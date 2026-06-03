@@ -1,0 +1,670 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>À propos – TechRepair Content | Notre histoire, notre équipe, nos valeurs</title>
+<meta name="description" content="Découvrez l'histoire de TechRepair Content, notre équipe d'experts SEO tech B2B, nos valeurs et notre approche unique du contenu orienté ROI."/>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet"/>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --blue:#1A56DB;--blue-dark:#1342b0;--blue-light:#EFF6FF;
+  --navy:#0F1B3D;--text:#1e293b;--muted:#64748b;
+  --border:#e2e8f0;--green:#10b981;--orange:#f97316;
+  --radius:12px;
+}
+html{scroll-behavior:smooth}
+body{font-family:'Manrope',sans-serif;color:var(--text);background:#fff;font-size:15px;line-height:1.6}
+a{text-decoration:none;color:inherit}
+
+/* ══ NAVBAR ══ */
+nav{position:sticky;top:0;z-index:200;background:#fff;border-bottom:1px solid var(--border);padding:0 32px;display:flex;align-items:center;gap:20px;height:62px;}
+.logo{display:flex;align-items:center;gap:10px;flex-shrink:0}
+.logo-box{width:36px;height:36px;background:var(--blue);border-radius:7px;display:grid;place-items:center;color:#fff;font-weight:800;font-size:13px;letter-spacing:-.5px}
+.logo-text{font-size:13px;font-weight:700;line-height:1.2;color:var(--navy)}
+.logo-text span{display:block;color:var(--muted);font-weight:500;font-size:11px}
+.nav-links{display:flex;gap:22px;margin-left:auto;align-items:center}
+.nav-links a{font-size:13.5px;font-weight:500;color:var(--muted);transition:color .2s}
+.nav-links a:hover,.nav-links a.active{color:var(--blue)}
+.nav-links a.active{border-bottom:2px solid var(--blue);padding-bottom:1px}
+.btn-nav{background:var(--blue);color:#fff;border:none;border-radius:8px;padding:9px 18px;font-weight:700;font-size:13.5px;cursor:pointer;white-space:nowrap;font-family:inherit}
+@media(max-width:600px){nav{padding:0 16px}.nav-links a:not(:last-child){display:none}}
+
+/* ══ HERO ══ */
+.page-hero{background:linear-gradient(145deg,#f0f5ff 50%,#dce9ff 100%);padding:64px 32px 56px;}
+.page-hero-inner{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center}
+.page-badge{display:inline-block;background:#FFF3E0;color:#E65100;font-size:10.5px;font-weight:700;letter-spacing:.6px;padding:4px 12px;border-radius:20px;margin-bottom:18px;text-transform:uppercase;}
+.page-hero h1{font-size:36px;font-weight:800;line-height:1.15;color:var(--navy);margin-bottom:16px}
+.page-hero p{color:var(--muted);font-size:14px;line-height:1.75;margin-bottom:24px}
+.hero-trust{display:flex;flex-direction:column;gap:10px}
+.htrust-item{display:flex;align-items:center;gap:10px;font-size:13px;font-weight:600;color:var(--muted)}
+.htrust-ico{width:28px;height:28px;border-radius:7px;background:var(--blue-light);display:grid;place-items:center;color:var(--blue);font-size:13px;flex-shrink:0}
+
+/* Carte fondateur */
+.founder-card{background:#fff;border-radius:20px;padding:28px;box-shadow:0 8px 40px rgba(26,86,219,.1);border:1px solid var(--border)}
+.founder-top{display:flex;align-items:center;gap:16px;margin-bottom:18px}
+.founder-avatar{width:64px;height:64px;border-radius:50%;background:linear-gradient(135deg,var(--blue),#3b82f6);display:grid;place-items:center;font-size:22px;font-weight:800;color:#fff;flex-shrink:0}
+.founder-name{font-size:16px;font-weight:800;color:var(--navy);margin-bottom:3px}
+.founder-role{font-size:12px;color:var(--blue);font-weight:600}
+.founder-location{font-size:11.5px;color:var(--muted);margin-top:2px}
+.founder-quote{font-size:13.5px;color:var(--muted);line-height:1.75;font-style:italic;border-left:3px solid var(--blue);padding-left:14px;margin-bottom:16px}
+.founder-stats{display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px}
+.fs-item{text-align:center;background:#f8fafc;border-radius:8px;padding:10px 8px}
+.fs-val{font-size:20px;font-weight:800;color:var(--navy);line-height:1}
+.fs-lbl{font-size:10px;color:var(--muted);font-weight:600;margin-top:3px}
+
+/* ══ LAYOUT ══ */
+section{padding:72px 32px}
+.container{max-width:1100px;margin:0 auto}
+.section-eyebrow{display:inline-block;background:var(--blue-light);color:var(--blue);font-size:11px;font-weight:700;letter-spacing:.6px;padding:4px 12px;border-radius:20px;margin-bottom:14px;text-transform:uppercase;}
+.section-title{font-size:28px;font-weight:800;color:var(--navy);margin-bottom:10px;line-height:1.2}
+.section-sub{color:var(--muted);font-size:14px;max-width:520px;line-height:1.65;margin-bottom:42px}
+
+/* ══ HISTOIRE / TIMELINE ══ */
+.histoire-section{background:#f8fafc}
+.histoire-grid{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:start}
+.histoire-text p{font-size:13.5px;color:var(--muted);line-height:1.8;margin-bottom:16px}
+.histoire-text p strong{color:var(--navy)}
+.histoire-text blockquote{background:linear-gradient(135deg,var(--navy),#1e3a6e);border-radius:12px;padding:20px 24px;margin-top:20px}
+.histoire-text blockquote p{color:#e2e8f0;font-style:italic;margin-bottom:8px;font-size:14px}
+.histoire-text blockquote cite{font-size:12px;color:#94a3b8;font-style:normal;font-weight:600}
+
+.timeline{display:flex;flex-direction:column;gap:0}
+.tl-item{display:flex;gap:20px;padding-bottom:28px;position:relative}
+.tl-item:last-child{padding-bottom:0}
+.tl-item:not(:last-child)::before{content:'';position:absolute;left:19px;top:40px;bottom:0;width:2px;background:var(--border)}
+.tl-dot{width:40px;height:40px;border-radius:50%;background:var(--blue);color:#fff;font-size:11px;font-weight:800;display:grid;place-items:center;flex-shrink:0;z-index:1;box-shadow:0 0 0 4px #f8fafc}
+.tl-dot.active{background:linear-gradient(135deg,var(--blue),#3b82f6);box-shadow:0 0 0 4px #f8fafc,0 0 20px rgba(26,86,219,.3)}
+.tl-body{}
+.tl-year{font-size:11px;font-weight:700;color:var(--blue);text-transform:uppercase;letter-spacing:.5px;margin-bottom:4px}
+.tl-title{font-size:14px;font-weight:800;color:var(--navy);margin-bottom:5px}
+.tl-desc{font-size:12.5px;color:var(--muted);line-height:1.6}
+.tl-badge{display:inline-block;background:var(--blue-light);color:var(--blue);font-size:10px;font-weight:700;padding:2px 9px;border-radius:20px;margin-top:6px}
+
+/* ══ ÉQUIPE ══ */
+.equipe-section{background:#fff}
+.team-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.team-card{border:1px solid var(--border);border-radius:16px;padding:24px;transition:box-shadow .25s,transform .25s}
+.team-card:hover{box-shadow:0 8px 32px rgba(26,86,219,.1);transform:translateY(-3px)}
+.team-avatar{width:56px;height:56px;border-radius:50%;display:grid;place-items:center;font-size:20px;font-weight:800;color:#fff;margin-bottom:14px;flex-shrink:0}
+.team-name{font-size:15px;font-weight:800;color:var(--navy);margin-bottom:3px}
+.team-role{font-size:12px;color:var(--blue);font-weight:600;margin-bottom:10px}
+.team-bio{font-size:12.5px;color:var(--muted);line-height:1.65;margin-bottom:14px}
+.team-skills{display:flex;flex-wrap:wrap;gap:5px}
+.team-skill{background:#f8fafc;border:1px solid var(--border);border-radius:20px;padding:3px 10px;font-size:11px;font-weight:600;color:var(--muted)}
+.team-card-founder{border-color:var(--blue);box-shadow:0 4px 24px rgba(26,86,219,.1)}
+.founder-badge{display:inline-block;background:var(--blue);color:#fff;font-size:10px;font-weight:700;padding:2px 9px;border-radius:20px;margin-bottom:10px}
+
+/* ══ VALEURS ══ */
+.valeurs-section{background:linear-gradient(160deg,#f0f5ff 0%,#f8fafc 100%)}
+.valeurs-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.valeur-card{background:#fff;border:1px solid var(--border);border-radius:16px;padding:28px 24px;transition:box-shadow .25s,transform .25s}
+.valeur-card:hover{box-shadow:0 8px 32px rgba(26,86,219,.1);transform:translateY(-3px)}
+.valeur-icon{font-size:32px;margin-bottom:14px}
+.valeur-card h3{font-size:16px;font-weight:800;color:var(--navy);margin-bottom:8px}
+.valeur-card p{font-size:13px;color:var(--muted);line-height:1.7}
+.valeur-card .valeur-exemple{margin-top:12px;background:var(--blue-light);border-radius:8px;padding:9px 12px;font-size:12px;font-weight:600;color:var(--blue)}
+
+/* ══ CHIFFRES DARK ══ */
+.chiffres-section{background:var(--navy);padding:64px 32px}
+.chiffres-grid{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:repeat(4,1fr);gap:32px}
+.ch-item{text-align:center;padding:24px 16px;border-right:1px solid rgba(255,255,255,.1)}
+.ch-item:last-child{border-right:none}
+.ch-num{font-size:48px;font-weight:800;color:#fff;line-height:1;margin-bottom:6px}
+.ch-suf{font-size:22px;font-weight:800;color:var(--blue)}
+.ch-lbl{font-size:13.5px;font-weight:700;color:#cbd5e1;margin-bottom:6px}
+.ch-desc{font-size:11.5px;color:#64748b;line-height:1.5}
+
+/* ══ TÉMOIGNAGES ══ */
+.testi-section{background:#fff}
+.testi-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.testi-card{border:1px solid var(--border);border-radius:16px;padding:28px;transition:box-shadow .25s,transform .25s}
+.testi-card:hover{box-shadow:0 8px 32px rgba(26,86,219,.12);transform:translateY(-3px)}
+.testi-featured{border-color:var(--blue);box-shadow:0 4px 24px rgba(26,86,219,.12)}
+.testi-badge-top{display:inline-block;background:var(--blue);color:#fff;font-size:10.5px;font-weight:700;padding:3px 10px;border-radius:20px;margin-bottom:14px}
+.testi-stars{color:#f59e0b;font-size:16px;letter-spacing:2px;margin-bottom:14px}
+.testi-text{font-size:13.5px;color:var(--muted);line-height:1.7;margin-bottom:20px;font-style:italic}
+.testi-author{display:flex;align-items:center;gap:12px}
+.testi-avatar{width:40px;height:40px;border-radius:50%;display:grid;place-items:center;font-weight:800;font-size:13px;flex-shrink:0}
+.testi-name{font-size:13px;font-weight:700;color:var(--navy)}
+.testi-role{font-size:11.5px;color:var(--muted)}
+
+/* ══ APPROCHE / MÉTHODE ══ */
+.methode-section{background:#f8fafc}
+.methode-grid{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:start}
+.methode-steps{display:flex;flex-direction:column;gap:20px}
+.mstep{display:flex;gap:16px;align-items:flex-start}
+.mstep-num{width:36px;height:36px;border-radius:50%;background:var(--blue);color:#fff;font-size:13px;font-weight:800;display:grid;place-items:center;flex-shrink:0}
+.mstep-body h4{font-size:14px;font-weight:800;color:var(--navy);margin-bottom:5px}
+.mstep-body p{font-size:13px;color:var(--muted);line-height:1.65}
+
+.methode-engagements{background:#fff;border-radius:20px;padding:28px;border:1px solid var(--border);box-shadow:0 4px 24px rgba(26,86,219,.06)}
+.methode-engagements h3{font-size:16px;font-weight:800;color:var(--navy);margin-bottom:18px;display:flex;align-items:center;gap:8px}
+.eng-list{display:flex;flex-direction:column;gap:12px}
+.eng-item{display:flex;align-items:flex-start;gap:12px;padding:12px;border-radius:10px;background:#f8fafc;border:1px solid var(--border)}
+.eng-ico{font-size:18px;flex-shrink:0;margin-top:1px}
+.eng-body strong{display:block;font-size:13px;font-weight:700;color:var(--navy);margin-bottom:3px}
+.eng-body span{font-size:12px;color:var(--muted);line-height:1.5}
+
+/* ══ CTA BAND ══ */
+.cta-band{background:var(--navy);padding:60px 32px}
+.cta-inner{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:1fr auto;gap:48px;align-items:center}
+.cta-band h2{font-size:28px;font-weight:800;color:#fff;margin-bottom:9px}
+.cta-band>div>p{color:#94a3b8;font-size:13.5px;margin-bottom:24px;max-width:380px}
+.cta-btns{display:flex;gap:10px;flex-wrap:wrap}
+.btn-primary{background:var(--blue);color:#fff;border:none;border-radius:8px;padding:11px 20px;font-weight:700;font-size:13.5px;cursor:pointer;display:inline-flex;align-items:center;gap:7px;font-family:inherit;transition:background .2s}
+.btn-primary:hover{background:var(--blue-dark)}
+.btn-white{background:#fff;color:var(--navy);border-radius:8px;padding:11px 20px;font-weight:700;font-size:13.5px;display:inline-flex;align-items:center;gap:7px;cursor:pointer;border:none;font-family:inherit}
+.btn-outline{background:#fff;color:var(--text);border:1.5px solid var(--border);border-radius:8px;padding:11px 18px;font-weight:600;font-size:13.5px;cursor:pointer;font-family:inherit;transition:all .2s}
+.btn-outline:hover{border-color:var(--blue);color:var(--blue)}
+.btn-ghost{background:transparent;color:#fff;border:1.5px solid rgba(255,255,255,.3);border-radius:8px;padding:11px 20px;font-weight:700;font-size:13.5px;cursor:pointer;font-family:inherit}
+.btn-ghost:hover{border-color:#fff}
+.cta-checks{display:flex;flex-direction:column;gap:11px;flex-shrink:0}
+.cta-check{display:flex;align-items:center;gap:9px;color:#cbd5e1;font-size:13px}
+.cta-ci{color:var(--green);font-weight:700}
+
+/* ══ FOOTER ══ */
+footer{background:var(--navy);border-top:1px solid rgba(255,255,255,.07);padding:44px 32px 26px}
+.footer-inner{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:2fr 1fr 1fr 1fr 1fr;gap:32px}
+.footer-brand p{color:#64748b;font-size:12px;margin-top:8px;max-width:185px;line-height:1.7}
+footer h4{font-size:10.5px;font-weight:700;color:#94a3b8;text-transform:uppercase;letter-spacing:.5px;margin-bottom:13px}
+.flinks{list-style:none}
+.flinks li{margin-bottom:8px}
+.flinks a{color:#64748b;font-size:12px;transition:color .2s}
+.flinks a:hover{color:#fff}
+.fsocial{display:flex;gap:7px;margin-top:11px}
+.fsoc{width:29px;height:29px;border-radius:6px;background:rgba(255,255,255,.07);display:grid;place-items:center;font-size:11px;color:#94a3b8;transition:background .2s}
+.fsoc:hover{background:var(--blue);color:#fff}
+.footer-bottom{max-width:1100px;margin:24px auto 0;padding-top:16px;border-top:1px solid rgba(255,255,255,.07);display:flex;justify-content:space-between;color:#475569;font-size:11px;flex-wrap:wrap;gap:8px}
+
+/* ══ POPUP ══ */
+.popup-overlay{position:fixed;inset:0;background:rgba(15,27,61,.65);z-index:9999;display:flex;align-items:center;justify-content:center;padding:20px;opacity:0;pointer-events:none;transition:opacity .3s;backdrop-filter:blur(4px)}
+.popup-overlay.active{opacity:1;pointer-events:all}
+.popup-box{background:#fff;border-radius:20px;padding:44px 40px;max-width:460px;width:100%;position:relative;text-align:center;box-shadow:0 24px 80px rgba(0,0,0,.25);transform:translateY(20px);transition:transform .3s}
+.popup-overlay.active .popup-box{transform:translateY(0)}
+.popup-close{position:absolute;top:14px;right:16px;background:none;border:none;font-size:18px;color:var(--muted);cursor:pointer}
+.popup-icon{font-size:48px;margin-bottom:12px}
+.popup-title{font-size:22px;font-weight:800;color:var(--navy);margin-bottom:10px}
+.popup-text{font-size:14px;color:var(--muted);line-height:1.65;margin-bottom:22px}
+.popup-text strong{color:var(--navy)}
+.popup-form{display:flex;flex-direction:column;gap:10px;margin-bottom:12px}
+.popup-input{border:1.5px solid var(--border);border-radius:8px;padding:12px 16px;font-size:14px;font-family:inherit;outline:none}
+.popup-input:focus{border-color:var(--blue)}
+.popup-btn{background:var(--blue);color:#fff;border:none;border-radius:8px;padding:13px;font-size:14px;font-weight:700;cursor:pointer;font-family:inherit}
+.popup-note{font-size:11.5px;color:#94a3b8}
+
+/* ══ RESPONSIVE ══ */
+@media(max-width:960px){
+  .page-hero-inner{grid-template-columns:1fr;gap:36px}
+  .histoire-grid{grid-template-columns:1fr}
+  .team-grid{grid-template-columns:1fr 1fr}
+  .valeurs-grid{grid-template-columns:1fr 1fr}
+  .chiffres-grid{grid-template-columns:repeat(2,1fr)}
+  .ch-item{border-right:none;border-bottom:1px solid rgba(255,255,255,.1);padding-bottom:24px}
+  .ch-item:nth-child(3),.ch-item:nth-child(4){border-bottom:none}
+  .testi-grid{grid-template-columns:1fr}
+  .methode-grid{grid-template-columns:1fr}
+  .cta-inner{grid-template-columns:1fr}
+  .footer-inner{grid-template-columns:1fr 1fr}
+}
+@media(max-width:600px){
+  .page-hero h1{font-size:26px}
+  .section-title{font-size:22px}
+  .team-grid{grid-template-columns:1fr}
+  .valeurs-grid{grid-template-columns:1fr}
+  .founder-stats{grid-template-columns:1fr 1fr 1fr}
+  .footer-inner{grid-template-columns:1fr}
+  .popup-box{padding:32px 22px}
+}
+</style>
+</head>
+<body>
+
+<!-- ══ NAVBAR ══ -->
+<nav>
+  <div class="logo">
+    <div class="logo-box">TRD</div>
+    <div class="logo-text">TechRepair<span>Content</span></div>
+  </div>
+  <div class="nav-links">
+    <a href="index.html">Accueil</a>
+    <a href="services.html">Services</a>
+    <a href="secteurs.html">Secteurs</a>
+    <a href="apropos.html" class="active">À propos</a>
+    <a href="#blog">Blog</a>
+    <button class="btn-nav">Obtenir un devis</button>
+  </div>
+</nav>
+
+<!-- ══ HERO ══ -->
+<div class="page-hero">
+  <div class="page-hero-inner">
+    <div>
+      <span class="page-badge">Notre histoire</span>
+      <h1>Nous sommes obsédés par un seul résultat : votre croissance organique</h1>
+      <p>TechRepair Content est née d'un constat simple : le marché du contenu SEO tech B2B était saturé de rédacteurs généralistes incapables de parler le même langage que les DSI, les CMO et les RSSI. Nous avons changé ça.</p>
+      <div class="hero-trust">
+        <div class="htrust-item"><div class="htrust-ico">🎯</div>Spécialisation exclusive SaaS, Tech & E-commerce B2B</div>
+        <div class="htrust-item"><div class="htrust-ico">📍</div>Basés en France, clients dans toute l'Europe</div>
+        <div class="htrust-item"><div class="htrust-ico">🏆</div>Plus de 5 ans d'expertise SEO tech, 150+ contenus livrés</div>
+        <div class="htrust-item"><div class="htrust-ico">⚡</div>Réponse sous 24h, livraison dans les délais garantis</div>
+      </div>
+    </div>
+    <div class="founder-card">
+      <div class="founder-top">
+        <div class="founder-avatar">G</div>
+        <div>
+          <div class="founder-name">Goradieme</div>
+          <div class="founder-role">Fondateur & Head of Content</div>
+          <div class="founder-location">📍 France · techrepaircontent.com</div>
+        </div>
+      </div>
+      <p class="founder-quote">« J'ai créé TechRepair Content parce que j'en avais assez de voir des entreprises tech brillantes perdre des opportunités de croissance faute d'un contenu SEO à la hauteur de leur produit. »</p>
+      <div class="founder-stats">
+        <div class="fs-item"><div class="fs-val">5+</div><div class="fs-lbl">Ans d'XP</div></div>
+        <div class="fs-item"><div class="fs-val">150+</div><div class="fs-lbl">Contenus</div></div>
+        <div class="fs-item"><div class="fs-val">98%</div><div class="fs-lbl">Satisfaits</div></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ══ NOTRE HISTOIRE ══ -->
+<section class="histoire-section">
+  <div class="container">
+    <div class="histoire-grid">
+      <div class="histoire-text">
+        <span class="section-eyebrow">Notre histoire</span>
+        <h2 class="section-title">Plus de 5 ans à construire l'expertise que vos concurrents n'ont pas</h2>
+        <p>Tout a commencé en 2021 avec une frustration : les entreprises tech B2B avaient des produits exceptionnels mais une présence organique quasi nulle. Les agences généralistes produisaient du contenu <strong>sur</strong> la tech, pas <strong>avec</strong> la tech.</p>
+        <p>Nous avons fait le choix inverse. En tant qu'experts SEO tech, nous maîtrisons les codes des secteurs SaaS, E-commerce, Cybersécurité, Fintech et RH Tech. Nous avons utilisé des SIRH, audité des architectures Zero Trust, intégré des APIs SaaS. <strong>Nous écrivons ce que nous connaissons.</strong></p>
+        <p>Résultat : nos contenus ne ressemblent pas à ce que produit l'IA générique. Ils ressemblent à ce qu'écrirait votre meilleur expert technique si on lui apprenait le SEO.</p>
+        <blockquote>
+          <p>« Le SEO technique sans expertise métier, c'est un moteur sans carburant. Nous apportons les deux. »</p>
+          <cite>— Goradieme, Fondateur TechRepair Content</cite>
+        </blockquote>
+      </div>
+
+      <div class="timeline">
+        <div class="tl-item">
+          <div class="tl-dot">21</div>
+          <div class="tl-body">
+            <div class="tl-year">2021</div>
+            <div class="tl-title">Les premiers pas</div>
+            <div class="tl-desc">Naissance de l'idée : créer une agence de contenu SEO 100% dédiée aux entreprises tech B2B. Constat fondateur, le marché manque cruellement de contenu technique crédible.</div>
+            <span class="tl-badge">L'idée prend forme</span>
+          </div>
+        </div>
+        <div class="tl-item">
+          <div class="tl-dot">22</div>
+          <div class="tl-body">
+            <div class="tl-year">2022</div>
+            <div class="tl-title">Structuration de l'offre</div>
+            <div class="tl-desc">Création de la méthodologie "Content ROI First" : chaque contenu lié à un KPI business mesurable dès le brief.</div>
+            <span class="tl-badge">Méthode ROI-First créée</span>
+          </div>
+        </div>
+        <div class="tl-item">
+          <div class="tl-dot">23</div>
+          <div class="tl-body">
+            <div class="tl-year">2023</div>
+            <div class="tl-title">Expansion sectorielle</div>
+            <div class="tl-desc">Extension aux secteurs Cybersécurité et Fintech. Montée en expertise sur les contenus réglementaires NIS2, DORA et conformité RGPD.</div>
+            <span class="tl-badge">5 secteurs couverts</span>
+          </div>
+        </div>
+        <div class="tl-item">
+          <div class="tl-dot">24</div>
+          <div class="tl-body">
+            <div class="tl-year">2024</div>
+            <div class="tl-title">Intégration de l'IA supervisée</div>
+            <div class="tl-desc">Lancement de l'offre "Contenu IA augmenté" : pipeline hybride IA + validation humaine pour multiplier les volumes sans sacrifier la qualité.</div>
+            <span class="tl-badge">×3,8 capacité production</span>
+          </div>
+        </div>
+        <div class="tl-item">
+          <div class="tl-dot active">25</div>
+          <div class="tl-body">
+            <div class="tl-year">2025 — Aujourd'hui</div>
+            <div class="tl-title">TechRepair Content</div>
+            <div class="tl-desc">Refonte complète de la marque, nouveau site, nouvelles offres. Cap sur 500 contenus livrés et 100K visites organiques générées.</div>
+            <span class="tl-badge" style="background:#dcfce7;color:#16a34a">En cours · Objectif 2026</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ FONDATEUR ══ -->
+<section class="equipe-section">
+  <div class="container">
+    <div style="text-align:center;margin-bottom:42px">
+      <span class="section-eyebrow">Qui je suis</span>
+      <h2 class="section-title" style="text-align:center">Un expert SEO qui écrit ce qu'il connaît</h2>
+      <p class="section-sub" style="margin:0 auto">Pas de sous-traitance, pas de rédacteurs anonymes. Vous travaillez directement avec moi sur chaque mission.</p>
+    </div>
+    <div style="max-width:600px;margin:0 auto">
+      <div class="team-card team-card-founder" style="text-align:center;padding:36px">
+        <span class="founder-badge">Fondateur & Expert SEO</span>
+        <div class="team-avatar" style="background:linear-gradient(135deg,var(--blue),#3b82f6);margin:16px auto 16px">G</div>
+        <div class="team-name" style="font-size:20px">Goradieme</div>
+        <div class="team-role" style="font-size:13px;margin-bottom:16px">Fondateur TechRepair Content · Expert SEO Tech B2B</div>
+        <p class="team-bio" style="font-size:13.5px;line-height:1.75;margin-bottom:20px">Plus de 5 ans d'expertise SEO tech B2B. Je suis à la fois le stratège, le rédacteur et l'analyste de chaque mission. Ma promesse : vous livrer du contenu que votre équipe technique valide sans corrections, et que Google positionne.</p>
+        <div class="team-skills" style="justify-content:center">
+          <span class="team-skill">SEO stratégique</span>
+          <span class="team-skill">SaaS B2B</span>
+          <span class="team-skill">Content ROI</span>
+          <span class="team-skill">Stratégie IA</span>
+          <span class="team-skill">Cybersécurité</span>
+          <span class="team-skill">Fintech</span>
+          <span class="team-skill">RH Tech</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ VALEURS ══ -->
+<section class="valeurs-section">
+  <div class="container">
+    <div style="text-align:center;margin-bottom:42px">
+      <span class="section-eyebrow">Ce qui nous guide</span>
+      <h2 class="section-title" style="text-align:center">Nos 6 valeurs non négociables</h2>
+    </div>
+    <div class="valeurs-grid">
+      <div class="valeur-card">
+        <div class="valeur-icon">🎯</div>
+        <h3>ROI avant tout</h3>
+        <p>Chaque contenu est conçu pour produire un résultat business mesurable. Pas de contenu pour "faire du volume". Chaque article a un KPI cible.</p>
+        <div class="valeur-exemple">→ KPI défini dans chaque brief</div>
+      </div>
+      <div class="valeur-card">
+        <div class="valeur-icon">🔬</div>
+        <h3>Expertise réelle</h3>
+        <p>Nos rédacteurs ont exercé dans les secteurs pour lesquels ils écrivent. Pas de vulgarisation approximative — de la précision technique à chaque ligne.</p>
+        <div class="valeur-exemple">→ Experts sectoriels certifiés</div>
+      </div>
+      <div class="valeur-card">
+        <div class="valeur-icon">📊</div>
+        <h3>Données, pas opinions</h3>
+        <p>Chaque recommandation s'appuie sur des données GSC, Ahrefs ou GA4. Nous ne travaillons pas à l'intuition — nous travaillons à la donnée.</p>
+        <div class="valeur-exemple">→ Dashboard partagé chaque mois</div>
+      </div>
+      <div class="valeur-card">
+        <div class="valeur-icon">⚡</div>
+        <h3>Rapidité sans compromis</h3>
+        <p>Nous livrons vite sans sacrifier la qualité. Notre pipeline hybride IA + humain nous permet de tenir des délais que d'autres agences ne peuvent pas promettre.</p>
+        <div class="valeur-exemple">→ Délais garantis contractuellement</div>
+      </div>
+      <div class="valeur-card">
+        <div class="valeur-icon">🤝</div>
+        <h3>Transparence totale</h3>
+        <p>Vous savez toujours où en est votre projet, pourquoi chaque décision a été prise et comment les résultats évoluent. Pas de boîte noire.</p>
+        <div class="valeur-exemple">→ Rapport mensuel détaillé</div>
+      </div>
+      <div class="valeur-card">
+        <div class="valeur-icon">🚀</div>
+        <h3>Amélioration continue</h3>
+        <p>Les contenus livrés ne sont pas figés. Nous les monitorons et proposons des optimisations basées sur les évolutions des SERPs et de votre secteur.</p>
+        <div class="valeur-exemple">→ Content refresh inclus</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ CHIFFRES ══ -->
+<section class="chiffres-section">
+  <div class="chiffres-grid">
+    <div class="ch-item">
+      <div class="ch-num"><span class="stat-number" data-target="150">0</span><span class="ch-suf">+</span></div>
+      <div class="ch-lbl">Contenus livrés</div>
+      <div class="ch-desc">Articles, guides, livres blancs et fiches produits</div>
+    </div>
+    <div class="ch-item">
+      <div class="ch-num"><span class="stat-number" data-target="43">0</span><span class="ch-suf">K+</span></div>
+      <div class="ch-lbl">Visites organiques</div>
+      <div class="ch-desc">Trafic qualifié généré pour nos clients</div>
+    </div>
+    <div class="ch-item">
+      <div class="ch-num"><span class="stat-number" data-target="98">0</span><span class="ch-suf">%</span></div>
+      <div class="ch-lbl">Clients satisfaits</div>
+      <div class="ch-desc">Taux mesuré sur l'ensemble des missions</div>
+    </div>
+    <div class="ch-item">
+      <div class="ch-num"><span class="stat-number" data-target="5">0</span><span class="ch-suf">ans+</span></div>
+      <div class="ch-lbl">D'expertise SEO Tech</div>
+      <div class="ch-desc">SaaS, E-commerce et Tech B2B uniquement</div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ TÉMOIGNAGES ══ -->
+<section class="testi-section">
+  <div class="container">
+    <div style="text-align:center;margin-bottom:42px">
+      <span class="section-eyebrow">Ils nous font confiance</span>
+      <h2 class="section-title" style="text-align:center">Ce que disent nos clients</h2>
+    </div>
+    <div class="testi-grid">
+      <div class="testi-card testi-featured">
+        <span class="testi-badge-top">⭐ Client fidèle</span>
+        <div class="testi-stars">★★★★★</div>
+        <p class="testi-text">« TechRepair Content a transformé notre présence organique. Ce qui m'a le plus frappé : le contenu livré parle vraiment le langage de notre secteur. Pas besoin de tout réécrire avant publication. »</p>
+        <div class="testi-author">
+          <div class="testi-avatar" style="background:linear-gradient(135deg,var(--blue),#3b82f6);color:#fff">P</div>
+          <div>
+            <div class="testi-name">Paul</div>
+            <div class="testi-role">Directeur Marketing</div>
+          </div>
+        </div>
+      </div>
+      <div class="testi-card">
+        <div class="testi-stars">★★★★★</div>
+        <p class="testi-text">« En tant que fondateur, je n'avais pas le temps de gérer le contenu SEO. TechRepair Content a pris le sujet en main avec une vraie vision stratégique. Les résultats ont été visibles dès les premiers mois. »</p>
+        <div class="testi-author">
+          <div class="testi-avatar" style="background:linear-gradient(135deg,#7c3aed,#a78bfa);color:#fff">I</div>
+          <div>
+            <div class="testi-name">Izo</div>
+            <div class="testi-role">CEO · Fondateur</div>
+          </div>
+        </div>
+      </div>
+      <div class="testi-card">
+        <div class="testi-stars">★★★★★</div>
+        <p class="testi-text">« La refonte de nos 1 200 fiches produits en 4 mois semblait impossible. TechRepair Content l'a fait avec une qualité constante et un +47% de conversion à la clé. Le ROI a été au rendez-vous dès le premier trimestre. »</p>
+        <div class="testi-author">
+          <div class="testi-avatar" style="background:linear-gradient(135deg,var(--orange),#fbbf24);color:#fff">AB</div>
+          <div>
+            <div class="testi-name">Antoine B.</div>
+            <div class="testi-role">CEO · E-commerce Tech · 45M€ CA</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ MÉTHODE ══ -->
+<section class="methode-section">
+  <div class="container">
+    <div class="methode-grid">
+      <div>
+        <span class="section-eyebrow">Notre approche</span>
+        <h2 class="section-title">La méthode ROI-First en 5 étapes</h2>
+        <p class="section-sub" style="margin-bottom:32px">Pas de contenu produit sans objectif business défini. Voici comment nous travaillons sur chaque mission.</p>
+        <div class="methode-steps">
+          <div class="mstep">
+            <div class="mstep-num">1</div>
+            <div class="mstep-body">
+              <h4>Audit & cadrage stratégique</h4>
+              <p>Analyse de votre position SEO actuelle, de vos concurrents et identification des opportunités à fort ROI dans votre secteur.</p>
+            </div>
+          </div>
+          <div class="mstep">
+            <div class="mstep-num">2</div>
+            <div class="mstep-body">
+              <h4>Stratégie de clusters sémantiques</h4>
+              <p>Construction d'une architecture de contenu en silos thématiques pour maximiser l'autorité sectorielle et le maillage interne.</p>
+            </div>
+          </div>
+          <div class="mstep">
+            <div class="mstep-num">3</div>
+            <div class="mstep-body">
+              <h4>Brief & validation avant rédaction</h4>
+              <p>Chaque contenu est briefé en détail et validé par vous avant la rédaction. Zéro surprise à la livraison.</p>
+            </div>
+          </div>
+          <div class="mstep">
+            <div class="mstep-num">4</div>
+            <div class="mstep-body">
+              <h4>Rédaction expert + QA SEO</h4>
+              <p>Rédaction par un expert du secteur, relecture SEO technique, optimisation sémantique et vérification E-E-A-T.</p>
+            </div>
+          </div>
+          <div class="mstep">
+            <div class="mstep-num">5</div>
+            <div class="mstep-body">
+              <h4>Suivi de performance & optimisation</h4>
+              <p>Dashboard partagé, rapport mensuel, et propositions de content refresh basées sur l'évolution des positions.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="methode-engagements">
+        <h3>🤝 Nos engagements contractuels</h3>
+        <div class="eng-list">
+          <div class="eng-item">
+            <div class="eng-ico">⏱️</div>
+            <div class="eng-body">
+              <strong>Délais garantis</strong>
+              <span>Toute livraison hors délai donne droit à une remise sur la facture suivante. Nos délais sont contractuels, pas indicatifs.</span>
+            </div>
+          </div>
+          <div class="eng-item">
+            <div class="eng-ico">🔄</div>
+            <div class="eng-body">
+              <strong>1 révision incluse sous 48h</strong>
+              <span>Chaque livrable inclut une révision complète sous 48h ouvrés. Pas de discussion — c'est inclus.</span>
+            </div>
+          </div>
+          <div class="eng-item">
+            <div class="eng-ico">📊</div>
+            <div class="eng-body">
+              <strong>Rapport de performance mensuel</strong>
+              <span>Positions, trafic, leads générés — chaque mois vous recevez un rapport complet sur l'impact de chaque contenu.</span>
+            </div>
+          </div>
+          <div class="eng-item">
+            <div class="eng-ico">🛡️</div>
+            <div class="eng-body">
+              <strong>Contenu 100% original garanti</strong>
+              <span>Vérification anti-plagiat systématique. Zéro duplicate content, zéro contenu générique non supervisé.</span>
+            </div>
+          </div>
+          <div class="eng-item">
+            <div class="eng-ico">💬</div>
+            <div class="eng-body">
+              <strong>Interlocuteur dédié</strong>
+              <span>Un seul point de contact pour toute la mission. Réponse sous 4h en heures ouvrées, sous 24h le reste du temps.</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ CTA BAND ══ -->
+<div class="cta-band">
+  <div class="cta-inner">
+    <div>
+      <h2>Travaillons ensemble</h2>
+      <p>Vous avez un projet de contenu SEO tech B2B ? Parlons-en. Nous répondons sous 24h et proposons un audit SEO gratuit à chaque premier contact.</p>
+      <div class="cta-btns">
+        <button class="btn-white">Obtenir un devis gratuit →</button>
+        <button class="btn-ghost">Voir nos services →</button>
+      </div>
+    </div>
+    <div class="cta-checks">
+      <div class="cta-check"><span class="cta-ci">✓</span> Réponse sous 24h</div>
+      <div class="cta-check"><span class="cta-ci">✓</span> Audit SEO gratuit sur demande</div>
+      <div class="cta-check"><span class="cta-ci">✓</span> Sans engagement</div>
+    </div>
+  </div>
+</div>
+
+<!-- ══ FOOTER ══ -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <div class="logo"><div class="logo-box">TRD</div><div class="logo-text" style="color:#fff">TechRepair<span>Content</span></div></div>
+      <p>Rédaction SEO & technique pour entreprises SaaS, Tech et E-commerce.</p>
+    </div>
+    <div><h4>Navigation</h4><ul class="flinks"><li><a href="index.html">Accueil</a></li><li><a href="apropos.html">À propos</a></li><li><a href="services.html">Services</a></li><li><a href="secteurs.html">Secteurs</a></li><li><a href="#">Blog</a></li></ul></div>
+    <div><h4>Ressources</h4><ul class="flinks"><li><a href="#">FAQ</a></li><li><a href="#">Politique de confidentialité</a></li><li><a href="#">Mentions légales</a></li></ul></div>
+    <div>
+      <h4>Contact</h4>
+      <ul class="flinks"><li><a href="#">contact@techrepaircontent.com</a></li><li><a href="#">Réponse sous 24h</a></li></ul>
+      <div class="fsocial"><a class="fsoc" href="#">in</a><a class="fsoc" href="#">𝕏</a><a class="fsoc" href="#">✉</a></div>
+    </div>
+    <div><h4>Basé en France</h4><div style="font-size:22px">🇫🇷</div><p style="color:#64748b;font-size:11px;margin-top:7px">Travail avec des clients du monde entier.</p></div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2025 TechRepair Content. Tous droits réservés.</span>
+    <span>Fait avec ❤️ en France</span>
+  </div>
+</footer>
+
+<!-- ══ EXIT POPUP ══ -->
+<div class="popup-overlay" id="popupOverlay">
+  <div class="popup-box">
+    <button class="popup-close" id="popupClose">✕</button>
+    <div class="popup-icon">🎁</div>
+    <h3 class="popup-title">Avant de partir…</h3>
+    <p class="popup-text">Recevez gratuitement notre <strong>guide des 10 erreurs SEO</strong> qui coûtent des clients à vos concurrents Tech.</p>
+    <div class="popup-form">
+      <input type="email" class="popup-input" placeholder="votre@email.com"/>
+      <button class="popup-btn">Recevoir le guide gratuit →</button>
+    </div>
+    <p class="popup-note">✓ Sans spam · ✓ Désabonnement en 1 clic</p>
+  </div>
+</div>
+
+<script>
+// ── Compteurs animés ──
+const counters = document.querySelectorAll('.stat-number');
+const speed = 80;
+const animateCounters = () => {
+  counters.forEach(counter => {
+    const target = +counter.getAttribute('data-target');
+    const count = +counter.innerText;
+    const inc = Math.ceil(target / speed);
+    if (count < target) {
+      counter.innerText = Math.min(count + inc, target);
+      setTimeout(animateCounters, 18);
+    } else { counter.innerText = target; }
+  });
+};
+const chiffresSection = document.querySelector('.chiffres-section');
+let counted = false;
+const obs = new IntersectionObserver(entries => {
+  if (entries[0].isIntersecting && !counted) { counted = true; animateCounters(); }
+}, {threshold: 0.3});
+if (chiffresSection) obs.observe(chiffresSection);
+
+// ── Exit popup ──
+const overlay = document.getElementById('popupOverlay');
+const closeBtn = document.getElementById('popupClose');
+let popupShown = false;
+document.addEventListener('mouseleave', (e) => {
+  if (e.clientY < 10 && !popupShown) { popupShown = true; overlay.classList.add('active'); }
+});
+closeBtn.addEventListener('click', () => overlay.classList.remove('active'));
+overlay.addEventListener('click', (e) => { if(e.target === overlay) overlay.classList.remove('active'); });
+setTimeout(() => { if (!popupShown) { popupShown = true; overlay.classList.add('active'); } }, 20000);
+</script>
+</body>
+</html>
