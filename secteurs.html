@@ -1,0 +1,792 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Secteurs – TechRepair Content | SaaS, E-commerce, Cybersécurité, Fintech, RH Tech</title>
+<meta name="description" content="TechRepair Content crée du contenu SEO expert pour 5 secteurs tech B2B : SaaS, E-commerce Tech, Cybersécurité, Fintech et RH Tech. Découvrez notre approche sectorielle."/>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet"/>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --blue:#1A56DB;--blue-dark:#1342b0;--blue-light:#EFF6FF;
+  --navy:#0F1B3D;--text:#1e293b;--muted:#64748b;
+  --border:#e2e8f0;--green:#10b981;--orange:#f97316;
+  --radius:12px;
+}
+html{scroll-behavior:smooth}
+body{font-family:'Manrope',sans-serif;color:var(--text);background:#fff;font-size:15px;line-height:1.6}
+a{text-decoration:none;color:inherit}
+
+/* ══ NAVBAR ══ */
+nav{position:sticky;top:0;z-index:200;background:#fff;border-bottom:1px solid var(--border);padding:0 32px;display:flex;align-items:center;gap:20px;height:62px;}
+.logo{display:flex;align-items:center;gap:10px;flex-shrink:0}
+.logo-box{width:36px;height:36px;background:var(--blue);border-radius:7px;display:grid;place-items:center;color:#fff;font-weight:800;font-size:13px;letter-spacing:-.5px}
+.logo-text{font-size:13px;font-weight:700;line-height:1.2;color:var(--navy)}
+.logo-text span{display:block;color:var(--muted);font-weight:500;font-size:11px}
+.nav-links{display:flex;gap:22px;margin-left:auto;align-items:center}
+.nav-links a{font-size:13.5px;font-weight:500;color:var(--muted);transition:color .2s}
+.nav-links a:hover,.nav-links a.active{color:var(--blue)}
+.nav-links a.active{border-bottom:2px solid var(--blue);padding-bottom:1px}
+.btn-nav{background:var(--blue);color:#fff;border:none;border-radius:8px;padding:9px 18px;font-weight:700;font-size:13.5px;cursor:pointer;white-space:nowrap;font-family:inherit}
+@media(max-width:600px){nav{padding:0 16px}.nav-links a:not(:last-child){display:none}}
+
+/* ══ HERO ══ */
+.page-hero{background:linear-gradient(145deg,#f0f5ff 50%,#dce9ff 100%);padding:64px 32px 56px;text-align:center;}
+.page-hero-inner{max-width:720px;margin:0 auto}
+.page-badge{display:inline-block;background:#FFF3E0;color:#E65100;font-size:10.5px;font-weight:700;letter-spacing:.6px;padding:4px 12px;border-radius:20px;margin-bottom:18px;text-transform:uppercase;}
+.page-hero h1{font-size:38px;font-weight:800;line-height:1.15;color:var(--navy);margin-bottom:16px}
+.page-hero p{color:var(--muted);font-size:14.5px;max-width:540px;margin:0 auto 28px;line-height:1.7}
+.hero-nav-pills{display:flex;gap:8px;justify-content:center;flex-wrap:wrap}
+.hero-pill{background:#fff;border:1.5px solid var(--border);border-radius:30px;padding:7px 16px;font-size:12.5px;font-weight:600;color:var(--muted);cursor:pointer;transition:all .2s;text-decoration:none;display:inline-block;}
+.hero-pill:hover,.hero-pill.active{background:var(--blue);border-color:var(--blue);color:#fff}
+
+/* ══ LAYOUT ══ */
+section{padding:72px 32px}
+.container{max-width:1100px;margin:0 auto}
+.section-eyebrow{display:inline-block;background:var(--blue-light);color:var(--blue);font-size:11px;font-weight:700;letter-spacing:.6px;padding:4px 12px;border-radius:20px;margin-bottom:14px;text-transform:uppercase;}
+.section-title{font-size:28px;font-weight:800;color:var(--navy);margin-bottom:10px;line-height:1.2}
+.section-sub{color:var(--muted);font-size:14px;max-width:520px;line-height:1.65;margin-bottom:42px}
+
+/* ══ SECTEUR BLOCKS ══ */
+.secteur-wrap{display:flex;flex-direction:column;gap:0}
+
+.secteur-block{
+  padding:72px 0;
+  border-bottom:1px solid var(--border);
+  display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:start;
+}
+.secteur-block:last-child{border-bottom:none}
+.secteur-block.reverse{direction:rtl}
+.secteur-block.reverse>*{direction:ltr}
+
+/* Infos */
+.sect-tag{display:inline-flex;align-items:center;gap:8px;font-size:10.5px;font-weight:700;letter-spacing:.5px;text-transform:uppercase;padding:5px 14px;border-radius:20px;margin-bottom:16px;}
+.sect-icon-wrap{width:52px;height:52px;border-radius:12px;display:grid;place-items:center;font-size:24px;margin-bottom:16px;flex-shrink:0}
+
+.sect-info h2{font-size:24px;font-weight:800;color:var(--navy);line-height:1.2;margin-bottom:12px}
+.sect-info>p{font-size:13.5px;color:var(--muted);line-height:1.75;margin-bottom:22px}
+
+.sect-challenges{margin-bottom:22px}
+.sect-challenges h4{font-size:11.5px;font-weight:700;color:var(--navy);text-transform:uppercase;letter-spacing:.5px;margin-bottom:11px}
+.chall-list{display:flex;flex-direction:column;gap:8px}
+.chall-item{display:flex;align-items:flex-start;gap:10px;font-size:13px;color:var(--text);line-height:1.5}
+.chall-dot{width:18px;height:18px;border-radius:5px;display:grid;place-items:center;font-size:10px;font-weight:800;flex-shrink:0;margin-top:2px}
+
+.sect-content-types{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:22px}
+.sect-ct{background:var(--blue-light);color:var(--blue);font-size:11.5px;font-weight:600;padding:4px 11px;border-radius:20px}
+
+.sect-result{background:linear-gradient(135deg,var(--navy),#1e3a6e);border-radius:12px;padding:16px 20px;margin-bottom:22px;display:flex;align-items:center;gap:14px}
+.sect-result-ico{font-size:22px;flex-shrink:0}
+.sect-result-text strong{display:block;font-size:13px;font-weight:700;color:#fff;margin-bottom:3px}
+.sect-result-text span{font-size:12px;color:#94a3b8;line-height:1.5}
+
+.btn-primary{background:var(--blue);color:#fff;border:none;border-radius:8px;padding:11px 20px;font-weight:700;font-size:13.5px;cursor:pointer;display:inline-flex;align-items:center;gap:7px;font-family:inherit;transition:background .2s}
+.btn-primary:hover{background:var(--blue-dark)}
+.btn-outline{background:#fff;color:var(--text);border:1.5px solid var(--border);border-radius:8px;padding:11px 18px;font-weight:600;font-size:13.5px;cursor:pointer;font-family:inherit;transition:all .2s}
+.btn-outline:hover{border-color:var(--blue);color:var(--blue)}
+.sect-cta{display:flex;gap:10px;flex-wrap:wrap}
+
+/* Visuel */
+.sect-visual{border-radius:20px;padding:28px;border:1px solid var(--border)}
+.sv-header{display:flex;align-items:center;gap:12px;margin-bottom:20px}
+.sv-icon{width:42px;height:42px;border-radius:10px;display:grid;place-items:center;font-size:18px;flex-shrink:0}
+.sv-title{font-size:14px;font-weight:800;color:var(--navy)}
+.sv-sub{font-size:11.5px;color:var(--muted)}
+
+.sv-kpis{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:18px}
+.sv-kpi{background:#fff;border-radius:10px;padding:12px 14px;border:1px solid var(--border);text-align:center}
+.sv-kpi-val{font-size:24px;font-weight:800;color:var(--navy);line-height:1;margin-bottom:3px}
+.sv-kpi-lbl{font-size:10.5px;color:var(--muted);font-weight:600}
+.sv-kpi-trend{display:inline-flex;align-items:center;gap:3px;font-size:10px;font-weight:700;padding:1px 7px;border-radius:10px;margin-top:4px}
+.trend-up{background:#dcfce7;color:#16a34a}
+.trend-down{background:#fee2e2;color:#dc2626}
+
+.sv-mots-cles{margin-bottom:16px}
+.sv-mots-cles h5{font-size:11px;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:.5px;margin-bottom:9px}
+.sv-kw-list{display:flex;flex-direction:column;gap:6px}
+.sv-kw{display:flex;align-items:center;justify-content:space-between;gap:8px;font-size:12px}
+.sv-kw-text{color:var(--text);font-weight:500;flex:1}
+.sv-kw-bar-wrap{flex:1;height:5px;background:var(--border);border-radius:3px;overflow:hidden}
+.sv-kw-bar{height:100%;border-radius:3px;background:linear-gradient(90deg,var(--blue),#60a5fa)}
+.sv-kw-vol{font-size:10.5px;color:var(--muted);font-weight:600;flex-shrink:0;min-width:40px;text-align:right}
+
+.sv-funnel{display:grid;grid-template-columns:1fr 1fr 1fr;gap:6px;margin-top:14px}
+.sv-funnel-col{border-radius:8px;padding:10px 8px;text-align:center}
+.sf-tofu{background:#EFF6FF}
+.sf-mofu{background:#FFF7ED}
+.sf-bofu{background:#ECFDF5}
+.sv-funnel-col strong{display:block;font-size:10px;font-weight:800;letter-spacing:.4px;text-transform:uppercase;margin-bottom:6px}
+.sf-tofu strong{color:var(--blue)}
+.sf-mofu strong{color:var(--orange)}
+.sf-bofu strong{color:var(--green)}
+.sv-funnel-col span{display:block;font-size:10.5px;color:var(--muted);line-height:1.5}
+
+/* Couleurs par secteur */
+.v-saas{background:linear-gradient(145deg,#f0f5ff,#e0ebff);border-color:#c3d6f8}
+.v-ecom{background:linear-gradient(145deg,#fff7ed,#ffe8d0);border-color:#ffd5a8}
+.v-cyber{background:linear-gradient(145deg,#0f172a,#1e293b);border-color:rgba(239,68,68,.3)}
+.v-fintech{background:linear-gradient(145deg,#ecfdf5,#d1fae5);border-color:#a7f3d0}
+.v-rh{background:linear-gradient(145deg,#f5f3ff,#ede9fe);border-color:#c4b5fd}
+
+.v-cyber .sv-title{color:#fff}
+.v-cyber .sv-sub{color:#94a3b8}
+.v-cyber .sv-kpi{background:rgba(255,255,255,.07);border-color:rgba(255,255,255,.1)}
+.v-cyber .sv-kpi-val{color:#f87171}
+.v-cyber .sv-kpi-lbl{color:#64748b}
+.v-cyber .sv-mots-cles h5{color:#64748b}
+.v-cyber .sv-kw-text{color:#e2e8f0}
+.v-cyber .sv-kw-bar-wrap{background:rgba(255,255,255,.1)}
+.v-cyber .sv-kw-bar{background:linear-gradient(90deg,#ef4444,#f87171)}
+.v-cyber .sv-kw-vol{color:#64748b}
+.v-cyber .sv-funnel-col{background:rgba(255,255,255,.05)}
+.v-cyber .sf-tofu strong,.v-cyber .sf-mofu strong,.v-cyber .sf-bofu strong{color:#94a3b8}
+.v-cyber .sv-funnel-col span{color:#64748b}
+.v-cyber .sv-kpi-trend{background:rgba(239,68,68,.2);color:#f87171}
+
+/* Tags couleurs */
+.t-blue{background:var(--blue-light);color:var(--blue)}
+.t-orange{background:#FFF7ED;color:var(--orange)}
+.t-red{background:#FEF2F2;color:#dc2626}
+.t-green{background:#ECFDF5;color:var(--green)}
+.t-purple{background:#F5F3FF;color:#7c3aed}
+
+.chall-b{background:var(--blue-light);color:var(--blue)}
+.chall-o{background:#FFF7ED;color:var(--orange)}
+.chall-r{background:#FEF2F2;color:#dc2626}
+.chall-g{background:#ECFDF5;color:var(--green)}
+.chall-p{background:#F5F3FF;color:#7c3aed}
+
+/* ══ COMPARATIF SECTEURS ══ */
+.compar-section{background:#f8fafc}
+.compar-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:16px}
+.compar-card{
+  background:#fff;border:1px solid var(--border);border-radius:16px;
+  padding:20px 16px;text-align:center;transition:box-shadow .25s,transform .25s;
+  cursor:pointer;
+}
+.compar-card:hover{box-shadow:0 8px 32px rgba(26,86,219,.1);transform:translateY(-3px)}
+.cc-icon{font-size:28px;margin-bottom:10px}
+.cc-name{font-size:13px;font-weight:800;color:var(--navy);margin-bottom:6px}
+.cc-desc{font-size:11.5px;color:var(--muted);line-height:1.5;margin-bottom:12px}
+.cc-badge{display:inline-block;font-size:10px;font-weight:700;padding:3px 9px;border-radius:20px}
+
+/* ══ STATS BAR ══ */
+.stats-bar{background:var(--navy);padding:48px 32px}
+.stats-bar-grid{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:repeat(4,1fr);gap:32px}
+.sb-item{text-align:center;border-right:1px solid rgba(255,255,255,.1);padding:0 16px}
+.sb-item:last-child{border-right:none}
+.sb-val{font-size:40px;font-weight:800;color:#fff;line-height:1;margin-bottom:6px}
+.sb-suf{font-size:18px;font-weight:800;color:var(--blue)}
+.sb-lbl{font-size:13px;font-weight:700;color:#cbd5e1;margin-bottom:4px}
+.sb-desc{font-size:11.5px;color:#64748b}
+
+/* ══ CTA BAND ══ */
+.cta-band{background:var(--navy);padding:60px 32px}
+.cta-inner{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:1fr auto;gap:48px;align-items:center}
+.cta-band h2{font-size:28px;font-weight:800;color:#fff;margin-bottom:9px}
+.cta-band>div>p{color:#94a3b8;font-size:13.5px;margin-bottom:24px;max-width:380px}
+.cta-btns{display:flex;gap:10px;flex-wrap:wrap}
+.btn-white{background:#fff;color:var(--navy);border-radius:8px;padding:11px 20px;font-weight:700;font-size:13.5px;display:inline-flex;align-items:center;gap:7px;cursor:pointer;border:none;font-family:inherit}
+.btn-ghost{background:transparent;color:#fff;border:1.5px solid rgba(255,255,255,.3);border-radius:8px;padding:11px 20px;font-weight:700;font-size:13.5px;cursor:pointer;font-family:inherit;transition:border-color .2s}
+.btn-ghost:hover{border-color:#fff}
+.cta-checks{display:flex;flex-direction:column;gap:11px;flex-shrink:0}
+.cta-check{display:flex;align-items:center;gap:9px;color:#cbd5e1;font-size:13px}
+.cta-ci{color:var(--green);font-weight:700}
+
+/* ══ FOOTER ══ */
+footer{background:var(--navy);border-top:1px solid rgba(255,255,255,.07);padding:44px 32px 26px}
+.footer-inner{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:2fr 1fr 1fr 1fr 1fr;gap:32px}
+.footer-brand p{color:#64748b;font-size:12px;margin-top:8px;max-width:185px;line-height:1.7}
+footer h4{font-size:10.5px;font-weight:700;color:#94a3b8;text-transform:uppercase;letter-spacing:.5px;margin-bottom:13px}
+.flinks{list-style:none}
+.flinks li{margin-bottom:8px}
+.flinks a{color:#64748b;font-size:12px;transition:color .2s}
+.flinks a:hover{color:#fff}
+.fsocial{display:flex;gap:7px;margin-top:11px}
+.fsoc{width:29px;height:29px;border-radius:6px;background:rgba(255,255,255,.07);display:grid;place-items:center;font-size:11px;color:#94a3b8;transition:background .2s}
+.fsoc:hover{background:var(--blue);color:#fff}
+.footer-bottom{max-width:1100px;margin:24px auto 0;padding-top:16px;border-top:1px solid rgba(255,255,255,.07);display:flex;justify-content:space-between;color:#475569;font-size:11px;flex-wrap:wrap;gap:8px}
+
+/* ══ POPUP ══ */
+.popup-overlay{position:fixed;inset:0;background:rgba(15,27,61,.65);z-index:9999;display:flex;align-items:center;justify-content:center;padding:20px;opacity:0;pointer-events:none;transition:opacity .3s;backdrop-filter:blur(4px)}
+.popup-overlay.active{opacity:1;pointer-events:all}
+.popup-box{background:#fff;border-radius:20px;padding:44px 40px;max-width:460px;width:100%;position:relative;text-align:center;box-shadow:0 24px 80px rgba(0,0,0,.25);transform:translateY(20px);transition:transform .3s}
+.popup-overlay.active .popup-box{transform:translateY(0)}
+.popup-close{position:absolute;top:14px;right:16px;background:none;border:none;font-size:18px;color:var(--muted);cursor:pointer}
+.popup-icon{font-size:48px;margin-bottom:12px}
+.popup-title{font-size:22px;font-weight:800;color:var(--navy);margin-bottom:10px}
+.popup-text{font-size:14px;color:var(--muted);line-height:1.65;margin-bottom:22px}
+.popup-text strong{color:var(--navy)}
+.popup-form{display:flex;flex-direction:column;gap:10px;margin-bottom:12px}
+.popup-input{border:1.5px solid var(--border);border-radius:8px;padding:12px 16px;font-size:14px;font-family:inherit;outline:none}
+.popup-input:focus{border-color:var(--blue)}
+.popup-btn{background:var(--blue);color:#fff;border:none;border-radius:8px;padding:13px;font-size:14px;font-weight:700;cursor:pointer;font-family:inherit}
+.popup-note{font-size:11.5px;color:#94a3b8}
+
+/* ══ RESPONSIVE ══ */
+@media(max-width:960px){
+  .secteur-block{grid-template-columns:1fr;gap:32px}
+  .secteur-block.reverse{direction:ltr}
+  .compar-grid{grid-template-columns:1fr 1fr}
+  .stats-bar-grid{grid-template-columns:repeat(2,1fr)}
+  .sb-item{border-right:none;border-bottom:1px solid rgba(255,255,255,.1);padding-bottom:24px}
+  .sb-item:nth-child(3),.sb-item:nth-child(4){border-bottom:none}
+  .cta-inner{grid-template-columns:1fr}
+  .footer-inner{grid-template-columns:1fr 1fr}
+}
+@media(max-width:600px){
+  .page-hero h1{font-size:26px}
+  .section-title{font-size:22px}
+  .compar-grid{grid-template-columns:1fr}
+  .sv-kpis{grid-template-columns:1fr 1fr}
+  .sv-funnel{grid-template-columns:1fr}
+  .footer-inner{grid-template-columns:1fr}
+  .popup-box{padding:32px 22px}
+}
+</style>
+</head>
+<body>
+
+<!-- ══ NAVBAR ══ -->
+<nav>
+  <div class="logo">
+    <div class="logo-box">TRD</div>
+    <div class="logo-text">TechRepair<span>Content</span></div>
+  </div>
+  <div class="nav-links">
+    <a href="index.html">Accueil</a>
+    <a href="services.html">Services</a>
+    <a href="secteurs.html" class="active">Secteurs</a>
+    <a href="apropos.html">À propos</a>
+    <a href="blog.html">Blog</a>
+    <button class="btn-nav">Obtenir un devis</button>
+  </div>
+</nav>
+
+<!-- ══ HERO ══ -->
+<div class="page-hero">
+  <div class="page-hero-inner">
+    <span class="page-badge">Expertise sectorielle</span>
+    <h1>Un contenu expert,<br>calibré pour votre marché</h1>
+    <p>Nous ne rédigeons pas du contenu générique. Chaque secteur a ses codes, ses mots-clés et ses décideurs. Nous les connaissons.</p>
+    <div class="hero-nav-pills">
+      <a href="#saas" class="hero-pill active">SaaS B2B</a>
+      <a href="#ecommerce" class="hero-pill">E-commerce Tech</a>
+      <a href="#cyber" class="hero-pill">Cybersécurité</a>
+      <a href="#fintech" class="hero-pill">Fintech</a>
+      <a href="#rh" class="hero-pill">RH Tech</a>
+    </div>
+  </div>
+</div>
+
+<!-- ══ COMPARATIF RAPIDE ══ -->
+<section class="compar-section">
+  <div class="container">
+    <div style="text-align:center;margin-bottom:36px">
+      <span class="section-eyebrow">5 secteurs maîtrisés</span>
+      <h2 class="section-title" style="text-align:center">Notre expertise en un coup d'œil</h2>
+    </div>
+    <div class="compar-grid">
+      <a href="#saas" class="compar-card">
+        <div class="cc-icon">☁️</div>
+        <div class="cc-name">SaaS B2B</div>
+        <div class="cc-desc">Articles piliers, use cases, comparatifs logiciels</div>
+        <span class="cc-badge t-blue">Cœur de cible</span>
+      </a>
+      <a href="#ecommerce" class="compar-card">
+        <div class="cc-icon">🛒</div>
+        <div class="cc-name">E-commerce Tech</div>
+        <div class="cc-desc">Fiches produits, guides d'achat, SEO catalogue</div>
+        <span class="cc-badge t-orange">Fort volume</span>
+      </a>
+      <a href="#cyber" class="compar-card">
+        <div class="cc-icon">🔒</div>
+        <div class="cc-name">Cybersécurité</div>
+        <div class="cc-desc">Contenus techniques, conformité, threat intelligence</div>
+        <span class="cc-badge t-red">Haute valeur</span>
+      </a>
+      <a href="#fintech" class="compar-card">
+        <div class="cc-icon">💳</div>
+        <div class="cc-name">Fintech</div>
+        <div class="cc-desc">Réglementation, open banking, contenu de confiance</div>
+        <span class="cc-badge t-green">Forte opportunité</span>
+      </a>
+      <a href="#rh" class="compar-card">
+        <div class="cc-icon">👥</div>
+        <div class="cc-name">RH Tech</div>
+        <div class="cc-desc">SIRH, recrutement, paie, transformation RH</div>
+        <span class="cc-badge t-purple">Marché en essor</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ══ SECTEURS DÉTAILLÉS ══ -->
+<section id="saas" style="background:#fff">
+  <div class="container">
+    <div class="secteur-wrap">
+
+      <!-- SAAS B2B -->
+      <div class="secteur-block" style="padding-top:0">
+        <div class="sect-info">
+          <span class="sect-tag t-blue">☁️ Secteur 01</span>
+          <h2>SaaS B2B</h2>
+          <p>Le marché SaaS est saturé de contenus génériques. Pour sortir du lot, vos articles doivent démontrer une maîtrise technique réelle, adresser les vraies douleurs des décideurs et s'appuyer sur une stratégie de clusters sémantiques structurée.</p>
+
+          <div class="sect-challenges">
+            <h4>Défis spécifiques que nous adressons</h4>
+            <div class="chall-list">
+              <div class="chall-item"><div class="chall-dot chall-b">→</div><span>Cycle de vente long : créer du contenu MOFU/BOFU qui nourrit la décision sans être commercial</span></div>
+              <div class="chall-item"><div class="chall-dot chall-b">→</div><span>Vocabulaire technique pointu : intégration, API, compliance, SLA — maîtrisés par nos rédacteurs</span></div>
+              <div class="chall-item"><div class="chall-dot chall-b">→</div><span>Concurrence des géants : stratégie longue traîne pour rankner là où Salesforce ne se positionne pas</span></div>
+              <div class="chall-item"><div class="chall-dot chall-b">→</div><span>Personas multiples : IT, Finance, Ops — chaque contenu ciblé sur un décideur spécifique</span></div>
+            </div>
+          </div>
+
+          <div style="margin-bottom:16px">
+            <h4 style="font-size:11.5px;font-weight:700;color:var(--navy);text-transform:uppercase;letter-spacing:.5px;margin-bottom:10px">Types de contenus produits</h4>
+            <div class="sect-content-types">
+              <span class="sect-ct">Articles piliers</span>
+              <span class="sect-ct">Use cases</span>
+              <span class="sect-ct">Comparatifs logiciels</span>
+              <span class="sect-ct">Guides d'intégration</span>
+              <span class="sect-ct">Études de cas</span>
+              <span class="sect-ct">Livres blancs</span>
+            </div>
+          </div>
+
+          <div class="sect-result">
+            <div class="sect-result-ico">📈</div>
+            <div class="sect-result-text">
+              <strong>Résultat client — SaaS RH B2B</strong>
+              <span>+312% trafic organique · 47 leads/mois · Top 3 sur 14 mots-clés cibles en 6 mois</span>
+            </div>
+          </div>
+          <div class="sect-cta">
+            <button class="btn-primary">Démarrer un projet SaaS →</button>
+            <button class="btn-outline">Voir l'étude de cas</button>
+          </div>
+        </div>
+
+        <div class="sect-visual v-saas">
+          <div class="sv-header">
+            <div class="sv-icon" style="background:#EFF6FF">☁️</div>
+            <div><div class="sv-title">Opportunités SEO — SaaS B2B</div><div class="sv-sub">Mots-clés à fort potentiel inexploité</div></div>
+          </div>
+          <div class="sv-kpis">
+            <div class="sv-kpi"><div class="sv-kpi-val">+312%</div><div class="sv-kpi-lbl">Trafic moyen</div><div class="sv-kpi-trend trend-up">↑ 6 mois</div></div>
+            <div class="sv-kpi"><div class="sv-kpi-val">8 500</div><div class="sv-kpi-lbl">Rech. mensuelle moy.</div><div class="sv-kpi-trend trend-up">longue traîne</div></div>
+            <div class="sv-kpi"><div class="sv-kpi-val">3,2%</div><div class="sv-kpi-lbl">CVR organique moy.</div><div class="sv-kpi-trend trend-up">↑ vs paid</div></div>
+            <div class="sv-kpi"><div class="sv-kpi-val">DA 42</div><div class="sv-kpi-lbl">Autorité atteinte</div><div class="sv-kpi-trend trend-up">↑ +18pts</div></div>
+          </div>
+          <div class="sv-mots-cles">
+            <h5>Exemples de mots-clés travaillés</h5>
+            <div class="sv-kw-list">
+              <div class="sv-kw"><span class="sv-kw-text">logiciel gestion projet saas</span><div class="sv-kw-bar-wrap"><div class="sv-kw-bar" style="width:85%"></div></div><span class="sv-kw-vol">2 900/m</span></div>
+              <div class="sv-kw"><span class="sv-kw-text">comparatif crm b2b 2025</span><div class="sv-kw-bar-wrap"><div class="sv-kw-bar" style="width:70%"></div></div><span class="sv-kw-vol">1 600/m</span></div>
+              <div class="sv-kw"><span class="sv-kw-text">intégration api saas guide</span><div class="sv-kw-bar-wrap"><div class="sv-kw-bar" style="width:55%"></div></div><span class="sv-kw-vol">880/m</span></div>
+              <div class="sv-kw"><span class="sv-kw-text">onboarding saas best practices</span><div class="sv-kw-bar-wrap"><div class="sv-kw-bar" style="width:45%"></div></div><span class="sv-kw-vol">590/m</span></div>
+            </div>
+          </div>
+          <div class="sv-funnel">
+            <div class="sv-funnel-col sf-tofu"><strong>TOFU</strong><span>Articles informationnels & guides</span></div>
+            <div class="sv-funnel-col sf-mofu"><strong>MOFU</strong><span>Comparatifs & use cases</span></div>
+            <div class="sv-funnel-col sf-bofu"><strong>BOFU</strong><span>Études de cas & démos</span></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- E-COMMERCE TECH -->
+      <div class="secteur-block reverse" id="ecommerce">
+        <div class="sect-info">
+          <span class="sect-tag t-orange">🛒 Secteur 02</span>
+          <h2>E-commerce Tech</h2>
+          <p>Catalogues de milliers de références, thin content massif, concurrence des marketplaces — l'e-commerce tech est un terrain de jeu SEO exigeant. Nous maîtrisons la production à grande échelle sans sacrifier la qualité.</p>
+
+          <div class="sect-challenges">
+            <h4>Défis spécifiques que nous adressons</h4>
+            <div class="chall-list">
+              <div class="chall-item"><div class="chall-dot chall-o">→</div><span>Duplicate content massif : chaque fiche devient unique avec un angle bénéfices différencié</span></div>
+              <div class="chall-item"><div class="chall-dot chall-o">→</div><span>Specs techniques à vulgariser sans perdre en précision : notre spécialité</span></div>
+              <div class="chall-item"><div class="chall-dot chall-o">→</div><span>Amazon & LDLC : stratégie longue traîne sur des requêtes que les géants négligent</span></div>
+              <div class="chall-item"><div class="chall-dot chall-o">→</div><span>Schema Product, avis agrégés, rich snippets : implémentation complète incluse</span></div>
+            </div>
+          </div>
+
+          <div style="margin-bottom:16px">
+            <h4 style="font-size:11.5px;font-weight:700;color:var(--navy);text-transform:uppercase;letter-spacing:.5px;margin-bottom:10px">Types de contenus produits</h4>
+            <div class="sect-content-types">
+              <span class="sect-ct" style="background:#FFF7ED;color:var(--orange)">Fiches produits</span>
+              <span class="sect-ct" style="background:#FFF7ED;color:var(--orange)">Guides d'achat</span>
+              <span class="sect-ct" style="background:#FFF7ED;color:var(--orange)">Comparatifs produits</span>
+              <span class="sect-ct" style="background:#FFF7ED;color:var(--orange)">FAQ produit</span>
+              <span class="sect-ct" style="background:#FFF7ED;color:var(--orange)">Contenus catégorie</span>
+              <span class="sect-ct" style="background:#FFF7ED;color:var(--orange)">Tutoriels d'utilisation</span>
+            </div>
+          </div>
+
+          <div class="sect-result">
+            <div class="sect-result-ico">🛒</div>
+            <div class="sect-result-text">
+              <strong>Résultat client — E-commerce informatique</strong>
+              <span>1 200 fiches rédigées · +89% trafic produits · +47% conversion en 4 mois</span>
+            </div>
+          </div>
+          <div class="sect-cta">
+            <button class="btn-primary">Démarrer un projet E-commerce →</button>
+            <button class="btn-outline">Voir l'étude de cas</button>
+          </div>
+        </div>
+
+        <div class="sect-visual v-ecom">
+          <div class="sv-header">
+            <div class="sv-icon" style="background:#FFF7ED">🛒</div>
+            <div><div class="sv-title">Opportunités SEO — E-commerce Tech</div><div class="sv-sub">Mots-clés à fort potentiel inexploité</div></div>
+          </div>
+          <div class="sv-kpis">
+            <div class="sv-kpi"><div class="sv-kpi-val">+89%</div><div class="sv-kpi-lbl">Trafic produits</div><div class="sv-kpi-trend trend-up">↑ 4 mois</div></div>
+            <div class="sv-kpi"><div class="sv-kpi-val">+47%</div><div class="sv-kpi-lbl">Taux de conversion</div><div class="sv-kpi-trend trend-up">↑ panier moy.</div></div>
+            <div class="sv-kpi"><div class="sv-kpi-val">1 200</div><div class="sv-kpi-lbl">Fiches produites</div><div class="sv-kpi-trend trend-up">batch livraison</div></div>
+            <div class="sv-kpi"><div class="sv-kpi-val">94%</div><div class="sv-kpi-lbl">Score SEO moyen</div><div class="sv-kpi-trend trend-up">↑ Screaming Frog</div></div>
+          </div>
+          <div class="sv-mots-cles">
+            <h5>Exemples de mots-clés travaillés</h5>
+            <div class="sv-kw-list">
+              <div class="sv-kw"><span class="sv-kw-text">meilleur routeur wifi 6 pro</span><div class="sv-kw-bar-wrap"><div class="sv-kw-bar" style="width:80%;background:linear-gradient(90deg,var(--orange),#fbbf24)"></div></div><span class="sv-kw-vol">3 600/m</span></div>
+              <div class="sv-kw"><span class="sv-kw-text">écran 4k professionnel comparatif</span><div class="sv-kw-bar-wrap"><div class="sv-kw-bar" style="width:65%;background:linear-gradient(90deg,var(--orange),#fbbf24)"></div></div><span class="sv-kw-vol">1 900/m</span></div>
+              <div class="sv-kw"><span class="sv-kw-text">nas synology entreprise guide</span><div class="sv-kw-bar-wrap"><div class="sv-kw-bar" style="width:50%;background:linear-gradient(90deg,var(--orange),#fbbf24)"></div></div><span class="sv-kw-vol">720/m</span></div>
+              <div class="sv-kw"><span class="sv-kw-text">switch réseau pme 24 ports</span><div class="sv-kw-bar-wrap"><div class="sv-kw-bar" style="width:40%;background:linear-gradient(90deg,var(--orange),#fbbf24)"></div></div><span class="sv-kw-vol">480/m</span></div>
+            </div>
+          </div>
+          <div class="sv-funnel">
+            <div class="sv-funnel-col sf-tofu"><strong>TOFU</strong><span>Guides d'achat & comparatifs</span></div>
+            <div class="sv-funnel-col sf-mofu"><strong>MOFU</strong><span>Fiches produits optimisées</span></div>
+            <div class="sv-funnel-col sf-bofu"><strong>BOFU</strong><span>FAQ & cross-sell</span></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- CYBERSÉCURITÉ -->
+      <div class="secteur-block" id="cyber">
+        <div class="sect-info">
+          <span class="sect-tag t-red">🔒 Secteur 03</span>
+          <h2>Cybersécurité</h2>
+          <p>La cybersécurité est le secteur où la crédibilité du contenu est la plus critique. Un RSSI ou un DSI ne pardonne pas les approximations techniques. Nos rédacteurs sont formés aux réalités terrain : SIEM, EDR, Zero Trust, conformité NIS2/RGPD.</p>
+
+          <div class="sect-challenges">
+            <h4>Défis spécifiques que nous adressons</h4>
+            <div class="chall-list">
+              <div class="chall-item"><div class="chall-dot chall-r">→</div><span>Jargon ultra-technique : SOC, SIEM, EDR, SOAR — maîtrisés et vulgarisés sans être simplistes</span></div>
+              <div class="chall-item"><div class="chall-dot chall-r">→</div><span>Réglementation en évolution constante : NIS2, DORA, RGPD — veille permanente intégrée</span></div>
+              <div class="chall-item"><div class="chall-dot chall-r">→</div><span>Audience RSSI/DSI très méfiante : contenu factuel, sourcé, zéro marketing creux</span></div>
+              <div class="chall-item"><div class="chall-dot chall-r">→</div><span>Cycle de vente 6-18 mois : stratégie thought leadership sur le long terme</span></div>
+            </div>
+          </div>
+
+          <div style="margin-bottom:16px">
+            <h4 style="font-size:11.5px;font-weight:700;color:var(--navy);text-transform:uppercase;letter-spacing:.5px;margin-bottom:10px">Types de contenus produits</h4>
+            <div class="sect-content-types">
+              <span class="sect-ct" style="background:#FEF2F2;color:#dc2626">Threat Intelligence</span>
+              <span class="sect-ct" style="background:#FEF2F2;color:#dc2626">Guides conformité</span>
+              <span class="sect-ct" style="background:#FEF2F2;color:#dc2626">Comparatifs solutions</span>
+              <span class="sect-ct" style="background:#FEF2F2;color:#dc2626">Livres blancs NIS2</span>
+              <span class="sect-ct" style="background:#FEF2F2;color:#dc2626">Use cases RSSI</span>
+              <span class="sect-ct" style="background:#FEF2F2;color:#dc2626">Articles techniques</span>
+            </div>
+          </div>
+
+          <div class="sect-result" style="background:linear-gradient(135deg,#1a0a0a,#3b0a0a)">
+            <div class="sect-result-ico">🔒</div>
+            <div class="sect-result-text">
+              <strong>Résultat client — Éditeur cybersécurité B2B</strong>
+              <span>Livre blanc NIS2 : 430 leads RSSI en 60 jours · ×3,1 ROI sur 6 mois</span>
+            </div>
+          </div>
+          <div class="sect-cta">
+            <button class="btn-primary">Démarrer un projet Cyber →</button>
+            <button class="btn-outline">Voir l'étude de cas</button>
+          </div>
+        </div>
+
+        <div class="sect-visual v-cyber">
+          <div class="sv-header">
+            <div class="sv-icon" style="background:rgba(239,68,68,.15);color:#f87171">🔒</div>
+            <div><div class="sv-title">Opportunités SEO — Cybersécurité</div><div class="sv-sub">Mots-clés à fort potentiel inexploité</div></div>
+          </div>
+          <div class="sv-kpis">
+            <div class="sv-kpi"><div class="sv-kpi-val">430</div><div class="sv-kpi-lbl">Leads RSSI / 60j</div><div class="sv-kpi-trend" style="background:rgba(239,68,68,.2);color:#f87171">livre blanc</div></div>
+            <div class="sv-kpi"><div class="sv-kpi-val">×3,1</div><div class="sv-kpi-lbl">ROI 6 mois</div><div class="sv-kpi-trend" style="background:rgba(239,68,68,.2);color:#f87171">↑ vs coût</div></div>
+            <div class="sv-kpi"><div class="sv-kpi-val">12K€</div><div class="sv-kpi-lbl">LTV client moy.</div><div class="sv-kpi-trend" style="background:rgba(239,68,68,.2);color:#f87171">B2B Cyber</div></div>
+            <div class="sv-kpi"><div class="sv-kpi-val">Top 5</div><div class="sv-kpi-lbl">Mots-clés NIS2</div><div class="sv-kpi-trend" style="background:rgba(239,68,68,.2);color:#f87171">↑ 3 mois</div></div>
+          </div>
+          <div class="sv-mots-cles">
+            <h5>Exemples de mots-clés travaillés</h5>
+            <div class="sv-kw-list">
+              <div class="sv-kw"><span class="sv-kw-text">conformité nis2 guide entreprise</span><div class="sv-kw-bar-wrap"><div class="sv-kw-bar" style="width:90%;background:linear-gradient(90deg,#ef4444,#f87171)"></div></div><span class="sv-kw-vol">4 400/m</span></div>
+              <div class="sv-kw"><span class="sv-kw-text">siem vs soar comparatif</span><div class="sv-kw-bar-wrap"><div class="sv-kw-bar" style="width:65%;background:linear-gradient(90deg,#ef4444,#f87171)"></div></div><span class="sv-kw-vol">1 200/m</span></div>
+              <div class="sv-kw"><span class="sv-kw-text">zero trust architecture pme</span><div class="sv-kw-bar-wrap"><div class="sv-kw-bar" style="width:50%;background:linear-gradient(90deg,#ef4444,#f87171)"></div></div><span class="sv-kw-vol">880/m</span></div>
+              <div class="sv-kw"><span class="sv-kw-text">edr endpoint detection response</span><div class="sv-kw-bar-wrap"><div class="sv-kw-bar" style="width:40%;background:linear-gradient(90deg,#ef4444,#f87171)"></div></div><span class="sv-kw-vol">560/m</span></div>
+            </div>
+          </div>
+          <div class="sv-funnel">
+            <div class="sv-funnel-col sf-tofu"><strong>TOFU</strong><span>Guides & actualité réglementaire</span></div>
+            <div class="sv-funnel-col sf-mofu"><strong>MOFU</strong><span>Comparatifs & use cases RSSI</span></div>
+            <div class="sv-funnel-col sf-bofu"><strong>BOFU</strong><span>Livres blancs & démos</span></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- FINTECH -->
+      <div class="secteur-block reverse" id="fintech">
+        <div class="sect-info">
+          <span class="sect-tag t-green">💳 Secteur 04</span>
+          <h2>Fintech</h2>
+          <p>La Fintech est un marché où la confiance est reine. Un contenu imprécis sur la réglementation ou les risques peut coûter un client. Nous rédigeons des contenus qui rassurent les décideurs financiers tout en optimisant votre présence organique.</p>
+
+          <div class="sect-challenges">
+            <h4>Défis spécifiques que nous adressons</h4>
+            <div class="chall-list">
+              <div class="chall-item"><div class="chall-dot chall-g">→</div><span>Réglementation complexe : PSD2, DORA, MiCA, Basel III — intégrés avec précision et clarté</span></div>
+              <div class="chall-item"><div class="chall-dot chall-g">→</div><span>Audience DAF/Directeurs Financiers : ton expert, chiffres vérifiés, zéro approximation</span></div>
+              <div class="chall-item"><div class="chall-dot chall-g">→</div><span>YMYL (Your Money Your Life) : contenu E-E-A-T renforcé pour satisfaire les critères Google</span></div>
+              <div class="chall-item"><div class="chall-dot chall-g">→</div><span>Open banking & APIs : vulgarisation technique pour décideurs non-IT</span></div>
+            </div>
+          </div>
+
+          <div style="margin-bottom:16px">
+            <h4 style="font-size:11.5px;font-weight:700;color:var(--navy);text-transform:uppercase;letter-spacing:.5px;margin-bottom:10px">Types de contenus produits</h4>
+            <div class="sect-content-types">
+              <span class="sect-ct" style="background:#ECFDF5;color:var(--green)">Guides réglementaires</span>
+              <span class="sect-ct" style="background:#ECFDF5;color:var(--green)">Articles open banking</span>
+              <span class="sect-ct" style="background:#ECFDF5;color:var(--green)">Comparatifs solutions</span>
+              <span class="sect-ct" style="background:#ECFDF5;color:var(--green)">Études de cas ROI</span>
+              <span class="sect-ct" style="background:#ECFDF5;color:var(--green)">Livres blancs DORA</span>
+              <span class="sect-ct" style="background:#ECFDF5;color:var(--green)">Newsletters DAF</span>
+            </div>
+          </div>
+
+          <div class="sect-result" style="background:linear-gradient(135deg,#064e3b,#065f46)">
+            <div class="sect-result-ico">💳</div>
+            <div class="sect-result-text">
+              <strong>Résultat client — Fintech paiement B2B</strong>
+              <span>Guide DORA : 290 leads DAF en 45 jours · Top 3 sur "conformité DORA entreprise"</span>
+            </div>
+          </div>
+          <div class="sect-cta">
+            <button class="btn-primary">Démarrer un projet Fintech →</button>
+            <button class="btn-outline">Voir l'étude de cas</button>
+          </div>
+        </div>
+
+        <div class="sect-visual v-fintech">
+          <div class="sv-header">
+            <div class="sv-icon" style="background:#ECFDF5">💳</div>
+            <div><div class="sv-title">Opportunités SEO — Fintech</div><div class="sv-sub">Mots-clés à fort potentiel inexploité</div></div>
+          </div>
+          <div class="sv-kpis">
+            <div class="sv-kpi"><div class="sv-kpi-val">290</div><div class="sv-kpi-lbl">Leads DAF / 45j</div><div class="sv-kpi-trend trend-up">↑ guide DORA</div></div>
+            <div class="sv-kpi"><div class="sv-kpi-val">Top 3</div><div class="sv-kpi-lbl">Mots-clés DORA</div><div class="sv-kpi-trend trend-up">↑ 3 mois</div></div>
+            <div class="sv-kpi"><div class="sv-kpi-val">18K€</div><div class="sv-kpi-lbl">LTV client moy.</div><div class="sv-kpi-trend trend-up">Fintech B2B</div></div>
+            <div class="sv-kpi"><div class="sv-kpi-val">×2,8</div><div class="sv-kpi-lbl">ROI contenu</div><div class="sv-kpi-trend trend-up">↑ 6 mois</div></div>
+          </div>
+          <div class="sv-mots-cles">
+            <h5>Exemples de mots-clés travaillés</h5>
+            <div class="sv-kw-list">
+              <div class="sv-kw"><span class="sv-kw-text">conformité dora guide banque</span><div class="sv-kw-bar-wrap"><div class="sv-kw-bar" style="width:88%;background:linear-gradient(90deg,var(--green),#34d399)"></div></div><span class="sv-kw-vol">5 200/m</span></div>
+              <div class="sv-kw"><span class="sv-kw-text">open banking api psd2 entreprise</span><div class="sv-kw-bar-wrap"><div class="sv-kw-bar" style="width:68%;background:linear-gradient(90deg,var(--green),#34d399)"></div></div><span class="sv-kw-vol">2 100/m</span></div>
+              <div class="sv-kw"><span class="sv-kw-text">solution paiement b2b comparatif</span><div class="sv-kw-bar-wrap"><div class="sv-kw-bar" style="width:52%;background:linear-gradient(90deg,var(--green),#34d399)"></div></div><span class="sv-kw-vol">960/m</span></div>
+              <div class="sv-kw"><span class="sv-kw-text">mica crypto réglementation 2025</span><div class="sv-kw-bar-wrap"><div class="sv-kw-bar" style="width:42%;background:linear-gradient(90deg,var(--green),#34d399)"></div></div><span class="sv-kw-vol">640/m</span></div>
+            </div>
+          </div>
+          <div class="sv-funnel">
+            <div class="sv-funnel-col sf-tofu"><strong>TOFU</strong><span>Guides réglementaires & veille</span></div>
+            <div class="sv-funnel-col sf-mofu"><strong>MOFU</strong><span>Comparatifs & études ROI</span></div>
+            <div class="sv-funnel-col sf-bofu"><strong>BOFU</strong><span>Livres blancs & démos</span></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- RH TECH -->
+      <div class="secteur-block" id="rh" style="border-bottom:none">
+        <div class="sect-info">
+          <span class="sect-tag t-purple">👥 Secteur 05</span>
+          <h2>RH Tech</h2>
+          <p>Le marché des SIRH et logiciels RH est en pleine explosion. DRH, Directeurs Paie et DAF sont des acheteurs exigeants qui cherchent des contenus concrets sur la transformation RH, l'automatisation de la paie et la gestion des talents.</p>
+
+          <div class="sect-challenges">
+            <h4>Défis spécifiques que nous adressons</h4>
+            <div class="chall-list">
+              <div class="chall-item"><div class="chall-dot chall-p">→</div><span>Marché fragmenté : SIRH, ATS, logiciels paie, gestion des temps — chaque segment adressé</span></div>
+              <div class="chall-item"><div class="chall-dot chall-p">→</div><span>Réglementation paie & droit du travail : actualité juridique intégrée dans les contenus</span></div>
+              <div class="chall-item"><div class="chall-dot chall-p">→</div><span>Personas DRH/DAF : deux décideurs aux priorités différentes, deux angles rédactionnels</span></div>
+              <div class="chall-item"><div class="chall-dot chall-p">→</div><span>Saisonnalité forte (paie, BDESE, entretiens) : calendrier éditorial synchronisé avec l'actualité RH</span></div>
+            </div>
+          </div>
+
+          <div style="margin-bottom:16px">
+            <h4 style="font-size:11.5px;font-weight:700;color:var(--navy);text-transform:uppercase;letter-spacing:.5px;margin-bottom:10px">Types de contenus produits</h4>
+            <div class="sect-content-types">
+              <span class="sect-ct" style="background:#F5F3FF;color:#7c3aed">Articles SIRH</span>
+              <span class="sect-ct" style="background:#F5F3FF;color:#7c3aed">Guides transformation RH</span>
+              <span class="sect-ct" style="background:#F5F3FF;color:#7c3aed">Comparatifs ATS</span>
+              <span class="sect-ct" style="background:#F5F3FF;color:#7c3aed">Études de cas DRH</span>
+              <span class="sect-ct" style="background:#F5F3FF;color:#7c3aed">Livres blancs paie</span>
+              <span class="sect-ct" style="background:#F5F3FF;color:#7c3aed">Newsletters RH</span>
+            </div>
+          </div>
+
+          <div class="sect-result" style="background:linear-gradient(135deg,#2e1065,#4c1d95)">
+            <div class="sect-result-ico">👥</div>
+            <div class="sect-result-text">
+              <strong>Résultat client — Éditeur SIRH PME</strong>
+              <span>+312% trafic organique · 18 articles piliers · 47 leads DRH/mois en 6 mois</span>
+            </div>
+          </div>
+          <div class="sect-cta">
+            <button class="btn-primary">Démarrer un projet RH Tech →</button>
+            <button class="btn-outline">Voir l'étude de cas</button>
+          </div>
+        </div>
+
+        <div class="sect-visual v-rh">
+          <div class="sv-header">
+            <div class="sv-icon" style="background:#F5F3FF">👥</div>
+            <div><div class="sv-title">Opportunités SEO — RH Tech</div><div class="sv-sub">Mots-clés à fort potentiel inexploité</div></div>
+          </div>
+          <div class="sv-kpis">
+            <div class="sv-kpi"><div class="sv-kpi-val">+312%</div><div class="sv-kpi-lbl">Trafic organique</div><div class="sv-kpi-trend trend-up">↑ 6 mois</div></div>
+            <div class="sv-kpi"><div class="sv-kpi-val">47</div><div class="sv-kpi-lbl">Leads DRH / mois</div><div class="sv-kpi-trend trend-up">↑ qualifiés</div></div>
+            <div class="sv-kpi"><div class="sv-kpi-val">Top 3</div><div class="sv-kpi-lbl">Mots-clés SIRH</div><div class="sv-kpi-trend trend-up">↑ 14 requêtes</div></div>
+            <div class="sv-kpi"><div class="sv-kpi-val">×3,4</div><div class="sv-kpi-lbl">ROI contenu</div><div class="sv-kpi-trend trend-up">↑ 12 mois</div></div>
+          </div>
+          <div class="sv-mots-cles">
+            <h5>Exemples de mots-clés travaillés</h5>
+            <div class="sv-kw-list">
+              <div class="sv-kw"><span class="sv-kw-text">logiciel sirh pme comparatif</span><div class="sv-kw-bar-wrap"><div class="sv-kw-bar" style="width:85%;background:linear-gradient(90deg,#7c3aed,#a78bfa)"></div></div><span class="sv-kw-vol">3 200/m</span></div>
+              <div class="sv-kw"><span class="sv-kw-text">automatisation paie avantages</span><div class="sv-kw-bar-wrap"><div class="sv-kw-bar" style="width:66%;background:linear-gradient(90deg,#7c3aed,#a78bfa)"></div></div><span class="sv-kw-vol">1 400/m</span></div>
+              <div class="sv-kw"><span class="sv-kw-text">ats recrutement meilleur logiciel</span><div class="sv-kw-bar-wrap"><div class="sv-kw-bar" style="width:54%;background:linear-gradient(90deg,#7c3aed,#a78bfa)"></div></div><span class="sv-kw-vol">980/m</span></div>
+              <div class="sv-kw"><span class="sv-kw-text">entretien annuel guide drh</span><div class="sv-kw-bar-wrap"><div class="sv-kw-bar" style="width:38%;background:linear-gradient(90deg,#7c3aed,#a78bfa)"></div></div><span class="sv-kw-vol">520/m</span></div>
+            </div>
+          </div>
+          <div class="sv-funnel">
+            <div class="sv-funnel-col sf-tofu"><strong>TOFU</strong><span>Guides transformation RH</span></div>
+            <div class="sv-funnel-col sf-mofu"><strong>MOFU</strong><span>Comparatifs SIRH & ATS</span></div>
+            <div class="sv-funnel-col sf-bofu"><strong>BOFU</strong><span>Études de cas & démos</span></div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ══ STATS BAR ══ -->
+<div class="stats-bar">
+  <div class="stats-bar-grid">
+    <div class="sb-item"><div class="sb-val"><span class="stat-number" data-target="5">0</span></div><div class="sb-lbl">Secteurs maîtrisés</div><div class="sb-desc">SaaS, E-com, Cyber, Fintech, RH</div></div>
+    <div class="sb-item"><div class="sb-val"><span class="stat-number" data-target="150">0</span><span class="sb-suf">+</span></div><div class="sb-lbl">Contenus livrés</div><div class="sb-desc">Sur ces 5 secteurs</div></div>
+    <div class="sb-item"><div class="sb-val"><span class="stat-number" data-target="43">0</span><span class="sb-suf">K+</span></div><div class="sb-lbl">Visites organiques</div><div class="sb-desc">Générées pour nos clients</div></div>
+    <div class="sb-item"><div class="sb-val"><span class="stat-number" data-target="8">0</span><span class="sb-suf">ans</span></div><div class="sb-lbl">D'expertise sectorielle</div><div class="sb-desc">Tech B2B uniquement</div></div>
+  </div>
+</div>
+
+<!-- ══ CTA BAND ══ -->
+<div class="cta-band">
+  <div class="cta-inner">
+    <div>
+      <h2>Votre secteur, notre expertise</h2>
+      <p>Dites-nous dans quel secteur vous évoluez et nous vous proposerons une stratégie de contenu sur mesure.</p>
+      <div class="cta-btns">
+        <button class="btn-white">Obtenir un devis gratuit →</button>
+        <button class="btn-ghost">Voir nos services →</button>
+      </div>
+    </div>
+    <div class="cta-checks">
+      <div class="cta-check"><span class="cta-ci">✓</span> Réponse sous 24h</div>
+      <div class="cta-check"><span class="cta-ci">✓</span> Audit SEO gratuit sur demande</div>
+      <div class="cta-check"><span class="cta-ci">✓</span> Sans engagement</div>
+    </div>
+  </div>
+</div>
+
+<!-- ══ FOOTER ══ -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <div class="logo"><div class="logo-box">TRD</div><div class="logo-text" style="color:#fff">TechRepair<span>Content</span></div></div>
+      <p>Rédaction SEO & technique pour entreprises SaaS, Tech et E-commerce.</p>
+    </div>
+    <div><h4>Navigation</h4><ul class="flinks"><li><a href="index.html">Accueil</a></li><li><a href="#">À propos</a></li><li><a href="services.html">Services</a></li><li><a href="secteurs.html">Secteurs</a></li><li><a href="#">Blog</a></li></ul></div>
+    <div><h4>Ressources</h4><ul class="flinks"><li><a href="#">FAQ</a></li><li><a href="#">Politique de confidentialité</a></li><li><a href="#">Mentions légales</a></li></ul></div>
+    <div>
+      <h4>Contact</h4>
+      <ul class="flinks"><li><a href="#">contact@techrepaircontent.com</a></li><li><a href="#">Réponse sous 24h</a></li></ul>
+      <div class="fsocial"><a class="fsoc" href="#">in</a><a class="fsoc" href="#">𝕏</a><a class="fsoc" href="#">✉</a></div>
+    </div>
+    <div><h4>Basé en France</h4><div style="font-size:22px">🇫🇷</div><p style="color:#64748b;font-size:11px;margin-top:7px">Travail avec des clients du monde entier.</p></div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2025 TechRepair Content. Tous droits réservés.</span>
+    <span>Fait avec ❤️ en France</span>
+  </div>
+</footer>
+
+<!-- ══ EXIT POPUP ══ -->
+<div class="popup-overlay" id="popupOverlay">
+  <div class="popup-box">
+    <button class="popup-close" id="popupClose">✕</button>
+    <div class="popup-icon">🎁</div>
+    <h3 class="popup-title">Avant de partir…</h3>
+    <p class="popup-text">Recevez gratuitement notre <strong>guide des 10 erreurs SEO</strong> qui coûtent des clients à vos concurrents Tech.</p>
+    <div class="popup-form">
+      <input type="email" class="popup-input" placeholder="votre@email.com"/>
+      <button class="popup-btn">Recevoir le guide gratuit →</button>
+    </div>
+    <p class="popup-note">✓ Sans spam · ✓ Désabonnement en 1 clic</p>
+  </div>
+</div>
+
+<script>
+// ── Compteurs animés ──
+const counters = document.querySelectorAll('.stat-number');
+const speed = 80;
+const animateCounters = () => {
+  counters.forEach(counter => {
+    const target = +counter.getAttribute('data-target');
+    const count = +counter.innerText;
+    const inc = Math.ceil(target / speed);
+    if (count < target) {
+      counter.innerText = Math.min(count + inc, target);
+      setTimeout(animateCounters, 18);
+    } else { counter.innerText = target; }
+  });
+};
+const statsBar = document.querySelector('.stats-bar');
+let counted = false;
+const obs = new IntersectionObserver(entries => {
+  if (entries[0].isIntersecting && !counted) { counted = true; animateCounters(); }
+}, {threshold: 0.3});
+if (statsBar) obs.observe(statsBar);
+
+// ── Pills navigation ──
+document.querySelectorAll('.hero-pill').forEach(pill => {
+  pill.addEventListener('click', () => {
+    document.querySelectorAll('.hero-pill').forEach(p => p.classList.remove('active'));
+    pill.classList.add('active');
+  });
+});
+
+// ── Exit popup ──
+const overlay = document.getElementById('popupOverlay');
+const closeBtn = document.getElementById('popupClose');
+let popupShown = false;
+document.addEventListener('mouseleave', (e) => {
+  if (e.clientY < 10 && !popupShown) { popupShown = true; overlay.classList.add('active'); }
+});
+closeBtn.addEventListener('click', () => overlay.classList.remove('active'));
+overlay.addEventListener('click', (e) => { if(e.target === overlay) overlay.classList.remove('active'); });
+setTimeout(() => { if (!popupShown) { popupShown = true; overlay.classList.add('active'); } }, 20000);
+</script>
+</body>
+</html>
