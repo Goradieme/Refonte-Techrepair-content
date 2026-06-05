@@ -213,7 +213,7 @@ section{padding:72px 32px}
 .cta-band{background:var(--navy);padding:60px 32px}
 .cta-inner{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:1fr auto;gap:48px;align-items:center}
 .cta-band h2{font-size:28px;font-weight:800;color:#fff;margin-bottom:9px}
-.cta-band>div>p{color:#94a3b8;font-size:13.5px;margin-bottom:24px;max-width:380px}
+.cta-band>div>p{color:#6ee7b7;font-size:13.5px;margin-bottom:24px;max-width:380px}
 .cta-btns{display:flex;gap:10px;flex-wrap:wrap}
 .btn-white{background:#fff;color:var(--navy);border-radius:8px;padding:11px 20px;font-weight:700;font-size:13.5px;display:inline-flex;align-items:center;gap:7px;cursor:pointer;border:none;font-family:inherit;transition:opacity .2s}
 .btn-white:hover{opacity:.9}
@@ -331,10 +331,10 @@ footer h4{font-size:10.5px;font-weight:700;color:#94a3b8;text-transform:uppercas
     <h1>Du contenu qui génère<br>du trafic et des leads</h1>
     <p>Chaque service est conçu pour un objectif business précis : visibilité organique, conversion et autorité dans votre secteur tech.</p>
     <div class="hero-nav-pills">
-      <a href="#articles" class="hero-pill active">Articles SEO</a>
-      <a href="#fiches" class="hero-pill">Fiches produits</a>
-      <a href="#livres-blancs" class="hero-pill">Livres blancs</a>
-      <a href="#ia" class="hero-pill">Stratégie IA</a>
+      <a href="service-articles-seo.html" class="hero-pill active">Articles SEO</a>
+      <a href="service-fiches-produits.html" class="hero-pill">Fiches produits</a>
+      <a href="service-livres-blancs.html" class="hero-pill">Livres blancs</a>
+      <a href="service-strategie-ia.html" class="hero-pill">Stratégie IA</a>
     </div>
   </div>
 </div>
@@ -398,8 +398,8 @@ footer h4{font-size:10.5px;font-weight:700;color:#94a3b8;text-transform:uppercas
           </div>
 
           <div class="serv-cta-row">
-            <button class="btn-primary">Demander un devis →</button>
-            <button class="btn-outline">Voir un exemple</button>
+            <button class="btn-primary" onclick="window.location='devis.html'">Demander un devis →</button>
+            <a href="service-articles-seo.html" class="btn-outline">En savoir plus →</a>
           </div>
         </div>
 
@@ -473,8 +473,8 @@ footer h4{font-size:10.5px;font-weight:700;color:#94a3b8;text-transform:uppercas
           </div>
 
           <div class="serv-cta-row">
-            <button class="btn-primary">Demander un devis →</button>
-            <button class="btn-outline">Voir un exemple</button>
+            <button class="btn-primary" onclick="window.location='devis.html'">Demander un devis →</button>
+            <a href="service-fiches-produits.html" class="btn-outline">En savoir plus →</a>
           </div>
         </div>
 
@@ -548,8 +548,8 @@ footer h4{font-size:10.5px;font-weight:700;color:#94a3b8;text-transform:uppercas
           </div>
 
           <div class="serv-cta-row">
-            <button class="btn-primary">Demander un devis →</button>
-            <button class="btn-outline">Voir un exemple</button>
+            <button class="btn-primary" onclick="window.location='devis.html'">Demander un devis →</button>
+            <a href="service-livres-blancs.html" class="btn-outline">En savoir plus →</a>
           </div>
         </div>
 
@@ -623,8 +623,8 @@ footer h4{font-size:10.5px;font-weight:700;color:#94a3b8;text-transform:uppercas
           </div>
 
           <div class="serv-cta-row">
-            <button class="btn-primary">Demander un devis →</button>
-            <button class="btn-outline">Voir un exemple</button>
+            <button class="btn-primary" onclick="window.location='devis.html'">Demander un devis →</button>
+            <a href="service-strategie-ia.html" class="btn-outline">En savoir plus →</a>
           </div>
         </div>
 
@@ -767,8 +767,8 @@ footer h4{font-size:10.5px;font-weight:700;color:#94a3b8;text-transform:uppercas
       <h2>Prêt à faire décoller votre contenu ?</h2>
       <p>Discutons de votre projet et voyons comment nous pouvons vous aider à atteindre vos objectifs.</p>
       <div class="cta-btns">
-        <button class="btn-white">Obtenir un devis gratuit →</button>
-        <button class="btn-ghost">Nous contacter →</button>
+        <button class="btn-white" onclick="window.location='devis.html'">Obtenir un devis gratuit →</button>
+        <button class="btn-ghost" onclick="document.getElementById('contactPopup').classList.add('active')">Nous contacter →</button>
       </div>
     </div>
     <div class="cta-checks">
@@ -856,6 +856,13 @@ document.querySelectorAll('.hero-pill').forEach(pill => {
   });
 });
 
+// ── Popup contact ──
+const contactPopup = document.getElementById('contactPopup');
+if (contactPopup) {
+  contactPopup.addEventListener('click', e => {
+    if (e.target === contactPopup) contactPopup.classList.remove('active');
+  });
+}
 // ── Exit popup ──
 const overlay = document.getElementById('popupOverlay');
 const closeBtn = document.getElementById('popupClose');
@@ -883,5 +890,24 @@ mobileMenu.querySelectorAll('a').forEach(link => {
 });
 
 </script>
+
+<!-- ══ POPUP CONTACT ══ -->
+<div class="popup-overlay" id="contactPopup">
+  <div class="popup-box">
+    <button class="popup-close" onclick="document.getElementById('contactPopup').classList.remove('active')">✕</button>
+    <div class="popup-icon">📞</div>
+    <h3 class="popup-title">Nous contacter</h3>
+    <p class="popup-text">Choisissez le moyen de contact qui vous convient le mieux.</p>
+    <div style="display:flex;flex-direction:column;gap:12px;margin-bottom:16px">
+      <a href="tel:0758383635" style="display:flex;align-items:center;gap:12px;background:#f0f5ff;border:1.5px solid #c3d6f8;border-radius:10px;padding:14px 18px;font-weight:700;color:#0F1B3D;font-size:14px">
+        <span style="font-size:20px">📱</span>07 58 38 36 35
+      </a>
+      <a href="mailto:contact@techrepaircontent.com" style="display:flex;align-items:center;gap:12px;background:#f0f5ff;border:1.5px solid #c3d6f8;border-radius:10px;padding:14px 18px;font-weight:700;color:#0F1B3D;font-size:14px">
+        <span style="font-size:20px">✉️</span>contact@techrepaircontent.com
+      </a>
+    </div>
+    <p class="popup-note">✓ Réponse sous 24h · ✓ Devis gratuit & sans engagement</p>
+  </div>
+</div>
 </body>
 </html>
