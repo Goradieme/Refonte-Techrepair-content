@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Obtenir un devis – TechRepair Content | Rédaction SEO Tech B2B</title>
+<meta name="description" content="Demandez un devis gratuit pour vos besoins en rédaction SEO tech B2B. Articles, fiches produits, livres blancs — réponse sous 24h."/>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet"/>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --blue:#1A56DB;--blue-dark:#1342b0;--blue-light:#EFF6FF;
+  --navy:#0F1B3D;--text:#1e293b;--muted:#64748b;
+  --border:#e2e8f0;--green:#10b981;--orange:#f97316;
+  --radius:12px;
+}
+html{scroll-behavior:smooth}
+body{font-family:'Manrope',sans-serif;color:var(--text);background:#fff;font-size:15px;line-height:1.6}
+a{text-decoration:none;color:inherit}
+
+/* ══ NAVBAR ══ */
+nav{position:sticky;top:0;z-index:200;background:#fff;border-bottom:1px solid var(--border);padding:0 32px;display:flex;align-items:center;gap:20px;height:62px;}
+.logo{display:flex;align-items:center;gap:10px;flex-shrink:0}
+.logo-box{width:36px;height:36px;background:var(--blue);border-radius:7px;display:grid;place-items:center;color:#fff;font-weight:800;font-size:13px;letter-spacing:-.5px}
+.logo-text{font-size:13px;font-weight:700;line-height:1.2;color:var(--navy)}
+.logo-text span{display:block;color:var(--muted);font-weight:500;font-size:11px}
+.nav-links{display:flex;gap:22px;margin-left:auto;align-items:center}
+.nav-links a{font-size:13.5px;font-weight:500;color:var(--muted);transition:color .2s}
+.nav-links a:hover,.nav-links a.active{color:var(--blue)}
+.nav-links a.active{border-bottom:2px solid var(--blue);padding-bottom:1px}
+.btn-nav{background:var(--blue);color:#fff;border:none;border-radius:8px;padding:9px 18px;font-weight:700;font-size:13.5px;cursor:pointer;white-space:nowrap;font-family:inherit}
+.hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;background:none;border:none;padding:4px}
+.hamburger span{display:block;width:24px;height:2px;background:var(--navy);border-radius:2px;transition:all .3s}
+.hamburger.open span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+.hamburger.open span:nth-child(2){opacity:0}
+.hamburger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+.mobile-menu{display:none;position:fixed;top:62px;left:0;right:0;background:#fff;border-bottom:1px solid var(--border);padding:16px 24px;flex-direction:column;gap:4px;z-index:199;box-shadow:0 8px 24px rgba(0,0,0,.08)}
+.mobile-menu.open{display:flex}
+.mobile-menu a{font-size:15px;font-weight:600;color:var(--muted);padding:10px 0;border-bottom:1px solid var(--border);transition:color .2s}
+.mobile-menu a:last-of-type{border-bottom:none}
+.mobile-menu a:hover,.mobile-menu a.active{color:var(--blue)}
+.mobile-menu .btn-nav-mobile{margin-top:10px;background:var(--blue);color:#fff;border:none;border-radius:8px;padding:12px;font-weight:700;font-size:14px;cursor:pointer;font-family:inherit;width:100%}
+@media(max-width:768px){.hamburger{display:flex}.nav-links{display:none}}
+
+/* ══ HERO ══ */
+.page-hero{background:linear-gradient(145deg,#f0f5ff 50%,#dce9ff 100%);padding:56px 32px 48px;text-align:center;}
+.page-hero-inner{max-width:640px;margin:0 auto}
+.page-badge{display:inline-block;background:#FFF3E0;color:#E65100;font-size:10.5px;font-weight:700;letter-spacing:.6px;padding:4px 12px;border-radius:20px;margin-bottom:18px;text-transform:uppercase;}
+.page-hero h1{font-size:34px;font-weight:800;line-height:1.15;color:var(--navy);margin-bottom:14px}
+.page-hero p{color:var(--muted);font-size:14px;max-width:480px;margin:0 auto;line-height:1.7}
+
+/* ══ LAYOUT PRINCIPAL ══ */
+.devis-layout{max-width:1060px;margin:0 auto;padding:56px 32px;display:grid;grid-template-columns:1fr 380px;gap:40px;align-items:start}
+
+/* ══ FORMULAIRE ══ */
+.form-card{background:#fff;border:1px solid var(--border);border-radius:20px;padding:36px;box-shadow:0 4px 24px rgba(26,86,219,.07)}
+.form-card h2{font-size:20px;font-weight:800;color:var(--navy);margin-bottom:6px}
+.form-card>p{font-size:13px;color:var(--muted);margin-bottom:28px}
+
+.form-group{margin-bottom:20px}
+.form-label{display:block;font-size:13px;font-weight:700;color:var(--navy);margin-bottom:7px}
+.form-label span{color:#ef4444;margin-left:2px}
+.form-input{width:100%;border:1.5px solid var(--border);border-radius:9px;padding:12px 16px;font-size:14px;font-family:inherit;color:var(--text);outline:none;transition:border-color .2s,box-shadow .2s;background:#fff}
+.form-input:focus{border-color:var(--blue);box-shadow:0 0 0 3px rgba(26,86,219,.08)}
+.form-input::placeholder{color:#94a3b8}
+.form-select{width:100%;border:1.5px solid var(--border);border-radius:9px;padding:12px 16px;font-size:14px;font-family:inherit;color:var(--text);outline:none;cursor:pointer;background:#fff;transition:border-color .2s}
+.form-select:focus{border-color:var(--blue);box-shadow:0 0 0 3px rgba(26,86,219,.08)}
+.form-textarea{width:100%;border:1.5px solid var(--border);border-radius:9px;padding:12px 16px;font-size:14px;font-family:inherit;color:var(--text);outline:none;resize:vertical;min-height:130px;transition:border-color .2s;background:#fff}
+.form-textarea:focus{border-color:var(--blue);box-shadow:0 0 0 3px rgba(26,86,219,.08)}
+.form-textarea::placeholder{color:#94a3b8}
+
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+
+.form-submit{width:100%;background:var(--blue);color:#fff;border:none;border-radius:10px;padding:14px;font-size:15px;font-weight:700;cursor:pointer;font-family:inherit;transition:background .2s;display:flex;align-items:center;justify-content:center;gap:8px;margin-top:8px}
+.form-submit:hover{background:var(--blue-dark)}
+.form-submit:disabled{background:#94a3b8;cursor:not-allowed}
+.form-note{font-size:11.5px;color:var(--muted);text-align:center;margin-top:12px}
+
+/* Message succès */
+.form-success{display:none;text-align:center;padding:40px 20px}
+.form-success-icon{font-size:52px;margin-bottom:16px}
+.form-success h3{font-size:22px;font-weight:800;color:var(--navy);margin-bottom:10px}
+.form-success p{font-size:14px;color:var(--muted);line-height:1.7;max-width:360px;margin:0 auto 24px}
+.btn-retour{display:inline-flex;align-items:center;gap:7px;background:var(--blue);color:#fff;border-radius:8px;padding:11px 20px;font-size:13.5px;font-weight:700;transition:background .2s}
+.btn-retour:hover{background:var(--blue-dark)}
+
+/* ══ SIDEBAR ══ */
+.devis-sidebar{display:flex;flex-direction:column;gap:20px}
+
+.sidebar-card{background:#f8fafc;border:1px solid var(--border);border-radius:16px;padding:22px}
+.sidebar-card h3{font-size:13.5px;font-weight:800;color:var(--navy);margin-bottom:16px;display:flex;align-items:center;gap:8px}
+
+/* Garanties */
+.garanties-list{display:flex;flex-direction:column;gap:12px}
+.garantie-item{display:flex;align-items:flex-start;gap:12px}
+.garantie-ico{width:32px;height:32px;border-radius:8px;background:var(--blue-light);display:grid;place-items:center;font-size:14px;flex-shrink:0}
+.garantie-body strong{display:block;font-size:13px;font-weight:700;color:var(--navy);margin-bottom:2px}
+.garantie-body span{font-size:12px;color:var(--muted);line-height:1.5}
+
+/* Services */
+.services-list{display:flex;flex-direction:column;gap:8px}
+.service-item{display:flex;align-items:center;gap:10px;padding:9px 12px;border-radius:9px;background:#fff;border:1px solid var(--border);font-size:13px;font-weight:600;color:var(--text);cursor:pointer;transition:all .2s}
+.service-item:hover{border-color:var(--blue);color:var(--blue);background:var(--blue-light)}
+.service-ico{font-size:16px}
+
+/* Témoignage */
+.testi-mini{background:linear-gradient(135deg,var(--navy),#1e3a6e);border-radius:16px;padding:22px;border:none}
+.testi-mini h3{color:#fff}
+.testi-mini-stars{color:#f59e0b;font-size:14px;margin-bottom:10px}
+.testi-mini-text{font-size:13px;color:#cbd5e1;line-height:1.7;font-style:italic;margin-bottom:14px}
+.testi-mini-author{display:flex;align-items:center;gap:10px}
+.testi-mini-avatar{width:34px;height:34px;border-radius:50%;background:var(--blue);display:grid;place-items:center;font-size:12px;font-weight:800;color:#fff;flex-shrink:0}
+.testi-mini-name{font-size:12.5px;font-weight:700;color:#fff}
+.testi-mini-role{font-size:11px;color:#94a3b8}
+
+/* FAQ mini */
+.faq-mini-list{display:flex;flex-direction:column;gap:10px}
+.faq-mini-item{background:#fff;border:1px solid var(--border);border-radius:9px;padding:12px 14px}
+.faq-mini-q{font-size:12.5px;font-weight:700;color:var(--navy);margin-bottom:5px}
+.faq-mini-a{font-size:12px;color:var(--muted);line-height:1.55}
+
+/* ══ CTA BAND ══ */
+.cta-band{background:var(--navy);padding:60px 32px}
+.cta-inner{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:1fr auto;gap:48px;align-items:center}
+.cta-band h2{font-size:28px;font-weight:800;color:#fff;margin-bottom:9px}
+.cta-band>div>p{color:#94a3b8;font-size:13.5px;margin-bottom:24px;max-width:380px}
+.cta-btns{display:flex;gap:10px;flex-wrap:wrap}
+.btn-white{background:#fff;color:var(--navy);border-radius:8px;padding:11px 20px;font-weight:700;font-size:13.5px;display:inline-flex;align-items:center;gap:7px;cursor:pointer;border:none;font-family:inherit}
+.btn-ghost{background:transparent;color:#fff;border:1.5px solid rgba(255,255,255,.3);border-radius:8px;padding:11px 20px;font-weight:700;font-size:13.5px;cursor:pointer;font-family:inherit}
+.btn-ghost:hover{border-color:#fff}
+.cta-checks{display:flex;flex-direction:column;gap:11px;flex-shrink:0}
+.cta-check{display:flex;align-items:center;gap:9px;color:#cbd5e1;font-size:13px}
+.cta-ci{color:var(--green);font-weight:700}
+
+/* ══ FOOTER ══ */
+footer{background:var(--navy);border-top:1px solid rgba(255,255,255,.07);padding:44px 32px 26px}
+.footer-inner{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:2fr 1fr 1fr 1fr 1fr;gap:32px}
+.footer-brand p{color:#64748b;font-size:12px;margin-top:8px;max-width:185px;line-height:1.7}
+footer h4{font-size:10.5px;font-weight:700;color:#94a3b8;text-transform:uppercase;letter-spacing:.5px;margin-bottom:13px}
+.flinks{list-style:none}
+.flinks li{margin-bottom:8px}
+.flinks a{color:#64748b;font-size:12px;transition:color .2s}
+.flinks a:hover{color:#fff}
+.fsocial{display:flex;gap:7px;margin-top:11px}
+.fsoc{width:29px;height:29px;border-radius:6px;background:rgba(255,255,255,.07);display:grid;place-items:center;font-size:11px;color:#94a3b8;transition:background .2s}
+.fsoc:hover{background:var(--blue);color:#fff}
+.footer-bottom{max-width:1100px;margin:24px auto 0;padding-top:16px;border-top:1px solid rgba(255,255,255,.07);display:flex;justify-content:space-between;color:#475569;font-size:11px;flex-wrap:wrap;gap:8px}
+
+/* ══ RESPONSIVE ══ */
+@media(max-width:960px){
+  .devis-layout{grid-template-columns:1fr;gap:32px}
+  .form-row{grid-template-columns:1fr}
+  .cta-inner{grid-template-columns:1fr}
+  .footer-inner{grid-template-columns:1fr 1fr}
+}
+@media(max-width:600px){
+  .page-hero h1{font-size:26px}
+  .form-card{padding:24px}
+  .footer-inner{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+
+<!-- ══ NAVBAR ══ -->
+<nav>
+  <div class="logo">
+    <div class="logo-box">TRD</div>
+    <div class="logo-text">TechRepair<span>Content</span></div>
+  </div>
+  <div class="nav-links">
+    <a href="index.html">Accueil</a>
+    <a href="services.html">Services</a>
+    <a href="secteurs.html">Secteurs</a>
+    <a href="apropos.html">À propos</a>
+    <a href="blog.html">Blog</a>
+    <button class="btn-nav" onclick="window.location='devis.html'">Obtenir un devis</button>
+  </div>
+  <button class="hamburger" id="hamburger" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<!-- ══ MOBILE MENU ══ -->
+<div class="mobile-menu" id="mobileMenu">
+  <a href="index.html">Accueil</a>
+  <a href="services.html">Services</a>
+  <a href="secteurs.html">Secteurs</a>
+  <a href="apropos.html">À propos</a>
+  <a href="blog.html">Blog</a>
+  <button class="btn-nav-mobile" onclick="window.location='devis.html'">Obtenir un devis</button>
+</div>
+
+<!-- ══ HERO ══ -->
+<div class="page-hero">
+  <div class="page-hero-inner">
+    <span class="page-badge">Devis gratuit & sans engagement</span>
+    <h1>Obtenez votre devis SEO<br>en moins de 24h</h1>
+    <p>Décrivez votre projet en quelques lignes. Nous vous répondons avec une proposition adaptée à vos objectifs et à votre secteur.</p>
+  </div>
+</div>
+
+<!-- ══ LAYOUT ══ -->
+<div class="devis-layout">
+
+  <!-- FORMULAIRE -->
+  <div class="form-card">
+    <h2>Votre demande de devis</h2>
+    <p>Tous les champs marqués d'un <span style="color:#ef4444">*</span> sont obligatoires. Réponse garantie sous 24h.</p>
+
+    <!-- Formulaire connecté à Formspree -->
+    <form id="devisForm" action="https://formspree.io/f/xvznzoqa" method="POST">
+
+      <div class="form-row">
+        <div class="form-group">
+          <label class="form-label" for="nom">Nom complet <span>*</span></label>
+          <input type="text" id="nom" name="nom" class="form-input" placeholder="Votre nom et prénom" required/>
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="email">Adresse email <span>*</span></label>
+          <input type="email" id="email" name="email" class="form-input" placeholder="votre@email.com" required/>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label class="form-label" for="service">Service souhaité <span>*</span></label>
+        <select id="service" name="service" class="form-select" required>
+          <option value="" disabled selected>Sélectionnez un service</option>
+          <option value="Articles SEO">📄 Articles SEO</option>
+          <option value="Fiches produits">🛒 Fiches produits optimisées</option>
+          <option value="Livres blancs & Études de cas">📘 Livres blancs & Études de cas</option>
+          <option value="Stratégie de contenu IA">🤖 Stratégie de contenu IA augmentée</option>
+          <option value="Stratégie SEO complète">📊 Stratégie SEO complète</option>
+          <option value="Autre">💬 Autre / Je ne sais pas encore</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label class="form-label" for="message">Décrivez votre projet <span>*</span></label>
+        <textarea id="message" name="message" class="form-textarea" placeholder="Parlez-nous de votre secteur, de vos objectifs SEO, du volume de contenus souhaité, de vos délais…" required></textarea>
+      </div>
+
+      <!-- Champ honeypot anti-spam (caché) -->
+      <input type="text" name="_gotcha" style="display:none"/>
+      <!-- Redirection après envoi désactivée (on gère en JS) -->
+      <input type="hidden" name="_next" value=""/>
+
+      <button type="submit" class="form-submit" id="submitBtn">
+        <span id="submitText">Envoyer ma demande →</span>
+      </button>
+      <p class="form-note">🔒 Vos données sont confidentielles et ne seront jamais partagées.</p>
+    </form>
+
+    <!-- Message de succès -->
+    <div class="form-success" id="formSuccess">
+      <div class="form-success-icon">✅</div>
+      <h3>Demande envoyée avec succès !</h3>
+      <p>Merci pour votre message. Nous avons bien reçu votre demande et nous vous répondons sous <strong>24h</strong> à l'adresse email indiquée.</p>
+      <a href="index.html" class="btn-retour">← Retour à l'accueil</a>
+    </div>
+  </div>
+
+  <!-- SIDEBAR -->
+  <aside class="devis-sidebar">
+
+    <!-- Garanties -->
+    <div class="sidebar-card">
+      <h3>✅ Nos garanties</h3>
+      <div class="garanties-list">
+        <div class="garantie-item">
+          <div class="garantie-ico">⚡</div>
+          <div class="garantie-body">
+            <strong>Réponse sous 24h</strong>
+            <span>Chaque demande reçoit une réponse personnalisée dans les 24h ouvrées.</span>
+          </div>
+        </div>
+        <div class="garantie-item">
+          <div class="garantie-ico">🎯</div>
+          <div class="garantie-body">
+            <strong>Devis sur mesure</strong>
+            <span>Pas de tarif générique. Chaque devis est adapté à vos objectifs et votre secteur.</span>
+          </div>
+        </div>
+        <div class="garantie-item">
+          <div class="garantie-ico">🔒</div>
+          <div class="garantie-body">
+            <strong>Sans engagement</strong>
+            <span>Le devis est gratuit et ne vous engage à rien. Vous décidez librement.</span>
+          </div>
+        </div>
+        <div class="garantie-item">
+          <div class="garantie-ico">📊</div>
+          <div class="garantie-body">
+            <strong>Audit SEO offert</strong>
+            <span>Chaque premier contact inclut un audit SEO rapide de votre site.</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Services -->
+    <div class="sidebar-card">
+      <h3>📋 Nos services</h3>
+      <div class="services-list">
+        <a href="services.html" class="service-item"><span class="service-ico">📄</span>Articles SEO longue traîne</a>
+        <a href="services.html" class="service-item"><span class="service-ico">🛒</span>Fiches produits optimisées</a>
+        <a href="services.html" class="service-item"><span class="service-ico">📘</span>Livres blancs & études de cas</a>
+        <a href="services.html" class="service-item"><span class="service-ico">🤖</span>Stratégie de contenu IA</a>
+      </div>
+    </div>
+
+    <!-- Témoignage -->
+    <div class="sidebar-card testi-mini">
+      <h3>💬 Ils nous font confiance</h3>
+      <div class="testi-mini-stars">★★★★★</div>
+      <p class="testi-mini-text">« TechRepair Content a transformé notre présence organique. Le contenu livré parle vraiment le langage de notre secteur. »</p>
+      <div class="testi-mini-author">
+        <div class="testi-mini-avatar">P</div>
+        <div>
+          <div class="testi-mini-name">Paul</div>
+          <div class="testi-mini-role">Directeur Marketing</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- FAQ mini -->
+    <div class="sidebar-card">
+      <h3>❓ Questions fréquentes</h3>
+      <div class="faq-mini-list">
+        <div class="faq-mini-item">
+          <div class="faq-mini-q">Quel est le délai de livraison ?</div>
+          <div class="faq-mini-a">Un article de 2 000 mots est livré en 5 à 7 jours ouvrés après validation du brief.</div>
+        </div>
+        <div class="faq-mini-item">
+          <div class="faq-mini-q">Travaillez-vous avec des PME ?</div>
+          <div class="faq-mini-a">Oui, nous travaillons avec des startups, PME et grands comptes tech B2B.</div>
+        </div>
+        <div class="faq-mini-item">
+          <div class="faq-mini-q">Y a-t-il un volume minimum ?</div>
+          <div class="faq-mini-a">Non, nous acceptons les missions à partir d'un seul contenu.</div>
+        </div>
+      </div>
+    </div>
+
+  </aside>
+</div>
+
+<!-- ══ CTA BAND ══ -->
+<div class="cta-band">
+  <div class="cta-inner">
+    <div>
+      <h2>Une question avant de remplir le formulaire ?</h2>
+      <p>Contactez-nous directement par email, nous répondons sous 24h.</p>
+      <div class="cta-btns">
+        <a href="mailto:contact@techrepaircontent.com" class="btn-white">✉️ contact@techrepaircontent.com</a>
+        <a href="services.html" class="btn-ghost">Voir nos services →</a>
+      </div>
+    </div>
+    <div class="cta-checks">
+      <div class="cta-check"><span class="cta-ci">✓</span> Réponse sous 24h</div>
+      <div class="cta-check"><span class="cta-ci">✓</span> Audit SEO gratuit</div>
+      <div class="cta-check"><span class="cta-ci">✓</span> Sans engagement</div>
+    </div>
+  </div>
+</div>
+
+<!-- ══ FOOTER ══ -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <div class="logo"><div class="logo-box">TRD</div><div class="logo-text" style="color:#fff">TechRepair<span>Content</span></div></div>
+      <p>Rédaction SEO & technique pour entreprises SaaS, Tech et E-commerce.</p>
+    </div>
+    <div><h4>Navigation</h4><ul class="flinks"><li><a href="index.html">Accueil</a></li><li><a href="apropos.html">À propos</a></li><li><a href="services.html">Services</a></li><li><a href="secteurs.html">Secteurs</a></li><li><a href="blog.html">Blog</a></li></ul></div>
+    <div><h4>Ressources</h4><ul class="flinks"><li><a href="#">FAQ</a></li><li><a href="#">Confidentialité</a></li><li><a href="#">Mentions légales</a></li></ul></div>
+    <div>
+      <h4>Contact</h4>
+      <ul class="flinks"><li><a href="mailto:contact@techrepaircontent.com">contact@techrepaircontent.com</a></li><li><a href="#">Réponse sous 24h</a></li></ul>
+      <div class="fsocial"><a class="fsoc" href="#">in</a><a class="fsoc" href="#">𝕏</a><a class="fsoc" href="#">✉</a></div>
+    </div>
+    <div><h4>Basé en France</h4><div style="font-size:22px">🇫🇷</div></div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2025 TechRepair Content. Tous droits réservés.</span>
+    <span>Fait avec ❤️ en France</span>
+  </div>
+</footer>
+
+<script>
+// ── Hamburger menu ──
+const hamburger = document.getElementById('hamburger');
+const mobileMenu = document.getElementById('mobileMenu');
+hamburger.addEventListener('click', () => {
+  hamburger.classList.toggle('open');
+  mobileMenu.classList.toggle('open');
+});
+mobileMenu.querySelectorAll('a').forEach(link => {
+  link.addEventListener('click', () => {
+    hamburger.classList.remove('open');
+    mobileMenu.classList.remove('open');
+  });
+});
+
+// ── Formulaire Formspree avec confirmation visuelle ──
+const form = document.getElementById('devisForm');
+const submitBtn = document.getElementById('submitBtn');
+const submitText = document.getElementById('submitText');
+const formSuccess = document.getElementById('formSuccess');
+
+form.addEventListener('submit', async function(e) {
+  e.preventDefault();
+
+  // État chargement
+  submitBtn.disabled = true;
+  submitText.textContent = 'Envoi en cours…';
+
+  try {
+    const response = await fetch(form.action, {
+      method: 'POST',
+      body: new FormData(form),
+      headers: { 'Accept': 'application/json' }
+    });
+
+    if (response.ok) {
+      // Succès : cacher le formulaire, afficher le message
+      form.style.display = 'none';
+      formSuccess.style.display = 'block';
+    } else {
+      submitBtn.disabled = false;
+      submitText.textContent = 'Envoyer ma demande →';
+      alert('Une erreur est survenue. Veuillez réessayer ou nous contacter directement à contact@techrepaircontent.com');
+    }
+  } catch (error) {
+    submitBtn.disabled = false;
+    submitText.textContent = 'Envoyer ma demande →';
+    alert('Erreur de connexion. Veuillez réessayer ou nous contacter directement à contact@techrepaircontent.com');
+  }
+});
+</script>
+</body>
+</html>
