@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Contenu SEO Cybersécurité – TechRepair Content | Rédaction spécialisée Cybersécurité</title>
+<meta name="description" content="Stratégie de contenu SEO pour éditeurs SaaS B2B. Articles piliers, comparatifs, use cases et livres blancs pour générer du trafic qualifié et des leads CMO/DSI."/>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet"/>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{--blue:#1A56DB;--blue-dark:#1342b0;--blue-light:#EFF6FF;--navy:#0F1B3D;--text:#1e293b;--muted:#64748b;--border:#e2e8f0;--green:#10b981;--orange:#f97316;--radius:12px;--sector:#dc2626;--sector-light:#FEF2F2;}
+html{scroll-behavior:smooth}
+body{font-family:'Manrope',sans-serif;color:var(--text);background:#fff;font-size:15px;line-height:1.6}
+a{text-decoration:none;color:inherit}
+nav{position:sticky;top:0;z-index:200;background:#fff;border-bottom:1px solid var(--border);padding:0 32px;display:flex;align-items:center;gap:20px;height:62px;}
+.logo{display:flex;align-items:center;gap:10px;flex-shrink:0}
+.logo-box{width:36px;height:36px;background:var(--blue);border-radius:7px;display:grid;place-items:center;color:#fff;font-weight:800;font-size:13px;letter-spacing:-.5px}
+.logo-text{font-size:13px;font-weight:700;line-height:1.2;color:var(--navy)}
+.logo-text span{display:block;color:var(--muted);font-weight:500;font-size:11px}
+.nav-links{display:flex;gap:22px;margin-left:auto;align-items:center}
+.nav-links a{font-size:13.5px;font-weight:500;color:var(--muted);transition:color .2s}
+.nav-links a:hover,.nav-links a.active{color:var(--blue)}
+.nav-links a.active{border-bottom:2px solid var(--blue);padding-bottom:1px}
+.btn-nav{background:var(--blue);color:#fff;border:none;border-radius:8px;padding:9px 18px;font-weight:700;font-size:13.5px;cursor:pointer;white-space:nowrap;font-family:inherit}
+.hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;background:none;border:none;padding:4px}
+.hamburger span{display:block;width:24px;height:2px;background:var(--navy);border-radius:2px;transition:all .3s}
+.hamburger.open span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+.hamburger.open span:nth-child(2){opacity:0}
+.hamburger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+.mobile-menu{display:none;position:fixed;top:62px;left:0;right:0;background:#fff;border-bottom:1px solid var(--border);padding:16px 24px;flex-direction:column;gap:4px;z-index:199;box-shadow:0 8px 24px rgba(0,0,0,.08)}
+.mobile-menu.open{display:flex}
+.mobile-menu a{font-size:15px;font-weight:600;color:var(--muted);padding:10px 0;border-bottom:1px solid var(--border);transition:color .2s}
+.mobile-menu a:hover{color:var(--blue)}
+.mobile-menu .btn-nav-mobile{margin-top:10px;background:var(--blue);color:#fff;border:none;border-radius:8px;padding:12px;font-weight:700;font-size:14px;cursor:pointer;font-family:inherit;width:100%}
+@media(max-width:768px){.hamburger{display:flex}.nav-links{display:none}}
+/* Fil d'Ariane */
+.breadcrumb{background:#f8fafc;border-bottom:1px solid var(--border);padding:10px 32px}
+.breadcrumb-inner{max-width:1060px;margin:0 auto;display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+.breadcrumb-item{font-size:12.5px;font-weight:600;color:var(--muted)}
+.breadcrumb-item a{color:var(--muted);transition:color .2s}
+.breadcrumb-item a:hover{color:var(--blue)}
+.breadcrumb-sep{font-size:11px;color:#cbd5e1}
+.breadcrumb-current{font-size:12.5px;font-weight:700;padding:2px 10px;border-radius:20px;background:var(--sector-light);color:var(--sector)}
+/* Hero */
+.page-hero{background:linear-gradient(145deg,#f0f5ff 50%,#dce9ff 100%);padding:64px 32px 56px;}
+.page-hero-inner{max-width:900px;margin:0 auto;display:grid;grid-template-columns:1fr auto;gap:40px;align-items:center}
+.page-badge{display:inline-block;background:#FFF3E0;color:#E65100;font-size:10.5px;font-weight:700;letter-spacing:.6px;padding:4px 12px;border-radius:20px;margin-bottom:18px;text-transform:uppercase;}
+.page-hero h1{font-size:36px;font-weight:800;line-height:1.15;color:var(--navy);margin-bottom:16px}
+.page-hero p{color:var(--muted);font-size:14px;line-height:1.75;margin-bottom:24px}
+.hero-stats{display:flex;gap:16px;flex-wrap:wrap}
+.hero-stat{background:#fff;border-radius:12px;padding:14px 18px;text-align:center;box-shadow:0 2px 12px rgba(26,86,219,.08);border:1px solid var(--border)}
+.hero-stat-val{font-size:24px;font-weight:800;color:var(--sector);line-height:1}
+.hero-stat-lbl{font-size:11px;color:var(--muted);font-weight:600;margin-top:3px}
+.hero-icon-wrap{width:110px;height:110px;border-radius:24px;display:grid;place-items:center;font-size:48px;flex-shrink:0;box-shadow:0 12px 40px rgba(26,86,219,.25)}
+/* Layout */
+section{padding:64px 32px}
+.container{max-width:1060px;margin:0 auto}
+.section-eyebrow{display:inline-block;background:var(--sector-light);color:var(--sector);font-size:11px;font-weight:700;letter-spacing:.6px;padding:4px 12px;border-radius:20px;margin-bottom:14px;text-transform:uppercase;}
+.section-title{font-size:28px;font-weight:800;color:var(--navy);margin-bottom:12px;line-height:1.2}
+.section-sub{color:var(--muted);font-size:14px;line-height:1.7;margin-bottom:36px}
+/* Défis */
+.defis-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;margin-bottom:40px}
+.defi-card{background:#fff;border:1px solid var(--border);border-radius:14px;padding:22px;display:flex;gap:14px;align-items:flex-start;transition:box-shadow .25s,transform .25s}
+.defi-card:hover{box-shadow:0 6px 24px rgba(26,86,219,.08);transform:translateY(-2px)}
+.defi-ico{width:40px;height:40px;border-radius:10px;display:grid;place-items:center;font-size:18px;flex-shrink:0;background:var(--sector-light)}
+.defi-body h3{font-size:14px;font-weight:800;color:var(--navy);margin-bottom:5px}
+.defi-body p{font-size:13px;color:var(--muted);line-height:1.6}
+/* Contenus */
+.contenus-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.contenu-card{border:1px solid var(--border);border-radius:14px;padding:20px;text-align:center;transition:all .25s}
+.contenu-card:hover{border-color:var(--sector);background:var(--sector-light);transform:translateY(-2px)}
+.contenu-ico{font-size:28px;margin-bottom:10px}
+.contenu-card h3{font-size:13.5px;font-weight:800;color:var(--navy);margin-bottom:6px}
+.contenu-card p{font-size:12px;color:var(--muted);line-height:1.6}
+.contenu-tag{display:inline-block;font-size:10.5px;font-weight:700;padding:2px 9px;border-radius:20px;margin-top:8px;background:var(--sector-light);color:var(--sector)}
+/* Exemples */
+.exemples-section{background:#f8fafc}
+.exemple-card{background:#fff;border:1px solid var(--border);border-radius:16px;padding:24px;margin-bottom:16px;display:grid;grid-template-columns:auto 1fr auto;gap:20px;align-items:start;transition:box-shadow .25s}
+.exemple-card:hover{box-shadow:0 6px 24px rgba(26,86,219,.1)}
+.exemple-card:last-child{margin-bottom:0}
+.exemple-num{width:40px;height:40px;border-radius:50%;background:var(--sector);color:#fff;font-weight:800;font-size:15px;display:grid;place-items:center;flex-shrink:0}
+.exemple-body h3{font-size:15px;font-weight:800;color:var(--navy);margin-bottom:6px}
+.exemple-body p{font-size:13px;color:var(--muted);line-height:1.65}
+.exemple-result{background:var(--sector-light);border-radius:10px;padding:12px 16px;text-align:center;flex-shrink:0;min-width:140px}
+.exemple-result-val{font-size:22px;font-weight:800;color:var(--sector);line-height:1;margin-bottom:4px}
+.exemple-result-lbl{font-size:11px;color:var(--muted);font-weight:600}
+/* Mots-clés */
+.kw-section{background:#fff}
+.kw-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+.kw-card{background:#f8fafc;border:1px solid var(--border);border-radius:10px;padding:14px 16px;display:flex;align-items:center;justify-content:space-between;gap:10px}
+.kw-text{font-size:13px;font-weight:600;color:var(--text)}
+.kw-badge{font-size:11px;font-weight:700;color:var(--sector);background:var(--sector-light);padding:2px 9px;border-radius:20px;white-space:nowrap}
+/* Avantages */
+.avantages-section{background:#f8fafc}
+.avantages-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.avantage-card{background:#fff;border:1px solid var(--border);border-radius:16px;padding:24px}
+.avantage-icon{font-size:28px;margin-bottom:12px}
+.avantage-card h3{font-size:15px;font-weight:800;color:var(--navy);margin-bottom:8px}
+.avantage-card p{font-size:13px;color:var(--muted);line-height:1.7}
+.avantage-tag{display:inline-block;background:var(--sector-light);color:var(--sector);font-size:11px;font-weight:700;padding:3px 10px;border-radius:20px;margin-top:10px}
+/* Autres secteurs */
+.autres-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+.autre-card{border:1px solid var(--border);border-radius:12px;padding:16px;text-align:center;transition:all .25s}
+.autre-card:hover{border-color:var(--blue);transform:translateY(-2px);box-shadow:0 4px 16px rgba(26,86,219,.08)}
+.autre-ico{font-size:24px;margin-bottom:8px}
+.autre-name{font-size:13px;font-weight:700;color:var(--navy)}
+/* CTA */
+.cta-band{background:var(--navy);padding:60px 32px}
+.cta-inner{max-width:1060px;margin:0 auto;display:grid;grid-template-columns:1fr auto;gap:48px;align-items:center}
+.cta-band h2{font-size:28px;font-weight:800;color:#fff;margin-bottom:9px}
+.cta-band>div>p{color:#6ee7b7;font-size:13.5px;margin-bottom:24px;max-width:380px}
+.cta-btns{display:flex;gap:10px;flex-wrap:wrap}
+.btn-primary{background:var(--blue);color:#fff;border:none;border-radius:8px;padding:11px 20px;font-weight:700;font-size:13.5px;cursor:pointer;display:inline-flex;align-items:center;gap:7px;font-family:inherit}
+.btn-white{background:#fff;color:var(--navy);border-radius:8px;padding:11px 20px;font-weight:700;font-size:13.5px;display:inline-flex;align-items:center;gap:7px;cursor:pointer;border:none;font-family:inherit}
+.btn-ghost{background:transparent;color:#fff;border:1.5px solid rgba(255,255,255,.3);border-radius:8px;padding:11px 20px;font-weight:700;font-size:13.5px;cursor:pointer;font-family:inherit}
+.btn-ghost:hover{border-color:#fff}
+.cta-checks{display:flex;flex-direction:column;gap:11px;flex-shrink:0}
+.cta-check{display:flex;align-items:center;gap:9px;color:#cbd5e1;font-size:13px}
+.cta-ci{color:var(--green);font-weight:700}
+footer{background:var(--navy);border-top:1px solid rgba(255,255,255,.07);padding:44px 32px 26px}
+.footer-inner{max-width:1060px;margin:0 auto;display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:32px}
+.footer-brand p{color:#64748b;font-size:12px;margin-top:8px;max-width:185px;line-height:1.7}
+footer h4{font-size:10.5px;font-weight:700;color:#94a3b8;text-transform:uppercase;letter-spacing:.5px;margin-bottom:13px}
+.flinks{list-style:none}.flinks li{margin-bottom:8px}.flinks a{color:#64748b;font-size:12px;transition:color .2s}.flinks a:hover{color:#fff}
+.fsocial{display:flex;gap:7px;margin-top:11px}
+.fsoc{width:29px;height:29px;border-radius:6px;background:rgba(255,255,255,.07);display:grid;place-items:center;font-size:11px;color:#94a3b8;transition:background .2s}
+.fsoc:hover{background:var(--blue);color:#fff}
+.footer-bottom{max-width:1060px;margin:24px auto 0;padding-top:16px;border-top:1px solid rgba(255,255,255,.07);display:flex;justify-content:space-between;color:#475569;font-size:11px;flex-wrap:wrap;gap:8px}
+@media(max-width:960px){.page-hero-inner{grid-template-columns:1fr}.hero-icon-wrap{display:none}.defis-grid{grid-template-columns:1fr}.contenus-grid{grid-template-columns:1fr 1fr}.exemple-card{grid-template-columns:auto 1fr}.exemple-result{display:none}.kw-grid{grid-template-columns:1fr 1fr}.avantages-grid{grid-template-columns:1fr 1fr}.autres-grid{grid-template-columns:1fr 1fr}.cta-inner{grid-template-columns:1fr}.footer-inner{grid-template-columns:1fr 1fr}}
+@media(max-width:600px){.page-hero h1{font-size:26px}.contenus-grid{grid-template-columns:1fr}.kw-grid{grid-template-columns:1fr}.avantages-grid{grid-template-columns:1fr}.autres-grid{grid-template-columns:1fr 1fr}.footer-inner{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<nav>
+  <div class="logo"><div class="logo-box">TRD</div><div class="logo-text">TechRepair<span>Content</span></div></div>
+  <div class="nav-links">
+    <a href="index.html">Accueil</a>
+    <a href="services.html">Services</a>
+    <a href="secteurs.html" class="active">Secteurs</a>
+    <a href="apropos.html">À propos</a>
+    <a href="blog.html">Blog</a>
+    <button class="btn-nav" onclick="window.location='devis.html'">Obtenir un devis</button>
+  </div>
+  <button class="hamburger" id="hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
+</nav>
+<div class="mobile-menu" id="mobileMenu">
+  <a href="index.html">Accueil</a><a href="services.html">Services</a><a href="secteurs.html">Secteurs</a><a href="apropos.html">À propos</a><a href="blog.html">Blog</a>
+  <button class="btn-nav-mobile" onclick="window.location='devis.html'">Obtenir un devis</button>
+</div>
+
+<!-- FIL D'ARIANE -->
+<div class="breadcrumb">
+  <div class="breadcrumb-inner">
+    <span class="breadcrumb-item"><a href="index.html">🏠 Accueil</a></span>
+    <span class="breadcrumb-sep">›</span>
+    <span class="breadcrumb-item"><a href="secteurs.html">Secteurs</a></span>
+    <span class="breadcrumb-sep">›</span>
+    <span class="breadcrumb-current">🔒 Cybersécurité</span>
+  </div>
+</div>
+
+<!-- HERO -->
+<div class="page-hero">
+  <div class="page-hero-inner">
+    <div>
+      <span class="page-badge">Secteur 03</span>
+      <h1>Contenu SEO<br>pour la cybersécurité</h1>
+      <p>La cybersécurité est le secteur où la crédibilité du contenu est la plus critique. Un RSSI ou un DSI ne pardonne pas les approximations techniques. Nos rédacteurs sont formés aux réalités terrain : SIEM, EDR, Zero Trust, conformité NIS2 et DORA.</p>
+      <div class="hero-stats">
+        <div class="hero-stat"><div class="hero-stat-val">430</div><div class="hero-stat-lbl">Leads RSSI/60j</div></div>
+        <div class="hero-stat"><div class="hero-stat-val">Top 3</div><div class="hero-stat-lbl">Mots-clés NIS2</div></div>
+        <div class="hero-stat"><div class="hero-stat-val">×3,1</div><div class="hero-stat-lbl">ROI 6 mois</div></div>
+      </div>
+    </div>
+    <div class="hero-icon-wrap" style="background:linear-gradient(135deg,#dc2626,#ef4444)">🔒</div>
+  </div>
+</div>
+
+<!-- DÉFIS -->
+<section style="background:#fff">
+  <div class="container">
+    <span class="section-eyebrow">Défis du secteur</span>
+    <h2 class="section-title">Les vrais problèmes SEO des éditeurs SaaS</h2>
+    <p class="section-sub">Chaque secteur a ses contraintes spécifiques. Voici celles que nous adressons chaque jour pour nos clients SaaS.</p>
+    <div class="defis-grid">
+      <div class="defi-card"><div class="defi-ico">🔐</div><div class="defi-body"><h3>Jargon ultra-technique</h3><p>SOC, SIEM, EDR, SOAR, Zero Trust — nos rédacteurs maîtrisent ces acronymes et les utilisent avec précision, sans approximation.</p></div></div>
+      <div class="defi-card"><div class="defi-ico">📜</div><div class="defi-body"><h3>Réglementation en évolution</h3><p>NIS2, DORA, RGPD, ISO 27001 — les exigences changent. Notre veille permanente intègre les dernières évolutions réglementaires dans chaque contenu.</p></div></div>
+      <div class="defi-card"><div class="defi-ico">🎯</div><div class="defi-body"><h3>Audience RSSI très méfiante</h3><p>Les RSSI ignorent 90% du contenu cyber qu'ils voient. Seul un contenu factuel, sourcé et techniquement irréprochable passe leur filtre de crédibilité.</p></div></div>
+      <div class="defi-card"><div class="defi-ico">⏱️</div><div class="defi-body"><h3>Cycle de vente 6 à 18 mois</h3><p>Les décisions cyber sont longues et impliquent plusieurs parties prenantes. Votre thought leadership doit maintenir la pression pendant toute la durée du cycle.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- TYPES DE CONTENUS -->
+<section style="background:#f8fafc">
+  <div class="container">
+    <span class="section-eyebrow">Nos productions</span>
+    <h2 class="section-title">Les contenus qui convertissent en SaaS B2B</h2>
+    <p class="section-sub">Chaque format répond à une intention précise dans le funnel d'achat de vos prospects.</p>
+    <div class="contenus-grid">
+      <div class="contenu-card"><div class="contenu-ico">🛡️</div><h3>Threat Intelligence</h3><p>Actualité des cybermenaces, analyses de vulnérabilités, décryptage des attaques récentes.</p><span class="contenu-tag">TOFU</span></div>
+      <div class="contenu-card"><div class="contenu-ico">📜</div><h3>Guides conformité</h3><p>NIS2, DORA, RGPD, ISO 27001 — guides pratiques de mise en conformité pour les RSSI.</p><span class="contenu-tag">TOFU/MOFU</span></div>
+      <div class="contenu-card"><div class="contenu-ico">⚖️</div><h3>Comparatifs solutions</h3><p>SIEM vs SOAR, EDR vs antivirus, Zero Trust vs VPN — comparatifs techniques validés par des experts.</p><span class="contenu-tag">MOFU</span></div>
+      <div class="contenu-card"><div class="contenu-ico">📋</div><h3>Livres blancs réglementaires</h3><p>Documents de référence sur les obligations légales, checklist de conformité, guide de mise en oeuvre.</p><span class="contenu-tag">MOFU/BOFU</span></div>
+      <div class="contenu-card"><div class="contenu-ico">💼</div><h3>Use cases RSSI</h3><p>Scénarios concrets d'implémentation pour chaque persona : RSSI, DSI, DPO.</p><span class="contenu-tag">BOFU</span></div>
+      <div class="contenu-card"><div class="contenu-ico">📰</div><h3>Articles techniques</h3><p>Deep dives sur des technologies spécifiques : architecture Zero Trust, déploiement EDR, SIEM tuning.</p><span class="contenu-tag">TOFU</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- EXEMPLES -->
+<section class="exemples-section">
+  <div class="container">
+    <span class="section-eyebrow">Résultats clients</span>
+    <h2 class="section-title">Ce que nous avons produit pour des éditeurs SaaS</h2>
+    <p class="section-sub">Des missions concrètes avec des résultats mesurables dans votre secteur.</p>
+    <div class="exemple-card">
+      <div class="exemple-num">1</div>
+      <div class="exemple-body"><h3>Éditeur cybersécurité, Solution EDR entreprise</h3><p>12 articles satellites autour de 'NIS2 conformité', 'EDR vs antivirus', 'Zero Trust architecture PME'. Contenu validé par des experts RSSI, avec sources officielles ANSSI et ENISA intégrées.</p></div>
+      <div class="exemple-result"><div class="exemple-result-val">+430</div><div class="exemple-result-lbl">Leads RSSI en 60 jours</div></div>
+    </div>
+    <div class="exemple-card">
+      <div class="exemple-num">2</div>
+      <div class="exemple-body"><h3>Scale-up cybersécurité, Livre blanc NIS2</h3><p>Livre blanc de 16 pages sur la mise en conformité NIS2 pour les ETI, landing page dédiée et séquence nurturing 4 emails. Distribution auprès des RSSI et DSI via LinkedIn Ads.</p></div>
+      <div class="exemple-result"><div class="exemple-result-val">34%</div><div class="exemple-result-lbl">Taux conversion LP</div></div>
+    </div>
+    <div class="exemple-card">
+      <div class="exemple-num">3</div>
+      <div class="exemple-body"><h3>Éditeur SIEM, Comparatifs solutions</h3><p>8 pages comparatives 'SIEM vs SOAR', 'EDR vs antivirus', 'Zero Trust vs VPN'. Chaque comparatif inclut un tableau technique, des critères de choix et un verdict sourcé.</p></div>
+      <div class="exemple-result"><div class="exemple-result-val">Top 3</div><div class="exemple-result-lbl">Sur mots-clés comparatifs</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- MOTS-CLÉS -->
+<section class="kw-section">
+  <div class="container">
+    <span class="section-eyebrow">Opportunités SEO</span>
+    <h2 class="section-title">Exemples de mots-clés à fort potentiel en SaaS B2B</h2>
+    <p class="section-sub">Ces requêtes sont sous-exploitées par vos concurrents directs. Ce sont vos premières opportunités de positionnement.</p>
+    <div class="kw-grid">
+      <div class="kw-card"><span class="kw-text">conformité nis2 guide entreprise</span><span class="kw-badge">4 400/mois</span></div>
+      <div class="kw-card"><span class="kw-text">siem vs soar comparatif</span><span class="kw-badge">1 200/mois</span></div>
+      <div class="kw-card"><span class="kw-text">zero trust architecture pme</span><span class="kw-badge">880/mois</span></div>
+      <div class="kw-card"><span class="kw-text">edr endpoint detection response</span><span class="kw-badge">560/mois</span></div>
+      <div class="kw-card"><span class="kw-text">pentest entreprise guide</span><span class="kw-badge">1 600/mois</span></div>
+      <div class="kw-card"><span class="kw-text">dpo rgpd obligations entreprise</span><span class="kw-badge">2 100/mois</span></div>
+      <div class="kw-card"><span class="kw-text">cyberattaque pme prevention</span><span class="kw-badge">3 200/mois</span></div>
+      <div class="kw-card"><span class="kw-text">soc as a service comparatif</span><span class="kw-badge">490/mois</span></div>
+      <div class="kw-card"><span class="kw-text">iso 27001 certification guide</span><span class="kw-badge">1 800/mois</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- AVANTAGES -->
+<section class="avantages-section">
+  <div class="container">
+    <span class="section-eyebrow">Pourquoi nous choisir</span>
+    <h2 class="section-title">Notre expertise SaaS B2B en pratique</h2>
+    <div class="avantages-grid">
+      <div class="avantage-card"><div class="avantage-icon">🔬</div><h3>Expertise technique certifiée</h3><p>Nos rédacteurs cyber ont exercé dans des SOC et des équipes sécurité. Ils écrivent ce qu'ils ont vécu, pas ce qu'ils ont lu sur Wikipedia.</p><span class="avantage-tag">E-E-A-T renforcé</span></div>
+      <div class="avantage-card"><div class="avantage-icon">📊</div><h3>Sources officielles intégrées</h3><p>ANSSI, ENISA, CISA, ISO — chaque contenu s'appuie sur des références officielles que vos lecteurs RSSI reconnaissent et valident.</p><span class="avantage-tag">Crédibilité maximale</span></div>
+      <div class="avantage-card"><div class="avantage-icon">🎯</div><h3>Ciblage RSSI/DSI/DPO</h3><p>Nous connaissons les critères d'évaluation de chaque persona cyber. Nos contenus répondent aux bonnes questions au bon moment du cycle de décision.</p><span class="avantage-tag">Leads qualifiés</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- AUTRES SECTEURS -->
+<section style="background:#fff">
+  <div class="container">
+    <div style="text-align:center;margin-bottom:32px">
+      <span class="section-eyebrow">Autres secteurs</span>
+      <h2 class="section-title" style="text-align:center">Nous intervenons aussi sur</h2>
+    </div>
+    <div class="autres-grid">
+      <a href="secteur-saas.html" class="autre-card"><div class="autre-ico">☁️</div><div class="autre-name">SaaS B2B</div></a>
+      <a href="secteur-ecommerce.html" class="autre-card"><div class="autre-ico">🛒</div><div class="autre-name">E-commerce Tech</div></a>
+      <a href="secteur-fintech.html" class="autre-card"><div class="autre-ico">💳</div><div class="autre-name">Fintech</div></a>
+      <a href="secteur-rh-tech.html" class="autre-card"><div class="autre-ico">👥</div><div class="autre-name">RH Tech</div></a>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<div class="cta-band">
+  <div class="cta-inner">
+    <div>
+      <h2>Votre expertise cyber mérite d'être visible</h2>
+      <p>Discutons de votre stratégie de contenu et voyons comment atteindre vos cibles RSSI et DSI.</p>
+      <div class="cta-btns">
+        <button class="btn-white" onclick="window.location='devis.html'">Obtenir un devis gratuit →</button>
+        <a href="secteurs.html" class="btn-ghost">Voir tous les secteurs →</a>
+      </div>
+    </div>
+    <div class="cta-checks">
+      <div class="cta-check"><span class="cta-ci">✓</span> Réponse sous 24h</div>
+      <div class="cta-check"><span class="cta-ci">✓</span> Audit SEO gratuit</div>
+      <div class="cta-check"><span class="cta-ci">✓</span> Sans engagement</div>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <div class="footer-inner">
+    <div class="footer-brand"><div class="logo"><div class="logo-box">TRD</div><div class="logo-text" style="color:#fff">TechRepair<span>Content</span></div></div><p>Rédaction SEO & technique pour entreprises SaaS, Tech et E-commerce.</p></div>
+    <div><h4>Secteurs</h4><ul class="flinks"><li><a href="secteur-saas.html">SaaS B2B</a></li><li><a href="secteur-ecommerce.html">E-commerce Tech</a></li><li><a href="secteur-cybersecurite.html">Cybersécurité</a></li><li><a href="secteur-fintech.html">Fintech</a></li><li><a href="secteur-rh-tech.html">RH Tech</a></li></ul></div>
+    <div><h4>Services</h4><ul class="flinks"><li><a href="service-articles-seo.html">Articles SEO</a></li><li><a href="service-fiches-produits.html">Fiches produits</a></li><li><a href="service-livres-blancs.html">Livres blancs</a></li><li><a href="service-strategie-ia.html">Stratégie IA</a></li></ul></div>
+    <div><h4>Contact</h4><ul class="flinks"><li><a href="mailto:contact@techrepaircontent.com">contact@techrepaircontent.com</a></li><li><a href="tel:0758383635">07 58 38 36 35</a></li></ul><div class="fsocial"><a class="fsoc" href="#">in</a><a class="fsoc" href="#">𝕏</a><a class="fsoc" href="#">✉</a></div></div>
+  </div>
+  <div class="footer-bottom"><span>© 2025 TechRepair Content. Tous droits réservés.</span><span>Fait avec ❤️ en France</span></div>
+</footer>
+
+<script>
+const hamburger = document.getElementById('hamburger');
+const mobileMenu = document.getElementById('mobileMenu');
+hamburger.addEventListener('click', () => { hamburger.classList.toggle('open'); mobileMenu.classList.toggle('open'); });
+mobileMenu.querySelectorAll('a').forEach(link => { link.addEventListener('click', () => { hamburger.classList.remove('open'); mobileMenu.classList.remove('open'); }); });
+</script>
+</body>
+</html>
