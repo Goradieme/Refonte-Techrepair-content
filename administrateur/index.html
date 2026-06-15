@@ -1,0 +1,691 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<meta name="robots" content="noindex, nofollow"/>
+<title>CMS Admin — TechRepair Content</title>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet"/>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --blue:#1A56DB;--blue-dark:#1342b0;--blue-light:#EFF6FF;
+  --navy:#0F1B3D;--text:#1e293b;--muted:#64748b;
+  --border:#e2e8f0;--green:#10b981;--orange:#f97316;
+  --red:#ef4444;--bg:#f8fafc;
+}
+html{scroll-behavior:smooth}
+body{font-family:'Manrope',sans-serif;color:var(--text);background:var(--bg);font-size:15px;line-height:1.6;min-height:100vh}
+
+/* ══ LOGIN ══ */
+.login-screen{min-height:100vh;display:flex;align-items:center;justify-content:center;padding:20px;background:linear-gradient(145deg,#f0f5ff,#dce9ff)}
+.login-box{background:#fff;border-radius:20px;padding:40px;width:100%;max-width:420px;box-shadow:0 20px 60px rgba(26,86,219,.12)}
+.login-logo{display:flex;align-items:center;gap:10px;margin-bottom:28px}
+.login-logo-box{width:40px;height:40px;background:var(--blue);border-radius:9px;display:grid;place-items:center;color:#fff;font-weight:800;font-size:14px}
+.login-logo-text{font-size:15px;font-weight:800;color:var(--navy);line-height:1.2}
+.login-logo-text span{display:block;color:var(--muted);font-weight:500;font-size:12px}
+.login-title{font-size:22px;font-weight:800;color:var(--navy);margin-bottom:6px}
+.login-sub{font-size:13px;color:var(--muted);margin-bottom:24px;line-height:1.6}
+.login-label{font-size:12px;font-weight:700;color:var(--navy);display:block;margin-bottom:6px}
+.login-input{width:100%;border:1.5px solid var(--border);border-radius:10px;padding:12px 14px;font-size:14px;font-family:inherit;color:var(--text);outline:none;margin-bottom:10px;transition:border-color .2s}
+.login-input:focus{border-color:var(--blue);box-shadow:0 0 0 3px rgba(26,86,219,.08)}
+.login-hint{font-size:11.5px;color:var(--muted);margin-bottom:20px;line-height:1.6}
+.login-hint a{color:var(--blue)}
+.login-btn{width:100%;background:var(--blue);color:#fff;border:none;border-radius:10px;padding:13px;font-size:14px;font-weight:700;cursor:pointer;font-family:inherit;transition:background .2s}
+.login-btn:hover{background:var(--blue-dark)}
+.login-err{background:#fee2e2;color:#991b1b;border-radius:8px;padding:10px 14px;font-size:13px;margin-top:12px;display:none}
+
+/* ══ APP ══ */
+.app{display:none}
+
+/* ══ HEADER ══ */
+header{background:#fff;border-bottom:1px solid var(--border);padding:0 28px;display:flex;align-items:center;justify-content:space-between;height:62px;position:sticky;top:0;z-index:100}
+.logo{display:flex;align-items:center;gap:10px}
+.logo-box{width:34px;height:34px;background:var(--blue);border-radius:7px;display:grid;place-items:center;color:#fff;font-weight:800;font-size:12px}
+.logo-text{font-size:13px;font-weight:700;color:var(--navy);line-height:1.2}
+.logo-text span{display:block;color:var(--muted);font-weight:500;font-size:11px}
+.header-right{display:flex;align-items:center;gap:10px}
+.btn-new{background:var(--green);color:#fff;border:none;border-radius:8px;padding:8px 16px;font-size:13px;font-weight:700;cursor:pointer;font-family:inherit;display:inline-flex;align-items:center;gap:6px;text-decoration:none}
+.btn-new:hover{background:#059669}
+.btn-back-site{background:none;border:1.5px solid var(--border);border-radius:8px;padding:7px 14px;font-size:13px;font-weight:600;color:var(--muted);cursor:pointer;font-family:inherit;text-decoration:none;display:inline-flex;align-items:center;gap:6px}
+.btn-back-site:hover{border-color:var(--blue);color:var(--blue)}
+.btn-logout{background:none;border:none;color:var(--muted);font-size:13px;font-weight:600;cursor:pointer;font-family:inherit;padding:7px 10px;border-radius:8px}
+.btn-logout:hover{background:#fee2e2;color:var(--red)}
+.header-user{font-size:12px;color:var(--muted);display:flex;align-items:center;gap:6px}
+.user-dot{width:28px;height:28px;background:var(--blue-light);border-radius:50%;display:grid;place-items:center;font-size:11px;font-weight:800;color:var(--blue)}
+
+/* ══ LAYOUT ══ */
+.cms-layout{max-width:1100px;margin:0 auto;padding:28px 24px}
+
+/* ══ STATS ══ */
+.stats-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-bottom:32px}
+.stat-card{background:#fff;border:1px solid var(--border);border-radius:14px;padding:20px;display:flex;flex-direction:column;gap:6px}
+.stat-icon{font-size:22px;margin-bottom:4px}
+.stat-num{font-size:28px;font-weight:800;color:var(--navy);line-height:1}
+.stat-label{font-size:12px;color:var(--muted);font-weight:600}
+.stat-sub{font-size:11.5px;color:var(--muted)}
+
+/* ══ SECTION HEADER ══ */
+.section-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:16px}
+.section-title{font-size:14px;font-weight:800;color:var(--navy);display:flex;align-items:center;gap:8px}
+.articles-badge{background:var(--blue-light);color:var(--blue);font-size:11px;font-weight:700;padding:2px 9px;border-radius:20px}
+
+/* ══ FILTRES ══ */
+.filters-bar{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:16px}
+.filter-chip{background:#fff;border:1.5px solid var(--border);border-radius:30px;padding:6px 14px;font-size:12px;font-weight:600;color:var(--muted);cursor:pointer;font-family:inherit;transition:all .2s}
+.filter-chip:hover,.filter-chip.active{background:var(--blue);border-color:var(--blue);color:#fff}
+.search-bar{position:relative;margin-bottom:20px}
+.search-bar input{width:100%;border:1.5px solid var(--border);border-radius:10px;padding:10px 14px 10px 38px;font-size:13.5px;font-family:inherit;outline:none;background:#fff;transition:border-color .2s}
+.search-bar input:focus{border-color:var(--blue)}
+.search-icon{position:absolute;left:12px;top:50%;transform:translateY(-50%);color:var(--muted);font-size:15px;pointer-events:none}
+
+/* ══ TABLE ══ */
+.articles-table{background:#fff;border:1px solid var(--border);border-radius:14px;overflow:hidden}
+.table-head{display:grid;grid-template-columns:2fr 1fr 1fr 1fr 140px;gap:0;background:var(--bg);border-bottom:1px solid var(--border);padding:12px 20px;font-size:11px;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:.4px}
+.article-row{display:grid;grid-template-columns:2fr 1fr 1fr 1fr 140px;gap:0;padding:16px 20px;border-bottom:1px solid var(--border);align-items:center;transition:background .15s}
+.article-row:last-child{border-bottom:none}
+.article-row:hover{background:#fafbff}
+.row-title{font-size:13.5px;font-weight:700;color:var(--navy);line-height:1.35;margin-bottom:3px}
+.row-slug{font-size:11.5px;color:var(--muted);font-family:monospace}
+.row-cat{display:inline-flex;align-items:center;gap:5px;font-size:11px;font-weight:700;padding:3px 10px;border-radius:20px}
+.row-date{font-size:12.5px;color:var(--muted)}
+.row-lecture{font-size:12.5px;color:var(--muted)}
+.row-actions{display:flex;gap:6px;justify-content:flex-end}
+.btn-edit{background:var(--blue-light);color:var(--blue);border:none;border-radius:7px;padding:6px 12px;font-size:12px;font-weight:700;cursor:pointer;font-family:inherit;display:inline-flex;align-items:center;gap:4px;text-decoration:none;transition:background .15s}
+.btn-edit:hover{background:#dbeafe}
+.btn-del{background:#fee2e2;color:var(--red);border:none;border-radius:7px;padding:6px 10px;font-size:12px;font-weight:700;cursor:pointer;font-family:inherit;display:inline-flex;align-items:center;gap:4px;transition:background .15s}
+.btn-del:hover{background:#fecaca}
+.s-blue{background:var(--blue-light);color:var(--blue)}
+.s-orange{background:#FFF7ED;color:var(--orange)}
+.s-red{background:#FEF2F2;color:#dc2626}
+.s-green{background:#ECFDF5;color:var(--green)}
+.s-purple{background:#F5F3FF;color:#7c3aed}
+.s-navy{background:#EFF6FF;color:var(--navy)}
+
+/* ══ EMPTY STATE ══ */
+.empty-state{text-align:center;padding:64px 20px}
+.empty-icon{font-size:48px;margin-bottom:16px}
+.empty-title{font-size:18px;font-weight:800;color:var(--navy);margin-bottom:8px}
+.empty-sub{font-size:13.5px;color:var(--muted);max-width:360px;margin:0 auto 24px}
+
+/* ══ LOADING ══ */
+.loading{text-align:center;padding:48px;color:var(--muted);font-size:13.5px}
+.spinner{width:32px;height:32px;border:3px solid var(--border);border-top-color:var(--blue);border-radius:50%;animation:spin .7s linear infinite;margin:0 auto 12px}
+@keyframes spin{to{transform:rotate(360deg)}}
+
+/* ══ MODAL SUPPRESSION ══ */
+.modal-overlay{position:fixed;inset:0;background:rgba(15,27,61,.5);z-index:999;display:flex;align-items:center;justify-content:center;padding:20px;opacity:0;pointer-events:none;transition:opacity .2s;backdrop-filter:blur(4px)}
+.modal-overlay.open{opacity:1;pointer-events:all}
+.modal-box{background:#fff;border-radius:16px;padding:28px;max-width:420px;width:100%;box-shadow:0 20px 60px rgba(0,0,0,.2);transform:translateY(16px);transition:transform .2s}
+.modal-overlay.open .modal-box{transform:translateY(0)}
+.modal-icon{font-size:36px;margin-bottom:12px}
+.modal-title{font-size:18px;font-weight:800;color:var(--navy);margin-bottom:8px}
+.modal-sub{font-size:13.5px;color:var(--muted);line-height:1.6;margin-bottom:6px}
+.modal-article-name{font-size:13.5px;font-weight:700;color:var(--navy);background:var(--bg);border-radius:8px;padding:10px 14px;margin:12px 0 20px}
+.modal-btns{display:flex;gap:10px;justify-content:flex-end}
+.btn-cancel{background:#f1f5f9;color:var(--muted);border:none;border-radius:8px;padding:10px 18px;font-size:13px;font-weight:700;cursor:pointer;font-family:inherit}
+.btn-confirm-del{background:var(--red);color:#fff;border:none;border-radius:8px;padding:10px 18px;font-size:13px;font-weight:700;cursor:pointer;font-family:inherit;display:flex;align-items:center;gap:6px}
+.btn-confirm-del:hover{background:#dc2626}
+.btn-confirm-del:disabled{background:#94a3b8;cursor:not-allowed}
+
+/* ══ TOAST ══ */
+.toast{position:fixed;bottom:24px;right:24px;background:var(--navy);color:#fff;padding:12px 20px;border-radius:10px;font-size:13.5px;font-weight:600;z-index:9999;opacity:0;transform:translateY(10px);transition:all .3s;pointer-events:none;max-width:340px}
+.toast.show{opacity:1;transform:translateY(0)}
+.toast.toast-ok{background:#166534}
+.toast.toast-err{background:#991b1b}
+
+/* ══ CAT BARS ══ */
+.cat-bars{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-bottom:32px}
+.cat-bar-card{background:#fff;border:1px solid var(--border);border-radius:12px;padding:14px 16px}
+.cat-bar-label{font-size:12px;font-weight:700;color:var(--navy);margin-bottom:8px;display:flex;justify-content:space-between}
+.cat-bar-count{font-weight:800;color:var(--blue)}
+.cat-bar-track{height:6px;background:var(--border);border-radius:4px;overflow:hidden}
+.cat-bar-fill{height:100%;border-radius:4px;background:var(--blue);transition:width .6s ease}
+
+/* ══ RESPONSIVE ══ */
+@media(max-width:900px){
+  .stats-grid{grid-template-columns:1fr 1fr}
+  .cat-bars{grid-template-columns:1fr 1fr}
+  .table-head,.article-row{grid-template-columns:1fr 1fr 120px}
+  .col-date,.col-lecture{display:none}
+}
+@media(max-width:600px){
+  .stats-grid{grid-template-columns:1fr 1fr}
+  .cat-bars{grid-template-columns:1fr}
+  .table-head,.article-row{grid-template-columns:1fr 100px}
+  .col-cat{display:none}
+  header{padding:0 16px}
+  .cms-layout{padding:20px 16px}
+}
+</style>
+</head>
+<body>
+
+<!-- ══ ÉCRAN DE CONNEXION ══ -->
+<div class="login-screen" id="loginScreen">
+  <div class="login-box">
+    <div class="login-logo">
+      <div class="login-logo-box">TRD</div>
+      <div class="login-logo-text">TechRepair<span>CMS Admin</span></div>
+    </div>
+    <div class="login-title">Connexion</div>
+    <div class="login-sub">Entrez votre token GitHub pour accéder au panneau d'administration.</div>
+    <label class="login-label">Propriétaire du repo</label>
+    <input type="text" class="login-input" id="login-owner" placeholder="ex : goradieme"/>
+    <label class="login-label">Nom du repo</label>
+    <input type="text" class="login-input" id="login-repo" placeholder="ex : techrepaircontent"/>
+    <label class="login-label">Branche</label>
+    <input type="text" class="login-input" id="login-branch" placeholder="main" value="main"/>
+    <label class="login-label">Token GitHub</label>
+    <input type="password" class="login-input" id="login-token" placeholder="ghp_xxxxxxxxxxxx"/>
+    <div class="login-hint">GitHub → Settings → Developer settings → Personal access tokens → scope <strong>repo</strong> requis.<br><a href="https://github.com/settings/tokens" target="_blank">Générer un token →</a></div>
+    <button class="login-btn" onclick="seConnecter()">Accéder au CMS →</button>
+    <div class="login-err" id="login-err"></div>
+  </div>
+</div>
+
+<!-- ══ APPLICATION ══ -->
+<div class="app" id="app">
+
+  <!-- HEADER -->
+  <header>
+    <div class="logo">
+      <div class="logo-box">TRD</div>
+      <div class="logo-text">TechRepair<span>CMS Admin</span></div>
+    </div>
+    <div class="header-right">
+      <div class="header-user">
+        <div class="user-dot" id="user-initiale">?</div>
+        <span id="user-repo-label"></span>
+      </div>
+      <a href="../editeur-seo.html" class="btn-new">✍️ Nouvel article</a>
+      <a href="../blog.html" class="btn-back-site" target="_blank">🌐 Voir le site</a>
+      <button class="btn-logout" onclick="seDeconnecter()" title="Déconnexion">⎋ Quitter</button>
+    </div>
+  </header>
+
+  <!-- LAYOUT -->
+  <div class="cms-layout">
+
+    <!-- STATS -->
+    <div class="stats-grid" id="statsGrid">
+      <div class="stat-card">
+        <div class="stat-icon">📄</div>
+        <div class="stat-num" id="stat-total">—</div>
+        <div class="stat-label">Articles publiés</div>
+        <div class="stat-sub" id="stat-recent"></div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-icon">📂</div>
+        <div class="stat-num" id="stat-cats">—</div>
+        <div class="stat-label">Catégories actives</div>
+        <div class="stat-sub" id="stat-top-cat"></div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-icon">✍️</div>
+        <div class="stat-num" id="stat-auteur">—</div>
+        <div class="stat-label">Auteur principal</div>
+        <div class="stat-sub" id="stat-auteur-sub"></div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-icon">⏱</div>
+        <div class="stat-num" id="stat-lecture">—</div>
+        <div class="stat-label">Lecture moyenne</div>
+        <div class="stat-sub">par article</div>
+      </div>
+    </div>
+
+    <!-- BARRES CATÉGORIES -->
+    <div class="cat-bars" id="catBars"></div>
+
+    <!-- LISTE ARTICLES -->
+    <div class="section-header">
+      <div class="section-title">
+        📋 Articles
+        <span class="articles-badge" id="articlesCount">0</span>
+      </div>
+    </div>
+
+    <!-- FILTRES + RECHERCHE -->
+    <div class="filters-bar" id="filtersBar">
+      <button class="filter-chip active" data-filter="tous" onclick="filtrer('tous',this)">Tous</button>
+      <button class="filter-chip" data-filter="seo" onclick="filtrer('seo',this)">📊 SEO</button>
+      <button class="filter-chip" data-filter="saas" onclick="filtrer('saas',this)">☁️ SaaS B2B</button>
+      <button class="filter-chip" data-filter="ecommerce" onclick="filtrer('ecommerce',this)">🛒 E-commerce</button>
+      <button class="filter-chip" data-filter="cyber" onclick="filtrer('cyber',this)">🔒 Cybersécurité</button>
+      <button class="filter-chip" data-filter="fintech" onclick="filtrer('fintech',this)">💳 Fintech</button>
+      <button class="filter-chip" data-filter="rh" onclick="filtrer('rh',this)">👥 RH Tech</button>
+    </div>
+    <div class="search-bar">
+      <span class="search-icon">🔍</span>
+      <input type="text" id="searchInput" placeholder="Rechercher un article…" oninput="rechercherArticles()"/>
+    </div>
+
+    <!-- TABLE -->
+    <div class="articles-table" id="articlesTable">
+      <div class="loading">
+        <div class="spinner"></div>
+        Chargement des articles…
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- ══ MODAL SUPPRESSION ══ -->
+<div class="modal-overlay" id="modalDel">
+  <div class="modal-box">
+    <div class="modal-icon">🗑️</div>
+    <div class="modal-title">Supprimer l'article ?</div>
+    <div class="modal-sub">Cette action est irréversible. Le fichier HTML sera supprimé et l'article retiré du blog.</div>
+    <div class="modal-article-name" id="modal-article-name"></div>
+    <div class="modal-btns">
+      <button class="btn-cancel" onclick="fermerModal()">Annuler</button>
+      <button class="btn-confirm-del" id="btn-confirm-del" onclick="confirmerSuppression()">
+        <span>🗑️</span> Supprimer définitivement
+      </button>
+    </div>
+  </div>
+</div>
+
+<!-- ══ TOAST ══ -->
+<div class="toast" id="toast"></div>
+
+<script>
+/* ══════════════════════════════════
+   CONFIG & AUTH
+══════════════════════════════════ */
+const GH_STORAGE_KEY = 'trc_gh_config';
+let CFG = null;
+let ARTICLES_DATA = [];
+let filtreActif = 'tous';
+let articleASupprimer = null;
+
+const CAT_CONFIG = {
+  seo:       { label:'📊 SEO',           cls:'s-blue'   },
+  saas:      { label:'☁️ SaaS B2B',      cls:'s-blue'   },
+  ecommerce: { label:'🛒 E-commerce',    cls:'s-orange' },
+  cyber:     { label:'🔒 Cybersécurité', cls:'s-red'    },
+  fintech:   { label:'💳 Fintech',       cls:'s-green'  },
+  rh:        { label:'👥 RH Tech',       cls:'s-purple' },
+};
+
+function chargerConfigSauvegardee(){
+  try{
+    const raw = localStorage.getItem(GH_STORAGE_KEY);
+    return raw ? JSON.parse(raw) : null;
+  } catch(e){ return null; }
+}
+
+async function seConnecter(){
+  const owner  = document.getElementById('login-owner').value.trim();
+  const repo   = document.getElementById('login-repo').value.trim();
+  const branch = document.getElementById('login-branch').value.trim() || 'main';
+  const token  = document.getElementById('login-token').value.trim();
+  const errEl  = document.getElementById('login-err');
+  const btn    = document.querySelector('.login-btn');
+
+  if(!owner || !repo || !token){
+    errEl.style.display='block';
+    errEl.textContent='Remplissez tous les champs.';
+    return;
+  }
+
+  btn.textContent = 'Vérification…';
+  btn.disabled = true;
+  errEl.style.display = 'none';
+
+  try {
+    const r = await fetch(`https://api.github.com/repos/${owner}/${repo}`, {
+      headers:{ Authorization:'token '+token, Accept:'application/vnd.github+json' }
+    });
+    if(!r.ok) throw new Error(r.status === 401 ? 'Token invalide ou expiré.' : r.status === 404 ? 'Repo introuvable. Vérifiez propriétaire et nom.' : 'Erreur GitHub : '+r.status);
+    CFG = { owner, repo, branch, token };
+    localStorage.setItem(GH_STORAGE_KEY, JSON.stringify(CFG));
+    lancerApp();
+  } catch(e){
+    errEl.style.display='block';
+    errEl.textContent = e.message;
+    btn.textContent = 'Accéder au CMS →';
+    btn.disabled = false;
+  }
+}
+
+function seDeconnecter(){
+  CFG = null;
+  ARTICLES_DATA = [];
+  document.getElementById('app').style.display='none';
+  document.getElementById('loginScreen').style.display='flex';
+}
+
+function lancerApp(){
+  document.getElementById('loginScreen').style.display='none';
+  document.getElementById('app').style.display='block';
+  const initiale = (CFG.owner[0]||'?').toUpperCase();
+  document.getElementById('user-initiale').textContent = initiale;
+  document.getElementById('user-repo-label').textContent = CFG.owner+'/'+CFG.repo;
+  chargerArticles();
+}
+
+/* ══════════════════════════════════
+   GITHUB API
+══════════════════════════════════ */
+async function ghGet(path){
+  const r = await fetch(`https://api.github.com/repos/${CFG.owner}/${CFG.repo}/contents/${path}`, {
+    headers:{ Authorization:'token '+CFG.token, Accept:'application/vnd.github+json' }
+  });
+  if(r.status===404) return null;
+  if(!r.ok) throw new Error('GitHub '+r.status);
+  return r.json();
+}
+
+async function ghPut(path, body){
+  const r = await fetch(`https://api.github.com/repos/${CFG.owner}/${CFG.repo}/contents/${path}`, {
+    method:'PUT',
+    headers:{ Authorization:'token '+CFG.token, 'Content-Type':'application/json', Accept:'application/vnd.github+json' },
+    body: JSON.stringify(body)
+  });
+  if(!r.ok) throw new Error('GitHub PUT '+r.status+' : '+await r.text());
+  return r.json();
+}
+
+async function ghDelete(path, sha, message){
+  const r = await fetch(`https://api.github.com/repos/${CFG.owner}/${CFG.repo}/contents/${path}`, {
+    method:'DELETE',
+    headers:{ Authorization:'token '+CFG.token, 'Content-Type':'application/json', Accept:'application/vnd.github+json' },
+    body: JSON.stringify({ message, sha, branch: CFG.branch })
+  });
+  if(!r.ok) throw new Error('GitHub DELETE '+r.status+' : '+await r.text());
+  return r.json();
+}
+
+function toBase64(str){ return btoa(unescape(encodeURIComponent(str))); }
+function fromBase64(b64){ return decodeURIComponent(escape(atob(b64.replace(/\n/g,'')))); }
+
+/* ══════════════════════════════════
+   CHARGEMENT DES ARTICLES
+══════════════════════════════════ */
+async function chargerArticles(){
+  const table = document.getElementById('articlesTable');
+  table.innerHTML = '<div class="loading"><div class="spinner"></div>Chargement des articles…</div>';
+  try {
+    const blogFile = await ghGet('blog.html');
+    if(!blogFile) throw new Error('blog.html introuvable dans le repo.');
+    const blogContenu = fromBase64(blogFile.content);
+
+    // Extraire le tableau ARTICLES[]
+    const match = blogContenu.match(/const ARTICLES\s*=\s*\[([\s\S]*?)\];/);
+    if(!match) throw new Error('Tableau ARTICLES[] introuvable dans blog.html.');
+
+    const arrStr = match[1].trim();
+    ARTICLES_DATA = [];
+
+    if(arrStr && !arrStr.startsWith('/*')){
+      // Parser les objets JS manuellement (pas du JSON)
+      const objRegex = /\{([^}]+)\}/g;
+      let m;
+      while((m = objRegex.exec(arrStr)) !== null){
+        const obj = {};
+        const pairs = m[1].matchAll(/(\w+)\s*:\s*"([^"]*)"/g);
+        for(const p of pairs) obj[p[1]] = p[2];
+        if(obj.titre) ARTICLES_DATA.push(obj);
+      }
+    }
+
+    // Trier du plus récent au plus ancien
+    ARTICLES_DATA.sort((a,b) => new Date(b.date) - new Date(a.date));
+
+    afficherStats();
+    afficherTable(ARTICLES_DATA);
+  } catch(e){
+    table.innerHTML = `<div class="empty-state"><div class="empty-icon">⚠️</div><div class="empty-title">Erreur de chargement</div><div class="empty-sub">${e.message}</div></div>`;
+  }
+}
+
+/* ══════════════════════════════════
+   STATS
+══════════════════════════════════ */
+function afficherStats(){
+  const total = ARTICLES_DATA.length;
+  document.getElementById('stat-total').textContent = total;
+
+  const cats = {};
+  const auteurs = {};
+  let totalMins = 0;
+  let recentDate = null;
+
+  ARTICLES_DATA.forEach(a => {
+    cats[a.categorie] = (cats[a.categorie]||0)+1;
+    auteurs[a.auteur] = (auteurs[a.auteur]||0)+1;
+    const mins = parseInt(a.lecture)||0;
+    totalMins += mins;
+    if(!recentDate || new Date(a.date) > new Date(recentDate)) recentDate = a.date;
+  });
+
+  const catsActives = Object.keys(cats).length;
+  document.getElementById('stat-cats').textContent = catsActives;
+
+  const topCat = Object.entries(cats).sort((a,b)=>b[1]-a[1])[0];
+  if(topCat){
+    const cfg = CAT_CONFIG[topCat[0]];
+    document.getElementById('stat-top-cat').textContent = (cfg?cfg.label:topCat[0])+' ('+topCat[1]+')';
+  }
+
+  const topAuteur = Object.entries(auteurs).sort((a,b)=>b[1]-a[1])[0];
+  document.getElementById('stat-auteur').textContent = topAuteur ? topAuteur[0] : '—';
+  document.getElementById('stat-auteur-sub').textContent = topAuteur ? topAuteur[1]+' article'+(topAuteur[1]>1?'s':'') : '';
+
+  const moyMins = total>0 ? Math.round(totalMins/total) : 0;
+  document.getElementById('stat-lecture').textContent = moyMins ? moyMins+' min' : '—';
+
+  if(recentDate){
+    const d = new Date(recentDate);
+    document.getElementById('stat-recent').textContent = 'Dernier : '+d.toLocaleDateString('fr-FR',{day:'numeric',month:'short',year:'numeric'});
+  }
+
+  // Barres catégories
+  const catBars = document.getElementById('catBars');
+  const allCats = ['seo','saas','ecommerce','cyber','fintech','rh'];
+  const maxCount = Math.max(...Object.values(cats), 1);
+  catBars.innerHTML = allCats.map(key => {
+    const count = cats[key]||0;
+    const cfg = CAT_CONFIG[key];
+    const pct = Math.round(count/maxCount*100);
+    return `<div class="cat-bar-card">
+      <div class="cat-bar-label"><span>${cfg.label}</span><span class="cat-bar-count">${count}</span></div>
+      <div class="cat-bar-track"><div class="cat-bar-fill" style="width:${pct}%"></div></div>
+    </div>`;
+  }).join('');
+}
+
+/* ══════════════════════════════════
+   TABLE DES ARTICLES
+══════════════════════════════════ */
+function afficherTable(articles){
+  const table = document.getElementById('articlesTable');
+  document.getElementById('articlesCount').textContent = articles.length + ' article'+(articles.length>1?'s':'');
+
+  if(articles.length===0){
+    table.innerHTML = `<div class="empty-state">
+      <div class="empty-icon">✍️</div>
+      <div class="empty-title">Aucun article trouvé</div>
+      <div class="empty-sub">Publiez votre premier article depuis l'éditeur SEO.</div>
+      <a href="../editeur-seo.html" class="btn-new" style="display:inline-flex;margin-top:0">✍️ Créer un article</a>
+    </div>`;
+    return;
+  }
+
+  const rows = articles.map(a => {
+    const cfg = CAT_CONFIG[a.categorie] || { label:a.categorie, cls:'s-blue' };
+    const date = a.date ? new Date(a.date).toLocaleDateString('fr-FR',{day:'numeric',month:'short',year:'numeric'}) : '—';
+    const editUrl = `../editeur-seo.html?edit=${encodeURIComponent(a.lien||'')}`;
+    return `<div class="article-row">
+      <div>
+        <div class="row-title">${a.titre}</div>
+        <div class="row-slug">${a.lien||''}</div>
+      </div>
+      <div class="col-cat"><span class="row-cat ${cfg.cls}">${cfg.label}</span></div>
+      <div class="row-date col-date">${date}</div>
+      <div class="row-lecture col-lecture">⏱ ${a.lecture||'—'}</div>
+      <div class="row-actions">
+        <a href="${editUrl}" class="btn-edit">✏️ Éditer</a>
+        <button class="btn-del" onclick="ouvrirModal(${JSON.stringify(a.titre)}, ${JSON.stringify(a.lien||'')})">🗑️</button>
+      </div>
+    </div>`;
+  }).join('');
+
+  table.innerHTML = `
+    <div class="table-head">
+      <div>Article</div>
+      <div class="col-cat">Catégorie</div>
+      <div class="col-date">Date</div>
+      <div class="col-lecture">Lecture</div>
+      <div style="text-align:right">Actions</div>
+    </div>
+    ${rows}`;
+}
+
+/* ══════════════════════════════════
+   FILTRES & RECHERCHE
+══════════════════════════════════ */
+function filtrer(cat, btn){
+  filtreActif = cat;
+  document.querySelectorAll('.filter-chip').forEach(b=>b.classList.remove('active'));
+  btn.classList.add('active');
+  appliquerFiltres();
+}
+
+function rechercherArticles(){
+  appliquerFiltres();
+}
+
+function appliquerFiltres(){
+  const q = document.getElementById('searchInput').value.toLowerCase();
+  let filtered = ARTICLES_DATA;
+  if(filtreActif !== 'tous') filtered = filtered.filter(a=>a.categorie===filtreActif);
+  if(q) filtered = filtered.filter(a=>
+    (a.titre||'').toLowerCase().includes(q) ||
+    (a.extrait||'').toLowerCase().includes(q) ||
+    (a.auteur||'').toLowerCase().includes(q)
+  );
+  afficherTable(filtered);
+}
+
+/* ══════════════════════════════════
+   SUPPRESSION
+══════════════════════════════════ */
+function ouvrirModal(titre, lien){
+  articleASupprimer = { titre, lien };
+  document.getElementById('modal-article-name').textContent = titre;
+  document.getElementById('btn-confirm-del').disabled = false;
+  document.getElementById('btn-confirm-del').innerHTML = '<span>🗑️</span> Supprimer définitivement';
+  document.getElementById('modalDel').classList.add('open');
+}
+
+function fermerModal(){
+  document.getElementById('modalDel').classList.remove('open');
+  articleASupprimer = null;
+}
+
+document.getElementById('modalDel').addEventListener('click', function(e){
+  if(e.target === this) fermerModal();
+});
+
+async function confirmerSuppression(){
+  if(!articleASupprimer) return;
+  const { titre, lien } = articleASupprimer;
+  const btn = document.getElementById('btn-confirm-del');
+  btn.disabled = true;
+  btn.innerHTML = '⏳ Suppression…';
+
+  try {
+    // 1. Supprimer le fichier article HTML
+    const articlePath = lien.startsWith('/') ? lien.slice(1) : lien;
+    const articleFile = await ghGet(articlePath);
+    if(articleFile){
+      await ghDelete(articlePath, articleFile.sha, `🗑️ Suppression article : ${titre}`);
+    }
+
+    // 2. Supprimer l'image si elle existe
+    const slug = articlePath.replace('articles/','').replace('.html','');
+    const imgPath = `articles/images/${slug}.jpg`;
+    const imgFile = await ghGet(imgPath);
+    if(imgFile){
+      await ghDelete(imgPath, imgFile.sha, `🗑️ Suppression image : ${slug}`);
+    }
+
+    // 3. Retirer l'entrée de blog.html
+    const blogFile = await ghGet('blog.html');
+    if(blogFile){
+      const blogContenu = fromBase64(blogFile.content);
+      const blogMaj = retirerArticleDuBlog(blogContenu, lien);
+      await ghPut('blog.html', {
+        message: `📝 Retrait article "${titre}" de blog.html`,
+        content: toBase64(blogMaj),
+        sha: blogFile.sha,
+        branch: CFG.branch
+      });
+    }
+
+    fermerModal();
+    showToast('✅ Article supprimé avec succès', 'ok');
+
+    // Rafraîchir la liste
+    ARTICLES_DATA = ARTICLES_DATA.filter(a => a.lien !== lien);
+    afficherStats();
+    appliquerFiltres();
+
+  } catch(e){
+    btn.disabled = false;
+    btn.innerHTML = '<span>🗑️</span> Supprimer définitivement';
+    showToast('❌ Erreur : '+e.message, 'err');
+  }
+}
+
+function retirerArticleDuBlog(contenu, lien){
+  // Retire l'objet correspondant au lien dans ARTICLES[]
+  // Cherche un bloc { ... lien: "xxx" ... } et le supprime
+  const escaped = lien.replace(/[.*+?^${}()|[\]\\]/g,'\\$&');
+  const pattern = new RegExp(
+    ',?\\s*\\{[^}]*lien\\s*:\\s*"' + escaped + '"[^}]*\\}\\s*,?',
+    'g'
+  );
+  let result = contenu.replace(pattern, (match) => {
+    // Si le match commence par virgule, on retire juste le bloc
+    return match.startsWith(',') ? '' : '';
+  });
+  // Nettoyer les virgules doubles ou virgules orphelines
+  result = result.replace(/,\s*,/g, ',');
+  result = result.replace(/\[\s*,/g, '[');
+  result = result.replace(/,\s*\]/g, ']');
+  return result;
+}
+
+/* ══════════════════════════════════
+   TOAST
+══════════════════════════════════ */
+function showToast(msg, type=''){
+  const t = document.getElementById('toast');
+  t.textContent = msg;
+  t.className = 'toast show' + (type?' toast-'+type:'');
+  setTimeout(()=>t.className='toast', 3500);
+}
+
+/* ══════════════════════════════════
+   INIT — restaurer config éditeur
+══════════════════════════════════ */
+(function init(){
+  const cfg = chargerConfigSauvegardee();
+  if(cfg){
+    document.getElementById('login-owner').value  = cfg.owner  || '';
+    document.getElementById('login-repo').value   = cfg.repo   || '';
+    document.getElementById('login-branch').value = cfg.branch || 'main';
+    document.getElementById('login-token').value  = cfg.token  || '';
+    // Auto-connexion si config déjà sauvegardée
+    CFG = cfg;
+    lancerApp();
+  }
+})();
+</script>
+</body>
+</html>
