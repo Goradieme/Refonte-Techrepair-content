@@ -35,15 +35,7 @@
   .btn-success:hover:not(:disabled){background:#059669}
   .btn-publish{background:var(--blue);color:white;border-color:var(--blue);font-weight:700}
   .btn-publish:hover:not(:disabled){background:#1342b0}
-  .api-banner{background:#fefce8;border:1px solid #fde047;border-radius:var(--radius-lg);padding:.875rem 1.25rem;display:flex;align-items:center;gap:12px;font-size:13px;color:#713f12}
-  .api-banner i{color:#ca8a04;font-size:16px;flex-shrink:0}
-  .api-banner a{color:#1342b0;font-weight:600;text-decoration:underline}
-  .api-key-wrap{display:flex;gap:8px;margin-top:.5rem}
-  .api-key-input{flex:1;padding:7px 12px;border:1px solid #fde047;border-radius:var(--radius);font-size:12px;font-family:monospace;background:#fffbeb;color:#713f12;outline:none}
-  .api-key-input:focus{border-color:#ca8a04;box-shadow:0 0 0 3px rgba(202,138,4,.15)}
-  .api-key-input.saved{border-color:var(--success);background:#f0fdf4;color:#065f46}
-  .api-banner.connected{background:#f0fdf4;border-color:#86efac;color:#065f46}
-  .api-banner.connected i{color:var(--success)}
+  .info-banner{background:#eff6ff;border:1px solid #bfdbfe;border-radius:var(--radius-lg);padding:.875rem 1.25rem;display:flex;align-items:center;gap:12px;font-size:13px;color:#1e40af}
   .btn-ghost{background:transparent;color:var(--text-secondary);border-color:transparent}
   .btn-ghost:hover:not(:disabled){background:var(--bg);color:var(--text-primary)}
   .btn-sm{padding:5px 10px;font-size:12px}
@@ -167,20 +159,11 @@
   <!-- ── Colonne éditeur ── -->
   <div class="editor-col">
 
-    <!-- Clé API -->
-    <div class="api-banner" id="api-banner">
-      <i class="fas fa-key"></i>
-      <div style="flex:1">
-        <strong>Clé API Anthropic requise</strong> pour l'analyse IA du PDF.
-        <a href="https://console.anthropic.com/settings/keys" target="_blank">Obtenir ma clé →</a>
-        <div class="api-key-wrap">
-          <input type="password" class="api-key-input" id="api-key-input"
-            placeholder="sk-ant-…"
-            oninput="saveApiKey(this.value)">
-          <button class="btn btn-sm btn-secondary" onclick="toggleKeyVisibility()">
-            <i class="fas fa-eye" id="eye-icon"></i>
-          </button>
-        </div>
+    <!-- Info bannière -->
+    <div class="info-banner">
+      <i class="fas fa-magic" style="font-size:16px;flex-shrink:0"></i>
+      <div>
+        <strong>Analyse automatique gratuite</strong> — Importe un PDF, les champs SEO se remplissent instantanément sans clé API ni connexion internet.
       </div>
     </div>
 
@@ -403,63 +386,17 @@
 <div id="toast"><i class="fas fa-circle-check"></i> <span id="toast-msg"></span></div>
 
 <script>
-/* ── Clé API ── */
-function saveApiKey(val){
-  const key=val.trim();
-  if(key.startsWith('sk-ant-')&&key.length>20){
-    localStorage.setItem('anthropic-api-key',key);
-    document.getElementById('api-key-input').classList.add('saved');
-    const banner=document.getElementById('api-banner');
-    banner.classList.add('connected');
-    banner.querySelector('strong').textContent='✓ Clé API connectée — IA prête';
-    banner.querySelector('a').style.display='none';
-    showToast('success','Clé API sauvegardée !');
-  } else {
-    document.getElementById('api-key-input').classList.remove('saved');
-    document.getElementById('api-banner').classList.remove('connected');
-  }
-}
-function toggleKeyVisibility(){
-  const input=document.getElementById('api-key-input');
-  const icon=document.getElementById('eye-icon');
-  if(input.type==='password'){input.type='text';icon.className='fas fa-eye-slash';}
-  else{input.type='password';icon.className='fas fa-eye';}
-}
-function getApiKey(){
-  return localStorage.getItem('anthropic-api-key')||'';
-}
-(function initApiKey(){
-  const saved=getApiKey();
-  if(saved){
-    const input=document.getElementById('api-key-input');
-    input.value=saved;
-    input.classList.add('saved');
-    const banner=document.getElementById('api-banner');
-    banner.classList.add('connected');
-    banner.querySelector('strong').textContent='✓ Clé API connectée — IA prête';
-    banner.querySelector('a').style.display='none';
-  }
-})();
+pdfjsLib.GlobalWorkerOptions.workerSrc='https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js';
+const tagsData={secondary:[]};
 
-pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js';
-const tagsData = { secondary: [] };
-
-function fmt(cmd,val){ document.execCommand(cmd,false,val||null); document.getElementById('editor').focus(); }
-function fmtBlock(tag){ document.execCommand('formatBlock',false,tag); document.getElementById('editor').focus(); }
+function fmt(cmd,val){document.execCommand(cmd,false,val||null);document.getElementById('editor').focus();}
+function fmtBlock(tag){document.execCommand('formatBlock',false,tag);document.getElementById('editor').focus();}
 
 function updateCounts(){
-  const text = document.getElementById('editor').innerText||'';
-  const words = text.trim()?text.trim().split(/\s+/).length:0;
+  const text=document.getElementById('editor').innerText||'';
+  const words=text.trim()?text.trim().split(/\s+/).length:0;
   document.getElementById('word-count').textContent=words;
   document.getElementById('char-count').textContent=text.length;
-  autoLecture(words);
-}
-
-function autoLecture(words){
-  if(!document.getElementById('field-lecture').value){
-    const mins = Math.max(1,Math.round(words/200));
-    document.getElementById('field-lecture').value = mins+' min';
-  }
 }
 
 function countField(id,elId,max){
@@ -582,16 +519,10 @@ dropZone.addEventListener('drop',e=>{
 
 async function handlePDF(file){
   if(!file)return;
-  const apiKey=getApiKey();
-  if(!apiKey){
-    showToast('error','Entre ta clé API Anthropic pour analyser le PDF.');
-    document.getElementById('api-key-input').focus();
-    return;
-  }
   setProcessing(true,'Lecture du fichier PDF…');
   dropZone.classList.add('has-file');
   document.getElementById('drop-title').textContent=file.name;
-  document.getElementById('drop-sub').textContent='Analyse IA en cours…';
+  document.getElementById('drop-sub').textContent='Analyse en cours…';
   document.getElementById('clear-pdf-btn').style.display='flex';
   try{
     setProcessingStep('Extraction du texte…');
@@ -603,60 +534,97 @@ async function handlePDF(file){
       const content=await page.getTextContent();
       fullText+=content.items.map(s=>s.str).join(' ')+'\n';
     }
-    fullText=fullText.trim().slice(0,8000);
+    fullText=fullText.trim();
     if(!fullText)throw new Error('Aucun texte extractible dans ce PDF.');
     document.getElementById('editor').innerHTML='<p>'+fullText.replace(/\n+/g,'</p><p>')+'</p>';
     updateCounts();
-    setProcessingStep('Analyse IA des métadonnées SEO…');
-    await analyzeWithClaude(fullText);
+    setProcessingStep('Analyse des métadonnées SEO…');
+    await sleep(400);
+    analyzeLocally(fullText);
   }catch(err){
     setProcessing(false);
     showToast('error',err.message||'Erreur lors de la lecture du PDF.');
   }
 }
 
-async function analyzeWithClaude(text){
-  const categs = ['seo','saas','ecommerce','cyber','fintech','rh'];
-  const prompt=`Tu es un expert SEO spécialisé en contenu Tech B2B pour le site TechRepair Content.
-Analyse ce texte extrait d'un PDF et génère les métadonnées SEO optimisées.
-Réponds UNIQUEMENT en JSON valide, sans balises markdown, sans texte avant ou après.
+function analyzeLocally(text){
+  const clean = text.replace(/\s+/g,' ').trim();
+  const sentences = clean.split(/[.!?]+/).map(s=>s.trim()).filter(s=>s.length>30);
+  const words = clean.toLowerCase().split(/\s+/);
 
-Format attendu :
-{
-  "titre": "Titre SEO optimisé (50-60 caractères)",
-  "meta_description": "Description percutante pour Google (130-155 caractères)",
-  "slug": "slug-url-en-minuscules-avec-tirets",
-  "mot_cle_principal": "le mot-clé principal",
-  "categorie": "seo | saas | ecommerce | cyber | fintech | rh",
-  "mots_cles_secondaires": ["kw1","kw2","kw3"],
-  "lecture": "X min"
-}
-
-Texte à analyser :
-${text.slice(0,4000)}`;
-
-  const response=await fetch('https://api.anthropic.com/v1/messages',{
-    method:'POST',
-    headers:{'Content-Type':'application/json','x-api-key':getApiKey(),'anthropic-version':'2023-06-01','anthropic-dangerous-direct-browser-access':'true'},
-    body:JSON.stringify({model:'claude-sonnet-4-6',max_tokens:1000,messages:[{role:'user',content:prompt}]})
-  });
-  if(!response.ok)throw new Error('Erreur API Claude : '+response.status);
-  const data=await response.json();
-  const raw=data.content.find(b=>b.type==='text')?.text||'';
-  const parsed=JSON.parse(raw.replace(/```json|```/g,'').trim());
-
-  await fillField('field-title',parsed.titre,'title',60);
-  await fillField('field-meta',parsed.meta_description,'meta',155);
-  await fillFieldRaw('field-slug',slugify(parsed.slug));
-  await fillFieldRaw('field-keyword-main',parsed.mot_cle_principal);
-  if(parsed.lecture)await fillFieldRaw('field-lecture',parsed.lecture);
-  if(parsed.categorie&&categs.includes(parsed.categorie)){
-    document.getElementById('field-category').value=parsed.categorie;
-    document.getElementById('field-category').classList.add('auto-filled');
+  /* ── Titre : première phrase courte ou 60 premiers caractères significatifs ── */
+  let titre = '';
+  // Cherche une ligne courte en majuscules (souvent le titre du PDF)
+  const lines = text.split('\n').map(l=>l.trim()).filter(l=>l.length>10&&l.length<80);
+  for(const line of lines){
+    if(line.length>=20&&line.length<=65&&!/©|Page|http|www/.test(line)){
+      titre=line.replace(/[*#_]/g,'').trim();
+      break;
+    }
   }
-  setTags('secondary',parsed.mots_cles_secondaires||[]);
-  cleanSlug();updateSEO();setProcessing(false);
-  showToast('success','Champs SEO remplis automatiquement !');
+  if(!titre&&sentences[0]) titre = sentences[0].slice(0,60).trim();
+  if(titre.length>60) titre=titre.slice(0,57)+'…';
+
+  /* ── Catégorie : détection par mots-clés ── */
+  const catKeywords={
+    seo:['seo','référencement','serp','backlink','keyword','google','indexation','ranking','meta','slug','contenu','blog','rédaction','geo','overview'],
+    saas:['saas','logiciel','software','abonnement','crm','erp','api','cloud','b2b','startup','mrr','arr','churn','onboarding'],
+    ecommerce:['ecommerce','e-commerce','boutique','panier','conversion','produit','achat','marketplace','shopify','woocommerce'],
+    cyber:['cybersécurité','sécurité','hacker','phishing','ransomware','firewall','vulnérabilité','nis2','dora','rgpd','zero-trust'],
+    fintech:['fintech','paiement','banque','crypto','blockchain','investissement','trading','assurance','régulation'],
+    rh:['rh','ressources humaines','recrutement','talent','employé','onboarding','offboarding','paie','sirh','qvt'],
+  };
+  const textLow=clean.toLowerCase();
+  let bestCat='seo', bestScore=0;
+  for(const [cat,kws] of Object.entries(catKeywords)){
+    const score=kws.filter(k=>textLow.includes(k)).length;
+    if(score>bestScore){bestScore=score;bestCat=cat;}
+  }
+
+  /* ── Mot-clé principal : mot/bigram le plus fréquent (hors stopwords) ── */
+  const stopwords=new Set(['le','la','les','de','du','des','un','une','et','en','à','au','aux','par','pour','sur','dans','avec','que','qui','est','sont','il','elle','ils','elles','nous','vous','je','tu','se','sa','son','ses','ce','cet','cette','ces','mais','ou','donc','or','ni','car','si','ne','pas','plus','très','tout','tous','toute','toutes','leur','leurs','dont','où','comme','plus','sans','sous','entre','vers','chez','après','avant','même','aussi','bien','alors','déjà','encore','ainsi','peut','être','avoir','faire','dit','cette','also','the','and','for','with','from','that','this','are','was','has','have','not','its','your','our','their']);
+  const freq={};
+  for(let i=0;i<words.length-1;i++){
+    const w=words[i].replace(/[^a-zàâéèêëîïôùûüç-]/g,'');
+    const w2=words[i+1].replace(/[^a-zàâéèêëîïôùûüç-]/g,'');
+    if(w.length>4&&!stopwords.has(w)){freq[w]=(freq[w]||0)+1;}
+    if(w.length>3&&w2.length>3&&!stopwords.has(w)&&!stopwords.has(w2)){
+      const bg=w+' '+w2;freq[bg]=(freq[bg]||0)+2;
+    }
+  }
+  const sorted=Object.entries(freq).sort((a,b)=>b[1]-a[1]);
+  const motCle=sorted[0]?sorted[0][0]:'contenu seo';
+  const kwsSecondaires=sorted.slice(1,6).map(e=>e[0]);
+
+  /* ── Méta-description : 2e ou 3e phrase du texte ── */
+  let meta='';
+  for(const s of sentences.slice(1,6)){
+    if(s.length>=80&&s.length<=160){meta=s;break;}
+  }
+  if(!meta) meta=(sentences[1]||sentences[0]||'').slice(0,155);
+  if(meta.length>155) meta=meta.slice(0,152)+'…';
+
+  /* ── Slug depuis le titre ── */
+  const slug=slugify(titre);
+
+  /* ── Temps de lecture ── */
+  const wordCount=words.length;
+  const mins=Math.max(1,Math.round(wordCount/200));
+  const lecture=mins+' min';
+
+  /* ── Remplissage animé ── */
+  (async()=>{
+    await fillField('field-title',titre,'title',60);
+    await fillField('field-meta',meta,'meta',155);
+    await fillFieldRaw('field-slug',slug);
+    await fillFieldRaw('field-keyword-main',motCle);
+    await fillFieldRaw('field-lecture',lecture);
+    document.getElementById('field-category').value=bestCat;
+    document.getElementById('field-category').classList.add('auto-filled');
+    setTags('secondary',kwsSecondaires);
+    cleanSlug();updateSEO();setProcessing(false);
+    showToast('success','Champs SEO remplis automatiquement !');
+  })();
 }
 
 async function fillField(id,value,countId,max){
