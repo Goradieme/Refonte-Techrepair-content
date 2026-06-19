@@ -1,0 +1,696 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Éditeur SEO – TechRepair Content</title>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<style>
+  :root {
+    --bg:#f8f9fb;--surface:#ffffff;--border:#e2e6ea;--border-focus:#6c63ff;
+    --text-primary:#1a1a2e;--text-secondary:#6b7280;--text-muted:#9ca3af;
+    --accent:#6c63ff;--accent-light:#ede9fe;--accent-dark:#4f46e5;
+    --success:#10b981;--success-light:#d1fae5;
+    --warning:#f59e0b;--warning-light:#fef3c7;
+    --danger:#ef4444;--danger-light:#fee2e2;
+    --navy:#0F1B3D;--blue:#1A56DB;
+    --radius:8px;--radius-lg:12px;
+    --shadow:0 1px 3px rgba(0,0,0,.08),0 1px 2px rgba(0,0,0,.04);
+    --shadow-md:0 4px 12px rgba(0,0,0,.10);
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;background:var(--bg);color:var(--text-primary);font-size:14px;line-height:1.6;min-height:100vh}
+  .header{background:var(--surface);border-bottom:1px solid var(--border);padding:0 2rem;height:56px;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:100;box-shadow:var(--shadow)}
+  .header-brand{display:flex;align-items:center;gap:10px;font-weight:700;font-size:16px;color:var(--text-primary)}
+  .logo-box{width:32px;height:32px;background:var(--blue);border-radius:7px;display:flex;align-items:center;justify-content:center;color:white;font-weight:800;font-size:11px}
+  .header-actions{display:flex;align-items:center;gap:10px}
+  .btn{display:inline-flex;align-items:center;gap:6px;padding:7px 14px;border-radius:var(--radius);font-size:13px;font-weight:500;cursor:pointer;transition:all .15s;border:1px solid transparent;font-family:inherit;white-space:nowrap}
+  .btn:disabled{opacity:.5;cursor:not-allowed}
+  .btn-primary{background:var(--accent);color:white;border-color:var(--accent)}
+  .btn-primary:hover:not(:disabled){background:var(--accent-dark)}
+  .btn-secondary{background:var(--surface);color:var(--text-primary);border-color:var(--border)}
+  .btn-secondary:hover:not(:disabled){background:var(--bg)}
+  .btn-success{background:var(--success);color:white;border-color:var(--success)}
+  .btn-success:hover:not(:disabled){background:#059669}
+  .btn-publish{background:var(--blue);color:white;border-color:var(--blue);font-weight:700}
+  .btn-publish:hover:not(:disabled){background:#1342b0}
+  .btn-ghost{background:transparent;color:var(--text-secondary);border-color:transparent}
+  .btn-ghost:hover:not(:disabled){background:var(--bg);color:var(--text-primary)}
+  .btn-sm{padding:5px 10px;font-size:12px}
+  .layout{display:grid;grid-template-columns:1fr 340px;height:calc(100vh - 56px)}
+  .editor-col{overflow-y:auto;padding:1.5rem 2rem;display:flex;flex-direction:column;gap:1rem}
+  .sidebar-col{background:var(--surface);border-left:1px solid var(--border);overflow-y:auto;padding:1.25rem;display:flex;flex-direction:column;gap:1rem}
+  .card{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius-lg);padding:1.25rem;box-shadow:var(--shadow)}
+  .card-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:1rem}
+  .card-title{font-size:13px;font-weight:600;color:var(--text-secondary);text-transform:uppercase;letter-spacing:.5px;display:flex;align-items:center;gap:7px}
+  .card-title i{color:var(--accent);font-size:14px}
+  .drop-zone{border:2px dashed var(--border);border-radius:var(--radius-lg);padding:2rem 1.5rem;text-align:center;cursor:pointer;transition:all .2s;background:var(--bg);position:relative}
+  .drop-zone:hover,.drop-zone.dragover{border-color:var(--accent);background:var(--accent-light)}
+  .drop-zone.has-file{border-color:var(--success);background:var(--success-light)}
+  .drop-zone input[type="file"]{position:absolute;inset:0;opacity:0;cursor:pointer;width:100%;height:100%}
+  .drop-icon{font-size:2rem;color:var(--text-muted);margin-bottom:.5rem}
+  .drop-zone.has-file .drop-icon{color:var(--success)}
+  .drop-title{font-size:14px;font-weight:600;color:var(--text-primary);margin-bottom:4px}
+  .drop-sub{font-size:12px;color:var(--text-muted)}
+  .processing-banner{display:none;background:var(--accent-light);border:1px solid #c4b5fd;border-radius:var(--radius-lg);padding:1rem 1.25rem;align-items:center;gap:12px;font-size:13px;color:#5b21b6}
+  .processing-banner.visible{display:flex}
+  .spinner{width:18px;height:18px;border:2px solid #c4b5fd;border-top-color:#7c3aed;border-radius:50%;animation:spin .7s linear infinite;flex-shrink:0}
+  @keyframes spin{to{transform:rotate(360deg)}}
+  .field-group{display:flex;flex-direction:column;gap:5px}
+  .field-label{font-size:12px;font-weight:600;color:var(--text-secondary);display:flex;align-items:center;justify-content:space-between}
+  .field-label .char-count{font-weight:400;color:var(--text-muted);font-size:11px}
+  .field-label .char-count.over{color:var(--danger)}
+  .field-label .char-count.ok{color:var(--success)}
+  .field-input,.field-textarea,.field-select{width:100%;padding:8px 12px;border:1px solid var(--border);border-radius:var(--radius);font-size:13px;color:var(--text-primary);background:var(--surface);transition:border-color .15s,box-shadow .15s;font-family:inherit}
+  .field-input:focus,.field-textarea:focus,.field-select:focus{outline:none;border-color:var(--accent);box-shadow:0 0 0 3px rgba(108,99,255,.12)}
+  .field-input.auto-filled,.field-textarea.auto-filled{border-color:var(--success);background:#f0fdf4}
+  .field-textarea{resize:vertical;min-height:72px;line-height:1.5}
+  .rich-toolbar{display:flex;align-items:center;gap:2px;padding:6px 8px;border:1px solid var(--border);border-bottom:none;border-radius:var(--radius) var(--radius) 0 0;background:var(--bg);flex-wrap:wrap}
+  .rich-toolbar button{padding:5px 8px;border:none;background:transparent;border-radius:5px;cursor:pointer;font-size:13px;color:var(--text-secondary);transition:all .1s;min-width:28px;font-family:inherit}
+  .rich-toolbar button:hover{background:var(--border);color:var(--text-primary)}
+  .rich-toolbar .sep{width:1px;height:20px;background:var(--border);margin:0 3px}
+  .rich-editor{min-height:300px;padding:1rem;border:1px solid var(--border);border-radius:0 0 var(--radius) var(--radius);background:var(--surface);outline:none;font-size:14px;line-height:1.7;color:var(--text-primary)}
+  .rich-editor:focus{border-color:var(--accent)}
+  .rich-editor:empty:before{content:attr(data-placeholder);color:var(--text-muted)}
+  .rich-editor h1{font-size:22px;font-weight:700;margin-bottom:10px}
+  .rich-editor h2{font-size:18px;font-weight:600;margin-bottom:8px}
+  .rich-editor h3{font-size:16px;font-weight:600;margin-bottom:6px}
+  .rich-editor p{margin-bottom:8px}
+  .rich-editor ul,.rich-editor ol{padding-left:1.4rem;margin-bottom:8px}
+  .rich-editor blockquote{border-left:3px solid var(--accent);padding-left:12px;color:var(--text-secondary);font-style:italic}
+  .tags-container{display:flex;flex-wrap:wrap;gap:6px;padding:6px 8px;border:1px solid var(--border);border-radius:var(--radius);background:var(--surface);cursor:text;min-height:38px;align-items:center;transition:border-color .15s}
+  .tags-container:focus-within{border-color:var(--accent);box-shadow:0 0 0 3px rgba(108,99,255,.12)}
+  .tags-container.auto-filled{border-color:var(--success);background:#f0fdf4}
+  .tag-pill{display:inline-flex;align-items:center;gap:4px;background:var(--accent-light);color:var(--accent-dark);padding:2px 8px 2px 10px;border-radius:20px;font-size:12px;font-weight:500}
+  .tag-pill button{background:none;border:none;cursor:pointer;color:var(--accent);padding:0;display:flex;font-size:13px;line-height:1;opacity:.7}
+  .tag-pill button:hover{opacity:1}
+  .tags-input{border:none;outline:none;font-size:13px;color:var(--text-primary);background:transparent;flex:1;min-width:80px;font-family:inherit}
+  .seo-score-ring{display:flex;flex-direction:column;align-items:center;gap:6px;padding:.75rem 0}
+  .score-circle{width:72px;height:72px;position:relative}
+  .score-circle svg{transform:rotate(-90deg)}
+  .score-num{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-size:20px;font-weight:700;color:var(--text-primary)}
+  .score-label{font-size:12px;font-weight:600;color:var(--text-secondary);text-align:center}
+  .seo-checks{display:flex;flex-direction:column;gap:7px}
+  .seo-check{display:flex;align-items:flex-start;gap:8px;font-size:12px;line-height:1.4}
+  .seo-check i{font-size:12px;flex-shrink:0;margin-top:1px}
+  .check-ok{color:var(--success)}.check-warn{color:var(--warning)}.check-bad{color:var(--danger)}.check-neutral{color:var(--text-muted)}
+  .serp-preview{border:1px solid var(--border);border-radius:var(--radius);padding:.875rem;background:var(--bg);font-family:Arial,sans-serif}
+  .serp-url{font-size:11.5px;color:#202124;margin-bottom:2px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+  .serp-title{font-size:17px;color:#1a0dab;margin-bottom:4px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+  .serp-desc{font-size:12.5px;color:#4d5156;line-height:1.5;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+  .status-badge{display:inline-flex;align-items:center;gap:5px;padding:3px 10px;border-radius:20px;font-size:11px;font-weight:600}
+  .badge-draft{background:#f3f4f6;color:var(--text-secondary)}
+  .badge-ready{background:var(--success-light);color:#065f46}
+  .badge-warning{background:var(--warning-light);color:#92400e}
+  .word-count-bar{display:flex;align-items:center;gap:10px;font-size:12px;color:var(--text-muted);padding:5px 10px;background:var(--bg);border-radius:6px;border:1px solid var(--border)}
+  .wc-num{font-weight:600;color:var(--text-primary)}
+  .divider{height:1px;background:var(--border);margin:.25rem 0}
+
+  /* ══ MODAL PUBLICATION ══ */
+  .modal-overlay{position:fixed;inset:0;background:rgba(15,27,61,.6);z-index:9999;display:flex;align-items:center;justify-content:center;padding:20px;opacity:0;pointer-events:none;transition:opacity .25s;backdrop-filter:blur(4px)}
+  .modal-overlay.active{opacity:1;pointer-events:all}
+  .modal-box{background:var(--surface);border-radius:16px;padding:2rem;max-width:680px;width:100%;max-height:90vh;overflow-y:auto;box-shadow:var(--shadow-md);transform:translateY(16px);transition:transform .25s}
+  .modal-overlay.active .modal-box{transform:translateY(0)}
+  .modal-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:1.25rem;padding-bottom:1rem;border-bottom:1px solid var(--border)}
+  .modal-title{font-size:16px;font-weight:700;color:var(--text-primary);display:flex;align-items:center;gap:8px}
+  .modal-title i{color:var(--blue)}
+  .code-block{background:#0f172a;color:#e2e8f0;border-radius:var(--radius);padding:1rem;font-family:'Courier New',monospace;font-size:12px;line-height:1.6;overflow-x:auto;white-space:pre;max-height:340px;overflow-y:auto}
+  .step-item{display:flex;align-items:flex-start;gap:12px;padding:.875rem;background:var(--bg);border-radius:var(--radius);border:1px solid var(--border);margin-bottom:.625rem}
+  .step-num{width:26px;height:26px;border-radius:50%;background:var(--accent);color:white;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:700;flex-shrink:0}
+  .step-text{font-size:13px;color:var(--text-primary);line-height:1.5}
+  .step-text strong{color:var(--accent)}
+  .copy-success{color:var(--success);font-size:12px;margin-left:8px;opacity:0;transition:opacity .3s}
+  .copy-success.show{opacity:1}
+
+  #toast{position:fixed;bottom:24px;right:24px;padding:11px 16px;background:#1a1a2e;color:white;border-radius:var(--radius-lg);font-size:13px;font-weight:500;box-shadow:var(--shadow-md);z-index:99999;opacity:0;transform:translateY(10px);transition:all .25s;display:flex;align-items:center;gap:8px;pointer-events:none}
+  #toast.show{opacity:1;transform:translateY(0)}
+  #toast.success i{color:var(--success)}
+  #toast.error i{color:var(--danger)}
+
+  @media(max-width:900px){.layout{grid-template-columns:1fr}.sidebar-col{border-left:none;border-top:1px solid var(--border)}}
+</style>
+</head>
+<body>
+
+<header class="header">
+  <div class="header-brand">
+    <div class="logo-box">TRD</div>
+    Éditeur SEO · TechRepair Content
+  </div>
+  <div class="header-actions">
+    <span id="status-badge" class="status-badge badge-draft">
+      <i class="fas fa-circle" style="font-size:7px"></i> Brouillon
+    </span>
+    <button class="btn btn-secondary btn-sm" onclick="resetAll()">
+      <i class="fas fa-rotate-left"></i> Réinitialiser
+    </button>
+    <a href="blog.html" class="btn btn-secondary btn-sm" target="_blank">
+      <i class="fas fa-eye"></i> Voir le blog
+    </a>
+    <button class="btn btn-publish btn-sm" onclick="openPublishModal()">
+      <i class="fas fa-paper-plane"></i> Publier sur le blog
+    </button>
+  </div>
+</header>
+
+<div class="layout">
+  <!-- ── Colonne éditeur ── -->
+  <div class="editor-col">
+
+    <!-- PDF Import -->
+    <div class="card">
+      <div class="card-header">
+        <div class="card-title"><i class="fas fa-file-pdf"></i> Import PDF</div>
+        <button id="clear-pdf-btn" class="btn btn-ghost btn-sm" onclick="clearPDF()" style="display:none">
+          <i class="fas fa-xmark"></i> Effacer
+        </button>
+      </div>
+      <div class="drop-zone" id="drop-zone" onclick="document.getElementById('pdf-input').click()">
+        <input type="file" id="pdf-input" accept=".pdf" onchange="handlePDF(this.files[0])">
+        <div class="drop-icon"><i class="fas fa-cloud-arrow-up"></i></div>
+        <div class="drop-title" id="drop-title">Glissez un PDF ou cliquez pour importer</div>
+        <div class="drop-sub" id="drop-sub">Les champs SEO seront remplis automatiquement par l'IA</div>
+      </div>
+      <div class="processing-banner" id="processing-banner">
+        <div class="spinner"></div>
+        <div>
+          <strong>Analyse en cours…</strong>
+          <div style="font-size:12px;margin-top:2px;opacity:.8" id="processing-step">Extraction du texte PDF…</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Éditeur de contenu -->
+    <div class="card">
+      <div class="card-header">
+        <div class="card-title"><i class="fas fa-align-left"></i> Contenu de l'article</div>
+        <div class="word-count-bar">
+          <span class="wc-num" id="word-count">0</span> mots
+          <span style="color:var(--border)">|</span>
+          <span class="wc-num" id="char-count">0</span> car.
+        </div>
+      </div>
+      <div class="rich-toolbar">
+        <button onclick="fmt('bold')"><i class="fas fa-bold"></i></button>
+        <button onclick="fmt('italic')"><i class="fas fa-italic"></i></button>
+        <button onclick="fmt('underline')"><i class="fas fa-underline"></i></button>
+        <div class="sep"></div>
+        <button onclick="fmtBlock('h1')"><b style="font-size:11px">H1</b></button>
+        <button onclick="fmtBlock('h2')"><b style="font-size:11px">H2</b></button>
+        <button onclick="fmtBlock('h3')"><b style="font-size:11px">H3</b></button>
+        <button onclick="fmtBlock('p')"><i class="fas fa-paragraph"></i></button>
+        <div class="sep"></div>
+        <button onclick="fmt('insertUnorderedList')"><i class="fas fa-list-ul"></i></button>
+        <button onclick="fmt('insertOrderedList')"><i class="fas fa-list-ol"></i></button>
+        <button onclick="fmtBlock('blockquote')"><i class="fas fa-quote-right"></i></button>
+        <div class="sep"></div>
+        <button onclick="fmt('undo')"><i class="fas fa-rotate-left"></i></button>
+        <button onclick="fmt('redo')"><i class="fas fa-rotate-right"></i></button>
+      </div>
+      <div class="rich-editor" id="editor" contenteditable="true"
+        data-placeholder="Rédigez votre article ou importez un PDF…"
+        oninput="updateCounts(); updateSEO()">
+      </div>
+    </div>
+  </div>
+
+  <!-- ── Sidebar ── -->
+  <div class="sidebar-col">
+
+    <!-- Score SEO -->
+    <div class="card" style="padding:1rem">
+      <div class="card-title" style="margin-bottom:.75rem"><i class="fas fa-gauge-high"></i> Score SEO</div>
+      <div class="seo-score-ring">
+        <div class="score-circle">
+          <svg width="72" height="72" viewBox="0 0 72 72">
+            <circle cx="36" cy="36" r="28" fill="none" stroke="#e2e6ea" stroke-width="6"/>
+            <circle id="score-arc" cx="36" cy="36" r="28" fill="none" stroke="#6c63ff" stroke-width="6"
+              stroke-linecap="round" stroke-dasharray="0 176" style="transition:stroke-dasharray .5s,stroke .3s"/>
+          </svg>
+          <div class="score-num" id="score-num">0</div>
+        </div>
+        <div class="score-label" id="score-label">Commencez à rédiger</div>
+      </div>
+    </div>
+
+    <!-- Analyse SEO -->
+    <div class="card" style="padding:1rem">
+      <div class="card-title" style="margin-bottom:.75rem"><i class="fas fa-list-check"></i> Analyse SEO</div>
+      <div class="seo-checks" id="seo-checks">
+        <div class="seo-check check-neutral"><i class="fas fa-circle-info"></i><span>Importez un PDF ou rédigez du contenu.</span></div>
+      </div>
+    </div>
+
+    <!-- Métadonnées -->
+    <div class="card" style="padding:1rem">
+      <div class="card-title" style="margin-bottom:.75rem"><i class="fas fa-tags"></i> Métadonnées</div>
+      <div style="display:flex;flex-direction:column;gap:.75rem">
+
+        <div class="field-group">
+          <label class="field-label">Titre <span class="char-count" id="title-count">0 / 60</span></label>
+          <input type="text" class="field-input" id="field-title" placeholder="Titre SEO de l'article…"
+            oninput="countField('title','field-title',60);updateSEO()" maxlength="120">
+        </div>
+
+        <div class="field-group">
+          <label class="field-label">Méta-description <span class="char-count" id="meta-count">0 / 155</span></label>
+          <textarea class="field-textarea" id="field-meta" placeholder="Description affichée dans Google…"
+            oninput="countField('meta','field-meta',155);updateSEO()" maxlength="320" rows="3"></textarea>
+        </div>
+
+        <div class="field-group">
+          <label class="field-label">Slug URL</label>
+          <input type="text" class="field-input" id="field-slug" placeholder="mon-article-seo" oninput="cleanSlug();updateSEO()">
+        </div>
+
+        <div class="field-group">
+          <label class="field-label">Auteur</label>
+          <input type="text" class="field-input" id="field-author" placeholder="Goradieme" value="Goradieme">
+        </div>
+
+        <div class="field-group">
+          <label class="field-label">Catégorie</label>
+          <select class="field-select" id="field-category" oninput="updateSEO()">
+            <option value="">Choisir…</option>
+            <option value="seo">📊 SEO & Technique</option>
+            <option value="saas">☁️ SaaS B2B</option>
+            <option value="ecommerce">🛒 E-commerce Tech</option>
+            <option value="cyber">🔒 Cybersécurité</option>
+            <option value="fintech">💳 Fintech</option>
+            <option value="rh">👥 RH Tech</option>
+          </select>
+        </div>
+
+        <div class="field-group">
+          <label class="field-label">Temps de lecture</label>
+          <input type="text" class="field-input" id="field-lecture" placeholder="ex : 6 min" id="field-lecture">
+        </div>
+
+        <div class="divider"></div>
+
+        <div class="field-group">
+          <label class="field-label">Mot-clé principal</label>
+          <input type="text" class="field-input" id="field-keyword-main" placeholder="ex : référencement naturel" oninput="updateSEO()">
+        </div>
+
+        <div class="field-group">
+          <label class="field-label">Mots-clés secondaires</label>
+          <div class="tags-container" id="tags-secondary" onclick="document.getElementById('tags-input-secondary').focus()">
+            <input type="text" class="tags-input" id="tags-input-secondary"
+              placeholder="Tapez et appuyez sur Entrée…"
+              onkeydown="handleTagInput(event,'secondary')" oninput="updateSEO()">
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Aperçu Google -->
+    <div class="card" style="padding:1rem">
+      <div class="card-title" style="margin-bottom:.75rem"><i class="fas fa-magnifying-glass"></i> Aperçu Google</div>
+      <div class="serp-preview">
+        <div class="serp-url">https://techrepaircontent.com/<span id="serp-slug">mon-article</span></div>
+        <div class="serp-title" id="serp-title">Titre de votre article</div>
+        <div class="serp-desc" id="serp-desc">La méta-description apparaîtra ici…</div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- ══ MODAL PUBLICATION ══ -->
+<div class="modal-overlay" id="modal-publish">
+  <div class="modal-box">
+    <div class="modal-header">
+      <div class="modal-title"><i class="fas fa-paper-plane"></i> Publier l'article sur le blog</div>
+      <button class="btn btn-ghost btn-sm" onclick="closePublishModal()"><i class="fas fa-xmark"></i></button>
+    </div>
+
+    <div style="margin-bottom:1rem">
+      <p style="font-size:13px;color:var(--text-secondary);margin-bottom:.875rem">
+        Suis ces 3 étapes pour que l'article apparaisse sur ton blog.
+      </p>
+
+      <div class="step-item">
+        <div class="step-num">1</div>
+        <div class="step-text">
+          <strong>Copie le code ci-dessous</strong> — c'est l'entrée à ajouter dans <code style="background:var(--accent-light);color:var(--accent-dark);padding:1px 5px;border-radius:4px">articles.js</code>
+        </div>
+      </div>
+
+      <div style="position:relative;margin-bottom:.75rem">
+        <div class="code-block" id="article-code-block">Remplis d'abord le titre, la méta-description, le slug, la catégorie et le contenu.</div>
+        <button class="btn btn-sm btn-secondary" onclick="copyCode()"
+          style="position:absolute;top:8px;right:8px;font-size:11px">
+          <i class="fas fa-copy"></i> Copier
+          <span class="copy-success" id="copy-success">✓ Copié !</span>
+        </button>
+      </div>
+
+      <div class="step-item">
+        <div class="step-num">2</div>
+        <div class="step-text">
+          Ouvre le fichier <strong>articles.js</strong> dans ton dépôt GitHub →
+          clique sur <strong>✏️ Edit</strong> → colle le code dans le tableau <code style="background:var(--accent-light);color:var(--accent-dark);padding:1px 5px;border-radius:4px">ARTICLES = [ … ]</code>
+          → <strong>Commit changes</strong>.
+        </div>
+      </div>
+
+      <div class="step-item">
+        <div class="step-num">3</div>
+        <div class="step-text">
+          Attends ~1 minute que GitHub Pages se mette à jour, puis visite ton blog → l'article est en ligne 🎉
+        </div>
+      </div>
+    </div>
+
+    <div style="display:flex;justify-content:flex-end;gap:10px;padding-top:1rem;border-top:1px solid var(--border)">
+      <button class="btn btn-secondary" onclick="closePublishModal()">Fermer</button>
+      <a id="github-link" href="https://github.com" target="_blank" class="btn btn-publish">
+        <i class="fab fa-github"></i> Ouvrir GitHub →
+      </a>
+    </div>
+  </div>
+</div>
+
+<div id="toast"><i class="fas fa-circle-check"></i> <span id="toast-msg"></span></div>
+
+<script>
+pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js';
+const tagsData = { secondary: [] };
+
+function fmt(cmd,val){ document.execCommand(cmd,false,val||null); document.getElementById('editor').focus(); }
+function fmtBlock(tag){ document.execCommand('formatBlock',false,tag); document.getElementById('editor').focus(); }
+
+function updateCounts(){
+  const text = document.getElementById('editor').innerText||'';
+  const words = text.trim()?text.trim().split(/\s+/).length:0;
+  document.getElementById('word-count').textContent=words;
+  document.getElementById('char-count').textContent=text.length;
+  autoLecture(words);
+}
+
+function autoLecture(words){
+  if(!document.getElementById('field-lecture').value){
+    const mins = Math.max(1,Math.round(words/200));
+    document.getElementById('field-lecture').value = mins+' min';
+  }
+}
+
+function countField(id,elId,max){
+  const len=document.getElementById(elId).value.length;
+  const el=document.getElementById(id+'-count');
+  if(!el)return;
+  el.textContent=len+' / '+max;
+  el.className='char-count'+(len>max?' over':len>=max*.8?' ok':'');
+}
+
+function cleanSlug(){
+  const el=document.getElementById('field-slug');
+  el.value=el.value.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g,'')
+    .replace(/[^a-z0-9\s-]/g,'').replace(/\s+/g,'-').replace(/-+/g,'-');
+  document.getElementById('serp-slug').textContent=el.value||'mon-article';
+}
+
+function handleTagInput(e,group){
+  if(e.key==='Enter'||e.key===','){
+    e.preventDefault();
+    const val=e.target.value.trim().replace(/,$/,'');
+    if(val&&!tagsData[group].includes(val)){tagsData[group].push(val);renderTags(group);}
+    e.target.value='';updateSEO();
+  }
+  if(e.key==='Backspace'&&!e.target.value){tagsData[group].pop();renderTags(group);updateSEO();}
+}
+
+function renderTags(group){
+  const container=document.getElementById('tags-'+group);
+  const input=document.getElementById('tags-input-'+group);
+  container.innerHTML='';
+  tagsData[group].forEach((tag,i)=>{
+    const pill=document.createElement('span');
+    pill.className='tag-pill';
+    pill.innerHTML=tag+'<button onclick="removeTag(\''+group+'\','+i+')"><i class="fas fa-xmark"></i></button>';
+    container.appendChild(pill);
+  });
+  container.appendChild(input);
+}
+
+function removeTag(group,idx){tagsData[group].splice(idx,1);renderTags(group);updateSEO();}
+
+function setTags(group,arr){
+  tagsData[group]=arr.filter(Boolean).map(t=>t.trim()).filter(t=>t.length>0);
+  renderTags(group);
+  document.getElementById('tags-'+group).classList.add('auto-filled');
+}
+
+function updateSerp(){
+  const title=document.getElementById('field-title').value;
+  const meta=document.getElementById('field-meta').value;
+  const slug=document.getElementById('field-slug').value;
+  document.getElementById('serp-title').textContent=title||'Titre de votre article';
+  document.getElementById('serp-desc').textContent=meta||'La méta-description apparaîtra ici…';
+  document.getElementById('serp-slug').textContent=slug||'mon-article';
+}
+
+function updateSEO(){
+  updateSerp();
+  const title=document.getElementById('field-title').value;
+  const meta=document.getElementById('field-meta').value;
+  const slug=document.getElementById('field-slug').value;
+  const kw=document.getElementById('field-keyword-main').value.toLowerCase();
+  const text=(document.getElementById('editor').innerText||'').toLowerCase();
+  const words=text.trim()?text.trim().split(/\s+/).length:0;
+  const checks=[];let score=0;
+  if(!title){checks.push({ok:false,msg:'Titre SEO manquant'});}
+  else if(title.length<30){checks.push({warn:true,msg:'Titre trop court (<30 car.)'});score+=5;}
+  else if(title.length>60){checks.push({warn:true,msg:'Titre trop long (>60 car.)'});score+=5;}
+  else{checks.push({ok:true,msg:'Titre optimisé ('+title.length+' car.)'});score+=15;}
+  if(kw&&title.toLowerCase().includes(kw)){checks.push({ok:true,msg:'Mot-clé présent dans le titre'});score+=15;}
+  else if(kw){checks.push({warn:true,msg:'Mot-clé absent du titre'});}
+  if(!meta){checks.push({ok:false,msg:'Méta-description manquante'});}
+  else if(meta.length<70){checks.push({warn:true,msg:'Méta-description trop courte'});score+=5;}
+  else if(meta.length>155){checks.push({warn:true,msg:'Méta-description trop longue (>155)'});score+=5;}
+  else{checks.push({ok:true,msg:'Méta-description optimisée'});score+=15;}
+  if(!slug){checks.push({ok:false,msg:'Slug URL manquant'});}
+  else{checks.push({ok:true,msg:'Slug bien formaté'});score+=10;}
+  if(words===0){checks.push({ok:false,msg:'Contenu vide'});}
+  else if(words<300){checks.push({warn:true,msg:'Contenu court ('+words+' mots)'});score+=5;}
+  else if(words<600){checks.push({ok:true,msg:'Contenu acceptable ('+words+' mots)'});score+=15;}
+  else{checks.push({ok:true,msg:'Contenu riche ('+words+' mots)'});score+=25;}
+  if(kw&&text){
+    const kwCount=(text.match(new RegExp(kw.replace(/[.*+?^${}()|[\]\\]/g,'\\$&'),'g'))||[]).length;
+    const density=words>0?(kwCount/words*100).toFixed(1):0;
+    if(density==0){checks.push({warn:true,msg:'Mot-clé absent du contenu'});}
+    else if(density>3){checks.push({warn:true,msg:'Densité trop haute ('+density+'%)'});score+=5;}
+    else{checks.push({ok:true,msg:'Densité mot-clé : '+density+'%'});score+=10;}
+  }
+  if(tagsData.secondary.length>0){checks.push({ok:true,msg:tagsData.secondary.length+' mots-clés secondaires'});score+=5;}
+  const checksEl=document.getElementById('seo-checks');
+  checksEl.innerHTML=checks.map(c=>{
+    const cls=c.ok?'check-ok':c.warn?'check-warn':'check-bad';
+    const icon=c.ok?'fa-circle-check':c.warn?'fa-triangle-exclamation':'fa-circle-xmark';
+    return '<div class="seo-check '+cls+'"><i class="fas '+icon+'"></i><span>'+c.msg+'</span></div>';
+  }).join('');
+  score=Math.min(score,100);
+  const arc=document.getElementById('score-arc');
+  arc.style.strokeDasharray=(score/100*176)+' 176';
+  arc.style.stroke=score>=70?'#10b981':score>=40?'#f59e0b':'#6c63ff';
+  document.getElementById('score-num').textContent=score;
+  document.getElementById('score-label').textContent=
+    score>=80?'🟢 Excellent':score>=60?'🟡 Bon':score>=40?'🟠 À améliorer':'🔴 Insuffisant';
+  const badge=document.getElementById('status-badge');
+  if(score>=70){badge.className='status-badge badge-ready';badge.innerHTML='<i class="fas fa-circle" style="font-size:7px"></i> Prêt à publier';}
+  else if(score>=30){badge.className='status-badge badge-warning';badge.innerHTML='<i class="fas fa-circle" style="font-size:7px"></i> À compléter';}
+  else{badge.className='status-badge badge-draft';badge.innerHTML='<i class="fas fa-circle" style="font-size:7px"></i> Brouillon';}
+}
+
+/* ── PDF ── */
+const dropZone=document.getElementById('drop-zone');
+dropZone.addEventListener('dragover',e=>{e.preventDefault();dropZone.classList.add('dragover');});
+dropZone.addEventListener('dragleave',()=>dropZone.classList.remove('dragover'));
+dropZone.addEventListener('drop',e=>{
+  e.preventDefault();dropZone.classList.remove('dragover');
+  const file=e.dataTransfer.files[0];
+  if(file&&file.type==='application/pdf')handlePDF(file);
+  else showToast('error','Veuillez déposer un fichier PDF.');
+});
+
+async function handlePDF(file){
+  if(!file)return;
+  setProcessing(true,'Lecture du fichier PDF…');
+  dropZone.classList.add('has-file');
+  document.getElementById('drop-title').textContent=file.name;
+  document.getElementById('drop-sub').textContent='Analyse IA en cours…';
+  document.getElementById('clear-pdf-btn').style.display='flex';
+  try{
+    setProcessingStep('Extraction du texte…');
+    const arrayBuffer=await file.arrayBuffer();
+    const pdf=await pdfjsLib.getDocument({data:arrayBuffer}).promise;
+    let fullText='';
+    for(let i=1;i<=Math.min(pdf.numPages,15);i++){
+      const page=await pdf.getPage(i);
+      const content=await page.getTextContent();
+      fullText+=content.items.map(s=>s.str).join(' ')+'\n';
+    }
+    fullText=fullText.trim().slice(0,8000);
+    if(!fullText)throw new Error('Aucun texte extractible dans ce PDF.');
+    document.getElementById('editor').innerHTML='<p>'+fullText.replace(/\n+/g,'</p><p>')+'</p>';
+    updateCounts();
+    setProcessingStep('Analyse IA des métadonnées SEO…');
+    await analyzeWithClaude(fullText);
+  }catch(err){
+    setProcessing(false);
+    showToast('error',err.message||'Erreur lors de la lecture du PDF.');
+  }
+}
+
+async function analyzeWithClaude(text){
+  const categs = ['seo','saas','ecommerce','cyber','fintech','rh'];
+  const prompt=`Tu es un expert SEO spécialisé en contenu Tech B2B pour le site TechRepair Content.
+Analyse ce texte extrait d'un PDF et génère les métadonnées SEO optimisées.
+Réponds UNIQUEMENT en JSON valide, sans balises markdown, sans texte avant ou après.
+
+Format attendu :
+{
+  "titre": "Titre SEO optimisé (50-60 caractères)",
+  "meta_description": "Description percutante pour Google (130-155 caractères)",
+  "slug": "slug-url-en-minuscules-avec-tirets",
+  "mot_cle_principal": "le mot-clé principal",
+  "categorie": "seo | saas | ecommerce | cyber | fintech | rh",
+  "mots_cles_secondaires": ["kw1","kw2","kw3"],
+  "lecture": "X min"
+}
+
+Texte à analyser :
+${text.slice(0,4000)}`;
+
+  const response=await fetch('https://api.anthropic.com/v1/messages',{
+    method:'POST',
+    headers:{'Content-Type':'application/json'},
+    body:JSON.stringify({model:'claude-sonnet-4-6',max_tokens:1000,messages:[{role:'user',content:prompt}]})
+  });
+  if(!response.ok)throw new Error('Erreur API Claude : '+response.status);
+  const data=await response.json();
+  const raw=data.content.find(b=>b.type==='text')?.text||'';
+  const parsed=JSON.parse(raw.replace(/```json|```/g,'').trim());
+
+  await fillField('field-title',parsed.titre,'title',60);
+  await fillField('field-meta',parsed.meta_description,'meta',155);
+  await fillFieldRaw('field-slug',slugify(parsed.slug));
+  await fillFieldRaw('field-keyword-main',parsed.mot_cle_principal);
+  if(parsed.lecture)await fillFieldRaw('field-lecture',parsed.lecture);
+  if(parsed.categorie&&categs.includes(parsed.categorie)){
+    document.getElementById('field-category').value=parsed.categorie;
+    document.getElementById('field-category').classList.add('auto-filled');
+  }
+  setTags('secondary',parsed.mots_cles_secondaires||[]);
+  cleanSlug();updateSEO();setProcessing(false);
+  showToast('success','Champs SEO remplis automatiquement !');
+}
+
+async function fillField(id,value,countId,max){
+  const el=document.getElementById(id);el.value='';el.classList.add('auto-filled');
+  for(const ch of String(value)){el.value+=ch;countField(countId,id,max);await sleep(12);}
+}
+async function fillFieldRaw(id,value){
+  const el=document.getElementById(id);el.value='';el.classList.add('auto-filled');
+  for(const ch of String(value)){el.value+=ch;await sleep(10);}
+}
+function slugify(str){
+  return(str||'').toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g,'')
+    .replace(/[^a-z0-9\s-]/g,'').replace(/\s+/g,'-').replace(/-+/g,'-').trim();
+}
+function sleep(ms){return new Promise(r=>setTimeout(r,ms));}
+function setProcessing(active,msg){
+  document.getElementById('processing-banner').classList.toggle('visible',active);
+  if(msg)document.getElementById('processing-step').textContent=msg;
+}
+function setProcessingStep(step){document.getElementById('processing-step').textContent=step;}
+
+/* ── Réinitialiser ── */
+function clearPDF(){
+  document.getElementById('pdf-input').value='';
+  dropZone.classList.remove('has-file');
+  document.getElementById('drop-title').textContent='Glissez un PDF ou cliquez pour importer';
+  document.getElementById('drop-sub').textContent='Les champs SEO seront remplis automatiquement par l\'IA';
+  document.getElementById('clear-pdf-btn').style.display='none';
+  setProcessing(false);
+}
+function resetAll(){
+  if(!confirm('Réinitialiser tous les champs ?'))return;
+  clearPDF();
+  document.getElementById('editor').innerHTML='';
+  ['field-title','field-meta','field-slug','field-keyword-main','field-lecture'].forEach(id=>{
+    const el=document.getElementById(id);el.value='';el.classList.remove('auto-filled');
+  });
+  document.getElementById('field-category').value='';
+  document.getElementById('field-author').value='Goradieme';
+  tagsData.secondary=[];renderTags('secondary');
+  document.getElementById('tags-secondary').classList.remove('auto-filled');
+  updateCounts();updateSEO();
+  showToast('success','Éditeur réinitialisé.');
+}
+
+/* ── Modal Publication ── */
+function openPublishModal(){
+  const titre=document.getElementById('field-title').value.trim();
+  const meta=document.getElementById('field-meta').value.trim();
+  const slug=document.getElementById('field-slug').value.trim()||'mon-article';
+  const auteur=document.getElementById('field-author').value.trim()||'Goradieme';
+  const cat=document.getElementById('field-category').value||'seo';
+  const lecture=document.getElementById('field-lecture').value.trim()||'5 min';
+  const today=new Date().toISOString().split('T')[0];
+  const lien='articles/'+slug+'.html';
+  const extrait=meta.slice(0,200)||'Description de l\'article.';
+
+  const obj={
+    titre:titre||'Titre à renseigner',
+    extrait:extrait,
+    auteur:auteur,
+    date:today,
+    categorie:cat,
+    lecture:lecture,
+    lien:lien,
+    slug:slug,
+    motCle:document.getElementById('field-keyword-main').value.trim(),
+    metaDesc:meta
+  };
+
+  const lines=Object.entries(obj).map(([k,v])=>'    '+k+': '+JSON.stringify(v));
+  const code='  {\n'+lines.join(',\n')+'\n  },';
+  document.getElementById('article-code-block').textContent=code;
+  document.getElementById('modal-publish').classList.add('active');
+}
+
+function closePublishModal(){
+  document.getElementById('modal-publish').classList.remove('active');
+}
+
+function copyCode(){
+  const code=document.getElementById('article-code-block').textContent;
+  navigator.clipboard.writeText(code).then(()=>{
+    const s=document.getElementById('copy-success');
+    s.classList.add('show');
+    setTimeout(()=>s.classList.remove('show'),2000);
+  });
+}
+
+/* ── Toast ── */
+function showToast(type,msg){
+  const t=document.getElementById('toast');
+  const icon=t.querySelector('i');
+  document.getElementById('toast-msg').textContent=msg;
+  icon.className=type==='success'?'fas fa-circle-check':'fas fa-circle-xmark';
+  t.className='show '+type;
+  clearTimeout(t._timer);
+  t._timer=setTimeout(()=>{t.className='';},3000);
+}
+
+/* ── Fermer modal au clic extérieur ── */
+document.getElementById('modal-publish').addEventListener('click',e=>{
+  if(e.target===document.getElementById('modal-publish'))closePublishModal();
+});
+</script>
+</body>
+</html>
