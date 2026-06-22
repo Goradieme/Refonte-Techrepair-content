@@ -22,4 +22,16 @@ const ARTICLES = [
     metaDesc: "Boostez votre trafic SaaS avec ces 5 optimisations SEO techniques prouvées."
   },
   */
+     {
+    titre: "AI Overviews-GEO : Le guide complet pour dominer les résultats IA",
+    extrait: "Découvrez comment dominer les AI Overviews de Google en 2026 grâce au GEO, à l'E-E-A-T et aux 7 formats de contenus résistants. Guide complet",
+    auteur: "Goradieme",
+    date: "2026-06-22",
+    categorie: "saas",
+    lecture: "12",
+    lien: "articles/ai-overviews-geo-guide-complet-2026.html",
+    slug: "ai-overviews-geo-guide-complet-2026",
+    motCle: "AI Overviews et GEO",
+    metaDesc: "Découvrez comment dominer les AI Overviews de Google en 2026 grâce au GEO, à l'E-E-A-T et aux 7 formats de contenus résistants. Guide complet"
+  },
 ];
