@@ -1,15 +1,47 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-B1MRFH8WRQ"></script>
+<!-- ══ Tarteaucitron : gestion du consentement cookies (RGPD) ══ -->
+<script src="https://cdn.jsdelivr.net/gh/AmauriC/tarteaucitron.js/tarteaucitron.min.js"></script>
 <script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+tarteaucitron.init({
+  "privacyUrl": "",
+  "hashtag": "#tarteaucitron",
+  "cookieName": "tarteaucitron",
+  "orientation": "bottom",
+  "showAlertSmall": false,
+  "cookieslist": false,
+  "showIcon": true,
+  "iconPosition": "BottomRight",
+  "adblocker": false,
+  "DenyAllCta": true,
+  "AcceptAllCta": true,
+  "highPrivacy": true,
+  "handleBrowserDNTRequest": false,
+  "removeCredit": true,
+  "moreInfoLink": true,
+  "useExternalCss": false,
+  "mandatory": false
+});
 
-  gtag('config', 'G-B1MRFH8WRQ');
+tarteaucitron.user.gtagUa = 'G-B1MRFH8WRQ';
+tarteaucitron.user.gtagMore = function () { };
+(tarteaucitron.job = tarteaucitron.job || []).push('gtag');
 </script>
+
+<!-- Personnalisation couleurs TechRepairContent (navy/bleu) -->
+<style>
+#tarteaucitronRoot #tarteaucitronAlertBig{background:#0F1B3D!important}
+#tarteaucitronRoot #tarteaucitronAlertBig p,
+#tarteaucitronRoot #tarteaucitronAlertBig a{color:#fff!important}
+#tarteaucitronDisclaimerAlert,#tarteaucitronDisclaimerAlert strong,#tarteaucitronDisclaimerAlert a{color:#fff!important}
+#tarteaucitronAllAllowed,.tarteaucitronAllow{background:#1A56DB!important;color:#fff!important;border-color:#1A56DB!important}
+#tarteaucitronAllDenied,.tarteaucitronDeny{background:transparent!important;color:#fff!important;border:1px solid #fff!important}
+#tarteaucitronPersonalize2{background:transparent!important;color:#fff!important;border:1px solid #fff!important}
+#tarteaucitronIcon{background:#1A56DB!important}
+#tarteaucitronRoot .tarteaucitronCTAButton{background:#1A56DB!important}
+</style>
+
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 <title>Contenu SEO Cybersécurité – TechRepair Content | Rédaction spécialisée Cybersécurité</title>
