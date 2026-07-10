@@ -1,734 +1,1409 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Éditeur SEO – TechRepair Content</title>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Éditeur SEO — TechRepair Content</title>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet"/>
 <style>
-  :root {
-    --bg:#f8f9fb;--surface:#ffffff;--border:#e2e6ea;--border-focus:#6c63ff;
-    --text-primary:#1a1a2e;--text-secondary:#6b7280;--text-muted:#9ca3af;
-    --accent:#6c63ff;--accent-light:#ede9fe;--accent-dark:#4f46e5;
-    --success:#10b981;--success-light:#d1fae5;
-    --warning:#f59e0b;--warning-light:#fef3c7;
-    --danger:#ef4444;--danger-light:#fee2e2;
-    --navy:#0F1B3D;--blue:#1A56DB;
-    --radius:8px;--radius-lg:12px;
-    --shadow:0 1px 3px rgba(0,0,0,.08),0 1px 2px rgba(0,0,0,.04);
-    --shadow-md:0 4px 12px rgba(0,0,0,.10);
-  }
-  *{box-sizing:border-box;margin:0;padding:0}
-  body{font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;background:var(--bg);color:var(--text-primary);font-size:14px;line-height:1.6;min-height:100vh}
-  .header{background:var(--surface);border-bottom:1px solid var(--border);padding:0 2rem;height:56px;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:100;box-shadow:var(--shadow)}
-  .header-brand{display:flex;align-items:center;gap:10px;font-weight:700;font-size:16px;color:var(--text-primary)}
-  .logo-box{width:32px;height:32px;background:var(--blue);border-radius:7px;display:flex;align-items:center;justify-content:center;color:white;font-weight:800;font-size:11px}
-  .header-actions{display:flex;align-items:center;gap:10px}
-  .btn{display:inline-flex;align-items:center;gap:6px;padding:7px 14px;border-radius:var(--radius);font-size:13px;font-weight:500;cursor:pointer;transition:all .15s;border:1px solid transparent;font-family:inherit;white-space:nowrap}
-  .btn:disabled{opacity:.5;cursor:not-allowed}
-  .btn-primary{background:var(--accent);color:white;border-color:var(--accent)}
-  .btn-primary:hover:not(:disabled){background:var(--accent-dark)}
-  .btn-secondary{background:var(--surface);color:var(--text-primary);border-color:var(--border)}
-  .btn-secondary:hover:not(:disabled){background:var(--bg)}
-  .btn-success{background:var(--success);color:white;border-color:var(--success)}
-  .btn-success:hover:not(:disabled){background:#059669}
-  .btn-publish{background:var(--blue);color:white;border-color:var(--blue);font-weight:700}
-  .btn-publish:hover:not(:disabled){background:#1342b0}
-  .info-banner{background:#eff6ff;border:1px solid #bfdbfe;border-radius:var(--radius-lg);padding:.875rem 1.25rem;display:flex;align-items:center;gap:12px;font-size:13px;color:#1e40af}
-  .btn-ghost{background:transparent;color:var(--text-secondary);border-color:transparent}
-  .btn-ghost:hover:not(:disabled){background:var(--bg);color:var(--text-primary)}
-  .btn-sm{padding:5px 10px;font-size:12px}
-  .layout{display:grid;grid-template-columns:1fr 340px;height:calc(100vh - 56px)}
-  .editor-col{overflow-y:auto;padding:1.5rem 2rem;display:flex;flex-direction:column;gap:1rem}
-  .sidebar-col{background:var(--surface);border-left:1px solid var(--border);overflow-y:auto;padding:1.25rem;display:flex;flex-direction:column;gap:1rem}
-  .card{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius-lg);padding:1.25rem;box-shadow:var(--shadow)}
-  .card-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:1rem}
-  .card-title{font-size:13px;font-weight:600;color:var(--text-secondary);text-transform:uppercase;letter-spacing:.5px;display:flex;align-items:center;gap:7px}
-  .card-title i{color:var(--accent);font-size:14px}
-  .drop-zone{border:2px dashed var(--border);border-radius:var(--radius-lg);padding:2rem 1.5rem;text-align:center;cursor:pointer;transition:all .2s;background:var(--bg);position:relative}
-  .drop-zone:hover,.drop-zone.dragover{border-color:var(--accent);background:var(--accent-light)}
-  .drop-zone.has-file{border-color:var(--success);background:var(--success-light)}
-  .drop-zone input[type="file"]{position:absolute;inset:0;opacity:0;cursor:pointer;width:100%;height:100%}
-  .drop-icon{font-size:2rem;color:var(--text-muted);margin-bottom:.5rem}
-  .drop-zone.has-file .drop-icon{color:var(--success)}
-  .drop-title{font-size:14px;font-weight:600;color:var(--text-primary);margin-bottom:4px}
-  .drop-sub{font-size:12px;color:var(--text-muted)}
-  .processing-banner{display:none;background:var(--accent-light);border:1px solid #c4b5fd;border-radius:var(--radius-lg);padding:1rem 1.25rem;align-items:center;gap:12px;font-size:13px;color:#5b21b6}
-  .processing-banner.visible{display:flex}
-  .spinner{width:18px;height:18px;border:2px solid #c4b5fd;border-top-color:#7c3aed;border-radius:50%;animation:spin .7s linear infinite;flex-shrink:0}
-  @keyframes spin{to{transform:rotate(360deg)}}
-  .field-group{display:flex;flex-direction:column;gap:5px}
-  .field-label{font-size:12px;font-weight:600;color:var(--text-secondary);display:flex;align-items:center;justify-content:space-between}
-  .field-label .char-count{font-weight:400;color:var(--text-muted);font-size:11px}
-  .field-label .char-count.over{color:var(--danger)}
-  .field-label .char-count.ok{color:var(--success)}
-  .field-input,.field-textarea,.field-select{width:100%;padding:8px 12px;border:1px solid var(--border);border-radius:var(--radius);font-size:13px;color:var(--text-primary);background:var(--surface);transition:border-color .15s,box-shadow .15s;font-family:inherit}
-  .field-input:focus,.field-textarea:focus,.field-select:focus{outline:none;border-color:var(--accent);box-shadow:0 0 0 3px rgba(108,99,255,.12)}
-  .field-input.auto-filled,.field-textarea.auto-filled{border-color:var(--success);background:#f0fdf4}
-  .field-textarea{resize:vertical;min-height:72px;line-height:1.5}
-  .rich-toolbar{display:flex;align-items:center;gap:2px;padding:6px 8px;border:1px solid var(--border);border-bottom:none;border-radius:var(--radius) var(--radius) 0 0;background:var(--bg);flex-wrap:wrap}
-  .rich-toolbar button{padding:5px 8px;border:none;background:transparent;border-radius:5px;cursor:pointer;font-size:13px;color:var(--text-secondary);transition:all .1s;min-width:28px;font-family:inherit}
-  .rich-toolbar button:hover{background:var(--border);color:var(--text-primary)}
-  .rich-toolbar .sep{width:1px;height:20px;background:var(--border);margin:0 3px}
-  .rich-editor{min-height:300px;padding:1rem;border:1px solid var(--border);border-radius:0 0 var(--radius) var(--radius);background:var(--surface);outline:none;font-size:14px;line-height:1.7;color:var(--text-primary)}
-  .rich-editor:focus{border-color:var(--accent)}
-  .rich-editor:empty:before{content:attr(data-placeholder);color:var(--text-muted)}
-  .rich-editor h1{font-size:22px;font-weight:700;margin-bottom:10px}
-  .rich-editor h2{font-size:18px;font-weight:600;margin-bottom:8px}
-  .rich-editor h3{font-size:16px;font-weight:600;margin-bottom:6px}
-  .rich-editor p{margin-bottom:8px}
-  .rich-editor ul,.rich-editor ol{padding-left:1.4rem;margin-bottom:8px}
-  .rich-editor blockquote{border-left:3px solid var(--accent);padding-left:12px;color:var(--text-secondary);font-style:italic}
-  .tags-container{display:flex;flex-wrap:wrap;gap:6px;padding:6px 8px;border:1px solid var(--border);border-radius:var(--radius);background:var(--surface);cursor:text;min-height:38px;align-items:center;transition:border-color .15s}
-  .tags-container:focus-within{border-color:var(--accent);box-shadow:0 0 0 3px rgba(108,99,255,.12)}
-  .tags-container.auto-filled{border-color:var(--success);background:#f0fdf4}
-  .tag-pill{display:inline-flex;align-items:center;gap:4px;background:var(--accent-light);color:var(--accent-dark);padding:2px 8px 2px 10px;border-radius:20px;font-size:12px;font-weight:500}
-  .tag-pill button{background:none;border:none;cursor:pointer;color:var(--accent);padding:0;display:flex;font-size:13px;line-height:1;opacity:.7}
-  .tag-pill button:hover{opacity:1}
-  .tags-input{border:none;outline:none;font-size:13px;color:var(--text-primary);background:transparent;flex:1;min-width:80px;font-family:inherit}
-  .seo-score-ring{display:flex;flex-direction:column;align-items:center;gap:6px;padding:.75rem 0}
-  .score-circle{width:72px;height:72px;position:relative}
-  .score-circle svg{transform:rotate(-90deg)}
-  .score-num{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-size:20px;font-weight:700;color:var(--text-primary)}
-  .score-label{font-size:12px;font-weight:600;color:var(--text-secondary);text-align:center}
-  .seo-checks{display:flex;flex-direction:column;gap:7px}
-  .seo-check{display:flex;align-items:flex-start;gap:8px;font-size:12px;line-height:1.4}
-  .seo-check i{font-size:12px;flex-shrink:0;margin-top:1px}
-  .check-ok{color:var(--success)}.check-warn{color:var(--warning)}.check-bad{color:var(--danger)}.check-neutral{color:var(--text-muted)}
-  .serp-preview{border:1px solid var(--border);border-radius:var(--radius);padding:.875rem;background:var(--bg);font-family:Arial,sans-serif}
-  .serp-url{font-size:11.5px;color:#202124;margin-bottom:2px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-  .serp-title{font-size:17px;color:#1a0dab;margin-bottom:4px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-  .serp-desc{font-size:12.5px;color:#4d5156;line-height:1.5;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
-  .status-badge{display:inline-flex;align-items:center;gap:5px;padding:3px 10px;border-radius:20px;font-size:11px;font-weight:600}
-  .badge-draft{background:#f3f4f6;color:var(--text-secondary)}
-  .badge-ready{background:var(--success-light);color:#065f46}
-  .badge-warning{background:var(--warning-light);color:#92400e}
-  .word-count-bar{display:flex;align-items:center;gap:10px;font-size:12px;color:var(--text-muted);padding:5px 10px;background:var(--bg);border-radius:6px;border:1px solid var(--border)}
-  .wc-num{font-weight:600;color:var(--text-primary)}
-  .divider{height:1px;background:var(--border);margin:.25rem 0}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --blue:#1A56DB;--blue-dark:#1342b0;--blue-light:#EFF6FF;
+  --navy:#0F1B3D;--text:#1e293b;--muted:#64748b;
+  --border:#e2e8f0;--green:#10b981;--orange:#f97316;
+  --red:#ef4444;--bg:#f8fafc;
+}
+html{scroll-behavior:smooth}
+body{font-family:'Manrope',sans-serif;color:var(--text);background:var(--bg);font-size:15px;line-height:1.6}
 
-  /* ══ MODAL PUBLICATION ══ */
-  .modal-overlay{position:fixed;inset:0;background:rgba(15,27,61,.6);z-index:9999;display:flex;align-items:center;justify-content:center;padding:20px;opacity:0;pointer-events:none;transition:opacity .25s;backdrop-filter:blur(4px)}
-  .modal-overlay.active{opacity:1;pointer-events:all}
-  .modal-box{background:var(--surface);border-radius:16px;padding:2rem;max-width:680px;width:100%;max-height:90vh;overflow-y:auto;box-shadow:var(--shadow-md);transform:translateY(16px);transition:transform .25s}
-  .modal-overlay.active .modal-box{transform:translateY(0)}
-  .modal-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:1.25rem;padding-bottom:1rem;border-bottom:1px solid var(--border)}
-  .modal-title{font-size:16px;font-weight:700;color:var(--text-primary);display:flex;align-items:center;gap:8px}
-  .modal-title i{color:var(--blue)}
-  .code-block{background:#0f172a;color:#e2e8f0;border-radius:var(--radius);padding:1rem;font-family:'Courier New',monospace;font-size:12px;line-height:1.6;overflow-x:auto;white-space:pre;max-height:340px;overflow-y:auto}
-  .step-item{display:flex;align-items:flex-start;gap:12px;padding:.875rem;background:var(--bg);border-radius:var(--radius);border:1px solid var(--border);margin-bottom:.625rem}
-  .step-num{width:26px;height:26px;border-radius:50%;background:var(--accent);color:white;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:700;flex-shrink:0}
-  .step-text{font-size:13px;color:var(--text-primary);line-height:1.5}
-  .step-text strong{color:var(--accent)}
-  .copy-success{color:var(--success);font-size:12px;margin-left:8px;opacity:0;transition:opacity .3s}
-  .copy-success.show{opacity:1}
+/* ══ HEADER ══ */
+header{background:#fff;border-bottom:1px solid var(--border);padding:0 32px;display:flex;align-items:center;justify-content:space-between;height:62px;position:sticky;top:0;z-index:100}
+.logo{display:flex;align-items:center;gap:10px}
+.logo-box{width:36px;height:36px;background:var(--blue);border-radius:7px;display:grid;place-items:center;color:#fff;font-weight:800;font-size:13px}
+.logo-text{font-size:13px;font-weight:700;color:var(--navy);line-height:1.2}
+.logo-text span{display:block;color:var(--muted);font-weight:500;font-size:11px}
+.header-nav{display:flex;align-items:center;gap:12px}
+.btn-back{background:none;border:1.5px solid var(--border);border-radius:8px;padding:7px 14px;font-size:13px;font-weight:600;color:var(--muted);cursor:pointer;font-family:inherit;text-decoration:none;display:inline-flex;align-items:center;gap:6px}
+.btn-back:hover{border-color:var(--blue);color:var(--blue)}
+.btn-pub{background:var(--green);color:#fff;border:none;border-radius:8px;padding:8px 18px;font-size:13.5px;font-weight:700;cursor:pointer;font-family:inherit;display:inline-flex;align-items:center;gap:7px}
+.btn-pub:hover{background:#059669}
+.btn-pub:disabled{background:#94a3b8;cursor:not-allowed}
 
-  #toast{position:fixed;bottom:24px;right:24px;padding:11px 16px;background:#1a1a2e;color:white;border-radius:var(--radius-lg);font-size:13px;font-weight:500;box-shadow:var(--shadow-md);z-index:99999;opacity:0;transform:translateY(10px);transition:all .25s;display:flex;align-items:center;gap:8px;pointer-events:none}
-  #toast.show{opacity:1;transform:translateY(0)}
-  #toast.success i{color:var(--success)}
-  #toast.error i{color:var(--danger)}
+/* ══ LAYOUT ══ */
+.editor-layout{display:grid;grid-template-columns:1fr 340px;gap:0;max-width:100%;min-height:calc(100vh - 62px)}
+.editor-main{padding:28px 32px;overflow-y:auto}
+.editor-side{background:#fff;border-left:1px solid var(--border);padding:0;overflow-y:auto;position:sticky;top:62px;height:calc(100vh - 62px)}
 
-  @media(max-width:900px){.layout{grid-template-columns:1fr}.sidebar-col{border-left:none;border-top:1px solid var(--border)}}
+/* ══ CHAMPS ══ */
+.field-group{margin-bottom:20px}
+.field-label{display:flex;justify-content:space-between;align-items:center;margin-bottom:6px}
+.field-label label{font-size:13px;font-weight:700;color:var(--navy)}
+.char-count{font-size:12px;font-weight:600;padding:2px 8px;border-radius:20px}
+.cc-green{background:#dcfce7;color:#16a34a}
+.cc-orange{background:#ffedd5;color:#c2410c}
+.cc-red{background:#fee2e2;color:#dc2626}
+.cc-gray{background:#f1f5f9;color:var(--muted)}
+
+input[type=text],input[type=url],textarea,select{
+  width:100%;border:1.5px solid var(--border);border-radius:9px;
+  padding:11px 14px;font-size:14px;font-family:inherit;color:var(--text);
+  outline:none;background:#fff;transition:border-color .2s,box-shadow .2s;
+}
+input[type=text]:focus,input[type=url]:focus,textarea:focus,select:focus{
+  border-color:var(--blue);box-shadow:0 0 0 3px rgba(26,86,219,.08);
+}
+input[type=text]::placeholder,textarea::placeholder{color:#94a3b8}
+textarea{resize:vertical;line-height:1.65}
+#title-input{font-size:18px;font-weight:600}
+select{cursor:pointer}
+.field-hint{font-size:11.5px;color:var(--muted);margin-top:5px}
+
+/* ══ SERP PREVIEW ══ */
+.serp-preview{background:#fff;border:1.5px solid var(--border);border-radius:12px;padding:16px 18px;margin-top:10px}
+.serp-label{font-size:11px;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:.5px;margin-bottom:10px}
+.serp-url{font-size:13px;color:#5f6368;margin-bottom:4px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.serp-title{font-size:18px;color:#1a0dab;font-weight:400;margin-bottom:3px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;line-height:1.3}
+.serp-desc{font-size:13px;color:#4d5156;line-height:1.55;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.serp-title-warn{color:#dc2626!important}
+
+/* ══ SECTION TITRES ══ */
+.section-title-main{font-size:16px;font-weight:800;color:var(--navy);margin-bottom:20px;padding-bottom:12px;border-bottom:1px solid var(--border);display:flex;align-items:center;gap:8px}
+
+/* ══ IMAGE DE COUVERTURE ══ */
+.cover-zone{border:2px dashed var(--border);border-radius:12px;padding:0;text-align:center;cursor:pointer;transition:all .2s;background:#fff;position:relative;overflow:hidden;aspect-ratio:19/6;display:flex;flex-direction:column;align-items:center;justify-content:center;min-height:200px}
+.cover-zone:hover{border-color:var(--blue);background:var(--blue-light)}
+.cover-zone.has-img{border-style:solid;border-color:var(--blue)}
+.cover-zone-ico{font-size:38px;margin-bottom:12px}
+.cover-zone-lbl{font-size:14px;font-weight:600;color:var(--navy);margin-bottom:5px}
+.cover-zone-sub{font-size:12.5px;color:var(--muted)}
+.cover-preview{width:100%;height:100%;object-fit:cover;border-radius:10px;display:block}
+.cover-actions{display:flex;gap:8px;margin-top:10px}
+.btn-cover-change{flex:1;background:var(--blue-light);color:var(--blue);border:none;border-radius:8px;padding:8px;font-size:13px;font-weight:700;cursor:pointer;font-family:inherit}
+.btn-cover-remove{background:#fee2e2;color:#dc2626;border:none;border-radius:8px;padding:8px 14px;font-size:13px;font-weight:700;cursor:pointer;font-family:inherit}
+#cover-input{display:none}
+
+/* ══ METATAGS ══ */
+.metatags-section{background:#fff;border:1.5px solid var(--border);border-radius:12px;padding:18px;margin-top:0}
+.metatag-row{display:grid;grid-template-columns:180px 1fr;gap:10px;align-items:center;padding:8px 0;border-bottom:1px solid var(--border)}
+.metatag-row:last-child{border-bottom:none;padding-bottom:0}
+.metatag-key{font-size:12.5px;font-weight:700;color:var(--navy)}
+.metatag-key span{display:block;font-size:11px;font-weight:400;color:var(--muted);margin-top:2px}
+.og-preview{background:var(--bg);border:1.5px solid var(--border);border-radius:10px;overflow:hidden;margin-top:10px}
+.og-img{width:100%;height:140px;object-fit:cover;background:linear-gradient(135deg,#f0f5ff,#dce9ff);display:flex;align-items:center;justify-content:center;font-size:28px;color:var(--muted)}
+.og-body{padding:12px 14px}
+.og-domain{font-size:11px;color:var(--muted);text-transform:uppercase;margin-bottom:4px}
+.og-title{font-size:14px;font-weight:700;color:var(--navy);margin-bottom:4px;line-height:1.3}
+.og-desc{font-size:12.5px;color:var(--muted);line-height:1.5}
+
+/* ══ SIDEBAR ══ */
+.side-section{padding:16px 18px;border-bottom:1px solid var(--border)}
+.side-title{font-size:11px;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:.5px;margin-bottom:12px}
+
+/* Score global */
+.score-wrap{text-align:center;padding:20px 16px 16px}
+.score-ring{width:80px;height:80px;border-radius:50%;border:6px solid;display:flex;flex-direction:column;align-items:center;justify-content:center;margin:0 auto 10px;transition:border-color .4s}
+.score-num{font-size:26px;font-weight:800;line-height:1;transition:color .4s}
+.score-lbl{font-size:11px;color:var(--muted);margin-top:2px}
+.score-word{font-size:13px;font-weight:700;margin-top:4px}
+
+/* Checks */
+.checks-list{display:flex;flex-direction:column;gap:7px}
+.check-item{display:flex;align-items:flex-start;gap:9px;font-size:12.5px;line-height:1.45;color:var(--text)}
+.check-dot{width:16px;height:16px;border-radius:50%;flex-shrink:0;margin-top:1px;display:flex;align-items:center;justify-content:center;font-size:9px;font-weight:800;color:#fff}
+.d-green{background:#16a34a}.d-orange{background:#c2410c}.d-red{background:#dc2626}.d-gray{background:#94a3b8}
+
+/* Métriques */
+.metric-row{margin-bottom:10px}
+.metric-name{display:flex;justify-content:space-between;font-size:12px;color:var(--muted);margin-bottom:4px}
+.metric-val{font-weight:700}
+.metric-bar{height:7px;border-radius:4px;background:var(--border);overflow:hidden}
+.metric-fill{height:100%;border-radius:4px;transition:width .4s,background .4s}
+
+/* Tags */
+.tags-wrap{display:flex;flex-wrap:wrap;gap:6px}
+.tag{font-size:12px;padding:3px 10px;border-radius:20px;background:var(--blue-light);color:var(--blue);font-weight:600}
+
+/* Lisibilité */
+.readability-score{display:flex;align-items:center;gap:10px;padding:10px 14px;border-radius:10px;margin-bottom:10px}
+.rs-icon{font-size:20px}
+.rs-label{font-size:13px;font-weight:700}
+.rs-sub{font-size:11.5px;color:var(--muted)}
+
+/* Bouton publier sidebar */
+.pub-side-btn{display:block;width:100%;background:var(--blue);color:#fff;border:none;border-radius:9px;padding:12px;font-size:14px;font-weight:700;cursor:pointer;font-family:inherit;text-align:center;margin-top:4px;text-decoration:none}
+.pub-side-btn:hover{background:var(--blue-dark)}
+
+/* Toast */
+.toast{position:fixed;bottom:24px;right:24px;background:var(--navy);color:#fff;padding:12px 20px;border-radius:10px;font-size:13.5px;font-weight:600;z-index:9999;opacity:0;transform:translateY(10px);transition:all .3s;pointer-events:none}
+.toast.show{opacity:1;transform:translateY(0)}
+
+/* ══ RICH EDITOR (styles moved below) ══ */
+.rich-body:empty:before{content:attr(data-placeholder);color:#94a3b8;pointer-events:none}
+.rich-body h1{font-size:26px;font-weight:800;color:var(--navy);margin:20px 0 10px;line-height:1.2}
+.rich-body h2{font-size:22px;font-weight:700;color:var(--navy);margin:18px 0 8px;line-height:1.3}
+.rich-body h3{font-size:18px;font-weight:700;color:var(--navy);margin:14px 0 6px;line-height:1.35}
+.rich-body h4{font-size:15px;font-weight:700;color:var(--navy);margin:10px 0 4px}
+.rich-body p{margin:0 0 12px}
+.rich-body ul,
+.rich-body ol{padding-left:24px;margin:8px 0 12px}
+.rich-body li{margin-bottom:4px}
+.rich-body blockquote{border-left:4px solid var(--blue);background:var(--blue-light);padding:10px 16px;border-radius:0 8px 8px 0;margin:14px 0;color:var(--navy);font-style:italic}
+.rich-body a{color:var(--blue);text-decoration:underline}
+.rich-body mark{background:#fef08a;padding:1px 2px;border-radius:2px}
+.rich-body code{background:#f1f5f9;padding:2px 6px;border-radius:4px;font-size:13px;font-family:monospace;color:#e11d48}
+.rich-body pre{background:#1e293b;color:#e2e8f0;padding:14px 16px;border-radius:8px;overflow-x:auto;margin:12px 0;font-size:13px;font-family:monospace}
+.rich-body hr{border:none;border-top:2px solid var(--border);margin:20px 0}
+.rich-body table{width:100%;border-collapse:collapse;margin:12px 0;font-size:14px}
+.rich-body th{background:var(--navy);color:#fff;padding:8px 12px;text-align:left;font-weight:600}
+.rich-body td{padding:8px 12px;border:1px solid var(--border)}
+.rich-body tr:nth-child(even) td{background:#f8fafc}
+
+/* Link modal */
+.link-modal{position:fixed;inset:0;background:rgba(15,27,61,.45);z-index:500;display:flex;align-items:center;justify-content:center;opacity:0;pointer-events:none;transition:opacity .2s}
+.link-modal.open{opacity:1;pointer-events:all}
+.link-box{background:#fff;border-radius:14px;padding:24px;width:420px;max-width:90vw;box-shadow:0 20px 60px rgba(0,0,0,.2)}
+.link-box h4{font-size:15px;font-weight:800;color:var(--navy);margin-bottom:16px}
+.link-box label{font-size:12px;font-weight:700;color:var(--muted);display:block;margin-bottom:4px}
+.link-box input{width:100%;border:1.5px solid var(--border);border-radius:8px;padding:9px 12px;font-size:14px;font-family:inherit;outline:none;margin-bottom:12px}
+.link-box input:focus{border-color:var(--blue)}
+.link-box-btns{display:flex;gap:8px;justify-content:flex-end}
+.lb-cancel{background:#f1f5f9;color:var(--muted);border:none;border-radius:8px;padding:9px 16px;font-size:13px;font-weight:700;cursor:pointer;font-family:inherit}
+.lb-ok{background:var(--blue);color:#fff;border:none;border-radius:8px;padding:9px 18px;font-size:13px;font-weight:700;cursor:pointer;font-family:inherit}
+.lb-remove{background:#fee2e2;color:#dc2626;border:none;border-radius:8px;padding:9px 16px;font-size:13px;font-weight:700;cursor:pointer;font-family:inherit}
+
+/* Responsive */
+@media(max-width:960px){
+  .editor-layout{grid-template-columns:1fr}
+  .editor-side{position:static;height:auto;border-left:none;border-top:1px solid var(--border)}
+  .editor-main{padding:20px}
+  .toolbar{right:0}
+}
+@media(max-width:600px){
+  header{padding:0 16px}
+  .editor-main{padding:16px}
+  #title-input{font-size:15px}
+  .toolbar{gap:1px}
+  .tb-btn{width:26px;height:26px;font-size:13px}
+}
+
+/* ══ RICH EDITOR ══ */
+.rich-editor-wrap{border:1.5px solid var(--border);border-radius:9px;overflow:visible;background:#fff;transition:border-color .2s,box-shadow .2s;position:relative}
+.rich-editor-wrap:focus-within{border-color:var(--blue);box-shadow:0 0 0 3px rgba(26,86,219,.08)}
+.toolbar{display:flex;flex-wrap:wrap;gap:2px;padding:8px 10px;background:#f8fafc;border-bottom:1px solid var(--border);align-items:center;position:fixed;top:62px;left:0;right:341px;z-index:89;border-radius:0;box-shadow:0 2px 8px rgba(0,0,0,.06)}
+.rich-editor-wrap{padding-top:56px}
+.toolbar-group{display:flex;gap:2px;align-items:center}
+.toolbar-sep{width:1px;height:22px;background:var(--border);margin:0 4px;flex-shrink:0}
+.tb-btn{width:30px;height:30px;border:none;background:transparent;border-radius:6px;cursor:pointer;display:flex;align-items:center;justify-content:center;color:var(--text);transition:background .15s,color .15s;font-family:inherit;font-weight:600;flex-shrink:0;padding:0}
+.tb-btn:hover{background:#e2e8f0;color:var(--navy)}
+.tb-btn.active{background:var(--blue-light);color:var(--blue)}
+.tb-btn svg{width:15px;height:15px;stroke:currentColor;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;pointer-events:none}
+.tb-select{height:30px;border:1px solid var(--border);border-radius:6px;padding:0 8px;font-size:12.5px;font-family:inherit;color:var(--navy);background:#fff;cursor:pointer;font-weight:600;outline:none}
+.tb-select:focus{border-color:var(--blue)}
+.tb-color{width:30px;height:30px;border-radius:6px;border:1px solid var(--border);cursor:pointer;padding:4px 6px;background:#fff;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px;position:relative;flex-shrink:0}
+.tb-color input[type=color]{position:absolute;opacity:0;width:100%;height:100%;cursor:pointer;top:0;left:0;border:none;padding:0}
+.color-preview{width:16px;height:4px;border-radius:2px;pointer-events:none}
+/* Contrôle taille des titres dans la toolbar */
+.tb-fontsize-group{display:flex;align-items:center;gap:3px;flex-shrink:0}
+.tb-fontsize-label{font-size:11px;font-weight:700;color:var(--muted);padding:0 2px;white-space:nowrap}
+.tb-fontsize-val{font-size:12px;font-weight:800;color:var(--navy);min-width:30px;text-align:center;line-height:30px}
+.tb-fontsize-btn{width:22px;height:22px;border:1px solid var(--border);border-radius:5px;background:#fff;font-size:15px;line-height:1;cursor:pointer;color:var(--text);font-weight:700;display:flex;align-items:center;justify-content:center;transition:all .15s;flex-shrink:0;padding:0}
+.tb-fontsize-btn:hover{background:var(--blue);border-color:var(--blue);color:#fff}
+.rich-body{min-height:340px;padding:18px;font-size:15px;line-height:1.75;color:var(--text);outline:none;font-family:'Manrope',sans-serif}
+.rich-body:empty::before{content:attr(data-placeholder);color:#94a3b8;pointer-events:none;display:block}
+.rich-body h1{font-size:26px;font-weight:800;color:var(--navy);margin:20px 0 10px;line-height:1.2}
+.rich-body h2{font-size:22px;font-weight:700;color:var(--navy);margin:18px 0 8px;line-height:1.3;padding-bottom:6px;border-bottom:2px solid var(--border)}
+.rich-body h3{font-size:18px;font-weight:700;color:var(--navy);margin:14px 0 6px}
+.rich-body h4{font-size:15px;font-weight:700;color:var(--navy);margin:10px 0 4px}
+.rich-body p{margin:0 0 12px}
+.rich-body ul,.rich-body ol{padding-left:24px;margin:8px 0 12px}
+.rich-body li{margin-bottom:4px}
+.rich-body blockquote{border-left:4px solid var(--blue);background:var(--blue-light);padding:12px 18px;border-radius:0 8px 8px 0;margin:14px 0;font-style:italic;color:var(--navy)}
+.rich-body a{color:var(--blue);text-decoration:underline}
+.rich-body mark{background:#fef08a;padding:1px 3px;border-radius:2px}
+.rich-body code{background:#f1f5f9;padding:2px 6px;border-radius:4px;font-size:13px;font-family:monospace;color:#e11d48}
+.rich-body pre{background:#1e293b;color:#e2e8f0;padding:14px 16px;border-radius:8px;overflow-x:auto;margin:12px 0;font-size:13px;font-family:monospace}
+.rich-body hr{border:none;border-top:2px solid var(--border);margin:20px 0}
+.rich-body table{width:100%;border-collapse:collapse;margin:12px 0;font-size:14px}
+.rich-body th{background:var(--navy);color:#fff;padding:8px 12px;text-align:left;font-weight:600}
+.rich-body td{padding:8px 12px;border:1px solid var(--border)}
+.rich-body tr:nth-child(even) td{background:#f8fafc}
+.link-modal{position:fixed;inset:0;background:rgba(15,27,61,.45);z-index:500;display:flex;align-items:center;justify-content:center;opacity:0;pointer-events:none;transition:opacity .2s}
+.link-modal.open{opacity:1;pointer-events:all}
+.link-box{background:#fff;border-radius:14px;padding:24px;width:420px;max-width:90vw;box-shadow:0 20px 60px rgba(0,0,0,.2)}
+.link-box h4{font-size:15px;font-weight:800;color:var(--navy);margin-bottom:16px}
+.link-box label{font-size:12px;font-weight:700;color:var(--muted);display:block;margin-bottom:4px}
+.link-box input[type=text],.link-box input[type=url]{width:100%;border:1.5px solid var(--border);border-radius:8px;padding:9px 12px;font-size:14px;font-family:inherit;outline:none;margin-bottom:12px;color:var(--text)}
+.link-box input:focus{border-color:var(--blue)}
+.link-box-btns{display:flex;gap:8px;justify-content:flex-end;flex-wrap:wrap}
+.lb-cancel{background:#f1f5f9;color:var(--muted);border:none;border-radius:8px;padding:9px 16px;font-size:13px;font-weight:700;cursor:pointer;font-family:inherit}
+.lb-ok{background:var(--blue);color:#fff;border:none;border-radius:8px;padding:9px 18px;font-size:13px;font-weight:700;cursor:pointer;font-family:inherit}
+.lb-remove{background:#fee2e2;color:#dc2626;border:none;border-radius:8px;padding:9px 14px;font-size:13px;font-weight:700;cursor:pointer;font-family:inherit}
 </style>
 </head>
 <body>
 
-<header class="header">
-  <div class="header-brand">
+<!-- HEADER -->
+<header>
+  <div class="logo">
     <div class="logo-box">TRD</div>
-    Éditeur SEO · TechRepair Content
+    <div class="logo-text">TechRepair<span>Éditeur SEO</span></div>
   </div>
-  <div class="header-actions">
-    <span id="status-badge" class="status-badge badge-draft">
-      <i class="fas fa-circle" style="font-size:7px"></i> Brouillon
-    </span>
-    <button class="btn btn-secondary btn-sm" onclick="resetAll()">
-      <i class="fas fa-rotate-left"></i> Réinitialiser
-    </button>
-    <a href="blog.html" class="btn btn-secondary btn-sm" target="_blank">
-      <i class="fas fa-eye"></i> Voir le blog
-    </a>
-    <button class="btn btn-publish btn-sm" onclick="openPublishModal()">
-      <i class="fas fa-paper-plane"></i> Publier sur le blog
-    </button>
+  <div class="header-nav">
+    <a href="blog.html" class="btn-back">← Retour au blog</a>
+    <a href="admin/index.html" class="btn-back">🖊 CMS Admin</a>
+    <button class="btn-pub" id="btn-pub-top" onclick="publierDirect()">📤 Publier sur GitHub</button>
   </div>
 </header>
 
-<div class="layout">
-  <!-- ── Colonne éditeur ── -->
-  <div class="editor-col">
+<!-- LAYOUT -->
+<div class="editor-layout">
 
-    <!-- Info bannière -->
-    <div class="info-banner">
-      <i class="fas fa-magic" style="font-size:16px;flex-shrink:0"></i>
-      <div>
-        <strong>Analyse automatique gratuite</strong> — Importe un PDF, les champs SEO se remplissent instantanément sans clé API ni connexion internet.
+  <!-- COLONNE PRINCIPALE -->
+  <main class="editor-main">
+    <div class="section-title-main">✍️ Rédiger un nouvel article</div>
+
+    <!-- IMAGE DE COUVERTURE -->
+    <div class="field-group">
+      <div class="field-label"><label>Image de couverture</label></div>
+      <input type="file" id="cover-input" accept="image/*" onchange="handleCoverImage(event)"/>
+      <div class="cover-zone" id="cover-zone" onclick="document.getElementById('cover-input').click()">
+        <div class="cover-zone-ico">🖼️</div>
+        <div class="cover-zone-lbl">Cliquez pour ajouter une image</div>
+        <div class="cover-zone-sub">JPG, PNG, WebP — recommandé 1200 × 630 px</div>
+      </div>
+      <div class="cover-actions" id="cover-actions" style="display:none">
+        <button class="btn-cover-change" onclick="document.getElementById('cover-input').click()">🔄 Changer l'image</button>
+        <button class="btn-cover-remove" onclick="removeCover()">✕ Supprimer</button>
+      </div>
+      <div class="field-hint">Format idéal : 1200 × 630 px (ratio 1.91:1) pour l'Open Graph</div>
+    </div>
+
+    <!-- Titre -->
+    <div class="field-group">
+      <div class="field-label">
+        <label for="title-input">Titre de l'article (H1)</label>
+        <span class="char-count cc-gray" id="title-count">0 / 60</span>
+      </div>
+      <input type="text" id="title-input" placeholder="Ex : Stratégie SEO SaaS B2B : le guide complet 2025" oninput="analyze()"/>
+      <div class="field-hint">Entre 50 et 60 caractères, inclure le mot-clé principal</div>
+    </div>
+
+    <!-- Mot-clé -->
+    <div class="field-group">
+      <div class="field-label">
+        <label for="kw-input">Mot-clé principal (focus keyword)</label>
+      </div>
+      <input type="text" id="kw-input" placeholder="Ex : stratégie seo saas" oninput="analyze()"/>
+      <div class="field-hint">Le mot-clé sur lequel cet article doit se positionner</div>
+    </div>
+
+    <!-- URL -->
+    <div class="field-group">
+      <div class="field-label">
+        <label for="slug-input">Slug URL</label>
+        <span class="char-count cc-gray" id="slug-count">0 car.</span>
+      </div>
+      <input type="text" id="slug-input" placeholder="strategie-seo-saas-guide-complet-2025" oninput="analyze()"/>
+      <div class="field-hint">URL courte, sans accents, mots séparés par des tirets</div>
+    </div>
+
+    <!-- Meta description -->
+    <div class="field-group">
+      <div class="field-label">
+        <label for="meta-input">Meta description</label>
+        <span class="char-count cc-gray" id="meta-count">0 / 160</span>
+      </div>
+      <textarea id="meta-input" rows="3" placeholder="Rédigez une meta description qui incite au clic en 145 à 160 caractères..." oninput="analyze()"></textarea>
+      <div class="field-hint">145 à 160 caractères recommandés — inclure le mot-clé</div>
+    </div>
+
+    <!-- SERP Preview -->
+    <div class="field-group">
+      <div class="field-label"><label>Aperçu dans Google (SERP Preview)</label></div>
+      <div class="serp-preview">
+        <div class="serp-label">Prévisualisation Google</div>
+        <div class="serp-url" id="prev-url">https://www.techrepaircontent.com/articles/votre-article</div>
+        <div class="serp-title" id="prev-title">Titre de votre article (55 à 60 caractères recommandés)</div>
+        <div class="serp-desc" id="prev-desc">Votre meta description apparaîtra ici. Elle doit être engageante et inciter l'internaute à cliquer sur votre résultat plutôt que sur les autres.</div>
       </div>
     </div>
 
-    <!-- PDF Import -->
-    <div class="card">
-      <div class="card-header">
-        <div class="card-title"><i class="fas fa-file-pdf"></i> Import PDF</div>
-        <button id="clear-pdf-btn" class="btn btn-ghost btn-sm" onclick="clearPDF()" style="display:none">
-          <i class="fas fa-xmark"></i> Effacer
-        </button>
+    <!-- Contenu -->
+    <div class="field-group">
+      <div class="field-label">
+        <label>Contenu de l'article</label>
+        <span class="char-count cc-gray" id="body-count">0 mot</span>
       </div>
-      <div class="drop-zone" id="drop-zone" onclick="document.getElementById('pdf-input').click()">
-        <input type="file" id="pdf-input" accept=".pdf" onchange="handlePDF(this.files[0])">
-        <div class="drop-icon"><i class="fas fa-cloud-arrow-up"></i></div>
-        <div class="drop-title" id="drop-title">Glissez un PDF ou cliquez pour importer</div>
-        <div class="drop-sub" id="drop-sub">Les champs SEO seront remplis automatiquement par l'IA</div>
-      </div>
-      <div class="processing-banner" id="processing-banner">
-        <div class="spinner"></div>
-        <div>
-          <strong>Analyse en cours…</strong>
-          <div style="font-size:12px;margin-top:2px;opacity:.8" id="processing-step">Extraction du texte PDF…</div>
+
+      <div class="rich-editor-wrap">
+        <div class="toolbar">
+          <div class="toolbar-group">
+            <select class="tb-select" id="tb-heading" onchange="applyHeading(this.value)" title="Style de paragraphe">
+              <option value="p">Paragraphe</option>
+              <option value="h1">Titre H1</option>
+              <option value="h2">Titre H2</option>
+              <option value="h3">Titre H3</option>
+              <option value="h4">Titre H4</option>
+            </select>
+          </div>
+          <div class="toolbar-sep"></div>
+          <div class="toolbar-group">
+            <button class="tb-btn" id="btn-bold" onclick="fmt('bold')" title="Gras (Ctrl+B)"><svg viewBox="0 0 24 24"><path d="M6 4h8a4 4 0 0 1 4 4 4 4 0 0 1-4 4H6z"/><path d="M6 12h9a4 4 0 0 1 4 4 4 4 0 0 1-4 4H6z"/></svg></button>
+            <button class="tb-btn" id="btn-italic" onclick="fmt('italic')" title="Italique (Ctrl+I)"><svg viewBox="0 0 24 24"><line x1="19" y1="4" x2="10" y2="4"/><line x1="14" y1="20" x2="5" y2="20"/><line x1="15" y1="4" x2="9" y2="20"/></svg></button>
+            <button class="tb-btn" id="btn-underline" onclick="fmt('underline')" title="Souligné (Ctrl+U)"><svg viewBox="0 0 24 24"><path d="M6 3v7a6 6 0 0 0 6 6 6 6 0 0 0 6-6V3"/><line x1="4" y1="21" x2="20" y2="21"/></svg></button>
+            <button class="tb-btn" id="btn-strikeThrough" onclick="fmt('strikeThrough')" title="Barré"><svg viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><path d="M16 6c0-1.7-1.8-3-4-3s-4 1.3-4 3c0 2 2 3 4 3s4 1 4 3-1.8 3-4 3-4-1.3-4-3"/></svg></button>
+          </div>
+          <div class="toolbar-sep"></div>
+          <div class="toolbar-group">
+            <button class="tb-btn" id="btn-highlight" onclick="applyHighlight()" title="Surligner en jaune"><svg viewBox="0 0 24 24"><path d="m9 11-6 6v3h3l6-6"/><path d="m22 12-4.6 4.6a2 2 0 0 1-2.8 0l-5.2-5.2a2 2 0 0 1 0-2.8L14 4"/></svg></button>
+            <div class="tb-color" title="Couleur du texte">
+              <svg viewBox="0 0 24 24" style="width:13px;height:13px;stroke:currentColor;fill:none;stroke-width:2;pointer-events:none"><path d="M4 20h4l10.5-10.5a2.121 2.121 0 0 0-3-3L5 17Z"/></svg>
+              <div class="color-preview" id="txt-color-preview" style="background:#1e293b"></div>
+              <input type="color" id="txt-color-input" value="#1e293b" oninput="applyTextColor(this.value)"/>
+            </div>
+          </div>
+          <div class="toolbar-sep"></div>
+          <div class="toolbar-group">
+            <button class="tb-btn" id="btn-insertUnorderedList" onclick="fmt('insertUnorderedList')" title="Liste à puces"><svg viewBox="0 0 24 24"><line x1="9" y1="6" x2="20" y2="6"/><line x1="9" y1="12" x2="20" y2="12"/><line x1="9" y1="18" x2="20" y2="18"/><circle cx="4" cy="6" r="1.2" fill="currentColor" stroke="none"/><circle cx="4" cy="12" r="1.2" fill="currentColor" stroke="none"/><circle cx="4" cy="18" r="1.2" fill="currentColor" stroke="none"/></svg></button>
+            <button class="tb-btn" id="btn-insertOrderedList" onclick="fmt('insertOrderedList')" title="Liste numérotée"><svg viewBox="0 0 24 24"><line x1="10" y1="6" x2="21" y2="6"/><line x1="10" y1="12" x2="21" y2="12"/><line x1="10" y1="18" x2="21" y2="18"/><path d="M4 6h1v4M4 10h2M6 18H4c0-1 2-2 2-3s-1-1.5-2-1"/></svg></button>
+          </div>
+          <div class="toolbar-sep"></div>
+          <div class="toolbar-group">
+            <button class="tb-btn" onclick="fmt('justifyLeft')" title="Aligner à gauche"><svg viewBox="0 0 24 24"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="15" y2="12"/><line x1="3" y1="18" x2="18" y2="18"/></svg></button>
+            <button class="tb-btn" onclick="fmt('justifyCenter')" title="Centrer"><svg viewBox="0 0 24 24"><line x1="3" y1="6" x2="21" y2="6"/><line x1="6" y1="12" x2="18" y2="12"/><line x1="4" y1="18" x2="20" y2="18"/></svg></button>
+            <button class="tb-btn" onclick="fmt('justifyRight')" title="Aligner à droite"><svg viewBox="0 0 24 24"><line x1="3" y1="6" x2="21" y2="6"/><line x1="9" y1="12" x2="21" y2="12"/><line x1="6" y1="18" x2="21" y2="18"/></svg></button>
+          </div>
+          <div class="toolbar-sep"></div>
+          <div class="toolbar-group">
+            <button class="tb-btn" id="btn-link" onclick="openLinkModal()" title="Insérer un lien / maillage interne"><svg viewBox="0 0 24 24"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg></button>
+            <button class="tb-btn" onclick="removeLink()" title="Supprimer le lien"><svg viewBox="0 0 24 24"><path d="m18.84 12.25 1.72-1.71a5.004 5.004 0 0 0-7.07-7.07l-1.72 1.71"/><path d="m5.17 11.75-1.71 1.71a5.004 5.004 0 0 0 7.07 7.07l1.72-1.71"/><line x1="8" y1="2" x2="8" y2="5"/><line x1="2" y1="8" x2="5" y2="8"/><line x1="16" y1="19" x2="16" y2="22"/><line x1="19" y1="16" x2="22" y2="16"/></svg></button>
+          </div>
+          <div class="toolbar-sep"></div>
+          <div class="toolbar-group">
+            <button class="tb-btn" onclick="insertBlockquote()" title="Citation blockquote"><svg viewBox="0 0 24 24"><path d="M3 21c3 0 7-1 7-8V5c0-1.25-.756-2.017-2-2H4c-1.25 0-2 .75-2 1.972V11c0 1.25.75 2 2 2 1 0 1 0 1 1v1c0 1-1 2-2 2s-1 .008-1 1.031V20c0 1 0 1 1 1z"/><path d="M15 21c3 0 7-1 7-8V5c0-1.25-.757-2.017-2-2h-4c-1.25 0-2 .75-2 1.972V11c0 1.25.75 2 2 2h.75c0 2.25.25 4-2.75 4v3c0 1 0 1 1 1z"/></svg></button>
+            <button class="tb-btn" onclick="insertCode()" title="Code inline"><svg viewBox="0 0 24 24"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg></button>
+            <button class="tb-btn" onclick="insertHR()" title="Séparateur"><svg viewBox="0 0 24 24"><line x1="3" y1="12" x2="21" y2="12"/></svg></button>
+            <button class="tb-btn" onclick="insertTable()" title="Insérer un tableau"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M3 15h18M9 3v18M15 3v18"/></svg></button>
+          </div>
+          <div class="toolbar-sep"></div>
+          <div class="toolbar-group">
+            <button class="tb-btn" onclick="document.execCommand('undo')" title="Annuler"><svg viewBox="0 0 24 24"><path d="M3 7v6h6"/><path d="M21 17a9 9 0 0 0-9-9 9 9 0 0 0-6 2.3L3 13"/></svg></button>
+            <button class="tb-btn" onclick="document.execCommand('redo')" title="Rétablir"><svg viewBox="0 0 24 24"><path d="M21 7v6h-6"/><path d="M3 17a9 9 0 0 1 9-9 9 9 0 0 1 6 2.3L21 13"/></svg></button>
+          </div>
+          <div class="toolbar-sep"></div>
+          <div class="tb-fontsize-group">
+            <span class="tb-fontsize-label">Titres</span>
+            <button class="tb-fontsize-btn" id="tb-fs-down" title="Diminuer la taille des titres">−</button>
+            <span class="tb-fontsize-val" id="tb-fs-val">100%</span>
+            <button class="tb-fontsize-btn" id="tb-fs-up" title="Augmenter la taille des titres">+</button>
+          </div>
         </div>
+        <div class="rich-body" id="body-input" contenteditable="true"
+          data-placeholder="Rédigez votre article ici. Placez votre mot-clé dans les 100 premiers mots, utilisez des titres H2/H3 pour structurer, et visez 1 500 mots minimum."
+          oninput="onRichInput()" onkeyup="updateToolbarState()" onmouseup="updateToolbarState()">
+        </div>
+      </div>
+
+      <div class="field-hint" id="body-hint">Min. 1 500 mots recommandés pour le SEO B2B tech</div>
+    </div>
+
+    <!-- Catégorie + Auteur -->
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:20px">
+      <div class="field-group" style="margin-bottom:0">
+        <div class="field-label"><label for="cat-input">Catégorie</label></div>
+        <select id="cat-input" onchange="analyze()">
+          <option value="">Choisir une catégorie</option>
+          <option value="seo">📊 SEO & Technique</option>
+          <option value="saas">☁️ SaaS B2B</option>
+          <option value="ecommerce">🛒 E-commerce Tech</option>
+          <option value="cyber">🔒 Cybersécurité</option>
+          <option value="fintech">💳 Fintech</option>
+          <option value="rh">👥 RH Tech</option>
+        </select>
+      </div>
+      <div class="field-group" style="margin-bottom:0">
+        <div class="field-label"><label for="author-input">Auteur</label></div>
+        <input type="text" id="author-input" value="Goradieme" oninput="analyze()"/>
       </div>
     </div>
 
-    <!-- Éditeur de contenu -->
-    <div class="card">
-      <div class="card-header">
-        <div class="card-title"><i class="fas fa-align-left"></i> Contenu de l'article</div>
-        <div class="word-count-bar">
-          <span class="wc-num" id="word-count">0</span> mots
-          <span style="color:var(--border)">|</span>
-          <span class="wc-num" id="char-count">0</span> car.
+    <!-- Temps de lecture -->
+    <div class="field-group">
+      <div class="field-label"><label>Temps de lecture estimé</label></div>
+      <input type="text" id="read-time" readonly style="background:var(--bg);color:var(--muted);cursor:default" value="Calculé automatiquement"/>
+    </div>
+
+    <!-- Mots-clés secondaires -->
+    <div class="field-group">
+      <div class="field-label"><label for="kw2-input">Mots-clés secondaires (séparés par des virgules)</label></div>
+      <input type="text" id="kw2-input" placeholder="Ex : seo b2b, contenu saas, stratégie éditoriale" oninput="analyze()"/>
+    </div>
+
+    <!-- METATAGS SEO -->
+    <div class="field-group">
+      <div class="field-label"><label>Balises Meta & Open Graph</label></div>
+      <div class="metatags-section">
+        <div class="metatag-row">
+          <div class="metatag-key">og:title<span>Titre réseaux sociaux</span></div>
+          <input type="text" id="og-title" placeholder="Titre pour Facebook, LinkedIn, Twitter..." oninput="updateOG()"/>
+        </div>
+        <div class="metatag-row">
+          <div class="metatag-key">og:description<span>Description réseaux sociaux</span></div>
+          <textarea id="og-desc" rows="2" placeholder="Description pour les partages sur les réseaux sociaux..." oninput="updateOG()" style="font-size:13px;padding:9px 12px"></textarea>
+        </div>
+        <div class="metatag-row">
+          <div class="metatag-key">twitter:card<span>Format carte Twitter/X</span></div>
+          <select id="twitter-card" onchange="updateOG()">
+            <option value="summary_large_image">Grande image (recommandé)</option>
+            <option value="summary">Résumé compact</option>
+          </select>
+        </div>
+        <div class="metatag-row">
+          <div class="metatag-key">robots<span>Instructions Google</span></div>
+          <select id="robots-meta" onchange="updateOG()">
+            <option value="index, follow">Index + Follow (recommandé)</option>
+            <option value="noindex, follow">Ne pas indexer</option>
+            <option value="index, nofollow">Indexer sans suivre les liens</option>
+            <option value="noindex, nofollow">Exclure complètement</option>
+          </select>
+        </div>
+        <div class="metatag-row">
+          <div class="metatag-key">canonical<span>URL canonique</span></div>
+          <input type="text" id="canonical-url" placeholder="https://www.techrepaircontent.com/articles/..." oninput="updateOG()"/>
         </div>
       </div>
-      <div class="rich-toolbar">
-        <button onclick="fmt('bold')"><i class="fas fa-bold"></i></button>
-        <button onclick="fmt('italic')"><i class="fas fa-italic"></i></button>
-        <button onclick="fmt('underline')"><i class="fas fa-underline"></i></button>
-        <div class="sep"></div>
-        <button onclick="fmtBlock('h1')"><b style="font-size:11px">H1</b></button>
-        <button onclick="fmtBlock('h2')"><b style="font-size:11px">H2</b></button>
-        <button onclick="fmtBlock('h3')"><b style="font-size:11px">H3</b></button>
-        <button onclick="fmtBlock('p')"><i class="fas fa-paragraph"></i></button>
-        <div class="sep"></div>
-        <button onclick="fmt('insertUnorderedList')"><i class="fas fa-list-ul"></i></button>
-        <button onclick="fmt('insertOrderedList')"><i class="fas fa-list-ol"></i></button>
-        <button onclick="fmtBlock('blockquote')"><i class="fas fa-quote-right"></i></button>
-        <div class="sep"></div>
-        <button onclick="fmt('undo')"><i class="fas fa-rotate-left"></i></button>
-        <button onclick="fmt('redo')"><i class="fas fa-rotate-right"></i></button>
+
+      <!-- Prévisualisation Open Graph -->
+      <div style="margin-top:14px">
+        <div style="font-size:12px;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:.5px;margin-bottom:8px">Aperçu partage réseaux sociaux (Open Graph)</div>
+        <div class="og-preview">
+          <div id="og-img-preview" class="og-img">🖼️</div>
+          <div class="og-body">
+            <div class="og-domain">techrepaircontent.com</div>
+            <div class="og-title" id="og-title-preview">Titre de votre article</div>
+            <div class="og-desc" id="og-desc-preview">Description Open Graph de votre article</div>
+          </div>
+        </div>
       </div>
-      <div class="rich-editor" id="editor" contenteditable="true"
-        data-placeholder="Rédigez votre article ou importez un PDF…"
-        oninput="updateCounts(); updateSEO()">
+
+      <!-- Code métatags généré -->
+      <div style="margin-top:14px">
+        <div style="font-size:12px;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:.5px;margin-bottom:8px;display:flex;justify-content:space-between;align-items:center">
+          Code métatags généré
+          <button onclick="copyMetatags()" style="background:var(--blue-light);color:var(--blue);border:none;border-radius:6px;padding:4px 10px;font-size:11.5px;font-weight:700;cursor:pointer;font-family:inherit">📋 Copier</button>
+        </div>
+        <textarea id="metatags-output" readonly rows="8" style="font-family:monospace;font-size:11.5px;background:#f8fafc;color:var(--text);border-color:var(--border);resize:none"></textarea>
       </div>
     </div>
-  </div>
 
-  <!-- ── Sidebar ── -->
-  <div class="sidebar-col">
+  </main>
 
-    <!-- Score SEO -->
-    <div class="card" style="padding:1rem">
-      <div class="card-title" style="margin-bottom:.75rem"><i class="fas fa-gauge-high"></i> Score SEO</div>
-      <div class="seo-score-ring">
-        <div class="score-circle">
-          <svg width="72" height="72" viewBox="0 0 72 72">
-            <circle cx="36" cy="36" r="28" fill="none" stroke="#e2e6ea" stroke-width="6"/>
-            <circle id="score-arc" cx="36" cy="36" r="28" fill="none" stroke="#6c63ff" stroke-width="6"
-              stroke-linecap="round" stroke-dasharray="0 176" style="transition:stroke-dasharray .5s,stroke .3s"/>
-          </svg>
-          <div class="score-num" id="score-num">0</div>
-        </div>
-        <div class="score-label" id="score-label">Commencez à rédiger</div>
+  <!-- SIDEBAR ANALYSE -->
+  <aside class="editor-side">
+
+    <!-- Score global -->
+    <div class="score-wrap">
+      <div class="score-ring" id="score-ring" style="border-color:#94a3b8">
+        <span class="score-num" id="score-num" style="color:#94a3b8">0</span>
+        <span class="score-lbl">/ 100</span>
       </div>
+      <div class="score-word" id="score-word" style="color:#94a3b8">Commencez à rédiger</div>
+      <div style="font-size:12px;color:var(--muted);margin-top:4px">Score SEO global</div>
     </div>
 
     <!-- Analyse SEO -->
-    <div class="card" style="padding:1rem">
-      <div class="card-title" style="margin-bottom:.75rem"><i class="fas fa-list-check"></i> Analyse SEO</div>
-      <div class="seo-checks" id="seo-checks">
-        <div class="seo-check check-neutral"><i class="fas fa-circle-info"></i><span>Importez un PDF ou rédigez du contenu.</span></div>
+    <div class="side-section">
+      <div class="side-title">🔍 Analyse SEO</div>
+      <div class="checks-list" id="seo-checks">
+        <div class="check-item"><div class="check-dot d-gray"></div>Saisissez un titre et un mot-clé pour démarrer l'analyse</div>
       </div>
     </div>
 
-    <!-- Métadonnées -->
-    <div class="card" style="padding:1rem">
-      <div class="card-title" style="margin-bottom:.75rem"><i class="fas fa-tags"></i> Métadonnées</div>
-      <div style="display:flex;flex-direction:column;gap:.75rem">
-
-        <div class="field-group">
-          <label class="field-label">Titre <span class="char-count" id="title-count">0 / 60</span></label>
-          <input type="text" class="field-input" id="field-title" placeholder="Titre SEO de l'article…"
-            oninput="countField('title','field-title',60);updateSEO()" maxlength="120">
-        </div>
-
-        <div class="field-group">
-          <label class="field-label">Méta-description <span class="char-count" id="meta-count">0 / 155</span></label>
-          <textarea class="field-textarea" id="field-meta" placeholder="Description affichée dans Google…"
-            oninput="countField('meta','field-meta',155);updateSEO()" maxlength="320" rows="3"></textarea>
-        </div>
-
-        <div class="field-group">
-          <label class="field-label">Slug URL</label>
-          <input type="text" class="field-input" id="field-slug" placeholder="mon-article-seo" oninput="cleanSlug();updateSEO()">
-        </div>
-
-        <div class="field-group">
-          <label class="field-label">Auteur</label>
-          <input type="text" class="field-input" id="field-author" placeholder="Goradieme" value="Goradieme">
-        </div>
-
-        <div class="field-group">
-          <label class="field-label">Catégorie</label>
-          <select class="field-select" id="field-category" oninput="updateSEO()">
-            <option value="">Choisir…</option>
-            <option value="seo">📊 SEO & Technique</option>
-            <option value="saas">☁️ SaaS B2B</option>
-            <option value="ecommerce">🛒 E-commerce Tech</option>
-            <option value="cyber">🔒 Cybersécurité</option>
-            <option value="fintech">💳 Fintech</option>
-            <option value="rh">👥 RH Tech</option>
-          </select>
-        </div>
-
-        <div class="field-group">
-          <label class="field-label">Temps de lecture</label>
-          <input type="text" class="field-input" id="field-lecture" placeholder="ex : 6 min" id="field-lecture">
-        </div>
-
-        <div class="divider"></div>
-
-        <div class="field-group">
-          <label class="field-label">Mot-clé principal</label>
-          <input type="text" class="field-input" id="field-keyword-main" placeholder="ex : référencement naturel" oninput="updateSEO()">
-        </div>
-
-        <div class="field-group">
-          <label class="field-label">Mots-clés secondaires</label>
-          <div class="tags-container" id="tags-secondary" onclick="document.getElementById('tags-input-secondary').focus()">
-            <input type="text" class="tags-input" id="tags-input-secondary"
-              placeholder="Tapez et appuyez sur Entrée…"
-              onkeydown="handleTagInput(event,'secondary')" oninput="updateSEO()">
-          </div>
-        </div>
-
+    <!-- Lisibilité -->
+    <div class="side-section">
+      <div class="side-title">📖 Lisibilité</div>
+      <div class="checks-list" id="read-checks">
+        <div class="check-item"><div class="check-dot d-gray"></div>Rédigez du contenu pour analyser la lisibilité</div>
       </div>
     </div>
 
-    <!-- Aperçu Google -->
-    <div class="card" style="padding:1rem">
-      <div class="card-title" style="margin-bottom:.75rem"><i class="fas fa-magnifying-glass"></i> Aperçu Google</div>
-      <div class="serp-preview">
-        <div class="serp-url">https://techrepaircontent.com/<span id="serp-slug">mon-article</span></div>
-        <div class="serp-title" id="serp-title">Titre de votre article</div>
-        <div class="serp-desc" id="serp-desc">La méta-description apparaîtra ici…</div>
+    <!-- Métriques -->
+    <div class="side-section">
+      <div class="side-title">📊 Métriques</div>
+      <div id="metrics-wrap">
+        <div style="font-size:12.5px;color:var(--muted)">Les métriques s'affichent au fil de votre rédaction.</div>
       </div>
     </div>
 
-  </div>
+    <!-- Tags détectés -->
+    <div class="side-section">
+      <div class="side-title">🏷️ Mots-clés détectés</div>
+      <div class="tags-wrap" id="tags-wrap">
+        <span style="font-size:12px;color:var(--muted)">Rédigez du contenu pour détecter les mots-clés</span>
+      </div>
+    </div>
+
+    <!-- Publier -->
+    <div class="side-section" style="border-bottom:none">
+      <div class="side-title">🚀 Publication GitHub</div>
+
+      <!-- Config GitHub -->
+      <div id="gh-config-section">
+        <div style="font-size:12px;font-weight:700;color:var(--navy);margin-bottom:5px">Propriétaire du repo <span style="color:var(--muted);font-weight:500">(user ou org)</span></div>
+        <input type="text" id="gh-owner" placeholder="ex : goradieme" style="font-size:12px;padding:8px 10px;margin-bottom:8px"/>
+
+        <div style="font-size:12px;font-weight:700;color:var(--navy);margin-bottom:5px">Nom du repo</div>
+        <input type="text" id="gh-repo" placeholder="ex : techrepaircontent" style="font-size:12px;padding:8px 10px;margin-bottom:8px"/>
+
+        <div style="font-size:12px;font-weight:700;color:var(--navy);margin-bottom:5px">Branche</div>
+        <input type="text" id="gh-branch" placeholder="main" value="main" style="font-size:12px;padding:8px 10px;margin-bottom:8px"/>
+
+        <div style="font-size:12px;font-weight:700;color:var(--navy);margin-bottom:5px">Token GitHub</div>
+        <input type="password" id="gh-token" placeholder="ghp_xxxxxxxxxxxx" style="font-size:12px;padding:8px 10px;margin-bottom:4px"/>
+        <div style="font-size:11px;color:var(--muted);margin-bottom:10px;line-height:1.5">GitHub → Settings → Developer settings → Personal access tokens → <strong>repo</strong> scope requis</div>
+
+        <button onclick="sauvegarderConfig()" style="width:100%;background:var(--blue-light);color:var(--blue);border:none;border-radius:8px;padding:9px;font-size:12.5px;font-weight:700;cursor:pointer;font-family:inherit;margin-bottom:10px">💾 Sauvegarder la config</button>
+      </div>
+
+      <!-- Toggle config -->
+      <button onclick="toggleConfig()" id="btn-toggle-config" style="width:100%;background:none;border:1.5px solid var(--border);border-radius:8px;padding:8px;font-size:12px;font-weight:600;color:var(--muted);cursor:pointer;font-family:inherit;margin-bottom:10px;display:none">⚙️ Modifier la configuration</button>
+
+      <!-- Résumé config active -->
+      <div id="gh-config-summary" style="display:none;background:var(--blue-light);border-radius:8px;padding:10px 12px;margin-bottom:10px;font-size:11.5px;color:var(--navy)"></div>
+
+      <button class="pub-side-btn" id="btn-pub-direct" onclick="publierDirect()">📤 Publier sur GitHub →</button>
+      <div id="pub-status" style="margin-top:10px;font-size:12.5px;display:none"></div>
+    </div>
+
+  </aside>
 </div>
 
-<!-- ══ MODAL PUBLICATION ══ -->
-<div class="modal-overlay" id="modal-publish">
-  <div class="modal-box">
-    <div class="modal-header">
-      <div class="modal-title"><i class="fas fa-paper-plane"></i> Publier l'article sur le blog</div>
-      <button class="btn btn-ghost btn-sm" onclick="closePublishModal()"><i class="fas fa-xmark"></i></button>
+
+<!-- MODAL LIEN -->
+<div class="link-modal" id="link-modal">
+  <div class="link-box">
+    <h4>🔗 Insérer un lien</h4>
+    <label>Texte du lien</label>
+    <input type="text" id="link-text" placeholder="Ex : stratégie SEO SaaS"/>
+    <label>URL (maillage interne ou externe)</label>
+    <input type="url" id="link-url" placeholder="https://www.techrepaircontent.com/articles/..."/>
+    <div style="display:flex;align-items:center;gap:8px;margin-bottom:14px">
+      <input type="checkbox" id="link-nofollow" style="width:auto;margin:0"/>
+      <label style="font-size:12.5px;color:var(--muted);margin:0;cursor:pointer" for="link-nofollow">Attribut nofollow (lien externe)</label>
     </div>
-
-    <div style="margin-bottom:1rem">
-      <p style="font-size:13px;color:var(--text-secondary);margin-bottom:.875rem">
-        Suis ces 3 étapes pour que l'article apparaisse sur ton blog.
-      </p>
-
-      <div class="step-item">
-        <div class="step-num">1</div>
-        <div class="step-text">
-          <strong>Copie le code ci-dessous</strong> — c'est l'entrée à ajouter dans <code style="background:var(--accent-light);color:var(--accent-dark);padding:1px 5px;border-radius:4px">articles.js</code>
-        </div>
-      </div>
-
-      <div style="position:relative;margin-bottom:.75rem">
-        <div class="code-block" id="article-code-block">Remplis d'abord le titre, la méta-description, le slug, la catégorie et le contenu.</div>
-        <button class="btn btn-sm btn-secondary" onclick="copyCode()"
-          style="position:absolute;top:8px;right:8px;font-size:11px">
-          <i class="fas fa-copy"></i> Copier
-          <span class="copy-success" id="copy-success">✓ Copié !</span>
-        </button>
-      </div>
-
-      <div class="step-item">
-        <div class="step-num">2</div>
-        <div class="step-text">
-          Ouvre le fichier <strong>articles.js</strong> dans ton dépôt GitHub →
-          clique sur <strong>✏️ Edit</strong> → colle le code dans le tableau <code style="background:var(--accent-light);color:var(--accent-dark);padding:1px 5px;border-radius:4px">ARTICLES = [ … ]</code>
-          → <strong>Commit changes</strong>.
-        </div>
-      </div>
-
-      <div class="step-item">
-        <div class="step-num">3</div>
-        <div class="step-text">
-          Attends ~1 minute que GitHub Pages se mette à jour, puis visite ton blog → l'article est en ligne 🎉
-        </div>
-      </div>
-    </div>
-
-    <div style="display:flex;justify-content:flex-end;gap:10px;padding-top:1rem;border-top:1px solid var(--border)">
-      <button class="btn btn-secondary" onclick="closePublishModal()">Fermer</button>
-      <a id="github-link" href="https://github.com" target="_blank" class="btn btn-publish">
-        <i class="fab fa-github"></i> Ouvrir GitHub →
-      </a>
+    <div class="link-box-btns">
+      <button class="lb-cancel" onclick="closeLinkModal()">Annuler</button>
+      <button class="lb-remove" id="btn-remove-link" onclick="removeLinkFromModal()" style="display:none">Retirer le lien</button>
+      <button class="lb-ok" onclick="applyLink()">Insérer →</button>
     </div>
   </div>
 </div>
 
-<div id="toast"><i class="fas fa-circle-check"></i> <span id="toast-msg"></span></div>
+<!-- TOAST -->
+<div class="toast" id="toast"></div>
 
 <script>
-pdfjsLib.GlobalWorkerOptions.workerSrc='https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js';
-const tagsData={secondary:[]};
+/* ══ IMAGE DE COUVERTURE ══ */
+let coverDataUrl = null;
+let coverFile = null;
 
-function fmt(cmd,val){document.execCommand(cmd,false,val||null);document.getElementById('editor').focus();}
-function fmtBlock(tag){document.execCommand('formatBlock',false,tag);document.getElementById('editor').focus();}
-
-function updateCounts(){
-  const text=document.getElementById('editor').innerText||'';
-  const words=text.trim()?text.trim().split(/\s+/).length:0;
-  document.getElementById('word-count').textContent=words;
-  document.getElementById('char-count').textContent=text.length;
-}
-
-function countField(id,elId,max){
-  const len=document.getElementById(elId).value.length;
-  const el=document.getElementById(id+'-count');
-  if(!el)return;
-  el.textContent=len+' / '+max;
-  el.className='char-count'+(len>max?' over':len>=max*.8?' ok':'');
-}
-
-function cleanSlug(){
-  const el=document.getElementById('field-slug');
-  el.value=el.value.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g,'')
-    .replace(/[^a-z0-9\s-]/g,'').replace(/\s+/g,'-').replace(/-+/g,'-');
-  document.getElementById('serp-slug').textContent=el.value||'mon-article';
-}
-
-function handleTagInput(e,group){
-  if(e.key==='Enter'||e.key===','){
-    e.preventDefault();
-    const val=e.target.value.trim().replace(/,$/,'');
-    if(val&&!tagsData[group].includes(val)){tagsData[group].push(val);renderTags(group);}
-    e.target.value='';updateSEO();
-  }
-  if(e.key==='Backspace'&&!e.target.value){tagsData[group].pop();renderTags(group);updateSEO();}
-}
-
-function renderTags(group){
-  const container=document.getElementById('tags-'+group);
-  const input=document.getElementById('tags-input-'+group);
-  container.innerHTML='';
-  tagsData[group].forEach((tag,i)=>{
-    const pill=document.createElement('span');
-    pill.className='tag-pill';
-    pill.innerHTML=tag+'<button onclick="removeTag(\''+group+'\','+i+')"><i class="fas fa-xmark"></i></button>';
-    container.appendChild(pill);
-  });
-  container.appendChild(input);
-}
-
-function removeTag(group,idx){tagsData[group].splice(idx,1);renderTags(group);updateSEO();}
-
-function setTags(group,arr){
-  tagsData[group]=arr.filter(Boolean).map(t=>t.trim()).filter(t=>t.length>0);
-  renderTags(group);
-  document.getElementById('tags-'+group).classList.add('auto-filled');
-}
-
-function updateSerp(){
-  const title=document.getElementById('field-title').value;
-  const meta=document.getElementById('field-meta').value;
-  const slug=document.getElementById('field-slug').value;
-  document.getElementById('serp-title').textContent=title||'Titre de votre article';
-  document.getElementById('serp-desc').textContent=meta||'La méta-description apparaîtra ici…';
-  document.getElementById('serp-slug').textContent=slug||'mon-article';
-}
-
-function updateSEO(){
-  updateSerp();
-  const title=document.getElementById('field-title').value;
-  const meta=document.getElementById('field-meta').value;
-  const slug=document.getElementById('field-slug').value;
-  const kw=document.getElementById('field-keyword-main').value.toLowerCase();
-  const text=(document.getElementById('editor').innerText||'').toLowerCase();
-  const words=text.trim()?text.trim().split(/\s+/).length:0;
-  const checks=[];let score=0;
-  if(!title){checks.push({ok:false,msg:'Titre SEO manquant'});}
-  else if(title.length<30){checks.push({warn:true,msg:'Titre trop court (<30 car.)'});score+=5;}
-  else if(title.length>60){checks.push({warn:true,msg:'Titre trop long (>60 car.)'});score+=5;}
-  else{checks.push({ok:true,msg:'Titre optimisé ('+title.length+' car.)'});score+=15;}
-  if(kw&&title.toLowerCase().includes(kw)){checks.push({ok:true,msg:'Mot-clé présent dans le titre'});score+=15;}
-  else if(kw){checks.push({warn:true,msg:'Mot-clé absent du titre'});}
-  if(!meta){checks.push({ok:false,msg:'Méta-description manquante'});}
-  else if(meta.length<70){checks.push({warn:true,msg:'Méta-description trop courte'});score+=5;}
-  else if(meta.length>155){checks.push({warn:true,msg:'Méta-description trop longue (>155)'});score+=5;}
-  else{checks.push({ok:true,msg:'Méta-description optimisée'});score+=15;}
-  if(!slug){checks.push({ok:false,msg:'Slug URL manquant'});}
-  else{checks.push({ok:true,msg:'Slug bien formaté'});score+=10;}
-  if(words===0){checks.push({ok:false,msg:'Contenu vide'});}
-  else if(words<300){checks.push({warn:true,msg:'Contenu court ('+words+' mots)'});score+=5;}
-  else if(words<600){checks.push({ok:true,msg:'Contenu acceptable ('+words+' mots)'});score+=15;}
-  else{checks.push({ok:true,msg:'Contenu riche ('+words+' mots)'});score+=25;}
-  if(kw&&text){
-    const kwCount=(text.match(new RegExp(kw.replace(/[.*+?^${}()|[\]\\]/g,'\\$&'),'g'))||[]).length;
-    const density=words>0?(kwCount/words*100).toFixed(1):0;
-    if(density==0){checks.push({warn:true,msg:'Mot-clé absent du contenu'});}
-    else if(density>3){checks.push({warn:true,msg:'Densité trop haute ('+density+'%)'});score+=5;}
-    else{checks.push({ok:true,msg:'Densité mot-clé : '+density+'%'});score+=10;}
-  }
-  if(tagsData.secondary.length>0){checks.push({ok:true,msg:tagsData.secondary.length+' mots-clés secondaires'});score+=5;}
-  const checksEl=document.getElementById('seo-checks');
-  checksEl.innerHTML=checks.map(c=>{
-    const cls=c.ok?'check-ok':c.warn?'check-warn':'check-bad';
-    const icon=c.ok?'fa-circle-check':c.warn?'fa-triangle-exclamation':'fa-circle-xmark';
-    return '<div class="seo-check '+cls+'"><i class="fas '+icon+'"></i><span>'+c.msg+'</span></div>';
-  }).join('');
-  score=Math.min(score,100);
-  const arc=document.getElementById('score-arc');
-  arc.style.strokeDasharray=(score/100*176)+' 176';
-  arc.style.stroke=score>=70?'#10b981':score>=40?'#f59e0b':'#6c63ff';
-  document.getElementById('score-num').textContent=score;
-  document.getElementById('score-label').textContent=
-    score>=80?'🟢 Excellent':score>=60?'🟡 Bon':score>=40?'🟠 À améliorer':'🔴 Insuffisant';
-  const badge=document.getElementById('status-badge');
-  if(score>=70){badge.className='status-badge badge-ready';badge.innerHTML='<i class="fas fa-circle" style="font-size:7px"></i> Prêt à publier';}
-  else if(score>=30){badge.className='status-badge badge-warning';badge.innerHTML='<i class="fas fa-circle" style="font-size:7px"></i> À compléter';}
-  else{badge.className='status-badge badge-draft';badge.innerHTML='<i class="fas fa-circle" style="font-size:7px"></i> Brouillon';}
-}
-
-/* ── PDF ── */
-const dropZone=document.getElementById('drop-zone');
-dropZone.addEventListener('dragover',e=>{e.preventDefault();dropZone.classList.add('dragover');});
-dropZone.addEventListener('dragleave',()=>dropZone.classList.remove('dragover'));
-dropZone.addEventListener('drop',e=>{
-  e.preventDefault();dropZone.classList.remove('dragover');
-  const file=e.dataTransfer.files[0];
-  if(file&&file.type==='application/pdf')handlePDF(file);
-  else showToast('error','Veuillez déposer un fichier PDF.');
-});
-
-async function handlePDF(file){
-  if(!file)return;
-  setProcessing(true,'Lecture du fichier PDF…');
-  dropZone.classList.add('has-file');
-  document.getElementById('drop-title').textContent=file.name;
-  document.getElementById('drop-sub').textContent='Analyse en cours…';
-  document.getElementById('clear-pdf-btn').style.display='flex';
-  try{
-    setProcessingStep('Extraction du texte…');
-    const arrayBuffer=await file.arrayBuffer();
-    const pdf=await pdfjsLib.getDocument({data:arrayBuffer}).promise;
-    let fullText='';
-    for(let i=1;i<=Math.min(pdf.numPages,15);i++){
-      const page=await pdf.getPage(i);
-      const content=await page.getTextContent();
-      fullText+=content.items.map(s=>s.str).join(' ')+'\n';
-    }
-    fullText=fullText.trim();
-    if(!fullText)throw new Error('Aucun texte extractible dans ce PDF.');
-    document.getElementById('editor').innerHTML='<p>'+fullText.replace(/\n+/g,'</p><p>')+'</p>';
-    updateCounts();
-    setProcessingStep('Analyse des métadonnées SEO…');
-    await sleep(400);
-    analyzeLocally(fullText);
-  }catch(err){
-    setProcessing(false);
-    showToast('error',err.message||'Erreur lors de la lecture du PDF.');
-  }
-}
-
-function analyzeLocally(text){
-  const clean = text.replace(/\s+/g,' ').trim();
-  const sentences = clean.split(/[.!?]+/).map(s=>s.trim()).filter(s=>s.length>30);
-  const words = clean.toLowerCase().split(/\s+/);
-
-  /* ── Titre : première phrase courte ou 60 premiers caractères significatifs ── */
-  let titre = '';
-  // Cherche une ligne courte en majuscules (souvent le titre du PDF)
-  const lines = text.split('\n').map(l=>l.trim()).filter(l=>l.length>10&&l.length<80);
-  for(const line of lines){
-    if(line.length>=20&&line.length<=65&&!/©|Page|http|www/.test(line)){
-      titre=line.replace(/[*#_]/g,'').trim();
-      break;
-    }
-  }
-  if(!titre&&sentences[0]) titre = sentences[0].slice(0,60).trim();
-  if(titre.length>60) titre=titre.slice(0,57)+'…';
-
-  /* ── Catégorie : détection par mots-clés ── */
-  const catKeywords={
-    seo:['seo','référencement','serp','backlink','keyword','google','indexation','ranking','meta','slug','contenu','blog','rédaction','geo','overview'],
-    saas:['saas','logiciel','software','abonnement','crm','erp','api','cloud','b2b','startup','mrr','arr','churn','onboarding'],
-    ecommerce:['ecommerce','e-commerce','boutique','panier','conversion','produit','achat','marketplace','shopify','woocommerce'],
-    cyber:['cybersécurité','sécurité','hacker','phishing','ransomware','firewall','vulnérabilité','nis2','dora','rgpd','zero-trust'],
-    fintech:['fintech','paiement','banque','crypto','blockchain','investissement','trading','assurance','régulation'],
-    rh:['rh','ressources humaines','recrutement','talent','employé','onboarding','offboarding','paie','sirh','qvt'],
+function handleCoverImage(e){
+  const file = e.target.files[0];
+  if(!file) return;
+  coverFile = file;
+  const reader = new FileReader();
+  reader.onload = function(ev){
+    coverDataUrl = ev.target.result;
+    const zone = document.getElementById('cover-zone');
+    zone.innerHTML = '<img src="'+coverDataUrl+'" class="cover-preview" alt="Image de couverture"/>';
+    zone.classList.add('has-img');
+    zone.onclick = null;
+    document.getElementById('cover-actions').style.display = 'flex';
+    document.getElementById('og-img-preview').innerHTML = '<img src="'+coverDataUrl+'" style="width:100%;height:140px;object-fit:cover;display:block"/>';
+    analyze();
   };
-  const textLow=clean.toLowerCase();
-  let bestCat='seo', bestScore=0;
-  for(const [cat,kws] of Object.entries(catKeywords)){
-    const score=kws.filter(k=>textLow.includes(k)).length;
-    if(score>bestScore){bestScore=score;bestCat=cat;}
-  }
+  reader.readAsDataURL(file);
+}
 
-  /* ── Mot-clé principal : mot/bigram le plus fréquent (hors stopwords) ── */
-  const stopwords=new Set(['le','la','les','de','du','des','un','une','et','en','à','au','aux','par','pour','sur','dans','avec','que','qui','est','sont','il','elle','ils','elles','nous','vous','je','tu','se','sa','son','ses','ce','cet','cette','ces','mais','ou','donc','or','ni','car','si','ne','pas','plus','très','tout','tous','toute','toutes','leur','leurs','dont','où','comme','plus','sans','sous','entre','vers','chez','après','avant','même','aussi','bien','alors','déjà','encore','ainsi','peut','être','avoir','faire','dit','cette','also','the','and','for','with','from','that','this','are','was','has','have','not','its','your','our','their']);
+function removeCover(){
+  coverDataUrl = null; coverFile = null;
+  const zone = document.getElementById('cover-zone');
+  zone.innerHTML = '<div class="cover-zone-ico">🖼️</div><div class="cover-zone-lbl">Cliquez pour ajouter une image</div><div class="cover-zone-sub">JPG, PNG, WebP — recommandé 1200 × 630 px</div>';
+  zone.classList.remove('has-img');
+  zone.onclick = ()=>document.getElementById('cover-input').click();
+  document.getElementById('cover-actions').style.display = 'none';
+  document.getElementById('og-img-preview').innerHTML = '🖼️';
+  document.getElementById('cover-input').value = '';
+  analyze();
+}
+
+/* ══ METATAGS & OG ══ */
+function updateOG(){
+  const title = document.getElementById('og-title').value || document.getElementById('title-input').value || 'Titre de votre article';
+  const desc = document.getElementById('og-desc').value || document.getElementById('meta-input').value || 'Description de votre article';
+  const slug = document.getElementById('slug-input').value || 'votre-article';
+  const canonical = document.getElementById('canonical-url').value || 'https://www.techrepaircontent.com/articles/'+slug;
+  const robots = document.getElementById('robots-meta').value;
+  const twitterCard = document.getElementById('twitter-card').value;
+  const kw = document.getElementById('kw-input').value;
+  const kw2 = document.getElementById('kw2-input').value;
+  const allKw = [kw,kw2].filter(Boolean).join(', ');
+  const imgLine = coverDataUrl ? '\n<meta property="og:image" content="https://www.techrepaircontent.com/articles/images/'+slug+'.jpg"/>' : '';
+  const twImgLine = coverDataUrl ? '\n<meta name="twitter:image" content="https://www.techrepaircontent.com/articles/images/'+slug+'.jpg"/>' : '';
+
+  document.getElementById('og-title-preview').textContent = title;
+  document.getElementById('og-desc-preview').textContent = desc;
+
+  const metaCode = '<!-- SEO Meta Tags -->\n<title>'+title+'</title>\n<meta name="description" content="'+desc+'"/>\n'+(allKw?'<meta name="keywords" content="'+allKw+'"/>\n':'')+'<meta name="robots" content="'+robots+'"/>\n<link rel="canonical" href="'+canonical+'"/>\n\n<!-- Open Graph -->\n<meta property="og:type" content="article"/>\n<meta property="og:title" content="'+title+'"/>\n<meta property="og:description" content="'+desc+'"/>\n<meta property="og:url" content="'+canonical+'"/>\n<meta property="og:site_name" content="TechRepair Content"/>'+imgLine+'\n\n<!-- Twitter / X Card -->\n<meta name="twitter:card" content="'+twitterCard+'"/>\n<meta name="twitter:title" content="'+title+'"/>\n<meta name="twitter:description" content="'+desc+'"/>'+twImgLine;
+
+  document.getElementById('metatags-output').value = metaCode;
+}
+
+function copyMetatags(){
+  const el = document.getElementById('metatags-output');
+  el.select();
+  document.execCommand('copy');
+  showToast('✅ Code métatags copié dans le presse-papiers !');
+}
+
+/* ══ UTILITAIRES ══ */
+function getRichText(){
+  const el = document.getElementById('body-input');
+  if(!el) return '';
+  return el.innerText || el.textContent || '';
+}
+function getRichHTML(){
+  const el = document.getElementById('body-input');
+  if(!el) return '';
+  return el.innerHTML || '';
+}
+function wc(t){if(!t.trim())return 0;return t.trim().split(/\s+/).length}
+function readTime(w){return Math.max(1,Math.round(w/200))}
+function density(body,kw){
+  if(!body||!kw)return 0;
+  const words=wc(body);
+  const occ=(body.toLowerCase().match(new RegExp(kw.toLowerCase().replace(/[.*+?^${}()|[\]\\]/g,'\\$&'),'g'))||[]).length;
+  return words>0?(occ/words*100):0;
+}
+function avgSentLen(t){
+  const s=t.split(/[.!?]+/).filter(x=>x.trim().split(/\s+/).length>3);
+  if(!s.length)return 0;
+  return s.reduce((a,b)=>a+b.trim().split(/\s+/).length,0)/s.length;
+}
+function extractKws(t,kw){
+  const stop=['le','la','les','de','du','des','un','une','et','en','au','aux','pour','par','sur','que','qui','dans','avec','est','son','ses','pas','mais','ou','si','car','ce','se','sa','nous','vous','ils','elles','être','avoir','faire'];
+  const words=t.toLowerCase().replace(/[^a-zéèêàùûîôäëïüç\s]/g,' ').split(/\s+/).filter(w=>w.length>4&&!stop.includes(w));
   const freq={};
-  for(let i=0;i<words.length-1;i++){
-    const w=words[i].replace(/[^a-zàâéèêëîïôùûüç-]/g,'');
-    const w2=words[i+1].replace(/[^a-zàâéèêëîïôùûüç-]/g,'');
-    if(w.length>4&&!stopwords.has(w)){freq[w]=(freq[w]||0)+1;}
-    if(w.length>3&&w2.length>3&&!stopwords.has(w)&&!stopwords.has(w2)){
-      const bg=w+' '+w2;freq[bg]=(freq[bg]||0)+2;
-    }
+  words.forEach(w=>{freq[w]=(freq[w]||0)+1});
+  return Object.entries(freq).filter(([w,c])=>c>=2&&(!kw||w!==kw.toLowerCase())).sort((a,b)=>b[1]-a[1]).slice(0,10).map(x=>x[0]);
+}
+
+/* ══ COMPOSANTS UI ══ */
+function mkCheck(status,text){
+  const div=document.createElement('div');
+  div.className='check-item';
+  const dot=document.createElement('div');
+  dot.className='check-dot d-'+status;
+  dot.textContent=status==='green'?'✓':status==='orange'?'!':'✗';
+  if(status==='gray'){dot.textContent='';dot.style.background='#94a3b8';}
+  const span=document.createElement('span');
+  span.textContent=text;
+  div.appendChild(dot);
+  div.appendChild(span);
+  return div;
+}
+
+function mkMetric(name,val,max,unit){
+  const pct=Math.min(100,Math.max(0,val/max*100));
+  const color=pct>=70?'#16a34a':pct>=40?'#c2410c':'#dc2626';
+  const div=document.createElement('div');
+  div.className='metric-row';
+  div.innerHTML=`<div class="metric-name"><span>${name}</span><span class="metric-val" style="color:${color}">${val}${unit}</span></div><div class="metric-bar"><div class="metric-fill" style="width:${pct}%;background:${color}"></div></div>`;
+  return div;
+}
+
+function setCharCount(elId,len,min,max){
+  const el=document.getElementById(elId);
+  const ok=len>=min&&len<=max;
+  const warn=len>0&&(len>=min-15&&len<min||len>max&&len<=max+10);
+  el.textContent=len+' / '+max;
+  el.className='char-count '+(len===0?'cc-gray':ok?'cc-green':warn?'cc-orange':'cc-red');
+}
+
+function setScoreRing(score){
+  const color=score>=70?'#16a34a':score>=40?'#c2410c':'#dc2626';
+  const word=score>=70?'✅ Bon pour publication':score>=40?'⚠️ À améliorer':'🔴 Insuffisant';
+  document.getElementById('score-ring').style.borderColor=color;
+  document.getElementById('score-num').style.color=color;
+  document.getElementById('score-num').textContent=score;
+  document.getElementById('score-word').style.color=color;
+  document.getElementById('score-word').textContent=score===0?'Commencez à rédiger':word;
+}
+
+/* ══ ANALYSE PRINCIPALE ══ */
+function analyze(){
+  const title=document.getElementById('title-input').value;
+  const kw=document.getElementById('kw-input').value.trim().toLowerCase();
+  const meta=document.getElementById('meta-input').value;
+  const body=getRichText();
+  const slug=document.getElementById('slug-input').value.trim();
+
+  const titleLen=title.length;
+  const metaLen=meta.length;
+  const slugLen=slug.length;
+  const words=wc(body);
+  const rt=readTime(words);
+
+  /* Compteurs */
+  setCharCount('title-count',titleLen,50,60);
+  setCharCount('meta-count',metaLen,145,160);
+  document.getElementById('slug-count').textContent=slugLen+' car.';
+  document.getElementById('slug-count').className='char-count '+(slugLen===0?'cc-gray':slugLen<=75?'cc-green':'cc-orange');
+  document.getElementById('body-count').textContent=words+' mot'+(words>1?'s':'');
+  document.getElementById('read-time').value=rt+' min de lecture';
+
+  /* SERP Preview */
+  document.getElementById('prev-url').textContent='https://www.techrepaircontent.com/articles/'+(slug||'votre-article');
+  const prevTitle=document.getElementById('prev-title');
+  prevTitle.textContent=title||'Titre de votre article';
+  prevTitle.className='serp-title'+(titleLen>60?' serp-title-warn':'');
+  document.getElementById('prev-desc').textContent=meta||'Votre meta description apparaîtra ici. Elle doit être engageante et inciter au clic.';
+
+  /* Score */
+  let score=0;
+  const seoChecks=[];
+  const readChecks=[];
+
+  /* SEO checks */
+  if(kw){
+    const kwTitle=title.toLowerCase().includes(kw);
+    seoChecks.push({s:kwTitle?'green':'red',t:'Mot-clé dans le titre'+(kwTitle?' ✓':' — manquant')});
+    if(kwTitle)score+=12;
+
+    const kwMeta=meta.toLowerCase().includes(kw);
+    seoChecks.push({s:kwMeta?'green':'orange',t:'Mot-clé dans la meta'+(kwMeta?' ✓':' — à ajouter')});
+    if(kwMeta)score+=10;
+
+    const kwSlug=slug.toLowerCase().replace(/\s+/g,'-').includes(kw.replace(/\s+/g,'-'));
+    seoChecks.push({s:kwSlug?'green':'orange',t:'Mot-clé dans l\'URL'+(kwSlug?' ✓':' — recommandé')});
+    if(kwSlug)score+=8;
+
+    const d=parseFloat(density(body,kw).toFixed(1));
+    const dOk=d>=0.5&&d<=2.5;
+    seoChecks.push({s:dOk?'green':d>0&&d<0.5?'orange':d>2.5?'orange':'gray',t:'Densité : '+d+'%'+(dOk?' ✓':d<0.5&&d>0?' — trop faible':d>2.5?' — trop élevée':' — rédigez du contenu')});
+    if(dOk)score+=12;
+
+    const intro100=body.split(/\s+/).slice(0,100).join(' ').toLowerCase();
+    const kwIntro=intro100.includes(kw);
+    seoChecks.push({s:kwIntro?'green':body.length>0?'orange':'gray',t:'Mot-clé dans l\'intro'+(kwIntro?' ✓':' — à placer tôt')});
+    if(kwIntro)score+=8;
+  }else{
+    seoChecks.push({s:'gray',t:'Saisissez un mot-clé principal pour l\'analyse SEO complète'});
   }
-  const sorted=Object.entries(freq).sort((a,b)=>b[1]-a[1]);
-  const motCle=sorted[0]?sorted[0][0]:'contenu seo';
-  const kwsSecondaires=sorted.slice(1,6).map(e=>e[0]);
 
-  /* ── Méta-description : 2e ou 3e phrase du texte ── */
-  let meta='';
-  for(const s of sentences.slice(1,6)){
-    if(s.length>=80&&s.length<=160){meta=s;break;}
+  const titleOk=titleLen>=50&&titleLen<=60;
+  seoChecks.push({s:titleOk?'green':titleLen>0?'orange':'red',t:'Titre : '+titleLen+' car.'+(titleOk?' ✓':titleLen===0?' — obligatoire':titleLen<50?' — trop court':' — trop long')});
+  if(titleOk)score+=8;
+
+  const metaOk=metaLen>=145&&metaLen<=160;
+  seoChecks.push({s:metaOk?'green':metaLen>0?'orange':'red',t:'Meta : '+metaLen+' car.'+(metaOk?' ✓':metaLen===0?' — obligatoire':metaLen<145?' — trop courte':' — trop longue')});
+  if(metaOk)score+=10;
+
+  const wordsOk=words>=1500;
+  const wordsMed=words>=800;
+  seoChecks.push({s:wordsOk?'green':wordsMed?'orange':'red',t:'Contenu : '+words+' mots'+(wordsOk?' ✓':wordsMed?' — min. 1 500 recommandé':' — trop court')});
+  if(wordsOk)score+=12;else if(wordsMed)score+=4;
+
+  const hasSlug=slugLen>0;
+  seoChecks.push({s:hasSlug?'green':'orange',t:'URL définie'+(hasSlug?' ✓':' — à renseigner')});
+  if(hasSlug)score+=5;
+
+  /* Lisibilité */
+  const avgSent=avgSentLen(body);
+  const sentOk=avgSent>0&&avgSent<=20;
+  readChecks.push({s:sentOk?'green':avgSent>0?'orange':'gray',t:'Phrases : '+(avgSent>0?avgSent.toFixed(0)+' mots en moy.'+(sentOk?' ✓':' — raccourcir'):'contenu insuffisant')});
+  if(sentOk)score+=5;
+
+  const hasParas=body.split(/\n\n+/).filter(p=>p.trim().length>50).length>=2;
+  readChecks.push({s:hasParas?'green':body.length>200?'orange':'gray',t:'Paragraphes structurés'+(hasParas?' ✓':' — ajouter des sauts de ligne')});
+  if(hasParas)score+=5;
+
+  const hasH2=getRichHTML().includes('<h2');
+  readChecks.push({s:hasH2?'green':body.length>500?'orange':'gray',t:'Sous-titres H2 (##)'+(hasH2?' ✓':' — structurez avec des titres')});
+  if(hasH2)score+=5;
+
+  const catOk=document.getElementById('cat-input').value!=='';
+  readChecks.push({s:catOk?'green':'orange',t:'Catégorie définie'+(catOk?' ✓':' — obligatoire')});
+  if(catOk)score+=5;
+
+  /* Render */
+  const seoEl=document.getElementById('seo-checks');
+  const readEl=document.getElementById('read-checks');
+  seoEl.innerHTML='';readEl.innerHTML='';
+  seoChecks.forEach(c=>seoEl.appendChild(mkCheck(c.s,c.t)));
+  readChecks.forEach(c=>readEl.appendChild(mkCheck(c.s,c.t)));
+
+  /* Métriques */
+  const metricsEl=document.getElementById('metrics-wrap');
+  metricsEl.innerHTML='';
+  metricsEl.appendChild(mkMetric('Mots',words,2000,' mots'));
+  metricsEl.appendChild(mkMetric('Titre',titleLen,60,' car.'));
+  metricsEl.appendChild(mkMetric('Meta',metaLen,160,' car.'));
+  if(kw){
+    const d=parseFloat(density(body,kw).toFixed(1));
+    metricsEl.appendChild(mkMetric('Densité',d,2.5,'%'));
   }
-  if(!meta) meta=(sentences[1]||sentences[0]||'').slice(0,155);
-  if(meta.length>155) meta=meta.slice(0,152)+'…';
+  metricsEl.appendChild(mkMetric('Lecture',rt,15,' min'));
 
-  /* ── Slug depuis le titre ── */
-  const slug=slugify(titre);
+  /* Tags */
+  const tagsEl=document.getElementById('tags-wrap');
+  tagsEl.innerHTML='';
+  const kws=extractKws(body+' '+title+' '+meta,kw);
+  if(kws.length){
+    kws.forEach(w=>{const t=document.createElement('span');t.className='tag';t.textContent=w;tagsEl.appendChild(t);});
+  }else{
+    tagsEl.innerHTML='<span style="font-size:12px;color:var(--muted)">Rédigez du contenu pour détecter les mots-clés</span>';
+  }
 
-  /* ── Temps de lecture ── */
-  const wordCount=words.length;
-  const mins=Math.max(1,Math.round(wordCount/200));
-  const lecture=mins+' min';
-
-  /* ── Remplissage animé ── */
-  (async()=>{
-    await fillField('field-title',titre,'title',60);
-    await fillField('field-meta',meta,'meta',155);
-    await fillFieldRaw('field-slug',slug);
-    await fillFieldRaw('field-keyword-main',motCle);
-    await fillFieldRaw('field-lecture',lecture);
-    document.getElementById('field-category').value=bestCat;
-    document.getElementById('field-category').classList.add('auto-filled');
-    setTags('secondary',kwsSecondaires);
-    cleanSlug();updateSEO();setProcessing(false);
-    showToast('success','Champs SEO remplis automatiquement !');
-  })();
+  setScoreRing(Math.min(100,score));
+  updateOG();
 }
 
-async function fillField(id,value,countId,max){
-  const el=document.getElementById(id);el.value='';el.classList.add('auto-filled');
-  for(const ch of String(value)){el.value+=ch;countField(countId,id,max);await sleep(12);}
-}
-async function fillFieldRaw(id,value){
-  const el=document.getElementById(id);el.value='';el.classList.add('auto-filled');
-  for(const ch of String(value)){el.value+=ch;await sleep(10);}
-}
-function slugify(str){
-  return(str||'').toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g,'')
-    .replace(/[^a-z0-9\s-]/g,'').replace(/\s+/g,'-').replace(/-+/g,'-').trim();
-}
-function sleep(ms){return new Promise(r=>setTimeout(r,ms));}
-function setProcessing(active,msg){
-  document.getElementById('processing-banner').classList.toggle('visible',active);
-  if(msg)document.getElementById('processing-step').textContent=msg;
-}
-function setProcessingStep(step){document.getElementById('processing-step').textContent=step;}
+/* ══ CONFIG GITHUB (localStorage) ══ */
+const GH_STORAGE_KEY = 'trc_gh_config';
 
-/* ── Réinitialiser ── */
-function clearPDF(){
-  document.getElementById('pdf-input').value='';
-  dropZone.classList.remove('has-file');
-  document.getElementById('drop-title').textContent='Glissez un PDF ou cliquez pour importer';
-  document.getElementById('drop-sub').textContent='Les champs SEO seront remplis automatiquement par l\'IA';
-  document.getElementById('clear-pdf-btn').style.display='none';
-  setProcessing(false);
-}
-function resetAll(){
-  if(!confirm('Réinitialiser tous les champs ?'))return;
-  clearPDF();
-  document.getElementById('editor').innerHTML='';
-  ['field-title','field-meta','field-slug','field-keyword-main','field-lecture'].forEach(id=>{
-    const el=document.getElementById(id);el.value='';el.classList.remove('auto-filled');
-  });
-  document.getElementById('field-category').value='';
-  document.getElementById('field-author').value='Goradieme';
-  tagsData.secondary=[];renderTags('secondary');
-  document.getElementById('tags-secondary').classList.remove('auto-filled');
-  updateCounts();updateSEO();
-  showToast('success','Éditeur réinitialisé.');
+function chargerConfig(){
+  try {
+    const raw = localStorage.getItem(GH_STORAGE_KEY);
+    return raw ? JSON.parse(raw) : null;
+  } catch(e){ return null; }
 }
 
-/* ── Modal Publication ── */
-function openPublishModal(){
-  const titre=document.getElementById('field-title').value.trim();
-  const meta=document.getElementById('field-meta').value.trim();
-  const slug=document.getElementById('field-slug').value.trim()||'mon-article';
-  const auteur=document.getElementById('field-author').value.trim()||'Goradieme';
-  const cat=document.getElementById('field-category').value||'seo';
-  const lecture=document.getElementById('field-lecture').value.trim()||'5 min';
-  const today=new Date().toISOString().split('T')[0];
-  const lien='articles/'+slug+'.html';
-  const extrait=meta.slice(0,200)||'Description de l\'article.';
-
-  const obj={
-    titre:titre||'Titre à renseigner',
-    extrait:extrait,
-    auteur:auteur,
-    date:today,
-    categorie:cat,
-    lecture:lecture,
-    lien:lien,
-    slug:slug,
-    motCle:document.getElementById('field-keyword-main').value.trim(),
-    metaDesc:meta
-  };
-
-  const lines=Object.entries(obj).map(([k,v])=>'    '+k+': '+JSON.stringify(v));
-  const code='  {\n'+lines.join(',\n')+'\n  },';
-  document.getElementById('article-code-block').textContent=code;
-  document.getElementById('modal-publish').classList.add('active');
+function sauvegarderConfig(){
+  const owner  = document.getElementById('gh-owner').value.trim();
+  const repo   = document.getElementById('gh-repo').value.trim();
+  const branch = document.getElementById('gh-branch').value.trim() || 'main';
+  const token  = document.getElementById('gh-token').value.trim();
+  if(!owner || !repo || !token){
+    showToast('⚠️ Remplissez propriétaire, repo et token');
+    return;
+  }
+  const cfg = { owner, repo, branch, token };
+  localStorage.setItem(GH_STORAGE_KEY, JSON.stringify(cfg));
+  afficherConfigSummary(cfg);
+  showToast('✅ Configuration GitHub sauvegardée');
 }
 
-function closePublishModal(){
-  document.getElementById('modal-publish').classList.remove('active');
+function afficherConfigSummary(cfg){
+  const section = document.getElementById('gh-config-section');
+  const summary = document.getElementById('gh-config-summary');
+  const toggle  = document.getElementById('btn-toggle-config');
+  section.style.display = 'none';
+  toggle.style.display  = 'block';
+  summary.style.display = 'block';
+  summary.innerHTML = `🔗 <strong>${cfg.owner}/${cfg.repo}</strong> · branche <strong>${cfg.branch}</strong><br><span style="color:var(--muted)">Token : ${'•'.repeat(8) + cfg.token.slice(-4)}</span>`;
 }
 
-function copyCode(){
-  const code=document.getElementById('article-code-block').textContent;
-  navigator.clipboard.writeText(code).then(()=>{
-    const s=document.getElementById('copy-success');
-    s.classList.add('show');
-    setTimeout(()=>s.classList.remove('show'),2000);
-  });
+function toggleConfig(){
+  const section = document.getElementById('gh-config-section');
+  const toggle  = document.getElementById('btn-toggle-config');
+  const isHidden = section.style.display === 'none';
+  section.style.display = isHidden ? 'block' : 'none';
+  toggle.textContent = isHidden ? '✕ Fermer la configuration' : '⚙️ Modifier la configuration';
 }
 
-/* ── Toast ── */
-function showToast(type,msg){
-  const t=document.getElementById('toast');
-  const icon=t.querySelector('i');
-  document.getElementById('toast-msg').textContent=msg;
-  icon.className=type==='success'?'fas fa-circle-check':'fas fa-circle-xmark';
-  t.className='show '+type;
-  clearTimeout(t._timer);
-  t._timer=setTimeout(()=>{t.className='';},3000);
-}
-
-/* ── Fermer modal au clic extérieur ── */
-document.getElementById('modal-publish').addEventListener('click',e=>{
-  if(e.target===document.getElementById('modal-publish'))closePublishModal();
+/* Au chargement : restaurer la config si elle existe */
+document.addEventListener('DOMContentLoaded', function(){
+  const cfg = chargerConfig();
+  if(cfg){
+    document.getElementById('gh-owner').value  = cfg.owner  || '';
+    document.getElementById('gh-repo').value   = cfg.repo   || '';
+    document.getElementById('gh-branch').value = cfg.branch || 'main';
+    document.getElementById('gh-token').value  = cfg.token  || '';
+    afficherConfigSummary(cfg);
+  }
 });
+
+/* ══ UTILITAIRES GITHUB API ══ */
+async function ghGet(url, token){
+  const r = await fetch(url, {
+    headers: { Authorization: 'token '+token, Accept: 'application/vnd.github+json' }
+  });
+  if(!r.ok && r.status !== 404) throw new Error('GitHub API '+r.status+' : '+await r.text());
+  return r.status === 404 ? null : r.json();
+}
+
+async function ghPut(url, token, body){
+  const r = await fetch(url, {
+    method: 'PUT',
+    headers: { Authorization: 'token '+token, 'Content-Type': 'application/json', Accept: 'application/vnd.github+json' },
+    body: JSON.stringify(body)
+  });
+  if(!r.ok) throw new Error('GitHub API '+r.status+' : '+await r.text());
+  return r.json();
+}
+
+/* Encode une string en base64 compatible GitHub */
+function toBase64(str){
+  return btoa(unescape(encodeURIComponent(str)));
+}
+
+function setPubStatus(html, type){
+  const el = document.getElementById('pub-status');
+  el.style.display = 'block';
+  el.style.background = type==='ok'?'#dcfce7':type==='err'?'#fee2e2':'#fff7ed';
+  el.style.color = type==='ok'?'#166534':type==='err'?'#991b1b':'#92400e';
+  el.style.borderRadius = '8px';
+  el.style.padding = '10px 12px';
+  el.style.lineHeight = '1.6';
+  el.innerHTML = html;
+}
+
+/* ══ GÉNÉRATION DU HTML DE L'ARTICLE ══ */
+function genererArticleHTML(data){
+  const { titre, slug, meta, kw, kw2, auteur, categorie, lecture, corps, ogTitle, ogDesc, robots, canonical, twitterCard, coverDataUrl } = data;
+
+  const catLabels = { seo:'SEO & Technique', saas:'SaaS B2B', ecommerce:'E-commerce Tech', cyber:'Cybersécurité', fintech:'Fintech', rh:'RH Tech' };
+  const catLabel = catLabels[categorie] || categorie;
+  const allKw = [kw, kw2].filter(Boolean).join(', ');
+  const coverImg = coverDataUrl ? `<img src="../images/${slug}.jpg" alt="${titre}" style="width:100%;border-radius:12px;margin-bottom:28px;display:block"/>` : '';
+  const dateNow = new Date().toISOString().split('T')[0];
+  const ogImgTag = coverDataUrl ? `\n  <meta property="og:image" content="https://www.techrepaircontent.com/articles/images/${slug}.jpg"/>` : '';
+
+  return `<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>${ogTitle || titre}</title>
+<meta name="description" content="${meta}"/>
+${allKw ? `<meta name="keywords" content="${allKw}"/>\n` : ''}<meta name="robots" content="${robots||'index, follow'}"/>
+<link rel="canonical" href="${canonical || 'https://www.techrepaircontent.com/articles/'+slug}"/>
+<meta property="og:type" content="article"/>
+<meta property="og:title" content="${ogTitle || titre}"/>
+<meta property="og:description" content="${ogDesc || meta}"/>
+<meta property="og:url" content="https://www.techrepaircontent.com/articles/${slug}"/>
+<meta property="og:site_name" content="TechRepair Content"/>${ogImgTag}
+<meta name="twitter:card" content="${twitterCard||'summary_large_image'}"/>
+<meta name="twitter:title" content="${ogTitle || titre}"/>
+<meta name="twitter:description" content="${ogDesc || meta}"/>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet"/>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{--blue:#1A56DB;--navy:#0F1B3D;--text:#1e293b;--muted:#64748b;--border:#e2e8f0;--bg:#f8fafc}
+body{font-family:'Manrope',sans-serif;color:var(--text);background:#fff;font-size:16px;line-height:1.75}
+a{color:var(--blue)}
+nav{background:#fff;border-bottom:1px solid var(--border);padding:0 32px;display:flex;align-items:center;gap:20px;height:62px;position:sticky;top:0;z-index:100}
+.logo-box{width:36px;height:36px;background:var(--blue);border-radius:7px;display:grid;place-items:center;color:#fff;font-weight:800;font-size:13px}
+.logo-text{font-size:13px;font-weight:700;color:var(--navy);line-height:1.2}
+.logo-text span{display:block;color:var(--muted);font-weight:500;font-size:11px}
+.nav-back{margin-left:auto;color:var(--muted);font-size:13px;font-weight:600;text-decoration:none;display:flex;align-items:center;gap:6px;border:1.5px solid var(--border);border-radius:8px;padding:7px 14px;transition:all .2s}
+.nav-back:hover{border-color:var(--blue);color:var(--blue)}
+.article-wrap{max-width:760px;margin:0 auto;padding:48px 32px 80px}
+.article-cat{display:inline-block;background:#EFF6FF;color:var(--blue);font-size:11px;font-weight:700;padding:4px 12px;border-radius:20px;margin-bottom:16px}
+h1{font-size:38px;font-weight:800;color:var(--navy);line-height:1.15;margin-bottom:20px}
+.article-meta{display:flex;align-items:center;gap:16px;font-size:13px;color:var(--muted);margin-bottom:32px;flex-wrap:wrap;padding-bottom:20px;border-bottom:1px solid var(--border)}
+.article-body h2{font-size:24px;font-weight:700;color:var(--navy);margin:32px 0 12px;padding-bottom:8px;border-bottom:2px solid var(--border)}
+.article-body h3{font-size:20px;font-weight:700;color:var(--navy);margin:24px 0 8px}
+.article-body h4{font-size:17px;font-weight:700;color:var(--navy);margin:18px 0 6px}
+.article-body p{margin:0 0 16px}
+.article-body ul,.article-body ol{padding-left:26px;margin:8px 0 16px}
+.article-body li{margin-bottom:6px}
+.article-body blockquote{border-left:4px solid var(--blue);background:#EFF6FF;padding:14px 20px;border-radius:0 10px 10px 0;margin:20px 0;font-style:italic;color:var(--navy)}
+.article-body code{background:#f1f5f9;padding:2px 7px;border-radius:4px;font-size:14px;font-family:monospace;color:#e11d48}
+.article-body pre{background:#1e293b;color:#e2e8f0;padding:16px;border-radius:10px;overflow-x:auto;margin:16px 0;font-size:13.5px;font-family:monospace}
+.article-body table{width:100%;border-collapse:collapse;margin:16px 0;font-size:14px}
+.article-body th{background:var(--navy);color:#fff;padding:10px 14px;text-align:left;font-weight:600}
+.article-body td{padding:10px 14px;border:1px solid var(--border)}
+.article-body tr:nth-child(even) td{background:var(--bg)}
+.article-body mark{background:#fef08a;padding:1px 3px;border-radius:2px}
+.article-body a{color:var(--blue)}
+.article-body hr{border:none;border-top:2px solid var(--border);margin:28px 0}
+.back-btn{display:inline-flex;align-items:center;gap:7px;background:#EFF6FF;color:var(--blue);border-radius:8px;padding:11px 20px;font-size:13.5px;font-weight:700;text-decoration:none;margin-top:48px}
+.back-btn:hover{background:var(--blue);color:#fff}
+@media(max-width:600px){h1{font-size:26px}.article-wrap{padding:32px 16px 60px}nav{padding:0 16px}}
+</style>
+</head>
+<body>
+<nav>
+  <div style="display:flex;align-items:center;gap:10px">
+    <div class="logo-box">TRD</div>
+    <div class="logo-text">TechRepair<span>Content</span></div>
+  </div>
+  <a href="../blog.html" class="nav-back">← Retour au blog</a>
+</nav>
+<div class="article-wrap">
+  <span class="article-cat">${catLabel}</span>
+  <h1>${titre}</h1>
+  <div class="article-meta">
+    <span>✍️ ${auteur||'TechRepair Content'}</span>
+    <span>·</span>
+    <span>📅 ${new Date().toLocaleDateString('fr-FR',{day:'numeric',month:'long',year:'numeric'})}</span>
+    <span>·</span>
+    <span>⏱ ${lecture} de lecture</span>
+  </div>
+  ${coverImg}
+  <div class="article-body">
+    ${corps}
+  </div>
+  <a href="../blog.html" class="back-btn">← Retour au blog</a>
+</div>
+</body>
+</html>`;
+}
+
+/* ══ MISE À JOUR DU BLOG.HTML — injection dans ARTICLES[] ══ */
+function genererEntreeArticle(data){
+  const { titre, slug, meta, auteur, categorie, lecture } = data;
+  const dateNow = new Date().toISOString().split('T')[0];
+  const extrait = meta.length > 150 ? meta.slice(0, 147) + '…' : meta;
+  return `  {\n    titre:    "${titre.replace(/"/g,'&quot;')}",\n    extrait:  "${extrait.replace(/"/g,'&quot;')}",\n    auteur:   "${(auteur||'TechRepair Content').replace(/"/g,'&quot;')}",\n    date:     "${dateNow}",\n    categorie:"${categorie}",\n    lecture:  "${lecture}",\n    lien:     "articles/${slug}.html"\n  }`;
+}
+
+function injecterDansBlog(blogContenu, entreeArticle){
+  // Cherche le tableau ARTICLES = [ et insère la nouvelle entrée avant la fermeture ];
+  // Supporte le cas où le tableau est vide ou déjà peuplé
+  const markerVide   = /const ARTICLES\s*=\s*\[\s*(\/\*[\s\S]*?\*\/)?\s*\]/;
+  const markerPeuple = /const ARTICLES\s*=\s*\[/;
+
+  if(markerVide.test(blogContenu)){
+    // Tableau vide → remplacer par tableau avec 1 entrée
+    return blogContenu.replace(markerVide, `const ARTICLES = [\n${entreeArticle}\n]`);
+  } else if(markerPeuple.test(blogContenu)){
+    // Tableau existant → ajouter avant le dernier ];
+    // On cherche la position du dernier ]; qui ferme ARTICLES
+    const startIdx = blogContenu.search(markerPeuple);
+    let depth = 0, i = startIdx;
+    while(i < blogContenu.length){
+      if(blogContenu[i]==='[') depth++;
+      else if(blogContenu[i]===']'){ depth--; if(depth===0) break; }
+      i++;
+    }
+    // i est sur le ] fermant ARTICLES
+    const before = blogContenu.slice(0, i);
+    const after  = blogContenu.slice(i);
+    const needsComma = before.trimEnd().slice(-1) !== '[';
+    return before + (needsComma ? ',\n' : '\n') + entreeArticle + '\n' + after;
+  }
+  throw new Error('Marqueur ARTICLES[] introuvable dans blog.html');
+}
+
+/* ══ PUBLICATION PRINCIPALE ══ */
+async function publierDirect(){
+  const title   = document.getElementById('title-input').value.trim();
+  const score   = parseInt(document.getElementById('score-num').textContent);
+  const slug    = document.getElementById('slug-input').value.trim();
+  const meta    = document.getElementById('meta-input').value.trim();
+  const kw      = document.getElementById('kw-input').value.trim();
+  const kw2     = document.getElementById('kw2-input').value.trim();
+  const auteur  = document.getElementById('author-input').value.trim();
+  const cat     = document.getElementById('cat-input').value;
+  const lecture = document.getElementById('read-time').value.replace(' de lecture','').trim();
+  const corps   = getRichHTML();
+  const ogTitle = document.getElementById('og-title').value.trim();
+  const ogDesc  = document.getElementById('og-desc').value.trim();
+  const robots  = document.getElementById('robots-meta').value;
+  const canonical = document.getElementById('canonical-url').value.trim();
+  const twitterCard = document.getElementById('twitter-card').value;
+
+  /* Validations */
+  if(!title){ showToast('⚠️ Ajoutez un titre avant de publier'); return; }
+  if(!slug){  showToast('⚠️ Définissez le slug URL'); return; }
+  if(!cat){   showToast('⚠️ Sélectionnez une catégorie'); return; }
+  if(!meta){  showToast('⚠️ Rédigez la meta description'); return; }
+  if(score < 40){ showToast('⚠️ Score insuffisant ('+score+'/100) — améliorez l\'article'); return; }
+
+  /* Config GitHub */
+  const cfg = chargerConfig();
+  if(!cfg || !cfg.token || !cfg.owner || !cfg.repo){
+    showToast('⚠️ Configurez GitHub d\'abord (propriétaire, repo, token)');
+    const section = document.getElementById('gh-config-section');
+    section.style.display = 'block';
+    return;
+  }
+  const { owner, repo, branch, token } = cfg;
+  const API = `https://api.github.com/repos/${owner}/${repo}/contents/`;
+
+  const btn = document.getElementById('btn-pub-direct');
+  btn.disabled = true;
+  btn.textContent = '⏳ Publication en cours…';
+  setPubStatus('⏳ Connexion à GitHub…', 'info');
+
+  try {
+    const data = { titre:title, slug, meta, kw, kw2, auteur, categorie:cat, lecture, corps, ogTitle, ogDesc, robots, canonical, twitterCard, coverDataUrl };
+
+    /* ── 1. Uploader l'image si présente ── */
+    if(coverDataUrl){
+      setPubStatus('⏳ Upload de l\'image de couverture…', 'info');
+      const imgPath = `articles/images/${slug}.jpg`;
+      const imgExist = await ghGet(API + imgPath, token);
+      const imgBase64 = coverDataUrl.split(',')[1];
+      const imgBody = { message:`📸 Image couverture : ${slug}`, content: imgBase64, branch };
+      if(imgExist) imgBody.sha = imgExist.sha;
+      await ghPut(API + imgPath, token, imgBody);
+    }
+
+    /* ── 2. Créer / mettre à jour l'article HTML ── */
+    setPubStatus('⏳ Création du fichier article…', 'info');
+    const articlePath = `articles/${slug}.html`;
+    const articleExist = await ghGet(API + articlePath, token);
+    const articleHTML = genererArticleHTML(data);
+    const articleBody = { message:`✍️ Article : ${title}`, content: toBase64(articleHTML), branch };
+    if(articleExist) articleBody.sha = articleExist.sha;
+    await ghPut(API + articlePath, token, articleBody);
+
+    /* ── 3. Mettre à jour blog.html ── */
+    setPubStatus('⏳ Mise à jour de blog.html…', 'info');
+    const blogExist = await ghGet(API + 'blog.html', token);
+    if(!blogExist) throw new Error('blog.html introuvable dans le repo (vérifiez le chemin)');
+    const blogContenuB64 = blogExist.content.replace(/\n/g,'');
+    const blogContenu = decodeURIComponent(escape(atob(blogContenuB64)));
+    const entree = genererEntreeArticle({ titre:title, slug, meta, auteur, categorie:cat, lecture });
+    const blogMaj = injecterDansBlog(blogContenu, entree);
+    await ghPut(API + 'blog.html', token, {
+      message: `📝 Ajout article "${title}" dans blog.html`,
+      content: toBase64(blogMaj),
+      sha: blogExist.sha,
+      branch
+    });
+
+    /* ── Succès ── */
+    const url = `https://www.techrepaircontent.com/articles/${slug}.html`;
+    setPubStatus(`✅ <strong>Article publié avec succès !</strong><br><br>
+      📄 Fichier : <code>articles/${slug}.html</code><br>
+      📋 blog.html mis à jour automatiquement<br>
+      ${coverDataUrl ? `🖼️ Image uploadée : <code>articles/images/${slug}.jpg</code><br>` : ''}
+      <br>🔗 <a href="${url}" target="_blank" style="color:var(--blue);font-weight:700">Voir l'article →</a><br>
+      <span style="font-size:11px;color:var(--muted)">Visible après déploiement GitHub Pages (1–2 min)</span>`, 'ok');
+    showToast('🎉 Article publié sur GitHub !');
+
+  } catch(err){
+    console.error(err);
+    setPubStatus(`❌ <strong>Erreur de publication</strong><br><br>${err.message}<br><br>
+      <span style="font-size:11px;color:var(--muted)">Vérifiez : propriétaire/repo corrects · token valide avec scope <strong>repo</strong> · branche existante</span>`, 'err');
+    showToast('❌ Erreur — voir le panneau de statut');
+  } finally {
+    btn.disabled = false;
+    btn.textContent = '📤 Publier sur GitHub →';
+  }
+}
+
+function showToast(msg){
+  const t=document.getElementById('toast');
+  t.textContent=msg;
+  t.classList.add('show');
+  setTimeout(()=>t.classList.remove('show'),3000);
+}
+
+
+/* ══ RICH EDITOR ══ */
+let savedRange = null;
+
+function saveSelection(){
+  const sel = window.getSelection();
+  if(sel && sel.rangeCount > 0) savedRange = sel.getRangeAt(0).cloneRange();
+}
+
+function restoreSelection(){
+  if(!savedRange) return;
+  const sel = window.getSelection();
+  sel.removeAllRanges();
+  sel.addRange(savedRange);
+}
+
+function fmt(cmd){
+  document.getElementById('body-input').focus();
+  document.execCommand(cmd, false, null);
+  updateToolbarState();
+  onRichInput();
+}
+
+function applyHeading(tag){
+  document.getElementById('body-input').focus();
+  if(tag === 'p'){
+    document.execCommand('formatBlock', false, 'p');
+  } else {
+    document.execCommand('formatBlock', false, tag);
+  }
+  updateToolbarState();
+  onRichInput();
+}
+
+function applyHighlight(){
+  document.getElementById('body-input').focus();
+  document.execCommand('hiliteColor', false, '#fef08a');
+  updateToolbarState();
+  onRichInput();
+}
+
+function applyTextColor(color){
+  document.getElementById('txt-color-preview').style.background = color;
+  document.getElementById('body-input').focus();
+  document.execCommand('foreColor', false, color);
+  onRichInput();
+}
+
+function insertBlockquote(){
+  document.getElementById('body-input').focus();
+  document.execCommand('formatBlock', false, 'blockquote');
+  onRichInput();
+}
+
+function insertCode(){
+  const sel = window.getSelection();
+  if(sel && sel.toString()){
+    document.execCommand('insertHTML', false, '<code>' + sel.toString() + '</code>');
+  } else {
+    document.execCommand('insertHTML', false, '<code>code ici</code>');
+  }
+  onRichInput();
+}
+
+function insertHR(){
+  document.getElementById('body-input').focus();
+  document.execCommand('insertHorizontalRule', false, null);
+  onRichInput();
+}
+
+function insertTable(){
+  const rows = 3, cols = 3;
+  let html = '<table><tr>';
+  for(let c=0;c<cols;c++) html += '<th>En-tête ' + (c+1) + '</th>';
+  html += '</tr>';
+  for(let r=0;r<rows-1;r++){
+    html += '<tr>';
+    for(let c=0;c<cols;c++) html += '<td>Cellule</td>';
+    html += '</tr>';
+  }
+  html += '</table><p><br></p>';
+  document.getElementById('body-input').focus();
+  document.execCommand('insertHTML', false, html);
+  onRichInput();
+}
+
+/* ── LINK MODAL ── */
+function openLinkModal(){
+  saveSelection();
+  const sel = window.getSelection();
+  const txt = sel ? sel.toString() : '';
+  document.getElementById('link-text').value = txt;
+  document.getElementById('link-url').value = '';
+  document.getElementById('link-nofollow').checked = false;
+  const anchor = sel && sel.anchorNode ? sel.anchorNode.parentElement.closest('a') : null;
+  const removeBtn = document.getElementById('btn-remove-link');
+  if(anchor){
+    document.getElementById('link-url').value = anchor.href;
+    document.getElementById('link-nofollow').checked = anchor.rel.includes('nofollow');
+    removeBtn.style.display = 'block';
+  } else {
+    removeBtn.style.display = 'none';
+  }
+  document.getElementById('link-modal').classList.add('open');
+  setTimeout(()=>document.getElementById('link-url').focus(), 100);
+}
+
+function closeLinkModal(){
+  document.getElementById('link-modal').classList.remove('open');
+}
+
+function applyLink(){
+  const url = document.getElementById('link-url').value.trim();
+  const txt = document.getElementById('link-text').value.trim();
+  const nofollow = document.getElementById('link-nofollow').checked;
+  if(!url){ showToast('⚠️ Saisissez une URL'); return; }
+  restoreSelection();
+  document.getElementById('body-input').focus();
+  const sel = window.getSelection();
+  const isInternal = url.includes('techrepaircontent.com') || url.startsWith('/');
+  const rel = nofollow ? ' rel="nofollow"' : (isInternal ? '' : ' rel="noopener"');
+  const title = isInternal ? ' title="Maillage interne"' : '';
+  if(sel && sel.toString()){
+    document.execCommand('insertHTML', false, '<a href="' + url + '"' + rel + title + '>' + (txt || sel.toString()) + '</a>');
+  } else {
+    document.execCommand('insertHTML', false, '<a href="' + url + '"' + rel + title + '>' + (txt || url) + '</a>');
+  }
+  closeLinkModal();
+  onRichInput();
+}
+
+function removeLink(){
+  document.getElementById('body-input').focus();
+  document.execCommand('unlink', false, null);
+  onRichInput();
+}
+
+function removeLinkFromModal(){
+  closeLinkModal();
+  restoreSelection();
+  removeLink();
+}
+
+/* ── ÉTAT TOOLBAR ── */
+function updateToolbarState(){
+  const cmds = ['bold','italic','underline','strikeThrough','insertUnorderedList','insertOrderedList'];
+  cmds.forEach(cmd => {
+    const btn = document.getElementById('btn-' + cmd);
+    if(btn) btn.classList.toggle('active', document.queryCommandState(cmd));
+  });
+  const block = document.queryCommandValue('formatBlock').toLowerCase();
+  const sel = document.getElementById('tb-heading');
+  if(['h1','h2','h3','h4'].includes(block)) sel.value = block;
+  else sel.value = 'p';
+  const linkBtn = document.getElementById('btn-link');
+  const inLink = window.getSelection()?.anchorNode?.parentElement?.closest('a');
+  if(linkBtn) linkBtn.classList.toggle('active', !!inLink);
+}
+
+/* ── INPUT HANDLER ── */
+function onRichInput(){
+  analyze();
+}
+
+/* ── KEYBOARD SHORTCUTS ── */
+document.addEventListener('DOMContentLoaded', function(){
+  const editor = document.getElementById('body-input');
+  if(!editor) return;
+  editor.addEventListener('keydown', function(e){
+    if(e.ctrlKey || e.metaKey){
+      if(e.key === 'k'){ e.preventDefault(); openLinkModal(); }
+    }
+  });
+});
+
+/* Close modal on backdrop click */
+document.addEventListener('click', function(e){
+  const modal = document.getElementById('link-modal');
+  if(modal && e.target === modal) closeLinkModal();
+});
+
+/* ══ TAILLE DES TITRES ══ */
+(function(){
+  // Tailles de base en px pour chaque niveau dans .rich-body
+  const BASE = { h1:26, h2:22, h3:18, h4:15 };
+  let scale = 100; // pourcentage
+
+  function applyScale(s){
+    scale = Math.min(180, Math.max(60, s));
+    document.getElementById('tb-fs-val').textContent = scale + '%';
+    const style = document.getElementById('tb-fs-style') || (() => {
+      const el = document.createElement('style');
+      el.id = 'tb-fs-style';
+      document.head.appendChild(el);
+      return el;
+    })();
+    style.textContent =
+      '.rich-body h1{font-size:' + (BASE.h1 * scale / 100).toFixed(1) + 'px}' +
+      '.rich-body h2{font-size:' + (BASE.h2 * scale / 100).toFixed(1) + 'px}' +
+      '.rich-body h3{font-size:' + (BASE.h3 * scale / 100).toFixed(1) + 'px}' +
+      '.rich-body h4{font-size:' + (BASE.h4 * scale / 100).toFixed(1) + 'px}';
+  }
+
+  document.getElementById('tb-fs-up').addEventListener('click', () => applyScale(scale + 10));
+  document.getElementById('tb-fs-down').addEventListener('click', () => applyScale(scale - 10));
+})();
+
+/* Init */
+analyze();
 </script>
 </body>
 </html>
