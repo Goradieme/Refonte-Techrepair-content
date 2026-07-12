@@ -278,8 +278,9 @@ footer h4{font-size:10.5px;font-weight:700;color:#94a3b8;text-transform:uppercas
     <div class="sidebar-card newsletter-card">
       <h3>📩 Newsletter SEO Tech</h3>
       <p>Chaque semaine : 1 stratégie, 1 analyse, 1 opportunité SEO dans votre secteur.</p>
-      <input type="email" class="nl-input" placeholder="votre@email.com"/>
-      <button class="nl-btn">S'abonner gratuitement →</button>
+      <input type="email" class="nl-input" id="nlSidebarEmail" placeholder="votre@email.com"/>
+      <button class="nl-btn" id="nlSidebarBtn" type="button">S'abonner gratuitement →</button>
+      <p id="nlSidebarMsg" style="display:none;font-size:11.5px;margin-top:6px"></p>
       <p class="nl-note">✓ Sans spam · ✓ Désabonnement en 1 clic</p>
     </div>
     <div class="sidebar-card">
@@ -309,11 +310,12 @@ footer h4{font-size:10.5px;font-weight:700;color:#94a3b8;text-transform:uppercas
 <div class="nl-band">
   <div class="nl-band-inner">
     <h2>📩 La newsletter SEO Tech B2B</h2>
-    <p>Chaque semaine, une stratégie actionnable et une opportunité SEO dans votre secteur. Rejoignez 2 400+ marketeurs tech B2B.</p>
+    <p>Chaque semaine, une stratégie actionnable et une opportunité SEO dans votre secteur.</p>
     <div class="nl-band-form">
-      <input type="email" class="nl-band-input" placeholder="votre@email.com"/>
-      <button class="nl-band-btn">S'abonner →</button>
+      <input type="email" class="nl-band-input" id="nlBandEmail" placeholder="votre@email.com"/>
+      <button class="nl-band-btn" id="nlBandBtn" type="button">S'abonner →</button>
     </div>
+    <p id="nlBandMsg" style="display:none;font-size:12px;color:#fff;margin-top:8px"></p>
     <p class="nl-band-note">✓ Gratuit · ✓ Sans spam · ✓ Désabonnement en 1 clic</p>
   </div>
 </div>
@@ -324,8 +326,8 @@ footer h4{font-size:10.5px;font-weight:700;color:#94a3b8;text-transform:uppercas
       <h2>Du contenu qui performe, pas qui remplit des pages</h2>
       <p style="color:#fff">Vous voulez une stratégie de contenu sur mesure pour votre secteur tech B2B ? Parlons-en.</p>
       <div class="cta-btns">
-        <button class="btn-white">Obtenir un devis gratuit →</button>
-        <button class="btn-ghost-cta">Voir nos services →</button>
+        <button class="btn-white" onclick="window.location='/devis'">Obtenir un devis gratuit →</button>
+        <button class="btn-ghost-cta" onclick="window.location='/services'">Voir nos services →</button>
       </div>
     </div>
     <div class="cta-checks">
@@ -496,6 +498,47 @@ mobileMenu.querySelectorAll('a').forEach(link => {
     mobileMenu.classList.remove('open');
   });
 });
+
+// ── Newsletter : envoi vers Brevo (sidebar + bandeau bas de page) ──
+const BREVO_FORM_ACTION = 'https://a41ce724.sibforms.com/serve/MUIFAEGqDW1rbNTL0uU5ym6Ux5qJ7TJpdETsCjqRumOCnr-gRU8IGKx8Ic-JLjScrVVWrJVx_YXawDF8ao6y5hYLPvy7h8UJCk3gg9gTHcTaNAWQzbjwLnHO6DPk_HzPb7XY28rHy9JtEMuP-euST6RZutJ_bWOfqZFEtI-UUs9G4HA-O5V8JPwb3jLz0jhwuISuUqZ3Iok5IEyYHg==';
+
+function subscribeToNewsletter(emailInput, msgEl, btnEl, defaultBtnText) {
+  const email = emailInput.value.trim();
+  const isValidEmail = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+
+  msgEl.style.display = 'block';
+  if (!isValidEmail) {
+    msgEl.style.color = '#dc2626';
+    msgEl.textContent = "Merci d'entrer une adresse email valide.";
+    return;
+  }
+
+  const formData = new FormData();
+  formData.append('EMAIL', email);
+  formData.append('email_address_check', '');
+  formData.append('locale', 'fr');
+  formData.append('html_type', 'simple');
+  fetch(BREVO_FORM_ACTION, { method: 'POST', mode: 'no-cors', body: formData }).catch(() => {});
+
+  msgEl.style.color = '#10b981';
+  msgEl.textContent = 'Merci ! Vérifiez votre boîte mail pour confirmer.';
+  btnEl.textContent = 'Inscription envoyée ✓';
+  btnEl.disabled = true;
+}
+
+const nlSidebarBtn = document.getElementById('nlSidebarBtn');
+if (nlSidebarBtn) {
+  nlSidebarBtn.addEventListener('click', () => {
+    subscribeToNewsletter(document.getElementById('nlSidebarEmail'), document.getElementById('nlSidebarMsg'), nlSidebarBtn);
+  });
+}
+
+const nlBandBtn = document.getElementById('nlBandBtn');
+if (nlBandBtn) {
+  nlBandBtn.addEventListener('click', () => {
+    subscribeToNewsletter(document.getElementById('nlBandEmail'), document.getElementById('nlBandMsg'), nlBandBtn);
+  });
+}
 </script>
 </body>
 </html>
