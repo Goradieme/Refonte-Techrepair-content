@@ -383,9 +383,12 @@ const gridArticles = sorted.length > 1 ? sorted.slice(0, sorted.length - 1) : []
 const featuredZone = document.getElementById('featuredZone');
 if (featured) {
   const cfg = CAT_CONFIG[featured.categorie] || { label: featured.categorie, class: 's-blue' };
+  const visualStyle = featured.image
+    ? `style="background-image:linear-gradient(135deg,rgba(15,27,61,.82),rgba(30,58,110,.82)),url('${featured.image}');background-size:cover;background-position:center"`
+    : '';
   featuredZone.innerHTML = `
     <div class="article-featured">
-      <div class="af-visual">
+      <div class="af-visual" ${visualStyle}>
         <span class="af-new-badge">🔥 Article du moment</span>
         <div>
           <div class="af-visual-title">${featured.titre}</div>
