@@ -54,5 +54,4 @@ const ARTICLES = [
       motCle:    "agent IA RH",
       metaDesc:  "Découvrez comment les agents IA transforment les RH : recrutement, onboarding, rétention, paie. Guide complet avec cas d'usage, outils et méthode de déploiement.",
     },
-  ];
 ];
