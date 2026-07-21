@@ -1,10 +1,19 @@
-/* ══════════════════════════════════════════════════
+/* ═══════════════════════════════════════════════════════
    articles.js — Base d'articles TechRepair Content
-   ─────────────────────────────────────────────────
-   Ce fichier est partagé entre editeur.html et blog.html.
-   Ne pas modifier manuellement : utiliser l'éditeur SEO
-   pour ajouter des articles, puis copier le contenu généré.
-══════════════════════════════════════════════════ */
+   ───────────────────────────────────────────────────────
+   Ce fichier est partagé entre blog.html.
+
+   Édition manuelle directe sur GitHub :
+   1. Déposer l'image de l'article dans /articles
+   2. Ajouter un objet à ARTICLES ci-dessous avec tous les
+      champs (titre, extrait, auteur, date, categorie,
+      lecture, lien, slug, motCle, metaDesc, image)
+   3. Commit + push → mise en ligne automatique (GitHub Pages)
+
+   Champs obligatoires pour un affichage correct sur le blog :
+   titre, extrait, auteur, date (AAAA-MM-JJ), categorie,
+   lecture, lien, image
+   ═══════════════════════════════════════════════════════ */
 
 const ARTICLES = [
   {
