@@ -1,51 +1,15 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-<!-- ══ Tarteaucitron : gestion du consentement cookies (RGPD) ══ -->
-<script src="https://cdn.jsdelivr.net/gh/AmauriC/tarteaucitron.js/tarteaucitron.min.js"></script>
-<script>
-tarteaucitron.init({
-  "privacyUrl": "/confidentialite",
-  "hashtag": "#tarteaucitron",
-  "cookieName": "tarteaucitron",
-  "orientation": "bottom",
-  "showAlertSmall": false,
-  "cookieslist": false,
-  "showIcon": true,
-  "iconPosition": "BottomRight",
-  "adblocker": false,
-  "DenyAllCta": true,
-  "AcceptAllCta": true,
-  "highPrivacy": true,
-  "handleBrowserDNTRequest": false,
-  "removeCredit": true,
-  "moreInfoLink": true,
-  "useExternalCss": false,
-  "mandatory": false
-});
-
-tarteaucitron.user.gtagUa = 'G-B1MRFH8WRQ';
-tarteaucitron.user.gtagMore = function () { };
-(tarteaucitron.job = tarteaucitron.job || []).push('gtag');
-</script>
-
-<!-- Personnalisation couleurs TechRepairContent (navy/bleu) -->
-<style>
-#tarteaucitronRoot #tarteaucitronAlertBig{background:#0F1B3D!important}
-#tarteaucitronRoot #tarteaucitronAlertBig p,
-#tarteaucitronRoot #tarteaucitronAlertBig a{color:#fff!important}
-#tarteaucitronDisclaimerAlert,#tarteaucitronDisclaimerAlert strong,#tarteaucitronDisclaimerAlert a{color:#fff!important}
-#tarteaucitronAllAllowed,.tarteaucitronAllow{background:#1A56DB!important;color:#fff!important;border-color:#1A56DB!important}
-#tarteaucitronAllDenied,.tarteaucitronDeny{background:transparent!important;color:#fff!important;border:1px solid #fff!important}
-#tarteaucitronPersonalize2{background:transparent!important;color:#fff!important;border:1px solid #fff!important}
-#tarteaucitronIcon{background:#1A56DB!important}
-#tarteaucitronRoot .tarteaucitronCTAButton{background:#1A56DB!important}
-</style>
-
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<link rel="preconnect" href="https://cdn.jsdelivr.net"/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
 <title>TRD TechRepair Content – Rédacteur SEO SaaS, Tech & E-commerce</title>
-<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet"/>
+<meta name="description" content="Agence de rédaction SEO spécialisée SaaS, Tech et E-commerce B2B. Articles piliers, fiches produits, livres blancs et stratégie de contenu IA pour générer du trafic qualifié."/>
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" onload="this.onload=null;this.rel='stylesheet'"/>
+<noscript><link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet"/></noscript>
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 :root{
@@ -87,7 +51,7 @@ nav{
   gap:40px;align-items:center;
 }
 .hero-badge{
-  display:inline-block;background:#FFF3E0;color:#E65100;
+  display:inline-block;background:#FFF3E0;color:#9A3412;
   font-size:10.5px;font-weight:700;letter-spacing:.6px;
   padding:4px 12px;border-radius:20px;margin-bottom:16px;text-transform:uppercase;
 }
@@ -116,6 +80,8 @@ nav{
   align-items:flex-end;
   /* On laisse la scène respirer */
   padding:55px 20px 30px 10px;
+  /* Espace réservé pour éviter le décalage de mise en page (CLS) */
+  min-height:380px;
 }
 
 /* Fond arrondi bleu clair derrière le laptop */
@@ -448,15 +414,16 @@ section{padding:68px 32px}
 footer{background:var(--navy);border-top:1px solid rgba(255,255,255,.07);padding:44px 32px 26px}
 .footer-inner{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:2fr 1fr 1fr 1fr 1fr;gap:32px}
 .footer-brand p{color:#64748b;font-size:12px;margin-top:8px;max-width:185px;line-height:1.7}
-footer h4{font-size:10.5px;font-weight:700;color:#94a3b8;text-transform:uppercase;letter-spacing:.5px;margin-bottom:13px}
+footer .logo-text span{color:#94a3b8}
+footer h3{font-size:10.5px;font-weight:700;color:#94a3b8;text-transform:uppercase;letter-spacing:.5px;margin-bottom:13px}
 .flinks{list-style:none}
 .flinks li{margin-bottom:8px}
-.flinks a{color:#64748b;font-size:12px;transition:color .2s}
+.flinks a{color:#94a3b8;font-size:12px;transition:color .2s}
 .flinks a:hover{color:#fff}
 .fsocial{display:flex;gap:7px;margin-top:11px}
 .fsoc{width:29px;height:29px;border-radius:6px;background:rgba(255,255,255,.07);display:grid;place-items:center;font-size:11px;color:#94a3b8;transition:background .2s}
 .fsoc:hover{background:var(--blue);color:#fff}
-.footer-bottom{max-width:1100px;margin:24px auto 0;padding-top:16px;border-top:1px solid rgba(255,255,255,.07);display:flex;justify-content:space-between;color:#475569;font-size:11px;flex-wrap:wrap;gap:8px}
+.footer-bottom{max-width:1100px;margin:24px auto 0;padding-top:16px;border-top:1px solid rgba(255,255,255,.07);display:flex;justify-content:space-between;color:#94a3b8;font-size:11px;flex-wrap:wrap;gap:8px}
 
 /* ══════════════════════════════
    RESPONSIVE — TOUJOURS VISIBLE
@@ -473,6 +440,7 @@ footer h4{font-size:10.5px;font-weight:700;color:#94a3b8;text-transform:uppercas
     padding:50px 50px 28px;
     max-width:520px;
     margin:0 auto;
+    min-height:320px;
   }
   .lbg{inset:10px 0 12px 16px}
 
@@ -495,6 +463,7 @@ footer h4{font-size:10.5px;font-weight:700;color:#94a3b8;text-transform:uppercas
   .laptop-scene{
     padding:44px 24px 24px;
     max-width:100%;
+    min-height:280px;
   }
   .plant{width:65px}
   .souris{width:28px;right:-4px}
@@ -507,7 +476,7 @@ footer h4{font-size:10.5px;font-weight:700;color:#94a3b8;text-transform:uppercas
 
 @media(max-width:380px){
   .hero-inner h1{font-size:21px}
-  .laptop-scene{padding:40px 10px 20px}
+  .laptop-scene{padding:40px 10px 20px;min-height:240px}
   .plant{width:54px}
   .souris{display:none}
   .problems-grid{grid-template-columns:1fr}
@@ -562,6 +531,7 @@ footer h4{font-size:10.5px;font-weight:700;color:#94a3b8;text-transform:uppercas
   <a href="/blog">Blog</a>
   <button class="btn-nav-mobile" onclick="window.location='/devis'">Obtenir un devis</button>
 </div>
+<main>
 
 <!-- ══ HERO ══ -->
 <div class="hero-wrap">
@@ -1010,7 +980,7 @@ footer h4{font-size:10.5px;font-weight:700;color:#94a3b8;text-transform:uppercas
         <h3 class="roi-col-title">📊 Votre situation actuelle</h3>
 
         <div class="roi-field">
-          <label class="roi-label">Trafic organique mensuel actuel</label>
+          <label class="roi-label" for="rTraffic">Trafic organique mensuel actuel</label>
           <div class="roi-input-wrap">
             <input type="range" class="roi-range" id="rTraffic" min="100" max="50000" step="100" value="1000"/>
             <div class="roi-val-display"><span id="vTraffic">1 000</span> <span class="roi-unit">visites/mois</span></div>
@@ -1018,7 +988,7 @@ footer h4{font-size:10.5px;font-weight:700;color:#94a3b8;text-transform:uppercas
         </div>
 
         <div class="roi-field">
-          <label class="roi-label">Taux de conversion actuel (visiteur → lead)</label>
+          <label class="roi-label" for="rConv">Taux de conversion actuel (visiteur → lead)</label>
           <div class="roi-input-wrap">
             <input type="range" class="roi-range" id="rConv" min="0.1" max="10" step="0.1" value="1.5"/>
             <div class="roi-val-display"><span id="vConv">1.5</span> <span class="roi-unit">%</span></div>
@@ -1026,7 +996,7 @@ footer h4{font-size:10.5px;font-weight:700;color:#94a3b8;text-transform:uppercas
         </div>
 
         <div class="roi-field">
-          <label class="roi-label">Valeur moyenne d'un client (LTV)</label>
+          <label class="roi-label" for="rLTV">Valeur moyenne d'un client (LTV)</label>
           <div class="roi-input-wrap">
             <input type="range" class="roi-range" id="rLTV" min="100" max="20000" step="100" value="2000"/>
             <div class="roi-val-display"><span id="vLTV">2 000</span> <span class="roi-unit">€</span></div>
@@ -1034,7 +1004,7 @@ footer h4{font-size:10.5px;font-weight:700;color:#94a3b8;text-transform:uppercas
         </div>
 
         <div class="roi-field">
-          <label class="roi-label">Secteur d'activité</label>
+          <label class="roi-label" for="rSector">Secteur d'activité</label>
           <select class="roi-select" id="rSector" onchange="calcROI()">
             <option value="saas">SaaS / Logiciel B2B</option>
             <option value="ecom">E-commerce Tech</option>
@@ -1275,20 +1245,22 @@ footer h4{font-size:10.5px;font-weight:700;color:#94a3b8;text-transform:uppercas
 </div>
 
 <!-- ══ FOOTER ══ -->
+</main>
+
 <footer>
   <div class="footer-inner">
     <div class="footer-brand">
       <div class="logo"><div class="logo-box">TRD</div><div class="logo-text" style="color:#fff">TechRepair<span>Content</span></div></div>
       <p>Rédaction SEO &amp; technique pour entreprises SaaS, Tech et E-commerce.</p>
     </div>
-    <div><h4>Navigation</h4><ul class="flinks"><li><a href="/">Accueil</a></li><li><a href="/apropos">À propos</a></li><li><a href="/services">Services</a></li><li><a href="/secteurs">Secteurs</a></li><li><a href="/blog">Blog</a></li></ul></div>
-    <div><h4>Ressources</h4><ul class="flinks"><li><a href="/faq">FAQ</a></li><li><a href="/confidentialite">Politique de confidentialité</a></li><li><a href="/mentions-legales">Mentions légales</a></li></ul></div>
+    <div><h3>Navigation</h3><ul class="flinks"><li><a href="/">Accueil</a></li><li><a href="/apropos">À propos</a></li><li><a href="/services">Services</a></li><li><a href="/secteurs">Secteurs</a></li><li><a href="/blog">Blog</a></li></ul></div>
+    <div><h3>Ressources</h3><ul class="flinks"><li><a href="/faq">FAQ</a></li><li><a href="/confidentialite">Politique de confidentialité</a></li><li><a href="/mentions-legales">Mentions légales</a></li></ul></div>
     <div>
-      <h4>Contact</h4>
+      <h3>Contact</h3>
       <ul class="flinks"><li><a href="mailto:contact@techrepaircontent.com">contact@techrepaircontent.com</a></li><li><a href="/devis">Demander un devis</a></li></ul>
       <div class="fsocial"><a class="fsoc" href="https://www.linkedin.com/in/techrepair-content" target="_blank" rel="noopener">in</a><a class="fsoc" href="mailto:contact@techrepaircontent.com">✉</a></div>
     </div>
-    <div><h4>Basé en France</h4><div style="font-size:22px">🇫🇷</div><p style="color:#64748b;font-size:11px;margin-top:7px">Travail avec des clients du monde entier.</p></div>
+    <div><h3>Basé en France</h3><div style="font-size:22px">🇫🇷</div><p style="color:#64748b;font-size:11px;margin-top:7px">Travail avec des clients du monde entier.</p></div>
   </div>
   <div class="footer-bottom">
     <span>© 2025 TechRepair Content. Tous droits réservés.</span>
@@ -1304,7 +1276,7 @@ footer h4{font-size:10.5px;font-weight:700;color:#94a3b8;text-transform:uppercas
     <h3 class="popup-title">Avant de partir…</h3>
     <p class="popup-text">Recevez gratuitement notre <strong>guide des 10 erreurs SEO</strong> qui coûtent des clients à vos concurrents Tech.</p>
     <div class="popup-form">
-      <input type="email" class="popup-input" id="popupEmail" placeholder="votre@email.com" required/>
+      <input type="email" class="popup-input" id="popupEmail" placeholder="votre@email.com" required aria-label="Adresse email pour recevoir le guide"/>
       <button class="popup-btn" id="popupSubmit" type="button">Recevoir le guide gratuit →</button>
       <p id="popupError" style="display:none;color:#dc2626;font-size:12px;margin:2px 0 0;"></p>
     </div>
@@ -1316,7 +1288,7 @@ footer h4{font-size:10.5px;font-weight:700;color:#94a3b8;text-transform:uppercas
 /* ══ LOGOS BAR ══ */
 .logos-bar{background:#fff;border-top:1px solid var(--border);border-bottom:1px solid var(--border);padding:14px 32px;overflow:hidden}
 .logos-inner-wrap{max-width:1140px;margin:0 auto;display:flex;align-items:center;gap:24px}
-.logos-label{font-size:11.5px;font-weight:700;color:#94a3b8;white-space:nowrap;text-transform:uppercase;letter-spacing:.5px;flex-shrink:0}
+.logos-label{font-size:11.5px;font-weight:700;color:#475569;white-space:nowrap;text-transform:uppercase;letter-spacing:.5px;flex-shrink:0}
 .logos-scroll-wrap{flex:1;overflow:hidden;position:relative}
 .logos-scroll-wrap::before,.logos-scroll-wrap::after{content:'';position:absolute;top:0;bottom:0;width:60px;z-index:2}
 .logos-scroll-wrap::before{left:0;background:linear-gradient(90deg,#fff,transparent)}
@@ -1333,7 +1305,7 @@ footer h4{font-size:10.5px;font-weight:700;color:#94a3b8;text-transform:uppercas
 .stat-item:last-child{border-right:none}
 .stat-num-wrap{display:flex;justify-content:center;align-items:baseline;gap:4px;margin-bottom:8px}
 .stat-number{font-size:48px;font-weight:800;color:#fff;line-height:1;font-family:'Manrope',sans-serif}
-.stat-suf{font-size:22px;font-weight:800;color:var(--blue);line-height:1}
+.stat-suf{font-size:22px;font-weight:800;color:#fff;line-height:1}
 .stat-lbl{font-size:13.5px;font-weight:700;color:#fff;margin-bottom:6px}
 .stat-desc{font-size:11.5px;color:#fff;line-height:1.5}
 
@@ -1414,7 +1386,7 @@ footer h4{font-size:10.5px;font-weight:700;color:#94a3b8;text-transform:uppercas
 .roi-unit{font-size:12px;color:var(--muted);font-weight:600}
 .roi-select{width:100%;border:1.5px solid var(--border);border-radius:8px;padding:10px 14px;font-size:13.5px;font-family:inherit;color:var(--navy);outline:none;cursor:pointer;background:#fff}
 .roi-select:focus{border-color:var(--blue)}
-.roi-note{display:flex;align-items:flex-start;gap:7px;background:#f0f7ff;border-radius:8px;padding:10px 14px;font-size:11.5px;color:var(--muted);line-height:1.5;margin-top:4px}
+.roi-note{display:flex;align-items:flex-start;gap:7px;background:#f0f7ff;border-radius:8px;padding:10px 14px;font-size:11.5px;color:#475569;line-height:1.5;margin-top:4px}
 
 /* Results */
 .roi-results{background:var(--navy);border-radius:20px;padding:32px;box-shadow:0 8px 40px rgba(15,27,61,.2)}
@@ -1756,5 +1728,46 @@ mobileMenu.querySelectorAll('a').forEach(link => {
     <p class="popup-note">✓ Réponse sous 24h · ✓ Devis gratuit & sans engagement</p>
   </div>
 </div>
+<!-- ══ Tarteaucitron : gestion du consentement cookies (RGPD) ══ -->
+<script src="https://cdn.jsdelivr.net/gh/AmauriC/tarteaucitron.js/tarteaucitron.min.js"></script>
+<script>
+tarteaucitron.init({
+  "privacyUrl": "/confidentialite",
+  "hashtag": "#tarteaucitron",
+  "cookieName": "tarteaucitron",
+  "orientation": "bottom",
+  "showAlertSmall": false,
+  "cookieslist": false,
+  "showIcon": true,
+  "iconPosition": "BottomRight",
+  "adblocker": false,
+  "DenyAllCta": true,
+  "AcceptAllCta": true,
+  "highPrivacy": true,
+  "handleBrowserDNTRequest": false,
+  "removeCredit": true,
+  "moreInfoLink": true,
+  "useExternalCss": false,
+  "mandatory": false
+});
+
+tarteaucitron.user.gtagUa = 'G-B1MRFH8WRQ';
+tarteaucitron.user.gtagMore = function () { };
+(tarteaucitron.job = tarteaucitron.job || []).push('gtag');
+</script>
+
+<!-- Personnalisation couleurs TechRepairContent (navy/bleu) -->
+<style>
+#tarteaucitronRoot #tarteaucitronAlertBig{background:#0F1B3D!important}
+#tarteaucitronRoot #tarteaucitronAlertBig p,
+#tarteaucitronRoot #tarteaucitronAlertBig a{color:#fff!important}
+#tarteaucitronDisclaimerAlert,#tarteaucitronDisclaimerAlert strong,#tarteaucitronDisclaimerAlert a{color:#fff!important}
+#tarteaucitronAllAllowed,.tarteaucitronAllow{background:#1A56DB!important;color:#fff!important;border-color:#1A56DB!important}
+#tarteaucitronAllDenied,.tarteaucitronDeny{background:transparent!important;color:#fff!important;border:1px solid #fff!important}
+#tarteaucitronPersonalize2{background:transparent!important;color:#fff!important;border:1px solid #fff!important}
+#tarteaucitronIcon{background:#1A56DB!important}
+#tarteaucitronRoot .tarteaucitronCTAButton{background:#1A56DB!important}
+#tarteaucitronPrivacyUrl{color:#fff!important}
+</style>
 </body>
 </html>
