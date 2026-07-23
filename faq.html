@@ -1,52 +1,15 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-<!-- ══ Tarteaucitron : gestion du consentement cookies (RGPD) ══ -->
-<script src="https://cdn.jsdelivr.net/gh/AmauriC/tarteaucitron.js/tarteaucitron.min.js"></script>
-<script>
-tarteaucitron.init({
-  "privacyUrl": "/confidentialite",
-  "hashtag": "#tarteaucitron",
-  "cookieName": "tarteaucitron",
-  "orientation": "bottom",
-  "showAlertSmall": false,
-  "cookieslist": false,
-  "showIcon": true,
-  "iconPosition": "BottomRight",
-  "adblocker": false,
-  "DenyAllCta": true,
-  "AcceptAllCta": true,
-  "highPrivacy": true,
-  "handleBrowserDNTRequest": false,
-  "removeCredit": true,
-  "moreInfoLink": true,
-  "useExternalCss": false,
-  "mandatory": false
-});
-
-tarteaucitron.user.gtagUa = 'G-B1MRFH8WRQ';
-tarteaucitron.user.gtagMore = function () { };
-(tarteaucitron.job = tarteaucitron.job || []).push('gtag');
-</script>
-
-<!-- Personnalisation couleurs TechRepairContent (navy/bleu) -->
-<style>
-#tarteaucitronRoot #tarteaucitronAlertBig{background:#0F1B3D!important}
-#tarteaucitronRoot #tarteaucitronAlertBig p,
-#tarteaucitronRoot #tarteaucitronAlertBig a{color:#fff!important}
-#tarteaucitronDisclaimerAlert,#tarteaucitronDisclaimerAlert strong,#tarteaucitronDisclaimerAlert a{color:#fff!important}
-#tarteaucitronAllAllowed,.tarteaucitronAllow{background:#1A56DB!important;color:#fff!important;border-color:#1A56DB!important}
-#tarteaucitronAllDenied,.tarteaucitronDeny{background:transparent!important;color:#fff!important;border:1px solid #fff!important}
-#tarteaucitronPersonalize2{background:transparent!important;color:#fff!important;border:1px solid #fff!important}
-#tarteaucitronIcon{background:#1A56DB!important}
-#tarteaucitronRoot .tarteaucitronCTAButton{background:#1A56DB!important}
-</style>
-
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<link rel="preconnect" href="https://cdn.jsdelivr.net"/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
 <title>FAQ – TechRepair Content | Questions fréquentes</title>
 <meta name="description" content="Réponses aux questions fréquentes sur nos services de rédaction SEO B2B : tarifs, délais, méthode de travail, garanties."/>
-<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet"/>
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" onload="this.onload=null;this.rel='stylesheet'"/>
+<noscript><link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet"/></noscript>
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 :root{
@@ -75,7 +38,7 @@ nav{position:sticky;top:0;z-index:200;background:#fff;border-bottom:1px solid va
 /* ══ HERO ══ */
 .page-hero{background:linear-gradient(145deg,#f0f5ff 50%,#dce9ff 100%);padding:64px 32px 56px;}
 .page-hero-inner{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center}
-.page-badge{display:inline-block;background:#FFF3E0;color:#E65100;font-size:10.5px;font-weight:700;letter-spacing:.6px;padding:4px 12px;border-radius:20px;margin-bottom:18px;text-transform:uppercase;}
+.page-badge{display:inline-block;background:#FFF3E0;color:#9A3412;font-size:10.5px;font-weight:700;letter-spacing:.6px;padding:4px 12px;border-radius:20px;margin-bottom:18px;text-transform:uppercase;}
 .page-hero h1{font-size:36px;font-weight:800;line-height:1.15;color:var(--navy);margin-bottom:16px}
 .page-hero p{color:var(--muted);font-size:14px;line-height:1.75;margin-bottom:24px}
 .hero-trust{display:flex;flex-direction:column;gap:10px}
@@ -153,9 +116,9 @@ section{padding:72px 32px}
 .ch-item{text-align:center;padding:24px 16px;border-right:1px solid rgba(255,255,255,.1)}
 .ch-item:last-child{border-right:none}
 .ch-num{font-size:48px;font-weight:800;color:#fff;line-height:1;margin-bottom:6px}
-.ch-suf{font-size:22px;font-weight:800;color:var(--blue)}
+.ch-suf{font-size:22px;font-weight:800;color:#fff}
 .ch-lbl{font-size:13.5px;font-weight:700;color:#cbd5e1;margin-bottom:6px}
-.ch-desc{font-size:11.5px;color:#64748b;line-height:1.5}
+.ch-desc{font-size:11.5px;color:#94a3b8;line-height:1.5}
 
 /* ══ TÉMOIGNAGES ══ */
 .testi-section{background:#fff}
@@ -209,15 +172,16 @@ section{padding:72px 32px}
 footer{background:var(--navy);border-top:1px solid rgba(255,255,255,.07);padding:44px 32px 26px}
 .footer-inner{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:2fr 1fr 1fr 1fr 1fr;gap:32px}
 .footer-brand p{color:#64748b;font-size:12px;margin-top:8px;max-width:185px;line-height:1.7}
-footer h4{font-size:10.5px;font-weight:700;color:#94a3b8;text-transform:uppercase;letter-spacing:.5px;margin-bottom:13px}
+footer .logo-text span{color:#94a3b8}
+footer h3{font-size:10.5px;font-weight:700;color:#94a3b8;text-transform:uppercase;letter-spacing:.5px;margin-bottom:13px}
 .flinks{list-style:none}
 .flinks li{margin-bottom:8px}
-.flinks a{color:#64748b;font-size:12px;transition:color .2s}
+.flinks a{color:#94a3b8;font-size:12px;transition:color .2s}
 .flinks a:hover{color:#fff}
 .fsocial{display:flex;gap:7px;margin-top:11px}
 .fsoc{width:29px;height:29px;border-radius:6px;background:rgba(255,255,255,.07);display:grid;place-items:center;font-size:11px;color:#94a3b8;transition:background .2s}
 .fsoc:hover{background:var(--blue);color:#fff}
-.footer-bottom{max-width:1100px;margin:24px auto 0;padding-top:16px;border-top:1px solid rgba(255,255,255,.07);display:flex;justify-content:space-between;color:#475569;font-size:11px;flex-wrap:wrap;gap:8px}
+.footer-bottom{max-width:1100px;margin:24px auto 0;padding-top:16px;border-top:1px solid rgba(255,255,255,.07);display:flex;justify-content:space-between;color:#94a3b8;font-size:11px;flex-wrap:wrap;gap:8px}
 
 /* ══ POPUP ══ */
 .popup-overlay{position:fixed;inset:0;background:rgba(15,27,61,.65);z-index:9999;display:flex;align-items:center;justify-content:center;padding:20px;opacity:0;pointer-events:none;transition:opacity .3s;backdrop-filter:blur(4px)}
@@ -340,6 +304,7 @@ footer h4{font-size:10.5px;font-weight:700;color:#94a3b8;text-transform:uppercas
   <a href="/blog">Blog</a>
   <button class="btn-nav-mobile" onclick="window.location='/devis'">Obtenir un devis</button>
 </div>
+<main>
 
 <div class="faq-hero">
   <div class="faq-hero-inner">
@@ -433,20 +398,22 @@ footer h4{font-size:10.5px;font-weight:700;color:#94a3b8;text-transform:uppercas
 </div>
 
 
+</main>
+
 <footer>
   <div class="footer-inner">
     <div class="footer-brand">
       <div class="logo"><div class="logo-box">TRD</div><div class="logo-text" style="color:#fff">TechRepair<span>Content</span></div></div>
       <p>Rédaction SEO et technique pour entreprises SaaS, Tech et E-commerce.</p>
     </div>
-    <div><h4>Navigation</h4><ul class="flinks"><li><a href="/">Accueil</a></li><li><a href="/apropos">À propos</a></li><li><a href="/services">Services</a></li><li><a href="/secteurs">Secteurs</a></li><li><a href="/blog">Blog</a></li></ul></div>
-    <div><h4>Ressources</h4><ul class="flinks"><li><a href="/faq">FAQ</a></li><li><a href="/confidentialite">Politique de confidentialité</a></li><li><a href="/mentions-legales">Mentions légales</a></li></ul></div>
+    <div><h3>Navigation</h3><ul class="flinks"><li><a href="/">Accueil</a></li><li><a href="/apropos">À propos</a></li><li><a href="/services">Services</a></li><li><a href="/secteurs">Secteurs</a></li><li><a href="/blog">Blog</a></li></ul></div>
+    <div><h3>Ressources</h3><ul class="flinks"><li><a href="/faq">FAQ</a></li><li><a href="/confidentialite">Politique de confidentialité</a></li><li><a href="/mentions-legales">Mentions légales</a></li></ul></div>
     <div>
-      <h4>Contact</h4>
+      <h3>Contact</h3>
       <ul class="flinks"><li><a href="#">contact@techrepaircontent.com</a></li><li><a href="#">Réponse sous 24h</a></li></ul>
       <div class="fsocial"><a class="fsoc" href="https://www.linkedin.com/in/techrepair-content" target="_blank" rel="noopener">in</a><a class="fsoc" href="mailto:contact@techrepaircontent.com">✉</a></div>
     </div>
-    <div><h4>Basé en France</h4><div style="font-size:22px">🇫🇷</div><p style="color:#64748b;font-size:11px;margin-top:7px">Travail avec des clients du monde entier.</p></div>
+    <div><h3>Basé en France</h3><div style="font-size:22px">🇫🇷</div><p style="color:#64748b;font-size:11px;margin-top:7px">Travail avec des clients du monde entier.</p></div>
   </div>
   <div class="footer-bottom">
     <span>© 2025 TechRepair Content. Tous droits réservés.</span>
@@ -492,5 +459,46 @@ mobileMenu.querySelectorAll('a').forEach(link => {
 });
 
 </script>
+<!-- ══ Tarteaucitron : gestion du consentement cookies (RGPD) ══ -->
+<script src="https://cdn.jsdelivr.net/gh/AmauriC/tarteaucitron.js/tarteaucitron.min.js"></script>
+<script>
+tarteaucitron.init({
+  "privacyUrl": "/confidentialite",
+  "hashtag": "#tarteaucitron",
+  "cookieName": "tarteaucitron",
+  "orientation": "bottom",
+  "showAlertSmall": false,
+  "cookieslist": false,
+  "showIcon": true,
+  "iconPosition": "BottomRight",
+  "adblocker": false,
+  "DenyAllCta": true,
+  "AcceptAllCta": true,
+  "highPrivacy": true,
+  "handleBrowserDNTRequest": false,
+  "removeCredit": true,
+  "moreInfoLink": true,
+  "useExternalCss": false,
+  "mandatory": false
+});
+
+tarteaucitron.user.gtagUa = 'G-B1MRFH8WRQ';
+tarteaucitron.user.gtagMore = function () { };
+(tarteaucitron.job = tarteaucitron.job || []).push('gtag');
+</script>
+
+<!-- Personnalisation couleurs TechRepairContent (navy/bleu) -->
+<style>
+#tarteaucitronRoot #tarteaucitronAlertBig{background:#0F1B3D!important}
+#tarteaucitronRoot #tarteaucitronAlertBig p,
+#tarteaucitronRoot #tarteaucitronAlertBig a{color:#fff!important}
+#tarteaucitronDisclaimerAlert,#tarteaucitronDisclaimerAlert strong,#tarteaucitronDisclaimerAlert a{color:#fff!important}
+#tarteaucitronAllAllowed,.tarteaucitronAllow{background:#1A56DB!important;color:#fff!important;border-color:#1A56DB!important}
+#tarteaucitronAllDenied,.tarteaucitronDeny{background:transparent!important;color:#fff!important;border:1px solid #fff!important}
+#tarteaucitronPersonalize2{background:transparent!important;color:#fff!important;border:1px solid #fff!important}
+#tarteaucitronIcon{background:#1A56DB!important}
+#tarteaucitronRoot .tarteaucitronCTAButton{background:#1A56DB!important}
+#tarteaucitronPrivacyUrl{color:#fff!important}
+</style>
 </body>
 </html>
