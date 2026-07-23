@@ -117,10 +117,11 @@ section{padding:72px 32px}
 .sect-content-types{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:22px}
 .sect-ct{background:var(--blue-light);color:var(--blue);font-size:11.5px;font-weight:600;padding:4px 11px;border-radius:20px}
 
-.sect-result{background:linear-gradient(135deg,var(--navy),#1e3a6e);border-radius:12px;padding:16px 20px;margin-bottom:22px;display:flex;align-items:center;gap:14px}
-.sect-result-ico{font-size:22px;flex-shrink:0}
-.sect-result-text strong{display:block;font-size:13px;font-weight:700;color:#fff;margin-bottom:3px}
-.sect-result-text span{font-size:12px;color:#94a3b8;line-height:1.5}
+.sect-result{background:linear-gradient(135deg,var(--navy),#1e3a6e);border-radius:12px;padding:20px 22px;margin-bottom:22px}
+.sect-result-badge{display:inline-block;font-size:10px;font-weight:800;letter-spacing:.6px;text-transform:uppercase;color:#fff;background:rgba(255,255,255,.16);padding:4px 11px;border-radius:20px;margin-bottom:12px}
+.sect-result-claim{font-size:14px;font-weight:600;color:#fff;line-height:1.55;margin-bottom:15px}
+.sect-result-proof{display:flex;gap:8px;flex-wrap:wrap}
+.sect-result-proof span{font-size:11.5px;font-weight:600;color:#fff;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.22);padding:5px 12px;border-radius:20px}
 
 .btn-primary{background:var(--blue);color:#fff;border:none;border-radius:8px;padding:11px 20px;font-weight:700;font-size:13.5px;cursor:pointer;display:inline-flex;align-items:center;gap:7px;font-family:inherit;transition:background .2s}
 .btn-primary:hover{background:var(--blue-dark)}
@@ -410,9 +411,9 @@ footer h4{font-size:10.5px;font-weight:700;color:#94a3b8;text-transform:uppercas
             <h4>Défis spécifiques que nous adressons</h4>
             <div class="chall-list">
               <div class="chall-item"><div class="chall-dot chall-b">→</div><span>Cycle de vente long : créer du contenu MOFU/BOFU qui nourrit la décision sans être commercial</span></div>
-              <div class="chall-item"><div class="chall-dot chall-b">→</div><span>Vocabulaire technique pointu : intégration, API, compliance, SLA — maîtrisés par nos rédacteurs</span></div>
+              <div class="chall-item"><div class="chall-dot chall-b">→</div><span>Vocabulaire technique pointu : intégration, API, compliance, SLA, maîtrisés par nos rédacteurs</span></div>
               <div class="chall-item"><div class="chall-dot chall-b">→</div><span>Concurrence des géants : stratégie longue traîne pour rankner là où Salesforce ne se positionne pas</span></div>
-              <div class="chall-item"><div class="chall-dot chall-b">→</div><span>Personas multiples : IT, Finance, Ops — chaque contenu ciblé sur un décideur spécifique</span></div>
+              <div class="chall-item"><div class="chall-dot chall-b">→</div><span>Personas multiples : IT, Finance, Ops, chaque contenu ciblé sur un décideur spécifique</span></div>
             </div>
           </div>
 
@@ -429,10 +430,11 @@ footer h4{font-size:10.5px;font-weight:700;color:#94a3b8;text-transform:uppercas
           </div>
 
           <div class="sect-result">
-            <div class="sect-result-ico">📈</div>
-            <div class="sect-result-text">
-              <strong>Résultat client, SaaS RH B2B</strong>
-              <span>+312% trafic organique · 47 leads/mois · Top 3 sur 14 mots-clés cibles en 6 mois</span>
+            <span class="sect-result-badge">Notre promesse</span>
+            <p class="sect-result-claim">On ne vous vend pas des mots-clés : on construit la crédibilité qui convainc vos décideurs IT et Finance.</p>
+            <div class="sect-result-proof">
+              <span>Brief validé par un expert SaaS</span>
+              <span>Relecture technique avant livraison</span>
             </div>
           </div>
           <div class="sect-cta">
@@ -499,10 +501,11 @@ footer h4{font-size:10.5px;font-weight:700;color:#94a3b8;text-transform:uppercas
           </div>
 
           <div class="sect-result">
-            <div class="sect-result-ico">🛒</div>
-            <div class="sect-result-text">
-              <strong>Résultat client, E-commerce informatique</strong>
-              <span>1 200 fiches rédigées · +89% trafic produits · +47% conversion en 4 mois</span>
+            <span class="sect-result-badge">Fait pour convertir</span>
+            <p class="sect-result-claim">Zéro contenu générique : chaque fiche est pensée pour convertir, pas juste pour remplir un catalogue.</p>
+            <div class="sect-result-proof">
+              <span>Production à grande échelle sans sacrifier la qualité</span>
+              <span>Schema & FAQ inclus</span>
             </div>
           </div>
           <div class="sect-cta">
@@ -549,8 +552,8 @@ footer h4{font-size:10.5px;font-weight:700;color:#94a3b8;text-transform:uppercas
           <div class="sect-challenges">
             <h4>Défis spécifiques que nous adressons</h4>
             <div class="chall-list">
-              <div class="chall-item"><div class="chall-dot chall-r">→</div><span>Jargon ultra-technique : SOC, SIEM, EDR, SOAR — maîtrisés et vulgarisés sans être simplistes</span></div>
-              <div class="chall-item"><div class="chall-dot chall-r">→</div><span>Réglementation en évolution constante : NIS2, DORA, RGPD — veille permanente intégrée</span></div>
+              <div class="chall-item"><div class="chall-dot chall-r">→</div><span>Jargon ultra-technique : SOC, SIEM, EDR, SOAR, maîtrisés et vulgarisés sans être simplistes</span></div>
+              <div class="chall-item"><div class="chall-dot chall-r">→</div><span>Réglementation en évolution constante : NIS2, DORA, RGPD, veille permanente intégrée</span></div>
               <div class="chall-item"><div class="chall-dot chall-r">→</div><span>Audience RSSI/DSI très méfiante : contenu factuel, sourcé, zéro marketing creux</span></div>
               <div class="chall-item"><div class="chall-dot chall-r">→</div><span>Cycle de vente 6-18 mois : stratégie thought leadership sur le long terme</span></div>
             </div>
@@ -569,10 +572,11 @@ footer h4{font-size:10.5px;font-weight:700;color:#94a3b8;text-transform:uppercas
           </div>
 
           <div class="sect-result" style="background:linear-gradient(135deg,#1a0a0a,#3b0a0a)">
-            <div class="sect-result-ico">🔒</div>
-            <div class="sect-result-text">
-              <strong>Résultat client, Éditeur cybersécurité B2B</strong>
-              <span>Livre blanc NIS2 : 430 leads RSSI en 60 jours · ×3,1 ROI sur 6 mois</span>
+            <span class="sect-result-badge">Zéro approximation</span>
+            <p class="sect-result-claim">Face à un RSSI, l'approximation ne pardonne pas : rien n'est publié sans validation d'un expert sécurité.</p>
+            <div class="sect-result-proof">
+              <span>Relecture par un spécialiste cybersécurité</span>
+              <span>Veille NIS2 / DORA intégrée</span>
             </div>
           </div>
           <div class="sect-cta">
@@ -619,7 +623,7 @@ footer h4{font-size:10.5px;font-weight:700;color:#94a3b8;text-transform:uppercas
           <div class="sect-challenges">
             <h4>Défis spécifiques que nous adressons</h4>
             <div class="chall-list">
-              <div class="chall-item"><div class="chall-dot chall-g">→</div><span>Réglementation complexe : PSD2, DORA, MiCA, Basel III — intégrés avec précision et clarté</span></div>
+              <div class="chall-item"><div class="chall-dot chall-g">→</div><span>Réglementation complexe : PSD2, DORA, MiCA, Basel III, intégrés avec précision et clarté</span></div>
               <div class="chall-item"><div class="chall-dot chall-g">→</div><span>Audience DAF/Directeurs Financiers : ton expert, chiffres vérifiés, zéro approximation</span></div>
               <div class="chall-item"><div class="chall-dot chall-g">→</div><span>YMYL (Your Money Your Life) : contenu E-E-A-T renforcé pour satisfaire les critères Google</span></div>
               <div class="chall-item"><div class="chall-dot chall-g">→</div><span>Open banking & APIs : vulgarisation technique pour décideurs non-IT</span></div>
@@ -639,10 +643,11 @@ footer h4{font-size:10.5px;font-weight:700;color:#94a3b8;text-transform:uppercas
           </div>
 
           <div class="sect-result" style="background:linear-gradient(135deg,#064e3b,#065f46)">
-            <div class="sect-result-ico">💳</div>
-            <div class="sect-result-text">
-              <strong>Résultat client, Fintech paiement B2B</strong>
-              <span>Guide DORA : 290 leads DAF en 45 jours · Top 3 sur "conformité DORA entreprise"</span>
+            <span class="sect-result-badge">Sans compromis</span>
+            <p class="sect-result-claim">En fintech, une erreur réglementaire coûte cher : chaque contenu est vérifié avant publication.</p>
+            <div class="sect-result-proof">
+              <span>Conformité DORA / PSD2 / MiCA vérifiée</span>
+              <span>Standards YMYL respectés</span>
             </div>
           </div>
           <div class="sect-cta">
@@ -689,7 +694,7 @@ footer h4{font-size:10.5px;font-weight:700;color:#94a3b8;text-transform:uppercas
           <div class="sect-challenges">
             <h4>Défis spécifiques que nous adressons</h4>
             <div class="chall-list">
-              <div class="chall-item"><div class="chall-dot chall-p">→</div><span>Marché fragmenté : SIRH, ATS, logiciels paie, gestion des temps — chaque segment adressé</span></div>
+              <div class="chall-item"><div class="chall-dot chall-p">→</div><span>Marché fragmenté : SIRH, ATS, logiciels paie, gestion des temps, chaque segment adressé</span></div>
               <div class="chall-item"><div class="chall-dot chall-p">→</div><span>Réglementation paie & droit du travail : actualité juridique intégrée dans les contenus</span></div>
               <div class="chall-item"><div class="chall-dot chall-p">→</div><span>Personas DRH/DAF : deux décideurs aux priorités différentes, deux angles rédactionnels</span></div>
               <div class="chall-item"><div class="chall-dot chall-p">→</div><span>Saisonnalité forte (paie, BDESE, entretiens) : calendrier éditorial synchronisé avec l'actualité RH</span></div>
@@ -709,10 +714,11 @@ footer h4{font-size:10.5px;font-weight:700;color:#94a3b8;text-transform:uppercas
           </div>
 
           <div class="sect-result" style="background:linear-gradient(135deg,#2e1065,#4c1d95)">
-            <div class="sect-result-ico">👥</div>
-            <div class="sect-result-text">
-              <strong>Résultat client, Éditeur SIRH PME</strong>
-              <span>+312% trafic organique · 18 articles piliers · 47 leads DRH/mois en 6 mois</span>
+            <span class="sect-result-badge">On parle votre langage</span>
+            <p class="sect-result-claim">Le RH Tech a ses codes, SIRH, paie, droit du travail : on les parle couramment, pas approximativement.</p>
+            <div class="sect-result-proof">
+              <span>Angles DRH et DAF distincts</span>
+              <span>Actualité juridique RH suivie</span>
             </div>
           </div>
           <div class="sect-cta">
