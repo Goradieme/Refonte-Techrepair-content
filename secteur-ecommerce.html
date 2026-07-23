@@ -1,52 +1,15 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-<!-- ══ Tarteaucitron : gestion du consentement cookies (RGPD) ══ -->
-<script src="https://cdn.jsdelivr.net/gh/AmauriC/tarteaucitron.js/tarteaucitron.min.js"></script>
-<script>
-tarteaucitron.init({
-  "privacyUrl": "/confidentialite",
-  "hashtag": "#tarteaucitron",
-  "cookieName": "tarteaucitron",
-  "orientation": "bottom",
-  "showAlertSmall": false,
-  "cookieslist": false,
-  "showIcon": true,
-  "iconPosition": "BottomRight",
-  "adblocker": false,
-  "DenyAllCta": true,
-  "AcceptAllCta": true,
-  "highPrivacy": true,
-  "handleBrowserDNTRequest": false,
-  "removeCredit": true,
-  "moreInfoLink": true,
-  "useExternalCss": false,
-  "mandatory": false
-});
-
-tarteaucitron.user.gtagUa = 'G-B1MRFH8WRQ';
-tarteaucitron.user.gtagMore = function () { };
-(tarteaucitron.job = tarteaucitron.job || []).push('gtag');
-</script>
-
-<!-- Personnalisation couleurs TechRepairContent (navy/bleu) -->
-<style>
-#tarteaucitronRoot #tarteaucitronAlertBig{background:#0F1B3D!important}
-#tarteaucitronRoot #tarteaucitronAlertBig p,
-#tarteaucitronRoot #tarteaucitronAlertBig a{color:#fff!important}
-#tarteaucitronDisclaimerAlert,#tarteaucitronDisclaimerAlert strong,#tarteaucitronDisclaimerAlert a{color:#fff!important}
-#tarteaucitronAllAllowed,.tarteaucitronAllow{background:#1A56DB!important;color:#fff!important;border-color:#1A56DB!important}
-#tarteaucitronAllDenied,.tarteaucitronDeny{background:transparent!important;color:#fff!important;border:1px solid #fff!important}
-#tarteaucitronPersonalize2{background:transparent!important;color:#fff!important;border:1px solid #fff!important}
-#tarteaucitronIcon{background:#1A56DB!important}
-#tarteaucitronRoot .tarteaucitronCTAButton{background:#1A56DB!important}
-</style>
-
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<link rel="preconnect" href="https://cdn.jsdelivr.net"/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
 <title>Contenu SEO E-commerce Tech – TechRepair Content | Rédaction spécialisée E-commerce Tech</title>
-<meta name="description" content="Stratégie de contenu SEO pour éditeurs SaaS B2B. Articles piliers, comparatifs, use cases et livres blancs pour générer du trafic qualifié et des leads CMO/DSI."/>
-<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet"/>
+<meta name="description" content="Stratégie de contenu SEO pour e-commerce tech B2B. Fiches produits, guides d'achat et SEO catalogue pour générer du trafic organique et booster les conversions."/>
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" onload="this.onload=null;this.rel='stylesheet'"/>
+<noscript><link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet"/></noscript>
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 :root{--blue:#1A56DB;--blue-dark:#1342b0;--blue-light:#EFF6FF;--navy:#0F1B3D;--text:#1e293b;--muted:#64748b;--border:#e2e8f0;--green:#10b981;--orange:#f97316;--radius:12px;--sector:#f97316;--sector-light:#FFF7ED;}
@@ -85,7 +48,7 @@ nav{position:sticky;top:0;z-index:200;background:#fff;border-bottom:1px solid va
 /* Hero */
 .page-hero{background:linear-gradient(145deg,#f0f5ff 50%,#dce9ff 100%);padding:64px 32px 56px;}
 .page-hero-inner{max-width:900px;margin:0 auto;display:grid;grid-template-columns:1fr auto;gap:40px;align-items:center}
-.page-badge{display:inline-block;background:#FFF3E0;color:#E65100;font-size:10.5px;font-weight:700;letter-spacing:.6px;padding:4px 12px;border-radius:20px;margin-bottom:18px;text-transform:uppercase;}
+.page-badge{display:inline-block;background:#FFF3E0;color:#9A3412;font-size:10.5px;font-weight:700;letter-spacing:.6px;padding:4px 12px;border-radius:20px;margin-bottom:18px;text-transform:uppercase;}
 .page-hero h1{font-size:36px;font-weight:800;line-height:1.15;color:var(--navy);margin-bottom:16px}
 .page-hero p{color:var(--muted);font-size:14px;line-height:1.75;margin-bottom:24px}
 .hero-stats{display:flex;gap:16px;flex-wrap:wrap}
@@ -161,12 +124,13 @@ section{padding:64px 32px}
 footer{background:var(--navy);border-top:1px solid rgba(255,255,255,.07);padding:44px 32px 26px}
 .footer-inner{max-width:1060px;margin:0 auto;display:grid;grid-template-columns:2fr 1fr 1fr 1fr 1fr;gap:32px}
 .footer-brand p{color:#64748b;font-size:12px;margin-top:8px;max-width:185px;line-height:1.7}
-footer h4{font-size:10.5px;font-weight:700;color:#94a3b8;text-transform:uppercase;letter-spacing:.5px;margin-bottom:13px}
-.flinks{list-style:none}.flinks li{margin-bottom:8px}.flinks a{color:#64748b;font-size:12px;transition:color .2s}.flinks a:hover{color:#fff}
+footer .logo-text span{color:#94a3b8}
+footer h3{font-size:10.5px;font-weight:700;color:#94a3b8;text-transform:uppercase;letter-spacing:.5px;margin-bottom:13px}
+.flinks{list-style:none}.flinks li{margin-bottom:8px}.flinks a{color:#94a3b8;font-size:12px;transition:color .2s}.flinks a:hover{color:#fff}
 .fsocial{display:flex;gap:7px;margin-top:11px}
 .fsoc{width:29px;height:29px;border-radius:6px;background:rgba(255,255,255,.07);display:grid;place-items:center;font-size:11px;color:#94a3b8;transition:background .2s}
 .fsoc:hover{background:var(--blue);color:#fff}
-.footer-bottom{max-width:1060px;margin:24px auto 0;padding-top:16px;border-top:1px solid rgba(255,255,255,.07);display:flex;justify-content:space-between;color:#475569;font-size:11px;flex-wrap:wrap;gap:8px}
+.footer-bottom{max-width:1060px;margin:24px auto 0;padding-top:16px;border-top:1px solid rgba(255,255,255,.07);display:flex;justify-content:space-between;color:#94a3b8;font-size:11px;flex-wrap:wrap;gap:8px}
 @media(max-width:960px){.page-hero-inner{grid-template-columns:1fr}.hero-icon-wrap{display:none}.defis-grid{grid-template-columns:1fr}.contenus-grid{grid-template-columns:1fr 1fr}.exemple-card{grid-template-columns:auto 1fr}.exemple-result{display:none}.kw-grid{grid-template-columns:1fr 1fr}.avantages-grid{grid-template-columns:1fr 1fr}.autres-grid{grid-template-columns:1fr 1fr}.cta-inner{grid-template-columns:1fr}.footer-inner{grid-template-columns:1fr 1fr}}
 @media(max-width:600px){.page-hero h1{font-size:26px}.contenus-grid{grid-template-columns:1fr}.kw-grid{grid-template-columns:1fr}.avantages-grid{grid-template-columns:1fr}.autres-grid{grid-template-columns:1fr 1fr}.footer-inner{grid-template-columns:1fr}}
 </style>
@@ -188,6 +152,7 @@ footer h4{font-size:10.5px;font-weight:700;color:#94a3b8;text-transform:uppercas
   <a href="/">Accueil</a><a href="/services">Services</a><a href="/secteurs">Secteurs</a><a href="/apropos">À propos</a><a href="/blog">Blog</a>
   <button class="btn-nav-mobile" onclick="window.location='/devis'">Obtenir un devis</button>
 </div>
+<main>
 
 <!-- FIL D'ARIANE -->
 <div class="breadcrumb">
@@ -340,12 +305,14 @@ footer h4{font-size:10.5px;font-weight:700;color:#94a3b8;text-transform:uppercas
   </div>
 </div>
 
+</main>
+
 <footer>
   <div class="footer-inner">
     <div class="footer-brand"><div class="logo"><div class="logo-box">TRD</div><div class="logo-text" style="color:#fff">TechRepair<span>Content</span></div></div><p>Rédaction SEO & technique pour entreprises SaaS, Tech et E-commerce.</p></div>
-    <div><h4>Secteurs</h4><ul class="flinks"><li><a href="/secteur-saas">SaaS B2B</a></li><li><a href="/secteur-ecommerce">E-commerce Tech</a></li><li><a href="/secteur-cybersecurite">Cybersécurité</a></li><li><a href="/secteur-fintech">Fintech</a></li><li><a href="/secteur-rh-tech">RH Tech</a></li></ul></div>
-    <div><h4>Services</h4><ul class="flinks"><li><a href="/service-articles-seo">Articles SEO</a></li><li><a href="/service-fiches-produits">Fiches produits</a></li><li><a href="/service-livres-blancs">Livres blancs</a></li><li><a href="/service-strategie-ia">Stratégie IA</a></li></ul></div>
-    <div><h4>Ressources</h4><ul class="flinks"><li><a href="/faq">FAQ</a></li><li><a href="/confidentialite">Confidentialité</a></li><li><a href="/mentions-legales">Mentions légales</a></li></ul></div><div><h4>Contact</h4><ul class="flinks"><li><a href="mailto:contact@techrepaircontent.com">contact@techrepaircontent.com</a></li><li><a href="tel:0758383635">07 58 38 36 35</a></li></ul><div class="fsocial"><a class="fsoc" href="https://www.linkedin.com/in/techrepair-content" target="_blank" rel="noopener">in</a><a class="fsoc" href="mailto:contact@techrepaircontent.com">✉</a></div></div>
+    <div><h3>Secteurs</h3><ul class="flinks"><li><a href="/secteur-saas">SaaS B2B</a></li><li><a href="/secteur-ecommerce">E-commerce Tech</a></li><li><a href="/secteur-cybersecurite">Cybersécurité</a></li><li><a href="/secteur-fintech">Fintech</a></li><li><a href="/secteur-rh-tech">RH Tech</a></li></ul></div>
+    <div><h3>Services</h3><ul class="flinks"><li><a href="/service-articles-seo">Articles SEO</a></li><li><a href="/service-fiches-produits">Fiches produits</a></li><li><a href="/service-livres-blancs">Livres blancs</a></li><li><a href="/service-strategie-ia">Stratégie IA</a></li></ul></div>
+    <div><h3>Ressources</h3><ul class="flinks"><li><a href="/faq">FAQ</a></li><li><a href="/confidentialite">Confidentialité</a></li><li><a href="/mentions-legales">Mentions légales</a></li></ul></div><div><h3>Contact</h3><ul class="flinks"><li><a href="mailto:contact@techrepaircontent.com">contact@techrepaircontent.com</a></li><li><a href="tel:0758383635">07 58 38 36 35</a></li></ul><div class="fsocial"><a class="fsoc" href="https://www.linkedin.com/in/techrepair-content" target="_blank" rel="noopener">in</a><a class="fsoc" href="mailto:contact@techrepaircontent.com">✉</a></div></div>
   </div>
   <div class="footer-bottom"><span>© 2025 TechRepair Content. Tous droits réservés.</span><span>Fait avec ❤️ en France</span></div>
 </footer>
@@ -356,5 +323,46 @@ const mobileMenu = document.getElementById('mobileMenu');
 hamburger.addEventListener('click', () => { hamburger.classList.toggle('open'); mobileMenu.classList.toggle('open'); });
 mobileMenu.querySelectorAll('a').forEach(link => { link.addEventListener('click', () => { hamburger.classList.remove('open'); mobileMenu.classList.remove('open'); }); });
 </script>
+<!-- ══ Tarteaucitron : gestion du consentement cookies (RGPD) ══ -->
+<script src="https://cdn.jsdelivr.net/gh/AmauriC/tarteaucitron.js/tarteaucitron.min.js"></script>
+<script>
+tarteaucitron.init({
+  "privacyUrl": "/confidentialite",
+  "hashtag": "#tarteaucitron",
+  "cookieName": "tarteaucitron",
+  "orientation": "bottom",
+  "showAlertSmall": false,
+  "cookieslist": false,
+  "showIcon": true,
+  "iconPosition": "BottomRight",
+  "adblocker": false,
+  "DenyAllCta": true,
+  "AcceptAllCta": true,
+  "highPrivacy": true,
+  "handleBrowserDNTRequest": false,
+  "removeCredit": true,
+  "moreInfoLink": true,
+  "useExternalCss": false,
+  "mandatory": false
+});
+
+tarteaucitron.user.gtagUa = 'G-B1MRFH8WRQ';
+tarteaucitron.user.gtagMore = function () { };
+(tarteaucitron.job = tarteaucitron.job || []).push('gtag');
+</script>
+
+<!-- Personnalisation couleurs TechRepairContent (navy/bleu) -->
+<style>
+#tarteaucitronRoot #tarteaucitronAlertBig{background:#0F1B3D!important}
+#tarteaucitronRoot #tarteaucitronAlertBig p,
+#tarteaucitronRoot #tarteaucitronAlertBig a{color:#fff!important}
+#tarteaucitronDisclaimerAlert,#tarteaucitronDisclaimerAlert strong,#tarteaucitronDisclaimerAlert a{color:#fff!important}
+#tarteaucitronAllAllowed,.tarteaucitronAllow{background:#1A56DB!important;color:#fff!important;border-color:#1A56DB!important}
+#tarteaucitronAllDenied,.tarteaucitronDeny{background:transparent!important;color:#fff!important;border:1px solid #fff!important}
+#tarteaucitronPersonalize2{background:transparent!important;color:#fff!important;border:1px solid #fff!important}
+#tarteaucitronIcon{background:#1A56DB!important}
+#tarteaucitronRoot .tarteaucitronCTAButton{background:#1A56DB!important}
+#tarteaucitronPrivacyUrl{color:#fff!important}
+</style>
 </body>
 </html>
