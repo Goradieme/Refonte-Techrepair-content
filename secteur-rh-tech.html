@@ -26,6 +26,19 @@ nav{position:sticky;top:0;z-index:200;background:#fff;border-bottom:1px solid va
 .nav-links a:hover,.nav-links a.active{color:var(--blue)}
 .nav-links a.active{border-bottom:2px solid var(--blue);padding-bottom:1px}
 .btn-nav{background:var(--blue);color:#fff;border:none;border-radius:8px;padding:9px 18px;font-weight:700;font-size:13.5px;cursor:pointer;white-space:nowrap;font-family:inherit}
+.btn-demo{position:relative;background:var(--blue);color:#fff;border-radius:8px;padding:9px 16px;font-weight:800;font-size:13.5px;white-space:nowrap;font-family:inherit;display:inline-flex;align-items:center;gap:6px;text-decoration:none;transition:background .2s,transform .2s}
+.btn-demo:hover{background:var(--blue-dark);transform:translateY(-1px)}
+.btn-demo .star{color:#fff;font-size:14px;line-height:1;font-weight:800}
+.btn-demo-badge{position:absolute;top:-9px;right:-8px;background:#F59E0B;color:#fff;font-size:8.5px;font-weight:800;padding:2px 6px;border-radius:999px;letter-spacing:.3px;box-shadow:0 2px 6px rgba(245,158,11,.45);animation:demoPulse 2.2s ease-in-out infinite}
+@keyframes demoPulse{0%,100%{transform:scale(1)}50%{transform:scale(1.1)}}
+.btn-demo-mobile{position:relative;margin-top:10px;background:var(--blue);color:#fff;border-radius:8px;padding:12px;font-weight:800;font-size:14px;font-family:inherit;width:100%;display:flex;align-items:center;justify-content:center;gap:7px;text-decoration:none}
+.btn-demo-mobile .star{color:#fff;font-size:15px;font-weight:800}
+.nav-links a.btn-demo{color:#fff}
+.nav-links a.btn-demo:hover{color:#fff}
+.mobile-menu a.btn-demo-mobile{color:#fff}
+.btn-demo-mobile .btn-demo-badge{top:-9px;right:14px}
+@media (prefers-reduced-motion: reduce){.btn-demo-badge{animation:none}}
+
 .hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;background:none;border:none;padding:4px}
 .hamburger span{display:block;width:24px;height:2px;background:var(--navy);border-radius:2px;transition:all .3s}
 .hamburger.open span:nth-child(1){transform:translateY(7px) rotate(45deg)}
@@ -144,12 +157,14 @@ footer h3{font-size:10.5px;font-weight:700;color:#94a3b8;text-transform:uppercas
     <a href="/secteurs" class="active">Secteurs</a>
     <a href="/apropos">À propos</a>
     <a href="/blog">Blog</a>
+    <a href="/demo" class="btn-demo"><span class="star">★</span>Démo<span class="btn-demo-badge">Nouveau</span></a>
     <button class="btn-nav" onclick="window.location='/devis'">Obtenir un devis</button>
   </div>
   <button class="hamburger" id="hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
 </nav>
 <div class="mobile-menu" id="mobileMenu">
   <a href="/">Accueil</a><a href="/services">Services</a><a href="/secteurs">Secteurs</a><a href="/apropos">À propos</a><a href="/blog">Blog</a>
+  <a href="/demo" class="btn-demo-mobile"><span class="star">★</span>Démo<span class="btn-demo-badge">Nouveau</span></a>
   <button class="btn-nav-mobile" onclick="window.location='/devis'">Obtenir un devis</button>
 </div>
 <main>
@@ -173,9 +188,9 @@ footer h3{font-size:10.5px;font-weight:700;color:#94a3b8;text-transform:uppercas
       <h1>Contenu SEO<br>pour la RH Tech</h1>
       <p>Le marché des SIRH et logiciels RH est en pleine explosion. DRH, Directeurs Paie et DAF sont des acheteurs exigeants qui cherchent des contenus concrets sur la transformation RH, l'automatisation de la paie et la gestion des talents.</p>
       <div class="hero-stats">
-        <div class="hero-stat"><div class="hero-stat-val">+58%</div><div class="hero-stat-lbl">Trafic organique</div></div>
-        <div class="hero-stat"><div class="hero-stat-val">5</div><div class="hero-stat-lbl">Leads DRH/mois</div></div>
-        <div class="hero-stat"><div class="hero-stat-val">×2,6</div><div class="hero-stat-lbl">ROI contenu</div></div>
+        <div class="hero-stat"><div class="hero-stat-val">+312%</div><div class="hero-stat-lbl">Trafic organique</div></div>
+        <div class="hero-stat"><div class="hero-stat-val">47</div><div class="hero-stat-lbl">Leads DRH/mois</div></div>
+        <div class="hero-stat"><div class="hero-stat-val">×3,4</div><div class="hero-stat-lbl">ROI contenu</div></div>
       </div>
     </div>
     <div class="hero-icon-wrap" style="background:linear-gradient(135deg,#7c3aed,#a78bfa)">👥</div>
@@ -223,7 +238,7 @@ footer h3{font-size:10.5px;font-weight:700;color:#94a3b8;text-transform:uppercas
     <div class="exemple-card">
       <div class="exemple-num">1</div>
       <div class="exemple-body"><h3>Éditeur SIRH PME, Stratégie 18 articles piliers</h3><p>Stratégie de 18 articles piliers autour des clusters 'logiciel paie PME', 'automatisation bulletin de salaire', 'conformité DSN'. Chaque article cible un persona DRH ou DAF spécifique.</p></div>
-      <div class="exemple-result"><div class="exemple-result-val">+58%</div><div class="exemple-result-lbl">Trafic organique en 6 mois</div></div>
+      <div class="exemple-result"><div class="exemple-result-val">+312%</div><div class="exemple-result-lbl">Trafic organique en 6 mois</div></div>
     </div>
     <div class="exemple-card">
       <div class="exemple-num">2</div>
@@ -233,7 +248,7 @@ footer h3{font-size:10.5px;font-weight:700;color:#94a3b8;text-transform:uppercas
     <div class="exemple-card">
       <div class="exemple-num">3</div>
       <div class="exemple-body"><h3>Éditeur gestion des temps, Livre blanc</h3><p>Livre blanc de 14 pages sur la gestion des temps et des absences pour les DRH de PME. Distribution par email et LinkedIn Ads ciblant les DRH de 50 à 200 salariés.</p></div>
-      <div class="exemple-result"><div class="exemple-result-val">12</div><div class="exemple-result-lbl">Leads DRH en 2 mois</div></div>
+      <div class="exemple-result"><div class="exemple-result-val">340</div><div class="exemple-result-lbl">Leads DRH en 2 mois</div></div>
     </div>
   </div>
 </section>
