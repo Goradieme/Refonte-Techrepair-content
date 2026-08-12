@@ -1319,7 +1319,7 @@ footer h3{font-size:10.5px;font-weight:700;color:#94a3b8;text-transform:uppercas
 .stat-item{text-align:center;padding:24px 16px;border-right:1px solid rgba(255,255,255,.1)}
 .stat-item:last-child{border-right:none}
 .stat-num-wrap{display:flex;justify-content:center;align-items:baseline;gap:4px;margin-bottom:8px}
-.stat-number{font-size:48px;font-weight:800;color:#fff;line-height:1;font-family:'Manrope',sans-serif}
+.stat-number{font-size:48px;font-weight:800;color:#fff;line-height:1;font-family:'Manrope',sans-serif;font-variant-numeric:tabular-nums;display:inline-block;min-width:3ch;text-align:right}
 .stat-suf{font-size:22px;font-weight:800;color:#fff;line-height:1}
 .stat-lbl{font-size:13.5px;font-weight:700;color:#fff;margin-bottom:6px}
 .stat-desc{font-size:11.5px;color:#fff;line-height:1.5}
@@ -1744,7 +1744,7 @@ mobileMenu.querySelectorAll('a').forEach(link => {
   </div>
 </div>
 <!-- ══ Tarteaucitron : gestion du consentement cookies (RGPD) ══ -->
-<script src="https://cdn.jsdelivr.net/gh/AmauriC/tarteaucitron.js/tarteaucitron.min.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/AmauriC/tarteaucitron.js/tarteaucitron.min.js" defer></script>
 <script>
 tarteaucitron.init({
   "privacyUrl": "/confidentialite",
@@ -1790,5 +1790,3 @@ const trdAnalyticsFallback = setTimeout(trdLoadAnalytics, 5000);
 #tarteaucitronAllDenied,.tarteaucitronDeny{background:transparent!important;color:#fff!important;border:1px solid #fff!important}
 #tarteaucitronPersonalize2{background:transparent!important;color:#fff!important;border:1px solid #fff!important}
 #tarteaucitronIcon{background:#1A56DB!important}
-#tarteaucitronRoot .tarteaucitronCTAButton{background:#1A56DB!important}
-#tarteaucitronPriv
