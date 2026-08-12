@@ -377,7 +377,7 @@ mobileMenu.querySelectorAll('a').forEach(link => { link.addEventListener('click'
 document.querySelectorAll('.faq-q').forEach(btn => { btn.addEventListener('click', () => { const item = btn.parentElement; const isOpen = item.classList.contains('open'); document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open')); if (!isOpen) item.classList.add('open'); }); });
 </script>
 <!-- ══ Tarteaucitron : gestion du consentement cookies (RGPD) ══ -->
-<script src="https://cdn.jsdelivr.net/gh/AmauriC/tarteaucitron.js/tarteaucitron.min.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/AmauriC/tarteaucitron.js/tarteaucitron.min.js" defer></script>
 <script>
 tarteaucitron.init({
   "privacyUrl": "/confidentialite",
@@ -427,4 +427,4 @@ const trdAnalyticsFallback = setTimeout(trdLoadAnalytics, 5000);
 #tarteaucitronPrivacyUrl{color:#fff!important}
 </style>
 </body>
-</html>
+</
