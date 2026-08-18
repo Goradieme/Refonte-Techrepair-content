@@ -1,19 +1,10 @@
-/* ═══════════════════════════════════════════════════════
+/* ══════════════════════════════════════════════════
    articles.js — Base d'articles TechRepair Content
-   ───────────────────────────────────────────────────────
-   Ce fichier est partagé entre blog.html.
-
-   Édition manuelle directe sur GitHub :
-   1. Déposer l'image de l'article dans /articles
-   2. Ajouter un objet à ARTICLES ci-dessous avec tous les
-      champs (titre, extrait, auteur, date, categorie,
-      lecture, lien, slug, motCle, metaDesc, image)
-   3. Commit + push → mise en ligne automatique (GitHub Pages)
-
-   Champs obligatoires pour un affichage correct sur le blog :
-   titre, extrait, auteur, date (AAAA-MM-JJ), categorie,
-   lecture, lien, image
-   ═══════════════════════════════════════════════════════ */
+   ─────────────────────────────────────────────────
+   Ce fichier est partagé entre editeur.html et blog.html.
+   Ne pas modifier manuellement : utiliser l'éditeur SEO
+   pour ajouter des articles, puis copier le contenu généré.
+══════════════════════════════════════════════════ */
 
 const ARTICLES = [
   {
@@ -36,22 +27,21 @@ const ARTICLES = [
     categorie:"fintech",
     lecture:  "12 min",
     lien:     "articles/article-facturation-electronique-2026.html",
-    image:    "articles/facturation-electronique-2026-cover.jpg",
     slug:     "facturation-electronique-2026",
     motCle:   "facturation électronique 2026",
     metaDesc: "Calendrier exact, formats acceptés, plateformes agréées réelles et sanctions : le guide complet de la réforme de facturation électronique 2026."
   },
-    {
-      titre:     "Agents IA en RH : le guide complet",
-      extrait:   "Recrutement, onboarding, rétention, paie : comment les agents IA transforment concrètement la fonction RH, avec cas d'usage, ROI et cadre légal.",
-      auteur:    "Goradieme",
-      date:      "2026-07-21",
-      categorie: "rh",
-      lecture:   "12 min",
-      lien:      "articles/agents-ia-rh.html",
-      image:     "articles/agents-ia-rh-cover.jpg",
-      slug:      "agents-ia-rh",
-      motCle:    "agent IA RH",
-      metaDesc:  "Découvrez comment les agents IA transforment les RH : recrutement, onboarding, rétention, paie. Guide complet avec cas d'usage, outils et méthode de déploiement.",
-    },
+  {
+    titre:    "Le Commerce Agentique : le guide complet",
+    extrait:  "AEO, GEO, schema.org : comment rendre votre e-commerce visible par les agents IA (ChatGPT, Gemini, Copilot). Guide complet avec études indépendantes et checklist actionnable.",
+    auteur:   "Goradieme",
+    date:     "2026-08-15",
+    categorie:"ecommerce",
+    lecture:  "18 min",
+    lien:     "articles/article-commerce-agentique.html",
+    image:    "articles/commerce-agentique-cover.jpg",
+    slug:     "commerce-agentique",
+    motCle:   "commerce agentique",
+    metaDesc: "AEO, GEO, schema.org : comment rendre votre e-commerce visible par les agents IA. Guide complet et checklist actionnable."
+  },
 ];
