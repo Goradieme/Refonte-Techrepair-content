@@ -6,17 +6,28 @@
 <link rel="preconnect" href="https://cdn.jsdelivr.net"/>
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
-<title>Stratégie de Contenu IA – TechRepair Content | Contenu IA supervisé Tech B2B</title>
-<meta name="description" content="Stratégie de contenu IA augmentée pour entreprises tech B2B. Pipeline hybride IA + validation humaine pour multiplier votre production sans sacrifier la qualité E-E-A-T."/>
+<title>Services – TechRepair Content | Rédaction SEO SaaS, Tech & E-commerce</title>
+<meta name="description" content="Découvrez nos services de rédaction SEO premium : articles SEO, fiches produits, livres blancs et stratégie de contenu IA pour entreprises SaaS, Tech et E-commerce B2B."/>
 <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" onload="this.onload=null;this.rel='stylesheet'"/>
 <noscript><link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet"/></noscript>
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-:root{--blue:#1A56DB;--blue-dark:#1342b0;--blue-light:#EFF6FF;--navy:#0F1B3D;--text:#1e293b;--muted:#64748b;--border:#e2e8f0;--green:#10b981;--orange:#f97316;--radius:12px;}
+:root{
+  --blue:#1A56DB;--blue-dark:#1342b0;--blue-light:#EFF6FF;
+  --navy:#0F1B3D;--text:#1e293b;--muted:#64748b;
+  --border:#e2e8f0;--green:#10b981;--orange:#f97316;
+  --radius:12px;
+}
 html{scroll-behavior:smooth}
 body{font-family:'Manrope',sans-serif;color:var(--text);background:#fff;font-size:15px;line-height:1.6}
 a{text-decoration:none;color:inherit}
-nav{position:sticky;top:0;z-index:200;background:#fff;border-bottom:1px solid var(--border);padding:0 32px;display:flex;align-items:center;gap:20px;height:62px;}
+
+/* ══ NAVBAR ══ */
+nav{
+  position:sticky;top:0;z-index:200;
+  background:#fff;border-bottom:1px solid var(--border);
+  padding:0 32px;display:flex;align-items:center;gap:20px;height:62px;
+}
 .logo{display:flex;align-items:center;gap:10px;flex-shrink:0}
 .logo-box{width:36px;height:36px;background:var(--blue);border-radius:7px;display:grid;place-items:center;color:#fff;font-weight:800;font-size:13px;letter-spacing:-.5px}
 .logo-text{font-size:13px;font-weight:700;line-height:1.2;color:var(--navy)}
@@ -34,101 +45,226 @@ nav{position:sticky;top:0;z-index:200;background:#fff;border-bottom:1px solid va
 .btn-demo-mobile{position:relative;margin-top:10px;background:var(--blue);color:#fff;border-radius:8px;padding:12px;font-weight:800;font-size:14px;font-family:inherit;width:100%;display:flex;align-items:center;justify-content:center;gap:7px;text-decoration:none}
 .btn-demo-mobile .star{color:#fff;font-size:15px;font-weight:800}
 .nav-links a.btn-demo{color:#fff}
+.nav-tools{position:relative;display:inline-block}
+.nav-tools .chevron{font-size:10px;margin-left:2px;transition:transform .15s}
+.nav-tools:hover .chevron{transform:rotate(180deg)}
+.nav-tools-menu{display:none;position:absolute;top:calc(100% + 8px);left:0;background:#fff;border:1px solid var(--border);border-radius:12px;box-shadow:0 12px 32px rgba(15,27,61,.15);min-width:220px;padding:6px;z-index:60}
+.nav-tools:hover .nav-tools-menu,.nav-tools:focus-within .nav-tools-menu{display:block}
+.nav-tools-menu a{display:flex;align-items:center;gap:9px;padding:10px 12px;border-radius:8px;font-size:13.5px;font-weight:600;color:var(--navy);text-decoration:none;white-space:nowrap}
+.nav-tools-menu a:hover{background:var(--blue-light);color:var(--blue)}
+.nav-tools-menu a .ico{font-size:15px}
 .nav-links a.btn-demo:hover{color:#fff}
 .mobile-menu a.btn-demo-mobile{color:#fff}
 .btn-demo-mobile .btn-demo-badge{top:-9px;right:14px}
 @media (prefers-reduced-motion: reduce){.btn-demo-badge{animation:none}}
 
-.hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;background:none;border:none;padding:4px}
-.hamburger span{display:block;width:24px;height:2px;background:var(--navy);border-radius:2px;transition:all .3s}
-.hamburger.open span:nth-child(1){transform:translateY(7px) rotate(45deg)}
-.hamburger.open span:nth-child(2){opacity:0}
-.hamburger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
-.mobile-menu{display:none;position:fixed;top:62px;left:0;right:0;background:#fff;border-bottom:1px solid var(--border);padding:16px 24px;flex-direction:column;gap:4px;z-index:199;box-shadow:0 8px 24px rgba(0,0,0,.08)}
-.mobile-menu.open{display:flex}
-.mobile-menu a{font-size:15px;font-weight:600;color:var(--muted);padding:10px 0;border-bottom:1px solid var(--border);transition:color .2s}
-.mobile-menu a:hover,.mobile-menu a.active{color:var(--blue)}
-.mobile-menu .btn-nav-mobile{margin-top:10px;background:var(--blue);color:#fff;border:none;border-radius:8px;padding:12px;font-weight:700;font-size:14px;cursor:pointer;font-family:inherit;width:100%}
-@media(max-width:768px){.hamburger{display:flex}.nav-links{display:none}}
-.page-hero{background:linear-gradient(145deg,#f0f5ff 50%,#dce9ff 100%);padding:64px 32px 56px;}
-.page-hero-inner{max-width:800px;margin:0 auto;display:grid;grid-template-columns:1fr auto;gap:40px;align-items:center}
-.page-badge{display:inline-block;background:#FFF3E0;color:#9A3412;font-size:10.5px;font-weight:700;letter-spacing:.6px;padding:4px 12px;border-radius:20px;margin-bottom:18px;text-transform:uppercase;}
-.page-hero h1{font-size:36px;font-weight:800;line-height:1.15;color:var(--navy);margin-bottom:16px}
-.page-hero p{color:var(--muted);font-size:14px;line-height:1.75;margin-bottom:24px}
-.hero-stats{display:flex;gap:20px;flex-wrap:wrap}
-.hero-stat{background:#fff;border-radius:12px;padding:14px 18px;text-align:center;box-shadow:0 2px 12px rgba(26,86,219,.08);border:1px solid var(--border)}
-.hero-stat-val{font-size:24px;font-weight:800;color:var(--blue);line-height:1}
-.hero-stat-lbl{font-size:11px;color:var(--muted);font-weight:600;margin-top:3px}
-.hero-icon-wrap{width:120px;height:120px;border-radius:24px;background:linear-gradient(135deg,var(--blue),#3b82f6);display:grid;place-items:center;font-size:52px;flex-shrink:0;box-shadow:0 12px 40px rgba(26,86,219,.3)}
+@media(max-width:600px){nav{padding:0 16px}.nav-links a:not(:last-child){display:none}}
+
+/* ══ HERO SERVICES ══ */
+.page-hero{
+  background:linear-gradient(145deg,#f0f5ff 50%,#dce9ff 100%);
+  padding:64px 32px 56px;text-align:center;
+}
+.page-hero-inner{max-width:720px;margin:0 auto}
+.page-badge{
+  display:inline-block;background:#FFF3E0;color:#9A3412;
+  font-size:10.5px;font-weight:700;letter-spacing:.6px;
+  padding:4px 12px;border-radius:20px;margin-bottom:18px;text-transform:uppercase;
+}
+.page-hero h1{font-size:38px;font-weight:800;line-height:1.15;color:var(--navy);margin-bottom:16px}
+.page-hero p{color:var(--muted);font-size:14.5px;max-width:540px;margin:0 auto 28px;line-height:1.7}
+.hero-nav-pills{display:flex;gap:8px;justify-content:center;flex-wrap:wrap}
+.hero-pill{
+  background:#fff;border:1.5px solid var(--border);border-radius:30px;
+  padding:7px 16px;font-size:12.5px;font-weight:600;color:var(--muted);
+  cursor:pointer;transition:all .2s;
+}
+.hero-pill:hover,.hero-pill.active{background:var(--blue);border-color:var(--blue);color:#fff}
+
+/* ══ SECTION LAYOUT ══ */
 section{padding:72px 32px}
-.container{max-width:1060px;margin:0 auto}
-.section-eyebrow{display:inline-block;background:var(--blue-light);color:var(--blue);font-size:11px;font-weight:700;letter-spacing:.6px;padding:4px 12px;border-radius:20px;margin-bottom:14px;text-transform:uppercase;}
-.section-title{font-size:28px;font-weight:800;color:var(--navy);margin-bottom:12px;line-height:1.2}
-.section-sub{color:var(--muted);font-size:14px;line-height:1.7;margin-bottom:36px}
-/* Définition */
-.definition-block{background:linear-gradient(135deg,var(--navy),#1e3a6e);border-radius:20px;padding:40px;margin-bottom:0}
-.definition-block h2{font-size:22px;font-weight:800;color:#fff;margin-bottom:16px}
-.definition-block p{font-size:14px;color:#cbd5e1;line-height:1.8;margin-bottom:16px}
-.definition-block p strong{color:#fff}
-.def-pills{display:flex;gap:8px;flex-wrap:wrap;margin-top:20px}
-.def-pill{background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.15);color:#e2e8f0;font-size:12px;font-weight:600;padding:5px 14px;border-radius:20px}
-/* Exemples */
-.exemples-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
-.exemple-card{border:1px solid var(--border);border-radius:16px;padding:24px;transition:box-shadow .25s,transform .25s}
-.exemple-card:hover{box-shadow:0 8px 32px rgba(26,86,219,.1);transform:translateY(-3px)}
-.exemple-logo{width:48px;height:48px;border-radius:12px;display:grid;place-items:center;font-size:20px;margin-bottom:14px}
-.exemple-card h3{font-size:15px;font-weight:800;color:var(--navy);margin-bottom:6px}
-.exemple-sector{font-size:11px;font-weight:700;color:var(--blue);background:var(--blue-light);padding:2px 9px;border-radius:20px;display:inline-block;margin-bottom:10px}
-.exemple-card p{font-size:13px;color:var(--muted);line-height:1.65;margin-bottom:14px}
-.exemple-result{background:#f0f9ff;border-left:3px solid var(--blue);border-radius:0 8px 8px 0;padding:8px 12px;font-size:12px;font-weight:700;color:var(--navy)}
-/* Avantages */
-.avantages-section{background:#f8fafc}
-.avantages-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
-.avantage-card{background:#fff;border:1px solid var(--border);border-radius:16px;padding:28px;transition:box-shadow .25s,transform .25s}
-.avantage-card:hover{box-shadow:0 8px 32px rgba(26,86,219,.1);transform:translateY(-3px)}
-.avantage-icon{font-size:32px;margin-bottom:14px}
-.avantage-card h3{font-size:16px;font-weight:800;color:var(--navy);margin-bottom:8px}
-.avantage-card p{font-size:13px;color:var(--muted);line-height:1.7}
-.avantage-tag{display:inline-block;background:var(--blue-light);color:var(--blue);font-size:11px;font-weight:700;padding:3px 10px;border-radius:20px;margin-top:12px}
-/* Process */
-.process-steps{display:grid;grid-template-columns:repeat(5,1fr);gap:0;position:relative;margin-top:40px}
-.process-steps::before{content:'';position:absolute;top:20px;left:10%;right:10%;height:2px;background:var(--border);z-index:0}
-.process-step{text-align:center;padding:0 8px;position:relative;z-index:1}
-.ps-num{width:40px;height:40px;border-radius:50%;background:var(--blue);color:#fff;font-size:13px;font-weight:800;display:grid;place-items:center;margin:0 auto 12px;box-shadow:0 0 0 4px #fff}
-.ps-title{font-size:12.5px;font-weight:700;color:var(--navy);margin-bottom:5px}
-.ps-desc{font-size:11.5px;color:var(--muted);line-height:1.5}
-/* FAQ */
+.container{max-width:1100px;margin:0 auto}
+.section-eyebrow{
+  display:inline-block;background:var(--blue-light);color:var(--blue);
+  font-size:11px;font-weight:700;letter-spacing:.6px;
+  padding:4px 12px;border-radius:20px;margin-bottom:14px;text-transform:uppercase;
+}
+.section-title{font-size:28px;font-weight:800;color:var(--navy);margin-bottom:10px;line-height:1.2}
+.section-sub{color:var(--muted);font-size:14px;max-width:520px;line-height:1.65;margin-bottom:42px}
+
+/* ══ SERVICE CARDS ══ */
+.services-wrap{display:flex;flex-direction:column;gap:80px}
+
+.serv-block{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:start}
+.serv-block.reverse{direction:rtl}
+.serv-block.reverse>*{direction:ltr}
+
+/* Colonne infos */
+.serv-info{}
+.serv-tag{
+  display:inline-flex;align-items:center;gap:7px;
+  font-size:10.5px;font-weight:700;letter-spacing:.5px;text-transform:uppercase;
+  padding:4px 12px;border-radius:20px;margin-bottom:16px;
+}
+.tag-blue{background:var(--blue-light);color:var(--blue)}
+.tag-orange{background:#FFF7ED;color:var(--orange)}
+.tag-green{background:#ECFDF5;color:var(--green)}
+.tag-purple{background:#F5F3FF;color:#7c3aed}
+
+.serv-info h2{font-size:24px;font-weight:800;color:var(--navy);line-height:1.2;margin-bottom:12px}
+.serv-info>p{font-size:13.5px;color:var(--muted);line-height:1.75;margin-bottom:22px}
+
+.serv-deliverables{margin-bottom:22px}
+.serv-deliverables h4{font-size:11.5px;font-weight:700;color:var(--navy);text-transform:uppercase;letter-spacing:.5px;margin-bottom:11px}
+.deliv-list{display:flex;flex-direction:column;gap:8px}
+.deliv-item{
+  display:flex;align-items:flex-start;gap:10px;
+  font-size:13px;color:var(--text);line-height:1.55;
+}
+.deliv-check{
+  width:18px;height:18px;border-radius:5px;background:var(--blue-light);
+  display:grid;place-items:center;color:var(--blue);font-size:10px;
+  font-weight:800;flex-shrink:0;margin-top:2px;
+}
+
+.serv-result-box{
+  background:linear-gradient(135deg,var(--navy) 0%,#1e3a6e 100%);
+  border-radius:12px;padding:18px 20px;margin-bottom:22px;
+  display:flex;align-items:center;gap:14px;
+}
+.serv-result-ico{font-size:24px;flex-shrink:0}
+.serv-result-text strong{display:block;font-size:13px;font-weight:700;color:#fff;margin-bottom:3px}
+.serv-result-text span{font-size:12px;color:#94a3b8;line-height:1.5}
+.serv-result-source{display:block;font-size:10.5px;color:#5b7bb8;margin-top:5px;font-style:italic}
+
+.serv-cta-row{display:flex;gap:10px;flex-wrap:wrap}
+.btn-primary{background:var(--blue);color:#fff;border:none;border-radius:8px;padding:11px 20px;font-weight:700;font-size:13.5px;cursor:pointer;display:inline-flex;align-items:center;gap:7px;font-family:inherit;transition:background .2s}
+.btn-primary:hover{background:var(--blue-dark)}
+.btn-outline{background:#fff;color:var(--text);border:1.5px solid var(--border);border-radius:8px;padding:11px 18px;font-weight:600;font-size:13.5px;cursor:pointer;font-family:inherit;transition:all .2s}
+.btn-outline:hover{border-color:var(--blue);color:var(--blue)}
+
+/* Colonne visuelle */
+.serv-visual{
+  background:linear-gradient(145deg,#f0f5ff,#e0ebff);
+  border-radius:20px;padding:28px;border:1px solid #d0e2ff;
+}
+.sv-header{display:flex;align-items:center;gap:10px;margin-bottom:20px}
+.sv-icon{width:42px;height:42px;border-radius:10px;display:grid;place-items:center;font-size:18px;flex-shrink:0}
+.sv-title{font-size:14px;font-weight:800;color:var(--navy)}
+.sv-sub{font-size:11.5px;color:var(--muted)}
+
+.sv-metrics{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:18px}
+.sv-metric{background:#fff;border-radius:10px;padding:12px 14px;border:1px solid var(--border)}
+.sv-metric-val{font-size:22px;font-weight:800;color:var(--navy);line-height:1;margin-bottom:3px}
+.sv-metric-lbl{font-size:10.5px;color:var(--muted);font-weight:600}
+.sv-metric-badge{display:inline-flex;align-items:center;gap:3px;background:#dcfce7;color:#16a34a;font-size:10px;font-weight:700;padding:1px 7px;border-radius:10px;margin-top:4px}
+
+.sv-steps{display:flex;flex-direction:column;gap:0}
+.sv-step{display:flex;align-items:flex-start;gap:12px;padding:10px 0;border-bottom:1px solid #e2eaff}
+.sv-step:last-child{border-bottom:none}
+.sv-step-num{width:24px;height:24px;border-radius:50%;background:var(--blue);color:#fff;font-size:11px;font-weight:800;display:grid;place-items:center;flex-shrink:0;margin-top:2px}
+.sv-step-body strong{display:block;font-size:12.5px;font-weight:700;color:var(--navy);margin-bottom:2px}
+.sv-step-body span{font-size:11.5px;color:var(--muted)}
+
+.sv-tags{display:flex;gap:6px;flex-wrap:wrap;margin-top:16px}
+.sv-tag{background:#fff;border:1px solid var(--border);border-radius:20px;padding:4px 11px;font-size:11.5px;font-weight:600;color:var(--muted)}
+
+/* ══ DARK VISUALS ══ */
+.serv-visual.dark{
+  background:linear-gradient(145deg,#0f172a,#1e1b4b);
+  border-color:rgba(139,92,246,.3);
+}
+.serv-visual.dark .sv-title{color:#fff}
+.serv-visual.dark .sv-sub{color:#94a3b8}
+.serv-visual.dark .sv-step{border-bottom-color:rgba(255,255,255,.07)}
+.serv-visual.dark .sv-step-body strong{color:#e2e8f0}
+.serv-visual.dark .sv-step-body span{color:#64748b}
+.serv-visual.dark .sv-tag{background:rgba(255,255,255,.07);border-color:rgba(255,255,255,.1);color:#94a3b8}
+.serv-visual.dark .sv-metric{background:rgba(255,255,255,.06);border-color:rgba(255,255,255,.1)}
+.serv-visual.dark .sv-metric-val{color:#a78bfa}
+.serv-visual.dark .sv-metric-lbl{color:#64748b}
+
+/* ══ SECTION ÉTUDES DE CAS ══ */
+.cases-section{background:#f8fafc}
+.cases-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.case-card{
+  background:#fff;border:1px solid var(--border);border-radius:16px;
+  padding:24px;transition:box-shadow .25s,transform .25s;
+}
+.case-card:hover{box-shadow:0 8px 32px rgba(26,86,219,.1);transform:translateY(-3px)}
+.case-card-top{display:flex;align-items:center;justify-content:space-between;margin-bottom:16px}
+.case-sector{font-size:10.5px;font-weight:700;background:var(--blue-light);color:var(--blue);padding:3px 10px;border-radius:20px}
+.case-icon{font-size:22px}
+.case-card h3{font-size:14.5px;font-weight:800;color:var(--navy);margin-bottom:8px;line-height:1.3}
+.case-card p{font-size:12.5px;color:var(--muted);line-height:1.65;margin-bottom:16px}
+.case-results{display:flex;gap:10px}
+.case-result{flex:1;background:#f0f9ff;border-radius:8px;padding:8px 10px;text-align:center}
+.case-result-val{font-size:18px;font-weight:800;color:var(--blue);line-height:1;margin-bottom:2px}
+.case-result-lbl{font-size:10px;color:var(--muted);font-weight:600;line-height:1.3}
+
+/* ══ FAQ ══ */
+.faq-section{background:#fff}
 .faq-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;max-width:900px;margin:0 auto}
-.faq-item{border:1px solid var(--border);border-radius:12px;overflow:hidden}
+.faq-item{
+  border:1px solid var(--border);border-radius:12px;
+  overflow:hidden;transition:border-color .2s;
+}
 .faq-item:hover{border-color:var(--blue)}
-.faq-q{width:100%;background:#fff;border:none;padding:18px 20px;display:flex;align-items:center;justify-content:space-between;gap:12px;font-family:inherit;font-size:13.5px;font-weight:700;color:var(--navy);cursor:pointer;text-align:left}
+.faq-q{
+  width:100%;background:#fff;border:none;padding:18px 20px;
+  display:flex;align-items:center;justify-content:space-between;gap:12px;
+  font-family:inherit;font-size:13.5px;font-weight:700;color:var(--navy);
+  cursor:pointer;text-align:left;
+}
 .faq-arrow{font-size:12px;color:var(--muted);transition:transform .3s;flex-shrink:0}
 .faq-item.open .faq-arrow{transform:rotate(180deg)}
-.faq-a{max-height:0;overflow:hidden;transition:max-height .35s ease;font-size:13px;color:var(--muted);line-height:1.7}
+.faq-a{
+  max-height:0;overflow:hidden;transition:max-height .35s ease;
+  font-size:13px;color:var(--muted);line-height:1.7;
+}
 .faq-item.open .faq-a{max-height:200px}
 .faq-a-inner{padding:0 20px 18px}
-/* CTA */
+
+/* ══ STATS BAR ══ */
+.stats-bar{background:var(--navy);padding:48px 32px}
+.stats-bar-grid{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:repeat(4,1fr);gap:32px}
+.sb-item{text-align:center;border-right:1px solid rgba(255,255,255,.1);padding:0 16px}
+.sb-item:last-child{border-right:none}
+.sb-val{font-size:40px;font-weight:800;color:#fff;line-height:1;margin-bottom:6px}
+.sb-suf{font-size:18px;font-weight:800;color:#fff}
+.sb-lbl{font-size:13px;font-weight:700;color:#cbd5e1;margin-bottom:4px}
+.sb-desc{font-size:11.5px;color:#94a3b8}
+
+/* ══ CTA BAND ══ */
 .cta-band{background:var(--navy);padding:60px 32px}
-.cta-inner{max-width:1060px;margin:0 auto;display:grid;grid-template-columns:1fr auto;gap:48px;align-items:center}
+.cta-inner{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:1fr auto;gap:48px;align-items:center}
 .cta-band h2{font-size:28px;font-weight:800;color:#fff;margin-bottom:9px}
 .cta-band>div>p{color:#6ee7b7;font-size:13.5px;margin-bottom:24px;max-width:380px}
 .cta-btns{display:flex;gap:10px;flex-wrap:wrap}
-.btn-white{background:#fff;color:var(--navy);border-radius:8px;padding:11px 20px;font-weight:700;font-size:13.5px;display:inline-flex;align-items:center;gap:7px;cursor:pointer;border:none;font-family:inherit}
-.btn-ghost{background:transparent;color:#fff;border:1.5px solid rgba(255,255,255,.3);border-radius:8px;padding:11px 20px;font-weight:700;font-size:13.5px;cursor:pointer;font-family:inherit}
+.btn-white{background:#fff;color:var(--navy);border-radius:8px;padding:11px 20px;font-weight:700;font-size:13.5px;display:inline-flex;align-items:center;gap:7px;cursor:pointer;border:none;font-family:inherit;transition:opacity .2s}
+.btn-white:hover{opacity:.9}
+.btn-ghost{background:transparent;color:#fff;border:1.5px solid rgba(255,255,255,.3);border-radius:8px;padding:11px 20px;font-weight:700;font-size:13.5px;display:inline-flex;align-items:center;gap:7px;cursor:pointer;font-family:inherit;transition:border-color .2s}
 .btn-ghost:hover{border-color:#fff}
 .cta-checks{display:flex;flex-direction:column;gap:11px;flex-shrink:0}
 .cta-check{display:flex;align-items:center;gap:9px;color:#cbd5e1;font-size:13px}
 .cta-ci{color:var(--green);font-weight:700}
+
+/* ══ FOOTER ══ */
 footer{background:var(--navy);border-top:1px solid rgba(255,255,255,.07);padding:44px 32px 26px}
-.footer-inner{max-width:1060px;margin:0 auto;display:grid;grid-template-columns:2fr 1fr 1fr 1fr 1fr 1fr;gap:32px}
+.footer-inner{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:2fr 1fr 1fr 1fr 1fr;gap:32px}
 .footer-brand p{color:#94a3b8;font-size:12px;margin-top:8px;max-width:185px;line-height:1.7}
 footer .logo-text span{color:#94a3b8}
 footer h3{font-size:10.5px;font-weight:700;color:#94a3b8;text-transform:uppercase;letter-spacing:.5px;margin-bottom:13px}
-.flinks{list-style:none}.flinks li{margin-bottom:8px}.flinks a{color:#94a3b8;font-size:12px;transition:color .2s}.flinks a:hover{color:#fff}
+.flinks{list-style:none}
+.flinks li{margin-bottom:8px}
+.flinks a{color:#94a3b8;font-size:12px;transition:color .2s}
+.flinks a:hover{color:#fff}
 .fsocial{display:flex;gap:7px;margin-top:11px}
 .fsoc{width:29px;height:29px;border-radius:6px;background:rgba(255,255,255,.07);display:grid;place-items:center;font-size:11px;color:#94a3b8;transition:background .2s}
 .fsoc:hover{background:var(--blue);color:#fff}
-.footer-bottom{max-width:1060px;margin:24px auto 0;padding-top:16px;border-top:1px solid rgba(255,255,255,.07);display:flex;justify-content:space-between;color:#94a3b8;font-size:11px;flex-wrap:wrap;gap:8px}
+.footer-bottom{max-width:1100px;margin:24px auto 0;padding-top:16px;border-top:1px solid rgba(255,255,255,.07);display:flex;justify-content:space-between;color:#94a3b8;font-size:11px;flex-wrap:wrap;gap:8px}
+
+/* ══ POPUP ══ */
 .popup-overlay{position:fixed;inset:0;background:rgba(15,27,61,.65);z-index:9999;display:flex;align-items:center;justify-content:center;padding:20px;opacity:0;pointer-events:none;transition:opacity .3s;backdrop-filter:blur(4px)}
 .popup-overlay.active{opacity:1;pointer-events:all}
 .popup-box{background:#fff;border-radius:20px;padding:44px 40px;max-width:460px;width:100%;position:relative;text-align:center;box-shadow:0 24px 80px rgba(0,0,0,.25);transform:translateY(20px);transition:transform .3s}
@@ -137,245 +273,585 @@ footer h3{font-size:10.5px;font-weight:700;color:#94a3b8;text-transform:uppercas
 .popup-icon{font-size:48px;margin-bottom:12px}
 .popup-title{font-size:22px;font-weight:800;color:var(--navy);margin-bottom:10px}
 .popup-text{font-size:14px;color:var(--muted);line-height:1.65;margin-bottom:22px}
+.popup-text strong{color:var(--navy)}
+.popup-form{display:flex;flex-direction:column;gap:10px;margin-bottom:12px}
+.popup-input{border:1.5px solid var(--border);border-radius:8px;padding:12px 16px;font-size:14px;font-family:inherit;outline:none}
+.popup-input:focus{border-color:var(--blue)}
+.popup-btn{background:var(--blue);color:#fff;border:none;border-radius:8px;padding:13px;font-size:14px;font-weight:700;cursor:pointer;font-family:inherit}
 .popup-note{font-size:11.5px;color:#94a3b8}
-@media(max-width:960px){.page-hero-inner{grid-template-columns:1fr}.hero-icon-wrap{display:none}.exemples-grid{grid-template-columns:1fr}.avantages-grid{grid-template-columns:1fr 1fr}.process-steps{grid-template-columns:1fr 1fr;gap:20px}.process-steps::before{display:none}.faq-grid{grid-template-columns:1fr}.cta-inner{grid-template-columns:1fr}.footer-inner{grid-template-columns:1fr 1fr}}
-@media(max-width:600px){.page-hero h1{font-size:26px}.avantages-grid{grid-template-columns:1fr}.footer-inner{grid-template-columns:1fr}}
 
-/* ══ FIL D'ARIANE ══ */
-.breadcrumb{background:#f8fafc;border-bottom:1px solid var(--border);padding:10px 32px}
-.breadcrumb-inner{max-width:1060px;margin:0 auto;display:flex;align-items:center;gap:8px;flex-wrap:wrap}
-.breadcrumb-item{font-size:12.5px;font-weight:600;color:var(--muted)}
-.breadcrumb-item a{color:var(--muted);transition:color .2s}
-.breadcrumb-item a:hover{color:var(--blue)}
-.breadcrumb-sep{font-size:11px;color:#cbd5e1}
-.breadcrumb-current{font-size:12.5px;font-weight:700;padding:2px 10px;border-radius:20px}
+/* ══ RESPONSIVE ══ */
+@media(max-width:960px){
+  .serv-block{grid-template-columns:1fr;gap:32px}
+  .serv-block.reverse{direction:ltr}
+  .cases-grid{grid-template-columns:1fr}
+  .faq-grid{grid-template-columns:1fr}
+  .stats-bar-grid{grid-template-columns:repeat(2,1fr)}
+  .sb-item{border-right:none;border-bottom:1px solid rgba(255,255,255,.1);padding-bottom:24px}
+  .sb-item:nth-child(3),.sb-item:nth-child(4){border-bottom:none}
+  .cta-inner{grid-template-columns:1fr}
+  .footer-inner{grid-template-columns:1fr 1fr}
+}
+@media(max-width:600px){
+  .page-hero h1{font-size:26px}
+  .section-title{font-size:22px}
+  .cta-band h2{font-size:22px}
+  .footer-inner{grid-template-columns:1fr}
+  .sv-metrics{grid-template-columns:1fr 1fr}
+  .popup-box{padding:32px 22px}
+}
+
+/* ══ HAMBURGER MENU MOBILE ══ */
+.hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;background:none;border:none;padding:4px}
+.hamburger span{display:block;width:24px;height:2px;background:var(--navy);border-radius:2px;transition:all .3s}
+.hamburger.open span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+.hamburger.open span:nth-child(2){opacity:0}
+.hamburger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+.mobile-menu{display:none;position:fixed;top:62px;left:0;right:0;background:#fff;border-bottom:1px solid var(--border);padding:16px 24px;flex-direction:column;gap:4px;z-index:199;box-shadow:0 8px 24px rgba(0,0,0,.08)}
+.mobile-menu.open{display:flex}
+.mobile-menu a{font-size:15px;font-weight:600;color:var(--muted);padding:10px 0;border-bottom:1px solid var(--border);transition:color .2s}
+.mobile-menu a:last-of-type{border-bottom:none}
+.mobile-menu a:hover,.mobile-menu a.active{color:var(--blue)}
+.mobile-menu .btn-nav-mobile{margin-top:10px;background:var(--blue);color:#fff;border:none;border-radius:8px;padding:12px;font-weight:700;font-size:14px;cursor:pointer;font-family:inherit;width:100%}
+@media(max-width:768px){
+  .hamburger{display:flex}
+  .nav-links{display:none}
+}
 
 </style>
 </head>
 <body>
+
+<!-- ══ NAVBAR ══ -->
 <nav>
-  <div class="logo"><div class="logo-box">TRD</div><div class="logo-text">TechRepair<span>Content</span></div></div>
+  <div class="logo">
+    <div class="logo-box">TRD</div>
+    <div class="logo-text">TechRepair<span>Content</span></div>
+  </div>
   <div class="nav-links">
     <a href="/">Accueil</a>
     <a href="/services" class="active">Services</a>
     <a href="/secteurs">Secteurs</a>
     <a href="/apropos">À propos</a>
     <a href="/blog">Blog</a>
-    <a href="https://demo-agent-rh.vercel.app" class="btn-demo"><span class="star">★</span>Démo<span class="btn-demo-badge">Nouveau</span></a>
+    <div class="nav-tools">
+      <button class="btn-demo" type="button"><span class="star">★</span>Outils IA<span class="btn-demo-badge">Nouveau</span><span class="chevron">▾</span></button>
+      <div class="nav-tools-menu">
+        <a href="https://demo-agent-rh.vercel.app"><span class="ico">🤖</span> Démo avec Ted</a>
+        <a href="https://demo-agent-rh.vercel.app/audit-ia"><span class="ico">🔍</span> Audit IA gratuit</a>
+      </div>
+    </div>
     <button class="btn-nav" onclick="window.location='/devis'">Obtenir un devis</button>
   </div>
-  <button class="hamburger" id="hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
+  <button class="hamburger" id="hamburger" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
 </nav>
+
+<!-- ══ MOBILE MENU ══ -->
 <div class="mobile-menu" id="mobileMenu">
-  <a href="/">Accueil</a><a href="/services" class="active">Services</a><a href="/secteurs">Secteurs</a><a href="/apropos">À propos</a><a href="/blog">Blog</a>
-  <a href="https://demo-agent-rh.vercel.app" class="btn-demo-mobile"><span class="star">★</span>Démo<span class="btn-demo-badge">Nouveau</span></a>
+  <a href="/">Accueil</a>
+  <a href="/services" class="active">Services</a>
+  <a href="/secteurs">Secteurs</a>
+  <a href="/apropos">À propos</a>
+  <a href="/blog">Blog</a>
+  <a href="https://demo-agent-rh.vercel.app" class="btn-demo-mobile"><span class="star">★</span>Démo avec Ted<span class="btn-demo-badge">Nouveau</span></a>
+  <a href="https://demo-agent-rh.vercel.app/audit-ia" class="btn-demo-mobile"><span class="star">★</span>Audit IA gratuit</a>
   <button class="btn-nav-mobile" onclick="window.location='/devis'">Obtenir un devis</button>
 </div>
 <main>
 
-
-<!-- ══ FIL D'ARIANE ══ -->
-<div class="breadcrumb">
-  <div class="breadcrumb-inner">
-    <span class="breadcrumb-item"><a href="/">🏠 Accueil</a></span>
-    <span class="breadcrumb-sep">›</span>
-    <span class="breadcrumb-item"><a href="/services">Services</a></span>
-    <span class="breadcrumb-sep">›</span>
-    <span class="breadcrumb-current" style="background:#F5F3FF;color:#7c3aed">Stratégie de contenu IA</span>
-  </div>
-</div>
-
-<!-- HERO -->
+<!-- ══ HERO PAGE ══ -->
 <div class="page-hero">
   <div class="page-hero-inner">
-    <div>
-      <span class="page-badge">Service 04</span>
-      <h1>Stratégie de contenu<br>IA augmentée</h1>
-      <p>L'IA accélère, l'expertise humaine garantit la qualité. Notre approche hybride multiplie votre production de contenu sans sacrifier la précision technique, la cohérence éditoriale et l'autorité E-E-A-T indispensables pour ranker en 2025.</p>
-      <div class="hero-stats">
-        <div class="hero-stat"><div class="hero-stat-val">×3,8</div><div class="hero-stat-lbl">Volume contenu</div></div>
-        <div class="hero-stat"><div class="hero-stat-val">-60%</div><div class="hero-stat-lbl">Coût par article</div></div>
-        <div class="hero-stat"><div class="hero-stat-val">×2,4</div><div class="hero-stat-lbl">Trafic organique</div></div>
-      </div>
+    <span class="page-badge">Nos prestations</span>
+    <h1>Du contenu qui génère<br>du trafic et des leads</h1>
+    <p>Chaque service est conçu pour un objectif business précis : visibilité organique, conversion et autorité dans votre secteur tech.</p>
+    <div class="hero-nav-pills">
+      <a href="/service-articles-seo" class="hero-pill active">Articles SEO</a>
+      <a href="/service-fiches-produits" class="hero-pill">Fiches produits</a>
+      <a href="/service-livres-blancs" class="hero-pill">Livres blancs</a>
+      <a href="/service-strategie-ia" class="hero-pill">Stratégie IA</a>
     </div>
-    <div class="hero-icon-wrap">📄</div>
   </div>
 </div>
 
-<!-- DÉFINITION -->
-<section style="background:#fff">
+
+<!-- ══ SERVICES ══ -->
+<section id="articles">
   <div class="container">
-    <span class="section-eyebrow">Définition</span>
-    <h2 class="section-title">Qu'est-ce qu'un article SEO ?</h2>
-    <div class="definition-block">
-      <h2>Le contenu IA augmenté, c'est quoi exactement ?</h2>
-      <p>Le contenu IA augmenté est une approche éditoriale hybride où l'intelligence artificielle génère une première version structurée du contenu, tandis qu'un <strong>expert humain du secteur</strong> valide, enrichit et finalise chaque livrable. Ce n'est pas du contenu IA brut, c'est du contenu IA <strong>supervisé et certifié par un expert</strong>.</p>
-      <p>Le principe repose sur un <strong>pipeline éditorial en 4 étapes</strong> : (1) l'IA génère un brouillon structuré à partir d'un prompt calibré sur votre brand voice, (2) notre expert sectoriel valide la précision technique et enrichit le contenu, (3) notre équipe SEO optimise la structure sémantique et (4) le contenu final est livré prêt à publier avec métadonnées complètes.</p>
-      <p>Résultat : vous multipliez votre volume de production par 3 à 5 tout en maintenant un niveau de qualité E-E-A-T compatible avec les exigences de Google. Le contenu IA augmenté <strong>n'est pas détectable comme IA</strong> car il a été profondément remanié par un expert, il est indistinguable d'un contenu 100% humain sur le fond comme sur la forme.</p>
-      <div class="def-pills">
-        <span class="def-pill">Pipeline IA + humain</span>
-        <span class="def-pill">Prompt engineering</span>
-        <span class="def-pill">Brand voice calibré</span>
-        <span class="def-pill">Validation expert</span>
-        <span class="def-pill">E-E-A-T garanti</span>
-        <span class="def-pill">SGE optimisé</span>
-        <span class="def-pill">×3 à ×5 volume</span>
+    <div class="services-wrap">
+
+      <!-- SERVICE 1 : Articles SEO -->
+      <div class="serv-block">
+        <div class="serv-info">
+          <span class="serv-tag tag-blue">📄 Service 01</span>
+          <h2>Articles SEO longue traîne & piliers thématiques</h2>
+          <p>Des articles rédigés par des experts, structurés autour d'une stratégie de clusters sémantiques. Chaque article est conçu pour ranker, générer du trafic qualifié et convertir vos lecteurs en prospects.</p>
+
+          <div class="serv-deliverables">
+            <h4>Ce que vous recevez</h4>
+            <div class="deliv-list">
+              <div class="deliv-item"><div class="deliv-check">✓</div><span>Brief éditorial complet avec structure Hn, mots-clés primaires & secondaires, questions PAA</span></div>
+              <div class="deliv-item"><div class="deliv-check">✓</div><span>Article de 1 500 à 5 000 mots selon la concurrence et l'intention de recherche</span></div>
+              <div class="deliv-item"><div class="deliv-check">✓</div><span>Meta title + meta description optimisés (55-60 / 145-160 caractères)</span></div>
+              <div class="deliv-item"><div class="deliv-check">✓</div><span>Maillage interne suggéré avec ancres recommandées</span></div>
+              <div class="deliv-item"><div class="deliv-check">✓</div><span>Balisage Schema.org Article / FAQPage selon le type de contenu</span></div>
+              <div class="deliv-item"><div class="deliv-check">✓</div><span>1 révision incluse sous 48h</span></div>
+            </div>
+          </div>
+
+          <div class="serv-result-box">
+            <div class="serv-result-ico">📈</div>
+            <div class="serv-result-text">
+              <strong>Benchmark sectoriel 2026</strong>
+              <span>Le SEO B2B affiche un ROI médian de 230% sur 3 ans, avec un point mort atteint dès le 7ᵉ mois pour les entreprises SaaS.</span>
+              <span class="serv-result-source">Source : First Page Sage, 2026</span>
+            </div>
+          </div>
+
+          <div class="serv-cta-row">
+            <button class="btn-primary" onclick="window.location='/devis'">Demander un devis →</button>
+            <a href="/service-articles-seo" class="btn-outline">En savoir plus →</a>
+          </div>
+        </div>
+
+        <div class="serv-visual">
+          <div class="sv-header">
+            <div class="sv-icon" style="background:#EFF6FF">📄</div>
+            <div>
+              <div class="sv-title">Performance article SEO</div>
+              <div class="sv-sub">Exemple client SaaS B2B, 6 mois</div>
+            </div>
+          </div>
+          <div class="sv-metrics">
+            <div class="sv-metric">
+              <div class="sv-metric-val">+95%</div>
+              <div class="sv-metric-lbl">Trafic organique</div>
+              <div class="sv-metric-badge">↑ vs J-1</div>
+            </div>
+            <div class="sv-metric">
+              <div class="sv-metric-val">Top 3</div>
+              <div class="sv-metric-lbl">Positions SERP</div>
+              <div class="sv-metric-badge">↑ 14 mots-clés</div>
+            </div>
+            <div class="sv-metric">
+              <div class="sv-metric-val">4,2%</div>
+              <div class="sv-metric-lbl">Taux de conversion</div>
+              <div class="sv-metric-badge">↑ +1,8pts</div>
+            </div>
+            <div class="sv-metric">
+              <div class="sv-metric-val">18</div>
+              <div class="sv-metric-lbl">Articles produits</div>
+              <div class="sv-metric-badge">6 mois</div>
+            </div>
+          </div>
+          <div class="sv-steps">
+            <div class="sv-step"><div class="sv-step-num">1</div><div class="sv-step-body"><strong>Audit & stratégie de mots-clés</strong><span>Identification des clusters à fort potentiel</span></div></div>
+            <div class="sv-step"><div class="sv-step-num">2</div><div class="sv-step-body"><strong>Brief éditorial validé</strong><span>Structure, angle, sources, PAA</span></div></div>
+            <div class="sv-step"><div class="sv-step-num">3</div><div class="sv-step-body"><strong>Rédaction expert</strong><span>Contenu E-E-A-T, dense, sans fluff</span></div></div>
+            <div class="sv-step"><div class="sv-step-num">4</div><div class="sv-step-body"><strong>Livraison + suivi positions</strong><span>Dashboard de performance partagé</span></div></div>
+          </div>
+          <div class="sv-tags">
+            <span class="sv-tag">SaaS B2B</span><span class="sv-tag">E-E-A-T</span><span class="sv-tag">Longue traîne</span><span class="sv-tag">Cluster sémantique</span>
+          </div>
+        </div>
       </div>
+
+      <!-- SERVICE 2 : Fiches produits -->
+      <div class="serv-block reverse" id="fiches">
+        <div class="serv-info">
+          <span class="serv-tag tag-orange">🛒 Service 02</span>
+          <h2>Fiches produits optimisées SEO & conversion</h2>
+          <p>Des fiches produits qui rankent sur Google ET convertissent vos visiteurs. Nous combinons expertise technique produit, copywriting orienté bénéfices et optimisation sémantique pour chaque référence de votre catalogue.</p>
+
+          <div class="serv-deliverables">
+            <h4>Ce que vous recevez</h4>
+            <div class="deliv-list">
+              <div class="deliv-item"><div class="deliv-check">✓</div><span>Titre produit optimisé avec mot-clé principal positionné en tête</span></div>
+              <div class="deliv-item"><div class="deliv-check">✓</div><span>Description courte (accroche) + description longue (bénéfices + specs)</span></div>
+              <div class="deliv-item"><div class="deliv-check">✓</div><span>Balisage Schema.org Product avec prix, disponibilité, avis agrégés</span></div>
+              <div class="deliv-item"><div class="deliv-check">✓</div><span>Suggestions de cross-sell & up-sell éditorialement intégrées</span></div>
+              <div class="deliv-item"><div class="deliv-check">✓</div><span>FAQ produit optimisée pour les Featured Snippets</span></div>
+              <div class="deliv-item"><div class="deliv-check">✓</div><span>Livraison en lot (CSV ou intégration directe selon plateforme)</span></div>
+            </div>
+          </div>
+
+          <div class="serv-result-box">
+            <div class="serv-result-ico">🛒</div>
+            <div class="serv-result-text">
+              <strong>Benchmark sectoriel 2026</strong>
+              <span>Les fiches produits avec avis clients doublent leur taux de conversion, et 4 photos ou plus augmentent la conversion de 14% par rapport à une seule image.</span>
+              <span class="serv-result-source">Source : Baymard Institute, 2026</span>
+            </div>
+          </div>
+
+          <div class="serv-cta-row">
+            <button class="btn-primary" onclick="window.location='/devis'">Demander un devis →</button>
+            <a href="/service-fiches-produits" class="btn-outline">En savoir plus →</a>
+          </div>
+        </div>
+
+        <div class="serv-visual" style="background:linear-gradient(145deg,#fff7ed,#ffe8d0);border-color:#ffd5a8">
+          <div class="sv-header">
+            <div class="sv-icon" style="background:#FFF7ED">🛒</div>
+            <div>
+              <div class="sv-title">Performance fiches produits</div>
+              <div class="sv-sub">Exemple client E-commerce Tech, 4 mois</div>
+            </div>
+          </div>
+          <div class="sv-metrics">
+            <div class="sv-metric">
+              <div class="sv-metric-val">+89%</div>
+              <div class="sv-metric-lbl">Trafic organique</div>
+              <div class="sv-metric-badge">↑ vs J-1</div>
+            </div>
+            <div class="sv-metric">
+              <div class="sv-metric-val">+47%</div>
+              <div class="sv-metric-lbl">Taux conversion</div>
+              <div class="sv-metric-badge">↑ panier moyen</div>
+            </div>
+            <div class="sv-metric">
+              <div class="sv-metric-val">220</div>
+              <div class="sv-metric-lbl">Fiches rédigées</div>
+              <div class="sv-metric-badge">4 mois</div>
+            </div>
+            <div class="sv-metric">
+              <div class="sv-metric-val">94%</div>
+              <div class="sv-metric-lbl">Score qualité</div>
+              <div class="sv-metric-badge">Screaming Frog</div>
+            </div>
+          </div>
+          <div class="sv-steps">
+            <div class="sv-step"><div class="sv-step-num">1</div><div class="sv-step-body"><strong>Audit catalogue existant</strong><span>Contenu dupliqué, thin content, opportunités</span></div></div>
+            <div class="sv-step"><div class="sv-step-num">2</div><div class="sv-step-body"><strong>Template & charte éditoriale</strong><span>Adapté à votre plateforme (Shopify, WooCommerce…)</span></div></div>
+            <div class="sv-step"><div class="sv-step-num">3</div><div class="sv-step-body"><strong>Production en batch</strong><span>Livraison par vagues avec QA intégrée</span></div></div>
+            <div class="sv-step"><div class="sv-step-num">4</div><div class="sv-step-body"><strong>Suivi performances</strong><span>Rapport mensuel positions + conversions</span></div></div>
+          </div>
+          <div class="sv-tags">
+            <span class="sv-tag">E-commerce</span><span class="sv-tag">Schema Product</span><span class="sv-tag">Conversion</span><span class="sv-tag">Batch</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- SERVICE 3 : Livres blancs & Études de cas -->
+      <div class="serv-block" id="livres-blancs">
+        <div class="serv-info">
+          <span class="serv-tag tag-green">📘 Service 03</span>
+          <h2>Livres blancs & études de cas B2B</h2>
+          <p>Des contenus MOFU/BOFU à haute valeur ajoutée qui positionnent votre entreprise comme référence de son secteur, capturent des leads qualifiés et accélèrent la prise de décision de vos prospects.</p>
+
+          <div class="serv-deliverables">
+            <h4>Ce que vous recevez</h4>
+            <div class="deliv-list">
+              <div class="deliv-item"><div class="deliv-check">✓</div><span>Livre blanc de 12 à 20 pages : problématique, données sectorielles, solution, ROI prouvé</span></div>
+              <div class="deliv-item"><div class="deliv-check">✓</div><span>Étude de cas structurée : Contexte → Problème → Solution → Résultats chiffrés</span></div>
+              <div class="deliv-item"><div class="deliv-check">✓</div><span>Landing page de téléchargement optimisée conversion (copywriting inclus)</span></div>
+              <div class="deliv-item"><div class="deliv-check">✓</div><span>Séquence email de nurturing 3 emails post-téléchargement</span></div>
+              <div class="deliv-item"><div class="deliv-check">✓</div><span>Résumé LinkedIn Pulse + 3 posts de promotion organique</span></div>
+              <div class="deliv-item"><div class="deliv-check">✓</div><span>Sources vérifiées, interviews clients possibles sur demande</span></div>
+            </div>
+          </div>
+
+          <div class="serv-result-box">
+            <div class="serv-result-ico">📘</div>
+            <div class="serv-result-text">
+              <strong>Benchmark sectoriel 2026</strong>
+              <span>Les livres blancs comptent parmi les formats B2B les plus performants pour la conversion, nettement au-dessus des articles de blog (1 à 2%) ou des webinaires en direct (3 à 5%).</span>
+              <span class="serv-result-source">Source : Scalezia, 2026</span>
+            </div>
+          </div>
+
+          <div class="serv-cta-row">
+            <button class="btn-primary" onclick="window.location='/devis'">Demander un devis →</button>
+            <a href="/service-livres-blancs" class="btn-outline">En savoir plus →</a>
+          </div>
+        </div>
+
+        <div class="serv-visual" style="background:linear-gradient(145deg,#ecfdf5,#d1fae5);border-color:#a7f3d0">
+          <div class="sv-header">
+            <div class="sv-icon" style="background:#ECFDF5">📘</div>
+            <div>
+              <div class="sv-title">Performance livre blanc</div>
+              <div class="sv-sub">Exemple client SaaS RH, 3 mois</div>
+            </div>
+          </div>
+          <div class="sv-metrics">
+            <div class="sv-metric">
+              <div class="sv-metric-val">20</div>
+              <div class="sv-metric-lbl">Leads générés</div>
+              <div class="sv-metric-badge">↑ qualifiés</div>
+            </div>
+            <div class="sv-metric">
+              <div class="sv-metric-val">11%</div>
+              <div class="sv-metric-lbl">Taux conversion LP</div>
+              <div class="sv-metric-badge">↑ +6pts</div>
+            </div>
+            <div class="sv-metric">
+              <div class="sv-metric-val">12</div>
+              <div class="sv-metric-lbl">Pages livrées</div>
+              <div class="sv-metric-badge">+ landing page</div>
+            </div>
+            <div class="sv-metric">
+              <div class="sv-metric-val">×4,2</div>
+              <div class="sv-metric-lbl">ROI 6 mois</div>
+              <div class="sv-metric-badge">↑ vs coût</div>
+            </div>
+          </div>
+          <div class="sv-steps">
+            <div class="sv-step"><div class="sv-step-num">1</div><div class="sv-step-body"><strong>Cadrage stratégique</strong><span>Problématique, cible, angle différenciant</span></div></div>
+            <div class="sv-step"><div class="sv-step-num">2</div><div class="sv-step-body"><strong>Collecte & recherche</strong><span>Données sectorielles, interviews, études</span></div></div>
+            <div class="sv-step"><div class="sv-step-num">3</div><div class="sv-step-body"><strong>Rédaction + révisions</strong><span>2 allers-retours inclus</span></div></div>
+            <div class="sv-step"><div class="sv-step-num">4</div><div class="sv-step-body"><strong>Kit de distribution</strong><span>LP + emails + posts LinkedIn</span></div></div>
+          </div>
+          <div class="sv-tags">
+            <span class="sv-tag">Lead Magnet</span><span class="sv-tag">MOFU/BOFU</span><span class="sv-tag">Nurturing</span><span class="sv-tag">B2B</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- SERVICE 4 : Stratégie IA -->
+      <div class="serv-block reverse" id="ia">
+        <div class="serv-info">
+          <span class="serv-tag tag-purple">🤖 Service 04</span>
+          <h2>Stratégie de contenu IA augmentée</h2>
+          <p>L'IA accélère, l'expertise humaine garantit la qualité. Notre approche hybride multiplie votre production de contenu sans sacrifier la précision technique, la cohérence éditoriale et l'autorité E-E-A-T indispensables pour rankner en 2025.</p>
+
+          <div class="serv-deliverables">
+            <h4>Ce que vous recevez</h4>
+            <div class="deliv-list">
+              <div class="deliv-item"><div class="deliv-check">✓</div><span>Audit de votre stack contenu actuel + opportunités d'automatisation identifiées</span></div>
+              <div class="deliv-item"><div class="deliv-check">✓</div><span>Stratégie éditoriale full-funnel sur 6 mois avec calendrier et KPIs</span></div>
+              <div class="deliv-item"><div class="deliv-check">✓</div><span>Production IA supervisée : contenu généré, révisé et validé par des experts métier</span></div>
+              <div class="deliv-item"><div class="deliv-check">✓</div><span>Système de prompts personnalisés pour votre marque et votre secteur</span></div>
+              <div class="deliv-item"><div class="deliv-check">✓</div><span>Optimisation SGE (Search Generative Experience) / AI Overviews</span></div>
+              <div class="deliv-item"><div class="deliv-check">✓</div><span>Rapport mensuel performance + ajustements stratégiques</span></div>
+            </div>
+          </div>
+
+          <div class="serv-result-box" style="background:linear-gradient(135deg,#1e1b4b,#312e81)">
+            <div class="serv-result-ico">📊</div>
+            <div class="serv-result-text">
+              <strong>Benchmark sectoriel 2026</strong>
+              <span>Les entreprises intégrant l'IA dans leur production éditoriale gagnent en moyenne +40% de productivité rédactionnelle, avec un ROI positif mesuré dans 74% des cas à l'échelle.</span>
+              <span class="serv-result-source">Sources : Incremys, WEnvision × Google, 2026</span>
+            </div>
+          </div>
+
+          <div class="serv-cta-row">
+            <button class="btn-primary" onclick="window.location='/devis'">Demander un devis →</button>
+            <a href="/service-strategie-ia" class="btn-outline">En savoir plus →</a>
+          </div>
+        </div>
+
+        <div class="serv-visual dark">
+          <div class="sv-header">
+            <div class="sv-icon" style="background:rgba(139,92,246,.2);color:#a78bfa">🤖</div>
+            <div>
+              <div class="sv-title">Performance stratégie IA</div>
+              <div class="sv-sub">Exemple client Tech B2B, 4 mois</div>
+            </div>
+          </div>
+          <div class="sv-metrics">
+            <div class="sv-metric">
+              <div class="sv-metric-val">×2</div>
+              <div class="sv-metric-lbl">Volume contenu</div>
+              <div class="sv-metric-badge">↑ articles/mois</div>
+            </div>
+            <div class="sv-metric">
+              <div class="sv-metric-val">-35%</div>
+              <div class="sv-metric-lbl">Coût par article</div>
+              <div class="sv-metric-badge">↓ vs avant</div>
+            </div>
+            <div class="sv-metric">
+              <div class="sv-metric-val">×2,4</div>
+              <div class="sv-metric-lbl">Trafic organique</div>
+              <div class="sv-metric-badge">↑ 4 mois</div>
+            </div>
+            <div class="sv-metric">
+              <div class="sv-metric-val">100%</div>
+              <div class="sv-metric-lbl">Validé humain</div>
+              <div class="sv-metric-badge">E-E-A-T ✓</div>
+            </div>
+          </div>
+          <div class="sv-steps">
+            <div class="sv-step"><div class="sv-step-num">1</div><div class="sv-step-body"><strong>Audit & calibrage IA</strong><span>Prompts, brand voice, contraintes sectorielles</span></div></div>
+            <div class="sv-step"><div class="sv-step-num">2</div><div class="sv-step-body"><strong>Pipeline éditorial hybride</strong><span>IA génère, expert valide et enrichit</span></div></div>
+            <div class="sv-step"><div class="sv-step-num">3</div><div class="sv-step-body"><strong>Publication & distribution</strong><span>SEO on-page + schema + maillage</span></div></div>
+            <div class="sv-step"><div class="sv-step-num">4</div><div class="sv-step-body"><strong>Optimisation continue</strong><span>A/B, refresh, SGE monitoring</span></div></div>
+          </div>
+          <div class="sv-tags">
+            <span class="sv-tag">IA supervisée</span><span class="sv-tag">SGE</span><span class="sv-tag">E-E-A-T</span><span class="sv-tag">Full-funnel</span>
+          </div>
+        </div>
+      </div>
+
     </div>
   </div>
 </section>
 
-<!-- EXEMPLES -->
-<section style="background:#f8fafc">
+<!-- ══ FAQ ══ -->
+<section class="faq-section">
   <div class="container">
-    <span class="section-eyebrow">Exemples concrets</span>
-    <h2 class="section-title">Des entreprises tech qui ont misé sur les articles SEO</h2>
-    <p class="section-sub">Ces exemples illustrent comment des entreprises similaires à la vôtre ont transformé leur contenu en moteur de croissance organique.</p>
-    <div class="exemples-grid">
-      <div class="exemple-card">
-        <div class="exemple-logo" style="background:#F5F3FF">🤖</div>
-        <h3>Scale-up SaaS, Pipeline contenu IA full-funnel</h3>
-        <span class="exemple-sector">SaaS B2B</span>
-        <p>Mise en place d'un pipeline hybride IA pour produire 48 articles/mois (vs 12 avant). Prompts calibrés sur le brand voice, validation par un expert SaaS, monitoring E-E-A-T mensuel et optimisation SGE.</p>
-        <div class="exemple-result">📈 ×4 volume contenu · -60% coût/article · ×2,4 trafic organique en 4 mois</div>
-      </div>
-      <div class="exemple-card">
-        <div class="exemple-logo" style="background:#FEF2F2">🔒</div>
-        <h3>E-commerce tech, 2 000 fiches produits IA supervisées</h3>
-        <span class="exemple-sector">E-commerce Tech</span>
-        <p>Production de 2 000 fiches produits en 8 semaines via pipeline IA. Chaque lot de 100 fiches validé par un expert hardware avant livraison. Zéro duplicate content détecté, score SEO moyen 93%.</p>
-        <div class="exemple-result">📈 2 000 fiches en 8 semaines · Coût unitaire -65% · Qualité identique au 100% humain</div>
-      </div>
-      <div class="exemple-card">
-        <div class="exemple-logo" style="background:#ECFDF5">💳</div>
-        <h3>Éditeur cybersécurité, Veille réglementaire automatisée</h3>
-        <span class="exemple-sector">Cybersécurité</span>
-        <p>Pipeline IA pour produire 20 articles/mois sur l'actualité réglementaire (NIS2, DORA, RGPD). L'IA génère un premier jet à partir des sources officielles, notre expert RSSI valide et enrichit en 2h.</p>
-        <div class="exemple-result">📈 20 articles/mois vs 4 avant · Délai moyen 48h/article · Top 5 sur actualité cyber</div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- AVANTAGES -->
-<section class="avantages-section">
-  <div class="container">
-    <span class="section-eyebrow">Pourquoi investir</span>
-    <h2 class="section-title">Les avantages concrets pour votre entreprise</h2>
-    <p class="section-sub">Un article SEO bien rédigé travaille pour vous 24h/24, sans budget publicitaire supplémentaire.</p>
-    <div class="avantages-grid">
-      <div class="avantage-card">
-        <div class="avantage-icon">⚡</div>
-        <h3>Volume ×3 à ×5 sans perte de qualité</h3>
-        <p>Là où une équipe rédactionnelle classique produit 8 articles/mois, notre pipeline IA supervisé en produit 25 à 40 avec le même niveau de qualité. Vous saturez vos clusters sémantiques 3 à 5 fois plus vite.</p>
-        <span class="avantage-tag">Productivité ×3 à ×5</span>
-      </div>
-      <div class="avantage-card">
-        <div class="avantage-icon">💰</div>
-        <h3>Coût par article réduit de 60%</h3>
-        <p>Un article 100% humain coûte en moyenne entre 150 et 400€ selon la longueur et la technicité. Notre approche IA supervisée permet de produire le même article pour 60 à 65% moins cher, sans compromis sur la qualité finale.</p>
-        <span class="avantage-tag">Coût -60%</span>
-      </div>
-      <div class="avantage-card">
-        <div class="avantage-icon">🛡️</div>
-        <h3>E-E-A-T garanti à chaque livraison</h3>
-        <p>Chaque contenu IA est relu et enrichi par un expert du secteur avant livraison. Nous garantissons contractuellement que 100% du contenu livré est validé humainement, zéro contenu IA brut non supervisé.</p>
-        <span class="avantage-tag">100% validé humain</span>
-      </div>
-      <div class="avantage-card">
-        <div class="avantage-icon">🔧</div>
-        <h3>Brand voice calibré et cohérent</h3>
-        <p>Nos prompts sont construits sur mesure à partir de votre charte éditoriale, vos anciens contenus et vos personas. Le résultat : chaque article IA sonne comme s'il avait été écrit par votre meilleur rédacteur interne.</p>
-        <span class="avantage-tag">Cohérence éditoriale</span>
-      </div>
-      <div class="avantage-card">
-        <div class="avantage-icon">🌐</div>
-        <h3>Optimisation SGE et AI Overviews</h3>
-        <p>Notre pipeline intègre nativement l'optimisation pour la Search Generative Experience de Google. Vos contenus sont structurés pour être cités par les AI Overviews et les réponses ChatGPT/Perplexity.</p>
-        <span class="avantage-tag">SGE ready</span>
-      </div>
-      <div class="avantage-card">
-        <div class="avantage-icon">📊</div>
-        <h3>Monitoring et optimisation continue</h3>
-        <p>Notre pipeline inclut un suivi mensuel des performances de chaque contenu. Les articles qui ne performent pas sont rafraîchis ou restructurés automatiquement selon les données GSC, votre investissement est protégé dans la durée.</p>
-        <span class="avantage-tag">Content refresh automatisé</span>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- PROCESS -->
-<section style="background:#fff">
-  <div class="container">
-    <div style="text-align:center;margin-bottom:0">
-      <span class="section-eyebrow">Notre processus</span>
-      <h2 class="section-title" style="text-align:center">De la stratégie à la publication en 5 étapes</h2>
-    </div>
-    <div class="process-steps">
-      <div class="process-step"><div class="ps-num">1</div><div class="ps-title">Calibrage IA</div><div class="ps-desc">Analyse de votre brand voice, prompts sur mesure, contraintes sectorielles</div></div>
-      <div class="process-step"><div class="ps-num">2</div><div class="ps-title">Génération IA</div><div class="ps-desc">Production du brouillon structuré avec mots-clés et intention intégrés</div></div>
-      <div class="process-step"><div class="ps-num">3</div><div class="ps-title">Validation humaine</div><div class="ps-desc">Expert sectoriel : précision technique, enrichissement, E-E-A-T</div></div>
-      <div class="process-step"><div class="ps-num">4</div><div class="ps-title">Optimisation SEO</div><div class="ps-desc">Schema, meta, maillage, SGE, prêt à publier</div></div>
-      <div class="process-step"><div class="ps-num">5</div><div class="ps-title">Suivi & optimisation</div><div class="ps-desc">Dashboard partagé, rapport mensuel, content refresh si nécessaire</div></div>
-    </div>
-  </div>
-</section>
-
-<!-- FAQ -->
-<section style="background:#f8fafc">
-  <div class="container">
-    <div style="text-align:center;margin-bottom:36px">
-      <span class="section-eyebrow">FAQ</span>
-      <h2 class="section-title" style="text-align:center">Questions fréquentes</h2>
+    <div style="text-align:center;margin-bottom:42px">
+      <span class="section-eyebrow">Questions fréquentes</span>
+      <h2 class="section-title" style="text-align:center">Tout ce que vous devez savoir</h2>
     </div>
     <div class="faq-grid">
-      <div class="faq-item"><button class="faq-q">Le contenu IA est-il détectable par Google ?<span class="faq-arrow">▼</span></button><div class="faq-a"><div class="faq-a-inner">Google évalue la qualité du contenu, pas sa méthode de production. Notre contenu IA supervisé, remanié et validé par un expert humain passe tous les critères E-E-A-T et n'est pas pénalisé. Ce qui est pénalisé, c'est le contenu IA brut, non supervisé, sans valeur ajoutée.</div></div></div>
-      <div class="faq-item"><button class="faq-q">Quel modèle IA utilisez-vous ?<span class="faq-arrow">▼</span></button><div class="faq-a"><div class="faq-a-inner">Nous utilisons Claude (Anthropic) et GPT-4 selon le type de contenu et le secteur. Le choix du modèle est transparent et documenté dans chaque rapport mensuel. La validation humaine est identique quel que soit le modèle utilisé.</div></div></div>
-      <div class="faq-item"><button class="faq-q">Comment calibrez-vous l'IA sur mon brand voice ?<span class="faq-arrow">▼</span></button><div class="faq-a"><div class="faq-a-inner">Nous analysons vos 10 meilleurs contenus existants, votre charte éditoriale et vos personas pour construire un système de prompts sur mesure. Chaque prompt encode votre ton, votre niveau de technicité et vos mots à éviter.</div></div></div>
-      <div class="faq-item"><button class="faq-q">Puis-je commencer avec un seul article IA ?<span class="faq-arrow">▼</span></button><div class="faq-a"><div class="faq-a-inner">Oui. Nous proposons une mission test d'un article IA supervisé pour que vous puissiez évaluer la qualité avant de vous engager sur un volume. C'est la meilleure façon de voir concrètement ce que notre pipeline produit.</div></div></div>
+      <div class="faq-item">
+        <button class="faq-q">Quel est le délai de livraison d'un article SEO ?<span class="faq-arrow">▼</span></button>
+        <div class="faq-a"><div class="faq-a-inner">Un article de 2 000 mots est livré en 5 à 7 jours ouvrés après validation du brief. Pour des volumes importants ou des articles piliers (5 000+ mots), comptez 10 à 14 jours.</div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">Travaillez-vous avec des secteurs spécifiques ?<span class="faq-arrow">▼</span></button>
+        <div class="faq-a"><div class="faq-a-inner">Nous sommes spécialisés SaaS B2B, e-commerce tech et startups tech Series A/B. Nous n'acceptons pas les missions hors de notre domaine d'expertise pour garantir la qualité technique.</div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">Comment garantissez-vous la qualité E-E-A-T ?<span class="faq-arrow">▼</span></button>
+        <div class="faq-a"><div class="faq-a-inner">Chaque contenu est rédigé ou supervisé par un expert du secteur concerné, sourcé avec des données vérifiables et relu par notre équipe SEO. Le contenu IA est systématiquement validé humainement.</div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">Proposez-vous des contrats sur le long terme ?<span class="faq-arrow">▼</span></button>
+        <div class="faq-a"><div class="faq-a-inner">Oui. Nous proposons des contrats mensuels à partir de 4 articles/mois avec un tarif préférentiel. Les missions longues bénéficient également d'un suivi de performance dédié et d'un rapport mensuel.</div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">Le contenu est-il livré prêt à publier ?<span class="faq-arrow">▼</span></button>
+        <div class="faq-a"><div class="faq-a-inner">Oui. Vous recevez le contenu au format HTML ou Google Doc avec les balises Hn, meta title, meta description, alt text suggérés pour les images et les liens internes indiqués.</div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">Quelle est votre politique de révision ?<span class="faq-arrow">▼</span></button>
+        <div class="faq-a"><div class="faq-a-inner">Une révision complète est incluse dans chaque prestation sous 48h. Des révisions supplémentaires sont disponibles à un tarif horaire. Nous visons zéro aller-retour grâce à nos briefs détaillés.</div></div>
+      </div>
     </div>
   </div>
 </section>
 
-<!-- CTA -->
+<!-- ══ CTA BAND ══ -->
 <div class="cta-band">
   <div class="cta-inner">
     <div>
-      <h2>Prêt à multiplier votre production de contenu ?</h2>
-      <p style="color:#fff">Discutons de votre stack contenu actuel et voyons comment l'IA peut multiplier votre production sans sacrifier la qualité.</p>
+      <h2>Prêt à faire décoller votre contenu ?</h2>
+      <p style="color:#fff">Discutons de votre projet et voyons comment nous pouvons vous aider à atteindre vos objectifs.</p>
       <div class="cta-btns">
         <button class="btn-white" onclick="window.location='/devis'">Obtenir un devis gratuit →</button>
-        <a href="/services" class="btn-ghost">Voir tous les services →</a>
+        <button class="btn-ghost" onclick="document.getElementById('contactPopup').classList.add('active')">Nous contacter →</button>
       </div>
     </div>
     <div class="cta-checks">
       <div class="cta-check"><span class="cta-ci">✓</span> Réponse sous 24h</div>
-      <div class="cta-check"><span class="cta-ci">✓</span> Audit SEO gratuit</div>
+      <div class="cta-check"><span class="cta-ci">✓</span> Audit SEO gratuit sur demande</div>
       <div class="cta-check"><span class="cta-ci">✓</span> Sans engagement</div>
     </div>
   </div>
 </div>
 
+<!-- ══ FOOTER ══ -->
 </main>
 
 <footer>
   <div class="footer-inner">
-    <div class="footer-brand"><div class="logo"><div class="logo-box">TRD</div><div class="logo-text" style="color:#fff">TechRepair<span>Content</span></div></div><p>Rédaction SEO & technique pour entreprises SaaS, Tech et E-commerce.</p></div>
-    <div><h3>Navigation</h3><ul class="flinks"><li><a href="/">Accueil</a></li><li><a href="/apropos">À propos</a></li><li><a href="/services">Services</a></li><li><a href="/secteurs">Secteurs</a></li><li><a href="/blog">Blog</a></li></ul></div>
-    <div><h3>Services</h3><ul class="flinks"><li><a href="/service-articles-seo">Articles SEO</a></li><li><a href="/service-fiches-produits">Fiches produits</a></li><li><a href="/service-livres-blancs">Livres blancs</a></li><li><a href="/service-strategie-ia">Stratégie IA</a></li></ul></div>
-    <div><h3>Ressources</h3><ul class="flinks"><li><a href="/faq">FAQ</a></li><li><a href="/confidentialite">Confidentialité</a></li><li><a href="/mentions-legales">Mentions légales</a></li></ul></div><div><h3>Contact</h3><ul class="flinks"><li><a href="mailto:contact@techrepaircontent.com">contact@techrepaircontent.com</a></li><li><a href="tel:0758383635">07 58 38 36 35</a></li></ul><div class="fsocial"><a class="fsoc" href="https://www.linkedin.com/in/techrepair-content" target="_blank" rel="noopener">in</a><a class="fsoc" href="mailto:contact@techrepaircontent.com">✉</a></div></div>
-    <div><h3>Basé en France</h3><div style="font-size:22px">🇫🇷</div></div>
+    <div class="footer-brand">
+      <div class="logo"><div class="logo-box">TRD</div><div class="logo-text" style="color:#fff">TechRepair<span>Content</span></div></div>
+      <p>Rédaction SEO & technique pour entreprises SaaS, Tech et E-commerce.</p>
+    </div>
+    <div><h3>Navigation</h3><ul class="flinks"><li><a href="/">Accueil</a></li><li><a href="#">À propos</a></li><li><a href="/services">Services</a></li><li><a href="#">Secteurs</a></li><li><a href="/blog">Blog</a></li></ul></div>
+    <div><h3>Ressources</h3><ul class="flinks"><li><a href="/faq">FAQ</a></li><li><a href="/confidentialite">Politique de confidentialité</a></li><li><a href="/mentions-legales">Mentions légales</a></li></ul></div>
+    <div>
+      <h3>Contact</h3>
+      <ul class="flinks"><li><a href="#">contact@techrepaircontent.com</a></li><li><a href="#">Réponse sous 24h</a></li></ul>
+      <div class="fsocial"><a class="fsoc" href="https://www.linkedin.com/in/techrepair-content" target="_blank" rel="noopener">in</a><a class="fsoc" href="mailto:contact@techrepaircontent.com">✉</a></div>
+    </div>
+    <div><h3>Basé en France</h3><div style="font-size:22px">🇫🇷</div><p style="color:#94a3b8;font-size:11px;margin-top:7px">Travail avec des clients du monde entier.</p></div>
   </div>
-  <div class="footer-bottom"><span>© 2025 TechRepair Content. Tous droits réservés.</span><span>Fait avec ❤️ en France</span></div>
+  <div class="footer-bottom">
+    <span>© 2025 TechRepair Content. Tous droits réservés.</span>
+    <span>Fait avec ❤️ en France</span>
+  </div>
 </footer>
 
 <script>
+// ── Compteurs animés ──
+const counters = document.querySelectorAll('.stat-number');
+const speed = 80;
+const animateCounters = () => {
+  counters.forEach(counter => {
+    const target = +counter.getAttribute('data-target');
+    const count = +counter.innerText;
+    const inc = Math.ceil(target / speed);
+    if (count < target) {
+      counter.innerText = Math.min(count + inc, target);
+      setTimeout(animateCounters, 18);
+    } else { counter.innerText = target; }
+  });
+};
+const statsBar = document.querySelector('.stats-bar');
+let counted = false;
+const obs = new IntersectionObserver(entries => {
+  if (entries[0].isIntersecting && !counted) { counted = true; animateCounters(); }
+}, {threshold: 0.3});
+if (statsBar) obs.observe(statsBar);
+
+// ── FAQ accordion ──
+document.querySelectorAll('.faq-q').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const item = btn.parentElement;
+    const isOpen = item.classList.contains('open');
+    document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+    if (!isOpen) item.classList.add('open');
+  });
+});
+
+// ── Pill navigation scroll ──
+document.querySelectorAll('.hero-pill').forEach(pill => {
+  pill.addEventListener('click', () => {
+    document.querySelectorAll('.hero-pill').forEach(p => p.classList.remove('active'));
+    pill.classList.add('active');
+  });
+});
+
+// ── Popup contact ──
+const contactPopup = document.getElementById('contactPopup');
+if (contactPopup) {
+  contactPopup.addEventListener('click', e => {
+    if (e.target === contactPopup) contactPopup.classList.remove('active');
+  });
+}
+
+// ── Hamburger menu ──
 const hamburger = document.getElementById('hamburger');
 const mobileMenu = document.getElementById('mobileMenu');
-hamburger.addEventListener('click', () => { hamburger.classList.toggle('open'); mobileMenu.classList.toggle('open'); });
-mobileMenu.querySelectorAll('a').forEach(link => { link.addEventListener('click', () => { hamburger.classList.remove('open'); mobileMenu.classList.remove('open'); }); });
-document.querySelectorAll('.faq-q').forEach(btn => { btn.addEventListener('click', () => { const item = btn.parentElement; const isOpen = item.classList.contains('open'); document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open')); if (!isOpen) item.classList.add('open'); }); });
+hamburger.addEventListener('click', () => {
+  hamburger.classList.toggle('open');
+  mobileMenu.classList.toggle('open');
+});
+// Fermer le menu au clic sur un lien
+mobileMenu.querySelectorAll('a').forEach(link => {
+  link.addEventListener('click', () => {
+    hamburger.classList.remove('open');
+    mobileMenu.classList.remove('open');
+  });
+});
+
 </script>
+
+<!-- ══ POPUP CONTACT ══ -->
+<div class="popup-overlay" id="contactPopup">
+  <div class="popup-box">
+    <button class="popup-close" onclick="document.getElementById('contactPopup').classList.remove('active')">✕</button>
+    <div class="popup-icon">📞</div>
+    <h3 class="popup-title">Nous contacter</h3>
+    <p class="popup-text">Choisissez le moyen de contact qui vous convient le mieux.</p>
+    <div style="display:flex;flex-direction:column;gap:12px;margin-bottom:16px">
+      <a href="tel:0758383635" style="display:flex;align-items:center;gap:12px;background:#f0f5ff;border:1.5px solid #c3d6f8;border-radius:10px;padding:14px 18px;font-weight:700;color:#0F1B3D;font-size:14px">
+        <span style="font-size:20px">📱</span>07 58 38 36 35
+      </a>
+      <a href="mailto:contact@techrepaircontent.com" style="display:flex;align-items:center;gap:12px;background:#f0f5ff;border:1.5px solid #c3d6f8;border-radius:10px;padding:14px 18px;font-weight:700;color:#0F1B3D;font-size:14px">
+        <span style="font-size:20px">✉️</span>contact@techrepaircontent.com
+      </a>
+    </div>
+    <p class="popup-note">✓ Réponse sous 24h · ✓ Devis gratuit & sans engagement</p>
+  </div>
+</div>
 <!-- ══ Tarteaucitron : gestion du consentement cookies (RGPD) ══ -->
 <script src="https://cdn.jsdelivr.net/gh/AmauriC/tarteaucitron.js/tarteaucitron.min.js" defer></script>
 <script>
@@ -424,4 +900,7 @@ const trdAnalyticsFallback = setTimeout(trdLoadAnalytics, 5000);
 #tarteaucitronPersonalize2{background:transparent!important;color:#fff!important;border:1px solid #fff!important}
 #tarteaucitronIcon{background:#1A56DB!important}
 #tarteaucitronRoot .tarteaucitronCTAButton{background:#1A56DB!important}
-#tarteaucitr
+#tarteaucitronPrivacyUrl{color:#fff!important}
+</style>
+</body>
+</html>
