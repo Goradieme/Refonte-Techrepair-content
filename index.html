@@ -45,6 +45,14 @@ nav{
 .btn-demo-mobile{position:relative;margin-top:10px;background:var(--blue);color:#fff;border-radius:8px;padding:12px;font-weight:800;font-size:14px;font-family:inherit;width:100%;display:flex;align-items:center;justify-content:center;gap:7px;text-decoration:none}
 .btn-demo-mobile .star{color:#fff;font-size:15px;font-weight:800}
 .nav-links a.btn-demo{color:#fff}
+.nav-tools{position:relative;display:inline-block}
+.nav-tools .chevron{font-size:10px;margin-left:2px;transition:transform .15s}
+.nav-tools:hover .chevron{transform:rotate(180deg)}
+.nav-tools-menu{display:none;position:absolute;top:calc(100% + 8px);left:0;background:#fff;border:1px solid var(--border);border-radius:12px;box-shadow:0 12px 32px rgba(15,27,61,.15);min-width:220px;padding:6px;z-index:60}
+.nav-tools:hover .nav-tools-menu,.nav-tools:focus-within .nav-tools-menu{display:block}
+.nav-tools-menu a{display:flex;align-items:center;gap:9px;padding:10px 12px;border-radius:8px;font-size:13.5px;font-weight:600;color:var(--navy);text-decoration:none;white-space:nowrap}
+.nav-tools-menu a:hover{background:var(--blue-light);color:var(--blue)}
+.nav-tools-menu a .ico{font-size:15px}
 .nav-links a.btn-demo:hover{color:#fff}
 .mobile-menu a.btn-demo-mobile{color:#fff}
 .btn-demo-mobile .btn-demo-badge{top:-9px;right:14px}
@@ -528,7 +536,13 @@ footer h3{font-size:10.5px;font-weight:700;color:#94a3b8;text-transform:uppercas
     <a href="/secteurs">Secteurs</a>
     <a href="/apropos">À propos</a>
     <a href="/blog">Blog</a>
-    <a href="https://demo-agent-rh.vercel.app" class="btn-demo"><span class="star">★</span>Démo<span class="btn-demo-badge">Nouveau</span></a>
+    <div class="nav-tools">
+      <button class="btn-demo" type="button"><span class="star">★</span>Outils IA<span class="btn-demo-badge">Nouveau</span><span class="chevron">▾</span></button>
+      <div class="nav-tools-menu">
+        <a href="https://demo-agent-rh.vercel.app"><span class="ico">🤖</span> Démo avec Ted</a>
+        <a href="https://demo-agent-rh.vercel.app/audit-ia"><span class="ico">🔍</span> Audit IA gratuit</a>
+      </div>
+    </div>
     <button class="btn-nav" onclick="window.location='/devis'">Obtenir un devis</button>
   </div>
   <button class="hamburger" id="hamburger" aria-label="Menu">
@@ -543,7 +557,8 @@ footer h3{font-size:10.5px;font-weight:700;color:#94a3b8;text-transform:uppercas
   <a href="/secteurs">Secteurs</a>
   <a href="/apropos">À propos</a>
   <a href="/blog">Blog</a>
-  <a href="https://demo-agent-rh.vercel.app" class="btn-demo-mobile"><span class="star">★</span>Démo<span class="btn-demo-badge">Nouveau</span></a>
+  <a href="https://demo-agent-rh.vercel.app" class="btn-demo-mobile"><span class="star">★</span>Démo avec Ted<span class="btn-demo-badge">Nouveau</span></a>
+  <a href="https://demo-agent-rh.vercel.app/audit-ia" class="btn-demo-mobile"><span class="star">★</span>Audit IA gratuit</a>
   <button class="btn-nav-mobile" onclick="window.location='/devis'">Obtenir un devis</button>
 </div>
 <main>
@@ -840,7 +855,7 @@ footer h3{font-size:10.5px;font-weight:700;color:#94a3b8;text-transform:uppercas
           <li>Guides utilisateurs &amp; onboarding</li>
           <li>Livres blancs &amp; études de cas</li>
         </ul>
-        <div class="serv-result">📈 Résultat typique : +3x trafic organique en 90 jours</div>
+        <div class="serv-result">📈 Résultat typique : +80% trafic organique en 90 jours</div>
         <a href="/services" class="serv-link">En savoir plus →</a>
       </div>
 
@@ -855,7 +870,7 @@ footer h3{font-size:10.5px;font-weight:700;color:#94a3b8;text-transform:uppercas
           <li>Guides d'achat à fort taux de clic</li>
           <li>Optimisation catalogue à grande échelle</li>
         </ul>
-        <div class="serv-result">🛒 Résultat typique : taux de conversion ×2.8 en 60 jours</div>
+        <div class="serv-result">🛒 Résultat typique : taux de conversion ×1.6 en 60 jours</div>
         <a href="/services" class="serv-link">En savoir plus →</a>
       </div>
 
@@ -870,7 +885,7 @@ footer h3{font-size:10.5px;font-weight:700;color:#94a3b8;text-transform:uppercas
           <li>FAQ &amp; base de connaissances SEO-ready</li>
           <li>Contenus help center &amp; release notes</li>
         </ul>
-        <div class="serv-result">🎯 Résultat typique : −70% de tickets support en 60 jours</div>
+        <div class="serv-result">🎯 Résultat typique : −35% de tickets support en 60 jours</div>
         <a href="/services" class="serv-link">En savoir plus →</a>
       </div>
 
@@ -935,7 +950,7 @@ footer h3{font-size:10.5px;font-weight:700;color:#94a3b8;text-transform:uppercas
             <span class="serv-ai-mlbl">premier agent opérationnel</span>
           </div>
           <div class="serv-ai-metric">
-            <span class="serv-ai-mval">×6</span>
+            <span class="serv-ai-mval">×3</span>
             <span class="serv-ai-mlbl">ROI moyen à 6 mois</span>
           </div>
         </div>
@@ -1620,7 +1635,7 @@ const obs = new IntersectionObserver(entries => {
 if (statsSection) obs.observe(statsSection);
 
 // ── ROI Calculator ──
-const multipliers = { saas: { traffic: 3.2, conv: 1.6 }, ecom: { traffic: 2.8, conv: 2.4 }, tech: { traffic: 3.5, conv: 1.4 } };
+const multipliers = { saas: { traffic: 1.8, conv: 1.3 }, ecom: { traffic: 1.6, conv: 1.4 }, tech: { traffic: 1.9, conv: 1.25 } };
 function fmt(n) { return n.toLocaleString('fr-FR'); }
 function calcROI() {
   const traffic = +document.getElementById('rTraffic').value;
@@ -1790,3 +1805,8 @@ const trdAnalyticsFallback = setTimeout(trdLoadAnalytics, 5000);
 #tarteaucitronAllDenied,.tarteaucitronDeny{background:transparent!important;color:#fff!important;border:1px solid #fff!important}
 #tarteaucitronPersonalize2{background:transparent!important;color:#fff!important;border:1px solid #fff!important}
 #tarteaucitronIcon{background:#1A56DB!important}
+#tarteaucitronRoot .tarteaucitronCTAButton{background:#1A56DB!important}
+#tarteaucitronPrivacyUrl{color:#fff!important}
+</style>
+</body>
+</html>
