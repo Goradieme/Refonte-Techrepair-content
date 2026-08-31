@@ -44,4 +44,17 @@ const ARTICLES = [
     motCle:   "commerce agentique",
     metaDesc: "AEO, GEO, schema.org : comment rendre votre e-commerce visible par les agents IA. Guide complet et checklist actionnable."
   },
+   {
+    titre:    "Identités Non-Humaines : sécuriser l'explosion des agents IA",
+    extrait:  "Agents IA, clés API, tokens : les identités non-humaines dépassent déjà les identités humaines dans les entreprises. Guide complet sur les risques réels, incidents documentés et le standard émergent AIMS pour les sécuriser.",
+    auteur:   "Goradieme",
+    date:     "2026-08-31",
+    categorie:"cybersecurite",
+    lecture:  "16 min",
+    lien:     "articles/article-identites-non-humaines.html",
+    image:    "articles/identites-non-humaines-cover.jpg",
+    slug:     "identites-non-humaines",
+    motCle:   "identités non-humaines",
+    metaDesc: "Agents IA, clés API, tokens : les identités non-humaines explosent en nombre. Guide complet sur les risques, incidents réels et le standard AIMS (SPIFFE, WIMSE) pour les sécuriser."
+}
 ];
