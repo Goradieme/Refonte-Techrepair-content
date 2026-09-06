@@ -57,4 +57,17 @@ const ARTICLES = [
     motCle:   "identités non-humaines",
     metaDesc: "Agents IA, clés API, tokens : les identités non-humaines explosent en nombre. Guide complet sur les risques, incidents réels et le standard AIMS (SPIFFE, WIMSE) pour les sécuriser."
 }
+       {
+      titre:     "Agents IA en RH : le guide complet",
+      extrait:   "Recrutement, onboarding, rétention, paie : comment les agents IA transforment concrètement la fonction RH, avec cas d'usage, ROI et cadre légal.",
+      auteur:    "Goradieme",
+      date:      "2026-07-21",
+      categorie: "rh",
+      lecture:   "12 min",
+      lien:      "articles/article-agents-ia-rh.html",
+      image:     "articles/agents-ia-rh-cover.jpg",
+      slug:      "agents-ia-rh",
+      motCle:    "agent IA RH",
+      metaDesc:  "Découvrez comment les agents IA transforment les RH : recrutement, onboarding, rétention, paie. Guide complet avec cas d'usage, outils et méthode de déploiement."
+    },
 ];
