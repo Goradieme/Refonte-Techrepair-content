@@ -477,6 +477,7 @@ form.addEventListener('submit', async function(e) {
 <!-- ══ Tarteaucitron : gestion du consentement cookies (RGPD) ══ -->
 <script src="https://cdn.jsdelivr.net/gh/AmauriC/tarteaucitron.js/tarteaucitron.min.js" defer></script>
 <script>
+document.addEventListener("DOMContentLoaded", function(){
 tarteaucitron.init({
   "privacyUrl": "/confidentialite",
   "hashtag": "#tarteaucitron",
@@ -509,6 +510,7 @@ function trdLoadAnalytics(){
 const trdInteractionEvents = ['scroll','mousemove','touchstart','keydown'];
 trdInteractionEvents.forEach(evt => window.addEventListener(evt, trdLoadAnalytics, {once:true, passive:true}));
 const trdAnalyticsFallback = setTimeout(trdLoadAnalytics, 5000);
+});
 </script>
 
 <!-- Personnalisation couleurs TechRepairContent (navy/bleu) -->
@@ -522,7 +524,4 @@ const trdAnalyticsFallback = setTimeout(trdLoadAnalytics, 5000);
 #tarteaucitronPersonalize2{background:transparent!important;color:#fff!important;border:1px solid #fff!important}
 #tarteaucitronIcon{background:#1A56DB!important}
 #tarteaucitronRoot .tarteaucitronCTAButton{background:#1A56DB!important}
-#tarteaucitronPrivacyUrl{color:#fff!important}
-</style>
-</body>
-</html>
+#tarteauci
