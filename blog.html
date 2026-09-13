@@ -1,0 +1,607 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<link rel="preconnect" href="https://cdn.jsdelivr.net"/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<title>Blog – TechRepair Content | SEO, Contenu Tech & Stratégie B2B</title>
+<meta name="description" content="Conseils SEO, stratégie de contenu et insights tech B2B par les experts TechRepair Content."/>
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" onload="this.onload=null;this.rel='stylesheet'"/>
+<noscript><link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet"/></noscript>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --blue:#1A56DB;--blue-dark:#1342b0;--blue-light:#EFF6FF;
+  --navy:#0F1B3D;--text:#1e293b;--muted:#64748b;
+  --border:#e2e8f0;--green:#10b981;--orange:#f97316;
+  --radius:12px;
+}
+html{scroll-behavior:smooth}
+body{font-family:'Manrope',sans-serif;color:var(--text);background:#fff;font-size:15px;line-height:1.6}
+a{text-decoration:none;color:inherit}
+nav{position:sticky;top:0;z-index:200;background:#fff;border-bottom:1px solid var(--border);padding:0 32px;display:flex;align-items:center;gap:20px;height:62px;}
+.logo{display:flex;align-items:center;gap:10px;flex-shrink:0}
+.logo-box{width:36px;height:36px;background:var(--blue);border-radius:7px;display:grid;place-items:center;color:#fff;font-weight:800;font-size:13px;letter-spacing:-.5px}
+.logo-text{font-size:13px;font-weight:700;line-height:1.2;color:var(--navy)}
+.logo-text span{display:block;color:var(--muted);font-weight:500;font-size:11px}
+.nav-links{display:flex;gap:22px;margin-left:auto;align-items:center}
+.nav-links a{font-size:13.5px;font-weight:500;color:var(--muted);transition:color .2s}
+.nav-links a:hover,.nav-links a.active{color:var(--blue)}
+.nav-links a.active{border-bottom:2px solid var(--blue);padding-bottom:1px}
+.btn-nav{background:var(--blue);color:#fff;border:none;border-radius:8px;padding:9px 18px;font-weight:700;font-size:13.5px;cursor:pointer;white-space:nowrap;font-family:inherit}
+.btn-demo{position:relative;background:var(--blue);color:#fff;border-radius:8px;padding:9px 16px;font-weight:800;font-size:13.5px;white-space:nowrap;font-family:inherit;display:inline-flex;align-items:center;gap:6px;text-decoration:none;transition:background .2s,transform .2s}
+.btn-demo:hover{background:var(--blue-dark);transform:translateY(-1px)}
+.btn-demo .star{color:#fff;font-size:14px;line-height:1;font-weight:800}
+.btn-demo-badge{position:absolute;top:-9px;right:-8px;background:#F59E0B;color:#fff;font-size:8.5px;font-weight:800;padding:2px 6px;border-radius:999px;letter-spacing:.3px;box-shadow:0 2px 6px rgba(245,158,11,.45);animation:demoPulse 2.2s ease-in-out infinite}
+@keyframes demoPulse{0%,100%{transform:scale(1)}50%{transform:scale(1.1)}}
+.btn-demo-mobile{position:relative;margin-top:10px;background:var(--blue);color:#fff;border-radius:8px;padding:12px;font-weight:800;font-size:14px;font-family:inherit;width:100%;display:flex;align-items:center;justify-content:center;gap:7px;text-decoration:none}
+.btn-demo-mobile .star{color:#fff;font-size:15px;font-weight:800}
+.nav-links a.btn-demo{color:#fff}
+.nav-tools{position:relative;display:inline-block}
+.nav-tools .chevron{font-size:10px;margin-left:2px;transition:transform .15s}
+.nav-tools:hover .chevron{transform:rotate(180deg)}
+.nav-tools-menu{display:none;position:absolute;top:calc(100% + 8px);left:0;background:#fff;border:1px solid var(--border);border-radius:12px;box-shadow:0 12px 32px rgba(15,27,61,.15);min-width:220px;padding:6px;z-index:60}
+.nav-tools:hover .nav-tools-menu,.nav-tools:focus-within .nav-tools-menu{display:block}
+.nav-tools-menu a{display:flex;align-items:center;gap:9px;padding:10px 12px;border-radius:8px;font-size:13.5px;font-weight:600;color:var(--navy);text-decoration:none;white-space:nowrap}
+.nav-tools-menu a:hover{background:var(--blue-light);color:var(--blue)}
+.nav-tools-menu a .ico{font-size:15px}
+.nav-links a.btn-demo:hover{color:#fff}
+.mobile-menu a.btn-demo-mobile{color:#fff}
+.btn-demo-mobile .btn-demo-badge{top:-9px;right:14px}
+@media (prefers-reduced-motion: reduce){.btn-demo-badge{animation:none}}
+
+@media(max-width:600px){nav{padding:0 16px}.nav-links a:not(:last-child){display:none}}
+.page-hero{background:linear-gradient(145deg,#f0f5ff 50%,#dce9ff 100%);padding:56px 32px 48px;text-align:center;}
+.page-hero-inner{max-width:720px;margin:0 auto}
+.page-badge{display:inline-block;background:#FFF3E0;color:#9A3412;font-size:10.5px;font-weight:700;letter-spacing:.6px;padding:4px 12px;border-radius:20px;margin-bottom:18px;text-transform:uppercase;}
+.page-hero h1{font-size:36px;font-weight:800;line-height:1.15;color:var(--navy);margin-bottom:14px}
+.page-hero p{color:var(--muted);font-size:14px;max-width:520px;margin:0 auto 28px;line-height:1.7}
+.search-wrap{max-width:500px;margin:0 auto 24px;position:relative}
+.search-input{width:100%;border:1.5px solid var(--border);border-radius:40px;padding:13px 50px 13px 20px;font-size:14px;font-family:inherit;outline:none;background:#fff;transition:border-color .2s}
+.search-input:focus{border-color:var(--blue)}
+.search-btn{position:absolute;right:8px;top:50%;transform:translateY(-50%);background:var(--blue);border:none;border-radius:30px;padding:7px 16px;color:#fff;font-size:13px;font-weight:700;cursor:pointer;font-family:inherit}
+.filters{display:flex;gap:8px;justify-content:center;flex-wrap:wrap}
+.filter-btn{background:#fff;border:1.5px solid var(--border);border-radius:30px;padding:7px 16px;font-size:12.5px;font-weight:600;color:var(--muted);cursor:pointer;transition:all .2s;font-family:inherit}
+.filter-btn:hover,.filter-btn.active{background:var(--blue);border-color:var(--blue);color:#fff}
+.blog-layout{max-width:1100px;margin:0 auto;padding:56px 32px;display:grid;grid-template-columns:1fr 320px;gap:40px;align-items:start}
+.article-featured{border:1px solid var(--border);border-radius:20px;overflow:hidden;margin-bottom:32px;transition:box-shadow .25s,transform .25s;display:grid;grid-template-columns:1fr 1fr}
+.article-featured:hover{box-shadow:0 8px 40px rgba(26,86,219,.12);transform:translateY(-2px)}
+.af-visual{background:linear-gradient(135deg,var(--navy) 0%,#1e3a6e 100%);padding:36px 32px;display:flex;flex-direction:column;justify-content:space-between}
+.af-new-badge{display:inline-block;background:rgba(255,255,255,.15);color:#fff;font-size:10.5px;font-weight:700;padding:3px 10px;border-radius:20px;margin-bottom:auto}
+.af-visual-title{font-size:22px;font-weight:800;color:#fff;line-height:1.3;margin:16px 0 12px}
+.af-visual-meta{font-size:11.5px;color:#94a3b8}
+.af-content{padding:28px 28px 24px}
+.af-badge{display:inline-block;background:var(--blue);color:#fff;font-size:10px;font-weight:700;padding:3px 10px;border-radius:20px;margin-bottom:14px}
+.af-content h2{font-size:20px;font-weight:800;color:var(--navy);line-height:1.3;margin-bottom:10px}
+.af-content p{font-size:13px;color:var(--muted);line-height:1.7;margin-bottom:18px}
+.af-meta{display:flex;align-items:center;gap:14px;font-size:12px;color:var(--muted);margin-bottom:18px;flex-wrap:wrap}
+.af-meta-dot{width:4px;height:4px;border-radius:50%;background:var(--border)}
+.af-tags{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:18px}
+.af-tag-item{background:#f8fafc;border:1px solid var(--border);border-radius:20px;padding:3px 10px;font-size:11px;color:var(--muted);font-weight:600}
+.btn-article{display:inline-flex;align-items:center;gap:6px;background:var(--blue);color:#fff;border-radius:8px;padding:10px 18px;font-size:13px;font-weight:700;transition:background .2s}
+.btn-article:hover{background:var(--blue-dark)}
+.no-articles{text-align:center;padding:60px 20px;border:2px dashed var(--border);border-radius:16px;margin-bottom:32px}
+.no-articles-icon{font-size:40px;margin-bottom:16px}
+.no-articles h3{font-size:18px;font-weight:800;color:var(--navy);margin-bottom:8px}
+.no-articles p{font-size:13.5px;color:var(--muted);max-width:380px;margin:0 auto}
+.articles-section-title{font-size:13px;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:.5px;margin-bottom:16px;display:flex;align-items:center;gap:8px}
+.articles-count{background:var(--blue-light);color:var(--blue);font-size:11px;font-weight:700;padding:2px 9px;border-radius:20px}
+.articles-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-bottom:32px}
+.article-card{border:1px solid var(--border);border-radius:16px;overflow:hidden;transition:box-shadow .25s,transform .25s;display:flex;flex-direction:column}
+.article-card:hover{box-shadow:0 6px 28px rgba(26,86,219,.1);transform:translateY(-2px)}
+.ac-image{width:100%;height:140px;object-fit:cover;display:block;background:#f1f5f9}
+.ac-header{padding:20px 20px 0}
+.ac-header.no-image{padding-top:20px}
+.ac-sector{display:inline-flex;align-items:center;gap:5px;font-size:10.5px;font-weight:700;padding:3px 10px;border-radius:20px;margin-bottom:12px}
+.ac-header h3{font-size:14.5px;font-weight:800;color:var(--navy);line-height:1.35;margin-bottom:8px}
+.ac-header p{font-size:12.5px;color:var(--muted);line-height:1.65;margin-bottom:14px}
+.ac-meta{display:flex;align-items:center;gap:10px;font-size:11.5px;color:var(--muted);flex-wrap:wrap}
+.ac-footer{padding:14px 20px;border-top:1px solid var(--border);margin-top:auto;display:flex;align-items:center;justify-content:space-between}
+.ac-read{color:var(--blue);font-size:12.5px;font-weight:700;display:inline-flex;align-items:center;gap:5px}
+.ac-time{font-size:11px;color:var(--muted);font-weight:600}
+.s-blue{background:var(--blue-light);color:var(--blue)}
+.s-orange{background:#FFF7ED;color:var(--orange)}
+.s-red{background:#FEF2F2;color:#dc2626}
+.s-green{background:#ECFDF5;color:var(--green)}
+.s-purple{background:#F5F3FF;color:#7c3aed}
+.s-navy{background:#EFF6FF;color:var(--navy)}
+.pagination{display:flex;align-items:center;gap:8px;justify-content:center;margin-top:8px}
+.page-btn{width:36px;height:36px;border-radius:8px;border:1.5px solid var(--border);background:#fff;font-size:13px;font-weight:600;color:var(--muted);cursor:pointer;display:grid;place-items:center;transition:all .2s;font-family:inherit}
+.page-btn:hover,.page-btn.active{background:var(--blue);border-color:var(--blue);color:#fff}
+.sidebar{display:flex;flex-direction:column;gap:24px}
+.sidebar-card{background:#f8fafc;border:1px solid var(--border);border-radius:16px;padding:22px}
+.sidebar-card h3{font-size:13px;font-weight:800;color:var(--navy);margin-bottom:16px;display:flex;align-items:center;gap:8px}
+.newsletter-card{background:linear-gradient(135deg,var(--navy),#1e3a6e);border-color:rgba(255,255,255,.1)}
+.newsletter-card h3{color:#fff}
+.newsletter-card p{font-size:12.5px;color:#94a3b8;margin-bottom:14px;line-height:1.6}
+.nl-input{width:100%;border:1.5px solid rgba(255,255,255,.15);border-radius:8px;padding:10px 14px;font-size:13px;font-family:inherit;background:rgba(255,255,255,.08);color:#fff;outline:none;margin-bottom:9px}
+.nl-input::placeholder{color:#64748b}
+.nl-input:focus{border-color:rgba(255,255,255,.4)}
+.nl-btn{width:100%;background:var(--blue);color:#fff;border:none;border-radius:8px;padding:11px;font-size:13px;font-weight:700;cursor:pointer;font-family:inherit}
+.nl-note{font-size:11px;color:#475569;margin-top:8px;text-align:center}
+.top-article{display:flex;gap:12px;align-items:flex-start;padding:10px 0;border-bottom:1px solid var(--border)}
+.top-article:last-child{border-bottom:none;padding-bottom:0}
+.top-num{font-size:18px;font-weight:800;color:var(--border);flex-shrink:0;width:24px;line-height:1}
+.top-title{font-size:12.5px;font-weight:700;color:var(--navy);line-height:1.4;margin-bottom:3px}
+.top-meta{font-size:11px;color:var(--muted)}
+.cat-list{display:flex;flex-direction:column;gap:6px}
+.cat-item{display:flex;align-items:center;justify-content:space-between;padding:8px 12px;border-radius:8px;cursor:pointer;transition:background .2s}
+.cat-item:hover{background:#fff}
+.cat-name{font-size:13px;font-weight:600;color:var(--text);display:flex;align-items:center;gap:8px}
+.cat-count{font-size:11px;font-weight:700;color:var(--muted);background:#fff;border:1px solid var(--border);padding:2px 8px;border-radius:20px}
+.tags-cloud{display:flex;flex-wrap:wrap;gap:7px}
+.tag-item{background:#fff;border:1px solid var(--border);border-radius:20px;padding:4px 12px;font-size:11.5px;font-weight:600;color:var(--muted);cursor:pointer;transition:all .2s}
+.tag-item:hover{background:var(--blue);border-color:var(--blue);color:#fff}
+.guide-card{background:linear-gradient(135deg,#f0f5ff,#dce9ff);border-color:#c3d6f8}
+.guide-card p{font-size:12.5px;color:var(--muted);line-height:1.6;margin-bottom:14px}
+.guide-btn{display:block;text-align:center;background:var(--blue);color:#fff;border-radius:8px;padding:11px;font-size:13px;font-weight:700;transition:background .2s}
+.guide-btn:hover{background:var(--blue-dark)}
+.nl-band{background:var(--blue);padding:48px 32px}
+.nl-band-inner{max-width:700px;margin:0 auto;text-align:center}
+.nl-band h2{font-size:26px;font-weight:800;color:#fff;margin-bottom:10px}
+.nl-band p{color:rgba(255,255,255,.8);font-size:14px;margin-bottom:24px}
+.nl-band-form{display:flex;gap:10px;max-width:440px;margin:0 auto;flex-wrap:wrap}
+.nl-band-input{flex:1;border:none;border-radius:8px;padding:12px 16px;font-size:14px;font-family:inherit;outline:none;min-width:200px}
+.nl-band-btn{background:var(--navy);color:#fff;border:none;border-radius:8px;padding:12px 20px;font-size:14px;font-weight:700;cursor:pointer;font-family:inherit;white-space:nowrap}
+.nl-band-note{font-size:11.5px;color:rgba(255,255,255,.6);margin-top:10px}
+.cta-band{background:var(--navy);padding:60px 32px}
+.cta-inner{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:1fr auto;gap:48px;align-items:center}
+.cta-band h2{font-size:28px;font-weight:800;color:#fff;margin-bottom:9px}
+.cta-band>div>p{color:#94a3b8;font-size:13.5px;margin-bottom:24px;max-width:380px}
+.cta-btns{display:flex;gap:10px;flex-wrap:wrap}
+.btn-white{background:#fff;color:var(--navy);border-radius:8px;padding:11px 20px;font-weight:700;font-size:13.5px;display:inline-flex;align-items:center;gap:7px;cursor:pointer;border:none;font-family:inherit}
+.btn-ghost-cta{background:transparent;color:#fff;border:1.5px solid rgba(255,255,255,.3);border-radius:8px;padding:11px 20px;font-weight:700;font-size:13.5px;cursor:pointer;font-family:inherit}
+.btn-ghost-cta:hover{border-color:#fff}
+.cta-checks{display:flex;flex-direction:column;gap:11px;flex-shrink:0}
+.cta-check{display:flex;align-items:center;gap:9px;color:#cbd5e1;font-size:13px}
+.cta-ci{color:var(--green);font-weight:700}
+footer{background:var(--navy);border-top:1px solid rgba(255,255,255,.07);padding:44px 32px 26px}
+.footer-inner{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:2fr 1fr 1fr 1fr 1fr;gap:32px}
+.footer-brand p{color:#94a3b8;font-size:12px;margin-top:8px;max-width:185px;line-height:1.7}
+footer .logo-text span{color:#94a3b8}
+footer h3{font-size:10.5px;font-weight:700;color:#94a3b8;text-transform:uppercase;letter-spacing:.5px;margin-bottom:13px}
+.flinks{list-style:none}
+.flinks li{margin-bottom:8px}
+.flinks a{color:#94a3b8;font-size:12px;transition:color .2s}
+.flinks a:hover{color:#fff}
+.fsocial{display:flex;gap:7px;margin-top:11px}
+.fsoc{width:29px;height:29px;border-radius:6px;background:rgba(255,255,255,.07);display:grid;place-items:center;font-size:11px;color:#94a3b8;transition:background .2s}
+.fsoc:hover{background:var(--blue);color:#fff}
+.footer-bottom{max-width:1100px;margin:24px auto 0;padding-top:16px;border-top:1px solid rgba(255,255,255,.07);display:flex;justify-content:space-between;color:#94a3b8;font-size:11px;flex-wrap:wrap;gap:8px}
+.popup-overlay{position:fixed;inset:0;background:rgba(15,27,61,.65);z-index:9999;display:flex;align-items:center;justify-content:center;padding:20px;opacity:0;pointer-events:none;transition:opacity .3s;backdrop-filter:blur(4px)}
+.popup-overlay.active{opacity:1;pointer-events:all}
+.popup-box{background:#fff;border-radius:20px;padding:44px 40px;max-width:460px;width:100%;position:relative;text-align:center;box-shadow:0 24px 80px rgba(0,0,0,.25);transform:translateY(20px);transition:transform .3s}
+.popup-overlay.active .popup-box{transform:translateY(0)}
+.popup-close{position:absolute;top:14px;right:16px;background:none;border:none;font-size:18px;color:var(--muted);cursor:pointer}
+.popup-icon{font-size:48px;margin-bottom:12px}
+.popup-title{font-size:22px;font-weight:800;color:var(--navy);margin-bottom:10px}
+.popup-text{font-size:14px;color:var(--muted);line-height:1.65;margin-bottom:22px}
+.popup-text strong{color:var(--navy)}
+.popup-form{display:flex;flex-direction:column;gap:10px;margin-bottom:12px}
+.popup-input{border:1.5px solid var(--border);border-radius:8px;padding:12px 16px;font-size:14px;font-family:inherit;outline:none}
+.popup-input:focus{border-color:var(--blue)}
+.popup-btn{background:var(--blue);color:#fff;border:none;border-radius:8px;padding:13px;font-size:14px;font-weight:700;cursor:pointer;font-family:inherit}
+.popup-note{font-size:11.5px;color:#94a3b8}
+@media(max-width:960px){.blog-layout{grid-template-columns:1fr;padding:40px 24px}.sidebar{display:grid;grid-template-columns:1fr 1fr;gap:20px}.article-featured{grid-template-columns:1fr}.af-visual{min-height:180px}.cta-inner{grid-template-columns:1fr}.footer-inner{grid-template-columns:1fr 1fr}}
+@media(max-width:600px){.page-hero h1{font-size:26px}.articles-grid{grid-template-columns:1fr}.sidebar{grid-template-columns:1fr}.nl-band-form{flex-direction:column}.footer-inner{grid-template-columns:1fr}.popup-box{padding:32px 22px}}
+.hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;background:none;border:none;padding:4px}
+.hamburger span{display:block;width:24px;height:2px;background:var(--navy);border-radius:2px;transition:all .3s}
+.hamburger.open span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+.hamburger.open span:nth-child(2){opacity:0}
+.hamburger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+.mobile-menu{display:none;position:fixed;top:62px;left:0;right:0;background:#fff;border-bottom:1px solid var(--border);padding:16px 24px;flex-direction:column;gap:4px;z-index:199;box-shadow:0 8px 24px rgba(0,0,0,.08)}
+.mobile-menu.open{display:flex}
+.mobile-menu a{font-size:15px;font-weight:600;color:var(--muted);padding:10px 0;border-bottom:1px solid var(--border);transition:color .2s}
+.mobile-menu a:last-of-type{border-bottom:none}
+.mobile-menu a:hover,.mobile-menu a.active{color:var(--blue)}
+.mobile-menu .btn-nav-mobile{margin-top:10px;background:var(--blue);color:#fff;border:none;border-radius:8px;padding:12px;font-weight:700;font-size:14px;cursor:pointer;font-family:inherit;width:100%}
+@media(max-width:768px){.hamburger{display:flex}.nav-links{display:none}}
+</style>
+<link rel="canonical" href="https://www.techrepaircontent.com/blog"/>
+</head>
+<body>
+
+<nav>
+  <div class="logo">
+    <div class="logo-box">TRD</div>
+    <div class="logo-text">TechRepair<span>Content</span></div>
+  </div>
+  <div class="nav-links">
+    <a href="/">Accueil</a>
+    <a href="/services">Services</a>
+    <a href="/secteurs">Secteurs</a>
+    <a href="/apropos">À propos</a>
+    <a href="/blog" class="active">Blog</a>
+    <div class="nav-tools">
+      <button class="btn-demo" type="button"><span class="star">★</span>Outils IA<span class="btn-demo-badge">Nouveau</span><span class="chevron">▾</span></button>
+      <div class="nav-tools-menu">
+        <a href="https://demo.techrepaircontent.com"><span class="ico">🤖</span> Démo avec Ted</a>
+        <a href="https://demo.techrepaircontent.com/audit-ia.html"><span class="ico">🔍</span> Audit IA gratuit</a>
+      </div>
+    </div>
+    <button class="btn-nav" onclick="window.location='/devis'">Obtenir un devis</button>
+  </div>
+  <button class="hamburger" id="hamburger" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<div class="mobile-menu" id="mobileMenu">
+  <a href="/">Accueil</a>
+  <a href="/services">Services</a>
+  <a href="/secteurs">Secteurs</a>
+  <a href="/apropos">À propos</a>
+  <a href="/blog" class="active">Blog</a>
+  <a href="https://demo.techrepaircontent.com" class="btn-demo-mobile"><span class="star">★</span>Démo avec Ted<span class="btn-demo-badge">Nouveau</span></a>
+  <a href="https://demo.techrepaircontent.com/audit-ia.html" class="btn-demo-mobile"><span class="star">★</span>Audit IA gratuit</a>
+  <button class="btn-nav-mobile" onclick="window.location='/devis'">Obtenir un devis</button>
+</div>
+
+<div class="page-hero">
+  <div class="page-hero-inner">
+    <span class="page-badge">Ressources & Insights</span>
+    <h1>Stratégies SEO & Contenu Tech B2B<br>pour générer du trafic qualifié et des leads</h1>
+    <p>Guides pratiques, analyses de cas et méthodes actionnables pour les équipes marketing SaaS, E-commerce Tech, Cybersécurité, Fintech et RH Tech.</p>
+    <div class="search-wrap">
+      <input type="text" class="search-input" placeholder="Rechercher un article…" id="searchInput" aria-label="Rechercher un article"/>
+      <button class="search-btn">Chercher</button>
+    </div>
+    <div class="filters" id="filters">
+      <button class="filter-btn active" data-filter="tous">Tous</button>
+      <button class="filter-btn" data-filter="seo">SEO</button>
+      <button class="filter-btn" data-filter="saas">SaaS B2B</button>
+      <button class="filter-btn" data-filter="ecommerce">E-commerce</button>
+      <button class="filter-btn" data-filter="cyber">Cybersécurité</button>
+      <button class="filter-btn" data-filter="fintech">Fintech</button>
+      <button class="filter-btn" data-filter="rh">RH Tech</button>
+    </div>
+  </div>
+</div>
+
+<div class="blog-layout">
+  <main>
+    <div id="featuredZone"></div>
+    <div class="articles-section-title">
+      📋 Tous les articles
+      <span class="articles-count" id="articlesCount">0 article</span>
+    </div>
+    <!-- ══ LIENS STATIQUES : crawlables sans JavaScript. Masqués par JS une fois la grille rendue. ══ -->
+    <ul class="static-articles" id="staticArticles" style="list-style:none;padding:0;margin:0 0 24px">
+      <li><a href="articles/article-ai-overviews-seo.html">Comment survivre aux AI Overviews de Google en 2025 : le guide des contenus qui résistent</a></li>
+      <li><a href="articles/article-facturation-electronique-2026.html">Facturation électronique 2026 : comprendre la réforme et savoir où s'inscrire</a></li>
+      <li><a href="articles/article-commerce-agentique.html">Le Commerce Agentique : le guide complet</a></li>
+      <li><a href="articles/article-identites-non-humaines.html">Identités Non-Humaines : sécuriser l'explosion des agents IA</a></li>
+      <li><a href="articles/article-agents-ia-rh.html">Agents IA en RH : le guide complet</a></li>
+    </ul>
+    <div class="articles-grid" id="articlesGrid"></div>
+    <div class="pagination" id="pagination"></div>
+  </main>
+
+  <aside class="sidebar">
+    <div class="sidebar-card newsletter-card">
+      <h3>📩 Newsletter SEO Tech</h3>
+      <p>Chaque semaine : 1 stratégie, 1 analyse, 1 opportunité SEO dans votre secteur.</p>
+      <input type="email" class="nl-input" id="nlSidebarEmail" placeholder="votre@email.com" aria-label="Adresse email pour la newsletter"/>
+      <button class="nl-btn" id="nlSidebarBtn" type="button">S'abonner gratuitement →</button>
+      <p id="nlSidebarMsg" style="display:none;font-size:11.5px;margin-top:6px"></p>
+      <p class="nl-note">✓ Sans spam · ✓ Désabonnement en 1 clic</p>
+    </div>
+    <div class="sidebar-card">
+      <h3>📂 Catégories</h3>
+      <div class="cat-list" id="catList"></div>
+    </div>
+    <div class="sidebar-card">
+      <h3>🏷️ Tags populaires</h3>
+      <div class="tags-cloud">
+        <span class="tag-item">SEO technique</span>
+        <span class="tag-item">E-E-A-T</span>
+        <span class="tag-item">Clusters sémantiques</span>
+        <span class="tag-item">SaaS</span>
+        <span class="tag-item">Longue traîne</span>
+        <span class="tag-item">NIS2</span>
+        <span class="tag-item">DORA</span>
+        <span class="tag-item">Core Web Vitals</span>
+        <span class="tag-item">Schema.org</span>
+        <span class="tag-item">AI Overviews</span>
+        <span class="tag-item">ROI contenu</span>
+        <span class="tag-item">B2B</span>
+      </div>
+    </div>
+  </aside>
+</div>
+
+<div class="nl-band">
+  <div class="nl-band-inner">
+    <h2>📩 La newsletter SEO Tech B2B</h2>
+    <p>Chaque semaine, une stratégie actionnable et une opportunité SEO dans votre secteur.</p>
+    <div class="nl-band-form">
+      <input type="email" class="nl-band-input" id="nlBandEmail" placeholder="votre@email.com" aria-label="Adresse email pour la newsletter"/>
+      <button class="nl-band-btn" id="nlBandBtn" type="button">S'abonner →</button>
+    </div>
+    <p id="nlBandMsg" style="display:none;font-size:12px;color:#fff;margin-top:8px"></p>
+    <p class="nl-band-note">✓ Gratuit · ✓ Sans spam · ✓ Désabonnement en 1 clic</p>
+  </div>
+</div>
+
+<div class="cta-band">
+  <div class="cta-inner">
+    <div>
+      <h2>Du contenu qui performe, pas qui remplit des pages</h2>
+      <p style="color:#fff">Vous voulez une stratégie de contenu sur mesure pour votre secteur tech B2B ? Parlons-en.</p>
+      <div class="cta-btns">
+        <button class="btn-white" onclick="window.location='/devis'">Obtenir un devis gratuit →</button>
+        <button class="btn-ghost-cta" onclick="window.location='/services'">Voir nos services →</button>
+      </div>
+    </div>
+    <div class="cta-checks">
+      <div class="cta-check"><span class="cta-ci">✓</span> Réponse sous 24h</div>
+      <div class="cta-check"><span class="cta-ci">✓</span> Audit SEO gratuit</div>
+      <div class="cta-check"><span class="cta-ci">✓</span> Sans engagement</div>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <div class="logo"><div class="logo-box">TRD</div><div class="logo-text" style="color:#fff">TechRepair<span>Content</span></div></div>
+      <p>Rédaction SEO & technique pour entreprises SaaS, Tech et E-commerce.</p>
+    </div>
+    <div><h3>Navigation</h3><ul class="flinks"><li><a href="/">Accueil</a></li><li><a href="/apropos">À propos</a></li><li><a href="/services">Services</a></li><li><a href="/secteurs">Secteurs</a></li><li><a href="/blog">Blog</a></li></ul></div>
+    <div><h3>Ressources</h3><ul class="flinks"><li><a href="/faq">FAQ</a></li><li><a href="/confidentialite">Confidentialité</a></li><li><a href="/mentions-legales">Mentions légales</a></li></ul></div>
+    <div>
+      <h3>Contact</h3>
+      <ul class="flinks"><li><a href="#">contact@techrepaircontent.com</a></li><li><a href="#">Réponse sous 24h</a></li></ul>
+      <div class="fsocial"><a class="fsoc" href="https://www.linkedin.com/in/techrepair-content" target="_blank" rel="noopener">in</a><a class="fsoc" href="mailto:contact@techrepaircontent.com">✉</a></div>
+    </div>
+    <div><h3>Basé en France</h3><div style="font-size:22px">🇫🇷</div></div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2025 TechRepair Content. Tous droits réservés.</span>
+    <span>Fait avec ❤️ en France</span>
+  </div>
+</footer>
+
+<!-- ══ CHARGEMENT DES ARTICLES DEPUIS articles.js ══ -->
+<script src="articles.js"></script>
+
+<script>
+const CAT_CONFIG = {
+  seo:       { label: "📊 SEO",           class: "s-blue"   },
+  saas:      { label: "☁️ SaaS B2B",      class: "s-blue"   },
+  ecommerce: { label: "🛒 E-commerce",    class: "s-orange" },
+  cyber:     { label: "🔒 Cybersécurité", class: "s-red"    },
+  fintech:   { label: "💳 Fintech",       class: "s-green"  },
+  rh:        { label: "👥 RH Tech",       class: "s-purple" },
+};
+
+function formatDate(dateStr) {
+  return new Date(dateStr).toLocaleDateString('fr-FR', { day: 'numeric', month: 'long', year: 'numeric' });
+}
+
+const sorted = [...ARTICLES].sort((a, b) => new Date(a.date) - new Date(b.date));
+const featured = sorted.length > 0 ? sorted[sorted.length - 1] : null;
+const gridArticles = sorted.length > 1 ? sorted.slice(0, sorted.length - 1) : [];
+
+const featuredZone = document.getElementById('featuredZone');
+if (featured) {
+  const cfg = CAT_CONFIG[featured.categorie] || { label: featured.categorie, class: 's-blue' };
+  const visualStyle = featured.image
+    ? `style="background-image:linear-gradient(135deg,rgba(15,27,61,.82),rgba(30,58,110,.82)),url('${featured.image}');background-size:cover;background-position:center"`
+    : '';
+  featuredZone.innerHTML = `
+    <div class="article-featured">
+      <div class="af-visual" ${visualStyle}>
+        <span class="af-new-badge">🔥 Article du moment</span>
+        <div>
+          <div class="af-visual-title">${featured.titre}</div>
+          <div class="af-visual-meta">${featured.lecture} de lecture · Publié le ${formatDate(featured.date)}</div>
+        </div>
+      </div>
+      <div class="af-content">
+        <span class="af-badge">⭐ Dernier publié</span>
+        <h2>${featured.titre}</h2>
+        <div class="af-meta">
+          <span>✍️ ${featured.auteur}</span>
+          <div class="af-meta-dot"></div>
+          <span>${formatDate(featured.date)}</span>
+          <div class="af-meta-dot"></div>
+          <span>${featured.lecture}</span>
+        </div>
+        <p>${featured.extrait}</p>
+        <div class="af-tags"><span class="af-tag-item">${cfg.label}</span></div>
+        <a href="${featured.lien}" class="btn-article">Lire l'article →</a>
+      </div>
+    </div>`;
+} else {
+  featuredZone.innerHTML = `
+    <div class="no-articles">
+      <div class="no-articles-icon">✍️</div>
+      <h3>Le premier article arrive bientôt</h3>
+      <p>Abonnez-vous à la newsletter pour être notifié dès la publication du premier contenu.</p>
+    </div>`;
+}
+
+const grid = document.getElementById('articlesGrid');
+const countEl = document.getElementById('articlesCount');
+
+function renderGrid(articles) {
+  countEl.textContent = articles.length + ' article' + (articles.length > 1 ? 's' : '');
+  if (articles.length === 0) {
+    grid.innerHTML = `<div style="grid-column:1/-1;text-align:center;padding:40px;color:var(--muted);font-size:13.5px">Aucun autre article pour le moment. Revenez bientôt !</div>`;
+    return;
+  }
+  grid.innerHTML = articles.map(a => {
+    const cfg = CAT_CONFIG[a.categorie] || { label: a.categorie, class: 's-blue' };
+    const imageHtml = a.image ? `<img src="${a.image}" alt="${a.titre}" class="ac-image" onerror="this.style.display='none'"/>` : '';
+    return `
+      <div class="article-card" data-category="${a.categorie}">
+        ${imageHtml}
+        <div class="ac-header${a.image ? '' : ' no-image'}">
+          <span class="ac-sector ${cfg.class}">${cfg.label}</span>
+          <h3>${a.titre}</h3>
+          <p>${a.extrait}</p>
+          <div class="ac-meta">
+            <span>✍️ ${a.auteur}</span>
+            <span>·</span>
+            <span>${formatDate(a.date)}</span>
+          </div>
+        </div>
+        <div class="ac-footer">
+          <a href="${a.lien}" class="ac-read">Lire l'article →</a>
+          <span class="ac-time">⏱ ${a.lecture}</span>
+        </div>
+      </div>`;
+  }).join('');
+}
+
+renderGrid(gridArticles);
+var __sa=document.getElementById('staticArticles'); if(__sa) __sa.style.display='none';
+
+const catCounts = {};
+ARTICLES.forEach(a => { catCounts[a.categorie] = (catCounts[a.categorie] || 0) + 1; });
+const catList = document.getElementById('catList');
+const allCats = [
+  { key: 'seo',       label: '📊 SEO & Technique'  },
+  { key: 'saas',      label: '☁️ SaaS B2B'          },
+  { key: 'ecommerce', label: '🛒 E-commerce Tech'   },
+  { key: 'cyber',     label: '🔒 Cybersécurité'     },
+  { key: 'fintech',   label: '💳 Fintech'           },
+  { key: 'rh',        label: '👥 RH Tech'           },
+];
+catList.innerHTML = allCats.map(c => `
+  <div class="cat-item" onclick="filterBy('${c.key}')">
+    <span class="cat-name">${c.label}</span>
+    <span class="cat-count">${catCounts[c.key] || 0}</span>
+  </div>`).join('');
+
+function filterBy(cat) {
+  document.querySelectorAll('.filter-btn').forEach(b => {
+    b.classList.toggle('active', b.getAttribute('data-filter') === cat);
+  });
+  const filtered = cat === 'tous' ? gridArticles : gridArticles.filter(a => a.categorie === cat);
+  renderGrid(filtered);
+}
+
+document.querySelectorAll('.filter-btn').forEach(btn => {
+  btn.addEventListener('click', () => filterBy(btn.getAttribute('data-filter')));
+});
+
+document.getElementById('searchInput').addEventListener('input', function() {
+  const q = this.value.toLowerCase();
+  const filtered = gridArticles.filter(a =>
+    a.titre.toLowerCase().includes(q) || a.extrait.toLowerCase().includes(q)
+  );
+  renderGrid(filtered);
+});
+
+const hamburger = document.getElementById('hamburger');
+const mobileMenu = document.getElementById('mobileMenu');
+hamburger.addEventListener('click', () => {
+  hamburger.classList.toggle('open');
+  mobileMenu.classList.toggle('open');
+});
+mobileMenu.querySelectorAll('a').forEach(link => {
+  link.addEventListener('click', () => {
+    hamburger.classList.remove('open');
+    mobileMenu.classList.remove('open');
+  });
+});
+
+// ── Newsletter : envoi vers Brevo (sidebar + bandeau bas de page) ──
+const BREVO_FORM_ACTION = 'https://a41ce724.sibforms.com/serve/MUIFAEGqDW1rbNTL0uU5ym6Ux5qJ7TJpdETsCjqRumOCnr-gRU8IGKx8Ic-JLjScrVVWrJVx_YXawDF8ao6y5hYLPvy7h8UJCk3gg9gTHcTaNAWQzbjwLnHO6DPk_HzPb7XY28rHy9JtEMuP-euST6RZutJ_bWOfqZFEtI-UUs9G4HA-O5V8JPwb3jLz0jhwuISuUqZ3Iok5IEyYHg==';
+
+function subscribeToNewsletter(emailInput, msgEl, btnEl, defaultBtnText) {
+  const email = emailInput.value.trim();
+  const isValidEmail = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+
+  msgEl.style.display = 'block';
+  if (!isValidEmail) {
+    msgEl.style.color = '#dc2626';
+    msgEl.textContent = "Merci d'entrer une adresse email valide.";
+    return;
+  }
+
+  const formData = new FormData();
+  formData.append('EMAIL', email);
+  formData.append('email_address_check', '');
+  formData.append('locale', 'fr');
+  formData.append('html_type', 'simple');
+  fetch(BREVO_FORM_ACTION, { method: 'POST', mode: 'no-cors', body: formData }).catch(() => {});
+
+  msgEl.style.color = '#10b981';
+  msgEl.textContent = 'Merci ! Vérifiez votre boîte mail pour confirmer.';
+  btnEl.textContent = 'Inscription envoyée ✓';
+  btnEl.disabled = true;
+}
+
+const nlSidebarBtn = document.getElementById('nlSidebarBtn');
+if (nlSidebarBtn) {
+  nlSidebarBtn.addEventListener('click', () => {
+    subscribeToNewsletter(document.getElementById('nlSidebarEmail'), document.getElementById('nlSidebarMsg'), nlSidebarBtn);
+  });
+}
+
+const nlBandBtn = document.getElementById('nlBandBtn');
+if (nlBandBtn) {
+  nlBandBtn.addEventListener('click', () => {
+    subscribeToNewsletter(document.getElementById('nlBandEmail'), document.getElementById('nlBandMsg'), nlBandBtn);
+  });
+}
+</script>
+<!-- ══ Tarteaucitron : gestion du consentement cookies (RGPD) ══ -->
+<script src="https://cdn.jsdelivr.net/gh/AmauriC/tarteaucitron.js/tarteaucitron.min.js" defer></script>
+<script>
+document.addEventListener("DOMContentLoaded", function(){
+tarteaucitron.init({
+  "privacyUrl": "/confidentialite",
+  "hashtag": "#tarteaucitron",
+  "cookieName": "tarteaucitron",
+  "orientation": "bottom",
+  "showAlertSmall": false,
+  "cookieslist": false,
+  "showIcon": true,
+  "iconPosition": "BottomRight",
+  "adblocker": false,
+  "DenyAllCta": true,
+  "AcceptAllCta": true,
+  "highPrivacy": true,
+  "handleBrowserDNTRequest": false,
+  "removeCredit": true,
+  "moreInfoLink": true,
+  "useExternalCss": false,
+  "mandatory": false
+});
+
+tarteaucitron.user.gtagUa = 'G-B1MRFH8WRQ';
+tarteaucitron.user.gtagMore = function () { };
+// Charge le tracking (GTM/gtag) seulement après une vraie interaction,
+// pour ne pas pénaliser le chargement initial de la page (perf).
+function trdLoadAnalytics(){
+  (tarteaucitron.job = tarteaucitron.job || []).push('gtag');
+  trdInteractionEvents.forEach(evt => window.removeEventListener(evt, trdLoadAnalytics));
+  clearTimeout(trdAnalyticsFallback);
+}
+const trdInteractionEvents = ['scroll','mousemove','touchstart','keydown'];
+trdInteractionEvents.forEach(evt => window.addEventListener(evt, trdLoadAnalytics, {once:true, passive:true}));
+const trdAnalyticsFallback = setTimeout(trdLoadAnalytics, 5000);
+});
+</script>
+
+<!-- Personnalisation couleurs TechRepairContent (navy/bleu) -->
+<style>
+#tarteaucitronRoot #tarteaucitronAlertBig{background:#0F1B3D!important}
+#tarteaucitronRoot #tarteaucitronAlertBig p,
+#tarteaucitronRoot #tarteaucitronAlertBig a{color:#fff!important}
+#tarteaucitronDisclaimerAlert,#tarteaucitronDisclaimerAlert strong,#tarteaucitronDisclaimerAlert a{color:#fff!important}
+#tarteaucitronAllAllowed,.tarteaucitronAllow{background:#1A56DB!important;color:#fff!important;border-color:#1A56DB!important}
+#tarteaucitronAllDenied,.tarteaucitronDeny{background:transparent!important;color:#fff!important;border:1px solid #fff!important}
+#tarteaucitronPersonalize2{background:transparent!important;color:#fff!important;border:1px solid #fff!important}
+#tarteaucitronIcon{background:#1A56DB!important}
+#tarteaucitronRoot .tarteaucitronCTAButton{background:#1A56DB!important}
+#tarteaucitronPrivacyUrl{color:#fff!important}
+</style>
+</body>
+</html>
