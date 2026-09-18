@@ -70,4 +70,17 @@ const ARTICLES = [
       motCle:    "agent IA RH",
       metaDesc:  "Découvrez comment les agents IA transforment les RH : recrutement, onboarding, rétention, paie. Guide complet avec cas d'usage, outils et méthode de déploiement."
     },
+       {
+      titre:     "Dark social : le vrai funnel d'achat SaaS que Google Analytics ne voit pas",
+      extrait:   "Slack, Discord, LinkedIn, WhatsApp : jusqu'à 84% des échanges B2B autour de votre produit échappent à vos outils d'analyse. Comprendre le dark social et agir dessus.",
+      auteur:    "Goradieme",
+      date:      "2026-09-16",
+      categorie: "saas",
+      lecture:   "15 min",
+      lien:      "articles/article-dark-social-saas-b2b.html",
+      image:     "articles/dark-social-saas-b2b-cover.jpg",
+      slug:      "dark-social-saas-b2b",
+      motCle:    "dark social SaaS B2B",
+      metaDesc:  "Slack, Discord, LinkedIn : la majorité des décisions d'achat SaaS B2B se jouent hors de vos outils d'analyse. Guide complet pour mesurer et activer le dark social."
+    },
 ];
