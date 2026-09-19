@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>TechRepair Content — Blog</title>
+    <link>https://www.techrepaircontent.com/blog</link>
+    <description>Rédaction SEO et technique pour le SaaS, la tech et l'e-commerce.</description>
+    <language>fr-FR</language>
+    <lastBuildDate>Sat, 19 Sep 2026 16:23:24 GMT</lastBuildDate>
+    <atom:link href="https://www.techrepaircontent.com/feed.xml" rel="self" type="application/rss+xml"/>
+    <item>
+      <title>Dark social : le vrai funnel d'achat SaaS que Google Analytics ne voit pas</title>
+      <link>https://www.techrepaircontent.com/articles/article-dark-social-saas-b2b.html</link>
+      <guid isPermaLink="true">https://www.techrepaircontent.com/articles/article-dark-social-saas-b2b.html</guid>
+      <pubDate>Wed, 16 Sep 2026 09:00:00 GMT</pubDate>
+      <description>Slack, Discord, LinkedIn, WhatsApp : jusqu'à 84% des échanges B2B autour de votre produit échappent à vos outils d'analyse. Comprendre le dark social et agir dessus.</description>
+      <enclosure url="https://www.techrepaircontent.com/articles/dark-social-saas-b2b-cover.jpg" type="image/jpeg"/>
+    </item>
+    <item>
+      <title>Identités Non-Humaines : sécuriser l'explosion des agents IA</title>
+      <link>https://www.techrepaircontent.com/articles/article-identites-non-humaines.html</link>
+      <guid isPermaLink="true">https://www.techrepaircontent.com/articles/article-identites-non-humaines.html</guid>
+      <pubDate>Mon, 31 Aug 2026 09:00:00 GMT</pubDate>
+      <description>Agents IA, clés API, tokens : les identités non-humaines dépassent déjà les identités humaines dans les entreprises. Guide complet sur les risques réels, incidents documentés et le standard émergent AIMS pour les sécuriser.</description>
+      <enclosure url="https://www.techrepaircontent.com/articles/identites-non-humaines-cover.jpg" type="image/jpeg"/>
+    </item>
+    <item>
+      <title>Le Commerce Agentique : le guide complet</title>
+      <link>https://www.techrepaircontent.com/articles/article-commerce-agentique.html</link>
+      <guid isPermaLink="true">https://www.techrepaircontent.com/articles/article-commerce-agentique.html</guid>
+      <pubDate>Sat, 15 Aug 2026 09:00:00 GMT</pubDate>
+      <description>AEO, GEO, schema.org : comment rendre votre e-commerce visible par les agents IA (ChatGPT, Gemini, Copilot). Guide complet avec études indépendantes et checklist actionnable.</description>
+      <enclosure url="https://www.techrepaircontent.com/articles/commerce-agentique-cover.jpg" type="image/jpeg"/>
+    </item>
+    <item>
+      <title>Agents IA en RH : le guide complet</title>
+      <link>https://www.techrepaircontent.com/articles/article-agents-ia-rh.html</link>
+      <guid isPermaLink="true">https://www.techrepaircontent.com/articles/article-agents-ia-rh.html</guid>
+      <pubDate>Tue, 21 Jul 2026 09:00:00 GMT</pubDate>
+      <description>Recrutement, onboarding, rétention, paie : comment les agents IA transforment concrètement la fonction RH, avec cas d'usage, ROI et cadre légal.</description>
+      <enclosure url="https://www.techrepaircontent.com/articles/agents-ia-rh-cover.jpg" type="image/jpeg"/>
+    </item>
+    <item>
+      <title>Facturation électronique 2026 : comprendre la réforme et savoir où s'inscrire</title>
+      <link>https://www.techrepaircontent.com/articles/article-facturation-electronique-2026.html</link>
+      <guid isPermaLink="true">https://www.techrepaircontent.com/articles/article-facturation-electronique-2026.html</guid>
+      <pubDate>Wed, 15 Jul 2026 09:00:00 GMT</pubDate>
+      <description>Calendrier exact, formats acceptés, plateformes agréées réelles et sanctions : le guide complet de la réforme pour les entreprises françaises.</description>
+    </item>
+    <item>
+      <title>Comment survivre aux AI Overviews de Google en 2025 : le guide des contenus qui résistent</title>
+      <link>https://www.techrepaircontent.com/articles/article-ai-overviews-seo.html</link>
+      <guid isPermaLink="true">https://www.techrepaircontent.com/articles/article-ai-overviews-seo.html</guid>
+      <pubDate>Sat, 07 Jun 2025 09:00:00 GMT</pubDate>
+      <description>Les AI Overviews cannibalisent votre trafic SEO ? Voici la méthode exacte pour produire des contenus que Google cite — et non remplace — dans ses résultats IA.</description>
+    </item>
+  </channel>
+</rss>
