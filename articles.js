@@ -49,7 +49,7 @@ const ARTICLES = [
     extrait:  "Agents IA, clés API, tokens : les identités non-humaines dépassent déjà les identités humaines dans les entreprises. Guide complet sur les risques réels, incidents documentés et le standard émergent AIMS pour les sécuriser.",
     auteur:   "Goradieme",
     date:     "2026-08-31",
-    categorie:"cybersecurite",
+    categorie:"cyber",
     lecture:  "16 min",
     lien:     "articles/article-identites-non-humaines.html",
     image:    "articles/identites-non-humaines-cover.jpg",
