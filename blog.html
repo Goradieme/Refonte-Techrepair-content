@@ -6,8 +6,8 @@
 <link rel="preconnect" href="https://cdn.jsdelivr.net"/>
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
-<title>Blog – TechRepair Content | SEO, Contenu Tech & Stratégie B2B</title>
-<meta name="description" content="Conseils SEO, stratégie de contenu et insights tech B2B par les experts TechRepair Content."/>
+<title>Blog SEO, IA et réglementation tech | TechRepair Content</title>
+<meta name="description" content="Analyses de fond sur le référencement, les moteurs de réponse IA et les obligations réglementaires qui concernent les éditeurs SaaS, fintech et e-commerce."/>
 <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" onload="this.onload=null;this.rel='stylesheet'"/>
 <noscript><link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet"/></noscript>
 <style>
@@ -199,6 +199,15 @@ footer h3{font-size:10.5px;font-weight:700;color:#94a3b8;text-transform:uppercas
 .mobile-menu .btn-nav-mobile{margin-top:10px;background:var(--blue);color:#fff;border:none;border-radius:8px;padding:12px;font-weight:700;font-size:14px;cursor:pointer;font-family:inherit;width:100%}
 @media(max-width:768px){.hamburger{display:flex}.nav-links{display:none}}
 </style>
+<meta property="og:type" content="website"/>
+<meta property="og:site_name" content="TechRepair Content"/>
+<meta property="og:locale" content="fr_FR"/>
+<meta property="og:title" content="Blog SEO, IA et réglementation tech | TechRepair Content"/>
+<meta property="og:description" content="Analyses de fond sur le référencement, les moteurs de réponse IA et les obligations réglementaires qui concernent les éditeurs SaaS, fintech et e-commerce."/>
+<meta property="og:url" content="https://www.techrepaircontent.com/blog"/>
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Blog SEO, IA et réglementation tech | TechRepair Content"/>
+<meta name="twitter:description" content="Analyses de fond sur le référencement, les moteurs de réponse IA et les obligations réglementaires qui concernent les éditeurs SaaS, fintech et e-commerce."/>
 <link rel="canonical" href="https://www.techrepaircontent.com/blog"/>
 </head>
 <body>
@@ -269,12 +278,11 @@ footer h3{font-size:10.5px;font-weight:700;color:#94a3b8;text-transform:uppercas
     </div>
     <!-- ══ LIENS STATIQUES : crawlables sans JavaScript. Masqués par JS une fois la grille rendue. ══ -->
     <ul class="static-articles" id="staticArticles" style="list-style:none;padding:0;margin:0 0 24px">
-      <li><a href="/articles/article-dark-social-saas-b2b.html">Dark social : le vrai funnel d'achat SaaS que Google Analytics ne voit pas</a></li>
-      <li><a href="/articles/article-identites-non-humaines.html">Identités Non-Humaines : sécuriser l'explosion des agents IA</a></li>
-      <li><a href="/articles/article-commerce-agentique.html">Le Commerce Agentique : le guide complet</a></li>
-      <li><a href="/articles/article-agents-ia-rh.html">Agents IA en RH : le guide complet</a></li>
-      <li><a href="/articles/article-facturation-electronique-2026.html">Facturation électronique 2026 : comprendre la réforme et savoir où s'inscrire</a></li>
-      <li><a href="/articles/article-ai-overviews-seo.html">Comment survivre aux AI Overviews de Google en 2025 : le guide des contenus qui résistent</a></li>
+      <li><a href="articles/article-ai-overviews-seo.html">Comment survivre aux AI Overviews de Google en 2025 : le guide des contenus qui résistent</a></li>
+      <li><a href="articles/article-facturation-electronique-2026.html">Facturation électronique 2026 : comprendre la réforme et savoir où s'inscrire</a></li>
+      <li><a href="articles/article-commerce-agentique.html">Le Commerce Agentique : le guide complet</a></li>
+      <li><a href="articles/article-identites-non-humaines.html">Identités Non-Humaines : sécuriser l'explosion des agents IA</a></li>
+      <li><a href="articles/article-agents-ia-rh.html">Agents IA en RH : le guide complet</a></li>
     </ul>
     <div class="articles-grid" id="articlesGrid"></div>
     <div class="pagination" id="pagination"></div>
@@ -587,22 +595,4 @@ function trdLoadAnalytics(){
 }
 const trdInteractionEvents = ['scroll','mousemove','touchstart','keydown'];
 trdInteractionEvents.forEach(evt => window.addEventListener(evt, trdLoadAnalytics, {once:true, passive:true}));
-const trdAnalyticsFallback = setTimeout(trdLoadAnalytics, 5000);
-});
-</script>
-
-<!-- Personnalisation couleurs TechRepairContent (navy/bleu) -->
-<style>
-#tarteaucitronRoot #tarteaucitronAlertBig{background:#0F1B3D!important}
-#tarteaucitronRoot #tarteaucitronAlertBig p,
-#tarteaucitronRoot #tarteaucitronAlertBig a{color:#fff!important}
-#tarteaucitronDisclaimerAlert,#tarteaucitronDisclaimerAlert strong,#tarteaucitronDisclaimerAlert a{color:#fff!important}
-#tarteaucitronAllAllowed,.tarteaucitronAllow{background:#1A56DB!important;color:#fff!important;border-color:#1A56DB!important}
-#tarteaucitronAllDenied,.tarteaucitronDeny{background:transparent!important;color:#fff!important;border:1px solid #fff!important}
-#tarteaucitronPersonalize2{background:transparent!important;color:#fff!important;border:1px solid #fff!important}
-#tarteaucitronIcon{background:#1A56DB!important}
-#tarteaucitronRoot .tarteaucitronCTAButton{background:#1A56DB!important}
-#tarteaucitronPrivacyUrl{color:#fff!important}
-</style>
-</body>
-</html>
+const trdAn
