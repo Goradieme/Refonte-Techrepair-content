@@ -220,29 +220,126 @@ body{margin:0}
 .calc-reco b{color:var(--on-dark)}
 .calc-result .btn{width:100%}
 .calc-note{font-size:13px;color:var(--on-dark-soft)}
-.calc-method{margin-top:40px;max-width:760px;font-size:15px;color:var(--muted)}
-.calc-method h2{font-size:22px;color:var(--text);margin-bottom:10px}
+.calc-method{margin-top:32px;max-width:760px;font-size:15px;color:var(--muted)}
+.calc-method{border-top:1px solid var(--line);padding-top:8px}
+.calc-method summary{cursor:pointer;list-style:none;display:inline-flex;align-items:center;gap:8px;min-height:44px;font-weight:700;font-size:16px;color:var(--violet)}
+.calc-method summary::-webkit-details-marker{display:none}
+.calc-method summary::after{content:"+";font-size:20px;line-height:1;transition:transform .2s}
+.calc-method[open] summary::after{transform:rotate(45deg)}
+.calc-method[open] summary{margin-bottom:8px}
+.calc-note a{color:var(--accent);text-decoration:underline}
 .calc-method ul{padding-left:20px;margin:10px 0 0;display:flex;flex-direction:column;gap:6px}
 @media (max-width:980px){.calc{grid-template-columns:1fr}.calc-result{position:static}}
 @media (max-width:520px){.calc-row{grid-template-columns:1fr}}
+
+/* ===== Menu principal du site ===== */
+.aia-nav{gap:26px}
+.aia-nav a[aria-current="page"]{color:var(--blue)}
+.aia-tools{position:relative}
+.aia-tools__btn{display:inline-flex;align-items:center;gap:6px;min-height:44px;padding:0;border:0;background:none;font:inherit;font-weight:600;font-size:15px;color:var(--text);cursor:pointer}
+.aia-tools__btn .chev{width:16px;height:16px;transition:transform .15s}
+.aia-tools__menu{display:none;position:absolute;top:100%;left:-14px;min-width:250px;background:#fff;border:1px solid var(--line);border-radius:14px;box-shadow:0 14px 36px rgba(20,18,46,.14);padding:6px;z-index:20}
+.aia-tools:hover .aia-tools__menu,.aia-tools:focus-within .aia-tools__menu,.aia-tools.is-open .aia-tools__menu{display:flex;flex-direction:column}
+.aia-tools:hover .chev,.aia-tools.is-open .chev{transform:rotate(180deg)}
+.aia-tools__menu a{padding:10px 12px;border-radius:9px;font-size:14.5px;white-space:nowrap}
+.aia-tools__menu a:hover{background:var(--violet-tint);color:var(--violet-ink)}
+@media (max-width:1080px){
+  .aia-burger{display:grid;place-items:center}
+  .aia-nav{display:none;position:absolute;top:76px;left:0;right:0;flex-direction:column;align-items:stretch;gap:0;background:#fff;border-bottom:1px solid var(--line);padding:8px var(--gutter) 20px;max-height:calc(100vh - 76px);overflow-y:auto}
+  .aia-nav.is-open{display:flex}
+  .aia-nav > a{padding:14px 0;border-bottom:1px solid var(--line)}
+  .aia-nav a.btn{margin-top:12px;border:0}
+  .aia-tools{border-bottom:1px solid var(--line);padding:6px 0}
+  .aia-tools__btn{width:100%;justify-content:space-between}
+  .aia-tools__btn .chev{display:none}
+  .aia-tools__menu{display:flex;flex-direction:column;position:static;box-shadow:none;border:0;padding:0 0 6px 12px;min-width:0}
+  .aia-tools__menu a{padding:10px 0;border:0}
+}
+
+/* ===== Barre de navigation du site (identique aux autres pages) ===== */
+html{scroll-padding-top:76px}
+.trd-nav{position:sticky;top:0;z-index:200;background:#fff;border-bottom:1px solid #e2e8f0;padding:0 32px;display:flex;align-items:center;gap:20px;height:62px;font-family:'Manrope',sans-serif}
+.trd-nav a{text-decoration:none}
+.trd-logo{display:flex;align-items:center;gap:10px;flex-shrink:0}
+.trd-logo-box{width:36px;height:36px;background:#1A56DB;border-radius:7px;display:grid;place-items:center;color:#fff;font-weight:800;font-size:13px;letter-spacing:-.5px}
+.trd-logo-text{font-size:13px;font-weight:700;line-height:1.2;color:#0F1B3D}
+.trd-logo-text span{display:block;color:#64748b;font-weight:500;font-size:11px}
+.trd-links{display:flex;gap:22px;margin-left:auto;align-items:center}
+.trd-links > a:not(.trd-devis){font-size:13.5px;font-weight:500;color:#64748b;transition:color .2s}
+.trd-links > a:not(.trd-devis):hover{color:#1A56DB}
+.trd-tools{position:relative;display:inline-block}
+.trd-demo{position:relative;background:#1A56DB;color:#fff;border:none;border-radius:8px;padding:9px 16px;font-weight:800;font-size:13.5px;white-space:nowrap;font-family:inherit;display:inline-flex;align-items:center;gap:6px;cursor:pointer;transition:background .2s,transform .2s}
+.trd-demo:hover{background:#1342b0;transform:translateY(-1px)}
+.trd-star{color:#fff;font-size:14px;line-height:1;font-weight:800}
+.trd-badge{position:absolute;top:-9px;right:-8px;background:#F59E0B;color:#fff;font-size:8.5px;font-weight:800;padding:2px 6px;border-radius:999px;letter-spacing:.3px;box-shadow:0 2px 6px rgba(245,158,11,.45);animation:trdPulse 2.2s ease-in-out infinite}
+@keyframes trdPulse{0%,100%{transform:scale(1)}50%{transform:scale(1.1)}}
+.trd-chev{font-size:10px;margin-left:2px;transition:transform .15s}
+.trd-tools:hover .trd-chev,.trd-tools.is-open .trd-chev{transform:rotate(180deg)}
+.trd-menu{display:none;position:absolute;top:calc(100% + 8px);left:0;background:#fff;border:1px solid #e2e8f0;border-radius:12px;box-shadow:0 12px 32px rgba(15,27,61,.15);min-width:250px;padding:6px;z-index:60}
+.trd-tools::after{content:"";position:absolute;left:0;right:0;top:100%;height:10px}
+.trd-tools:hover .trd-menu,.trd-tools:focus-within .trd-menu,.trd-tools.is-open .trd-menu{display:block}
+.trd-menu a{display:flex;align-items:center;gap:9px;padding:10px 12px;border-radius:8px;font-size:13.5px;font-weight:600;color:#0F1B3D;white-space:nowrap}
+.trd-menu a:hover{background:#EFF6FF;color:#1A56DB}
+.trd-menu a[aria-current="page"]{color:#1A56DB;background:#EFF6FF}
+.trd-devis{background:#1A56DB;color:#fff;border-radius:8px;padding:9px 18px;font-weight:700;font-size:13.5px;white-space:nowrap}
+.trd-devis:hover{background:#1342b0;color:#fff}
+.trd-burger{display:none;flex-direction:column;gap:5px;cursor:pointer;background:none;border:none;padding:10px;margin-left:auto}
+.trd-burger span{display:block;width:24px;height:2px;background:#0F1B3D;border-radius:2px;transition:all .3s}
+.trd-burger.open span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+.trd-burger.open span:nth-child(2){opacity:0}
+.trd-burger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+.trd-mobile{display:none;position:fixed;top:62px;left:0;right:0;max-height:calc(100vh - 62px);overflow-y:auto;background:#fff;border-bottom:1px solid #e2e8f0;padding:16px 24px;flex-direction:column;gap:4px;z-index:199;box-shadow:0 8px 24px rgba(0,0,0,.08);font-family:'Manrope',sans-serif}
+.trd-mobile.open{display:flex}
+.trd-mobile a{font-size:15px;font-weight:600;color:#64748b;padding:10px 0;border-bottom:1px solid #e2e8f0;text-decoration:none}
+.trd-mobile a[aria-current="page"]{color:#1A56DB}
+.trd-mobile a.trd-demo-m{position:relative;margin-top:10px;background:#1A56DB;color:#fff;border-radius:8px;padding:12px;font-weight:800;font-size:14px;display:flex;align-items:center;justify-content:center;gap:7px;border-bottom:none}
+.trd-mobile a.trd-demo-m .trd-badge{top:-9px;right:14px}
+.trd-mobile a.trd-devis-m{margin-top:10px;background:#1A56DB;color:#fff;border-radius:8px;padding:12px;font-weight:700;font-size:14px;text-align:center;border-bottom:none}
+.trd-nav :focus-visible,.trd-mobile :focus-visible{outline:3px solid #93b4f5;outline-offset:2px}
+@media (max-width:768px){.trd-burger{display:flex}.trd-links{display:none}.trd-nav{padding:0 16px}}
+@media (prefers-reduced-motion:reduce){.trd-badge{animation:none}}
 </style>
 </head>
 <body>
+<!-- ══ NAVBAR (identique aux autres pages du site) ══ -->
+<nav class="trd-nav" aria-label="Navigation principale">
+  <a class="trd-logo" href="/"><span class="trd-logo-box">TRD</span><span class="trd-logo-text">TechRepair<span>Content</span></span></a>
+  <div class="trd-links">
+    <a href="/">Accueil</a>
+    <a href="/services">Services</a>
+    <a href="/secteurs">Secteurs</a>
+    <a href="/apropos">À propos</a>
+    <a href="/blog">Blog</a>
+    <div class="trd-tools">
+      <button class="trd-demo" type="button" aria-haspopup="true" aria-expanded="false"><span class="trd-star">★</span>Outils IA<span class="trd-badge">Nouveau</span><span class="trd-chev">▾</span></button>
+      <div class="trd-menu">
+        <a href="/agents-ia"><span aria-hidden="true">⚙️</span> Agents IA sur mesure</a>
+        <a href="/visibilite-ia"><span aria-hidden="true">💬</span> Visibilité dans les IA</a>
+        <a href="/calculateur-temps-perdu" aria-current="page"><span aria-hidden="true">⏱️</span> Calculateur de temps perdu</a>
+        <a href="https://demo.techrepaircontent.com"><span aria-hidden="true">🤖</span> Démo avec Ted</a>
+        <a href="https://demo.techrepaircontent.com/audit-ia.html"><span aria-hidden="true">🔍</span> Audit IA gratuit</a>
+      </div>
+    </div>
+    <a class="trd-devis" href="/devis">Obtenir un devis</a>
+  </div>
+  <button class="trd-burger" id="trdBurger" type="button" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="trdMobile"><span></span><span></span><span></span></button>
+</nav>
+<div class="trd-mobile" id="trdMobile">
+  <a href="/">Accueil</a>
+  <a href="/services">Services</a>
+  <a href="/secteurs">Secteurs</a>
+  <a href="/apropos">À propos</a>
+  <a href="/blog">Blog</a>
+  <a href="/agents-ia">Agents IA sur mesure</a>
+  <a href="/visibilite-ia">Visibilité dans les IA</a>
+  <a href="/calculateur-temps-perdu" aria-current="page">Calculateur de temps perdu</a>
+  <a href="https://demo.techrepaircontent.com" class="trd-demo-m"><span class="trd-star">★</span>Démo avec Ted<span class="trd-badge">Nouveau</span></a>
+  <a href="https://demo.techrepaircontent.com/audit-ia.html" class="trd-demo-m"><span class="trd-star">★</span>Audit IA gratuit</a>
+  <a href="/devis" class="trd-devis-m">Obtenir un devis</a>
+</div>
+
 <div class="aia">
 
-<header class="aia-header">
-  <div class="wrap">
-    <a class="aia-logo" href="/"><b>TRD</b><span>TechRepair<small>Content</small></span></a>
-    <button class="aia-burger" type="button" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="aia-nav">
-      <svg class="ico" viewBox="0 0 24 24" width="26" height="26" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
-    </button>
-    <nav class="aia-nav" id="aia-nav" aria-label="Navigation">
-      <a href="/agents-ia">Agents IA</a>
-      <a href="/visibilite-ia">Visibilité IA</a>
-      <a class="btn btn--primary" href="/agents-ia#diagnostic">Diagnostic gratuit</a>
-    </nav>
-  </div>
-</header>
 
 <main>
 <section class="aia-hero">
@@ -267,19 +364,19 @@ body{margin:0}
             <small>Qui font ces tâches</small>
           </label>
           <label class="calc-field">Coût horaire moyen (€)
-            <input type="number" id="rate" min="10" max="300" step="1" value="40" inputmode="numeric">
-            <small>Salaire chargé ÷ heures travaillées</small>
+            <input type="number" id="rate" min="10" max="300" step="1" value="45" inputmode="numeric">
+            <small>Moyenne en France : 44,70 € (INSEE, 2025)</small>
           </label>
         </div>
 
         <h2>Heures par semaine et par personne</h2>
         <p class="sub">Faites glisser chaque curseur.</p>
         <div class="calc-tasks">
-          <div class="calc-task"><label for="t1">Rédiger et reformuler du contenu<small>Articles, fiches, posts, emails types</small></label><output for="t1" id="o1">2 h</output><input type="range" id="t1" min="0" max="15" step="0.5" value="2" data-auto="0.5"></div>
-          <div class="calc-task"><label for="t2">Relancer et qualifier les prospects<small>Suivi des leads, relances, CRM</small></label><output for="t2" id="o2">2 h</output><input type="range" id="t2" min="0" max="15" step="0.5" value="2" data-auto="0.6"></div>
-          <div class="calc-task"><label for="t3">Faire de la veille<small>Concurrents, marché, tendances</small></label><output for="t3" id="o3">1 h</output><input type="range" id="t3" min="0" max="15" step="0.5" value="1" data-auto="0.7"></div>
-          <div class="calc-task"><label for="t4">Répondre aux mêmes questions clients<small>Support, SAV, questions avant-vente</small></label><output for="t4" id="o4">3 h</output><input type="range" id="t4" min="0" max="15" step="0.5" value="3" data-auto="0.5"></div>
-          <div class="calc-task"><label for="t5">Saisie, copier-coller, reporting<small>Tableaux, comptes rendus, mises à jour</small></label><output for="t5" id="o5">2 h</output><input type="range" id="t5" min="0" max="15" step="0.5" value="2" data-auto="0.6"></div>
+          <div class="calc-task"><label for="t1">Rédiger et reformuler du contenu<small>Articles, fiches, posts, emails types</small></label><output for="t1" id="o1">1,5 h</output><input type="range" id="t1" min="0" max="15" step="0.5" value="1.5" data-auto="0.3"></div>
+          <div class="calc-task"><label for="t2">Relancer et qualifier les prospects<small>Suivi des leads, relances, CRM</small></label><output for="t2" id="o2">1,5 h</output><input type="range" id="t2" min="0" max="15" step="0.5" value="1.5" data-auto="0.3"></div>
+          <div class="calc-task"><label for="t3">Faire de la veille<small>Concurrents, marché, tendances</small></label><output for="t3" id="o3">0,5 h</output><input type="range" id="t3" min="0" max="15" step="0.5" value="0.5" data-auto="0.3"></div>
+          <div class="calc-task"><label for="t4">Répondre aux mêmes questions clients<small>Support, SAV, questions avant-vente</small></label><output for="t4" id="o4">2 h</output><input type="range" id="t4" min="0" max="15" step="0.5" value="2" data-auto="0.3"></div>
+          <div class="calc-task"><label for="t5">Saisie, copier-coller, reporting<small>Tableaux, comptes rendus, mises à jour</small></label><output for="t5" id="o5">1,5 h</output><input type="range" id="t5" min="0" max="15" step="0.5" value="1.5" data-auto="0.3"></div>
         </div>
       </form>
 
@@ -292,19 +389,21 @@ body{margin:0}
         </div>
         <p class="calc-reco" id="rReco"></p>
         <a class="btn btn--primary" href="/agents-ia#diagnostic">En parler lors d'un diagnostic gratuit</a>
-        <p class="calc-note">Estimation indicative, à affiner lors du diagnostic.</p>
+        <p class="calc-note">Calcul prudent : 30 % du temps récupéré, quand les études mesurent 40 % et plus. <a href="#hypotheses" id="seeHyp">Voir les sources</a></p>
       </aside>
     </div>
 
-    <div class="calc-method">
-      <h2>Comment le calcul est fait</h2>
-      <p>Le calcul reste volontairement prudent :</p>
+    <details class="calc-method" id="hypotheses">
+      <summary>Voir les hypothèses et les sources</summary>
+      <p>Les heures sont celles que vous indiquez. Pour le reste, le calcul s'appuie sur des chiffres publics, et reste volontairement en dessous de ce que mesurent les études.</p>
       <ul>
-        <li>45 semaines travaillées par an.</li>
-        <li>Seule une partie de chaque tâche est considérée comme automatisable : 50 % pour la rédaction et le support (relecture et cas complexes restent humains), 60 % pour les relances et la saisie, 70 % pour la veille.</li>
-        <li>Le délai de rentabilité compare l'économie mensuelle au prix de la formule Starter (1 agent) ou Pro (2 à 3 agents), mise en place et abonnement compris.</li>
+        <li><b>Coût horaire par défaut : 45 €.</b> Le coût moyen d'une heure de travail dans le secteur marchand en France est de 44,70 € en 2025 (<a href="https://www.insee.fr/fr/statistiques/9036065" target="_blank" rel="noopener">INSEE</a>). Remplacez-le par le vôtre.</li>
+        <li><b>45 semaines travaillées par an</b>, soit la durée légale de 1 607 heures par an à 35 heures par semaine, arrondie à la baisse.</li>
+        <li><b>30 % du temps considéré comme récupérable</b>, pour chaque tâche. Les études mesurent davantage : 40 % de temps gagné sur des tâches de rédaction (<a href="https://economics.mit.edu/news/study-finds-chatgpt-boosts-worker-productivity-some-writing-tasks" target="_blank" rel="noopener">MIT, publié dans Science, 2023</a>), et jusqu'à 50 % de demandes clients en moins à traiter par un humain selon <a href="https://www.mckinsey.com/capabilities/tech-and-ai/our-insights/the-economic-potential-of-generative-ai-the-next-productivity-frontier" target="_blank" rel="noopener">McKinsey</a>. Le reste (relecture, cas complexes, décisions) reste humain.</li>
+        <li>Pour situer les ordres de grandeur : les commerciaux ne passent que 28 % de leur temps à vendre, le reste partant en saisie et en gestion (<a href="https://www.salesforce.com/news/stories/sales-research-2023/" target="_blank" rel="noopener">Salesforce, 7 775 commerciaux interrogés</a>).</li>
+        <li>Le délai de rentabilité compare l'économie mensuelle au prix du niveau adapté (agent support, agent métier ou système multi-agents), mise en place et abonnement compris.</li>
       </ul>
-    </div>
+    </details>
   </div>
 </section>
 </main>
@@ -325,7 +424,7 @@ body{margin:0}
 
   /* Calculateur */
   var WEEKS=45;
-  var PLANS={starter:{name:'Starter (1 agent)',setup:2900,monthly:190},pro:{name:'Pro (2 à 3 agents)',setup:6900,monthly:390}};
+  var PLANS={support:{name:'Niveau 2, Agent support client',setup:1900,monthly:149},metier:{name:'Niveau 3, Agent métier connecté',setup:2900,monthly:190},multi:{name:'Niveau 4, Système multi-agents',setup:6900,monthly:390}};
   var nf=new Intl.NumberFormat('fr-FR',{maximumFractionDigits:0});
   var hf=new Intl.NumberFormat('fr-FR',{maximumFractionDigits:1});
   var $=function(id){return document.getElementById(id);};
@@ -351,7 +450,8 @@ body{margin:0}
 
     var reco=$('rReco');
     if(recW<=0){reco.innerHTML='Indiquez le temps passé sur au moins une tâche pour voir le résultat.';return;}
-    var plan=active<=1?PLANS.starter:PLANS.pro;
+    var onlySupport=active===1&&parseFloat(sliders[3].value)>0;
+    var plan=active>1?PLANS.multi:(onlySupport?PLANS.support:PLANS.metier);
     var net=recM-plan.monthly;
     if(net<=0){
       reco.innerHTML='À ce niveau, un agent IA ne serait <b>probablement pas rentable</b> pour vous. Ce n\'est pas toujours la bonne solution, et je préfère vous le dire.';
@@ -361,7 +461,24 @@ body{margin:0}
     reco.innerHTML='Formule adaptée : <b>'+plan.name+'</b>. Avec cette estimation, la mise en place serait rentabilisée en <b>'+months+' mois environ</b>, abonnement compris.';
   }
   document.getElementById('calc').addEventListener('input',update);
+  var seeHyp=document.getElementById('seeHyp');
+  if(seeHyp){seeHyp.addEventListener('click',function(){var d=document.getElementById('hypotheses');if(d)d.open=true;});}
   update();
+})();
+</script>
+<script>
+(function(){
+  var b=document.getElementById('trdBurger'), m=document.getElementById('trdMobile');
+  if(b&&m){
+    b.addEventListener('click',function(){var o=m.classList.toggle('open');b.classList.toggle('open',o);b.setAttribute('aria-expanded',o?'true':'false');b.setAttribute('aria-label',o?'Fermer le menu':'Ouvrir le menu');});
+    m.querySelectorAll('a').forEach(function(a){a.addEventListener('click',function(){m.classList.remove('open');b.classList.remove('open');b.setAttribute('aria-expanded','false');});});
+  }
+  var t=document.querySelector('.trd-tools'), tb=t&&t.querySelector('.trd-demo');
+  if(tb){
+    tb.addEventListener('click',function(e){e.stopPropagation();var o=t.classList.toggle('is-open');tb.setAttribute('aria-expanded',o?'true':'false');});
+    document.addEventListener('click',function(e){if(!t.contains(e.target)){t.classList.remove('is-open');tb.setAttribute('aria-expanded','false');}});
+  }
+  document.addEventListener('keydown',function(e){if(e.key==='Escape'){if(t){t.classList.remove('is-open');}if(m&&m.classList.contains('open')){m.classList.remove('open');b.classList.remove('open');b.setAttribute('aria-expanded','false');}}});
 })();
 </script>
 </body>

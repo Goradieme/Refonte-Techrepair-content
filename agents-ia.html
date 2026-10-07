@@ -166,6 +166,42 @@ body{margin:0}
 .aia-plan--featured .price strong,.aia-plan--featured .monthly strong{color:var(--on-dark)}
 .aia-plan--featured li .ico{color:var(--accent)}
 .aia-badge{padding:5px 10px;border-radius:999px;background:var(--ink-3);color:var(--accent);font-family:var(--body);font-size:12px;font-weight:700}
+.aia-tiers{display:flex;flex-direction:column;gap:16px}
+.aia-tier{display:grid;grid-template-columns:88px minmax(0,1.5fr) minmax(0,1fr) 210px;gap:28px;align-items:center;background:var(--surface);border:1px solid var(--line);border-radius:20px;padding:26px 30px}
+.aia-tier__lvl{display:flex;flex-direction:column;align-items:center;justify-content:center;width:72px;height:72px;border-radius:16px;background:var(--violet-tint);color:var(--violet-ink)}
+.aia-tier__lvl span{font-size:11px;font-weight:700}
+.aia-tier__lvl b{font-family:var(--display);font-size:30px;line-height:1}
+.aia-tier h3{font-size:20px;display:flex;flex-wrap:wrap;align-items:center;gap:10px;margin-bottom:6px}
+.aia-tier__main p{font-size:15px;color:var(--muted)}
+.aia-tier__ex{margin-top:8px!important;font-size:14px!important}
+.aia-tier__ex b{color:var(--text)}
+.aia-tier__feats{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:9px;font-size:14.5px}
+.aia-tier__feats li{display:flex;gap:9px;align-items:flex-start}
+.aia-tier__feats .ico{width:18px;height:18px;color:var(--violet);margin-top:3px}
+.aia-tier__price{display:flex;flex-direction:column;gap:2px;font-size:14px;color:var(--muted)}
+.aia-tier__price strong{font-family:var(--display);font-size:28px;color:var(--text);line-height:1.15}
+.aia-tier__price b{color:var(--text)}
+.aia-tier__price .btn{margin-top:12px;min-height:44px;padding:10px 18px}
+.aia-tier--featured{background:var(--ink);border-color:var(--ink);color:var(--on-dark)}
+.aia-tier--featured .aia-tier__lvl{background:var(--ink-3);color:var(--accent)}
+.aia-tier--featured .aia-tier__main p,.aia-tier--featured .aia-tier__price{color:var(--on-dark-muted)}
+.aia-tier--featured .aia-tier__ex b,.aia-tier--featured .aia-tier__price strong,.aia-tier--featured .aia-tier__price b{color:var(--on-dark)}
+.aia-tier--featured .aia-tier__feats .ico{color:var(--accent)}
+.aia-tier--custom{grid-template-columns:minmax(0,1fr) auto;background:transparent;border-style:dashed;padding:22px 30px}
+@media (max-width:1100px){
+  .aia-tier{grid-template-columns:72px minmax(0,1fr);gap:18px 22px;padding:24px}
+  .aia-tier__feats,.aia-tier__price{grid-column:2}
+  .aia-tier__price{flex-direction:row;flex-wrap:wrap;align-items:baseline;gap:4px 10px}
+  .aia-tier__price .btn{flex-basis:100%;margin-top:6px}
+}
+@media (max-width:560px){
+  .aia-tier{grid-template-columns:1fr;padding:22px 20px}
+  .aia-tier__lvl{flex-direction:row;gap:6px;width:auto;height:auto;padding:6px 12px;border-radius:999px;justify-self:start}
+  .aia-tier__lvl b{font-size:16px}
+  .aia-tier__feats,.aia-tier__price{grid-column:1}
+  .aia-tier--custom{grid-template-columns:1fr}
+  .aia-tier .btn{width:100%}
+}
 .aia-plans-note{margin-top:24px;font-size:14px;color:var(--muted);max-width:760px}
 @media (max-width:1000px){.aia-plans{grid-template-columns:1fr;max-width:560px}}
 
@@ -195,6 +231,73 @@ body{margin:0}
 .aia-footer a:hover{color:#fff}
 
 @media (prefers-reduced-motion:reduce){.aia *{transition:none!important}}
+
+/* ===== Menu principal du site ===== */
+.aia-nav{gap:26px}
+.aia-nav a[aria-current="page"]{color:var(--blue)}
+.aia-tools{position:relative}
+.aia-tools__btn{display:inline-flex;align-items:center;gap:6px;min-height:44px;padding:0;border:0;background:none;font:inherit;font-weight:600;font-size:15px;color:var(--text);cursor:pointer}
+.aia-tools__btn .chev{width:16px;height:16px;transition:transform .15s}
+.aia-tools__menu{display:none;position:absolute;top:100%;left:-14px;min-width:250px;background:#fff;border:1px solid var(--line);border-radius:14px;box-shadow:0 14px 36px rgba(20,18,46,.14);padding:6px;z-index:20}
+.aia-tools:hover .aia-tools__menu,.aia-tools:focus-within .aia-tools__menu,.aia-tools.is-open .aia-tools__menu{display:flex;flex-direction:column}
+.aia-tools:hover .chev,.aia-tools.is-open .chev{transform:rotate(180deg)}
+.aia-tools__menu a{padding:10px 12px;border-radius:9px;font-size:14.5px;white-space:nowrap}
+.aia-tools__menu a:hover{background:var(--violet-tint);color:var(--violet-ink)}
+@media (max-width:1080px){
+  .aia-burger{display:grid;place-items:center}
+  .aia-nav{display:none;position:absolute;top:76px;left:0;right:0;flex-direction:column;align-items:stretch;gap:0;background:#fff;border-bottom:1px solid var(--line);padding:8px var(--gutter) 20px;max-height:calc(100vh - 76px);overflow-y:auto}
+  .aia-nav.is-open{display:flex}
+  .aia-nav > a{padding:14px 0;border-bottom:1px solid var(--line)}
+  .aia-nav a.btn{margin-top:12px;border:0}
+  .aia-tools{border-bottom:1px solid var(--line);padding:6px 0}
+  .aia-tools__btn{width:100%;justify-content:space-between}
+  .aia-tools__btn .chev{display:none}
+  .aia-tools__menu{display:flex;flex-direction:column;position:static;box-shadow:none;border:0;padding:0 0 6px 12px;min-width:0}
+  .aia-tools__menu a{padding:10px 0;border:0}
+}
+
+/* ===== Barre de navigation du site (identique aux autres pages) ===== */
+html{scroll-padding-top:76px}
+.trd-nav{position:sticky;top:0;z-index:200;background:#fff;border-bottom:1px solid #e2e8f0;padding:0 32px;display:flex;align-items:center;gap:20px;height:62px;font-family:'Manrope',sans-serif}
+.trd-nav a{text-decoration:none}
+.trd-logo{display:flex;align-items:center;gap:10px;flex-shrink:0}
+.trd-logo-box{width:36px;height:36px;background:#1A56DB;border-radius:7px;display:grid;place-items:center;color:#fff;font-weight:800;font-size:13px;letter-spacing:-.5px}
+.trd-logo-text{font-size:13px;font-weight:700;line-height:1.2;color:#0F1B3D}
+.trd-logo-text span{display:block;color:#64748b;font-weight:500;font-size:11px}
+.trd-links{display:flex;gap:22px;margin-left:auto;align-items:center}
+.trd-links > a:not(.trd-devis){font-size:13.5px;font-weight:500;color:#64748b;transition:color .2s}
+.trd-links > a:not(.trd-devis):hover{color:#1A56DB}
+.trd-tools{position:relative;display:inline-block}
+.trd-demo{position:relative;background:#1A56DB;color:#fff;border:none;border-radius:8px;padding:9px 16px;font-weight:800;font-size:13.5px;white-space:nowrap;font-family:inherit;display:inline-flex;align-items:center;gap:6px;cursor:pointer;transition:background .2s,transform .2s}
+.trd-demo:hover{background:#1342b0;transform:translateY(-1px)}
+.trd-star{color:#fff;font-size:14px;line-height:1;font-weight:800}
+.trd-badge{position:absolute;top:-9px;right:-8px;background:#F59E0B;color:#fff;font-size:8.5px;font-weight:800;padding:2px 6px;border-radius:999px;letter-spacing:.3px;box-shadow:0 2px 6px rgba(245,158,11,.45);animation:trdPulse 2.2s ease-in-out infinite}
+@keyframes trdPulse{0%,100%{transform:scale(1)}50%{transform:scale(1.1)}}
+.trd-chev{font-size:10px;margin-left:2px;transition:transform .15s}
+.trd-tools:hover .trd-chev,.trd-tools.is-open .trd-chev{transform:rotate(180deg)}
+.trd-menu{display:none;position:absolute;top:calc(100% + 8px);left:0;background:#fff;border:1px solid #e2e8f0;border-radius:12px;box-shadow:0 12px 32px rgba(15,27,61,.15);min-width:250px;padding:6px;z-index:60}
+.trd-tools::after{content:"";position:absolute;left:0;right:0;top:100%;height:10px}
+.trd-tools:hover .trd-menu,.trd-tools:focus-within .trd-menu,.trd-tools.is-open .trd-menu{display:block}
+.trd-menu a{display:flex;align-items:center;gap:9px;padding:10px 12px;border-radius:8px;font-size:13.5px;font-weight:600;color:#0F1B3D;white-space:nowrap}
+.trd-menu a:hover{background:#EFF6FF;color:#1A56DB}
+.trd-menu a[aria-current="page"]{color:#1A56DB;background:#EFF6FF}
+.trd-devis{background:#1A56DB;color:#fff;border-radius:8px;padding:9px 18px;font-weight:700;font-size:13.5px;white-space:nowrap}
+.trd-devis:hover{background:#1342b0;color:#fff}
+.trd-burger{display:none;flex-direction:column;gap:5px;cursor:pointer;background:none;border:none;padding:10px;margin-left:auto}
+.trd-burger span{display:block;width:24px;height:2px;background:#0F1B3D;border-radius:2px;transition:all .3s}
+.trd-burger.open span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+.trd-burger.open span:nth-child(2){opacity:0}
+.trd-burger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+.trd-mobile{display:none;position:fixed;top:62px;left:0;right:0;max-height:calc(100vh - 62px);overflow-y:auto;background:#fff;border-bottom:1px solid #e2e8f0;padding:16px 24px;flex-direction:column;gap:4px;z-index:199;box-shadow:0 8px 24px rgba(0,0,0,.08);font-family:'Manrope',sans-serif}
+.trd-mobile.open{display:flex}
+.trd-mobile a{font-size:15px;font-weight:600;color:#64748b;padding:10px 0;border-bottom:1px solid #e2e8f0;text-decoration:none}
+.trd-mobile a[aria-current="page"]{color:#1A56DB}
+.trd-mobile a.trd-demo-m{position:relative;margin-top:10px;background:#1A56DB;color:#fff;border-radius:8px;padding:12px;font-weight:800;font-size:14px;display:flex;align-items:center;justify-content:center;gap:7px;border-bottom:none}
+.trd-mobile a.trd-demo-m .trd-badge{top:-9px;right:14px}
+.trd-mobile a.trd-devis-m{margin-top:10px;background:#1A56DB;color:#fff;border-radius:8px;padding:12px;font-weight:700;font-size:14px;text-align:center;border-bottom:none}
+.trd-nav :focus-visible,.trd-mobile :focus-visible{outline:3px solid #93b4f5;outline-offset:2px}
+@media (max-width:768px){.trd-burger{display:flex}.trd-links{display:none}.trd-nav{padding:0 16px}}
+@media (prefers-reduced-motion:reduce){.trd-badge{animation:none}}
 </style>
 
 <script type="application/ld+json">
@@ -202,7 +305,7 @@ body{margin:0}
   "@context":"https://schema.org",
   "@type":"FAQPage",
   "mainEntity":[
-    {"@type":"Question","name":"Combien coûte un agent IA ?","acceptedAnswer":{"@type":"Answer","text":"La mise en place d'un premier agent commence à 2 900 € HT, puis un abonnement à partir de 190 € HT par mois couvre l'hébergement, l'usage de l'IA et le suivi. Le diagnostic gratuit permet d'établir un devis précis."}},
+    {"@type":"Question","name":"Combien coûte un agent IA ?","acceptedAnswer":{"@type":"Answer","text":"Cela dépend de sa complexité : de 990 € HT de mise en place et 49 € HT par mois pour un assistant FAQ, à 6 900 € HT et 390 € HT par mois pour un système de plusieurs agents. L'abonnement couvre l'hébergement, l'usage de l'IA et le suivi. Le diagnostic gratuit permet d'établir un devis précis."}},
     {"@type":"Question","name":"Mes données sont-elles en sécurité ?","acceptedAnswer":{"@type":"Answer","text":"Vos données servent uniquement à faire fonctionner votre agent et leur traitement respecte le RGPD. Je vous indique précisément où elles sont hébergées et qui y a accès."}},
     {"@type":"Question","name":"Que se passe-t-il si l'agent se trompe ?","acceptedAnswer":{"@type":"Answer","text":"Les actions sensibles passent par votre validation, et l'agent transmet la main à un humain dès qu'il n'est pas sûr de sa réponse."}},
     {"@type":"Question","name":"Combien de temps faut-il pour mettre en place un agent ?","acceptedAnswer":{"@type":"Answer","text":"Comptez en général 2 à 5 semaines entre le diagnostic et la mise en production, selon le nombre d'outils à connecter."}},
@@ -212,24 +315,46 @@ body{margin:0}
 </script>
 </head>
 <body>
+<!-- ══ NAVBAR (identique aux autres pages du site) ══ -->
+<nav class="trd-nav" aria-label="Navigation principale">
+  <a class="trd-logo" href="/"><span class="trd-logo-box">TRD</span><span class="trd-logo-text">TechRepair<span>Content</span></span></a>
+  <div class="trd-links">
+    <a href="/">Accueil</a>
+    <a href="/services">Services</a>
+    <a href="/secteurs">Secteurs</a>
+    <a href="/apropos">À propos</a>
+    <a href="/blog">Blog</a>
+    <div class="trd-tools">
+      <button class="trd-demo" type="button" aria-haspopup="true" aria-expanded="false"><span class="trd-star">★</span>Outils IA<span class="trd-badge">Nouveau</span><span class="trd-chev">▾</span></button>
+      <div class="trd-menu">
+        <a href="/agents-ia" aria-current="page"><span aria-hidden="true">⚙️</span> Agents IA sur mesure</a>
+        <a href="/visibilite-ia"><span aria-hidden="true">💬</span> Visibilité dans les IA</a>
+        <a href="/calculateur-temps-perdu"><span aria-hidden="true">⏱️</span> Calculateur de temps perdu</a>
+        <a href="https://demo.techrepaircontent.com"><span aria-hidden="true">🤖</span> Démo avec Ted</a>
+        <a href="https://demo.techrepaircontent.com/audit-ia.html"><span aria-hidden="true">🔍</span> Audit IA gratuit</a>
+      </div>
+    </div>
+    <a class="trd-devis" href="/devis">Obtenir un devis</a>
+  </div>
+  <button class="trd-burger" id="trdBurger" type="button" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="trdMobile"><span></span><span></span><span></span></button>
+</nav>
+<div class="trd-mobile" id="trdMobile">
+  <a href="/">Accueil</a>
+  <a href="/services">Services</a>
+  <a href="/secteurs">Secteurs</a>
+  <a href="/apropos">À propos</a>
+  <a href="/blog">Blog</a>
+  <a href="/agents-ia" aria-current="page">Agents IA sur mesure</a>
+  <a href="/visibilite-ia">Visibilité dans les IA</a>
+  <a href="/calculateur-temps-perdu">Calculateur de temps perdu</a>
+  <a href="https://demo.techrepaircontent.com" class="trd-demo-m"><span class="trd-star">★</span>Démo avec Ted<span class="trd-badge">Nouveau</span></a>
+  <a href="https://demo.techrepaircontent.com/audit-ia.html" class="trd-demo-m"><span class="trd-star">★</span>Audit IA gratuit</a>
+  <a href="/devis" class="trd-devis-m">Obtenir un devis</a>
+</div>
+
 <div class="aia">
 
 <!-- ================= HEADER ================= -->
-<header class="aia-header">
-  <div class="wrap">
-    <a class="aia-logo" href="/"><b>TRD</b><span>TechRepair<small>Content</small></span></a>
-    <button class="aia-burger" type="button" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="aia-nav">
-      <svg class="ico" viewBox="0 0 24 24" width="26" height="26" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
-    </button>
-    <nav class="aia-nav" id="aia-nav" aria-label="Navigation de la page">
-      <a href="#agents">Agents</a>
-      <a href="#methode">Méthode</a>
-      <a href="#tarifs">Tarifs</a>
-      <a href="#faq">FAQ</a>
-      <a class="btn btn--primary" href="#diagnostic">Diagnostic gratuit</a>
-    </nav>
-  </div>
-</header>
 
 <main>
 
@@ -373,56 +498,83 @@ body{margin:0}
   <div class="wrap">
     <div class="head">
       <span class="label">Tarifs</span>
-      <h2>Des formules claires, un devis précis après diagnostic</h2>
+      <h2>Quatre niveaux, du plus simple au plus complet</h2>
       <p>Une mise en place, puis un abonnement mensuel qui couvre l'hébergement, l'usage de l'IA et le suivi.</p>
     </div>
-    <div class="aia-plans">
-
-      <div class="aia-plan">
-        <h3>Starter</h3>
-        <p class="for">Pour tester sur une tâche précise</p>
-        <p class="price">Mise en place à partir de<strong>2 900 € HT</strong></p>
-        <p class="monthly">puis <strong>190 € HT / mois</strong></p>
-        <ul>
-          <li><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Diagnostic et cadrage</li>
-          <li><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>1 agent configuré sur vos données</li>
-          <li><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Connexion à 2 outils</li>
-          <li><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Hébergement, maintenance et suivi mensuel</li>
+    <div class="aia-tiers" role="list">
+      <article role="listitem" class="aia-tier">
+        <div class="aia-tier__lvl" aria-hidden="true"><span>Niveau</span><b>1</b></div>
+        <div class="aia-tier__main">
+          <h3>Assistant FAQ</h3>
+          <p>Répond aux questions fréquentes de vos visiteurs, 24h/24, à partir de vos pages et de votre FAQ.</p>
+          <p class="aia-tier__ex"><b>Exemples :</b> Questions avant-vente, horaires, tarifs, délais</p>
+        </div>
+        <ul class="aia-tier__feats">
+          <li><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Installé sur votre site</li><li><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Réponses limitées à vos contenus</li><li><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Mise en ligne en 1 semaine</li>
         </ul>
-        <a class="btn btn--outline" href="#diagnostic">Choisir Starter</a>
-      </div>
-
-      <div class="aia-plan aia-plan--featured">
-        <h3>Pro <span class="aia-badge">Recommandé</span></h3>
-        <p class="for">2 à 3 agents qui travaillent ensemble</p>
-        <p class="price">Mise en place à partir de<strong>6 900 € HT</strong></p>
-        <p class="monthly">puis <strong>390 € HT / mois</strong></p>
-        <ul>
-          <li><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Tout ce qui est inclus dans Starter</li>
-          <li><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Jusqu'à 3 agents coordonnés</li>
-          <li><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Connexion à 5 outils</li>
-          <li><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Rapport mensuel du temps gagné</li>
-          <li><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Ajustements illimités des consignes</li>
+        <div class="aia-tier__price">
+          <span>Mise en place dès</span><strong>990 € HT</strong>
+          <span>puis <b>49 € HT / mois</b></span>
+          <a class="btn btn--outline" href="#diagnostic">En parler</a>
+        </div>
+      </article>
+      <article role="listitem" class="aia-tier">
+        <div class="aia-tier__lvl" aria-hidden="true"><span>Niveau</span><b>2</b></div>
+        <div class="aia-tier__main">
+          <h3>Agent support client</h3>
+          <p>L'Agent Support Tier-1 : il traite les demandes simples et passe la main à un humain dès qu'il doute.</p>
+          <p class="aia-tier__ex"><b>Exemples :</b> SAV, suivi de commande, questions produit</p>
+        </div>
+        <ul class="aia-tier__feats">
+          <li><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Connecté à vos données produit</li><li><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Connexion à 1 outil (Crisp, Zendesk, email…)</li><li><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Transfert vers votre équipe</li>
         </ul>
-        <a class="btn btn--primary" href="#diagnostic">Choisir Pro</a>
-      </div>
-
-      <div class="aia-plan">
-        <h3>Sur mesure</h3>
-        <p class="for">Plusieurs équipes ou outils métier spécifiques</p>
-        <p class="price">Mise en place<strong>Sur devis</strong></p>
-        <p class="monthly">Abonnement selon le volume</p>
-        <ul>
-          <li><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Agents multiples</li>
-          <li><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Intégrations spécifiques (API, ERP, outils métier)</li>
-          <li><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Un seul interlocuteur du début à la fin</li>
-          <li><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Formation de votre équipe</li>
+        <div class="aia-tier__price">
+          <span>Mise en place dès</span><strong>1 900 € HT</strong>
+          <span>puis <b>149 € HT / mois</b></span>
+          <a class="btn btn--outline" href="#diagnostic">En parler</a>
+        </div>
+      </article>
+      <article role="listitem" class="aia-tier aia-tier--featured">
+        <div class="aia-tier__lvl" aria-hidden="true"><span>Niveau</span><b>3</b></div>
+        <div class="aia-tier__main">
+          <h3>Agent métier connecté <span class="aia-badge">Idéal pour démarrer</span></h3>
+          <p>Un agent qui agit dans vos outils : Lead Nurturing, Content Factory ou Veille Concurrentielle.</p>
+          <p class="aia-tier__ex"><b>Exemples :</b> Relances de leads, contenus SEO, rapport de veille</p>
+        </div>
+        <ul class="aia-tier__feats">
+          <li><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Connexion à 2 outils (CRM, CMS, Gmail…)</li><li><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Validation humaine des actions sensibles</li><li><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Rapport mensuel du temps gagné</li>
         </ul>
-        <a class="btn btn--outline" href="#diagnostic">Me contacter</a>
+        <div class="aia-tier__price">
+          <span>Mise en place dès</span><strong>2 900 € HT</strong>
+          <span>puis <b>190 € HT / mois</b></span>
+          <a class="btn btn--primary" href="#diagnostic">En parler</a>
+        </div>
+      </article>
+      <article role="listitem" class="aia-tier">
+        <div class="aia-tier__lvl" aria-hidden="true"><span>Niveau</span><b>4</b></div>
+        <div class="aia-tier__main">
+          <h3>Système multi-agents</h3>
+          <p>2 à 3 agents qui travaillent ensemble sur un processus complet, de bout en bout.</p>
+          <p class="aia-tier__ex"><b>Exemples :</b> Du lead entrant au contenu de relance, du ticket à la base de connaissances</p>
+        </div>
+        <ul class="aia-tier__feats">
+          <li><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Jusqu'à 3 agents coordonnés</li><li><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Connexion à 5 outils</li><li><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Ajustements illimités des consignes</li>
+        </ul>
+        <div class="aia-tier__price">
+          <span>Mise en place dès</span><strong>6 900 € HT</strong>
+          <span>puis <b>390 € HT / mois</b></span>
+          <a class="btn btn--outline" href="#diagnostic">En parler</a>
+        </div>
+      </article>
+      <div class="aia-tier aia-tier--custom">
+        <div class="aia-tier__main">
+          <h3>Sur mesure</h3>
+          <p>Plusieurs équipes, outils métier spécifiques (API, ERP), formation de vos équipes : tarif sur devis, après diagnostic.</p>
+        </div>
+        <a class="btn btn--outline" href="#diagnostic">Demander un devis</a>
       </div>
-
     </div>
-    <p class="aia-plans-note">Les prix « à partir de » correspondent à un périmètre simple. Le tarif final dépend du nombre de tâches, d'outils à connecter et du volume traité ; il est fixé avec vous après le diagnostic. Pour estimer d'abord ce que vous pourriez économiser : <a href="/calculateur-temps-perdu">calculateur de temps perdu</a>.</p>
+    <p class="aia-plans-note"><b>Pour comparer :</b> un outil prêt à l'emploi (chatbot, assistant de prospection) coûte en 2026 de 20 à 500 € par mois, mais c'est à vous de le configurer, de l'alimenter et de le surveiller (<a href="https://www.hyperstack.studio/blog/quel-est-le-prix-dun-agent-ia-en-2026" target="_blank" rel="noopener">source</a>). Ici, l'abonnement comprend l'hébergement, l'usage de l'IA, la maintenance et le suivi. Les prix « dès » correspondent à un périmètre simple ; le tarif final dépend du nombre de tâches, d'outils et du volume, et il est fixé avec vous après le diagnostic. Pour estimer d'abord ce que vous pourriez économiser : <a href="/calculateur-temps-perdu">calculateur de temps perdu</a>.</p>
   </div>
 </section>
 
@@ -437,7 +589,7 @@ body{margin:0}
     <div>
       <details>
         <summary>Combien coûte un agent IA ?<svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg></summary>
-        <p>La mise en place d'un premier agent commence à 2 900 € HT, puis un abonnement à partir de 190 € HT par mois couvre l'hébergement, l'usage de l'IA et le suivi. Le diagnostic gratuit permet d'établir un devis précis.</p>
+        <p>Cela dépend de sa complexité : de 990 € HT de mise en place et 49 € HT par mois pour un assistant FAQ, à 6 900 € HT et 390 € HT par mois pour un système de plusieurs agents. L'abonnement couvre l'hébergement, l'usage de l'IA et le suivi. Le diagnostic gratuit permet d'établir un devis précis.</p>
       </details>
       <details>
         <summary>Mes données sont-elles en sécurité ?<svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg></summary>
@@ -492,6 +644,21 @@ body{margin:0}
     btn.setAttribute('aria-label',open?'Fermer le menu':'Ouvrir le menu');
   });
   nav.querySelectorAll('a').forEach(function(a){a.addEventListener('click',function(){nav.classList.remove('is-open');btn.setAttribute('aria-expanded','false');});});
+})();
+</script>
+<script>
+(function(){
+  var b=document.getElementById('trdBurger'), m=document.getElementById('trdMobile');
+  if(b&&m){
+    b.addEventListener('click',function(){var o=m.classList.toggle('open');b.classList.toggle('open',o);b.setAttribute('aria-expanded',o?'true':'false');b.setAttribute('aria-label',o?'Fermer le menu':'Ouvrir le menu');});
+    m.querySelectorAll('a').forEach(function(a){a.addEventListener('click',function(){m.classList.remove('open');b.classList.remove('open');b.setAttribute('aria-expanded','false');});});
+  }
+  var t=document.querySelector('.trd-tools'), tb=t&&t.querySelector('.trd-demo');
+  if(tb){
+    tb.addEventListener('click',function(e){e.stopPropagation();var o=t.classList.toggle('is-open');tb.setAttribute('aria-expanded',o?'true':'false');});
+    document.addEventListener('click',function(e){if(!t.contains(e.target)){t.classList.remove('is-open');tb.setAttribute('aria-expanded','false');}});
+  }
+  document.addEventListener('keydown',function(e){if(e.key==='Escape'){if(t){t.classList.remove('is-open');}if(m&&m.classList.contains('open')){m.classList.remove('open');b.classList.remove('open');b.setAttribute('aria-expanded','false');}}});
 })();
 </script>
 </body>

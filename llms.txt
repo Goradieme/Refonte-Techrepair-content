@@ -4,7 +4,7 @@
 
 ## Services
 
-- [Agents IA sur mesure](https://www.techrepaircontent.com/agents-ia): agents Content Factory, Lead Nurturing, Veille Concurrentielle et Support Tier-1, avec validation humaine. Starter à partir de 2 900 € HT + 190 € HT/mois ; Pro à partir de 6 900 € HT + 390 € HT/mois.
+- [Agents IA sur mesure](https://www.techrepaircontent.com/agents-ia): agents Content Factory, Lead Nurturing, Veille Concurrentielle et Support Tier-1, avec validation humaine. Quatre niveaux : assistant FAQ dès 990 € HT + 49 € HT/mois, agent support dès 1 900 € HT + 149 € HT/mois, agent métier connecté dès 2 900 € HT + 190 € HT/mois, système multi-agents dès 6 900 € HT + 390 € HT/mois.
 - [Visibilité dans les IA (GEO)](https://www.techrepaircontent.com/visibilite-ia): test gratuit, audit GEO complet à 990 € HT, accompagnement à partir de 1 490 € HT/mois avec production de contenus.
 - [Articles SEO](https://www.techrepaircontent.com/service-articles-seo.html): rédaction d'articles optimisés pour le B2B tech.
 - [Fiches produits](https://www.techrepaircontent.com/service-fiches-produits.html): rédaction de fiches produits optimisées.

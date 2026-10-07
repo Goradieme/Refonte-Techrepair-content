@@ -239,6 +239,73 @@ body{margin:0}
 .aia-form button{grid-column:1 / -1;border:0;cursor:pointer;font:inherit}
 .aia-form .legal{grid-column:1 / -1;font-size:13px;color:var(--muted)}
 @media (max-width:620px){.aia-form{grid-template-columns:1fr}}
+
+/* ===== Menu principal du site ===== */
+.aia-nav{gap:26px}
+.aia-nav a[aria-current="page"]{color:var(--blue)}
+.aia-tools{position:relative}
+.aia-tools__btn{display:inline-flex;align-items:center;gap:6px;min-height:44px;padding:0;border:0;background:none;font:inherit;font-weight:600;font-size:15px;color:var(--text);cursor:pointer}
+.aia-tools__btn .chev{width:16px;height:16px;transition:transform .15s}
+.aia-tools__menu{display:none;position:absolute;top:100%;left:-14px;min-width:250px;background:#fff;border:1px solid var(--line);border-radius:14px;box-shadow:0 14px 36px rgba(20,18,46,.14);padding:6px;z-index:20}
+.aia-tools:hover .aia-tools__menu,.aia-tools:focus-within .aia-tools__menu,.aia-tools.is-open .aia-tools__menu{display:flex;flex-direction:column}
+.aia-tools:hover .chev,.aia-tools.is-open .chev{transform:rotate(180deg)}
+.aia-tools__menu a{padding:10px 12px;border-radius:9px;font-size:14.5px;white-space:nowrap}
+.aia-tools__menu a:hover{background:var(--violet-tint);color:var(--violet-ink)}
+@media (max-width:1080px){
+  .aia-burger{display:grid;place-items:center}
+  .aia-nav{display:none;position:absolute;top:76px;left:0;right:0;flex-direction:column;align-items:stretch;gap:0;background:#fff;border-bottom:1px solid var(--line);padding:8px var(--gutter) 20px;max-height:calc(100vh - 76px);overflow-y:auto}
+  .aia-nav.is-open{display:flex}
+  .aia-nav > a{padding:14px 0;border-bottom:1px solid var(--line)}
+  .aia-nav a.btn{margin-top:12px;border:0}
+  .aia-tools{border-bottom:1px solid var(--line);padding:6px 0}
+  .aia-tools__btn{width:100%;justify-content:space-between}
+  .aia-tools__btn .chev{display:none}
+  .aia-tools__menu{display:flex;flex-direction:column;position:static;box-shadow:none;border:0;padding:0 0 6px 12px;min-width:0}
+  .aia-tools__menu a{padding:10px 0;border:0}
+}
+
+/* ===== Barre de navigation du site (identique aux autres pages) ===== */
+html{scroll-padding-top:76px}
+.trd-nav{position:sticky;top:0;z-index:200;background:#fff;border-bottom:1px solid #e2e8f0;padding:0 32px;display:flex;align-items:center;gap:20px;height:62px;font-family:'Manrope',sans-serif}
+.trd-nav a{text-decoration:none}
+.trd-logo{display:flex;align-items:center;gap:10px;flex-shrink:0}
+.trd-logo-box{width:36px;height:36px;background:#1A56DB;border-radius:7px;display:grid;place-items:center;color:#fff;font-weight:800;font-size:13px;letter-spacing:-.5px}
+.trd-logo-text{font-size:13px;font-weight:700;line-height:1.2;color:#0F1B3D}
+.trd-logo-text span{display:block;color:#64748b;font-weight:500;font-size:11px}
+.trd-links{display:flex;gap:22px;margin-left:auto;align-items:center}
+.trd-links > a:not(.trd-devis){font-size:13.5px;font-weight:500;color:#64748b;transition:color .2s}
+.trd-links > a:not(.trd-devis):hover{color:#1A56DB}
+.trd-tools{position:relative;display:inline-block}
+.trd-demo{position:relative;background:#1A56DB;color:#fff;border:none;border-radius:8px;padding:9px 16px;font-weight:800;font-size:13.5px;white-space:nowrap;font-family:inherit;display:inline-flex;align-items:center;gap:6px;cursor:pointer;transition:background .2s,transform .2s}
+.trd-demo:hover{background:#1342b0;transform:translateY(-1px)}
+.trd-star{color:#fff;font-size:14px;line-height:1;font-weight:800}
+.trd-badge{position:absolute;top:-9px;right:-8px;background:#F59E0B;color:#fff;font-size:8.5px;font-weight:800;padding:2px 6px;border-radius:999px;letter-spacing:.3px;box-shadow:0 2px 6px rgba(245,158,11,.45);animation:trdPulse 2.2s ease-in-out infinite}
+@keyframes trdPulse{0%,100%{transform:scale(1)}50%{transform:scale(1.1)}}
+.trd-chev{font-size:10px;margin-left:2px;transition:transform .15s}
+.trd-tools:hover .trd-chev,.trd-tools.is-open .trd-chev{transform:rotate(180deg)}
+.trd-menu{display:none;position:absolute;top:calc(100% + 8px);left:0;background:#fff;border:1px solid #e2e8f0;border-radius:12px;box-shadow:0 12px 32px rgba(15,27,61,.15);min-width:250px;padding:6px;z-index:60}
+.trd-tools::after{content:"";position:absolute;left:0;right:0;top:100%;height:10px}
+.trd-tools:hover .trd-menu,.trd-tools:focus-within .trd-menu,.trd-tools.is-open .trd-menu{display:block}
+.trd-menu a{display:flex;align-items:center;gap:9px;padding:10px 12px;border-radius:8px;font-size:13.5px;font-weight:600;color:#0F1B3D;white-space:nowrap}
+.trd-menu a:hover{background:#EFF6FF;color:#1A56DB}
+.trd-menu a[aria-current="page"]{color:#1A56DB;background:#EFF6FF}
+.trd-devis{background:#1A56DB;color:#fff;border-radius:8px;padding:9px 18px;font-weight:700;font-size:13.5px;white-space:nowrap}
+.trd-devis:hover{background:#1342b0;color:#fff}
+.trd-burger{display:none;flex-direction:column;gap:5px;cursor:pointer;background:none;border:none;padding:10px;margin-left:auto}
+.trd-burger span{display:block;width:24px;height:2px;background:#0F1B3D;border-radius:2px;transition:all .3s}
+.trd-burger.open span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+.trd-burger.open span:nth-child(2){opacity:0}
+.trd-burger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+.trd-mobile{display:none;position:fixed;top:62px;left:0;right:0;max-height:calc(100vh - 62px);overflow-y:auto;background:#fff;border-bottom:1px solid #e2e8f0;padding:16px 24px;flex-direction:column;gap:4px;z-index:199;box-shadow:0 8px 24px rgba(0,0,0,.08);font-family:'Manrope',sans-serif}
+.trd-mobile.open{display:flex}
+.trd-mobile a{font-size:15px;font-weight:600;color:#64748b;padding:10px 0;border-bottom:1px solid #e2e8f0;text-decoration:none}
+.trd-mobile a[aria-current="page"]{color:#1A56DB}
+.trd-mobile a.trd-demo-m{position:relative;margin-top:10px;background:#1A56DB;color:#fff;border-radius:8px;padding:12px;font-weight:800;font-size:14px;display:flex;align-items:center;justify-content:center;gap:7px;border-bottom:none}
+.trd-mobile a.trd-demo-m .trd-badge{top:-9px;right:14px}
+.trd-mobile a.trd-devis-m{margin-top:10px;background:#1A56DB;color:#fff;border-radius:8px;padding:12px;font-weight:700;font-size:14px;text-align:center;border-bottom:none}
+.trd-nav :focus-visible,.trd-mobile :focus-visible{outline:3px solid #93b4f5;outline-offset:2px}
+@media (max-width:768px){.trd-burger{display:flex}.trd-links{display:none}.trd-nav{padding:0 16px}}
+@media (prefers-reduced-motion:reduce){.trd-badge{animation:none}}
 </style>
 
 <script type="application/ld+json">
@@ -263,23 +330,45 @@ body{margin:0}
 </script>
 </head>
 <body>
+<!-- ══ NAVBAR (identique aux autres pages du site) ══ -->
+<nav class="trd-nav" aria-label="Navigation principale">
+  <a class="trd-logo" href="/"><span class="trd-logo-box">TRD</span><span class="trd-logo-text">TechRepair<span>Content</span></span></a>
+  <div class="trd-links">
+    <a href="/">Accueil</a>
+    <a href="/services">Services</a>
+    <a href="/secteurs">Secteurs</a>
+    <a href="/apropos">À propos</a>
+    <a href="/blog">Blog</a>
+    <div class="trd-tools">
+      <button class="trd-demo" type="button" aria-haspopup="true" aria-expanded="false"><span class="trd-star">★</span>Outils IA<span class="trd-badge">Nouveau</span><span class="trd-chev">▾</span></button>
+      <div class="trd-menu">
+        <a href="/agents-ia"><span aria-hidden="true">⚙️</span> Agents IA sur mesure</a>
+        <a href="/visibilite-ia" aria-current="page"><span aria-hidden="true">💬</span> Visibilité dans les IA</a>
+        <a href="/calculateur-temps-perdu"><span aria-hidden="true">⏱️</span> Calculateur de temps perdu</a>
+        <a href="https://demo.techrepaircontent.com"><span aria-hidden="true">🤖</span> Démo avec Ted</a>
+        <a href="https://demo.techrepaircontent.com/audit-ia.html"><span aria-hidden="true">🔍</span> Audit IA gratuit</a>
+      </div>
+    </div>
+    <a class="trd-devis" href="/devis">Obtenir un devis</a>
+  </div>
+  <button class="trd-burger" id="trdBurger" type="button" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="trdMobile"><span></span><span></span><span></span></button>
+</nav>
+<div class="trd-mobile" id="trdMobile">
+  <a href="/">Accueil</a>
+  <a href="/services">Services</a>
+  <a href="/secteurs">Secteurs</a>
+  <a href="/apropos">À propos</a>
+  <a href="/blog">Blog</a>
+  <a href="/agents-ia">Agents IA sur mesure</a>
+  <a href="/visibilite-ia" aria-current="page">Visibilité dans les IA</a>
+  <a href="/calculateur-temps-perdu">Calculateur de temps perdu</a>
+  <a href="https://demo.techrepaircontent.com" class="trd-demo-m"><span class="trd-star">★</span>Démo avec Ted<span class="trd-badge">Nouveau</span></a>
+  <a href="https://demo.techrepaircontent.com/audit-ia.html" class="trd-demo-m"><span class="trd-star">★</span>Audit IA gratuit</a>
+  <a href="/devis" class="trd-devis-m">Obtenir un devis</a>
+</div>
+
 <div class="aia">
 
-<header class="aia-header">
-  <div class="wrap">
-    <a class="aia-logo" href="/"><b>TRD</b><span>TechRepair<small>Content</small></span></a>
-    <button class="aia-burger" type="button" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="aia-nav">
-      <svg class="ico" viewBox="0 0 24 24" width="26" height="26" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
-    </button>
-    <nav class="aia-nav" id="aia-nav" aria-label="Navigation de la page">
-      <a href="#audit">Ce qu'on mesure</a>
-      <a href="#methode">Méthode</a>
-      <a href="#tarifs">Tarifs</a>
-      <a href="#faq">FAQ</a>
-      <a class="btn btn--primary" href="#test">Test gratuit</a>
-    </nav>
-  </div>
-</header>
 
 <main>
 
@@ -482,6 +571,21 @@ body{margin:0}
     btn.setAttribute('aria-label',open?'Fermer le menu':'Ouvrir le menu');
   });
   nav.querySelectorAll('a').forEach(function(a){a.addEventListener('click',function(){nav.classList.remove('is-open');btn.setAttribute('aria-expanded','false');});});
+})();
+</script>
+<script>
+(function(){
+  var b=document.getElementById('trdBurger'), m=document.getElementById('trdMobile');
+  if(b&&m){
+    b.addEventListener('click',function(){var o=m.classList.toggle('open');b.classList.toggle('open',o);b.setAttribute('aria-expanded',o?'true':'false');b.setAttribute('aria-label',o?'Fermer le menu':'Ouvrir le menu');});
+    m.querySelectorAll('a').forEach(function(a){a.addEventListener('click',function(){m.classList.remove('open');b.classList.remove('open');b.setAttribute('aria-expanded','false');});});
+  }
+  var t=document.querySelector('.trd-tools'), tb=t&&t.querySelector('.trd-demo');
+  if(tb){
+    tb.addEventListener('click',function(e){e.stopPropagation();var o=t.classList.toggle('is-open');tb.setAttribute('aria-expanded',o?'true':'false');});
+    document.addEventListener('click',function(e){if(!t.contains(e.target)){t.classList.remove('is-open');tb.setAttribute('aria-expanded','false');}});
+  }
+  document.addEventListener('keydown',function(e){if(e.key==='Escape'){if(t){t.classList.remove('is-open');}if(m&&m.classList.contains('open')){m.classList.remove('open');b.classList.remove('open');b.setAttribute('aria-expanded','false');}}});
 })();
 </script>
 </body>
