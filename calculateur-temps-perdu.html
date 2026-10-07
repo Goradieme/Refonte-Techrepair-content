@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Calculateur : combien d'heures votre équipe perd-elle ? | TechRepair Content</title>
 <meta name="description" content="Estimez en 1 minute le temps et l'argent que votre équipe perd sur les tâches répétitives, et ce qu'un agent IA pourrait vous faire récupérer.">
-<link rel="canonical" href="https://techrepaircontent.com/calculateur-temps-perdu">
+<link rel="canonical" href="https://www.techrepaircontent.com/calculateur-temps-perdu">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&family=Sora:wght@600;700&display=swap" rel="stylesheet">
@@ -298,7 +298,7 @@ body{margin:0}
 
     <div class="calc-method">
       <h2>Comment le calcul est fait</h2>
-      <p>Nous restons volontairement prudents :</p>
+      <p>Le calcul reste volontairement prudent :</p>
       <ul>
         <li>45 semaines travaillées par an.</li>
         <li>Seule une partie de chaque tâche est considérée comme automatisable : 50 % pour la rédaction et le support (relecture et cas complexes restent humains), 60 % pour les relances et la saisie, 70 % pour la veille.</li>
@@ -354,7 +354,7 @@ body{margin:0}
     var plan=active<=1?PLANS.starter:PLANS.pro;
     var net=recM-plan.monthly;
     if(net<=0){
-      reco.innerHTML='À ce niveau, un agent IA ne serait <b>probablement pas rentable</b> pour vous. Ce n\'est pas toujours la bonne solution, et nous préférons vous le dire.';
+      reco.innerHTML='À ce niveau, un agent IA ne serait <b>probablement pas rentable</b> pour vous. Ce n\'est pas toujours la bonne solution, et je préfère vous le dire.';
       return;
     }
     var months=Math.max(1,Math.ceil(plan.setup/net));
