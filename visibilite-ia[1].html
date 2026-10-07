@@ -1,0 +1,488 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Visibilité dans les IA (GEO) pour entreprises B2B tech | TechRepair Content</title>
+<meta name="description" content="Votre marque est-elle citée par ChatGPT, Perplexity, Gemini et les réponses IA de Google ? Test gratuit, audit GEO et production des contenus qui vous font citer. Spécialistes B2B tech.">
+<link rel="canonical" href="https://techrepaircontent.com/visibilite-ia">
+<meta property="og:title" content="Être cité par les IA | TechRepair Content">
+<meta property="og:description" content="Nous mesurons si votre marque est citée par les IA, puis nous écrivons les contenus qui vous y font apparaître.">
+<meta property="og:type" content="website">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&family=Sora:wght@600;700&display=swap" rel="stylesheet">
+<style>
+
+/* ===== Tokens ===== */
+.aia{
+  --ink:#14122E; --ink-2:#1F1C42; --ink-3:#2A2658; --line-dark:#37336B; --line-dark-2:#4A4585;
+  --on-dark:#F5F4FF; --on-dark-muted:#C4C0E6; --on-dark-soft:#A9A5CF;
+  --accent:#A78BFA; --violet:#6D4AE0; --violet-deep:#5B3BC9; --violet-ink:#2E1F73; --violet-tint:#EEEBFD;
+  --blue:#1D4ED8; --blue-btn:#2563EB; --blue-hover:#1E40AF;
+  --bg:#F6F6FA; --surface:#FFFFFF; --line:#E3E2EE; --text:#1B1A2E; --muted:#55536E;
+  --display:"Sora", "Segoe UI", system-ui, sans-serif;
+  --body:"Manrope", "Segoe UI", system-ui, sans-serif;
+  --wrap:1200px; --gutter:clamp(20px, 5vw, 120px);
+}
+*,*::before,*::after{box-sizing:border-box}
+body{margin:0}
+.aia{font-family:var(--body);color:var(--text);background:var(--bg);line-height:1.6;-webkit-font-smoothing:antialiased}
+.aia img,.aia svg{max-width:100%}
+.aia a{color:var(--blue)}
+.aia a:hover{color:var(--blue-hover)}
+.aia :focus-visible{outline:3px solid var(--accent);outline-offset:3px;border-radius:6px}
+.aia h1,.aia h2,.aia h3{font-family:var(--display);margin:0;letter-spacing:-0.01em;line-height:1.15}
+.aia p{margin:0}
+.aia .wrap{max-width:calc(var(--wrap) + 2*var(--gutter));margin:0 auto;padding-inline:var(--gutter)}
+.aia .section{padding-block:clamp(64px, 9vw, 112px)}
+.aia .section--white{background:var(--surface)}
+.aia .section--dark{background:var(--ink);color:var(--on-dark)}
+.aia .label{display:block;font-size:14px;font-weight:700;color:var(--violet);margin-bottom:12px}
+.aia .section--dark .label{color:var(--accent)}
+.aia .head{max-width:760px;margin-bottom:clamp(28px, 4vw, 48px)}
+.aia .head h2{font-size:clamp(28px, 3.4vw, 40px)}
+.aia .head p{margin-top:14px;font-size:clamp(16px, 1.4vw, 18px);color:var(--muted)}
+.aia .section--dark .head p{color:var(--on-dark-muted)}
+.aia .ico{width:24px;height:24px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round;flex-shrink:0}
+
+/* Buttons */
+.aia .btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:48px;padding:14px 24px;border-radius:12px;font-weight:700;font-size:16px;text-decoration:none;transition:background-color .15s}
+.aia .btn--primary{background:var(--blue-btn);color:#fff}
+.aia .btn--primary:hover{background:var(--blue);color:#fff}
+.aia .btn--ghost-dark{border:1px solid var(--line-dark-2);color:var(--on-dark);font-weight:600}
+.aia .btn--ghost-dark:hover{background:var(--ink-2);color:var(--on-dark)}
+.aia .btn--outline{border:1px solid var(--blue);color:var(--blue)}
+.aia .btn--outline:hover{background:#EEF3FF;color:var(--blue-hover)}
+
+/* ===== Header (à remplacer par celui de votre site si besoin) ===== */
+.aia-header{background:#fff;border-bottom:1px solid var(--line);position:sticky;top:0;z-index:10}
+.aia-header .wrap{display:flex;align-items:center;justify-content:space-between;min-height:76px}
+.aia-logo{display:flex;align-items:center;gap:12px;text-decoration:none;color:var(--text)!important}
+.aia-logo b{display:grid;place-items:center;width:46px;height:46px;border-radius:12px;background:var(--blue);color:#fff;font-family:var(--display);font-size:15px}
+.aia-logo span{display:flex;flex-direction:column;line-height:1.15;font-weight:700;font-size:18px}
+.aia-logo small{font-weight:500;font-size:15px;color:var(--muted)}
+.aia-nav{display:flex;align-items:center;gap:32px;font-weight:600;font-size:15px}
+.aia-nav a{color:var(--text);text-decoration:none}
+.aia-nav a.btn{color:#fff;min-height:44px;padding:10px 18px}
+.aia-burger{display:none;width:44px;height:44px;border:0;background:none;color:var(--text);cursor:pointer;border-radius:10px}
+@media (max-width:860px){
+  .aia-burger{display:grid;place-items:center}
+  .aia-nav{display:none;position:absolute;top:76px;left:0;right:0;flex-direction:column;align-items:stretch;gap:0;background:#fff;border-bottom:1px solid var(--line);padding:8px var(--gutter) 20px}
+  .aia-nav.is-open{display:flex}
+  .aia-nav a{padding:14px 0;border-bottom:1px solid var(--line)}
+  .aia-nav a.btn{margin-top:12px;border:0}
+}
+
+/* ===== Hero ===== */
+.aia-hero{background:var(--ink);color:var(--on-dark);padding-block:clamp(56px, 8vw, 96px)}
+.aia-hero .wrap{display:grid;grid-template-columns:minmax(0,1fr) 460px;gap:64px;align-items:center}
+.aia-pill{display:inline-block;padding:7px 14px;border-radius:999px;border:1px solid var(--line-dark-2);color:var(--accent);font-size:14px;font-weight:700;margin-bottom:24px}
+.aia-hero h1{font-size:clamp(34px, 4.6vw, 56px);line-height:1.1;letter-spacing:-0.02em;font-weight:700}
+.aia-hero .lead{margin-top:22px;font-size:clamp(17px, 1.6vw, 20px);color:var(--on-dark-muted);max-width:580px}
+.aia-hero .ctas{display:flex;flex-wrap:wrap;gap:14px;margin-top:32px}
+.aia-hero .reassure{margin-top:18px;font-size:14px;color:var(--on-dark-soft)}
+.aia-flow{background:var(--ink-2);border:1px solid var(--line-dark);border-radius:20px;padding:24px;display:flex;flex-direction:column;gap:12px}
+.aia-flow header{display:flex;justify-content:space-between;align-items:center;font-size:14px;color:var(--on-dark-muted);padding-bottom:4px}
+.aia-flow header strong{color:var(--on-dark)}
+.aia-flow .live{display:flex;align-items:center;gap:6px}
+.aia-flow .live::before{content:"";width:8px;height:8px;border-radius:50%;background:#4ADE80}
+.aia-flow ol{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:12px}
+.aia-flow li{display:flex;gap:14px;align-items:flex-start;padding:16px;border-radius:14px;background:var(--ink);border:1px solid var(--line-dark)}
+.aia-flow li.is-human{border-color:var(--accent)}
+.aia-flow .n{display:grid;place-items:center;width:32px;height:32px;border-radius:50%;background:var(--ink-3);color:var(--accent);font-weight:700;font-size:14px;flex-shrink:0}
+.aia-flow li b{display:block;font-size:16px}
+.aia-flow li span{font-size:14px;color:var(--on-dark-muted)}
+@media (max-width:980px){.aia-hero .wrap{grid-template-columns:1fr;gap:40px}}
+@media (max-width:520px){.aia-hero .ctas .btn{width:100%}}
+
+/* ===== Constat ===== */
+.aia-pains{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:20px;list-style:none;margin:0;padding:0}
+.aia-pains li{background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:26px;display:flex;flex-direction:column;gap:12px}
+.aia-pains .ib{display:grid;place-items:center;width:44px;height:44px;border-radius:12px;background:var(--violet-tint);color:var(--violet)}
+.aia-pains b{font-size:18px}
+.aia-pains span{font-size:15px;color:var(--muted);line-height:1.55}
+@media (max-width:1000px){.aia-pains{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:560px){.aia-pains{grid-template-columns:1fr}}
+
+/* ===== Agents ===== */
+.aia-agents{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:24px}
+.aia-agent{background:var(--bg);border:1px solid var(--line);border-radius:20px;padding:clamp(24px, 3vw, 36px);display:flex;flex-direction:column;gap:18px}
+.aia-agent .top{display:flex;align-items:center;gap:16px}
+.aia-agent .ib{display:grid;place-items:center;width:52px;height:52px;border-radius:14px;background:var(--ink);color:var(--accent);flex-shrink:0}
+.aia-agent h3{font-size:clamp(19px, 1.8vw, 22px)}
+.aia-agent dl{margin:0;display:flex;flex-direction:column;gap:16px}
+.aia-agent dt{font-size:13px;font-weight:700;color:var(--muted);margin-bottom:4px}
+.aia-agent dd{margin:0;font-size:16px;line-height:1.55}
+.aia-agent .result{background:var(--violet-tint);border-radius:12px;padding:14px 16px}
+.aia-agent .result dt{color:var(--violet-deep)}
+.aia-agent .result dd{font-weight:700;color:var(--violet-ink)}
+.aia-tools{display:flex;flex-wrap:wrap;align-items:center;gap:8px;font-size:13px;margin-top:auto}
+.aia-tools > span:first-child{color:var(--muted);font-weight:600;margin-right:2px}
+.aia-tools .t{padding:6px 10px;border-radius:8px;background:#fff;border:1px solid var(--line)}
+@media (max-width:860px){.aia-agents{grid-template-columns:1fr}}
+
+/* ===== Méthode ===== */
+.aia-steps{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:32px;list-style:none;margin:0;padding:0}
+.aia-steps li{display:flex;flex-direction:column;gap:10px;padding-top:24px;border-top:2px solid var(--line-dark)}
+.aia-steps li:first-child{border-top-color:var(--accent)}
+.aia-steps .num{font-family:var(--display);font-size:30px;font-weight:700;color:var(--accent)}
+.aia-steps b{font-size:20px}
+.aia-steps p{font-size:15px;color:var(--on-dark-muted)}
+.aia-steps .dur{align-self:flex-start;display:inline-flex;align-items:center;gap:6px;padding:6px 10px;border-radius:8px;background:var(--ink-2);font-size:13px;font-weight:600}
+@media (max-width:1000px){.aia-steps{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:560px){.aia-steps{grid-template-columns:1fr;gap:24px}}
+
+/* ===== Confiance ===== */
+.aia-trust{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:32px;list-style:none;margin:0;padding:0}
+.aia-trust li{display:flex;flex-direction:column;gap:10px}
+.aia-trust .ico{width:28px;height:28px;color:var(--violet)}
+.aia-trust b{font-size:18px}
+.aia-trust span{font-size:15px;color:var(--muted)}
+@media (max-width:1000px){.aia-trust{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:560px){.aia-trust{grid-template-columns:1fr;gap:24px}}
+
+/* ===== Tarifs ===== */
+.aia-plans{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px;align-items:stretch}
+.aia-plan{background:var(--surface);border:1px solid var(--line);border-radius:20px;padding:clamp(24px, 3vw, 36px);display:flex;flex-direction:column;gap:14px}
+.aia-plan h3{font-size:22px;display:flex;justify-content:space-between;align-items:center;gap:12px}
+.aia-plan .for{font-size:15px;color:var(--muted)}
+.aia-plan .price{font-size:15px;color:var(--muted);margin-top:6px}
+.aia-plan .price strong{display:block;font-family:var(--display);font-size:34px;color:var(--text);line-height:1.1}
+.aia-plan .monthly{font-size:15px;color:var(--muted)}
+.aia-plan .monthly strong{color:var(--text)}
+.aia-plan ul{list-style:none;margin:8px 0 0;padding:0;display:flex;flex-direction:column;gap:12px;font-size:15px;flex-grow:1}
+.aia-plan li{display:flex;gap:10px;align-items:flex-start}
+.aia-plan li .ico{width:20px;height:20px;color:var(--violet);margin-top:2px}
+.aia-plan .btn{margin-top:12px}
+.aia-plan--featured{background:var(--ink);border-color:var(--ink);color:var(--on-dark)}
+.aia-plan--featured .for,.aia-plan--featured .price,.aia-plan--featured .monthly{color:var(--on-dark-muted)}
+.aia-plan--featured .price strong,.aia-plan--featured .monthly strong{color:var(--on-dark)}
+.aia-plan--featured li .ico{color:var(--accent)}
+.aia-badge{padding:5px 10px;border-radius:999px;background:var(--ink-3);color:var(--accent);font-family:var(--body);font-size:12px;font-weight:700}
+.aia-plans-note{margin-top:24px;font-size:14px;color:var(--muted);max-width:760px}
+@media (max-width:1000px){.aia-plans{grid-template-columns:1fr;max-width:560px}}
+
+/* ===== FAQ ===== */
+.aia-faq .wrap{display:grid;grid-template-columns:360px minmax(0,1fr);gap:80px}
+.aia-faq details{border-bottom:1px solid var(--line)}
+.aia-faq summary{list-style:none;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:16px;padding:22px 0;font-weight:700;font-size:18px}
+.aia-faq summary::-webkit-details-marker{display:none}
+.aia-faq summary .ico{transition:transform .2s;color:var(--violet)}
+.aia-faq details[open] summary .ico{transform:rotate(45deg)}
+.aia-faq details p{padding-bottom:22px;font-size:16px;color:var(--muted);max-width:680px}
+@media (max-width:900px){.aia-faq .wrap{grid-template-columns:1fr;gap:16px}.aia-faq summary{font-size:16px}}
+
+/* ===== CTA final ===== */
+.aia-final{text-align:center}
+.aia-final h2{font-size:clamp(28px, 3.8vw, 44px);max-width:820px;margin:0 auto}
+.aia-final p{margin:18px auto 0;font-size:clamp(16px, 1.5vw, 19px);color:var(--on-dark-muted);max-width:620px}
+.aia-final .btn{margin-top:30px;min-height:56px;padding-inline:30px;font-size:17px}
+.aia-final small{display:block;margin-top:16px;font-size:14px;color:var(--on-dark-soft)}
+@media (max-width:520px){.aia-final .btn{width:100%}}
+
+/* ===== Footer (à remplacer par celui de votre site si besoin) ===== */
+.aia-footer{background:#0E0C22;color:var(--on-dark-soft);font-size:14px;padding-block:28px}
+.aia-footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:16px}
+.aia-footer nav{display:flex;flex-wrap:wrap;gap:24px}
+.aia-footer a{color:var(--on-dark-muted);text-decoration:none}
+.aia-footer a:hover{color:#fff}
+
+@media (prefers-reduced-motion:reduce){.aia *{transition:none!important}}
+
+.aia-steps--light li{border-top-color:var(--line)}
+.aia-steps--light li:first-child{border-top-color:var(--violet)}
+.aia-steps--light .num{color:var(--violet)}
+.aia-steps--light p{color:var(--muted)}
+.aia-steps--light .dur{background:var(--violet-tint);color:var(--violet-ink)}
+
+
+/* ===== Spécifique page Visibilité IA ===== */
+.aia-answer{background:var(--ink-2);border:1px solid var(--line-dark);border-radius:20px;padding:24px;display:flex;flex-direction:column;gap:16px}
+.aia-answer .tag{font-size:13px;color:var(--on-dark-soft)}
+.aia-answer .q{align-self:flex-end;max-width:90%;background:var(--ink-3);border-radius:16px 16px 4px 16px;padding:12px 16px;font-size:15px}
+.aia-answer .a{background:var(--ink);border:1px solid var(--line-dark);border-radius:16px 16px 16px 4px;padding:16px;font-size:15px;color:var(--on-dark-muted)}
+.aia-answer .a ol{margin:10px 0 0;padding-left:20px;display:flex;flex-direction:column;gap:6px;color:var(--on-dark)}
+.aia-answer .missing{display:flex;align-items:center;gap:10px;padding:12px 14px;border-radius:12px;border:1px dashed var(--accent);color:var(--on-dark);font-size:15px}
+.aia-answer .missing b{color:var(--accent)}
+
+.aia-compare{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px;list-style:none;margin:0;padding:0}
+.aia-compare li{background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:26px;display:flex;flex-direction:column;gap:10px}
+.aia-compare b{font-size:18px}
+.aia-compare span{font-size:15px;color:var(--muted)}
+@media (max-width:900px){.aia-compare{grid-template-columns:1fr}}
+
+.aia-measure{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:24px}
+.aia-measure article{background:var(--bg);border:1px solid var(--line);border-radius:20px;padding:clamp(22px, 3vw, 32px);display:flex;gap:18px;align-items:flex-start}
+.aia-measure .ib{display:grid;place-items:center;width:48px;height:48px;border-radius:14px;background:var(--ink);color:var(--accent);flex-shrink:0}
+.aia-measure h3{font-size:19px;margin-bottom:6px}
+.aia-measure p{font-size:15px;color:var(--muted)}
+@media (max-width:820px){.aia-measure{grid-template-columns:1fr}}
+
+.aia-diff .wrap{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:64px;align-items:start}
+.aia-diff ul{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:22px}
+.aia-diff li{display:flex;gap:14px}
+.aia-diff li .ico{color:var(--accent);margin-top:3px}
+.aia-diff li b{display:block;font-size:18px;margin-bottom:4px}
+.aia-diff li span{color:var(--on-dark-muted);font-size:15px}
+.aia-sectors{display:flex;flex-wrap:wrap;gap:10px;margin-top:24px}
+.aia-sectors a{padding:8px 14px;border-radius:999px;border:1px solid var(--line-dark-2);color:var(--on-dark);text-decoration:none;font-size:14px;font-weight:600}
+.aia-sectors a:hover{background:var(--ink-2);color:#fff}
+@media (max-width:900px){.aia-diff .wrap{grid-template-columns:1fr;gap:36px}}
+
+.aia-form{background:var(--surface);border:1px solid var(--line);border-radius:20px;padding:clamp(24px, 4vw, 40px);display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px;text-align:left;color:var(--text);max-width:760px;margin:32px auto 0}
+.aia-form label{display:flex;flex-direction:column;gap:6px;font-size:14px;font-weight:700}
+.aia-form label.full{grid-column:1 / -1}
+.aia-form input,.aia-form select{font:inherit;font-weight:500;font-size:16px;padding:12px 14px;border-radius:10px;border:1px solid #C9C7DA;background:#fff;color:var(--text);min-height:48px}
+.aia-form input:focus,.aia-form select:focus{outline:3px solid var(--accent);outline-offset:1px;border-color:var(--violet)}
+.aia-form .hint{font-weight:500;color:var(--muted);font-size:13px}
+.aia-form button{grid-column:1 / -1;border:0;cursor:pointer;font:inherit}
+.aia-form .legal{grid-column:1 / -1;font-size:13px;color:var(--muted)}
+@media (max-width:620px){.aia-form{grid-template-columns:1fr}}
+</style>
+
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@graph":[
+    {"@type":"Service","name":"Audit et optimisation de la visibilité dans les IA (GEO)","provider":{"@type":"Organization","name":"TechRepair Content","url":"https://techrepaircontent.com"},"areaServed":"FR","audience":{"@type":"BusinessAudience","name":"Entreprises B2B tech : SaaS, cybersécurité, fintech, RH tech, e-commerce"},
+     "offers":[
+       {"@type":"Offer","name":"Test de visibilité IA","price":"0","priceCurrency":"EUR"},
+       {"@type":"Offer","name":"Audit GEO complet","price":"990","priceCurrency":"EUR","description":"Prix hors taxes"},
+       {"@type":"Offer","name":"Accompagnement visibilité IA","price":"1490","priceCurrency":"EUR","description":"À partir de, hors taxes, par mois"}
+     ]},
+    {"@type":"FAQPage","mainEntity":[
+      {"@type":"Question","name":"Qu'est-ce que le GEO ?","acceptedAnswer":{"@type":"Answer","text":"Le GEO (Generative Engine Optimization) consiste à rendre votre marque et vos contenus faciles à trouver, comprendre et citer par les IA génératives comme ChatGPT, Perplexity, Gemini, Claude ou les réponses IA de Google."}},
+      {"@type":"Question","name":"Le SEO classique est-il encore utile ?","acceptedAnswer":{"@type":"Answer","text":"Oui. Les IA qui cherchent sur le web s'appuient en grande partie sur des pages bien indexées. Le GEO s'ajoute au SEO : il travaille la clarté des réponses, la structure des pages et votre présence sur les sources que les IA consultent."}},
+      {"@type":"Question","name":"Pouvez-vous garantir que mon entreprise sera citée ?","acceptedAnswer":{"@type":"Answer","text":"Non, et personne ne peut le garantir honnêtement : les réponses des IA varient selon la question, le moment et l'utilisateur. Nous mesurons votre taux de citation avant et après, sur les mêmes questions, pour suivre les progrès de façon objective."}},
+      {"@type":"Question","name":"En combien de temps voit-on des résultats ?","acceptedAnswer":{"@type":"Answer","text":"Les premières évolutions apparaissent généralement entre quelques semaines et trois mois, car chaque IA met à jour ses sources à son propre rythme."}},
+      {"@type":"Question","name":"Quelles IA testez-vous ?","acceptedAnswer":{"@type":"Answer","text":"ChatGPT, Perplexity, Gemini, Claude et les réponses IA de Google. Le test gratuit couvre ChatGPT et Perplexity."}}
+    ]}
+  ]
+}
+</script>
+</head>
+<body>
+<div class="aia">
+
+<header class="aia-header">
+  <div class="wrap">
+    <a class="aia-logo" href="/"><b>TRD</b><span>TechRepair<small>Content</small></span></a>
+    <button class="aia-burger" type="button" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="aia-nav">
+      <svg class="ico" viewBox="0 0 24 24" width="26" height="26" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+    </button>
+    <nav class="aia-nav" id="aia-nav" aria-label="Navigation de la page">
+      <a href="#audit">Ce qu'on mesure</a>
+      <a href="#methode">Méthode</a>
+      <a href="#tarifs">Tarifs</a>
+      <a href="#faq">FAQ</a>
+      <a class="btn btn--primary" href="#test">Test gratuit</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+
+<section class="aia-hero">
+  <div class="wrap">
+    <div>
+      <span class="aia-pill">Visibilité dans les IA</span>
+      <h1>Quand vos acheteurs demandent à ChatGPT, est-ce votre nom qui sort ?</h1>
+      <p class="lead">Vos prospects B2B posent désormais leurs questions à ChatGPT, Perplexity, Gemini et aux réponses IA de Google. Nous mesurons si votre marque y est citée, puis nous écrivons les contenus qui vous y font apparaître.</p>
+      <div class="ctas">
+        <a class="btn btn--primary" href="#test">Tester ma visibilité gratuitement</a>
+        <a class="btn btn--ghost-dark" href="#audit">Ce que nous mesurons</a>
+      </div>
+      <p class="reassure">Résultat sous 48 h ouvrées, sans engagement</p>
+    </div>
+
+    <figure class="aia-answer" aria-label="Exemple de réponse d'une IA à une question d'acheteur">
+      <span class="tag">Exemple de question posée à une IA</span>
+      <div class="q">Quel logiciel de gestion des notes de frais pour une PME de 80 salariés ?</div>
+      <div class="a">Voici les solutions les plus souvent recommandées :
+        <ol><li>Concurrent A</li><li>Concurrent B</li><li>Concurrent C</li></ol>
+      </div>
+      <div class="missing"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/></svg><span>Votre marque : <b>absente de la réponse</b></span></div>
+    </figure>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap">
+    <div class="head">
+      <span class="label">Pourquoi maintenant</span>
+      <h2>Google classe des pages. Les IA choisissent quelques marques.</h2>
+      <p>Être en première page ne suffit plus si l'IA qui répond à votre prospect ne vous mentionne pas.</p>
+    </div>
+    <ul class="aia-compare">
+      <li><b>Une seule réponse, pas dix liens</b><span>L'IA résume et recommande. Le prospect ne voit souvent que les marques qu'elle cite.</span></li>
+      <li><b>Peu de places disponibles</b><span>Une réponse cite en général trois à cinq solutions. Si vos concurrents y sont, ils prennent la demande.</span></li>
+      <li><b>Des critères différents</b><span>Les IA privilégient les contenus clairs, structurés, à jour, et les marques citées sur d'autres sites de confiance.</span></li>
+    </ul>
+  </div>
+</section>
+
+<section class="section section--white" id="audit">
+  <div class="wrap">
+    <div class="head">
+      <span class="label">L'audit</span>
+      <h2>Ce que nous mesurons</h2>
+      <p>Un état des lieux chiffré, puis un plan d'action classé par impact.</p>
+    </div>
+    <div class="aia-measure">
+      <article><span class="ib"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></span><div><h3>Les questions de vos acheteurs</h3><p>Nous listons 30 questions réelles que posent vos prospects, du problème au choix d'une solution.</p></div></article>
+      <article><span class="ib"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 3v18h18"/><path d="m7 15 4-4 3 3 5-6"/></svg></span><div><h3>Votre taux de citation</h3><p>Nous posons ces questions à ChatGPT, Perplexity, Gemini, Claude et aux réponses IA de Google, et comptons vos apparitions.</p></div></article>
+      <article><span class="ib"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><circle cx="9" cy="7" r="4"/><path d="M3 21v-2a4 4 0 0 1 4-4h4a4 4 0 0 1 4 4v2"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/><path d="M21 21v-2a4 4 0 0 0-3-3.85"/></svg></span><div><h3>Qui est cité à votre place</h3><p>Les concurrents mentionnés, et surtout les sources sur lesquelles les IA s'appuient pour les recommander.</p></div></article>
+      <article><span class="ib"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M7 9h10M7 13h6"/></svg></span><div><h3>Ce que les IA voient de votre site</h3><p>Accès des robots IA, données structurées, fichier llms.txt, et pages qui répondent clairement aux questions.</p></div></article>
+    </div>
+  </div>
+</section>
+
+<section class="section section--dark aia-diff">
+  <div class="wrap">
+    <div class="head" style="margin-bottom:0">
+      <span class="label">Notre différence</span>
+      <h2>Un audit, c'est un début. Nous écrivons aussi les contenus.</h2>
+      <p>La plupart des audits se terminent par une liste de recommandations. Chez nous, la même équipe rédige les pages et articles qui vous font citer.</p>
+      <div class="aia-sectors" aria-label="Secteurs couverts">
+        <a href="/secteur-saas.html">SaaS</a><a href="/secteur-cybersecurite.html">Cybersécurité</a><a href="/secteur-fintech.html">Fintech</a><a href="/secteur-rh-tech.html">RH tech</a><a href="/secteur-ecommerce.html">E-commerce</a>
+      </div>
+    </div>
+    <ul>
+      <li><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><div><b>Spécialistes B2B tech</b><span>Nous connaissons le vocabulaire et les cycles d'achat de vos clients, et les questions qu'ils posent vraiment.</span></div></li>
+      <li><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><div><b>Rédaction intégrée</b><span>Pages comparatives, FAQ, guides et fiches produits structurés pour être repris par les IA.</span></div></li>
+      <li><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><div><b>Mesure avant / après</b><span>Les mêmes questions, retestées chaque mois : vous voyez ce qui progresse.</span></div></li>
+      <li><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><div><b>SEO et GEO ensemble</b><span>Chaque contenu est pensé pour Google et pour les IA, sans double budget.</span></div></li>
+    </ul>
+  </div>
+</section>
+
+<section class="section" id="methode">
+  <div class="wrap">
+    <div class="head">
+      <span class="label">Méthode</span>
+      <h2>Quatre étapes, des résultats mesurés</h2>
+    </div>
+    <ol class="aia-steps aia-steps--light">
+      <li><span class="num">01</span><b>Test gratuit</b><p>10 questions clés posées à ChatGPT et Perplexity, avec vos 3 principaux concurrents.</p><span class="dur">48 h ouvrées</span></li>
+      <li><span class="num">02</span><b>Audit complet</b><p>30 questions, 5 IA, analyse des sources et du site, plan d'action priorisé.</p><span class="dur">10 jours ouvrés</span></li>
+      <li><span class="num">03</span><b>Optimisation</b><p>Réécriture des pages clés, nouveaux contenus, données structurées, présence sur les sources citées.</p><span class="dur">Mois 1 à 3</span></li>
+      <li><span class="num">04</span><b>Suivi</b><p>Nouveau test chaque mois sur les mêmes questions et ajustement des priorités.</p><span class="dur">Chaque mois</span></li>
+    </ol>
+  </div>
+</section>
+
+<section class="section section--white" id="tarifs">
+  <div class="wrap">
+    <div class="head">
+      <span class="label">Tarifs</span>
+      <h2>Commencez gratuitement, avancez à votre rythme</h2>
+    </div>
+    <div class="aia-plans">
+      <div class="aia-plan">
+        <h3>Test de visibilité</h3>
+        <p class="for">Savoir où vous en êtes</p>
+        <p class="price">Prix<strong>Gratuit</strong></p>
+        <p class="monthly">Sans engagement</p>
+        <ul>
+          <li><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>10 questions de votre marché</li>
+          <li><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>ChatGPT et Perplexity</li>
+          <li><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Comparaison avec 3 concurrents</li>
+          <li><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>3 actions prioritaires</li>
+        </ul>
+        <a class="btn btn--outline" href="#test">Demander mon test</a>
+      </div>
+      <div class="aia-plan aia-plan--featured">
+        <h3>Accompagnement <span class="aia-badge">Recommandé</span></h3>
+        <p class="for">Être cité, mois après mois</p>
+        <p class="price">À partir de<strong>1 490 € HT</strong></p>
+        <p class="monthly">par mois, <strong>audit complet offert</strong> pour 6 mois</p>
+        <ul>
+          <li><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Audit GEO complet inclus</li>
+          <li><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>4 contenus optimisés SEO et IA par mois</li>
+          <li><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Réécriture de vos pages clés</li>
+          <li><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Rapport mensuel de citations</li>
+        </ul>
+        <a class="btn btn--primary" href="#test">Commencer par le test gratuit</a>
+      </div>
+      <div class="aia-plan">
+        <h3>Audit GEO complet</h3>
+        <p class="for">Un plan d'action, sans abonnement</p>
+        <p class="price">Prix fixe<strong>990 € HT</strong></p>
+        <p class="monthly">Livré en 10 jours ouvrés</p>
+        <ul>
+          <li><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>30 questions, 5 IA testées</li>
+          <li><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Analyse des concurrents et des sources</li>
+          <li><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Audit technique (robots IA, données structurées)</li>
+          <li><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Plan d'action priorisé et restitution en visio</li>
+        </ul>
+        <a class="btn btn--outline" href="#test">Commander l'audit</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section aia-faq" id="faq">
+  <div class="wrap">
+    <div class="head">
+      <span class="label">FAQ</span>
+      <h2>Vos questions</h2>
+    </div>
+    <div>
+      <details><summary>Qu'est-ce que le GEO ?<svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg></summary><p>Le GEO (Generative Engine Optimization) consiste à rendre votre marque et vos contenus faciles à trouver, comprendre et citer par les IA génératives comme ChatGPT, Perplexity, Gemini, Claude ou les réponses IA de Google.</p></details>
+      <details><summary>Le SEO classique est-il encore utile ?<svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg></summary><p>Oui. Les IA qui cherchent sur le web s'appuient en grande partie sur des pages bien indexées. Le GEO s'ajoute au SEO : il travaille la clarté des réponses, la structure des pages et votre présence sur les sources que les IA consultent.</p></details>
+      <details><summary>Pouvez-vous garantir que mon entreprise sera citée ?<svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg></summary><p>Non, et personne ne peut le garantir honnêtement : les réponses des IA varient selon la question, le moment et l'utilisateur. Nous mesurons votre taux de citation avant et après, sur les mêmes questions, pour suivre les progrès de façon objective.</p></details>
+      <details><summary>En combien de temps voit-on des résultats ?<svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg></summary><p>Les premières évolutions apparaissent généralement entre quelques semaines et trois mois, car chaque IA met à jour ses sources à son propre rythme.</p></details>
+      <details><summary>Quelles IA testez-vous ?<svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg></summary><p>ChatGPT, Perplexity, Gemini, Claude et les réponses IA de Google. Le test gratuit couvre ChatGPT et Perplexity.</p></details>
+    </div>
+  </div>
+</section>
+
+<section class="section section--dark aia-final" id="test">
+  <div class="wrap">
+    <h2>Découvrez si les IA vous recommandent</h2>
+    <p>Indiquez votre site et vos concurrents : vous recevez votre test de visibilité sous 48 h ouvrées.</p>
+    <!-- Remplacez VOTRE_ID par l'identifiant de votre formulaire (Formspree, Tally, ou l'URL de votre propre script) -->
+    <form class="aia-form" action="https://formspree.io/f/VOTRE_ID" method="POST">
+      <input type="hidden" name="_subject" value="Demande de test de visibilité IA">
+      <label>Site web<input type="url" name="site" placeholder="https://votre-site.fr" required autocomplete="url"></label>
+      <label>Email professionnel<input type="email" name="email" placeholder="prenom@entreprise.fr" required autocomplete="email"></label>
+      <label>Secteur
+        <select name="secteur" required>
+          <option value="">Choisir</option>
+          <option>SaaS</option><option>Cybersécurité</option><option>Fintech</option><option>RH tech</option><option>E-commerce</option><option>Autre</option>
+        </select>
+      </label>
+      <label>Votre offre en quelques mots<input type="text" name="offre" placeholder="Ex. : logiciel de paie pour PME"></label>
+      <label class="full">Vos 3 principaux concurrents <span class="hint">Séparés par des virgules</span><input type="text" name="concurrents" placeholder="Concurrent A, Concurrent B, Concurrent C"></label>
+      <button class="btn btn--primary" type="submit">Recevoir mon test gratuit</button>
+      <p class="legal">Vos informations servent uniquement à réaliser le test et à vous recontacter. <a href="/confidentialite">Politique de confidentialité</a></p>
+    </form>
+  </div>
+</section>
+
+</main>
+
+<footer class="aia-footer">
+  <div class="wrap">
+    <span>© 2026 TechRepair Content</span>
+    <nav aria-label="Liens légaux"><a href="/mentions-legales">Mentions légales</a><a href="/confidentialite">Confidentialité</a><a href="/contact">Contact</a></nav>
+  </div>
+</footer>
+
+</div>
+
+<script>
+(function(){
+  var btn=document.querySelector('.aia-burger'), nav=document.getElementById('aia-nav');
+  if(!btn||!nav) return;
+  btn.addEventListener('click',function(){
+    var open=nav.classList.toggle('is-open');
+    btn.setAttribute('aria-expanded',open?'true':'false');
+    btn.setAttribute('aria-label',open?'Fermer le menu':'Ouvrir le menu');
+  });
+  nav.querySelectorAll('a').forEach(function(a){a.addEventListener('click',function(){nav.classList.remove('is-open');btn.setAttribute('aria-expanded','false');});});
+})();
+</script>
+</body>
+</html>

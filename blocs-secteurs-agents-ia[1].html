@@ -1,0 +1,108 @@
+<!--
+  BLOCS « AGENTS IA » POUR LES PAGES SECTEURS
+  1. Collez le bloc <style> une seule fois (dans le <head> ou en haut de chaque page secteur).
+  2. Collez le bloc <section> correspondant dans chaque page secteur, avant l'appel à l'action final.
+-->
+<style>
+.aia-sector{--ink:#14122E;--ink-2:#1F1C42;--ink-3:#2A2658;--line:#37336B;--line-2:#4A4585;--on:#F5F4FF;--muted:#D6D3F0;--accent:#A78BFA;--blue:#2563EB;--blue-d:#1D4ED8;
+  box-sizing:border-box;padding:clamp(24px, 5vw, 64px) clamp(16px, 5vw, 120px);font-family:"Manrope","Segoe UI",system-ui,sans-serif;line-height:1.6}
+.aia-sector *{box-sizing:border-box}
+.aia-sector .box{max-width:1200px;margin:0 auto;padding:clamp(28px, 5vw, 56px);border-radius:28px;background:var(--ink);color:var(--on)}
+.aia-sector .k{display:block;color:var(--accent);font-size:14px;font-weight:700;margin-bottom:12px}
+.aia-sector h2{margin:0;font-family:"Sora","Segoe UI",system-ui,sans-serif;font-size:clamp(26px, 3vw, 36px);line-height:1.15;letter-spacing:-0.01em;color:#fff;max-width:760px}
+.aia-sector .intro{margin:14px 0 0;color:var(--muted);font-size:clamp(16px, 1.4vw, 18px);max-width:720px}
+.aia-sector ul{list-style:none;margin:32px 0 0;padding:0;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+.aia-sector li{background:var(--ink-2);border:1px solid var(--line);border-radius:18px;padding:22px;display:flex;flex-direction:column;gap:8px}
+.aia-sector li b{font-size:17px;color:#fff}
+.aia-sector li span{font-size:15px;color:var(--muted)}
+.aia-sector li em{font-style:normal;font-size:13px;font-weight:700;color:var(--accent);margin-top:auto;padding-top:6px}
+.aia-sector .ctas{display:flex;flex-wrap:wrap;gap:12px;margin-top:28px}
+.aia-sector .btn{display:inline-flex;align-items:center;justify-content:center;min-height:48px;padding:14px 22px;border-radius:12px;font-weight:700;font-size:16px;text-decoration:none}
+.aia-sector .btn--p{background:var(--blue);color:#fff}
+.aia-sector .btn--p:hover{background:var(--blue-d);color:#fff}
+.aia-sector .btn--g{border:1px solid var(--line-2);color:var(--on);font-weight:600}
+.aia-sector .btn--g:hover{background:var(--ink-2);color:#fff}
+.aia-sector .btn:focus-visible{outline:3px solid var(--accent);outline-offset:3px}
+@media (max-width:900px){.aia-sector ul{grid-template-columns:1fr}}
+@media (max-width:520px){.aia-sector .btn{width:100%}}
+</style>
+
+
+<!-- ================= SaaS (secteur-saas.html) ================= -->
+<section class="aia-sector" aria-labelledby="aia-saas">
+  <div class="box">
+    <span class="k">Agents IA pour éditeurs SaaS</span>
+    <h2 id="aia-saas">Moins de tickets, plus d'essais convertis</h2>
+    <p class="intro">Vos équipes support et marketing répètent les mêmes gestes à chaque nouvel utilisateur. Un agent peut les prendre en charge.</p>
+    <ul>
+      <li><b>Support produit</b><span>Répond aux questions des utilisateurs à partir de votre documentation, et escalade les bugs à votre équipe.</span><em>Agent Support Tier-1</em></li>
+      <li><b>Relance des essais gratuits</b><span>Repère les comptes en essai inactifs et leur envoie une relance adaptée à leur usage.</span><em>Agent Lead Nurturing</em></li>
+      <li><b>Contenus à chaque mise à jour</b><span>Transforme vos notes de version en articles, emails et posts prêts à relire.</span><em>Agent Content Factory</em></li>
+    </ul>
+    <div class="ctas"><a class="btn btn--p" href="/agents-ia#diagnostic">Diagnostic gratuit</a><a class="btn btn--g" href="/calculateur-temps-perdu">Calculer le temps perdu</a></div>
+  </div>
+</section>
+
+
+<!-- ================= Cybersécurité (secteur-cybersecurite.html) ================= -->
+<section class="aia-sector" aria-labelledby="aia-cyber">
+  <div class="box">
+    <span class="k">Agents IA pour la cybersécurité</span>
+    <h2 id="aia-cyber">Vos experts sur les menaces, pas sur la paperasse</h2>
+    <p class="intro">Questionnaires de sécurité, veille, contenus techniques : des tâches lourdes qui mobilisent vos profils les plus rares.</p>
+    <ul>
+      <li><b>Questionnaires de sécurité</b><span>Prépare les réponses aux questionnaires fournisseurs et appels d'offres à partir de votre documentation validée.</span><em>Agent Content Factory</em></li>
+      <li><b>Veille vulnérabilités et concurrents</b><span>Suit les nouvelles failles et les publications concurrentes, et vous propose les sujets à traiter.</span><em>Agent Veille Concurrentielle</em></li>
+      <li><b>Qualification des demandes</b><span>Trie les demandes entrantes selon la taille, le besoin et l'urgence avant de les transmettre aux commerciaux.</span><em>Agent Lead Nurturing</em></li>
+    </ul>
+    <div class="ctas"><a class="btn btn--p" href="/agents-ia#diagnostic">Diagnostic gratuit</a><a class="btn btn--g" href="/calculateur-temps-perdu">Calculer le temps perdu</a></div>
+  </div>
+</section>
+
+
+<!-- ================= Fintech (secteur-fintech.html) ================= -->
+<section class="aia-sector" aria-labelledby="aia-fintech">
+  <div class="box">
+    <span class="k">Agents IA pour la fintech</span>
+    <h2 id="aia-fintech">Suivre la réglementation sans y passer vos semaines</h2>
+    <p class="intro">Dans un secteur régulé, chaque contenu et chaque réponse client doivent être exacts. L'agent prépare, votre équipe valide.</p>
+    <ul>
+      <li><b>Veille réglementaire</b><span>Repère les nouvelles publications des autorités et résume ce qui change pour votre activité.</span><em>Agent Veille Concurrentielle</em></li>
+      <li><b>Questions clients fréquentes</b><span>Répond aux questions sur les frais, délais et démarches, à partir de contenus validés par votre conformité.</span><em>Agent Support Tier-1</em></li>
+      <li><b>Contenus pédagogiques</b><span>Rédige guides et articles explicatifs, soumis à relecture avant toute publication.</span><em>Agent Content Factory</em></li>
+    </ul>
+    <div class="ctas"><a class="btn btn--p" href="/agents-ia#diagnostic">Diagnostic gratuit</a><a class="btn btn--g" href="/calculateur-temps-perdu">Calculer le temps perdu</a></div>
+  </div>
+</section>
+
+
+<!-- ================= RH tech (secteur-rh-tech.html) ================= -->
+<section class="aia-sector" aria-labelledby="aia-rh">
+  <div class="box">
+    <span class="k">Agents IA pour la RH tech</span>
+    <h2 id="aia-rh">Des démos mieux préparées, des clients mieux accompagnés</h2>
+    <p class="intro">Entre prospects RH, utilisateurs et contenus experts, vos équipes répondent souvent aux mêmes questions.</p>
+    <ul>
+      <li><b>Qualification des prospects</b><span>Identifie la taille d'entreprise, les outils en place et le besoin avant chaque démo.</span><em>Agent Lead Nurturing</em></li>
+      <li><b>Support utilisateurs</b><span>Répond aux questions des RH et des salariés sur l'utilisation de votre logiciel.</span><em>Agent Support Tier-1</em></li>
+      <li><b>Contenus d'expertise RH</b><span>Produit articles et guides sur la paie, le recrutement ou le droit social, relus par votre équipe.</span><em>Agent Content Factory</em></li>
+    </ul>
+    <div class="ctas"><a class="btn btn--p" href="/agents-ia#diagnostic">Diagnostic gratuit</a><a class="btn btn--g" href="/calculateur-temps-perdu">Calculer le temps perdu</a></div>
+  </div>
+</section>
+
+
+<!-- ================= E-commerce (secteur-ecommerce.html) ================= -->
+<section class="aia-sector" aria-labelledby="aia-ecom">
+  <div class="box">
+    <span class="k">Agents IA pour l'e-commerce</span>
+    <h2 id="aia-ecom">Des fiches produits à grande échelle, un SAV qui suit</h2>
+    <p class="intro">Catalogue qui grandit, questions « où est ma commande ? », prix concurrents qui bougent : l'agent absorbe le volume.</p>
+    <ul>
+      <li><b>Fiches produits</b><span>Rédige et met à jour vos fiches à partir des données fournisseurs, dans votre ton et optimisées SEO.</span><em>Agent Content Factory</em></li>
+      <li><b>Suivi de commande et SAV</b><span>Répond aux questions de livraison, retours et tailles, et transmet les litiges à votre équipe.</span><em>Agent Support Tier-1</em></li>
+      <li><b>Veille prix et catalogue</b><span>Surveille les prix et nouveautés des concurrents et vous envoie un résumé chaque semaine.</span><em>Agent Veille Concurrentielle</em></li>
+    </ul>
+    <div class="ctas"><a class="btn btn--p" href="/agents-ia#diagnostic">Diagnostic gratuit</a><a class="btn btn--g" href="/calculateur-temps-perdu">Calculer le temps perdu</a></div>
+  </div>
+</section>

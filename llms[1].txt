@@ -1,0 +1,28 @@
+# TechRepair Content
+
+> Agence française de contenu et d'automatisation pour les entreprises B2B tech (SaaS, cybersécurité, fintech, RH tech, e-commerce). Rédaction SEO, visibilité dans les IA génératives (GEO) et agents IA sur mesure.
+
+## Services
+
+- [Agents IA sur mesure](https://techrepaircontent.com/agents-ia): agents Content Factory, Lead Nurturing, Veille Concurrentielle et Support Tier-1, avec validation humaine. Starter à partir de 2 900 € HT + 190 € HT/mois ; Pro à partir de 6 900 € HT + 390 € HT/mois.
+- [Visibilité dans les IA (GEO)](https://techrepaircontent.com/visibilite-ia): test gratuit, audit GEO complet à 990 € HT, accompagnement à partir de 1 490 € HT/mois avec production de contenus.
+- [Articles SEO](https://techrepaircontent.com/service-articles-seo.html): rédaction d'articles optimisés pour le B2B tech.
+- [Fiches produits](https://techrepaircontent.com/service-fiches-produits.html): rédaction de fiches produits optimisées.
+
+## Outils
+
+- [Calculateur de temps perdu](https://techrepaircontent.com/calculateur-temps-perdu): estime le temps et le coût des tâches répétitives et le délai de rentabilité d'un agent IA.
+
+## Secteurs
+
+- [SaaS](https://techrepaircontent.com/secteur-saas.html)
+- [Cybersécurité](https://techrepaircontent.com/secteur-cybersecurite.html)
+- [Fintech](https://techrepaircontent.com/secteur-fintech.html)
+- [RH tech](https://techrepaircontent.com/secteur-rh-tech.html)
+- [E-commerce](https://techrepaircontent.com/secteur-ecommerce.html)
+
+## Ressources
+
+- [Blog](https://techrepaircontent.com/blog.html)
+- [FAQ](https://techrepaircontent.com/faq.html)
+- [Contact et devis](https://techrepaircontent.com/devis.html)
