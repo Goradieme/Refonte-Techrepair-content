@@ -170,6 +170,22 @@ footer h4{font-size:10.5px;font-weight:700;color:#94a3b8;text-transform:uppercas
 /* ══ Liens vers les sources citées ══ */
 a.src{color:var(--blue);font-weight:600;text-decoration:underline;text-underline-offset:2px;text-decoration-thickness:1px;transition:color .2s}
 a.src:hover{color:var(--blue-dark);text-decoration-thickness:2px}
+/* ══ Mise en forme éditoriale (gabarit 2026) ══ */
+.ah-cover{max-width:960px;box-shadow:0 18px 50px rgba(15,27,61,.18);border:none}
+.key-points{border:1px solid var(--border);border-top:3px solid var(--blue);border-radius:0 0 14px 14px;padding:20px 24px 8px;margin:6px 0 30px;background:#fff}
+.key-points h3{margin:0 0 12px!important;font-size:12px!important;letter-spacing:1.4px;text-transform:uppercase;color:var(--blue-dark)!important}
+.key-points ul{margin-left:18px}
+.key-points li{margin-bottom:10px}
+.stat-row{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:14px;margin:20px 0 24px}
+.stat{border-left:3px solid var(--blue);padding:4px 0 4px 14px}
+.stat b{display:block;font-size:30px;font-weight:800;color:var(--navy);line-height:1.1}
+.stat span{font-size:12.5px;color:var(--muted);line-height:1.45;display:block;margin-top:4px}
+.content table th{font-size:12.5px;text-transform:uppercase;letter-spacing:.4px}
+.content table tr:nth-child(even) td{background:#fafbfd}
+.sources{font-size:13px;color:var(--muted);margin-left:20px}
+.sources li{margin-bottom:6px;line-height:1.6}
+.sources a{color:var(--blue-dark);text-decoration:underline;text-underline-offset:2px}
+@media(max-width:600px){.content table{display:block;overflow-x:auto}.stat b{font-size:26px}}
 </style>
 <script type="application/ld+json">
 {
@@ -198,7 +214,7 @@ a.src:hover{color:var(--blue-dark);text-decoration-thickness:2px}
       "inLanguage": "fr-FR",
       "keywords": "GEO référencement IA",
       "articleSection": "SEO",
-      "wordCount": 2425,
+      "wordCount": 2445,
       "image": "https://www.techrepaircontent.com/articles/geo-etre-cite-par-chatgpt-cover.jpg"
     },
     {
@@ -320,7 +336,7 @@ a.src:hover{color:var(--blue-dark);text-decoration-thickness:2px}
     <div class="ah-dot"></div>
     <span>⏱ 12 min de lecture</span>
   </div>
-  <div class="ah-cover"><img src="geo-etre-cite-par-chatgpt-cover.jpg" alt="GEO : se faire citer par ChatGPT, Perplexity et Gemini" width="1200" height="630" style="max-height:360px;object-fit:cover"/></div>
+  <div class="ah-cover"><img src="geo-etre-cite-par-chatgpt-cover.jpg" alt="GEO : se faire citer par ChatGPT, Perplexity et Gemini" width="1200" height="630" loading="eager"/></div>
 </div>
 
 <div class="layout">
@@ -330,15 +346,15 @@ a.src:hover{color:var(--blue-dark);text-decoration-thickness:2px}
 
     <p>C'est l'objet du <strong>GEO</strong>, pour <em>Generative Engine Optimization</em> : le travail qui consiste à rendre vos contenus trouvables, compréhensibles et dignes d'être cités par les moteurs de réponse IA. Le sujet attire beaucoup de promesses, et parfois de la poudre aux yeux. Ce guide fait le tri entre ce qui est documenté par les éditeurs eux-mêmes ou par la recherche, et ce qui relève encore de l'hypothèse.</p>
 
-    <p>Il s'adresse aux équipes marketing et aux fondateurs d'entreprises SaaS, tech et e-commerce B2B. Vous y trouverez :</p>
-    <ul>
-      <li>une définition claire du GEO et de ce qui le distingue du SEO classique ;</li>
-      <li>les chiffres qui permettent de dimensionner l'enjeu, sans l'exagérer ;</li>
-      <li>la façon dont ChatGPT, Perplexity, Gemini et Copilot sélectionnent réellement leurs sources ;</li>
-      <li>les réglages techniques à vérifier, et les fausses bonnes idées à éviter ;</li>
-      <li>une méthode d'écriture fondée sur des résultats publiés ;</li>
-      <li>un plan d'action sur 30 jours pour mesurer, corriger et progresser.</li>
-    </ul>
+    <div class="key-points">
+      <h3>Points clés</h3>
+      <ul>
+        <li><strong>Le GEO prolonge le SEO, il ne le remplace pas :</strong> les assistants IA puisent leurs sources dans des index de recherche.</li>
+        <li><strong>Les robots se règlent séparément :</strong> bloquer l'entraînement des modèles n'exclut pas des réponses, bloquer la recherche, si.</li>
+        <li><strong>Le contenu vérifiable est le plus cité :</strong> sources, citations et statistiques sont les leviers les mieux documentés.</li>
+        <li><strong>La visibilité se mesure déjà :</strong> GA4, le rapport de citations de Bing et un panel de questions suffisent pour commencer.</li>
+      </ul>
+    </div>
 
     <div class="toc-box">
       <h3>📋 Sommaire</h3>
@@ -352,6 +368,7 @@ a.src:hover{color:var(--blue-dark);text-decoration-thickness:2px}
         <li><a href="#ch7">Mesurer votre visibilité dans les IA</a></li>
         <li><a href="#ch8">Plan d'action sur 30 jours</a></li>
         <li><a href="#faq">Questions fréquentes</a></li>
+        <li><a href="#sources">Sources</a></li>
       </ol>
     </div>
 
@@ -375,11 +392,17 @@ a.src:hover{color:var(--blue-dark);text-decoration-thickness:2px}
 
     <h2 id="ch2">2. Pourquoi le sujet devient sérieux en B2B</h2>
 
+    <div class="stat-row">
+      <div class="stat"><b>1,2 Md</b><span>utilisateurs hebdomadaires de ChatGPT (OpenAI, septembre 2026)</span></div>
+      <div class="stat"><b>12,1 %</b><span>des inscriptions d'Ahrefs issues des assistants IA, pour 0,5 % de ses visites</span></div>
+      <div class="stat"><b>&lt; 0,6 %</b><span>du trafic venu des IA pour 90 % des 54 sites étudiés par Amsive</span></div>
+    </div>
+
     <p>L'usage, d'abord. Lors de sa conférence développeurs du 29 septembre 2026, OpenAI a évoqué <a href="https://openai.com/index/devday-2026-recap/" class="src" target="_blank" rel="noopener">1,2 milliard d'utilisateurs hebdomadaires de ChatGPT</a>. Parmi eux, des acheteurs B2B qui demandent « quel logiciel de paie pour une PME de 50 salariés » ou « comment se mettre en conformité NIS2 » avant de contacter le moindre commercial.</p>
 
-    <p>La valeur de ce trafic, ensuite, et c'est là qu'il faut rester précis. Ahrefs a publié en mai 2026 l'analyse de ses propres données : le trafic venu des assistants IA ne représentait que <a href="https://ahrefs.com/blog/fr/conversion-trafic-ia-ahrefs/" class="src" target="_blank" rel="noopener">0,5 % de ses visites, mais 12,1 % de ses inscriptions</a>, soit un taux de conversion environ 23 fois supérieur à celui de la recherche organique. Ce résultat porte sur un seul site, dont l'audience est très spécialisée.</p>
+    <p>La valeur de ce trafic, ensuite, et c'est là qu'il faut rester précis. Ahrefs a publié en mai 2026 l'analyse de ses propres données : le trafic venu des assistants IA ne représentait que <a href="https://ahrefs.com/blog/fr/conversion-trafic-ia-ahrefs/" class="src" target="_blank" rel="noopener">0,5 % de ses visites, mais 12,1 % de ses inscriptions</a>, soit un taux de conversion environ 23 fois supérieur à celui de la recherche organique. Ce résultat porte sur un seul site, à l'audience très spécialisée.</p>
 
-    <p>À l'inverse, l'agence Amsive a étudié six mois de données GA4 sur 54 sites, B2B et B2C confondus. Elle n'a trouvé <a href="https://www.blogdumoderateur.com/etude-trafic-genere-ia-convertition/" class="src" target="_blank" rel="noopener">aucun écart statistiquement significatif</a> entre la conversion du trafic IA (4,87 %) et celle du trafic organique (4,60 %), avec toutefois un léger avantage sur les sites B2B. Pour 90 % des sites étudiés, les IA pesaient moins de 0,6 % du trafic.</p>
+    <p>À l'inverse, l'agence Amsive a étudié six mois de données GA4 sur 54 sites, B2B et B2C confondus, et n'a trouvé <a href="https://www.blogdumoderateur.com/etude-trafic-genere-ia-convertition/" class="src" target="_blank" rel="noopener">aucun écart statistiquement significatif</a> entre la conversion du trafic IA (4,87 %) et celle du trafic organique (4,60 %), avec un léger avantage sur les sites B2B.</p>
 
     <div class="callout">
       <strong>La lecture honnête de ces chiffres</strong>
@@ -516,6 +539,18 @@ a.src:hover{color:var(--blue-dark);text-decoration-thickness:2px}
       <a href="/visibilite-ia" class="final-cta">Tester votre visibilité dans les IA →</a>
     </div>
 
+    <h2 id="sources">Sources</h2>
+    <ol class="sources">
+      <li>Aggarwal P. et al., « GEO: Generative Engine Optimization », arXiv:2311.09735, 2023, révisé en 2024. <a href="https://arxiv.org/abs/2311.09735" target="_blank" rel="noopener">arxiv.org</a></li>
+      <li>OpenAI, récapitulatif du DevDay 2026, 29 septembre 2026. <a href="https://openai.com/index/devday-2026-recap/" target="_blank" rel="noopener">openai.com</a></li>
+      <li>OpenAI, « Overview of OpenAI Crawlers ». <a href="https://developers.openai.com/api/docs/bots" target="_blank" rel="noopener">developers.openai.com</a></li>
+      <li>Perplexity, « Perplexity Crawlers ». <a href="https://docs.perplexity.ai/docs/resources/perplexity-crawlers.md" target="_blank" rel="noopener">docs.perplexity.ai</a></li>
+      <li>Google Search Central, « AI features and your website ». <a href="https://developers.google.com/search/docs/appearance/ai-features" target="_blank" rel="noopener">developers.google.com</a></li>
+      <li>Stox P., « Le trafic IA convertit-il mieux que le trafic SEO ? », Ahrefs, mai 2026. <a href="https://ahrefs.com/blog/fr/conversion-trafic-ia-ahrefs/" target="_blank" rel="noopener">ahrefs.com</a></li>
+      <li>Le Blog du Modérateur, étude Amsive sur la conversion du trafic IA, septembre 2025. <a href="https://www.blogdumoderateur.com/etude-trafic-genere-ia-convertition/" target="_blank" rel="noopener">blogdumoderateur.com</a></li>
+      <li>Search Influence, « Inside Bing's New AI Performance Report », février 2026. <a href="https://www.searchinfluence.com/blog/bing-ai-performance-report-copilot-citations/" target="_blank" rel="noopener">searchinfluence.com</a></li>
+    </ol>
+
   </main>
 
   <aside class="sidebar">
@@ -531,6 +566,7 @@ a.src:hover{color:var(--blue-dark);text-decoration-thickness:2px}
         <a href="#ch7">7. Mesurer</a>
         <a href="#ch8">8. Plan sur 30 jours</a>
         <a href="#faq">FAQ</a>
+        <a href="#sources">Sources</a>
       </div>
     </div>
     <div class="sidebar-card">
