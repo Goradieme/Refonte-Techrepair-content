@@ -44,7 +44,9 @@ def texte_brut(fragment: str) -> str:
 
 
 def compter_mots(fragment: str) -> int:
-    return len(re.findall(r"[\wÀ-ÿ'’-]+", texte_brut(fragment)))
+    """Mots du corps, hors liste bibliographique finale."""
+    sans_sources = re.sub(r'<ol class="sources">[\s\S]*?</ol>', " ", fragment)
+    return len(re.findall(r"[\wÀ-ÿ'’-]+", texte_brut(sans_sources)))
 
 
 def js_str(s: str) -> str:
@@ -146,7 +148,7 @@ def main(chemin_meta: str) -> None:
         "H1": esc(m["h1"]),
         "DATE_FR": date_fr,
         "LECTURE": lecture.replace(" min", " min"),
-        "COVER": (f'  <div class="ah-cover"><img src="{Path(image).name}" alt="{esc(m.get("imageAlt", m["titre"]))}" width="1200" height="630" style="max-height:360px;object-fit:cover"/></div>\n'
+        "COVER": (f'  <div class="ah-cover"><img src="{Path(image).name}" alt="{esc(m.get("imageAlt", m["titre"]))}" width="1200" height="630" loading="eager"/></div>\n'
                   if image else ""),
         "CORPS": corps,
         "MINI_TOC": mini_toc,
