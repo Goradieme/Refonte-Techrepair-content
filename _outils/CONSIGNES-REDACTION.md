@@ -101,6 +101,22 @@ rédaction technique, agents IA) et à ses secteurs (SaaS B2B, e-commerce tech,
 cybersécurité, fintech, RH tech). Un sujet tendance peut remplacer le sujet prévu du
 calendrier s'il est plus pertinent ce jour-là ; l'ajouter alors au calendrier.
 
+## Diversité des sujets (règle stricte)
+
+Avant de choisir, lire les 10 derniers articles de `articles.js` (titre, catégorie, mot-clé).
+- Jamais la même catégorie deux jours de suite ; chaque catégorie (seo, saas, ecommerce,
+  cyber, fintech, rh) revient au moins une fois tous les 7 jours.
+- Les sujets IA (GEO, ChatGPT, agents IA, moteurs de réponse, IA générative) : au plus
+  **un article par semaine**. Le reste du temps, traiter les vrais sujets métier des
+  secteurs : réglementation (NIS2, DORA, DSP3, facturation électronique, AI Act, RGPD,
+  accessibilité), sécurité, paiement, conversion e-commerce, recrutement et paie,
+  pricing et croissance SaaS, documentation produit, livres blancs, fiches produits,
+  SEO technique, stratégie de contenu.
+- Pas deux articles sur le même angle ou le même mot-clé, même reformulés.
+- Partir d'une question concrète que se pose un décideur cette semaine (actualité,
+  échéance, étude, annonce) et y répondre de façon complète et actionnable : ce qui
+  change, qui est concerné, quoi faire, dans quel ordre, avec quels chiffres.
+
 ## Catégories
 
 `seo`, `saas`, `ecommerce`, `cyber`, `fintech`, `rh` (voir `CAT_CONFIG` dans `blog.html`).
