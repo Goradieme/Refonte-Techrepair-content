@@ -17,15 +17,38 @@ commençant par `_`). Il contient tout ce qu'il faut pour produire un article pa
 4. Générer la couverture : `python3 _outils/couverture.py <slug> "<titre court>" <categorie>`
 5. Assembler et indexer : `python3 _outils/publier_article.py _outils/brouillons/<slug>.json`
    (met à jour l'article, `articles.js`, `blog.html`, `sitemap.xml`, `feed.xml` et le calendrier).
-6. Vérifier le rendu dans un navigateur (bureau et mobile).
-7. Exporter le PDF de relecture :
+6. **Contrôle qualité obligatoire** (l'article peut être publié sans relecture humaine) :
+   - `python3 _outils/verifier_article.py _outils/brouillons/<slug>.html` (installer
+     d'abord `pip install --break-system-packages -q pyspellchecker`) ; corriger tout ce
+     qui est signalé, puis relancer jusqu'à obtenir zéro problème typographique.
+   - Ouvrir **chaque** source externe avec WebFetch : la page doit exister et contenir
+     le chiffre ou l'affirmation citée, avec la même date et le même périmètre. Une
+     source introuvable, payante, ou qui ne confirme pas l'affirmation est remplacée ;
+     à défaut, l'affirmation est supprimée. Privilégier les sources primaires
+     (organisme officiel, éditeur, auteur de l'étude) aux blogs qui les reprennent.
+   - Relire l'article **en entier, deux fois** : orthographe, grammaire, accords,
+     conjugaison, ponctuation et typographie française (espace avant « ; : ! ? »,
+     guillemets « »), noms propres, chiffres, cohérence entre titre, sommaire et
+     parties, liens. Corriger directement.
+   - Relancer `publier_article.py` après les corrections.
+7. Vérifier le rendu dans un navigateur (bureau et mobile).
+8. Exporter le PDF de relecture :
    `NODE_PATH=$(npm root -g) node _outils/pdf_article.js articles/article-<slug>.html _outils/relecture/<slug>.pdf`
    puis l'ouvrir pour contrôler la mise en page.
-8. Ouvrir une demande de fusion sur une branche `article/<date>-<slug>`. Ne jamais
-   pousser sur `main` : la publication se fait quand Goradieme fusionne. Le message
+9. Ouvrir une demande de fusion sur une branche `article/<date>-<slug>`. Ne jamais
+   pousser sur `main` dans cette étape. Le message
    final de la session (envoyé par e-mail à papisdieme79@gmail.com) doit contenir le
    lien direct de téléchargement du PDF :
    `https://github.com/Goradieme/Refonte-Techrepair-content/raw/<branche>/_outils/relecture/<slug>.pdf`
+
+## Publication automatique
+
+Goradieme a demandé que l'article soit publié automatiquement s'il ne réagit pas dans
+les 2 heures suivant l'e-mail. Une tâche planifiée distincte vérifie chaque heure les
+demandes de fusion `article/...` ouvertes depuis plus de 2 heures et les fusionne,
+**sauf** si Goradieme a laissé un commentaire ou un avis sur la demande, si elle porte
+l'étiquette `attendre`, ou si elle a été fermée. Pour bloquer une publication, il suffit
+donc de commenter la demande de fusion (par exemple « stop »).
 
 ## Exigences éditoriales
 
