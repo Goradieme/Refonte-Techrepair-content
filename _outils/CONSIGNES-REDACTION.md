@@ -17,9 +17,15 @@ commençant par `_`). Il contient tout ce qu'il faut pour produire un article pa
 4. Générer la couverture : `python3 _outils/couverture.py <slug> "<titre court>" <categorie>`
 5. Assembler et indexer : `python3 _outils/publier_article.py _outils/brouillons/<slug>.json`
    (met à jour l'article, `articles.js`, `blog.html`, `sitemap.xml`, `feed.xml` et le calendrier).
-6. Vérifier le rendu dans un navigateur (bureau et mobile), puis ouvrir une demande de
-   fusion sur une branche `article/<date>-<slug>`. Ne jamais pousser sur `main` :
-   la publication se fait quand Goradieme fusionne.
+6. Vérifier le rendu dans un navigateur (bureau et mobile).
+7. Exporter le PDF de relecture :
+   `NODE_PATH=$(npm root -g) node _outils/pdf_article.js articles/article-<slug>.html _outils/relecture/<slug>.pdf`
+   puis l'ouvrir pour contrôler la mise en page.
+8. Ouvrir une demande de fusion sur une branche `article/<date>-<slug>`. Ne jamais
+   pousser sur `main` : la publication se fait quand Goradieme fusionne. Le message
+   final de la session (envoyé par e-mail à papisdieme79@gmail.com) doit contenir le
+   lien direct de téléchargement du PDF :
+   `https://github.com/Goradieme/Refonte-Techrepair-content/raw/<branche>/_outils/relecture/<slug>.pdf`
 
 ## Exigences éditoriales
 
