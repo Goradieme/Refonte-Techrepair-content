@@ -83,4 +83,17 @@ const ARTICLES = [
       motCle:    "dark social SaaS B2B",
       metaDesc:  "Slack, Discord, LinkedIn : la majorité des décisions d'achat SaaS B2B se jouent hors de vos outils d'analyse. Guide complet pour mesurer et activer le dark social."
     },
+  {
+    titre:    "GEO : comment faire citer votre entreprise B2B par ChatGPT, Perplexity et Gemini",
+    extrait:  "Robots à autoriser, écriture vérifiable, mentions tierces et mesure des citations : la méthode documentée pour que les assistants IA citent votre entreprise B2B.",
+    auteur:   "Goradieme",
+    date:     "2026-10-22",
+    categorie:"seo",
+    lecture:  "12 min",
+    lien:     "articles/article-geo-etre-cite-par-chatgpt.html",
+    image:    "articles/geo-etre-cite-par-chatgpt-cover.jpg",
+    slug:     "geo-etre-cite-par-chatgpt",
+    motCle:   "GEO référencement IA",
+    metaDesc: "Robots, contenus, mesure : la méthode documentée pour que ChatGPT, Perplexity, Gemini et Copilot citent votre entreprise B2B. Plan d'action sur 30 jours."
+  },
 ];

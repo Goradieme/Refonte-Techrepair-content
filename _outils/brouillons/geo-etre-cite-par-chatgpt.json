@@ -1,0 +1,32 @@
+{
+  "slug": "geo-etre-cite-par-chatgpt",
+  "categorie": "seo",
+  "date": "2026-10-22",
+  "titre": "GEO : comment faire citer votre entreprise B2B par ChatGPT, Perplexity et Gemini",
+  "titreSeo": "GEO : se faire citer par ChatGPT, Perplexity et Gemini",
+  "h1": "GEO : comment faire citer votre entreprise B2B par ChatGPT, Perplexity et Gemini",
+  "filAriane": "GEO et référencement IA",
+  "motCle": "GEO référencement IA",
+  "metaDesc": "Robots, contenus, mesure : la méthode documentée pour que ChatGPT, Perplexity, Gemini et Copilot citent votre entreprise B2B. Plan d'action sur 30 jours.",
+  "extrait": "Robots à autoriser, écriture vérifiable, mentions tierces et mesure des citations : la méthode documentée pour que les assistants IA citent votre entreprise B2B.",
+  "image": "articles/geo-etre-cite-par-chatgpt-cover.jpg",
+  "imageAlt": "GEO : se faire citer par ChatGPT, Perplexity et Gemini",
+  "sommaireCourt": {
+    "ch1": "1. Définition du GEO",
+    "ch2": "2. L'enjeu en B2B",
+    "ch3": "3. Comment les IA choisissent",
+    "ch4": "4. Fondations techniques",
+    "ch5": "5. Écrire pour être cité",
+    "ch6": "6. Mentions tierces",
+    "ch7": "7. Mesurer",
+    "ch8": "8. Plan sur 30 jours",
+    "faq": "FAQ"
+  },
+  "ctaLateral": {
+    "titre": "Votre marque est-elle citée par les IA ?",
+    "texte": "Test gratuit de votre visibilité dans ChatGPT, Perplexity et Gemini, puis audit GEO détaillé si besoin.",
+    "lien": "/visibilite-ia",
+    "bouton": "Tester ma visibilité"
+  },
+  "remplacer": true
+}
