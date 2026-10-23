@@ -96,4 +96,17 @@ const ARTICLES = [
     motCle:   "GEO référencement IA",
     metaDesc: "Robots, contenus, mesure : la méthode documentée pour que ChatGPT, Perplexity, Gemini et Copilot citent votre entreprise B2B. Plan d'action sur 30 jours."
   },
+  {
+    titre:    "NIS2 en France : entreprises concernées et plan d'action avant la loi Résilience",
+    extrait:  "La transposition de NIS2 est de nouveau reportée à l'Assemblée. Seuils, secteurs, obligations, référentiel ReCyF de l'ANSSI : qui est concerné et quoi faire dès maintenant.",
+    auteur:   "Goradieme",
+    date:     "2026-10-23",
+    categorie:"cyber",
+    lecture:  "12 min",
+    lien:     "articles/article-nis2-france-entreprises-concernees.html",
+    image:    "articles/nis2-france-entreprises-concernees-cover.jpg",
+    slug:     "nis2-france-entreprises-concernees",
+    motCle:   "NIS2 entreprises concernées",
+    metaDesc: "Loi Résilience reportée : quelles entreprises sont concernées par NIS2, ce que la loi exigera et le plan d'action en six étapes à lancer dès maintenant."
+  },
 ];
