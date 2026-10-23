@@ -233,6 +233,10 @@ def main(chemin_meta: str) -> None:
             "[\n" + ",\n".join("  " + json.dumps(x, ensure_ascii=False) for x in cal) + "\n]\n",
             encoding="utf-8")
 
+    # --- Maillage interne : bloc « À lire aussi » recalculé sur tous les articles ---
+    import subprocess
+    subprocess.run([sys.executable, str(RACINE / "_outils" / "maillage.py")], check=True)
+
     print(f"OK : articles/{fichier} — {mots} mots, {lecture} de lecture, "
           f"{len(h2s)} parties, {len(faq)} questions FAQ.")
 
