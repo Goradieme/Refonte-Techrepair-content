@@ -1,0 +1,32 @@
+{
+  "slug": "nis2-france-entreprises-concernees",
+  "categorie": "cyber",
+  "date": "2026-10-23",
+  "titre": "NIS2 en France : entreprises concernées et plan d'action avant la loi Résilience",
+  "titreSeo": "NIS2 : entreprises concernées et que faire avant la loi",
+  "h1": "NIS2 en France : entreprises concernées et plan d'action avant la loi Résilience",
+  "filAriane": "NIS2 : entreprises concernées",
+  "motCle": "NIS2 entreprises concernées",
+  "metaDesc": "Loi Résilience reportée : quelles entreprises sont concernées par NIS2, ce que la loi exigera et le plan d'action en six étapes à lancer dès maintenant.",
+  "extrait": "La transposition de NIS2 est de nouveau reportée à l'Assemblée. Seuils, secteurs, obligations, référentiel ReCyF de l'ANSSI : qui est concerné et quoi faire dès maintenant.",
+  "image": "articles/nis2-france-entreprises-concernees-cover.jpg",
+  "imageAlt": "NIS2 en France : entreprises concernées et plan d'action",
+  "sommaireCourt": {
+    "ch1": "1. Où en est NIS2",
+    "ch2": "2. Entreprises concernées",
+    "ch3": "3. Les obligations",
+    "ch4": "4. Pourquoi ne pas attendre",
+    "ch5": "5. Fournisseurs et éditeurs",
+    "ch6": "6. Plan en six étapes",
+    "ch7": "7. Documenter pour prouver",
+    "faq": "FAQ",
+    "sources": "Sources"
+  },
+  "ctaLateral": {
+    "titre": "Des contenus cyber exacts et convaincants",
+    "texte": "Livres blancs, pages sécurité et documentation technique rédigés avec vos experts, sur NIS2, DORA ou ISO 27001.",
+    "lien": "/secteur-cybersecurite",
+    "bouton": "Découvrir l'offre cyber"
+  },
+  "remplacer": true
+}
