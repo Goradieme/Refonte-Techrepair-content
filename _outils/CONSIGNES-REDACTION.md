@@ -17,7 +17,10 @@ commençant par `_`). Il contient tout ce qu'il faut pour produire un article pa
 4. Générer la couverture : `python3 _outils/couverture.py <slug> "<titre de couverture>" <categorie> "<sur-titre>" <numéro>`
    (titre de couverture ≤ 70 caractères ; sur-titre : « Guide stratégique », « Analyse »,
    « Décryptage réglementaire », « Méthode »… ; numéro = nombre d'articles dans
-   `articles.js` après ajout). Ouvrir l'image produite et vérifier qu'elle est parfaite.
+   `articles.js` après ajout ; 6e argument facultatif `orange` ou `bleu` pour l'accent).
+   Formuler le titre de couverture avec un sujet court avant les deux-points (« NIS2 : … »),
+   mis en couleur d'accent. Ouvrir l'image produite et vérifier qu'elle est parfaite :
+   titre sur 4 lignes au plus, aucune coupure de mot, illustration nette.
 5. Assembler et indexer : `python3 _outils/publier_article.py _outils/brouillons/<slug>.json`
    (met à jour l'article, `articles.js`, `blog.html`, `sitemap.xml`, `feed.xml` et le calendrier).
 6. **Contrôle qualité obligatoire** (l'article peut être publié sans relecture humaine) :
