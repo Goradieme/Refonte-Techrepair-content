@@ -547,7 +547,7 @@ body{font-family:'Manrope',sans-serif;background:var(--bg);color:var(--text);fon
     </div>
     <div class="faq-item">
       <div class="faq-q" onclick="this.parentElement.classList.toggle('open')">Qu'est-ce que le GEO (Generative Engine Optimization) ?</div>
-      <div class="faq-a">Le GEO est la discipline qui vise à optimiser le contenu pour être cité comme source par les moteurs de recherche génératifs (Google AI Overviews, Perplexity, ChatGPT, Gemini). Il se distingue du SEO classique par son objectif : une citation dans une réponse synthétisée plutôt qu'un classement dans un index.</div>
+      <div class="faq-a">Le GEO est la discipline qui vise à optimiser le contenu pour être cité comme source par les moteurs de recherche génératifs (Google AI Overviews, Perplexity, ChatGPT, Gemini). Il se distingue du SEO classique par son objectif : une citation dans une réponse synthétisée plutôt qu'un classement dans un index. Notre guide <a href="/articles/article-geo-etre-cite-par-chatgpt.html" style="color:#1A56DB;font-weight:600;text-decoration:underline;text-underline-offset:2px">GEO : comment faire citer votre entreprise par ChatGPT, Perplexity et Gemini</a> détaille la méthode, robot par robot.</div>
     </div>
     <div class="faq-item">
       <div class="faq-q" onclick="this.parentElement.classList.toggle('open')">Les AI Overviews sont-ils déjà actifs en France ?</div>
@@ -579,7 +579,23 @@ body{font-family:'Manrope',sans-serif;background:var(--bg);color:var(--text);fon
       </div>
     </div>
 
-  </article>
+  <!-- maillage:debut -->
+<section class="maillage" aria-label="Articles liés">
+<style>
+.maillage{margin:44px 0 8px;padding-top:28px;border-top:1px solid #e2e8f0;font-family:inherit}
+.maillage h2{font-size:20px!important;font-weight:800;color:#0F1B3D;margin:0 0 16px!important}
+.mi-grille{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:14px}
+.mi-carte{display:flex;flex-direction:column;gap:8px;border:1px solid #e2e8f0;border-radius:14px;padding:16px 18px;background:#fff;text-decoration:none!important;transition:border-color .2s,box-shadow .2s,transform .2s}
+.mi-carte:hover{border-color:#1A56DB;box-shadow:0 8px 24px rgba(26,86,219,.10);transform:translateY(-2px)}
+.mi-cat{font-size:10.5px;font-weight:800;letter-spacing:1.2px;text-transform:uppercase;color:#1342b0}
+.mi-titre{font-size:14.5px;font-weight:700;line-height:1.4;color:#0F1B3D}
+.mi-lire{margin-top:auto;font-size:12px;color:#64748b}
+</style>
+<h2>À lire aussi</h2>
+<div class="mi-grille"><a class="mi-carte" href="/articles/article-geo-etre-cite-par-chatgpt.html"><span class="mi-cat">SEO</span><span class="mi-titre">GEO : comment faire citer votre entreprise B2B par ChatGPT, Perplexity et Gemini</span><span class="mi-lire">Lire l'article · 12 min</span></a><a class="mi-carte" href="/articles/article-dark-social-saas-b2b.html"><span class="mi-cat">SaaS B2B</span><span class="mi-titre">Dark social : le vrai funnel d&#x27;achat SaaS que Google Analytics ne voit pas</span><span class="mi-lire">Lire l'article · 15 min</span></a><a class="mi-carte" href="/articles/article-commerce-agentique.html"><span class="mi-cat">E-commerce</span><span class="mi-titre">Le Commerce Agentique : le guide complet</span><span class="mi-lire">Lire l'article · 18 min</span></a></div>
+</section>
+<!-- maillage:fin -->
+</article>
 
   <!-- TABLE DES MATIÈRES -->
   <aside class="toc">
@@ -626,7 +642,7 @@ window.addEventListener('scroll', () => {
     const el = document.getElementById(id);
     if(el){
       const rect = el.getBoundingClientRect();
-      a.classList.toggle('active', rect.top <= 80 etet rect.bottom > 0);
+      a.classList.toggle('active', rect.top <= 80 && rect.bottom > 0);
     }
   });
 });

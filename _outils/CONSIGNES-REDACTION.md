@@ -17,7 +17,11 @@ commençant par `_`). Il contient tout ce qu'il faut pour produire un article pa
 4. Générer la couverture : `python3 _outils/couverture.py <slug> "<titre de couverture>" <categorie> "<sur-titre>" <numéro>`
    (titre de couverture ≤ 70 caractères ; sur-titre : « Guide stratégique », « Analyse »,
    « Décryptage réglementaire », « Méthode »… ; numéro = nombre d'articles dans
-   `articles.js` après ajout ; 6e argument facultatif `orange` ou `bleu` pour l'accent).
+   `articles.js` après ajout ; 6e argument facultatif `orange`, `bleu` ou `auto` pour
+   l'accent ; 7e argument facultatif pour le style : `scission`, `nuit`, `accent` ou
+   `papier`). Sans 7e argument, le style tourne automatiquement avec le numéro : ne pas
+   le forcer, sauf si la couverture précédente avait le même style.
+   Varier aussi l'accent d'un article à l'autre quand c'est possible.
    Formuler le titre de couverture avec un sujet court avant les deux-points (« NIS2 : … »),
    mis en couleur d'accent. Ouvrir l'image produite et vérifier qu'elle est parfaite :
    titre sur 4 lignes au plus, aucune coupure de mot, illustration nette.
@@ -82,9 +86,19 @@ commençant par `_`). Il contient tout ce qu'il faut pour produire un article pa
 - Réponse directe dans les deux premières phrases de chaque partie ; passages
   autonomes, citables tels quels.
 - 4 à 8 liens externes vers les sources primaires : `class="src" target="_blank" rel="noopener"`.
-- 3 à 5 liens internes : la page service liée au sujet (`pagesLiees` du calendrier),
-  un ou deux articles existants du blog, `/devis` ou un outil (`/visibilite-ia`,
-  `/calculateur-temps-perdu`, audit IA).
+- **Maillage interne (obligatoire)** :
+  - dans le nouvel article, 4 à 6 liens internes contextuels : la page service liée
+    (`pagesLiees`), la page secteur, **au moins deux articles existants du blog** dont
+    le sujet est proche, et `/devis` ou un outil (`/visibilite-ia`,
+    `/calculateur-temps-perdu`, audit IA). Ancres descriptives (jamais « cliquez ici »),
+    insérées là où le lecteur en a besoin ;
+  - en retour, ajouter **un lien contextuel vers le nouvel article dans les deux
+    articles existants les plus proches** : une phrase naturelle et utile, dans la
+    partie pertinente. Si l'article existant a un brouillon dans `_outils/brouillons/`,
+    modifier le brouillon puis relancer `publier_article.py` avec `"remplacer": true`
+    dans son JSON ; sinon modifier directement la page dans `articles/` ;
+  - le bloc « À lire aussi » (3 articles proches) est recalculé automatiquement sur
+    toutes les pages par `_outils/maillage.py`, lancé par `publier_article.py`.
 - FAQ finale `<h2 id="faq">` avec 3 à 5 `<div class="faq-item"><h3>…</h3><p>…</p></div>`
   (balisée automatiquement en FAQPage).
 - Au moins une rangée de chiffres clés `<div class="stat-row">` avec 3 `<div class="stat"><b>chiffre</b><span>légende sourcée et datée</span></div>`.
