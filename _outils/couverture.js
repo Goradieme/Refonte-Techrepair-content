@@ -180,7 +180,7 @@ body.s-papier:after{content:"";position:absolute;left:0;right:0;top:0;height:8px
 </style></head><body class="s-${STYLE}">
 <svg class="grain" width="1200" height="630"><filter id="n"><feTurbulence type="fractalNoise" baseFrequency=".9" numOctaves="2" stitchTiles="stitch"/><feColorMatrix values="0 0 0 0 .5  0 0 0 0 .45  0 0 0 0 .4  0 0 0 .09 0"/></filter><rect width="100%" height="100%" filter="url(#n)"/></svg>
 <div class="gauche">
-  <div class="marque"><div class="logo">TRD</div><div class="nom">TechRepair Content</div><div class="sep"></div><div class="coll">Insights</div></div>
+  <div class="marque"><div class="logo">TRD</div><div class="nom">TechRepair Content</div><div class="sep"></div><div class="coll">Analyses</div></div>
   <div class="kicker"><i></i>${esc(LIBELLES[cat] || cat)}</div>
   <h1 id="t">${esc(titre).replace(/^([^:]+:)/, '<em>$1</em>')}</h1>
   <div class="pied"><b>${esc(surTitre)}</b><span class="pt"></span><span>${dateTxt}</span>${numero ? `<span class="num">N° ${String(numero).padStart(3, '0')}</span>` : ''}</div>
