@@ -21,17 +21,25 @@ commençant par `_`). Il contient tout ce qu'il faut pour produire un article pa
    page d'origine. Ne jamais inventer un chiffre, une citation, un client ou une étude.
 4. Rédiger le corps dans `_outils/brouillons/<slug>.html` et les métadonnées dans
    `_outils/brouillons/<slug>.json` (prendre `geo-etre-cite-par-chatgpt.*` comme modèle).
-5. Générer la couverture : `python3 _outils/couverture.py <slug> "<titre de couverture>" <categorie> "<sur-titre>" <numéro>`
-   (titre de couverture ≤ 70 caractères ; sur-titre : « Guide stratégique », « Analyse »,
-   « Décryptage réglementaire », « Méthode »… ; numéro = nombre d'articles dans
-   `articles.js` après ajout ; 6e argument facultatif `orange`, `bleu` ou `auto` pour
-   l'accent ; 7e argument facultatif pour le style : `scission`, `nuit`, `accent` ou
-   `papier`). Sans 7e argument, le style tourne automatiquement avec le numéro : ne pas
-   le forcer, sauf si la couverture précédente avait le même style.
-   Varier aussi l'accent d'un article à l'autre quand c'est possible.
-   Formuler le titre de couverture avec un sujet court avant les deux-points (« NIS2 : … »),
-   mis en couleur d'accent. Ouvrir l'image produite et vérifier qu'elle est parfaite :
-   titre sur 4 lignes au plus, aucune coupure de mot, illustration nette.
+5. Générer la couverture :
+   `python3 _outils/couverture.py <slug> "<titre de couverture>" <categorie> "<sur-titre>" <numéro> [couleur] [style] [--motif=…]`
+   - titre de couverture ≤ 70 caractères, sujet court avant les deux-points (« NIS2 : … »),
+     apostrophes typographiques (’) ; sur-titre : « Guide stratégique », « Analyse »,
+     « Décryptage réglementaire », « Méthode »… ; numéro = nombre d'articles dans
+     `articles.js` après ajout ;
+   - **couleur** (couleurs du site) : `bleu`, `orange`, `vert`, `violet`, ou `auto`.
+     Ne jamais reprendre la couleur de la couverture précédente ; choisir celle qui sert
+     le sujet (vert pour l'environnement, la croissance ; orange pour l'alerte, le risque ;
+     violet pour l'IA, l'innovation ; bleu pour le cadre, la méthode) ;
+   - **style** : `scission`, `nuit`, `accent`, `papier` ; sans argument, il tourne avec le
+     numéro. Ne jamais reprendre le style de la couverture précédente ;
+   - **motif** (illustration liée au sujet, à privilégier sur le motif de catégorie) :
+     `fiche-produit` (e-commerce, catalogue, fiches produits), `document` (loi, règlement,
+     norme, conformité, livre blanc), `tableau-de-bord` (chiffres, ROI, performance, SaaS),
+     `calendrier` (échéance, date d'entrée en vigueur). Sans motif, l'illustration de la
+     catégorie s'applique (bouclier, ondes, couches, courbe, réseau, colis) ;
+   - ouvrir l'image et vérifier qu'elle est parfaite : titre sur 4 lignes au plus, aucune
+     coupure de mot, illustration nette, aucun élément coupé ou superposé au texte.
 6. Assembler et indexer : `python3 _outils/publier_article.py _outils/brouillons/<slug>.json`
    (met à jour l'article, `articles.js`, `blog.html`, `sitemap.xml`, `feed.xml` et le calendrier).
 7. **Contrôle qualité obligatoire** (l'article peut être publié sans relecture humaine) :

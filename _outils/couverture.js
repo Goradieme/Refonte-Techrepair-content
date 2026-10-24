@@ -1,5 +1,5 @@
 // couverture.js — Couverture éditoriale haute définition (rendu HTML/SVG par Chromium).
-// Usage : node _outils/couverture.js <slug> "<titre>" <categorie> "<sur-titre>" <numero> [orange|bleu] [scission|nuit|accent|papier]
+// Usage : node _outils/couverture.js <slug> "<titre>" <categorie> "<sur-titre>" <numero> [bleu|orange|vert|violet|auto] [scission|nuit|accent|papier] [--motif=fiche-produit|document|tableau-de-bord|calendrier]
 // Produit articles/<slug>-cover.jpg en 2400x1260 (affichage 1200x630, net sur écrans Retina).
 const fs = require('fs');
 const path = require('path');
@@ -7,8 +7,12 @@ const { chromium } = require('playwright');
 
 const RACINE = path.resolve(__dirname, '..');
 const POL = path.join(__dirname, 'polices');
-const [slug, titre, cat, surTitre = 'Analyse', numero = '', accentArgBrut] = process.argv.slice(2);
-const accentArg = ['orange', 'bleu'].includes(accentArgBrut) ? accentArgBrut : undefined;
+const ARGS = process.argv.slice(2).filter(a => !a.startsWith('--'));
+const OPTS = Object.fromEntries(process.argv.slice(2).filter(a => a.startsWith('--')).map(a => a.slice(2).split('=')));
+const [slug, titre, cat, surTitre = 'Analyse', numero = '', accentArgBrut, styleArg] = ARGS;
+const COULEURS = ['bleu', 'orange', 'vert', 'violet'];
+const accentArg = COULEURS.includes(accentArgBrut) ? accentArgBrut : undefined;
+const MOTIF = OPTS.motif || '';
 if (!slug || !titre || !cat) {
   console.error('Usage : node _outils/couverture.js <slug> "<titre>" <categorie> "<sur-titre>" <numero> [orange|bleu]');
   process.exit(1);
@@ -16,13 +20,17 @@ if (!slug || !titre || !cat) {
 
 const LIBELLES = { seo: 'SEO & visibilité', saas: 'SaaS B2B', ecommerce: 'E-commerce tech',
   cyber: 'Cybersécurité', fintech: 'Fintech', rh: 'RH tech' };
-// Accent par défaut : orange pour cyber, e-commerce, RH ; bleu pour SEO, SaaS, fintech.
-const PAR_DEFAUT = { cyber: 'orange', ecommerce: 'orange', rh: 'orange', seo: 'bleu', saas: 'bleu', fintech: 'bleu' };
+// Couleurs d'accent : celles du site techrepaircontent.com (bleu, orange, vert, violet).
+// Sans choix explicite, la couleur tourne avec le numéro, décalée à chaque cycle de styles
+// pour ne jamais répéter la même combinaison style + couleur deux fois de suite.
 const ACCENTS = {
-  orange: { a: '#F97316', b: '#FDBA74', c: '#C2410C', glow: 'rgba(249,115,22,.55)' },
-  bleu:   { a: '#2563EB', b: '#93C5FD', c: '#1A56DB', glow: 'rgba(37,99,235,.6)' },
+  bleu:   { a: '#2563EB', b: '#93C5FD', c: '#1A56DB' },
+  orange: { a: '#F97316', b: '#FDBA74', c: '#C2410C' },
+  vert:   { a: '#10B981', b: '#6EE7B7', c: '#047857' },
+  violet: { a: '#7C3AED', b: '#C4B5FD', c: '#6D28D9' },
 };
-const AC = ACCENTS[accentArg || PAR_DEFAUT[cat] || 'bleu'];
+const N = parseInt(numero, 10) || 0;
+const AC = ACCENTS[accentArg || COULEURS[(N + Math.floor(N / 4)) % 4]];
 const MOIS = ['janvier','février','mars','avril','mai','juin','juillet','août','septembre','octobre','novembre','décembre'];
 const d = new Date();
 const dateTxt = `${MOIS[d.getMonth()][0].toUpperCase()}${MOIS[d.getMonth()].slice(1)} ${d.getFullYear()}`;
@@ -37,7 +45,7 @@ const rnd = () => ((graine = (graine * 1664525 + 1013904223) >>> 0) / 4294967296
 const W = 'rgba(255,255,255,', CX = 246, CY = 300;
 // Styles de couverture : ils tournent d'un article à l'autre (numéro), ou se forcent en 7e argument.
 const STYLES = ['scission', 'nuit', 'accent', 'papier'];
-const STYLE = process.argv[8] || STYLES[(parseInt(numero, 10) || 0) % STYLES.length];
+const STYLE = STYLES.includes(styleArg) ? styleArg : STYLES[N % STYLES.length];
 let INK = W, IL = AC, FOND = '#0B1633';
 if (STYLE === 'papier') { INK = 'rgba(11,22,51,'; FOND = '#F6F4EF'; }
 if (STYLE === 'accent') { IL = { a: '#FFFFFF', b: '#FFFFFF', c: '#0B1633', glow: 'rgba(255,255,255,.4)' }; FOND = AC.c; }
@@ -45,10 +53,64 @@ function illustration() {
   const defs = `
     <radialGradient id="halo" cx="50%" cy="50%" r="50%"><stop offset="0" stop-color="${IL.a}" stop-opacity=".55"/><stop offset="1" stop-color="${IL.a}" stop-opacity="0"/></radialGradient>
     <linearGradient id="acc" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="${IL.b}"/><stop offset="1" stop-color="${IL.a}"/></linearGradient>
+    <linearGradient id="acc2" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="${AC.b}"/><stop offset="1" stop-color="${AC.a}"/></linearGradient>
     <linearGradient id="verre" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#fff" stop-opacity=".16"/><stop offset="1" stop-color="#fff" stop-opacity=".03"/></linearGradient>
     <filter id="flou" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="6"/></filter>`;
   let g = `<circle cx="${CX}" cy="${CY}" r="210" fill="url(#halo)" opacity=".55"/>`;
-  if (cat === 'cyber') {
+  const ombre = `<filter id="ombre" x="-30%" y="-30%" width="160%" height="160%"><feDropShadow dx="0" dy="14" stdDeviation="16" flood-color="#020617" flood-opacity=".35"/></filter>`;
+  const barre = (x, y, w, h, c, o = 1) => `<rect x="${x}" y="${y}" width="${w}" height="${h}" rx="${h / 2}" fill="${c}" fill-opacity="${o}"/>`;
+  const pastille = (x, y, ok) => `<g><circle cx="${x}" cy="${y}" r="15" fill="${ok ? '#10B981' : '#EF4444'}" stroke="#fff" stroke-width="3"/>${ok
+    ? `<path d="M ${x - 6} ${y} l 4 4.5 l 8 -9" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>`
+    : `<path d="M ${x - 5} ${y - 5} l 10 10 M ${x + 5} ${y - 5} l -10 10" stroke="#fff" stroke-width="3" stroke-linecap="round"/>`}</g>`;
+  if (MOTIF === 'fiche-produit') {
+    // Fiche produit stylisée, annotée comme un audit : ce qui est vérifiable (✓) / ce qui ne l'est pas (✕).
+    const x = CX - 128, y = CY - 196, w = 256, h = 392;
+    g += `<defs>${ombre}<linearGradient id="visuel" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#EEF2F8"/><stop offset="1" stop-color="#DCE3EE"/></linearGradient></defs>
+      <rect x="${x + 22}" y="${y + 18}" width="${w}" height="${h}" rx="18" fill="#fff" opacity=".08" transform="rotate(6 ${CX} ${CY})"/>
+      <g filter="url(#ombre)"><rect x="${x}" y="${y}" width="${w}" height="${h}" rx="18" fill="#fff"/></g>
+      <rect x="${x + 14}" y="${y + 14}" width="${w - 28}" height="150" rx="12" fill="url(#visuel)"/>
+      <rect x="${CX - 62}" y="${y + 52}" width="124" height="80" rx="8" fill="#0F1B3D"/><rect x="${CX - 54}" y="${y + 59}" width="108" height="64" rx="4" fill="url(#acc2)"/>
+      <path d="M ${CX - 82} ${y + 134} h 164 l -10 10 h -144 z" fill="#94A3B8"/>
+      <g transform="translate(${x + 30} ${y + 30})"><circle r="16" fill="${AC.a}"/><path d="M -6 6 C -6 -4 0 -9 8 -9 C 8 -1 3 6 -6 6 Z M -6 6 L 2 -2" fill="none" stroke="#fff" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></g>
+      ${barre(x + 22, y + 184, 170, 12, '#0F1B3D')}${barre(x + 22, y + 206, 120, 10, '#94A3B8', .7)}
+      <g fill="#F59E0B">${[0, 1, 2, 3, 4].map(i => `<path transform="translate(${x + 30 + i * 20} ${y + 236}) scale(.8)" d="M0,-9 L2.6,-3 L9,-2.8 L4,1.4 L5.6,8 L0,4.4 L-5.6,8 L-4,1.4 L-9,-2.8 L-2.6,-3 Z" opacity="${i < 4 ? 1 : .3}"/>`).join('')}</g>
+      ${barre(x + 22, y + 262, 200, 8, '#CBD5E1')}${barre(x + 22, y + 278, 176, 8, '#CBD5E1')}${barre(x + 22, y + 294, 188, 8, '#CBD5E1')}
+      ${barre(x + 22, y + 318, 74, 16, '#0F1B3D')}
+      <rect x="${x + 22}" y="${y + 344}" width="${w - 44}" height="34" rx="9" fill="${AC.a}"/>${barre(CX - 46, y + 357, 92, 8, '#fff', .9)}
+      <path d="M ${x + w - 4} ${y + 30} C ${x + w + 30} ${y + 30} ${x + w + 30} ${y + 52} ${x + w + 44} ${y + 52}" fill="none" stroke="${INK}.55)" stroke-width="1.5" stroke-dasharray="3 4"/>${pastille(x + w + 58, y + 52, false)}
+      <path d="M ${x + w - 30} ${y + 266} C ${x + w + 20} ${y + 266} ${x + w + 20} ${y + 286} ${x + w + 44} ${y + 286}" fill="none" stroke="${INK}.55)" stroke-width="1.5" stroke-dasharray="3 4"/>${pastille(x + w + 58, y + 286, true)}
+      <path d="M ${x + 4} ${y + 190} C ${x - 30} ${y + 190} ${x - 30} ${y + 210} ${x - 44} ${y + 210}" fill="none" stroke="${INK}.55)" stroke-width="1.5" stroke-dasharray="3 4"/>${pastille(x - 58, y + 210, true)}`;
+  } else if (MOTIF === 'document') {
+    // Texte réglementaire : pages empilées, articles surlignés, tampon.
+    const x = CX - 120, y = CY - 180, w = 240, h = 340;
+    g += `<defs>${ombre}</defs>
+      <rect x="${x + 26}" y="${y - 14}" width="${w}" height="${h}" rx="10" fill="#fff" opacity=".12" transform="rotate(5 ${CX} ${CY})"/>
+      <rect x="${x + 12}" y="${y - 6}" width="${w}" height="${h}" rx="10" fill="#fff" opacity=".25" transform="rotate(2 ${CX} ${CY})"/>
+      <g filter="url(#ombre)"><rect x="${x}" y="${y}" width="${w}" height="${h}" rx="10" fill="#fff"/></g>
+      ${barre(x + 28, y + 34, 120, 12, '#0F1B3D')}${barre(x + 28, y + 56, 80, 8, '#94A3B8')}
+      ${[0, 1, 2, 3, 4, 5, 6, 7, 8, 9].map(i => { const yy = y + 92 + i * 20; const hl = i === 2 || i === 3 || i === 7;
+        return (hl ? `<rect x="${x + 22}" y="${yy - 7}" width="${w - 44}" height="16" rx="4" fill="${AC.b}" fill-opacity=".55"/>` : '') + barre(x + 28, yy - 3, (i % 3 === 2 ? 140 : 184), 7, hl ? '#0F1B3D' : '#CBD5E1'); }).join('')}
+      <g transform="translate(${x + w - 34} ${y + h - 40}) rotate(-14)"><circle r="40" fill="none" stroke="${AC.a}" stroke-width="4"/><circle r="30" fill="none" stroke="${AC.a}" stroke-width="1.5"/><path d="M -14 0 l 9 9 l 19 -20" fill="none" stroke="${AC.a}" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/></g>`;
+  } else if (MOTIF === 'tableau-de-bord') {
+    const x = CX - 150, y = CY - 150, w = 300, h = 300;
+    let bars = '';
+    for (let i = 0; i < 7; i++) { const hh = 30 + rnd() * 90; bars += `<rect x="${x + 30 + i * 36}" y="${y + 250 - hh}" width="22" height="${hh}" rx="4" fill="${i === 5 ? AC.a : '#CBD5E1'}"/>`; }
+    g += `<defs>${ombre}</defs><g filter="url(#ombre)"><rect x="${x}" y="${y}" width="${w}" height="${h}" rx="16" fill="#fff"/></g>
+      ${barre(x + 24, y + 26, 90, 10, '#0F1B3D')}
+      <rect x="${x + 24}" y="${y + 52}" width="76" height="58" rx="10" fill="#F1F5F9"/>${barre(x + 34, y + 66, 40, 14, AC.a)}${barre(x + 34, y + 90, 50, 7, '#94A3B8')}
+      <rect x="${x + 112}" y="${y + 52}" width="76" height="58" rx="10" fill="#F1F5F9"/>${barre(x + 122, y + 66, 46, 14, '#0F1B3D')}${barre(x + 122, y + 90, 40, 7, '#94A3B8')}
+      <rect x="${x + 200}" y="${y + 52}" width="76" height="58" rx="10" fill="#F1F5F9"/>${barre(x + 210, y + 66, 34, 14, '#10B981')}${barre(x + 210, y + 90, 48, 7, '#94A3B8')}
+      ${bars}<line x1="${x + 24}" y1="${y + 252}" x2="${x + w - 24}" y2="${y + 252}" stroke="#E2E8F0"/>`;
+  } else if (MOTIF === 'calendrier') {
+    const x = CX - 140, y = CY - 140, w = 280, h = 290;
+    let cases = '';
+    for (let r = 0; r < 5; r++) for (let c = 0; c < 7; c++) { const n = r * 7 + c; const cible = n === 23;
+      cases += `<rect x="${x + 20 + c * 35}" y="${y + 90 + r * 36}" width="28" height="28" rx="7" fill="${cible ? AC.a : (n < 23 ? '#E2E8F0' : '#F8FAFC')}"/>`; }
+    g += `<defs>${ombre}</defs><g filter="url(#ombre)"><rect x="${x}" y="${y}" width="${w}" height="${h}" rx="18" fill="#fff"/></g>
+      <path d="M ${x} ${y + 18} a 18 18 0 0 1 18 -18 h ${w - 36} a 18 18 0 0 1 18 18 v 46 h -${w} z" fill="#0F1B3D"/>
+      ${barre(x + 24, y + 28, 100, 12, '#fff')}<rect x="${x + 60}" y="${y - 14}" width="12" height="30" rx="6" fill="#94A3B8"/><rect x="${x + w - 72}" y="${y - 14}" width="12" height="30" rx="6" fill="#94A3B8"/>
+      ${cases}<circle cx="${x + 20 + 2 * 35 + 14}" cy="${y + 90 + 3 * 36 + 14}" r="24" fill="none" stroke="${AC.a}" stroke-width="3" stroke-dasharray="4 4"/>`;
+  } else if (cat === 'cyber') {
     const shield = (s) => `M ${CX} ${CY - 150 * s} L ${CX + 118 * s} ${CY - 108 * s} L ${CX + 118 * s} ${CY + 6 * s} C ${CX + 118 * s} ${CY + 88 * s} ${CX + 62 * s} ${CY + 142 * s} ${CX} ${CY + 170 * s} C ${CX - 62 * s} ${CY + 142 * s} ${CX - 118 * s} ${CY + 88 * s} ${CX - 118 * s} ${CY + 6 * s} L ${CX - 118 * s} ${CY - 108 * s} Z`;
     let hex = '';
     const r = 21;
