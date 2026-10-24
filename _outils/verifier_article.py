@@ -13,7 +13,8 @@ Affiche :
   3. la liste des sources externes, à ouvrir UNE PAR UNE avec WebFetch pour vérifier
      que la page existe et qu'elle contient bien le chiffre ou l'affirmation citée ;
   4. les liens internes qui ne correspondent à aucune page du site ;
-  5. les phrases qui reprennent mot pour mot (6 mots consécutifs) un autre article.
+  5. les phrases qui reprennent mot pour mot (6 mots consécutifs) un autre article ;
+  6. le maillage interne : au moins 2 liens vers des articles existants et 2 liens retour.
 Code de sortie 1 s'il reste un problème typographique ou un lien interne cassé.
 """
 import html
@@ -121,6 +122,24 @@ def main(chemin):
     if not repris:
         print("   aucune")
     erreurs += len(repris)
+
+    # 6. Maillage interne entre articles (hors bloc « À lire aussi »)
+    def corps_page(f):
+        return re.sub(r"<!-- maillage:debut -->[\s\S]*?<!-- maillage:fin -->", " ", f.read_text(encoding="utf-8"))
+    sortants = {x for x in re.findall(r'href="[^"]*article-([a-z0-9-]+)\.html"', src) if x != slug}
+    entrants = [g.stem.replace("article-", "") for g in sorted((RACINE / "articles").glob("article-*.html"))
+                if g.stem != f"article-{slug}" and re.search(r'href="[^"]*article-' + re.escape(slug) + r'\.html"', corps_page(g))]
+    print(f"6. Maillage interne : {len(sortants)} lien(s) vers d'autres articles, {len(entrants)} article(s) qui pointent vers celui-ci")
+    for s in sorted(sortants):
+        print(f"   → {s}")
+    for s in entrants:
+        print(f"   ← {s}")
+    if len(sortants) < 2:
+        print("   ✗ au moins 2 liens contextuels vers des articles existants sont exigés")
+        erreurs += 1
+    if len(entrants) < 2:
+        print("   ✗ au moins 2 articles existants doivent pointer vers celui-ci (liens retour dans le texte)")
+        erreurs += 1
 
     sys.exit(1 if erreurs else 0)
 
