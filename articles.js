@@ -109,4 +109,17 @@ const ARTICLES = [
     motCle:   "NIS2 entreprises concernées",
     metaDesc: "Loi Résilience reportée : quelles entreprises sont concernées par NIS2, ce que la loi exigera et le plan d'action en six étapes à lancer dès maintenant."
   },
+  {
+    titre:    "Allégations environnementales : ce qu'il faut changer sur vos fiches produits",
+    extrait:  "L'échéance européenne contre l'écoblanchiment est passée, la loi française attend à l'Assemblée. Ce qui sera interdit, ce qui est déjà sanctionné et comment réécrire vos fiches produits.",
+    auteur:   "Goradieme",
+    date:     "2026-10-24",
+    categorie:"ecommerce",
+    lecture:  "12 min",
+    lien:     "articles/article-allegations-environnementales-fiches-produits.html",
+    image:    "articles/allegations-environnementales-fiches-produits-cover.jpg",
+    slug:     "allegations-environnementales-fiches-produits",
+    motCle:   "allégations environnementales fiches produits",
+    metaDesc: "Directive 2024/825 applicable depuis le 27 septembre 2026, loi française en attente : les allégations environnementales à retirer de vos fiches produits."
+  },
 ];

@@ -1,0 +1,32 @@
+{
+  "slug": "allegations-environnementales-fiches-produits",
+  "categorie": "ecommerce",
+  "date": "2026-10-24",
+  "titre": "Allégations environnementales : ce qu'il faut changer sur vos fiches produits",
+  "titreSeo": "Allégations environnementales : réécrire vos fiches produits",
+  "h1": "Allégations environnementales : ce qu'il faut changer sur vos fiches produits",
+  "filAriane": "Allégations environnementales",
+  "motCle": "allégations environnementales fiches produits",
+  "metaDesc": "Directive 2024/825 applicable depuis le 27 septembre 2026, loi française en attente : les allégations environnementales à retirer de vos fiches produits.",
+  "extrait": "L'échéance européenne contre l'écoblanchiment est passée, la loi française attend à l'Assemblée. Ce qui sera interdit, ce qui est déjà sanctionné et comment réécrire vos fiches produits.",
+  "image": "articles/allegations-environnementales-fiches-produits-cover.jpg",
+  "imageAlt": "Allégations environnementales : ce qu'il faut changer sur vos fiches produits",
+  "sommaireCourt": {
+    "ch1": "1. Le 27 septembre 2026",
+    "ch2": "2. Les pratiques interdites",
+    "ch3": "3. Produits tech",
+    "ch4": "4. Le droit actuel",
+    "ch5": "5. Audit en cinq étapes",
+    "ch6": "6. Réécrire et convertir",
+    "ch7": "7. Labels et neutralité",
+    "faq": "FAQ",
+    "sources": "Sources"
+  },
+  "ctaLateral": {
+    "titre": "Des fiches produits précises et conformes",
+    "texte": "Nous réécrivons vos fiches produits tech avec des faits vérifiables : caractéristiques, durabilité, garanties, sans allégation vague.",
+    "lien": "/service-fiches-produits",
+    "bouton": "Découvrir l'offre fiches produits"
+  },
+  "remplacer": true
+}
