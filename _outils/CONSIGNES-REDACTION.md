@@ -9,12 +9,19 @@ commençant par `_`). Il contient tout ce qu'il faut pour produire un article pa
    `statut` vaut `a_faire`. Si tous sont faits, proposer 10 nouveaux sujets dans la
    même logique (rotation des catégories, pas de doublon avec `articles.js`) et les
    ajouter au calendrier dans la même demande de fusion.
-2. Rechercher le sujet sur le web : sources primaires d'abord (textes officiels,
+2. **Choisir le mot-clé avec des données** : Ubersuggest est connecté (offre gratuite :
+   3 recherches par jour, ne pas en gaspiller). Utiliser `keyword_overview` (France :
+   `locId` 2250, `language` fr) sur 2 ou 3 formulations candidates et retenir celle qui
+   combine le meilleur volume et une difficulté SEO raisonnable (idéalement < 40 pour un
+   site jeune). Noter volume et difficulté dans la description de la demande de fusion.
+   Semrush et Ahrefs sont reliés mais inutilisables en l'état (unités API Semrush
+   épuisées, offre Ahrefs sans accès API) : ne pas les appeler.
+3. Rechercher le sujet sur le web : sources primaires d'abord (textes officiels,
    documentation des éditeurs, études publiées), chiffres datés et vérifiés sur la
    page d'origine. Ne jamais inventer un chiffre, une citation, un client ou une étude.
-3. Rédiger le corps dans `_outils/brouillons/<slug>.html` et les métadonnées dans
+4. Rédiger le corps dans `_outils/brouillons/<slug>.html` et les métadonnées dans
    `_outils/brouillons/<slug>.json` (prendre `geo-etre-cite-par-chatgpt.*` comme modèle).
-4. Générer la couverture : `python3 _outils/couverture.py <slug> "<titre de couverture>" <categorie> "<sur-titre>" <numéro>`
+5. Générer la couverture : `python3 _outils/couverture.py <slug> "<titre de couverture>" <categorie> "<sur-titre>" <numéro>`
    (titre de couverture ≤ 70 caractères ; sur-titre : « Guide stratégique », « Analyse »,
    « Décryptage réglementaire », « Méthode »… ; numéro = nombre d'articles dans
    `articles.js` après ajout ; 6e argument facultatif `orange`, `bleu` ou `auto` pour
@@ -25,9 +32,9 @@ commençant par `_`). Il contient tout ce qu'il faut pour produire un article pa
    Formuler le titre de couverture avec un sujet court avant les deux-points (« NIS2 : … »),
    mis en couleur d'accent. Ouvrir l'image produite et vérifier qu'elle est parfaite :
    titre sur 4 lignes au plus, aucune coupure de mot, illustration nette.
-5. Assembler et indexer : `python3 _outils/publier_article.py _outils/brouillons/<slug>.json`
+6. Assembler et indexer : `python3 _outils/publier_article.py _outils/brouillons/<slug>.json`
    (met à jour l'article, `articles.js`, `blog.html`, `sitemap.xml`, `feed.xml` et le calendrier).
-6. **Contrôle qualité obligatoire** (l'article peut être publié sans relecture humaine) :
+7. **Contrôle qualité obligatoire** (l'article peut être publié sans relecture humaine) :
    - `python3 _outils/verifier_article.py _outils/brouillons/<slug>.html` (installer
      d'abord `pip install --break-system-packages -q pyspellchecker`) ; corriger tout ce
      qui est signalé, puis relancer jusqu'à obtenir zéro problème typographique.
@@ -41,11 +48,11 @@ commençant par `_`). Il contient tout ce qu'il faut pour produire un article pa
      guillemets « »), noms propres, chiffres, cohérence entre titre, sommaire et
      parties, liens. Corriger directement.
    - Relancer `publier_article.py` après les corrections.
-7. Vérifier le rendu dans un navigateur (bureau et mobile).
-8. Exporter le PDF de relecture :
+8. Vérifier le rendu dans un navigateur (bureau et mobile).
+9. Exporter le PDF de relecture :
    `NODE_PATH=$(npm root -g) node _outils/pdf_article.js articles/article-<slug>.html _outils/relecture/<slug>.pdf`
    puis l'ouvrir pour contrôler la mise en page.
-9. Ouvrir une demande de fusion sur une branche `article/<date>-<slug>`. Ne jamais
+10. Ouvrir une demande de fusion sur une branche `article/<date>-<slug>`. Ne jamais
    pousser sur `main` dans cette étape, et ne jamais commenter la demande. Le lien de
    téléchargement du PDF, à mettre dans la description de la demande :
    `https://github.com/Goradieme/Refonte-Techrepair-content/raw/<branche>/_outils/relecture/<slug>.pdf`
@@ -55,8 +62,9 @@ commençant par `_`). Il contient tout ce qu'il faut pour produire un article pa
 - **03 h 47 — rédaction** : une tâche rédige l'article du jour (daté du jour), le
   contrôle, exporte le PDF et ouvre la demande de fusion `article/AAAA-MM-JJ-<slug>`.
   Elle ne fait rien si une demande d'article datée du jour est déjà ouverte.
-- **06 h 00 — e-mail de relecture** : une tâche envoie à Goradieme (notification et
-  e-mail à papisdieme79@gmail.com) le titre, le lien du PDF et le lien de la demande.
+- **06 h 00 — e-mail de relecture** : une tâche envoie depuis Gmail, à
+  papisdieme79@gmail.com, un e-mail mis en forme (couverture, points clés, bouton de
+  téléchargement du PDF, lien de la demande), plus une notification.
 - **08 h 00 — publication** : une tâche fusionne les demandes `article/...` ouvertes,
   **sauf** si elles ont reçu un commentaire ou un avis, portent l'étiquette `attendre`
   ou ont été fermées. Pour bloquer une publication, il suffit de commenter la demande
