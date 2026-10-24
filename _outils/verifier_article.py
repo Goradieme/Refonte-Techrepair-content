@@ -12,7 +12,8 @@ Affiche :
   2. les problèmes typographiques (espaces, ponctuation, tirets cadratins, guillemets) ;
   3. la liste des sources externes, à ouvrir UNE PAR UNE avec WebFetch pour vérifier
      que la page existe et qu'elle contient bien le chiffre ou l'affirmation citée ;
-  4. les liens internes qui ne correspondent à aucune page du site.
+  4. les liens internes qui ne correspondent à aucune page du site ;
+  5. les phrases qui reprennent mot pour mot (6 mots consécutifs) un autre article.
 Code de sortie 1 s'il reste un problème typographique ou un lien interne cassé.
 """
 import html
@@ -90,6 +91,36 @@ def main(chemin):
         ok = any(c.is_file() for c in candidats)
         print(f"   {'✓' if ok else '✗'} {lien}")
         erreurs += 0 if ok else 1
+
+    # 5. Formulations déjà employées dans d'autres articles
+    def shingles(txt, n=6):
+        m = re.findall(r"[a-zà-ÿœ0-9']+", txt.lower())
+        return {" ".join(m[i:i + n]) for i in range(len(m) - n + 1)}
+    slug = Path(chemin).stem
+    deja = {}
+    for autre in sorted((RACINE / "articles").glob("article-*.html")):
+        if autre.stem == f"article-{slug}":
+            continue
+        h = autre.read_text(encoding="utf-8")
+        h = re.sub(r"<!-- maillage:debut -->[\s\S]*?<!-- maillage:fin -->", " ", h)
+        corps = re.search(r"<main[\s\S]*?</main>|<article[\s\S]*?</article>", h)
+        for s in shingles(texte(corps.group(0) if corps else h)):
+            deja.setdefault(s, autre.stem.replace("article-", ""))
+    # Libellés de structure communs au gabarit : autorisés.
+    permis = ("questions fréquentes", "points clés", "en résumé", "à lire aussi", "lire l'article")
+    repris = []
+    for phrase in [l for l in brut.split("\n") if len(l.split()) >= 6]:
+        for s in shingles(phrase):
+            if s in deja and not any(p in s for p in permis):
+                repris.append((phrase.strip(), deja[s], s))
+                break
+    print(f"5. Formulations déjà utilisées dans d'autres articles ({len(repris)}) :")
+    for phrase, src, s in repris[:25]:
+        print(f"   ✗ « {phrase[:110]}{'…' if len(phrase) > 110 else ''} »")
+        print(f"     passage commun « {s} » (déjà dans {src})")
+    if not repris:
+        print("   aucune")
+    erreurs += len(repris)
 
     sys.exit(1 if erreurs else 0)
 

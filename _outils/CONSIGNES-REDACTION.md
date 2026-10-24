@@ -132,6 +132,23 @@ Avant de choisir, lire les 10 derniers articles de `articles.js` (titre, catégo
 - Pas deux articles sur le même angle ou le même mot-clé, même reformulés.
 - Ne jamais écrire de formule méta du type « Ce guide répond à la question que se pose… » :
   poser directement la question au lecteur, ou entrer dans le sujet.
+
+## Variété des formulations (règle stricte)
+
+Chaque article doit sonner neuf. Avant d'écrire, relire l'introduction, les intertitres,
+les encadrés et la conclusion des 5 derniers articles, puis s'en écarter :
+- **Introduction** : changer d'attaque à chaque fois (un chiffre, une scène concrète, une
+  échéance, une idée reçue à corriger, une question directe, une citation officielle…).
+  Jamais deux articles de suite avec la même structure d'ouverture.
+- **Intertitres, titres d'encadrés (`callout`), phrases de transition, conclusion,
+  appel à l'action, questions de FAQ** : formulations propres au sujet, jamais recopiées
+  d'un autre article (« La lecture honnête de ces chiffres », « Ce que ça change
+  concrètement », « Plan d'action sur 30 jours »… ne se réutilisent pas tels quels).
+- Varier aussi le rythme : longueur des phrases, tableaux ou listes selon le besoin,
+  type de plan (chronologique, par profil, par risque, par question…).
+- `verifier_article.py` signale toute phrase qui reprend 6 mots consécutifs d'un autre
+  article : la réécrire (seuls les noms propres, intitulés officiels et libellés du
+  gabarit comme « Points clés » ou « Questions fréquentes » sont admis).
 - Partir d'une question concrète que se pose un décideur cette semaine (actualité,
   échéance, étude, annonce) et y répondre de façon complète et actionnable : ce qui
   change, qui est concerné, quoi faire, dans quel ordre, avec quels chiffres.
