@@ -130,6 +130,8 @@ Avant de choisir, lire les 10 derniers articles de `articles.js` (titre, catégo
   pricing et croissance SaaS, documentation produit, livres blancs, fiches produits,
   SEO technique, stratégie de contenu.
 - Pas deux articles sur le même angle ou le même mot-clé, même reformulés.
+- Ne jamais écrire de formule méta du type « Ce guide répond à la question que se pose… » :
+  poser directement la question au lecteur, ou entrer dans le sujet.
 - Partir d'une question concrète que se pose un décideur cette semaine (actualité,
   échéance, étude, annonce) et y répondre de façon complète et actionnable : ce qui
   change, qui est concerné, quoi faire, dans quel ordre, avec quels chiffres.
