@@ -62,7 +62,7 @@ def main(chemin):
         (r"\s[,.]", "espace avant une virgule ou un point"),
         (r"«\S|\S»", "espace manquante à l'intérieur des guillemets « »"),
         (r'(?<![=\w])"[^"<>]{2,80}"', "guillemets droits dans le texte (utiliser « »)"),
-        (r"\b(\w+) \1\b", "mot répété"),
+        (r"\b([^\W\d]+) \1\b", "mot répété"),
     ]
     lignes = [l for l in brut.split("\n") if l.strip()]
     for motif, libelle in regles:
