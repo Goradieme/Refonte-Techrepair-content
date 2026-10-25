@@ -130,7 +130,7 @@ const ARTICLES = [
     categorie:"rh",
     lecture:  "12 min",
     lien:     "articles/article-transparence-salariale-offres-emploi.html",
-    image:    "articles/transparence-salariale-offres-emploi-cover.jpg",
+    image:    "articles/transparence-salariale-offres-emploi-cover.jpg?v=2",
     slug:     "transparence-salariale-offres-emploi",
     motCle:   "transparence salariale",
     metaDesc: "Projet de loi au Sénat : fourchette de salaire obligatoire dans les offres, catégories de valeur égale, seuil de 5 %. Ce qu'il faut préparer dès maintenant."
