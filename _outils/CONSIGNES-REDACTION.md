@@ -107,7 +107,9 @@ commençant par `_`). Il contient tout ce qu'il faut pour produire un article pa
     (`pagesLiees`), la page secteur, **au moins deux articles existants du blog** dont
     le sujet est proche, et `/devis` ou un outil (`/visibilite-ia`,
     `/calculateur-temps-perdu`, audit IA). Ancres descriptives (jamais « cliquez ici »),
-    insérées là où le lecteur en a besoin ;
+    insérées là où le lecteur en a besoin, et **réparties dans tout l'article** : au moins
+    un lien dans chaque tiers (début, milieu, fin), jamais deux liens vers d'autres
+    articles dans la même partie (contrôlé par `verifier_article.py`) ;
   - en retour, ajouter **un lien contextuel vers le nouvel article dans les deux
     articles existants les plus proches** : une phrase naturelle et utile, dans la
     partie pertinente. Si l'article existant a un brouillon dans `_outils/brouillons/`,

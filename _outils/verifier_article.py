@@ -134,6 +134,23 @@ def main(chemin):
         print(f"   → {s}")
     for s in entrants:
         print(f"   ← {s}")
+    # Répartition : au moins un lien interne dans chaque tiers de l'article,
+    # et jamais plus d'un lien vers un autre article dans la même partie.
+    corps_sans_sources = src.split('<h2 id="sources"')[0]
+    n = len(corps_sans_sources)
+    pos = [m.start() / n for m in re.finditer(r'<a href="/', corps_sans_sources)]
+    tiers = {min(int(x * 3), 2) for x in pos}
+    print(f"   répartition des liens internes par tiers de l'article : {sorted(t + 1 for t in tiers)}")
+    if tiers != {0, 1, 2}:
+        print("   ✗ répartir les liens internes dans tout l'article : au moins un dans chaque tiers (début, milieu, fin)")
+        erreurs += 1
+    parties = re.split(r'<h2 id=', corps_sans_sources)
+    for part in parties:
+        nb = len(set(re.findall(r'href="[^"]*article-([a-z0-9-]+)\.html"', part)) - {slug})
+        if nb > 1:
+            titre_p = re.sub(r"<[^>]+>", "", part.split("</h2>")[0])[:60]
+            print(f"   ✗ {nb} liens vers d'autres articles dans la même partie ({titre_p}…) : les espacer")
+            erreurs += 1
     if len(sortants) < 2:
         print("   ✗ au moins 2 liens contextuels vers des articles existants sont exigés")
         erreurs += 1
