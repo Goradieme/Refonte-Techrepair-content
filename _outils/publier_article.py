@@ -191,6 +191,14 @@ def main(chemin_meta: str) -> None:
         ligne = f'      <li><a href="articles/{fichier}">{esc(m["titre"])}</a></li>\n'
         b = b.replace("    </ul>\n    <div class=\"articles-grid\"", ligne + "    </ul>\n    <div class=\"articles-grid\"", 1)
         bh.write_text(b, encoding="utf-8")
+    # Version de articles.js (empreinte du contenu) : force le navigateur et le
+    # cache Cloudflare à recharger la liste des articles après chaque publication.
+    import hashlib
+    empreinte = hashlib.sha1(aj.read_bytes()).hexdigest()[:10]
+    b = bh.read_text(encoding="utf-8")
+    b2 = re.sub(r'src="articles\.js(\?v=[0-9a-f]+)?"', f'src="articles.js?v={empreinte}"', b)
+    if b2 != b:
+        bh.write_text(b2, encoding="utf-8")
 
     # --- sitemap.xml -------------------------------------------------------------
     sm = RACINE / "sitemap.xml"
