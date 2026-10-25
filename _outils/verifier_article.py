@@ -116,9 +116,9 @@ def main(chemin):
                 repris.append((phrase.strip(), deja[s], s))
                 break
     print(f"5. Formulations déjà utilisées dans d'autres articles ({len(repris)}) :")
-    for phrase, src, s in repris[:25]:
+    for phrase, origine, s in repris[:25]:
         print(f"   ✗ « {phrase[:110]}{'…' if len(phrase) > 110 else ''} »")
-        print(f"     passage commun « {s} » (déjà dans {src})")
+        print(f"     passage commun « {s} » (déjà dans {origine})")
     if not repris:
         print("   aucune")
     erreurs += len(repris)

@@ -1,0 +1,32 @@
+{
+  "slug": "transparence-salariale-offres-emploi",
+  "categorie": "rh",
+  "date": "2026-10-25",
+  "titre": "Transparence salariale : ce que vos offres d'emploi et vos grilles doivent changer",
+  "titreSeo": "Transparence salariale : préparer vos offres d'emploi",
+  "h1": "Transparence salariale : ce que vos offres d'emploi et vos grilles doivent changer",
+  "filAriane": "Transparence salariale",
+  "motCle": "transparence salariale",
+  "metaDesc": "Projet de loi au Sénat : fourchette de salaire obligatoire dans les offres, catégories de valeur égale, seuil de 5 %. Ce qu'il faut préparer dès maintenant.",
+  "extrait": "Le projet de loi de transposition attend son examen au Parlement. Fourchettes dans les offres, fin des questions sur le salaire passé, catégories de valeur égale : l'ordre dans lequel s'y préparer.",
+  "image": "articles/transparence-salariale-offres-emploi-cover.jpg",
+  "imageAlt": "Transparence salariale : ce que vos offres d'emploi et vos grilles doivent changer",
+  "sommaireCourt": {
+    "ch1": "1. Le calendrier",
+    "ch2": "2. Quatre règles au recrutement",
+    "ch3": "3. Catégories de valeur égale",
+    "ch4": "4. Indicateurs et 5 %",
+    "ch5": "5. Réécrire une annonce",
+    "ch6": "6. Éditeurs RH",
+    "ch7": "7. Quatre chantiers",
+    "faq": "FAQ",
+    "sources": "Sources"
+  },
+  "ctaLateral": {
+    "titre": "Des contenus RH précis et à jour",
+    "texte": "Offres d'emploi, pages carrières, livres blancs et documentation produit pour les éditeurs RH tech, rédigés avec vos équipes.",
+    "lien": "/secteur-rh-tech",
+    "bouton": "Découvrir l'offre RH tech"
+  },
+  "remplacer": true
+}

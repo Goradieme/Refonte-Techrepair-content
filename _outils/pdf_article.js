@@ -38,7 +38,11 @@ const { chromium } = require('playwright');
   await p.evaluate(() => {
     const re = /[\u{1F300}-\u{1FAFF}\u{2600}-\u{27BF}\u{2B00}-\u{2BFF}\u{FE0F}]/gu;
     const w = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT);
-    while (w.nextNode()) w.currentNode.nodeValue = w.currentNode.nodeValue.replace(re, '').replace(/^\s+(?=\S)/, m => m.includes('\n') ? m : '');
+    while (w.nextNode()) {
+      const v = w.currentNode.nodeValue, n = v.replace(re, '');
+      // L'espace de tête n'est retirée que si un émoji a été supprimé (sinon « </strong> mot » perdrait son espace).
+      if (n !== v) w.currentNode.nodeValue = n.replace(/^\s+(?=\S)/, m => m.includes('\n') ? m : '');
+    }
   });
   const titre = await p.title();
   await p.pdf({
