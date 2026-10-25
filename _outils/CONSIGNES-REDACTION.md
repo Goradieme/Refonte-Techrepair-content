@@ -113,6 +113,11 @@ commençant par `_`). Il contient tout ce qu'il faut pour produire un article pa
     partie pertinente. Si l'article existant a un brouillon dans `_outils/brouillons/`,
     modifier le brouillon puis relancer `publier_article.py` avec `"remplacer": true`
     dans son JSON ; sinon modifier directement la page dans `articles/` ;
+  - **mise en avant subtile des services** : quand le sujet s'y prête (RH, support,
+    veille, contenu, tâches répétitives), glisser une phrase naturelle et utile qui montre
+    comment un agent IA ou un service de TechRepair Content résout un point précis de
+    l'article, avec un lien vers `/agents-ia`, `/calculateur-temps-perdu` ou la page
+    service concernée. Une seule mention, factuelle, jamais publicitaire ;
   - le bloc « À lire aussi » (3 articles proches) est recalculé automatiquement sur
     toutes les pages par `_outils/maillage.py`, lancé par `publier_article.py`.
 - FAQ finale `<h2 id="faq">` avec 3 à 5 `<div class="faq-item"><h3>…</h3><p>…</p></div>`
