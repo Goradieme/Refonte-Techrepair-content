@@ -122,4 +122,17 @@ const ARTICLES = [
     motCle:   "allégations environnementales fiches produits",
     metaDesc: "Directive 2024/825 applicable depuis le 27 septembre 2026, loi française en attente : les allégations environnementales à retirer de vos fiches produits."
   },
+  {
+    titre:    "Transparence salariale : ce que vos offres d'emploi et vos grilles doivent changer",
+    extrait:  "Le projet de loi de transposition attend son examen au Parlement. Fourchettes dans les offres, fin des questions sur le salaire passé, catégories de valeur égale : l'ordre dans lequel s'y préparer.",
+    auteur:   "Goradieme",
+    date:     "2026-10-25",
+    categorie:"rh",
+    lecture:  "12 min",
+    lien:     "articles/article-transparence-salariale-offres-emploi.html",
+    image:    "articles/transparence-salariale-offres-emploi-cover.jpg",
+    slug:     "transparence-salariale-offres-emploi",
+    motCle:   "transparence salariale",
+    metaDesc: "Projet de loi au Sénat : fourchette de salaire obligatoire dans les offres, catégories de valeur égale, seuil de 5 %. Ce qu'il faut préparer dès maintenant."
+  },
 ];
