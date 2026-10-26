@@ -35,6 +35,53 @@ fondateur ou directeur commercial d'une entreprise **SaaS B2B, fintech ou cybers
   et une conclusion avec un appel à l'action précis vers la page service et `/devis`
   (par exemple un audit ou un diagnostic de contenu offert).
 
+## Cohérence avec les services (règle stricte)
+
+Chaque article part d'un **problème réel** d'une cible et mène naturellement à **un
+service principal** de TechRepair Content, noté dans le champ `service` du calendrier
+et lié dans l'article. Un sujet qui ne mène à aucun service n'est pas traité.
+
+| Service (page) | Problèmes des cibles qu'il résout | Exemples d'angles |
+|---|---|---|
+| Articles SEO longue traîne et piliers (`/service-articles-seo`) | trafic faible ou non qualifié, blog qui ne génère pas de démos, concurrents mieux classés, contenus non conformes en fintech (YMYL) | SEO SaaS, SEO fintech, marketing cyber, pages comparatives, clusters, E-E-A-T, ROI du contenu |
+| Livres blancs et études de cas B2B (`/service-livres-blancs`) | peu de leads qualifiés, cycle de vente long, besoin de preuve face à un DSI, un RSSI ou un DAF | livre blanc qui convertit, étude de cas, conformité (NIS2, DORA, DSP3) transformée en argument |
+| Fiches produits SEO et conversion (`/service-fiches-produits`) | catalogue invisible, contenu dupliqué, retours produits | fiche produit technique, guide d'achat, données structurées |
+| Stratégie de contenu IA augmentée (`/service-strategie-ia`) | pas assez de contenus pour couvrir le marché, qualité irrégulière, ton de marque perdu | produire plus avec l'IA sans perdre en qualité, process éditorial |
+| Agents IA (`/agents-ia`) | leads non relancés, veille concurrentielle ou réglementaire chronophage, support saturé, tâches répétitives | agent de relance des leads, veille automatisée, help center et agent support |
+| Visibilité dans les IA (`/visibilite-ia`) | marque absente des réponses de ChatGPT, Perplexity, Gemini | mesurer et améliorer sa citation par les IA (au plus 1 article IA par semaine) |
+
+- **Varier** : jamais le même service principal deux jours de suite, et au moins
+  4 services différents sur 7 jours, en plus de la rotation des secteurs.
+- **Le service se mérite** : l'article doit être utile même si le lecteur ne nous
+  contacte jamais ; le service est présenté comme la façon d'aller plus vite ou plus
+  loin, une seule fois, de façon factuelle, puis dans l'appel à l'action final.
+
+## Un article = une solution applicable (règle stricte)
+
+Le lecteur doit pouvoir **résoudre son problème avec l'article**, dès la semaine
+suivante. Avant d'écrire, formuler en une phrase : « [cible] n'arrive pas à [problème
+précis] ; après lecture, il saura [résultat] grâce à [méthode] ». Le problème doit être
+attesté (question réelle relevée, étude, discussion de forum, exigence réglementaire).
+
+Le plan suit la logique de résolution, avec des intertitres propres au sujet :
+1. **Le problème et son coût** : symptômes reconnaissables, pourquoi il apparaît, ce
+   qu'il coûte (chiffres sourcés).
+2. **Le diagnostic** : comment le lecteur vérifie s'il est concerné et à quel degré
+   (questions à se poser, indicateurs, outils gratuits).
+3. **La solution pas à pas** : étapes numérotées, dans l'ordre, avec qui fait quoi,
+   combien de temps, quels outils, et les critères de décision quand il y a un choix.
+4. **Un livrable prêt à l'emploi** dans l'article : modèle, plan type, grille
+   d'évaluation, checklist, gabarit de brief, exemple avant / après (rédigé pour
+   l'article et présenté comme tel).
+5. **Les erreurs qui font échouer** la démarche et comment les éviter.
+6. **Mesurer que c'est résolu** : indicateurs, seuils réalistes, délai d'observation.
+7. **Le faire soi-même ou se faire accompagner** : ce qui se fait en interne, ce que le
+   service apporte, puis l'appel à l'action (diagnostic, audit ou devis).
+
+Interdits : les généralités sans méthode, les listes de conseils interchangeables d'un
+secteur à l'autre, les « il faut » sans le « comment ». Chaque partie contient au moins
+un élément concret et propre au secteur visé (exemple, chiffre, contrainte, outil).
+
 ## Recherche de mots-clés et de questions réelles
 
 En attendant l'abonnement Ahrefs (Semrush : unités API épuisées ; Ahrefs : pas d'accès

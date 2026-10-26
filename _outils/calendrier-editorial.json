@@ -81,7 +81,7 @@
   "motCle": "génération de leads b2b",
   "intention": "commerciale / méthode",
   "pagesLiees": [
-   "/service-articles-seo",
+   "/service-livres-blancs",
    "/secteur-saas",
    "/devis"
   ],
@@ -95,7 +95,9 @@
    "comment générer des leads b2b",
    "pourquoi générer des leads",
    "agence génération de leads b2b"
-  ]
+  ],
+  "service": "livres-blancs",
+  "probleme": "Le blog et le site d'un SaaS B2B attirent des visites mais presque aucun lead qualifié."
  },
  {
   "n": 10,
@@ -106,13 +108,39 @@
   "motCle": "marketing cybersécurité",
   "intention": "commerciale / méthode",
   "pagesLiees": [
-   "/secteur-cybersecurite",
    "/service-articles-seo",
+   "/secteur-cybersecurite",
    "/devis"
   ],
   "donneesMotCle": {
    "source": "à valider (Ubersuggest + google_suggestions)"
-  }
+  },
+  "service": "articles-seo",
+  "probleme": "Un éditeur de cybersécurité n'arrive pas à intéresser les RSSI : ses contenus sonnent commerciaux ou alarmistes."
+ },
+ {
+  "n": 37,
+  "statut": "a_faire",
+  "categorie": "fintech",
+  "slug": "marketing-fintech-confiance",
+  "titre": "Marketing fintech : les contenus qui créent la confiance avant la première démo",
+  "motCle": "marketing fintech",
+  "intention": "méthode",
+  "pagesLiees": [
+   "/service-livres-blancs",
+   "/secteur-fintech",
+   "/devis"
+  ],
+  "donneesMotCle": {
+   "source": "à valider (Ubersuggest + google_suggestions)"
+  },
+  "questionsReelles": [
+   "b2b marketing fintech",
+   "fintech marketing strategy",
+   "marketing pour fintech"
+  ],
+  "service": "livres-blancs",
+  "probleme": "Une fintech B2B perd des prospects qui ne lui font pas encore confiance avant la démo."
  },
  {
   "n": 34,
@@ -138,7 +166,47 @@
    "agence seo saas",
    "saas seo checklist",
    "saas seo cost"
+  ],
+  "service": "articles-seo",
+  "probleme": "Un SaaS veut externaliser son SEO mais ne sait pas évaluer un consultant ni quoi exiger."
+ },
+ {
+  "n": 41,
+  "titre": "Leads non relancés : automatiser le suivi des téléchargements et des essais SaaS",
+  "motCle": "lead nurturing",
+  "intention": "méthode",
+  "donneesMotCle": {
+   "source": "à valider (Ubersuggest + google_suggestions)"
+  },
+  "slug": "agent-relance-leads-saas",
+  "statut": "a_faire",
+  "categorie": "saas",
+  "service": "agents-ia",
+  "probleme": "Les leads issus des livres blancs et des essais gratuits ne sont pas relancés à temps et refroidissent.",
+  "pagesLiees": [
+   "/agents-ia",
+   "/secteur-saas",
+   "/devis"
   ]
+ },
+ {
+  "n": 39,
+  "statut": "a_faire",
+  "categorie": "cyber",
+  "slug": "nis2-argument-commercial-editeurs",
+  "titre": "NIS2 : en faire un argument commercial crédible quand on vend de la cybersécurité",
+  "motCle": "nis2 marketing",
+  "intention": "méthode",
+  "pagesLiees": [
+   "/service-livres-blancs",
+   "/secteur-cybersecurite",
+   "/devis"
+  ],
+  "donneesMotCle": {
+   "source": "à valider (Ubersuggest + google_suggestions)"
+  },
+  "service": "livres-blancs",
+  "probleme": "Un éditeur cyber veut faire de NIS2 un argument commercial sans discours anxiogène ni approximation."
  },
  {
   "n": 13,
@@ -149,13 +217,15 @@
   "motCle": "SEO fintech",
   "intention": "méthode",
   "pagesLiees": [
-   "/secteur-fintech",
    "/service-articles-seo",
+   "/secteur-fintech",
    "/devis"
   ],
   "donneesMotCle": {
    "source": "à valider (Ubersuggest + google_suggestions)"
-  }
+  },
+  "service": "articles-seo",
+  "probleme": "Les contenus d'une fintech ne se classent pas : Google applique ses critères YMYL et la communication doit rester conforme."
  },
  {
   "n": 4,
@@ -181,6 +251,179 @@
    "livre blanc marketing (110/mois)",
    "comment faire un livre blanc",
    "landing page livre blanc"
+  ],
+  "service": "livres-blancs",
+  "probleme": "Un livre blanc a été produit mais génère peu de téléchargements ou des leads inexploitables."
+ },
+ {
+  "n": 2,
+  "statut": "a_faire",
+  "categorie": "ecommerce",
+  "slug": "fiche-produit-seo-produits-techniques",
+  "titre": "Fiche produit SEO : la méthode pour vendre des produits techniques en ligne",
+  "motCle": "fiche produit SEO",
+  "intention": "méthode",
+  "pagesLiees": [
+   "/service-fiches-produits",
+   "/secteur-ecommerce",
+   "/devis"
+  ],
+  "donneesMotCle": {
+   "source": "à valider (Ubersuggest + google_suggestions)"
+  },
+  "service": "fiches-produits",
+  "probleme": "Les fiches produits techniques reprennent le texte fabricant : contenu dupliqué, mauvais classement, peu de conversions."
+ },
+ {
+  "n": 16,
+  "statut": "a_faire",
+  "categorie": "seo",
+  "slug": "contenu-ia-google-penalite",
+  "titre": "Produire plus de contenus B2B avec l'IA sans perdre en qualité ni en crédibilité",
+  "motCle": "contenu IA Google",
+  "intention": "informationnelle",
+  "pagesLiees": [
+   "/service-strategie-ia",
+   "/secteur-saas",
+   "/devis"
+  ],
+  "donneesMotCle": {
+   "source": "à valider (Ubersuggest + google_suggestions)"
+  },
+  "service": "strategie-ia",
+  "probleme": "Une équipe marketing réduite ne publie pas assez pour couvrir son marché, et les contenus générés par IA sont fades ou risqués."
+ },
+ {
+  "n": 42,
+  "titre": "Veille réglementaire cybersécurité : l'automatiser sans rien laisser passer",
+  "motCle": "veille réglementaire cybersécurité",
+  "intention": "méthode",
+  "donneesMotCle": {
+   "source": "à valider (Ubersuggest + google_suggestions)"
+  },
+  "slug": "veille-reglementaire-cyber-automatisee",
+  "statut": "a_faire",
+  "categorie": "cyber",
+  "service": "agents-ia",
+  "probleme": "La veille réglementaire et concurrentielle d'un éditeur cyber prend des heures chaque semaine et reste incomplète.",
+  "pagesLiees": [
+   "/agents-ia",
+   "/secteur-cybersecurite",
+   "/devis"
+  ]
+ },
+ {
+  "n": 12,
+  "statut": "a_faire",
+  "categorie": "saas",
+  "slug": "pages-alternative-comparatif-saas",
+  "titre": "Pages « alternative à » et comparatifs : le format SEO le plus rentable en SaaS",
+  "motCle": "page comparatif SaaS",
+  "intention": "méthode / achat",
+  "pagesLiees": [
+   "/service-articles-seo",
+   "/secteur-saas",
+   "/devis"
+  ],
+  "donneesMotCle": {
+   "source": "à valider (Ubersuggest + google_suggestions)"
+  },
+  "service": "articles-seo",
+  "probleme": "Les prospects d'un SaaS comparent avec des concurrents sur des pages tierces qui ne lui sont pas favorables."
+ },
+ {
+  "n": 23,
+  "statut": "a_faire",
+  "categorie": "fintech",
+  "slug": "etude-de-cas-b2b-rediger",
+  "titre": "Étude de cas fintech : prouver la fiabilité sans trahir le secret client",
+  "motCle": "étude de cas B2B",
+  "intention": "méthode",
+  "pagesLiees": [
+   "/service-livres-blancs",
+   "/secteur-fintech",
+   "/devis"
+  ],
+  "donneesMotCle": {
+   "source": "à valider (Ubersuggest + google_suggestions)"
+  },
+  "service": "livres-blancs",
+  "probleme": "Une fintech n'a pas de preuve client publiable alors que les DAF exigent des références."
+ },
+ {
+  "n": 11,
+  "statut": "a_faire",
+  "categorie": "seo",
+  "slug": "eeat-b2b-tech",
+  "titre": "E-E-A-T en B2B tech : prouver son expertise à Google et aux lecteurs",
+  "motCle": "E-E-A-T",
+  "intention": "informationnelle",
+  "pagesLiees": [
+   "/service-articles-seo",
+   "/secteur-saas",
+   "/devis"
+  ],
+  "donneesMotCle": {
+   "source": "à valider (Ubersuggest + google_suggestions)"
+  },
+  "service": "articles-seo",
+  "probleme": "Un site B2B tech publie régulièrement mais Google ne le considère pas comme une source experte."
+ },
+ {
+  "n": 14,
+  "statut": "a_faire",
+  "categorie": "ecommerce",
+  "slug": "guide-achat-ecommerce-qui-convertit",
+  "titre": "Guide d'achat e-commerce : la structure qui fait passer à l'acte",
+  "motCle": "guide d'achat e-commerce",
+  "intention": "méthode",
+  "pagesLiees": [
+   "/service-fiches-produits",
+   "/secteur-ecommerce",
+   "/devis"
+  ],
+  "donneesMotCle": {
+   "source": "à valider (Ubersuggest + google_suggestions)"
+  },
+  "service": "fiches-produits",
+  "probleme": "Les visiteurs d'un e-commerce tech hésitent faute de comparaison claire et partent chez un concurrent."
+ },
+ {
+  "n": 27,
+  "statut": "a_faire",
+  "categorie": "saas",
+  "slug": "landing-page-saas-conversion",
+  "titre": "Landing page SaaS : anatomie d'une page qui transforme les visites en démos",
+  "motCle": "landing page SaaS",
+  "intention": "méthode / conversion",
+  "pagesLiees": [
+   "/service-articles-seo",
+   "/secteur-saas",
+   "/devis"
+  ],
+  "donneesMotCle": {
+   "source": "à valider (Ubersuggest + google_suggestions)"
+  },
+  "service": "articles-seo",
+  "probleme": "Les pages de destination d'un SaaS reçoivent du trafic mais convertissent peu en démos."
+ },
+ {
+  "n": 43,
+  "titre": "Votre SaaS est-il recommandé par ChatGPT ? Le diagnostic en une heure",
+  "motCle": "visibilité marque ChatGPT",
+  "intention": "méthode",
+  "donneesMotCle": {
+   "source": "à valider (Ubersuggest + google_suggestions)"
+  },
+  "slug": "audit-visibilite-ia-saas",
+  "statut": "a_faire",
+  "categorie": "seo",
+  "service": "visibilite-ia",
+  "probleme": "Une marque SaaS est absente des réponses des IA alors que ses acheteurs les interrogent.",
+  "pagesLiees": [
+   "/visibilite-ia",
+   "/secteur-saas",
+   "/devis"
   ]
  },
  {
@@ -192,13 +435,110 @@
   "motCle": "rédaction technique cybersécurité",
   "intention": "méthode / achat",
   "pagesLiees": [
+   "/service-articles-seo",
    "/secteur-cybersecurite",
-   "/services",
    "/devis"
   ],
   "donneesMotCle": {
    "source": "à valider (Ubersuggest + google_suggestions)"
-  }
+  },
+  "service": "articles-seo",
+  "probleme": "Les contenus techniques d'un éditeur cyber sont soit trop vagues pour un RSSI, soit illisibles pour un décideur."
+ },
+ {
+  "n": 40,
+  "statut": "a_faire",
+  "categorie": "fintech",
+  "slug": "dsp3-dora-contenus-rassurer",
+  "titre": "DSP3 et DORA : transformer la conformité en contenus qui rassurent vos prospects",
+  "motCle": "contenu conformité fintech",
+  "intention": "méthode",
+  "pagesLiees": [
+   "/service-livres-blancs",
+   "/secteur-fintech",
+   "/devis"
+  ],
+  "donneesMotCle": {
+   "source": "à valider (Ubersuggest + google_suggestions)"
+  },
+  "service": "livres-blancs",
+  "probleme": "La conformité DSP3 ou DORA d'une fintech est réelle mais invisible pour ses prospects."
+ },
+ {
+  "n": 17,
+  "statut": "a_faire",
+  "categorie": "saas",
+  "slug": "documentation-produit-levier-seo",
+  "titre": "Documentation produit : faire de votre help center un levier SEO",
+  "motCle": "documentation produit SEO",
+  "intention": "méthode",
+  "pagesLiees": [
+   "/agents-ia",
+   "/secteur-saas",
+   "/devis"
+  ],
+  "donneesMotCle": {
+   "source": "à valider (Ubersuggest + google_suggestions)"
+  },
+  "service": "agents-ia",
+  "probleme": "Le help center d'un SaaS est mal référencé et le support répond sans cesse aux mêmes questions."
+ },
+ {
+  "n": 24,
+  "statut": "a_faire",
+  "categorie": "rh",
+  "slug": "marque-employeur-tech-contenu",
+  "titre": "Marque employeur tech : le contenu qui attire les développeurs",
+  "motCle": "marque employeur tech",
+  "intention": "méthode",
+  "pagesLiees": [
+   "/service-articles-seo",
+   "/secteur-rh-tech",
+   "/devis"
+  ],
+  "donneesMotCle": {
+   "source": "à valider (Ubersuggest + google_suggestions)"
+  },
+  "service": "articles-seo",
+  "probleme": "Une entreprise tech peine à recruter des développeurs faute de contenus crédibles sur son équipe et sa technique."
+ },
+ {
+  "n": 44,
+  "titre": "Étude de cas cybersécurité : raconter un incident évité sans exposer le client",
+  "motCle": "étude de cas cybersécurité",
+  "intention": "méthode",
+  "donneesMotCle": {
+   "source": "à valider (Ubersuggest + google_suggestions)"
+  },
+  "slug": "etude-de-cas-cybersecurite",
+  "statut": "a_faire",
+  "categorie": "cyber",
+  "service": "livres-blancs",
+  "probleme": "Les clients d'un éditeur cyber refusent d'être cités, et les ventes manquent de preuves concrètes.",
+  "pagesLiees": [
+   "/service-livres-blancs",
+   "/secteur-cybersecurite",
+   "/devis"
+  ]
+ },
+ {
+  "n": 29,
+  "statut": "a_faire",
+  "categorie": "seo",
+  "slug": "roi-contenu-b2b-mesurer",
+  "titre": "ROI du contenu B2B : comment le mesurer sans se raconter d'histoires",
+  "motCle": "ROI contenu B2B",
+  "intention": "informationnelle",
+  "pagesLiees": [
+   "/service-articles-seo",
+   "/secteur-saas",
+   "/devis"
+  ],
+  "donneesMotCle": {
+   "source": "à valider (Ubersuggest + google_suggestions)"
+  },
+  "service": "articles-seo",
+  "probleme": "La direction doute du contenu faute de mesure fiable de son retour sur investissement."
  },
  {
   "n": 36,
@@ -210,7 +550,8 @@
   "intention": "méthode",
   "pagesLiees": [
    "/service-articles-seo",
-   "/secteur-saas"
+   "/secteur-saas",
+   "/devis"
   ],
   "donneesMotCle": {
    "volume": 50,
@@ -223,49 +564,32 @@
    "saas seo strategy",
    "programmatic seo saas",
    "saas seo mistakes"
-  ]
+  ],
+  "service": "articles-seo",
+  "probleme": "Le SEO d'un SaaS amène du trafic informationnel qui ne se transforme pas en essais ni en démos."
  },
  {
-  "n": 37,
+  "n": 7,
   "statut": "a_faire",
-  "categorie": "fintech",
-  "slug": "marketing-fintech-confiance",
-  "titre": "Marketing fintech : les contenus qui créent la confiance avant la première démo",
-  "motCle": "marketing fintech",
+  "categorie": "seo",
+  "slug": "cluster-thematique-saas-b2b",
+  "titre": "Clusters thématiques : construire une architecture de contenu SaaS qui se classe",
+  "motCle": "cluster thématique SEO",
   "intention": "méthode",
   "pagesLiees": [
-   "/secteur-fintech",
-   "/service-livres-blancs",
+   "/service-articles-seo",
+   "/secteur-saas",
    "/devis"
   ],
   "donneesMotCle": {
    "source": "à valider (Ubersuggest + google_suggestions)"
   },
-  "questionsReelles": [
-   "b2b marketing fintech",
-   "fintech marketing strategy",
-   "marketing pour fintech"
-  ]
- },
- {
-  "n": 12,
-  "statut": "a_faire",
-  "categorie": "saas",
-  "slug": "pages-alternative-comparatif-saas",
-  "titre": "Pages « alternative à » et comparatifs : le format SEO le plus rentable en SaaS",
-  "motCle": "page comparatif SaaS",
-  "intention": "méthode / achat",
-  "pagesLiees": [
-   "/secteur-saas",
-   "/service-articles-seo"
-  ],
-  "donneesMotCle": {
-   "source": "à valider (Ubersuggest + google_suggestions)"
-  }
+  "service": "articles-seo",
+  "probleme": "Les articles d'un SaaS se cannibalisent et aucun ne se classe sur les requêtes importantes."
  },
  {
   "n": 38,
-  "statut": "a_faire",
+  "statut": "ecarte",
   "categorie": "seo",
   "slug": "marketing-saas-b2b-canaux",
   "titre": "Marketing SaaS B2B : quels canaux financer quand on n'a pas un budget de licorne",
@@ -286,200 +610,8 @@
    "digital marketing saas (90/mois)",
    "kpi marketing saas",
    "stratégie marketing saas b2b"
-  ]
- },
- {
-  "n": 2,
-  "statut": "a_faire",
-  "categorie": "ecommerce",
-  "slug": "fiche-produit-seo-produits-techniques",
-  "titre": "Fiche produit SEO : la méthode pour vendre des produits techniques en ligne",
-  "motCle": "fiche produit SEO",
-  "intention": "méthode",
-  "pagesLiees": [
-   "/service-fiches-produits",
-   "/secteur-ecommerce"
   ],
-  "donneesMotCle": {
-   "source": "à valider (Ubersuggest + google_suggestions)"
-  }
- },
- {
-  "n": 39,
-  "statut": "a_faire",
-  "categorie": "cyber",
-  "slug": "nis2-argument-commercial-editeurs",
-  "titre": "NIS2 : en faire un argument commercial crédible quand on vend de la cybersécurité",
-  "motCle": "nis2 marketing",
-  "intention": "méthode",
-  "pagesLiees": [
-   "/secteur-cybersecurite",
-   "/service-livres-blancs",
-   "/devis"
-  ],
-  "donneesMotCle": {
-   "source": "à valider (Ubersuggest + google_suggestions)"
-  }
- },
- {
-  "n": 27,
-  "statut": "a_faire",
-  "categorie": "saas",
-  "slug": "landing-page-saas-conversion",
-  "titre": "Landing page SaaS : anatomie d'une page qui transforme les visites en démos",
-  "motCle": "landing page SaaS",
-  "intention": "méthode / conversion",
-  "pagesLiees": [
-   "/services",
-   "/secteur-saas"
-  ],
-  "donneesMotCle": {
-   "source": "à valider (Ubersuggest + google_suggestions)"
-  }
- },
- {
-  "n": 40,
-  "statut": "a_faire",
-  "categorie": "fintech",
-  "slug": "dsp3-dora-contenus-rassurer",
-  "titre": "DSP3 et DORA : transformer la conformité en contenus qui rassurent vos prospects",
-  "motCle": "contenu conformité fintech",
-  "intention": "méthode",
-  "pagesLiees": [
-   "/secteur-fintech",
-   "/service-livres-blancs"
-  ],
-  "donneesMotCle": {
-   "source": "à valider (Ubersuggest + google_suggestions)"
-  }
- },
- {
-  "n": 23,
-  "statut": "a_faire",
-  "categorie": "saas",
-  "slug": "etude-de-cas-b2b-rediger",
-  "titre": "Étude de cas B2B : le plan pour transformer un client satisfait en argument de vente",
-  "motCle": "étude de cas B2B",
-  "intention": "méthode",
-  "pagesLiees": [
-   "/service-livres-blancs",
-   "/services"
-  ],
-  "donneesMotCle": {
-   "source": "à valider (Ubersuggest + google_suggestions)"
-  }
- },
- {
-  "n": 7,
-  "statut": "a_faire",
-  "categorie": "seo",
-  "slug": "cluster-thematique-saas-b2b",
-  "titre": "Clusters thématiques : construire une architecture de contenu SaaS qui se classe",
-  "motCle": "cluster thématique SEO",
-  "intention": "méthode",
-  "pagesLiees": [
-   "/service-articles-seo",
-   "/secteur-saas"
-  ],
-  "donneesMotCle": {
-   "source": "à valider (Ubersuggest + google_suggestions)"
-  }
- },
- {
-  "n": 29,
-  "statut": "a_faire",
-  "categorie": "seo",
-  "slug": "roi-contenu-b2b-mesurer",
-  "titre": "ROI du contenu B2B : comment le mesurer sans se raconter d'histoires",
-  "motCle": "ROI contenu B2B",
-  "intention": "informationnelle",
-  "pagesLiees": [
-   "/service-articles-seo",
-   "/devis"
-  ],
-  "donneesMotCle": {
-   "source": "à valider (Ubersuggest + google_suggestions)"
-  }
- },
- {
-  "n": 17,
-  "statut": "a_faire",
-  "categorie": "saas",
-  "slug": "documentation-produit-levier-seo",
-  "titre": "Documentation produit : faire de votre help center un levier SEO",
-  "motCle": "documentation produit SEO",
-  "intention": "méthode",
-  "pagesLiees": [
-   "/services",
-   "/secteur-saas"
-  ],
-  "donneesMotCle": {
-   "source": "à valider (Ubersuggest + google_suggestions)"
-  }
- },
- {
-  "n": 11,
-  "statut": "a_faire",
-  "categorie": "seo",
-  "slug": "eeat-b2b-tech",
-  "titre": "E-E-A-T en B2B tech : prouver son expertise à Google et aux lecteurs",
-  "motCle": "E-E-A-T",
-  "intention": "informationnelle",
-  "pagesLiees": [
-   "/service-articles-seo",
-   "/apropos"
-  ],
-  "donneesMotCle": {
-   "source": "à valider (Ubersuggest + google_suggestions)"
-  }
- },
- {
-  "n": 24,
-  "statut": "a_faire",
-  "categorie": "rh",
-  "slug": "marque-employeur-tech-contenu",
-  "titre": "Marque employeur tech : le contenu qui attire les développeurs",
-  "motCle": "marque employeur tech",
-  "intention": "méthode",
-  "pagesLiees": [
-   "/secteur-rh-tech",
-   "/service-articles-seo"
-  ],
-  "donneesMotCle": {
-   "source": "à valider (Ubersuggest + google_suggestions)"
-  }
- },
- {
-  "n": 16,
-  "statut": "a_faire",
-  "categorie": "seo",
-  "slug": "contenu-ia-google-penalite",
-  "titre": "Contenu rédigé avec l'IA : ce que Google pénalise vraiment (et ce qu'il ne pénalise pas)",
-  "motCle": "contenu IA Google",
-  "intention": "informationnelle",
-  "pagesLiees": [
-   "/service-articles-seo",
-   "/agents-ia"
-  ],
-  "donneesMotCle": {
-   "source": "à valider (Ubersuggest + google_suggestions)"
-  }
- },
- {
-  "n": 14,
-  "statut": "a_faire",
-  "categorie": "ecommerce",
-  "slug": "guide-achat-ecommerce-qui-convertit",
-  "titre": "Guide d'achat e-commerce : la structure qui fait passer à l'acte",
-  "motCle": "guide d'achat e-commerce",
-  "intention": "méthode",
-  "pagesLiees": [
-   "/service-fiches-produits",
-   "/secteur-ecommerce"
-  ],
-  "donneesMotCle": {
-   "source": "à valider (Ubersuggest + google_suggestions)"
-  }
+  "raison": "hors ligne éditoriale du 26/10/2026 (aucun service principal ou doublon)"
  },
  {
   "n": 5,
@@ -492,7 +624,7 @@
   "pagesLiees": [
    "/secteur-fintech"
   ],
-  "raison": "hors ligne éditoriale du 26/10/2026 (ne répond pas à une recherche d'acheteur de contenus)"
+  "raison": "hors ligne éditoriale du 26/10/2026 (aucun service principal ou doublon)"
  },
  {
   "n": 6,
@@ -506,7 +638,7 @@
    "/secteur-rh-tech",
    "/agents-ia"
   ],
-  "raison": "hors ligne éditoriale du 26/10/2026 (ne répond pas à une recherche d'acheteur de contenus)"
+  "raison": "hors ligne éditoriale du 26/10/2026 (aucun service principal ou doublon)"
  },
  {
   "n": 8,
@@ -520,7 +652,7 @@
    "/agents-ia",
    "/calculateur-temps-perdu"
   ],
-  "raison": "hors ligne éditoriale du 26/10/2026 (ne répond pas à une recherche d'acheteur de contenus)"
+  "raison": "hors ligne éditoriale du 26/10/2026 (aucun service principal ou doublon)"
  },
  {
   "n": 9,
@@ -534,7 +666,7 @@
    "/service-fiches-produits",
    "/visibilite-ia"
   ],
-  "raison": "hors ligne éditoriale du 26/10/2026 (ne répond pas à une recherche d'acheteur de contenus)"
+  "raison": "hors ligne éditoriale du 26/10/2026 (aucun service principal ou doublon)"
  },
  {
   "n": 15,
@@ -547,7 +679,7 @@
   "pagesLiees": [
    "/secteur-rh-tech"
   ],
-  "raison": "hors ligne éditoriale du 26/10/2026 (ne répond pas à une recherche d'acheteur de contenus)"
+  "raison": "hors ligne éditoriale du 26/10/2026 (aucun service principal ou doublon)"
  },
  {
   "n": 18,
@@ -560,7 +692,7 @@
   "pagesLiees": [
    "/secteur-cybersecurite"
   ],
-  "raison": "hors ligne éditoriale du 26/10/2026 (ne répond pas à une recherche d'acheteur de contenus)"
+  "raison": "hors ligne éditoriale du 26/10/2026 (aucun service principal ou doublon)"
  },
  {
   "n": 19,
@@ -574,7 +706,7 @@
    "/calculateur-temps-perdu",
    "/agents-ia"
   ],
-  "raison": "hors ligne éditoriale du 26/10/2026 (ne répond pas à une recherche d'acheteur de contenus)"
+  "raison": "hors ligne éditoriale du 26/10/2026 (aucun service principal ou doublon)"
  },
  {
   "n": 20,
@@ -587,7 +719,7 @@
   "pagesLiees": [
    "/service-fiches-produits"
   ],
-  "raison": "hors ligne éditoriale du 26/10/2026 (ne répond pas à une recherche d'acheteur de contenus)"
+  "raison": "hors ligne éditoriale du 26/10/2026 (aucun service principal ou doublon)"
  },
  {
   "n": 21,
@@ -600,7 +732,7 @@
   "pagesLiees": [
    "/service-articles-seo"
   ],
-  "raison": "hors ligne éditoriale du 26/10/2026 (ne répond pas à une recherche d'acheteur de contenus)"
+  "raison": "hors ligne éditoriale du 26/10/2026 (aucun service principal ou doublon)"
  },
  {
   "n": 25,
@@ -614,7 +746,7 @@
    "/agents-ia",
    "/service-articles-seo"
   ],
-  "raison": "hors ligne éditoriale du 26/10/2026 (ne répond pas à une recherche d'acheteur de contenus)"
+  "raison": "hors ligne éditoriale du 26/10/2026 (aucun service principal ou doublon)"
  },
  {
   "n": 26,
@@ -627,7 +759,7 @@
   "pagesLiees": [
    "/secteur-cybersecurite"
   ],
-  "raison": "hors ligne éditoriale du 26/10/2026 (ne répond pas à une recherche d'acheteur de contenus)"
+  "raison": "hors ligne éditoriale du 26/10/2026 (aucun service principal ou doublon)"
  },
  {
   "n": 28,
@@ -641,7 +773,7 @@
    "/visibilite-ia",
    "/service-fiches-produits"
   ],
-  "raison": "hors ligne éditoriale du 26/10/2026 (ne répond pas à une recherche d'acheteur de contenus)"
+  "raison": "hors ligne éditoriale du 26/10/2026 (aucun service principal ou doublon)"
  },
  {
   "n": 30,
@@ -655,6 +787,6 @@
    "/services",
    "/secteur-saas"
   ],
-  "raison": "hors ligne éditoriale du 26/10/2026 (ne répond pas à une recherche d'acheteur de contenus)"
+  "raison": "hors ligne éditoriale du 26/10/2026 (aucun service principal ou doublon)"
  }
 ]
