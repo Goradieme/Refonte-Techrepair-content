@@ -1,34 +1,660 @@
 [
-  {"n": 1, "statut": "publie", "categorie": "seo", "slug": "geo-etre-cite-par-chatgpt", "titre": "GEO : comment faire citer votre entreprise B2B par ChatGPT, Perplexity et Gemini", "motCle": "GEO référencement IA", "intention": "informationnelle / prise de conscience", "pagesLiees": ["/visibilite-ia", "/service-articles-seo"], "date": "2026-10-22"},
-  {"n": 2, "statut": "a_faire", "categorie": "ecommerce", "slug": "fiche-produit-seo-produits-techniques", "titre": "Fiche produit SEO : la méthode pour vendre des produits techniques en ligne", "motCle": "fiche produit SEO", "intention": "méthode", "pagesLiees": ["/service-fiches-produits", "/secteur-ecommerce"]},
-  {"n": 3, "statut": "publie", "categorie": "cyber", "slug": "nis2-france-entreprises-concernees", "titre": "NIS2 en France : entreprises concernées et plan d'action avant la loi Résilience", "motCle": "NIS2 entreprises concernées", "intention": "informationnelle réglementaire", "pagesLiees": ["/secteur-cybersecurite", "/service-livres-blancs"], "date": "2026-10-23"},
-  {"n": 4, "statut": "a_faire", "categorie": "saas", "slug": "livre-blanc-saas-generer-leads", "titre": "Livre blanc SaaS : comment en écrire un qui génère vraiment des leads", "motCle": "livre blanc SaaS", "intention": "méthode / commerciale", "pagesLiees": ["/service-livres-blancs", "/secteur-saas"]},
-  {"n": 5, "statut": "a_faire", "categorie": "fintech", "slug": "dora-fintech-obligations", "titre": "Règlement DORA : ce qu'il change concrètement pour les fintechs", "motCle": "DORA fintech", "intention": "informationnelle réglementaire", "pagesLiees": ["/secteur-fintech"]},
-  {"n": 6, "statut": "a_faire", "categorie": "rh", "slug": "ai-act-recrutement-logiciels-rh", "titre": "AI Act et recrutement : ce que les éditeurs de logiciels RH doivent anticiper", "motCle": "AI Act recrutement", "intention": "informationnelle réglementaire", "pagesLiees": ["/secteur-rh-tech", "/agents-ia"]},
-  {"n": 7, "statut": "a_faire", "categorie": "seo", "slug": "cluster-thematique-saas-b2b", "titre": "Clusters thématiques : construire une architecture de contenu SaaS qui se classe", "motCle": "cluster thématique SEO", "intention": "méthode", "pagesLiees": ["/service-articles-seo", "/secteur-saas"]},
-  {"n": 8, "statut": "a_faire", "categorie": "saas", "slug": "agent-ia-support-client-saas", "titre": "Agent IA de support client : mise en place, coûts réels et limites", "motCle": "agent IA support client", "intention": "commerciale", "pagesLiees": ["/agents-ia", "/calculateur-temps-perdu"]},
-  {"n": 9, "statut": "a_faire", "categorie": "ecommerce", "slug": "donnees-structurees-ecommerce", "titre": "Données structurées e-commerce : le balisage Schema.org qui compte vraiment", "motCle": "données structurées e-commerce", "intention": "technique", "pagesLiees": ["/service-fiches-produits", "/visibilite-ia"]},
-  {"n": 10, "statut": "a_faire", "categorie": "cyber", "slug": "marketing-contenu-cybersecurite", "titre": "Marketing de contenu en cybersécurité : convaincre sans jouer sur la peur", "motCle": "marketing cybersécurité", "intention": "méthode", "pagesLiees": ["/secteur-cybersecurite", "/service-articles-seo"]},
-  {"n": 11, "statut": "a_faire", "categorie": "seo", "slug": "eeat-b2b-tech", "titre": "E-E-A-T en B2B tech : prouver son expertise à Google et aux lecteurs", "motCle": "E-E-A-T", "intention": "informationnelle", "pagesLiees": ["/service-articles-seo", "/apropos"]},
-  {"n": 12, "statut": "a_faire", "categorie": "saas", "slug": "pages-alternative-comparatif-saas", "titre": "Pages « alternative à » et comparatifs : le format SEO le plus rentable en SaaS", "motCle": "page comparatif SaaS", "intention": "méthode / BOFU", "pagesLiees": ["/secteur-saas", "/service-articles-seo"]},
-  {"n": 13, "statut": "a_faire", "categorie": "fintech", "slug": "contenu-seo-fintech-ymyl", "titre": "SEO fintech : écrire sur l'argent quand Google applique ses critères YMYL", "motCle": "SEO fintech", "intention": "méthode", "pagesLiees": ["/secteur-fintech", "/service-articles-seo"]},
-  {"n": 14, "statut": "a_faire", "categorie": "ecommerce", "slug": "guide-achat-ecommerce-qui-convertit", "titre": "Guide d'achat e-commerce : la structure qui fait passer à l'acte", "motCle": "guide d'achat e-commerce", "intention": "méthode", "pagesLiees": ["/service-fiches-produits", "/secteur-ecommerce"]},
-  {"n": 15, "statut": "a_faire", "categorie": "rh", "slug": "choisir-sirh-criteres", "titre": "Choisir un SIRH : les critères qui comptent pour une PME en croissance", "motCle": "choisir un SIRH", "intention": "commerciale", "pagesLiees": ["/secteur-rh-tech"]},
-  {"n": 16, "statut": "a_faire", "categorie": "seo", "slug": "contenu-ia-google-penalite", "titre": "Contenu rédigé avec l'IA : ce que Google pénalise vraiment (et ce qu'il ne pénalise pas)", "motCle": "contenu IA Google", "intention": "informationnelle", "pagesLiees": ["/service-articles-seo", "/agents-ia"]},
-  {"n": 17, "statut": "a_faire", "categorie": "saas", "slug": "documentation-produit-levier-seo", "titre": "Documentation produit : faire de votre help center un levier SEO", "motCle": "documentation produit SEO", "intention": "méthode", "pagesLiees": ["/services", "/secteur-saas"]},
-  {"n": 18, "statut": "a_faire", "categorie": "cyber", "slug": "zero-trust-pme-guide", "titre": "Zero Trust expliqué simplement : par où commence une PME", "motCle": "zero trust PME", "intention": "informationnelle", "pagesLiees": ["/secteur-cybersecurite"]},
-  {"n": 19, "statut": "a_faire", "categorie": "saas", "slug": "cout-taches-repetitives-equipe", "titre": "Combien vous coûtent vraiment les tâches répétitives de votre équipe", "motCle": "coût tâches répétitives", "intention": "prise de conscience", "pagesLiees": ["/calculateur-temps-perdu", "/agents-ia"]},
-  {"n": 20, "statut": "a_faire", "categorie": "ecommerce", "slug": "reduire-retours-produits-descriptions", "titre": "Réduire les retours produits grâce aux descriptions : méthode et exemples", "motCle": "réduire retours produits", "intention": "méthode", "pagesLiees": ["/service-fiches-produits"]},
-  {"n": 21, "statut": "a_faire", "categorie": "seo", "slug": "core-web-vitals-inp-b2b", "titre": "Core Web Vitals et INP : ce qu'un site B2B doit vraiment corriger", "motCle": "Core Web Vitals", "intention": "technique", "pagesLiees": ["/service-articles-seo"]},
-  {"n": 22, "statut": "publie", "categorie": "fintech", "slug": "dsp3-psr-fintechs-preparer", "titre": "DSP3 et règlement PSR : ce que les fintechs de paiement doivent préparer", "motCle": "DSP3", "intention": "informationnelle réglementaire / méthode", "pagesLiees": ["/secteur-fintech", "/service-livres-blancs"], "sujetTendance": "Position du Conseil en première lecture sur la DSP3 et le PSR datée du 21 octobre 2026 et publiée le 23 octobre 2026 en vue de son adoption ; rapport OSMP 2025 (fraude par manipulation : 516 M€, +34 %)", "date": "2026-10-26"},
-  {"n": 23, "statut": "a_faire", "categorie": "saas", "slug": "etude-de-cas-b2b-rediger", "titre": "Étude de cas B2B : le plan pour transformer un client satisfait en argument de vente", "motCle": "étude de cas B2B", "intention": "méthode", "pagesLiees": ["/service-livres-blancs", "/services"]},
-  {"n": 24, "statut": "a_faire", "categorie": "rh", "slug": "marque-employeur-tech-contenu", "titre": "Marque employeur tech : le contenu qui attire les développeurs", "motCle": "marque employeur tech", "intention": "méthode", "pagesLiees": ["/secteur-rh-tech", "/service-articles-seo"]},
-  {"n": 25, "statut": "a_faire", "categorie": "seo", "slug": "veille-concurrentielle-seo-ia", "titre": "Veille concurrentielle SEO : l'automatiser avec un agent IA sans perdre en finesse", "motCle": "veille concurrentielle SEO", "intention": "méthode", "pagesLiees": ["/agents-ia", "/service-articles-seo"]},
-  {"n": 26, "statut": "a_faire", "categorie": "cyber", "slug": "ransomware-pme-prevention", "titre": "Ransomware : le plan de prévention réaliste pour une PME", "motCle": "ransomware PME", "intention": "informationnelle", "pagesLiees": ["/secteur-cybersecurite"]},
-  {"n": 27, "statut": "a_faire", "categorie": "saas", "slug": "landing-page-saas-conversion", "titre": "Landing page SaaS : anatomie d'une page qui transforme les visites en démos", "motCle": "landing page SaaS", "intention": "méthode", "pagesLiees": ["/services", "/secteur-saas"]},
-  {"n": 28, "statut": "a_faire", "categorie": "ecommerce", "slug": "recherche-conversationnelle-ecommerce", "titre": "Recherche conversationnelle : adapter son catalogue aux questions des acheteurs", "motCle": "recherche conversationnelle e-commerce", "intention": "méthode", "pagesLiees": ["/visibilite-ia", "/service-fiches-produits"]},
-  {"n": 29, "statut": "a_faire", "categorie": "seo", "slug": "roi-contenu-b2b-mesurer", "titre": "ROI du contenu B2B : comment le mesurer sans se raconter d'histoires", "motCle": "ROI contenu B2B", "intention": "informationnelle", "pagesLiees": ["/service-articles-seo", "/devis"]},
-  {"n": 30, "statut": "a_faire", "categorie": "saas", "slug": "onboarding-saas-contenu-activation", "titre": "Onboarding SaaS : les contenus qui font passer de l'inscription à l'activation", "motCle": "onboarding SaaS", "intention": "méthode", "pagesLiees": ["/services", "/secteur-saas"]},
-  {"n": 31, "statut": "publie", "categorie": "ecommerce", "slug": "allegations-environnementales-fiches-produits", "titre": "Allégations environnementales : ce qu'il faut changer sur vos fiches produits", "motCle": "allégations environnementales fiches produits", "intention": "informationnelle / mise en conformité", "pagesLiees": ["/service-fiches-produits", "/secteur-ecommerce"], "sujetTendance": "Directive (UE) 2024/825 applicable au 27 septembre 2026, transposition française en attente", "date": "2026-10-24"},
-  {"n": 32, "statut": "publie", "categorie": "rh", "slug": "transparence-salariale-offres-emploi", "titre": "Transparence salariale : ce que vos offres d'emploi et vos grilles doivent changer", "motCle": "transparence salariale", "intention": "informationnelle réglementaire / méthode", "pagesLiees": ["/secteur-rh-tech", "/service-livres-blancs"], "sujetTendance": "Projet de loi n° 944 de transposition de la directive (UE) 2023/970 déposé au Sénat le 10 septembre 2026 ; question écrite sur le coût pour les PME publiée le 22 octobre 2026", "date": "2026-10-25"}
+ {
+  "n": 1,
+  "statut": "publie",
+  "categorie": "seo",
+  "slug": "geo-etre-cite-par-chatgpt",
+  "titre": "GEO : comment faire citer votre entreprise B2B par ChatGPT, Perplexity et Gemini",
+  "motCle": "GEO référencement IA",
+  "intention": "informationnelle / prise de conscience",
+  "pagesLiees": [
+   "/visibilite-ia",
+   "/service-articles-seo"
+  ],
+  "date": "2026-10-22"
+ },
+ {
+  "n": 3,
+  "statut": "publie",
+  "categorie": "cyber",
+  "slug": "nis2-france-entreprises-concernees",
+  "titre": "NIS2 en France : entreprises concernées et plan d'action avant la loi Résilience",
+  "motCle": "NIS2 entreprises concernées",
+  "intention": "informationnelle réglementaire",
+  "pagesLiees": [
+   "/secteur-cybersecurite",
+   "/service-livres-blancs"
+  ],
+  "date": "2026-10-23"
+ },
+ {
+  "n": 22,
+  "statut": "publie",
+  "categorie": "fintech",
+  "slug": "dsp3-psr-fintechs-preparer",
+  "titre": "DSP3 et règlement PSR : ce que les fintechs de paiement doivent préparer",
+  "motCle": "DSP3",
+  "intention": "informationnelle réglementaire / méthode",
+  "pagesLiees": [
+   "/secteur-fintech",
+   "/service-livres-blancs"
+  ],
+  "sujetTendance": "Position du Conseil en première lecture sur la DSP3 et le PSR datée du 21 octobre 2026 et publiée le 23 octobre 2026 en vue de son adoption ; rapport OSMP 2025 (fraude par manipulation : 516 M€, +34 %)",
+  "date": "2026-10-26"
+ },
+ {
+  "n": 31,
+  "statut": "publie",
+  "categorie": "ecommerce",
+  "slug": "allegations-environnementales-fiches-produits",
+  "titre": "Allégations environnementales : ce qu'il faut changer sur vos fiches produits",
+  "motCle": "allégations environnementales fiches produits",
+  "intention": "informationnelle / mise en conformité",
+  "pagesLiees": [
+   "/service-fiches-produits",
+   "/secteur-ecommerce"
+  ],
+  "sujetTendance": "Directive (UE) 2024/825 applicable au 27 septembre 2026, transposition française en attente",
+  "date": "2026-10-24"
+ },
+ {
+  "n": 32,
+  "statut": "publie",
+  "categorie": "rh",
+  "slug": "transparence-salariale-offres-emploi",
+  "titre": "Transparence salariale : ce que vos offres d'emploi et vos grilles doivent changer",
+  "motCle": "transparence salariale",
+  "intention": "informationnelle réglementaire / méthode",
+  "pagesLiees": [
+   "/secteur-rh-tech",
+   "/service-livres-blancs"
+  ],
+  "sujetTendance": "Projet de loi n° 944 de transposition de la directive (UE) 2023/970 déposé au Sénat le 10 septembre 2026 ; question écrite sur le coût pour les PME publiée le 22 octobre 2026",
+  "date": "2026-10-25"
+ },
+ {
+  "n": 33,
+  "statut": "a_faire",
+  "categorie": "saas",
+  "slug": "generation-leads-b2b-saas",
+  "titre": "Génération de leads B2B en SaaS : les contenus qui remplissent vraiment le pipeline",
+  "motCle": "génération de leads b2b",
+  "intention": "commerciale / méthode",
+  "pagesLiees": [
+   "/service-articles-seo",
+   "/secteur-saas",
+   "/devis"
+  ],
+  "donneesMotCle": {
+   "volume": 320,
+   "sd": 11,
+   "cpc": 32.4,
+   "source": "Ubersuggest FR, 26/10/2026"
+  },
+  "questionsReelles": [
+   "comment générer des leads b2b",
+   "pourquoi générer des leads",
+   "agence génération de leads b2b"
+  ]
+ },
+ {
+  "n": 10,
+  "statut": "a_faire",
+  "categorie": "cyber",
+  "slug": "marketing-contenu-cybersecurite",
+  "titre": "Marketing cybersécurité : convaincre un RSSI sans jouer sur la peur",
+  "motCle": "marketing cybersécurité",
+  "intention": "commerciale / méthode",
+  "pagesLiees": [
+   "/secteur-cybersecurite",
+   "/service-articles-seo",
+   "/devis"
+  ],
+  "donneesMotCle": {
+   "source": "à valider (Ubersuggest + google_suggestions)"
+  }
+ },
+ {
+  "n": 34,
+  "statut": "a_faire",
+  "categorie": "seo",
+  "slug": "consultant-seo-saas-choisir",
+  "titre": "Consultant SEO SaaS : comment le choisir et ce qu'il doit livrer",
+  "motCle": "consultant seo saas",
+  "intention": "achat",
+  "pagesLiees": [
+   "/service-articles-seo",
+   "/secteur-saas",
+   "/devis"
+  ],
+  "donneesMotCle": {
+   "volume": 110,
+   "sd": 17,
+   "cpc": null,
+   "source": "Ubersuggest FR, 26/10/2026"
+  },
+  "questionsReelles": [
+   "consultant seo saas",
+   "agence seo saas",
+   "saas seo checklist",
+   "saas seo cost"
+  ]
+ },
+ {
+  "n": 13,
+  "statut": "a_faire",
+  "categorie": "fintech",
+  "slug": "contenu-seo-fintech-ymyl",
+  "titre": "SEO fintech : écrire sur l'argent quand Google applique ses critères YMYL (et que l'ACPR vous lit)",
+  "motCle": "SEO fintech",
+  "intention": "méthode",
+  "pagesLiees": [
+   "/secteur-fintech",
+   "/service-articles-seo",
+   "/devis"
+  ],
+  "donneesMotCle": {
+   "source": "à valider (Ubersuggest + google_suggestions)"
+  }
+ },
+ {
+  "n": 4,
+  "statut": "a_faire",
+  "categorie": "saas",
+  "slug": "livre-blanc-saas-generer-leads",
+  "titre": "Livre blanc B2B : exemple de plan et méthode pour qu'il génère des leads",
+  "motCle": "livre blanc exemple",
+  "intention": "méthode / achat",
+  "pagesLiees": [
+   "/service-livres-blancs",
+   "/secteur-saas",
+   "/devis"
+  ],
+  "donneesMotCle": {
+   "volume": 170,
+   "sd": 31,
+   "cpc": 4.48,
+   "source": "Ubersuggest FR, 26/10/2026"
+  },
+  "questionsReelles": [
+   "qu'est-ce qu'un livre blanc (260/mois)",
+   "livre blanc marketing (110/mois)",
+   "comment faire un livre blanc",
+   "landing page livre blanc"
+  ]
+ },
+ {
+  "n": 35,
+  "statut": "a_faire",
+  "categorie": "cyber",
+  "slug": "redaction-technique-cybersecurite",
+  "titre": "Rédaction technique en cybersécurité : ce qu'un RSSI attend du contenu d'un éditeur",
+  "motCle": "rédaction technique cybersécurité",
+  "intention": "méthode / achat",
+  "pagesLiees": [
+   "/secteur-cybersecurite",
+   "/services",
+   "/devis"
+  ],
+  "donneesMotCle": {
+   "source": "à valider (Ubersuggest + google_suggestions)"
+  }
+ },
+ {
+  "n": 36,
+  "statut": "a_faire",
+  "categorie": "saas",
+  "slug": "strategie-seo-saas",
+  "titre": "Stratégie SEO SaaS : du trafic aux essais gratuits et aux démos",
+  "motCle": "stratégie seo saas",
+  "intention": "méthode",
+  "pagesLiees": [
+   "/service-articles-seo",
+   "/secteur-saas"
+  ],
+  "donneesMotCle": {
+   "volume": 50,
+   "sd": 29,
+   "cpc": 3.56,
+   "source": "Ubersuggest FR, 26/10/2026"
+  },
+  "questionsReelles": [
+   "seo pour saas",
+   "saas seo strategy",
+   "programmatic seo saas",
+   "saas seo mistakes"
+  ]
+ },
+ {
+  "n": 37,
+  "statut": "a_faire",
+  "categorie": "fintech",
+  "slug": "marketing-fintech-confiance",
+  "titre": "Marketing fintech : les contenus qui créent la confiance avant la première démo",
+  "motCle": "marketing fintech",
+  "intention": "méthode",
+  "pagesLiees": [
+   "/secteur-fintech",
+   "/service-livres-blancs",
+   "/devis"
+  ],
+  "donneesMotCle": {
+   "source": "à valider (Ubersuggest + google_suggestions)"
+  },
+  "questionsReelles": [
+   "b2b marketing fintech",
+   "fintech marketing strategy",
+   "marketing pour fintech"
+  ]
+ },
+ {
+  "n": 12,
+  "statut": "a_faire",
+  "categorie": "saas",
+  "slug": "pages-alternative-comparatif-saas",
+  "titre": "Pages « alternative à » et comparatifs : le format SEO le plus rentable en SaaS",
+  "motCle": "page comparatif SaaS",
+  "intention": "méthode / achat",
+  "pagesLiees": [
+   "/secteur-saas",
+   "/service-articles-seo"
+  ],
+  "donneesMotCle": {
+   "source": "à valider (Ubersuggest + google_suggestions)"
+  }
+ },
+ {
+  "n": 38,
+  "statut": "a_faire",
+  "categorie": "seo",
+  "slug": "marketing-saas-b2b-canaux",
+  "titre": "Marketing SaaS B2B : quels canaux financer quand on n'a pas un budget de licorne",
+  "motCle": "marketing saas",
+  "intention": "commerciale",
+  "pagesLiees": [
+   "/secteur-saas",
+   "/service-articles-seo",
+   "/devis"
+  ],
+  "donneesMotCle": {
+   "volume": 110,
+   "sd": 12,
+   "cpc": 11.7,
+   "source": "Ubersuggest FR, 26/10/2026"
+  },
+  "questionsReelles": [
+   "digital marketing saas (90/mois)",
+   "kpi marketing saas",
+   "stratégie marketing saas b2b"
+  ]
+ },
+ {
+  "n": 2,
+  "statut": "a_faire",
+  "categorie": "ecommerce",
+  "slug": "fiche-produit-seo-produits-techniques",
+  "titre": "Fiche produit SEO : la méthode pour vendre des produits techniques en ligne",
+  "motCle": "fiche produit SEO",
+  "intention": "méthode",
+  "pagesLiees": [
+   "/service-fiches-produits",
+   "/secteur-ecommerce"
+  ],
+  "donneesMotCle": {
+   "source": "à valider (Ubersuggest + google_suggestions)"
+  }
+ },
+ {
+  "n": 39,
+  "statut": "a_faire",
+  "categorie": "cyber",
+  "slug": "nis2-argument-commercial-editeurs",
+  "titre": "NIS2 : en faire un argument commercial crédible quand on vend de la cybersécurité",
+  "motCle": "nis2 marketing",
+  "intention": "méthode",
+  "pagesLiees": [
+   "/secteur-cybersecurite",
+   "/service-livres-blancs",
+   "/devis"
+  ],
+  "donneesMotCle": {
+   "source": "à valider (Ubersuggest + google_suggestions)"
+  }
+ },
+ {
+  "n": 27,
+  "statut": "a_faire",
+  "categorie": "saas",
+  "slug": "landing-page-saas-conversion",
+  "titre": "Landing page SaaS : anatomie d'une page qui transforme les visites en démos",
+  "motCle": "landing page SaaS",
+  "intention": "méthode / conversion",
+  "pagesLiees": [
+   "/services",
+   "/secteur-saas"
+  ],
+  "donneesMotCle": {
+   "source": "à valider (Ubersuggest + google_suggestions)"
+  }
+ },
+ {
+  "n": 40,
+  "statut": "a_faire",
+  "categorie": "fintech",
+  "slug": "dsp3-dora-contenus-rassurer",
+  "titre": "DSP3 et DORA : transformer la conformité en contenus qui rassurent vos prospects",
+  "motCle": "contenu conformité fintech",
+  "intention": "méthode",
+  "pagesLiees": [
+   "/secteur-fintech",
+   "/service-livres-blancs"
+  ],
+  "donneesMotCle": {
+   "source": "à valider (Ubersuggest + google_suggestions)"
+  }
+ },
+ {
+  "n": 23,
+  "statut": "a_faire",
+  "categorie": "saas",
+  "slug": "etude-de-cas-b2b-rediger",
+  "titre": "Étude de cas B2B : le plan pour transformer un client satisfait en argument de vente",
+  "motCle": "étude de cas B2B",
+  "intention": "méthode",
+  "pagesLiees": [
+   "/service-livres-blancs",
+   "/services"
+  ],
+  "donneesMotCle": {
+   "source": "à valider (Ubersuggest + google_suggestions)"
+  }
+ },
+ {
+  "n": 7,
+  "statut": "a_faire",
+  "categorie": "seo",
+  "slug": "cluster-thematique-saas-b2b",
+  "titre": "Clusters thématiques : construire une architecture de contenu SaaS qui se classe",
+  "motCle": "cluster thématique SEO",
+  "intention": "méthode",
+  "pagesLiees": [
+   "/service-articles-seo",
+   "/secteur-saas"
+  ],
+  "donneesMotCle": {
+   "source": "à valider (Ubersuggest + google_suggestions)"
+  }
+ },
+ {
+  "n": 29,
+  "statut": "a_faire",
+  "categorie": "seo",
+  "slug": "roi-contenu-b2b-mesurer",
+  "titre": "ROI du contenu B2B : comment le mesurer sans se raconter d'histoires",
+  "motCle": "ROI contenu B2B",
+  "intention": "informationnelle",
+  "pagesLiees": [
+   "/service-articles-seo",
+   "/devis"
+  ],
+  "donneesMotCle": {
+   "source": "à valider (Ubersuggest + google_suggestions)"
+  }
+ },
+ {
+  "n": 17,
+  "statut": "a_faire",
+  "categorie": "saas",
+  "slug": "documentation-produit-levier-seo",
+  "titre": "Documentation produit : faire de votre help center un levier SEO",
+  "motCle": "documentation produit SEO",
+  "intention": "méthode",
+  "pagesLiees": [
+   "/services",
+   "/secteur-saas"
+  ],
+  "donneesMotCle": {
+   "source": "à valider (Ubersuggest + google_suggestions)"
+  }
+ },
+ {
+  "n": 11,
+  "statut": "a_faire",
+  "categorie": "seo",
+  "slug": "eeat-b2b-tech",
+  "titre": "E-E-A-T en B2B tech : prouver son expertise à Google et aux lecteurs",
+  "motCle": "E-E-A-T",
+  "intention": "informationnelle",
+  "pagesLiees": [
+   "/service-articles-seo",
+   "/apropos"
+  ],
+  "donneesMotCle": {
+   "source": "à valider (Ubersuggest + google_suggestions)"
+  }
+ },
+ {
+  "n": 24,
+  "statut": "a_faire",
+  "categorie": "rh",
+  "slug": "marque-employeur-tech-contenu",
+  "titre": "Marque employeur tech : le contenu qui attire les développeurs",
+  "motCle": "marque employeur tech",
+  "intention": "méthode",
+  "pagesLiees": [
+   "/secteur-rh-tech",
+   "/service-articles-seo"
+  ],
+  "donneesMotCle": {
+   "source": "à valider (Ubersuggest + google_suggestions)"
+  }
+ },
+ {
+  "n": 16,
+  "statut": "a_faire",
+  "categorie": "seo",
+  "slug": "contenu-ia-google-penalite",
+  "titre": "Contenu rédigé avec l'IA : ce que Google pénalise vraiment (et ce qu'il ne pénalise pas)",
+  "motCle": "contenu IA Google",
+  "intention": "informationnelle",
+  "pagesLiees": [
+   "/service-articles-seo",
+   "/agents-ia"
+  ],
+  "donneesMotCle": {
+   "source": "à valider (Ubersuggest + google_suggestions)"
+  }
+ },
+ {
+  "n": 14,
+  "statut": "a_faire",
+  "categorie": "ecommerce",
+  "slug": "guide-achat-ecommerce-qui-convertit",
+  "titre": "Guide d'achat e-commerce : la structure qui fait passer à l'acte",
+  "motCle": "guide d'achat e-commerce",
+  "intention": "méthode",
+  "pagesLiees": [
+   "/service-fiches-produits",
+   "/secteur-ecommerce"
+  ],
+  "donneesMotCle": {
+   "source": "à valider (Ubersuggest + google_suggestions)"
+  }
+ },
+ {
+  "n": 5,
+  "statut": "ecarte",
+  "categorie": "fintech",
+  "slug": "dora-fintech-obligations",
+  "titre": "Règlement DORA : ce qu'il change concrètement pour les fintechs",
+  "motCle": "DORA fintech",
+  "intention": "informationnelle réglementaire",
+  "pagesLiees": [
+   "/secteur-fintech"
+  ],
+  "raison": "hors ligne éditoriale du 26/10/2026 (ne répond pas à une recherche d'acheteur de contenus)"
+ },
+ {
+  "n": 6,
+  "statut": "ecarte",
+  "categorie": "rh",
+  "slug": "ai-act-recrutement-logiciels-rh",
+  "titre": "AI Act et recrutement : ce que les éditeurs de logiciels RH doivent anticiper",
+  "motCle": "AI Act recrutement",
+  "intention": "informationnelle réglementaire",
+  "pagesLiees": [
+   "/secteur-rh-tech",
+   "/agents-ia"
+  ],
+  "raison": "hors ligne éditoriale du 26/10/2026 (ne répond pas à une recherche d'acheteur de contenus)"
+ },
+ {
+  "n": 8,
+  "statut": "ecarte",
+  "categorie": "saas",
+  "slug": "agent-ia-support-client-saas",
+  "titre": "Agent IA de support client : mise en place, coûts réels et limites",
+  "motCle": "agent IA support client",
+  "intention": "commerciale",
+  "pagesLiees": [
+   "/agents-ia",
+   "/calculateur-temps-perdu"
+  ],
+  "raison": "hors ligne éditoriale du 26/10/2026 (ne répond pas à une recherche d'acheteur de contenus)"
+ },
+ {
+  "n": 9,
+  "statut": "ecarte",
+  "categorie": "ecommerce",
+  "slug": "donnees-structurees-ecommerce",
+  "titre": "Données structurées e-commerce : le balisage Schema.org qui compte vraiment",
+  "motCle": "données structurées e-commerce",
+  "intention": "technique",
+  "pagesLiees": [
+   "/service-fiches-produits",
+   "/visibilite-ia"
+  ],
+  "raison": "hors ligne éditoriale du 26/10/2026 (ne répond pas à une recherche d'acheteur de contenus)"
+ },
+ {
+  "n": 15,
+  "statut": "ecarte",
+  "categorie": "rh",
+  "slug": "choisir-sirh-criteres",
+  "titre": "Choisir un SIRH : les critères qui comptent pour une PME en croissance",
+  "motCle": "choisir un SIRH",
+  "intention": "commerciale",
+  "pagesLiees": [
+   "/secteur-rh-tech"
+  ],
+  "raison": "hors ligne éditoriale du 26/10/2026 (ne répond pas à une recherche d'acheteur de contenus)"
+ },
+ {
+  "n": 18,
+  "statut": "ecarte",
+  "categorie": "cyber",
+  "slug": "zero-trust-pme-guide",
+  "titre": "Zero Trust expliqué simplement : par où commence une PME",
+  "motCle": "zero trust PME",
+  "intention": "informationnelle",
+  "pagesLiees": [
+   "/secteur-cybersecurite"
+  ],
+  "raison": "hors ligne éditoriale du 26/10/2026 (ne répond pas à une recherche d'acheteur de contenus)"
+ },
+ {
+  "n": 19,
+  "statut": "ecarte",
+  "categorie": "saas",
+  "slug": "cout-taches-repetitives-equipe",
+  "titre": "Combien vous coûtent vraiment les tâches répétitives de votre équipe",
+  "motCle": "coût tâches répétitives",
+  "intention": "prise de conscience",
+  "pagesLiees": [
+   "/calculateur-temps-perdu",
+   "/agents-ia"
+  ],
+  "raison": "hors ligne éditoriale du 26/10/2026 (ne répond pas à une recherche d'acheteur de contenus)"
+ },
+ {
+  "n": 20,
+  "statut": "ecarte",
+  "categorie": "ecommerce",
+  "slug": "reduire-retours-produits-descriptions",
+  "titre": "Réduire les retours produits grâce aux descriptions : méthode et exemples",
+  "motCle": "réduire retours produits",
+  "intention": "méthode",
+  "pagesLiees": [
+   "/service-fiches-produits"
+  ],
+  "raison": "hors ligne éditoriale du 26/10/2026 (ne répond pas à une recherche d'acheteur de contenus)"
+ },
+ {
+  "n": 21,
+  "statut": "ecarte",
+  "categorie": "seo",
+  "slug": "core-web-vitals-inp-b2b",
+  "titre": "Core Web Vitals et INP : ce qu'un site B2B doit vraiment corriger",
+  "motCle": "Core Web Vitals",
+  "intention": "technique",
+  "pagesLiees": [
+   "/service-articles-seo"
+  ],
+  "raison": "hors ligne éditoriale du 26/10/2026 (ne répond pas à une recherche d'acheteur de contenus)"
+ },
+ {
+  "n": 25,
+  "statut": "ecarte",
+  "categorie": "seo",
+  "slug": "veille-concurrentielle-seo-ia",
+  "titre": "Veille concurrentielle SEO : l'automatiser avec un agent IA sans perdre en finesse",
+  "motCle": "veille concurrentielle SEO",
+  "intention": "méthode",
+  "pagesLiees": [
+   "/agents-ia",
+   "/service-articles-seo"
+  ],
+  "raison": "hors ligne éditoriale du 26/10/2026 (ne répond pas à une recherche d'acheteur de contenus)"
+ },
+ {
+  "n": 26,
+  "statut": "ecarte",
+  "categorie": "cyber",
+  "slug": "ransomware-pme-prevention",
+  "titre": "Ransomware : le plan de prévention réaliste pour une PME",
+  "motCle": "ransomware PME",
+  "intention": "informationnelle",
+  "pagesLiees": [
+   "/secteur-cybersecurite"
+  ],
+  "raison": "hors ligne éditoriale du 26/10/2026 (ne répond pas à une recherche d'acheteur de contenus)"
+ },
+ {
+  "n": 28,
+  "statut": "ecarte",
+  "categorie": "ecommerce",
+  "slug": "recherche-conversationnelle-ecommerce",
+  "titre": "Recherche conversationnelle : adapter son catalogue aux questions des acheteurs",
+  "motCle": "recherche conversationnelle e-commerce",
+  "intention": "méthode",
+  "pagesLiees": [
+   "/visibilite-ia",
+   "/service-fiches-produits"
+  ],
+  "raison": "hors ligne éditoriale du 26/10/2026 (ne répond pas à une recherche d'acheteur de contenus)"
+ },
+ {
+  "n": 30,
+  "statut": "ecarte",
+  "categorie": "saas",
+  "slug": "onboarding-saas-contenu-activation",
+  "titre": "Onboarding SaaS : les contenus qui font passer de l'inscription à l'activation",
+  "motCle": "onboarding SaaS",
+  "intention": "méthode",
+  "pagesLiees": [
+   "/services",
+   "/secteur-saas"
+  ],
+  "raison": "hors ligne éditoriale du 26/10/2026 (ne répond pas à une recherche d'acheteur de contenus)"
+ }
 ]
