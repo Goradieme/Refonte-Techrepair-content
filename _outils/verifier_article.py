@@ -5,6 +5,7 @@ verifier_article.py — Contrôle qualité d'un brouillon avant publication.
 Usage :
     pip install --break-system-packages -q pyspellchecker   (une fois par session)
     python3 _outils/verifier_article.py _outils/brouillons/<slug>.html
+    python3 _outils/verifier_article.py --livre-blanc _outils/livres-blancs/<slug>.html
 
 Affiche :
   1. les mots inconnus du dictionnaire français (fautes possibles, à relire un par un ;
@@ -31,6 +32,9 @@ def texte(fragment):
     t = re.sub(r"<[^>]+>", "", t)
     t = "\n".join(l.strip() for l in t.split("\n"))
     return html.unescape(t)
+
+
+LIVRE_BLANC = False
 
 
 def main(chemin):
@@ -127,8 +131,9 @@ def main(chemin):
     def corps_page(f):
         return re.sub(r"<!-- maillage:debut -->[\s\S]*?<!-- maillage:fin -->", " ", f.read_text(encoding="utf-8"))
     sortants = {x for x in re.findall(r'href="[^"]*article-([a-z0-9-]+)\.html"', src) if x != slug}
+    cible = (r'href="[^"]*livres-blancs/' if LIVRE_BLANC else r'href="[^"]*article-') + re.escape(slug) + r'\.html"'
     entrants = [g.stem.replace("article-", "") for g in sorted((RACINE / "articles").glob("article-*.html"))
-                if g.stem != f"article-{slug}" and re.search(r'href="[^"]*article-' + re.escape(slug) + r'\.html"', corps_page(g))]
+                if g.stem != f"article-{slug}" and re.search(cible, corps_page(g))]
     print(f"6. Maillage interne : {len(sortants)} lien(s) vers d'autres articles, {len(entrants)} article(s) qui pointent vers celui-ci")
     for s in sorted(sortants):
         print(f"   → {s}")
@@ -162,6 +167,10 @@ def main(chemin):
 
 
 if __name__ == "__main__":
-    if len(sys.argv) != 2:
+    args = sys.argv[1:]
+    if "--livre-blanc" in args:
+        LIVRE_BLANC = True
+        args.remove("--livre-blanc")
+    if len(args) != 1:
         sys.exit(__doc__)
-    main(sys.argv[1])
+    main(args[0])
