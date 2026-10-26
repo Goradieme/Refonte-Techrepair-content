@@ -135,4 +135,17 @@ const ARTICLES = [
     motCle:   "transparence salariale",
     metaDesc: "Projet de loi au Sénat : fourchette de salaire obligatoire dans les offres, catégories de valeur égale, seuil de 5 %. Ce qu'il faut préparer dès maintenant."
   },
+  {
+    titre:    "DSP3 et règlement PSR : ce que les fintechs de paiement doivent préparer",
+    extrait:  "Le Conseil a arrêté sa position sur la DSP3 et le PSR. Remboursement des victimes de faux conseillers, vérification du bénéficiaire, nouvel agrément : l'ordre dans lequel s'y préparer.",
+    auteur:   "Goradieme",
+    date:     "2026-10-26",
+    categorie:"fintech",
+    lecture:  "12 min",
+    lien:     "articles/article-dsp3-psr-fintechs-preparer.html",
+    image:    "articles/dsp3-psr-fintechs-preparer-cover.jpg",
+    slug:     "dsp3-psr-fintechs-preparer",
+    motCle:   "DSP3",
+    metaDesc: "Texte arrêté par le Conseil le 21 octobre 2026 : remboursement de la fraude par usurpation, vérification du bénéficiaire, agrément. Les chantiers DSP3 à ouvrir."
+  },
 ];

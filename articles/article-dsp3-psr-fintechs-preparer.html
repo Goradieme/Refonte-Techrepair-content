@@ -1,0 +1,670 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>DSP3 et PSR : ce que les fintechs doivent préparer | TechRepair Content</title>
+<meta name="description" content="Position du Conseil publiée le 23 octobre 2026 : remboursement des fraudes par usurpation, vérification du bénéficiaire, agrément. Les chantiers DSP3 à ouvrir."/>
+<meta name="author" content="Goradieme"/>
+<link rel="canonical" href="https://www.techrepaircontent.com/articles/article-dsp3-psr-fintechs-preparer.html"/>
+<meta property="og:title" content="DSP3 et règlement PSR : ce que les fintechs de paiement doivent préparer"/>
+<meta property="og:description" content="Position du Conseil publiée le 23 octobre 2026 : remboursement des fraudes par usurpation, vérification du bénéficiaire, agrément. Les chantiers DSP3 à ouvrir."/>
+<meta property="og:type" content="article"/>
+<meta property="og:url" content="https://www.techrepaircontent.com/articles/article-dsp3-psr-fintechs-preparer.html"/>
+<meta property="og:locale" content="fr_FR"/>
+<meta property="og:site_name" content="TechRepair Content"/>
+<meta property="og:image" content="https://www.techrepaircontent.com/articles/dsp3-psr-fintechs-preparer-cover.jpg"/>
+<meta property="article:published_time" content="2026-10-26"/>
+<meta name="twitter:card" content="summary_large_image"/>
+
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet"/>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --blue:#1A56DB;--blue-dark:#1342b0;--blue-light:#EFF6FF;
+  --navy:#0F1B3D;--text:#1e293b;--muted:#64748b;
+  --border:#e2e8f0;--green:#10b981;--orange:#f97316;--purple:#7c3aed;
+  --radius:12px;
+}
+html{scroll-behavior:smooth}
+body{font-family:'Manrope',sans-serif;color:var(--text);background:#fff;font-size:15px;line-height:1.6}
+a{text-decoration:none;color:inherit}
+nav{position:sticky;top:0;z-index:200;background:#fff;border-bottom:1px solid var(--border);padding:0 32px;display:flex;align-items:center;gap:20px;height:62px;}
+.logo{display:flex;align-items:center;gap:10px;flex-shrink:0}
+.logo-box{width:36px;height:36px;background:var(--blue);border-radius:7px;display:grid;place-items:center;color:#fff;font-weight:800;font-size:13px;letter-spacing:-.5px}
+.logo-text{font-size:13px;font-weight:700;line-height:1.2;color:var(--navy)}
+.logo-text span{display:block;color:var(--muted);font-weight:500;font-size:11px}
+.nav-links{display:flex;gap:22px;margin-left:auto;align-items:center}
+.nav-links a{font-size:13.5px;font-weight:500;color:var(--muted);transition:color .2s}
+.nav-links a:hover,.nav-links a.active{color:var(--blue)}
+.nav-links a.active{border-bottom:2px solid var(--blue);padding-bottom:1px}
+.btn-nav{background:var(--blue);color:#fff;border:none;border-radius:8px;padding:9px 18px;font-weight:700;font-size:13.5px;cursor:pointer;white-space:nowrap;font-family:inherit}
+@media(max-width:600px){nav{padding:0 16px}.nav-links a:not(:last-child){display:none}}
+.hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;background:none;border:none;padding:4px}
+.hamburger span{display:block;width:24px;height:2px;background:var(--navy);border-radius:2px;transition:all .3s}
+.hamburger.open span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+.hamburger.open span:nth-child(2){opacity:0}
+.hamburger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+.mobile-menu{display:none;position:fixed;top:62px;left:0;right:0;background:#fff;border-bottom:1px solid var(--border);padding:16px 24px;flex-direction:column;gap:4px;z-index:199;box-shadow:0 8px 24px rgba(0,0,0,.08)}
+.mobile-menu.open{display:flex}
+.mobile-menu a{font-size:15px;font-weight:600;color:var(--muted);padding:10px 0;border-bottom:1px solid var(--border);transition:color .2s}
+.mobile-menu a:last-of-type{border-bottom:none}
+.mobile-menu a:hover,.mobile-menu a.active{color:var(--blue)}
+.mobile-menu .btn-nav-mobile{margin-top:10px;background:var(--blue);color:#fff;border:none;border-radius:8px;padding:12px;font-weight:700;font-size:14px;cursor:pointer;font-family:inherit;width:100%}
+@media(max-width:768px){.hamburger{display:flex}.nav-links{display:none}}
+
+.breadcrumb{max-width:1100px;margin:0 auto;padding:18px 32px 0;font-size:12.5px;color:var(--muted)}
+.breadcrumb a{color:var(--muted)}
+.breadcrumb a:hover{color:var(--blue)}
+
+.article-hero{max-width:1100px;margin:0 auto;padding:24px 32px 0}
+.ah-badge{display:inline-flex;align-items:center;gap:5px;background:#F5F3FF;color:var(--purple);font-size:11px;font-weight:700;padding:4px 12px;border-radius:20px;margin-bottom:16px}
+.article-hero h1{font-size:34px;font-weight:800;line-height:1.2;color:var(--navy);max-width:820px;margin-bottom:16px}
+.ah-meta{display:flex;align-items:center;gap:12px;font-size:13px;color:var(--muted);margin-bottom:24px;flex-wrap:wrap}
+.ah-dot{width:4px;height:4px;border-radius:50%;background:var(--border)}
+.ah-cover{width:100%;border-radius:20px;overflow:hidden;margin-bottom:8px;border:1px solid var(--border)}
+.ah-cover img{width:100%;height:auto;display:block}
+
+.layout{max-width:1100px;margin:0 auto;padding:40px 32px 56px;display:grid;grid-template-columns:1fr 300px;gap:44px;align-items:start}
+.content h2{font-size:24px;font-weight:800;color:var(--navy);margin:40px 0 14px;line-height:1.3}
+.content h3{font-size:18px;font-weight:800;color:var(--navy);margin:28px 0 10px;line-height:1.3}
+.content p{margin-bottom:14px;color:var(--text);font-size:15px;line-height:1.75}
+.content ul,.content ol{margin:0 0 16px 20px;color:var(--text)}
+.content li{margin-bottom:7px;line-height:1.7}
+.content strong{color:var(--navy)}
+.content em{color:var(--muted)}
+.content hr{border:none;border-top:1px solid var(--border);margin:36px 0}
+.intro-lead{font-size:16.5px;color:var(--muted);line-height:1.8;margin-bottom:20px}
+.toc-box{background:var(--blue-light);border:1px solid #c3d6f8;border-radius:16px;padding:22px 24px;margin:24px 0 36px}
+.toc-box h3{margin:0 0 12px;font-size:14px;color:var(--navy)}
+.toc-box ol{margin:0 0 0 18px}
+.toc-box li{font-size:13.5px;margin-bottom:6px}
+.toc-box a{color:var(--blue-dark);font-weight:600}
+.toc-box a:hover{text-decoration:underline}
+.callout{background:#f8fafc;border-left:3px solid var(--blue);border-radius:8px;padding:16px 20px;margin:18px 0;font-size:14px}
+.callout strong{display:block;margin-bottom:4px;color:var(--navy)}
+.benefit{font-size:13.5px;color:var(--muted);font-style:italic;margin:-6px 0 16px}
+table{width:100%;border-collapse:collapse;margin:18px 0 22px;font-size:13.5px}
+th,td{border:1px solid var(--border);padding:10px 12px;text-align:left;vertical-align:top}
+th{background:#f8fafc;color:var(--navy);font-weight:700}
+.case-card{border:1px solid var(--border);border-radius:14px;padding:20px 22px;margin-bottom:18px;background:#fafbfc}
+.case-card h3{margin-top:0}
+.faq-item{border-bottom:1px solid var(--border);padding:16px 0}
+.faq-item:last-child{border-bottom:none}
+.faq-item p.question{font-weight:800;color:var(--navy);margin-bottom:6px;font-size:15px}
+.conclusion-box{background:linear-gradient(135deg,var(--navy),#1e3a6e);border-radius:18px;padding:32px;margin-top:32px;color:#fff}
+.conclusion-box p{color:#cbd5e1}
+.conclusion-box strong{color:#fff}
+.conclusion-box .final-cta{display:inline-block;margin-top:14px;background:var(--blue);color:#fff;border-radius:8px;padding:12px 22px;font-weight:700;font-size:14px}
+
+.sidebar{display:flex;flex-direction:column;gap:20px;position:sticky;top:80px}
+.sidebar-card{background:#f8fafc;border:1px solid var(--border);border-radius:16px;padding:20px}
+.sidebar-card h3{font-size:12.5px;font-weight:800;color:var(--navy);margin-bottom:14px;text-transform:uppercase;letter-spacing:.4px}
+.mini-toc{display:flex;flex-direction:column;gap:9px}
+.mini-toc a{font-size:12.5px;color:var(--muted);line-height:1.5}
+.mini-toc a:hover{color:var(--blue)}
+.author-card{display:flex;gap:10px;align-items:center}
+.author-avatar{width:38px;height:38px;border-radius:50%;background:var(--blue);color:#fff;display:grid;place-items:center;font-weight:800;font-size:13px}
+.author-name{font-size:13px;font-weight:700;color:var(--navy)}
+.author-role{font-size:11.5px;color:var(--muted)}
+.guide-card{background:linear-gradient(135deg,#f0f5ff,#dce9ff);border-color:#c3d6f8}
+.guide-card p{font-size:12.5px;color:var(--muted);line-height:1.6;margin-bottom:14px}
+.guide-btn{display:block;text-align:center;background:var(--blue);color:#fff;border-radius:8px;padding:11px;font-size:13px;font-weight:700;transition:background .2s}
+.guide-btn:hover{background:var(--blue-dark)}
+
+.nl-band{background:var(--blue);padding:48px 32px}
+.nl-band-inner{max-width:700px;margin:0 auto;text-align:center}
+.nl-band h2{font-size:26px;font-weight:800;color:#fff;margin-bottom:10px}
+.nl-band p{color:rgba(255,255,255,.8);font-size:14px;margin-bottom:24px}
+.nl-band-form{display:flex;gap:10px;max-width:440px;margin:0 auto;flex-wrap:wrap}
+.nl-band-input{flex:1;border:none;border-radius:8px;padding:12px 16px;font-size:14px;font-family:inherit;outline:none;min-width:200px}
+.nl-band-btn{background:var(--navy);color:#fff;border:none;border-radius:8px;padding:12px 20px;font-size:14px;font-weight:700;cursor:pointer;font-family:inherit;white-space:nowrap}
+.nl-band-note{font-size:11.5px;color:rgba(255,255,255,.6);margin-top:10px}
+
+.cta-band{background:var(--navy);padding:60px 32px}
+.cta-inner{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:1fr auto;gap:48px;align-items:center}
+.cta-band h2{font-size:28px;font-weight:800;color:#fff;margin-bottom:9px}
+.cta-band>div>p{color:#94a3b8;font-size:13.5px;margin-bottom:24px;max-width:380px}
+.cta-btns{display:flex;gap:10px;flex-wrap:wrap}
+.btn-white{background:#fff;color:var(--navy);border-radius:8px;padding:11px 20px;font-weight:700;font-size:13.5px;display:inline-flex;align-items:center;gap:7px;cursor:pointer;border:none;font-family:inherit}
+.btn-ghost-cta{background:transparent;color:#fff;border:1.5px solid rgba(255,255,255,.3);border-radius:8px;padding:11px 20px;font-weight:700;font-size:13.5px;cursor:pointer;font-family:inherit}
+.btn-ghost-cta:hover{border-color:#fff}
+.cta-checks{display:flex;flex-direction:column;gap:11px;flex-shrink:0}
+.cta-check{display:flex;align-items:center;gap:9px;color:#cbd5e1;font-size:13px}
+.cta-ci{color:var(--green);font-weight:700}
+
+footer{background:var(--navy);border-top:1px solid rgba(255,255,255,.07);padding:44px 32px 26px}
+.footer-inner{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:2fr 1fr 1fr 1fr 1fr;gap:32px}
+.footer-brand p{color:#64748b;font-size:12px;margin-top:8px;max-width:185px;line-height:1.7}
+footer h4{font-size:10.5px;font-weight:700;color:#94a3b8;text-transform:uppercase;letter-spacing:.5px;margin-bottom:13px}
+.flinks{list-style:none}
+.flinks li{margin-bottom:8px}
+.flinks a{color:#64748b;font-size:12px;transition:color .2s}
+.flinks a:hover{color:#fff}
+.fsocial{display:flex;gap:7px;margin-top:11px}
+.fsoc{width:29px;height:29px;border-radius:6px;background:rgba(255,255,255,.07);display:grid;place-items:center;font-size:11px;color:#94a3b8;transition:background .2s}
+.fsoc:hover{background:var(--blue);color:#fff}
+.footer-bottom{max-width:1100px;margin:24px auto 0;padding-top:16px;border-top:1px solid rgba(255,255,255,.07);display:flex;justify-content:space-between;color:#475569;font-size:11px;flex-wrap:wrap;gap:8px}
+
+@media(max-width:960px){.layout{grid-template-columns:1fr}.sidebar{position:static;display:grid;grid-template-columns:1fr 1fr;gap:16px}.cta-inner{grid-template-columns:1fr}.footer-inner{grid-template-columns:1fr 1fr}}
+@media(max-width:600px){.article-hero h1{font-size:26px}.sidebar{grid-template-columns:1fr}.nl-band-form{flex-direction:column}.footer-inner{grid-template-columns:1fr}}
+
+.btn-demo{position:relative;background:var(--blue);color:#fff;border:none;border-radius:8px;padding:9px 16px;font-weight:800;font-size:13.5px;white-space:nowrap;font-family:inherit;display:inline-flex;align-items:center;gap:6px;text-decoration:none;cursor:pointer;transition:background .2s,transform .2s}
+.btn-demo:hover{background:var(--blue-dark);transform:translateY(-1px)}
+.btn-demo .star{color:#fff;font-size:14px;line-height:1;font-weight:800}
+.btn-demo-badge{position:absolute;top:-9px;right:-8px;background:#F59E0B;color:#fff;font-size:8.5px;font-weight:800;padding:2px 6px;border-radius:999px;letter-spacing:.3px;box-shadow:0 2px 6px rgba(245,158,11,.45);animation:demoPulse 2.2s ease-in-out infinite}
+@keyframes demoPulse{0%,100%{transform:scale(1)}50%{transform:scale(1.1)}}
+.nav-tools{position:relative;display:inline-block}
+.nav-tools .chevron{font-size:10px;margin-left:2px;transition:transform .15s}
+.nav-tools:hover .chevron{transform:rotate(180deg)}
+.nav-tools-menu{display:none;position:absolute;top:calc(100% + 8px);right:0;background:#fff;border:1px solid var(--border);border-radius:12px;box-shadow:0 12px 32px rgba(15,27,61,.15);min-width:220px;padding:6px;z-index:260}
+.nav-tools:hover .nav-tools-menu,.nav-tools:focus-within .nav-tools-menu{display:block}
+.nav-tools-menu a{display:flex;align-items:center;gap:9px;padding:10px 12px;border-radius:8px;font-size:13.5px;font-weight:600;color:var(--navy);text-decoration:none;white-space:nowrap}
+.nav-tools-menu a:hover{background:var(--blue-light);color:var(--blue)}
+.nav-tools-menu a .ico{font-size:15px}
+.btn-demo-mobile{position:relative;margin-top:10px;background:var(--blue);color:#fff;border-radius:8px;padding:12px;font-weight:800;font-size:14px;font-family:inherit;width:100%;display:flex;align-items:center;justify-content:center;gap:7px;text-decoration:none;border-bottom:none!important}
+.btn-demo-mobile .star{color:#fff;font-size:15px;font-weight:800}
+.mobile-menu a.btn-demo-mobile{color:#fff}
+.btn-demo-mobile .btn-demo-badge{top:-9px;right:14px;animation:none}
+
+/* ══ Liens vers les sources citées ══ */
+a.src{color:var(--blue);font-weight:600;text-decoration:underline;text-underline-offset:2px;text-decoration-thickness:1px;transition:color .2s}
+a.src:hover{color:var(--blue-dark);text-decoration-thickness:2px}
+/* ══ Mise en forme éditoriale (gabarit 2026) ══ */
+.ah-cover{max-width:960px;box-shadow:0 18px 50px rgba(15,27,61,.18);border:none}
+.key-points{border:1px solid var(--border);border-top:3px solid var(--blue);border-radius:0 0 14px 14px;padding:20px 24px 8px;margin:6px 0 30px;background:#fff}
+.key-points h3{margin:0 0 12px!important;font-size:12px!important;letter-spacing:1.4px;text-transform:uppercase;color:var(--blue-dark)!important}
+.key-points ul{margin-left:18px}
+.key-points li{margin-bottom:10px}
+.stat-row{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:14px;margin:20px 0 24px}
+.stat{border-left:3px solid var(--blue);padding:4px 0 4px 14px}
+.stat b{display:block;font-size:30px;font-weight:800;color:var(--navy);line-height:1.1}
+.stat span{font-size:12.5px;color:var(--muted);line-height:1.45;display:block;margin-top:4px}
+.content table th{font-size:12.5px;text-transform:uppercase;letter-spacing:.4px}
+.content table tr:nth-child(even) td{background:#fafbfd}
+.sources{font-size:13px;color:var(--muted);margin-left:20px}
+.sources li{margin-bottom:6px;line-height:1.6}
+.sources a{color:var(--blue-dark);text-decoration:underline;text-underline-offset:2px}
+@media(max-width:600px){.content table{display:block;overflow-x:auto}.stat b{font-size:26px}}
+.content p a:not(.final-cta),.content li a,.content td a{color:var(--blue);font-weight:600;text-decoration:underline;text-underline-offset:2px;text-decoration-thickness:1px}
+.content p a:not(.final-cta):hover,.content li a:hover,.content td a:hover{color:var(--blue-dark);text-decoration-thickness:2px}
+</style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "BlogPosting",
+      "headline": "DSP3 et règlement PSR : ce que les fintechs de paiement doivent préparer",
+      "description": "Position du Conseil publiée le 23 octobre 2026 : remboursement des fraudes par usurpation, vérification du bénéficiaire, agrément. Les chantiers DSP3 à ouvrir.",
+      "datePublished": "2026-10-26",
+      "dateModified": "2026-10-26",
+      "author": {
+        "@type": "Person",
+        "name": "Goradieme",
+        "url": "https://www.techrepaircontent.com/apropos"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "TechRepair Content",
+        "url": "https://www.techrepaircontent.com/"
+      },
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://www.techrepaircontent.com/articles/article-dsp3-psr-fintechs-preparer.html"
+      },
+      "inLanguage": "fr-FR",
+      "keywords": "DSP3",
+      "articleSection": "Fintech",
+      "wordCount": 2493,
+      "image": "https://www.techrepaircontent.com/articles/dsp3-psr-fintechs-preparer-cover.jpg"
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Quand la DSP3 entrera-t-elle en application ?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "La plupart des règles s'appliqueront 21 mois après l'entrée en vigueur des textes, et la vérification du bénéficiaire étendue après 27 mois. La publication au Journal officiel est attendue après la seconde lecture du Parlement ; l'application devrait donc intervenir en 2028."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Quelle différence entre DSP3 et PSR ?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "La DSP3 est une directive à transposer en droit national, centrée sur l'agrément et la supervision. Le PSR est un règlement directement applicable qui fixe les règles de conduite : fraude, frais, accès aux comptes et authentification."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Ma banque devra-t-elle me rembourser si un faux conseiller m'a fait valider un virement ?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Une fois le PSR applicable, oui en principe, si le fraudeur s'est fait passer pour un salarié de votre prestataire, que vous avez porté plainte et informé votre prestataire. Avant cette date, ce sont les règles actuelles de DSP2 qui s'appliquent."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Une fintech déjà agréée devra-t-elle refaire une demande ?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Elle devra au minimum démontrer qu'elle respecte les nouvelles exigences, dans un délai fixé par le texte ; les modalités précises en France dépendront de la loi de transposition et de l'ACPR."
+          }
+        }
+      ]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Accueil",
+          "item": "https://www.techrepaircontent.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Blog",
+          "item": "https://www.techrepaircontent.com/blog"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "DSP3 et PSR",
+          "item": "https://www.techrepaircontent.com/articles/article-dsp3-psr-fintechs-preparer.html"
+        }
+      ]
+    }
+  ]
+}
+</script>
+</head>
+<body>
+
+<nav>
+  <div class="logo">
+    <div class="logo-box">TRD</div>
+    <div class="logo-text">TechRepair<span>Content</span></div>
+  </div>
+  <div class="nav-links">
+    <a href="/">Accueil</a>
+    <a href="/services">Services</a>
+    <a href="/secteurs">Secteurs</a>
+    <a href="/apropos">À propos</a>
+    <a href="/blog" class="active">Blog</a>
+    <div class="nav-tools">
+      <button class="btn-demo" type="button"><span class="star">★</span>Outils IA<span class="btn-demo-badge">Nouveau</span><span class="chevron">▾</span></button>
+      <div class="nav-tools-menu">
+        <a href="/agents-ia"><span class="ico">⚙️</span> Agents IA sur mesure</a>
+        <a href="/visibilite-ia"><span class="ico">💬</span> Visibilité dans les IA</a>
+        <a href="/calculateur-temps-perdu"><span class="ico">⏱️</span> Calculateur de temps perdu</a>
+        <a href="https://demo.techrepaircontent.com"><span class="ico">🤖</span> Démo avec Ted</a>
+        <a href="https://demo.techrepaircontent.com/audit-ia.html"><span class="ico">🔍</span> Audit IA gratuit</a>
+      </div>
+    </div>
+    <button class="btn-nav" onclick="window.location='/devis'">Obtenir un devis</button>
+  </div>
+  <button class="hamburger" id="hamburger" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<div class="mobile-menu" id="mobileMenu">
+  <a href="/">Accueil</a>
+  <a href="/services">Services</a>
+  <a href="/secteurs">Secteurs</a>
+  <a href="/apropos">À propos</a>
+  <a href="/blog" class="active">Blog</a>
+  <a href="https://demo.techrepaircontent.com" class="btn-demo-mobile"><span class="star">★</span>Démo avec Ted<span class="btn-demo-badge">Nouveau</span></a>
+  <a href="https://demo.techrepaircontent.com/audit-ia.html" class="btn-demo-mobile"><span class="star">★</span>Audit IA gratuit</a>
+  <button class="btn-nav-mobile" onclick="window.location='/devis'">Obtenir un devis</button>
+</div>
+
+<div class="breadcrumb">
+  <a href="/">Accueil</a> / <a href="/blog">Blog</a> / <span style="color:var(--navy)">DSP3 et PSR</span>
+</div>
+
+<div class="article-hero">
+  <span class="ah-badge" style="background:#ECFDF5;color:#047857">💳 Fintech</span>
+  <h1>DSP3 et règlement PSR : ce que les fintechs de paiement doivent préparer</h1>
+  <div class="ah-meta">
+    <span>✍️ Goradieme</span>
+    <div class="ah-dot"></div>
+    <span>Publié le 26 octobre 2026</span>
+    <div class="ah-dot"></div>
+    <span>⏱ 12 min de lecture</span>
+  </div>
+  <div class="ah-cover"><img src="dsp3-psr-fintechs-preparer-cover.jpg" alt="DSP3 et règlement PSR : ce que les fintechs de paiement doivent préparer" width="1200" height="630" loading="eager"/></div>
+</div>
+
+<div class="layout">
+  <main class="content">
+
+<p class="intro-lead">516 millions d'euros. C'est le montant de la fraude par manipulation subie en France en 2025 par les utilisateurs de moyens de paiement, en hausse de 34&nbsp;% sur un an selon l'Observatoire de la sécurité des moyens de paiement. La réforme européenne qui doit remplacer DSP2 a été écrite pour répondre à ce chiffre, et elle franchit cette semaine l'une de ses dernières étapes.</p>
+
+    <p>Le 23 octobre 2026, le Conseil de l'Union européenne a publié, en vue de son adoption, sa position en première lecture sur la <strong>DSP3</strong> et sur le règlement sur les services de paiement (PSR). Le contenu ne bougera plus : il reprend l'accord politique conclu avec le Parlement fin 2025. Pour une fintech, un établissement de paiement ou un émetteur de monnaie électronique, la question n'est donc plus de savoir ce que le texte dira, mais par quel chantier commencer, sachant que l'application interviendra environ 21 mois après la publication au Journal officiel.</p>
+
+    <div class="key-points">
+      <h3>Points clés</h3>
+      <ul>
+        <li><strong>Le texte est figé :</strong> la position du Conseil reprend le compromis approuvé par le Coreper le 22 avril 2026 et par la commission ECON du Parlement le 5 mai 2026 ; restent l'adoption formelle, la seconde lecture au Parlement et la publication.</li>
+        <li><strong>La fraude change de payeur :</strong> lorsqu'un escroc se fait passer pour un salarié de la banque, le prestataire de paiement devra rembourser la victime, sous conditions, et les plateformes en ligne pourront être appelées à contribuer.</li>
+        <li><strong>La vérification du nom du bénéficiaire s'étend :</strong> déjà obligatoire pour les virements en euros depuis le 9 octobre 2025, elle couvrira tous les virements.</li>
+        <li><strong>Les agréments ne sont pas acquis :</strong> établissements de paiement et de monnaie électronique devront démontrer qu'ils respectent le nouveau cadre, la directive sur la monnaie électronique étant abrogée.</li>
+      </ul>
+    </div>
+
+    <div class="toc-box">
+      <h3>📋 Sommaire</h3>
+      <ol>
+        <li><a href="#ch1">DSP3 et PSR : le calendrier à retenir</a></li>
+        <li><a href="#ch2">La fraude par manipulation, raison d'être de la réforme</a></li>
+        <li><a href="#ch3">Usurpation d'identité : qui rembourse désormais</a></li>
+        <li><a href="#ch4">Vérification du bénéficiaire : de l'euro instantané à tous les virements</a></li>
+        <li><a href="#ch5">Open banking : un tableau de bord et des obstacles interdits</a></li>
+        <li><a href="#ch6">Agrément : la licence actuelle ne suffira pas</a></li>
+        <li><a href="#ch7">Frais, retraits et relevés : la transparence devient vérifiable</a></li>
+        <li><a href="#ch8">Les sept chantiers à ouvrir en 2027</a></li>
+        <li><a href="#faq">Questions fréquentes</a></li>
+        <li><a href="#sources">Sources</a></li>
+      </ol>
+    </div>
+
+    <h2 id="ch1">1. DSP3 et PSR : le calendrier à retenir</h2>
+
+    <p>La réforme comporte deux textes. La DSP3 est une directive : elle devra être transposée en droit français et porte surtout sur l'agrément et la supervision des établissements. Le PSR est un règlement : il s'appliquera directement, sans loi nationale, et regroupe les règles de conduite (fraude, frais, accès aux comptes, authentification).</p>
+
+    <p>Les deux propositions ont été publiées par la Commission européenne le 28 juin 2023. Les négociations entre le Conseil et le Parlement ont commencé le 9 juillet 2025 et le dernier trilogue politique s'est tenu à Strasbourg le 26 novembre 2025, d'après les exposés des motifs que le Conseil a joints à sa position. Le 13 mai 2026, la présidente de la commission ECON a écrit qu'elle recommanderait au Parlement d'accepter la position du Conseil en seconde lecture, sous réserve de la révision juridique et linguistique. Le cabinet Norton Rose Fulbright a signalé la <a href="https://www.regulationtomorrow.com/2026/10/psd3-council-of-eu-publishes-first-reading-position-with-view-to-adoption/" class="src" target="_blank" rel="noopener">publication de cette position le 23 octobre 2026</a>.</p>
+
+    <table>
+      <thead>
+        <tr><th>Étape</th><th>Date</th><th>Ce que cela signifie</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Proposition de la Commission</td><td>28 juin 2023</td><td>Début de la procédure législative</td></tr>
+        <tr><td>Accord politique en trilogue</td><td>26 novembre 2025</td><td>Contenu arrêté entre le Conseil et le Parlement</td></tr>
+        <tr><td>Approbation par le Coreper puis par ECON</td><td>22 avril et 5 mai 2026</td><td>Compromis technique validé des deux côtés</td></tr>
+        <tr><td>Position du Conseil en première lecture</td><td>Datée du 21 octobre, publiée le 23 octobre 2026</td><td>Texte final, en vue de son adoption</td></tr>
+        <tr><td>Seconde lecture et publication</td><td>Attendues fin 2026</td><td>Point de départ des délais</td></tr>
+        <tr><td>Application de la plupart des règles</td><td>21 mois après l'entrée en vigueur</td><td>Probablement au cours de 2028</td></tr>
+        <tr><td>Vérification du bénéficiaire étendue</td><td>27 mois après l'entrée en vigueur</td><td>Six mois de plus que le reste du règlement</td></tr>
+      </tbody>
+    </table>
+
+    <p>Les délais de 21 et 27 mois sont ceux que relèvent les analyses des textes, notamment celle du cabinet <a href="https://www.alston.com/en/insights/publications/2026/10/psd3-psr-europe-business-operations" class="src" target="_blank" rel="noopener">Alston &amp; Bird</a>. Vingt et un mois paraissent longs ; ils le sont moins quand il faut à la fois refondre des parcours, renégocier des contrats et constituer un dossier d'agrément. Dans le <a href="/secteur-fintech">secteur fintech</a>, le chantier le plus long risque d'être documentaire plutôt que technique.</p>
+
+    <h2 id="ch2">2. La fraude par manipulation, raison d'être de la réforme</h2>
+
+    <p>Les fraudeurs ont changé de méthode : plutôt que de voler des données de carte, ils convainquent la victime d'autoriser elle-même le paiement. C'est ce glissement que la réforme cherche à corriger.</p>
+
+    <div class="stat-row">
+      <div class="stat"><b>516 M€</b><span>fraude par manipulation en France en 2025, +34&nbsp;% sur un an (Banque de France, OSMP, septembre 2026)</span></div>
+      <div class="stat"><b>41,6&nbsp;%</b><span>part de la manipulation dans le montant total de la fraude aux paiements en 2025 (OSMP)</span></div>
+      <div class="stat"><b>376 M€</b><span>fraude par manipulation sur les seuls virements en 2025 (OSMP)</span></div>
+    </div>
+
+    <p>Le communiqué de la Banque de France du 7 septembre 2026 montre un paysage contrasté. Le montant total de la fraude a progressé de 3,8&nbsp;% alors que le nombre d'opérations frauduleuses a baissé de 7,6&nbsp;%. La carte n'a jamais été aussi sûre : 47 euros fraudés pour 100&nbsp;000 euros payés. Le virement, lui, concentre la manipulation, et le scénario le plus répandu reste celui du faux conseiller bancaire. Un virement sur six est désormais instantané, ce qui réduit le temps disponible pour arrêter une opération suspecte.</p>
+
+    <p>L'Observatoire fixe quatre priorités : coopération avec les opérateurs télécoms sur l'usurpation des numéros, plan de coopération avec les plateformes numériques, renforcement des outils de prévention des banques (plafonds individuels, partage de données, intelligence artificielle) et sensibilisation des utilisateurs. Le PSR donne une base juridique à plusieurs de ces pistes (plateformes, partage de données, prévention) ; la sensibilisation reste largement entre les mains des acteurs eux-mêmes.</p>
+
+    <div class="callout">
+      <strong>Un risque qui se lit dans les comptes, pas seulement dans les statistiques</strong>
+      <p>Avec le PSR, chaque fraude par usurpation non détectée peut devenir une perte inscrite au bilan du prestataire. Le budget de prévention cesse d'être un poste de conformité pour devenir une ligne de rentabilité, à arbitrer avec les mêmes chiffres que le coût d'acquisition client.</p>
+    </div>
+
+    <h2 id="ch3">3. Usurpation d'identité : qui rembourse désormais</h2>
+
+    <p>Le prestataire de paiement devra rembourser intégralement le client lorsqu'un fraudeur s'est fait passer pour l'un de ses salariés et a amené ce client à approuver un paiement, à condition que la victime ait porté plainte et informé son prestataire. C'est la principale rupture avec DSP2, qui laissait le plus souvent la perte au client ayant lui-même validé l'opération.</p>
+
+    <h3>Une responsabilité liée à la qualité de la prévention</h3>
+
+    <p>Selon l'exposé des motifs du Conseil sur le PSR, la responsabilité du prestataire est engagée s'il ne disposait pas de systèmes de prévention suffisants ou n'a pas réagi à des anomalies. L'analyse publiée par <a href="https://www.taylorwessing.com/fr/insights-and-events/insights/2025/11/eu-lawmakers-strike-a-deal-on-payments-reforms" class="src" target="_blank" rel="noopener">Taylor Wessing</a> après l'accord résume la logique : un prestataire dépourvu de mécanismes antifraude adaptés supporte les pertes de ses clients. La surveillance des transactions et le partage d'informations sur la fraude entre prestataires deviennent ainsi la meilleure défense juridique autant que la meilleure défense opérationnelle.</p>
+
+    <h3>Les plateformes entrent dans le circuit</h3>
+
+    <p>Les grandes plateformes en ligne seront responsables envers le prestataire qui a remboursé un client lorsqu'elles avaient été informées d'un contenu frauduleux sans le retirer. Elles ne pourront par ailleurs diffuser de publicité pour des services financiers dans un État membre que si l'annonceur y est dûment autorisé. Une fintech qui fait de la publicité en ligne doit donc s'attendre à des contrôles d'agrément plus systématiques.</p>
+
+    <h2 id="ch4">4. Vérification du bénéficiaire : de l'euro instantané à tous les virements</h2>
+
+    <p>Depuis le 9 octobre 2025, les prestataires de la zone euro doivent proposer gratuitement un service qui compare le nom du bénéficiaire à l'IBAN saisi, en application du règlement sur les virements instantanés, comme l'a rappelé la <a href="https://finance.ec.europa.eu/news/new-eu-rules-make-instant-euro-payments-faster-and-safer-2025-10-10_en" class="src" target="_blank" rel="noopener">Commission européenne</a>. Le PSR généralise ce contrôle à l'ensemble des virements, avec un délai d'application plus long que le reste du texte.</p>
+
+    <p>La plupart des acteurs français ont donc déjà l'infrastructure. Ce qui change, c'est le périmètre, étendu aux virements dans d'autres devises que l'euro, et surtout le poids de l'alerte. Avec la nouvelle répartition des responsabilités, la trace d'un avertissement de non-concordance ignoré par le client sera probablement examinée en cas de litige. Le message affiché doit donc être compris du premier coup, à l'écran, par un client parfois sous pression d'un escroc au téléphone.</p>
+
+    <h3>Trois questions à poser à votre parcours de virement</h3>
+
+    <ul>
+      <li>Le message de non-concordance dit-il clairement ce que le client risque, sans jargon ni code d'erreur ?</li>
+      <li>Le cas d'une concordance partielle (faute de frappe, nom commercial) est-il distingué d'une absence totale de correspondance ?</li>
+      <li>La décision du client et le message exact affiché sont-ils horodatés et conservés en vue d'un éventuel litige ?</li>
+    </ul>
+
+    <h2 id="ch5">5. Open banking : un tableau de bord et des obstacles interdits</h2>
+
+    <p>Le PSR impose aux teneurs de comptes de fournir aux clients un tableau de bord pour suivre et révoquer les accès à leurs données accordés à des prestataires tiers. Il dresse aussi une liste d'obstacles à l'accès aux données qui seront explicitement interdits.</p>
+
+    <p>Pour les agrégateurs et les initiateurs de paiement, c'est la fin d'un rapport de force défavorable : les banques ne pourront plus imposer des étapes artificielles ou des délais discriminatoires, et devront ouvrir l'accès aux comptes de paiement aux établissements de paiement sur une base non discriminatoire.</p>
+
+    <p>Le tableau de bord a une conséquence moins visible : le client verra, au même endroit, la liste de tous les services auxquels il a donné accès. Une permission dont l'utilité n'est pas évidente risque d'être révoquée. Chaque fintech fondée sur l'accès aux comptes aura donc intérêt à rédiger un libellé de consentement qui explique en une phrase ce que le client y gagne. Côté sécurité, les jetons d'accès échangés entre banques et prestataires tiers relèvent de la même logique que les <a href="/articles/article-identites-non-humaines.html">identités non humaines à inventorier et à protéger</a> dans tout système d'information.</p>
+
+    <h2 id="ch6">6. Agrément : la licence actuelle ne suffira pas</h2>
+
+    <p>La DSP3 abroge la deuxième directive sur la monnaie électronique et fait entrer les établissements de monnaie électronique dans le régime d'agrément des établissements de paiement. Les acteurs déjà agréés devront démontrer qu'ils respectent les nouvelles exigences, au lieu de voir leur licence prolongée automatiquement.</p>
+
+    <p>L'exposé des motifs du Conseil sur la DSP3 cite plusieurs évolutions : protection renforcée des fonds des utilisateurs, mieux isolés en cas de liquidation, accès facilité des établissements de paiement aux systèmes de règlement des banques centrales, règles simplifiées pour les distributeurs automatiques indépendants. Le délai laissé aux établissements existants pour se mettre en conformité est estimé à 27 mois après l'entrée en vigueur par certaines analyses, dont celle du cabinet <a href="https://www.dudkowiak.com/blog/psd3-and-psr-final-texts-agreed-new-obligations-for-payment-institutions" class="src" target="_blank" rel="noopener">Dudkowiak &amp; Putyra</a> ; la loi française de transposition précisera la procédure devant l'ACPR.</p>
+
+    <p>Concrètement, il faudra reprendre le programme d'activités, la description de la gouvernance, le dispositif de cantonnement des fonds, le plan de continuité et la politique de maîtrise des risques. Les fintechs déjà soumises à DORA disposent d'une partie de la matière, à condition qu'elle soit à jour et cohérente d'un document à l'autre. La démarche ressemble à celle que décrit notre analyse sur <a href="/articles/article-nis2-france-entreprises-concernees.html">les entreprises concernées par NIS2 et la preuve documentaire</a> : un régulateur juge sur pièces.</p>
+
+    <h2 id="ch7">7. Frais, retraits et relevés : la transparence devient vérifiable</h2>
+
+    <p>Les prestataires devront informer le client de tous les frais avant l'initiation d'un paiement, y compris les frais de conversion monétaire et les frais fixes de retrait aux distributeurs. Les commerçants devront de leur côté recevoir une information claire sur les commissions qui leur sont facturées.</p>
+
+    <p>Le <a href="https://www.consilium.europa.eu/en/press/press-releases/2025/11/27/payment-services-council-and-parliament-agree-to-step-up-the-fight-against-fraud-and-increase-transparency/" class="src" target="_blank" rel="noopener">communiqué du Conseil du 27 novembre 2025</a> détaille deux mesures : les exploitants de distributeurs devront afficher tous les frais et taux de change avant l'opération, et les commerces pourront proposer des retraits d'espèces sans achat, avec carte à puce et code, jusqu'à 150 euros ou l'équivalent en monnaie nationale. Le texte exige aussi que le nom commercial habituel du commerçant corresponde à celui qui figure sur le relevé du client. L'objectif : qu'un client reconnaisse sans effort chaque paiement de son relevé.</p>
+
+    <h2 id="ch8">8. Les sept chantiers à ouvrir en 2027</h2>
+
+    <p>L'ordre ci-dessous suit le coût du retard : les chantiers qui touchent la responsabilité financière d'abord, les ajustements d'interface ensuite.</p>
+
+    <ol>
+      <li><strong>Chiffrer l'exposition à l'usurpation :</strong> reprendre les plaintes pour faux conseiller des douze derniers mois et estimer ce qu'aurait coûté une obligation de remboursement.</li>
+      <li><strong>Auditer la surveillance des transactions :</strong> vérifier que les anomalies déclenchent une action tracée, car c'est sur ce point que la responsabilité se jouera.</li>
+      <li><strong>Réécrire les messages de vérification du bénéficiaire :</strong> tester leur compréhension auprès de vrais clients, y compris âgés ou peu familiers du numérique.</li>
+      <li><strong>Préparer le dossier d'agrément :</strong> recenser les documents existants (DORA, LCB-FT, cantonnement) et identifier les écarts avec les nouvelles exigences.</li>
+      <li><strong>Revoir les contrats :</strong> avec les partenaires bancaires, les prestataires techniques et les plateformes publicitaires, pour répartir les nouvelles responsabilités.</li>
+      <li><strong>Mettre à jour la documentation des interfaces :</strong> pour un teneur de comptes, documenter l'accès et le tableau de bord ; pour un prestataire tiers, actualiser les libellés de consentement.</li>
+      <li><strong>Refondre l'information tarifaire :</strong> grilles de frais, conditions générales et pages d'aide, en partant de ce que le client voit avant de valider un paiement.</li>
+    </ol>
+
+    <p>Une partie de ces chantiers est éditoriale : conditions générales lisibles, messages d'alerte, guides de prévention de la fraude, documentation d'API, dossier réglementaire. Ce sont des contenus que nous rédigeons avec les équipes conformité et produit, sous forme de <a href="/service-livres-blancs">livres blancs et de documentation technique</a>. La logique est la même que pour la <a href="/articles/article-facturation-electronique-2026.html">réforme de la facturation électronique</a> : les entreprises qui avaient préparé leurs flux et leurs explications avant l'échéance ont absorbé le changement sans rupture de service.</p>
+
+    <h2 id="faq">Questions fréquentes</h2>
+
+    <div class="faq-item">
+      <h3>Quand la DSP3 entrera-t-elle en application ?</h3>
+      <p>La plupart des règles s'appliqueront 21 mois après l'entrée en vigueur des textes, et la vérification du bénéficiaire étendue après 27 mois. La publication au Journal officiel est attendue après la seconde lecture du Parlement ; l'application devrait donc intervenir en 2028.</p>
+    </div>
+
+    <div class="faq-item">
+      <h3>Quelle différence entre DSP3 et PSR ?</h3>
+      <p>La DSP3 est une directive à transposer en droit national, centrée sur l'agrément et la supervision. Le PSR est un règlement directement applicable qui fixe les règles de conduite : fraude, frais, accès aux comptes et authentification.</p>
+    </div>
+
+    <div class="faq-item">
+      <h3>Ma banque devra-t-elle me rembourser si un faux conseiller m'a fait valider un virement ?</h3>
+      <p>Une fois le PSR applicable, oui en principe, si le fraudeur s'est fait passer pour un salarié de votre prestataire, que vous avez porté plainte et informé votre prestataire. Avant cette date, ce sont les règles actuelles de DSP2 qui s'appliquent.</p>
+    </div>
+
+    <div class="faq-item">
+      <h3>Une fintech déjà agréée devra-t-elle refaire une demande ?</h3>
+      <p>Elle devra au minimum démontrer qu'elle respecte les nouvelles exigences, dans un délai fixé par le texte ; les modalités précises en France dépendront de la loi de transposition et de l'ACPR.</p>
+    </div>
+
+    <div class="conclusion-box">
+      <p><strong>En résumé</strong></p>
+      <p>La DSP3 et le PSR déplacent le coût de la fraude par manipulation vers ceux qui peuvent la prévenir : prestataires de paiement d'abord, plateformes ensuite. Le texte est arrêté, les délais sont connus et la Banque de France a déjà chiffré l'enjeu. Les fintechs qui mesurent leur exposition, clarifient leurs parcours et constituent leur dossier d'agrément en 2027 aborderont 2028 avec une longueur d'avance sur leurs concurrents.</p>
+      <a href="/devis" class="final-cta">Préparer vos contenus réglementaires de paiement →</a>
+    </div>
+
+    <h2 id="sources">Sources</h2>
+    <ol class="sources">
+      <li>Banque de France, « Rapport 2025 de l'Observatoire de la sécurité des moyens de paiement », communiqué de presse, 7 septembre 2026. <a href="https://www.banque-france.fr/system/files/2026-09/Communique_de_presse_du_rapport_2025.pdf" target="_blank" rel="noopener">banque-france.fr</a></li>
+      <li>Conseil de l'Union européenne, « Draft Statement of the Council's Reasons », position en première lecture sur le règlement relatif aux services de paiement, doc. 8543/26 ADD 1 REV 1, 21 octobre 2026. <a href="https://data.consilium.europa.eu/doc/document/ST-8543-2026-ADD-1-REV-1/en/pdf" target="_blank" rel="noopener">data.consilium.europa.eu</a></li>
+      <li>Conseil de l'Union européenne, « Draft Statement of the Council's Reasons », position en première lecture sur la directive relative aux services de paiement, doc. 8535/26 ADD 1, 21 octobre 2026. <a href="https://data.consilium.europa.eu/doc/document/ST-8535-2026-ADD-1/en/pdf" target="_blank" rel="noopener">data.consilium.europa.eu</a></li>
+      <li>Conseil de l'Union européenne, « Payment services: Council and Parliament agree to step up the fight against fraud and increase transparency », 27 novembre 2025. <a href="https://www.consilium.europa.eu/en/press/press-releases/2025/11/27/payment-services-council-and-parliament-agree-to-step-up-the-fight-against-fraud-and-increase-transparency/" target="_blank" rel="noopener">consilium.europa.eu</a></li>
+      <li>Commission européenne, « New EU rules make instant euro payments faster and safer », 10 octobre 2025. <a href="https://finance.ec.europa.eu/news/new-eu-rules-make-instant-euro-payments-faster-and-safer-2025-10-10_en" target="_blank" rel="noopener">finance.ec.europa.eu</a></li>
+      <li>Norton Rose Fulbright, « PSD3: Council of EU publishes first reading position with view to adoption », Regulation Tomorrow, 23 octobre 2026. <a href="https://www.regulationtomorrow.com/2026/10/psd3-council-of-eu-publishes-first-reading-position-with-view-to-adoption/" target="_blank" rel="noopener">regulationtomorrow.com</a></li>
+      <li>Taylor Wessing, « EU lawmakers strike a deal on payments reforms », 1er décembre 2025. <a href="https://www.taylorwessing.com/fr/insights-and-events/insights/2025/11/eu-lawmakers-strike-a-deal-on-payments-reforms" target="_blank" rel="noopener">taylorwessing.com</a></li>
+      <li>Assi G. et Kim C., Alston &amp; Bird, « Payment Pending: What PSD3 and the PSR Mean for Businesses Operating in Europe », 20 octobre 2026. <a href="https://www.alston.com/en/insights/publications/2026/10/psd3-psr-europe-business-operations" target="_blank" rel="noopener">alston.com</a></li>
+      <li>Dudkowiak &amp; Putyra, « PSD3 and PSR: final texts agreed. New obligations for payment institutions », 20 juillet 2026. <a href="https://www.dudkowiak.com/blog/psd3-and-psr-final-texts-agreed-new-obligations-for-payment-institutions" target="_blank" rel="noopener">dudkowiak.com</a></li>
+    </ol>
+
+  <!-- maillage:debut -->
+<section class="maillage" aria-label="Articles liés">
+<style>
+.maillage{margin:44px 0 8px;padding-top:28px;border-top:1px solid #e2e8f0;font-family:inherit}
+.maillage h2{font-size:20px!important;font-weight:800;color:#0F1B3D;margin:0 0 16px!important}
+.mi-grille{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:14px}
+.mi-carte{display:flex;flex-direction:column;gap:8px;border:1px solid #e2e8f0;border-radius:14px;padding:16px 18px;background:#fff;text-decoration:none!important;transition:border-color .2s,box-shadow .2s,transform .2s}
+.mi-carte:hover{border-color:#1A56DB;box-shadow:0 8px 24px rgba(26,86,219,.10);transform:translateY(-2px)}
+.mi-cat{font-size:10.5px;font-weight:800;letter-spacing:1.2px;text-transform:uppercase;color:#1342b0}
+.mi-titre{font-size:14.5px;font-weight:700;line-height:1.4;color:#0F1B3D}
+.mi-lire{margin-top:auto;font-size:12px;color:#64748b}
+</style>
+<h2>À lire aussi</h2>
+<div class="mi-grille"><a class="mi-carte" href="/articles/article-facturation-electronique-2026.html"><span class="mi-cat">Fintech</span><span class="mi-titre">Facturation électronique 2026 : comprendre la réforme et savoir où s&#x27;inscrire</span><span class="mi-lire">Lire l'article · 12 min</span></a><a class="mi-carte" href="/articles/article-transparence-salariale-offres-emploi.html"><span class="mi-cat">RH Tech</span><span class="mi-titre">Transparence salariale : ce que vos offres d&#x27;emploi et vos grilles doivent changer</span><span class="mi-lire">Lire l'article · 12 min</span></a><a class="mi-carte" href="/articles/article-allegations-environnementales-fiches-produits.html"><span class="mi-cat">E-commerce</span><span class="mi-titre">Allégations environnementales : ce qu&#x27;il faut changer sur vos fiches produits</span><span class="mi-lire">Lire l'article · 12 min</span></a></div>
+</section>
+<!-- maillage:fin -->
+</main>
+
+  <aside class="sidebar">
+    <div class="sidebar-card">
+      <h3>Sommaire</h3>
+      <div class="mini-toc">
+        <a href="#ch1">1. Le calendrier</a>
+        <a href="#ch2">2. La fraude par manipulation</a>
+        <a href="#ch3">3. Qui rembourse</a>
+        <a href="#ch4">4. Vérification du bénéficiaire</a>
+        <a href="#ch5">5. Open banking</a>
+        <a href="#ch6">6. Agrément</a>
+        <a href="#ch7">7. Frais et retraits</a>
+        <a href="#ch8">8. Sept chantiers</a>
+        <a href="#faq">FAQ</a>
+        <a href="#sources">Sources</a>
+      </div>
+    </div>
+    <div class="sidebar-card">
+      <div class="author-card">
+        <div class="author-avatar">GD</div>
+        <div>
+          <div class="author-name">Goradieme</div>
+          <div class="author-role">Rédacteur SEO tech B2B · TechRepair Content</div>
+        </div>
+      </div>
+    </div>
+    <div class="sidebar-card guide-card">
+      <h3>Des contenus de paiement exacts</h3>
+      <p>Conditions générales lisibles, messages d'alerte, documentation d'API et livres blancs pour les fintechs, rédigés avec vos équipes conformité.</p>
+      <a href="/secteur-fintech" class="guide-btn">Découvrir l'offre fintech</a>
+    </div>
+  </aside>
+</div>
+
+<div class="nl-band">
+  <div class="nl-band-inner">
+    <h2>📩 La newsletter SEO Tech B2B</h2>
+    <p>Chaque semaine, une stratégie actionnable et une opportunité SEO dans votre secteur.</p>
+    <div class="nl-band-form">
+      <input type="email" class="nl-band-input" id="nlBandEmail" placeholder="votre@email.com"/>
+      <button class="nl-band-btn" id="nlBandBtn" type="button">S'abonner →</button>
+    </div>
+    <p id="nlBandMsg" style="display:none;font-size:12px;color:#fff;margin-top:8px"></p>
+    <p class="nl-band-note">✓ Gratuit · ✓ Sans spam · ✓ Désabonnement en 1 clic</p>
+  </div>
+</div>
+
+<div class="cta-band">
+  <div class="cta-inner">
+    <div>
+      <h2>Du contenu qui performe, pas qui remplit des pages</h2>
+      <p>Vous voulez une stratégie de contenu sur mesure pour votre secteur tech B2B ? Parlons-en.</p>
+      <div class="cta-btns">
+        <button class="btn-white" onclick="window.location='/devis'">Obtenir un devis gratuit →</button>
+        <button class="btn-ghost-cta" onclick="window.location='/services'">Voir nos services →</button>
+      </div>
+    </div>
+    <div class="cta-checks">
+      <div class="cta-check"><span class="cta-ci">✓</span> Réponse sous 24h</div>
+      <div class="cta-check"><span class="cta-ci">✓</span> Audit SEO gratuit</div>
+      <div class="cta-check"><span class="cta-ci">✓</span> Sans engagement</div>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <div class="logo"><div class="logo-box">TRD</div><div class="logo-text" style="color:#fff">TechRepair<span>Content</span></div></div>
+      <p>Rédaction SEO & technique pour entreprises SaaS, Tech et E-commerce.</p>
+    </div>
+    <div><h4>Navigation</h4><ul class="flinks"><li><a href="/">Accueil</a></li><li><a href="/apropos">À propos</a></li><li><a href="/services">Services</a></li><li><a href="/secteurs">Secteurs</a></li><li><a href="/blog">Blog</a></li></ul></div>
+    <div><h4>Ressources</h4><ul class="flinks"><li><a href="/agents-ia">Agents IA</a></li><li><a href="/visibilite-ia">Visibilité dans les IA</a></li><li><a href="/faq">FAQ</a></li><li><a href="/confidentialite">Confidentialité</a></li><li><a href="/mentions-legales">Mentions légales</a></li></ul></div>
+    <div>
+      <h4>Contact</h4>
+      <ul class="flinks"><li><a href="mailto:contact@techrepaircontent.com">contact@techrepaircontent.com</a></li><li><a href="#">Réponse sous 24h</a></li></ul>
+      <div class="fsocial"><a class="fsoc" href="https://www.linkedin.com/in/techrepair-content" target="_blank" rel="noopener">in</a><a class="fsoc" href="mailto:contact@techrepaircontent.com">✉</a></div>
+    </div>
+    <div><h4>Basé en France</h4><div style="font-size:22px">🇫🇷</div></div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2026 TechRepair Content. Tous droits réservés.</span>
+    <span>Fait avec ❤️ en France</span>
+  </div>
+</footer>
+
+<script>
+const hamburger = document.getElementById('hamburger');
+const mobileMenu = document.getElementById('mobileMenu');
+hamburger.addEventListener('click', () => {
+  hamburger.classList.toggle('open');
+  mobileMenu.classList.toggle('open');
+});
+mobileMenu.querySelectorAll('a').forEach(link => {
+  link.addEventListener('click', () => {
+    hamburger.classList.remove('open');
+    mobileMenu.classList.remove('open');
+  });
+});
+
+const BREVO_FORM_ACTION = 'https://a41ce724.sibforms.com/serve/MUIFAEGqDW1rbNTL0uU5ym6Ux5qJ7TJpdETsCjqRumOCnr-gRU8IGKx8Ic-JLjScrVVWrJVx_YXawDF8ao6y5hYLPvy7h8UJCk3gg9gTHcTaNAWQzbjwLnHO6DPk_HzPb7XY28rHy9JtEMuP-euST6RZutJ_bWOfqZFEtI-UUs9G4HA-O5V8JPwb3jLz0jhwuISuUqZ3Iok5IEyYHg==';
+
+function subscribeToNewsletter(emailInput, msgEl, btnEl) {
+  const email = emailInput.value.trim();
+  const isValidEmail = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+  msgEl.style.display = 'block';
+  if (!isValidEmail) {
+    msgEl.style.color = '#dc2626';
+    msgEl.textContent = "Merci d'entrer une adresse email valide.";
+    return;
+  }
+  const formData = new FormData();
+  formData.append('EMAIL', email);
+  formData.append('email_address_check', '');
+  formData.append('locale', 'fr');
+  formData.append('html_type', 'simple');
+  fetch(BREVO_FORM_ACTION, { method: 'POST', mode: 'no-cors', body: formData }).catch(() => {});
+  msgEl.style.color = '#10b981';
+  msgEl.textContent = 'Merci ! Vérifiez votre boîte mail pour confirmer.';
+  btnEl.textContent = 'Inscription envoyée ✓';
+  btnEl.disabled = true;
+}
+
+const nlBandBtn = document.getElementById('nlBandBtn');
+nlBandBtn.addEventListener('click', () => {
+  subscribeToNewsletter(document.getElementById('nlBandEmail'), document.getElementById('nlBandMsg'), nlBandBtn);
+});
+</script>
+</body>
+</html>
