@@ -2,9 +2,31 @@
  {
   "mois": "2026-11",
   "statut": "a_faire",
+  "categorie": "seo",
+  "service": "visibilite-ia",
+  "couleur": "violet",
+  "slug": "visibilite-ia-b2b-guide",
+  "titre": "Être recommandé par les IA : le guide B2B de la visibilité dans ChatGPT, Perplexity et Gemini",
+  "motCle": "visibilité IA",
+  "probleme": "Les acheteurs B2B interrogent les IA, qui citent quelques marques et ignorent les autres."
+ },
+ {
+  "mois": "2026-12",
+  "statut": "a_faire",
+  "categorie": "saas",
+  "service": "agents-ia",
+  "couleur": "orange",
+  "slug": "agents-ia-marketing-b2b",
+  "titre": "Agents IA pour le marketing B2B : cas d'usage, coûts réels et mise en place",
+  "motCle": "agent IA marketing",
+  "probleme": "Les équipes marketing B2B perdent des heures sur la relance des leads, la veille et la production de contenus répétitifs."
+ },
+ {
+  "mois": "2027-01",
+  "statut": "a_faire",
   "categorie": "saas",
   "service": "articles-seo",
-  "couleur": "orange",
+  "couleur": "bleu",
   "slug": "seo-saas-b2b-trafic-demos",
   "titre": "SEO SaaS B2B : la méthode complète pour transformer le trafic en démos",
   "motCle": "seo saas",
@@ -18,7 +40,7 @@
   }
  },
  {
-  "mois": "2026-12",
+  "mois": "2027-02",
   "statut": "a_faire",
   "categorie": "cyber",
   "service": "livres-blancs",
@@ -29,7 +51,7 @@
   "probleme": "Les éditeurs de cybersécurité peinent à produire des contenus crédibles pour des acheteurs techniques et sceptiques."
  },
  {
-  "mois": "2027-01",
+  "mois": "2027-03",
   "statut": "a_faire",
   "categorie": "fintech",
   "service": "articles-seo",
@@ -40,7 +62,7 @@
   "probleme": "Les fintechs doivent publier pour être trouvées, sous les critères YMYL de Google et les règles de communication financière."
  },
  {
-  "mois": "2027-02",
+  "mois": "2027-04",
   "statut": "a_faire",
   "categorie": "saas",
   "service": "livres-blancs",
@@ -55,27 +77,5 @@
    "cpc": 4.48,
    "source": "Ubersuggest FR, 26/10/2026"
   }
- },
- {
-  "mois": "2027-03",
-  "statut": "a_faire",
-  "categorie": "seo",
-  "service": "visibilite-ia",
-  "couleur": "violet",
-  "slug": "visibilite-ia-b2b-guide",
-  "titre": "Être recommandé par les IA : le guide B2B de la visibilité dans ChatGPT, Perplexity et Gemini",
-  "motCle": "visibilité IA",
-  "probleme": "Les acheteurs B2B interrogent les IA, qui citent quelques marques et ignorent les autres."
- },
- {
-  "mois": "2027-04",
-  "statut": "a_faire",
-  "categorie": "saas",
-  "service": "agents-ia",
-  "couleur": "orange",
-  "slug": "agents-ia-marketing-b2b",
-  "titre": "Agents IA pour le marketing B2B : cas d'usage, coûts réels et mise en place",
-  "motCle": "agent IA marketing",
-  "probleme": "Les équipes marketing B2B perdent des heures sur la relance des leads, la veille et la production de contenus répétitifs."
  }
 ]
