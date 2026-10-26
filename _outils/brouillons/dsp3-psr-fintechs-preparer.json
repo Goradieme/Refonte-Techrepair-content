@@ -1,0 +1,33 @@
+{
+  "slug": "dsp3-psr-fintechs-preparer",
+  "categorie": "fintech",
+  "date": "2026-10-26",
+  "titre": "DSP3 et règlement PSR : ce que les fintechs de paiement doivent préparer",
+  "titreSeo": "DSP3 et PSR : ce que les fintechs doivent préparer",
+  "h1": "DSP3 et règlement PSR : ce que les fintechs de paiement doivent préparer",
+  "filAriane": "DSP3 et PSR",
+  "motCle": "DSP3",
+  "metaDesc": "Position du Conseil publiée le 23 octobre 2026 : remboursement des fraudes par usurpation, vérification du bénéficiaire, agrément. Les chantiers DSP3 à ouvrir.",
+  "extrait": "Le Conseil a arrêté sa position sur la DSP3 et le PSR. Remboursement des victimes de faux conseillers, vérification du bénéficiaire, nouvel agrément : l'ordre dans lequel s'y préparer.",
+  "image": "articles/dsp3-psr-fintechs-preparer-cover.jpg",
+  "imageAlt": "DSP3 et règlement PSR : ce que les fintechs de paiement doivent préparer",
+  "sommaireCourt": {
+    "ch1": "1. Le calendrier",
+    "ch2": "2. La fraude par manipulation",
+    "ch3": "3. Qui rembourse",
+    "ch4": "4. Vérification du bénéficiaire",
+    "ch5": "5. Open banking",
+    "ch6": "6. Agrément",
+    "ch7": "7. Frais et retraits",
+    "ch8": "8. Sept chantiers",
+    "faq": "FAQ",
+    "sources": "Sources"
+  },
+  "ctaLateral": {
+    "titre": "Des contenus de paiement exacts",
+    "texte": "Conditions générales lisibles, messages d'alerte, documentation d'API et livres blancs pour les fintechs, rédigés avec vos équipes conformité.",
+    "lien": "/secteur-fintech",
+    "bouton": "Découvrir l'offre fintech"
+  },
+  "remplacer": true
+}
