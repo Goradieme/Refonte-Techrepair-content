@@ -1,0 +1,81 @@
+[
+ {
+  "mois": "2026-11",
+  "statut": "a_faire",
+  "categorie": "saas",
+  "service": "articles-seo",
+  "couleur": "orange",
+  "slug": "seo-saas-b2b-trafic-demos",
+  "titre": "SEO SaaS B2B : la méthode complète pour transformer le trafic en démos",
+  "motCle": "seo saas",
+  "probleme": "Le SEO d'un SaaS B2B amène des visites qui ne se transforment ni en essais ni en démos.",
+  "donneesMotCle": {
+   "volume": 50,
+   "sd": 29,
+   "cpc": 3.56,
+   "source": "Ubersuggest FR, 26/10/2026",
+   "associes": "consultant seo saas 110 (SD 17), marketing saas 110 (SD 12)"
+  }
+ },
+ {
+  "mois": "2026-12",
+  "statut": "a_faire",
+  "categorie": "cyber",
+  "service": "livres-blancs",
+  "couleur": "violet",
+  "slug": "marketing-contenu-cybersecurite-rssi",
+  "titre": "Marketing de contenu en cybersécurité : convaincre RSSI, DSI et direction générale",
+  "motCle": "marketing cybersécurité",
+  "probleme": "Les éditeurs de cybersécurité peinent à produire des contenus crédibles pour des acheteurs techniques et sceptiques."
+ },
+ {
+  "mois": "2027-01",
+  "statut": "a_faire",
+  "categorie": "fintech",
+  "service": "articles-seo",
+  "couleur": "vert",
+  "slug": "contenus-fintech-conformes-convaincants",
+  "titre": "Contenus fintech conformes et convaincants : SEO YMYL, règles de communication et preuves de confiance",
+  "motCle": "SEO fintech",
+  "probleme": "Les fintechs doivent publier pour être trouvées, sous les critères YMYL de Google et les règles de communication financière."
+ },
+ {
+  "mois": "2027-02",
+  "statut": "a_faire",
+  "categorie": "saas",
+  "service": "livres-blancs",
+  "couleur": "bleu",
+  "slug": "livre-blanc-b2b-methode-modeles",
+  "titre": "Le livre blanc B2B qui génère des leads : méthode, modèles et plan de diffusion",
+  "motCle": "livre blanc exemple",
+  "probleme": "Les livres blancs B2B sont souvent longs à produire et génèrent peu de leads qualifiés.",
+  "donneesMotCle": {
+   "volume": 170,
+   "sd": 31,
+   "cpc": 4.48,
+   "source": "Ubersuggest FR, 26/10/2026"
+  }
+ },
+ {
+  "mois": "2027-03",
+  "statut": "a_faire",
+  "categorie": "seo",
+  "service": "visibilite-ia",
+  "couleur": "violet",
+  "slug": "visibilite-ia-b2b-guide",
+  "titre": "Être recommandé par les IA : le guide B2B de la visibilité dans ChatGPT, Perplexity et Gemini",
+  "motCle": "visibilité IA",
+  "probleme": "Les acheteurs B2B interrogent les IA, qui citent quelques marques et ignorent les autres."
+ },
+ {
+  "mois": "2027-04",
+  "statut": "a_faire",
+  "categorie": "saas",
+  "service": "agents-ia",
+  "couleur": "orange",
+  "slug": "agents-ia-marketing-b2b",
+  "titre": "Agents IA pour le marketing B2B : cas d'usage, coûts réels et mise en place",
+  "motCle": "agent IA marketing",
+  "probleme": "Les équipes marketing B2B perdent des heures sur la relance des leads, la veille et la production de contenus répétitifs."
+ }
+]

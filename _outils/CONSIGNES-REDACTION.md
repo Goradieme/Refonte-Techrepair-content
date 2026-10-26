@@ -82,6 +82,69 @@ Interdits : les généralités sans méthode, les listes de conseils interchange
 secteur à l'autre, les « il faut » sans le « comment ». Chaque partie contient au moins
 un élément concret et propre au secteur visé (exemple, chiffre, contrainte, outil).
 
+## Livre blanc et newsletter du mois (le 1er de chaque mois)
+
+Le **1er de chaque mois**, la tâche de nuit produit **un livre blanc** à la place de
+l'article du jour, **et la newsletter du mois** dans la même demande de fusion. Les
+autres jours, uniquement des articles.
+
+**Sujet** : le premier sujet `a_faire` de `_outils/calendrier-livres-blancs.json` (un
+thème pilier, plus large qu'un article, rattaché à un service). Il peut être remplacé par
+un sujet plus porteur s'il respecte la ligne éditoriale ; l'ajouter alors au calendrier.
+
+**Exigences** : 4 000 à 7 000 mots hors sources (15 à 25 pages), au moins 6 chapitres
+`<h2 id="chN">`, au moins 2 outils prêts à l'emploi `<div class="outil"><h3>…</h3>…</div>`
+(grille, checklist `<ul class="checklist">`, modèle, plan type), des chiffres sourcés
+(`stat-row`), au moins un tableau, des encadrés `callout`, une conclusion
+`conclusion-box`, puis `<h2 id="sources">Sources</h2><ol class="sources">`. Mêmes règles
+que les articles pour les sources, la langue, la typographie, la variété des formulations
+et le plan de résolution (« Un article = une solution applicable »), en plus approfondi :
+c'est la référence du mois sur le sujet. Liens internes : au moins 2 articles du blog,
+la page du service et `/devis`.
+
+**Fichiers** : `_outils/livres-blancs/<slug>.html` (corps) et `<slug>.json` avec : `slug`,
+`date`, `categorie`, `service`, `couleur` (bleu, orange, vert, violet ; différente du mois
+précédent), `titre`, `titreCouverture` (≤ 60 caractères), `titreCourt`, `sousTitre`,
+`titreSeo` (≤ 65), `metaDesc` (≤ 160), `motCle`, `resume` (1 à 2 phrases), `apprendre`
+(4 à 6 bénéfices concrets), `pourQui` (3 profils), `pointsCles` (4 conclusions, pour
+l'e-mail de relecture), et en option `ctaTitre`, `ctaTexte`.
+
+**Production** :
+1. `NODE_PATH=$(npm root -g) node _outils/livre_blanc.js _outils/livres-blancs/<slug>.json`
+   (PDF mis en page, couverture et vignette dans `livres-blancs/`) ; ouvrir la couverture et
+   3 ou 4 pages du PDF en image pour vérifier la mise en page.
+2. `python3 _outils/verifier_article.py --livre-blanc _outils/livres-blancs/<slug>.html`
+   (même contrôle que les articles ; les liens retour attendus pointent vers
+   `/livres-blancs/<slug>.html`).
+3. `python3 _outils/publier_livre_blanc.py _outils/livres-blancs/<slug>.json` : page de
+   téléchargement indexable (présentation, sommaire, premier chapitre en libre accès,
+   formulaire e-mail Brevo puis téléchargement immédiat), index `/livres-blancs/`,
+   sitemap et flux RSS.
+4. Ajouter un lien contextuel vers `/livres-blancs/<slug>.html` dans les deux articles
+   existants les plus proches, et régler le `ctaLateral` de ces articles sur le livre blanc
+   (titre, texte d'une phrase, lien, bouton « Télécharger le livre blanc »).
+5. Branche `livre-blanc/AAAA-MM-JJ-<slug>`, demande de fusion avec le lien du PDF
+   `https://github.com/Goradieme/Refonte-Techrepair-content/raw/<branche>/livres-blancs/<slug>.pdf`.
+
+**Newsletter du mois** : `_outils/newsletters/AAAA-MM.json` (`objet` ≤ 60 caractères,
+`preheader`, `edito` de 2 à 4 phrases signé Goradieme, `livreBlanc` = slug du mois,
+`articles` facultatif, `conseil` = une action concrète et utile ce mois-ci), puis
+`python3 _outils/newsletter.py _outils/newsletters/AAAA-MM.json` → e-mail HTML prêt à
+envoyer (articles du mois précédent par défaut, liens suivis par UTM). Ouvrir le rendu en
+image. Elle part après la publication du livre blanc (tâche de 8 h).
+
+## Les livres blancs, atout SEO dans les articles
+
+Dans chaque article, quand le sujet s'y prête (génération de leads, autorité, netlinking,
+nurturing, preuve face à un acheteur exigeant, cycle de vente long), montrer en une ou
+deux phrases utiles comment un **livre blanc** sert le SEO et l'acquisition : il attire des
+liens et des citations, nourrit des articles satellites, capte l'e-mail des visiteurs
+qualifiés et donne aux IA une source de référence. Lier alors
+`/service-livres-blancs` (en plus du service principal de l'article) et, s'il en existe un
+sur un sujet proche, le livre blanc de TechRepair Content (`/livres-blancs/<slug>.html`).
+Une fois au moins un livre blanc publié, le `ctaLateral` de chaque nouvel article pointe
+vers le livre blanc le plus proche du sujet.
+
 ## Recherche de mots-clés et de questions réelles
 
 En attendant l'abonnement Ahrefs (Semrush : unités API épuisées ; Ahrefs : pas d'accès
@@ -173,15 +236,20 @@ API ; ne pas les appeler) :
 
 - **03 h 47 — rédaction** : une tâche rédige l'article du jour (daté du jour), le
   contrôle, exporte le PDF et ouvre la demande de fusion `article/AAAA-MM-JJ-<slug>`.
-  Elle ne fait rien si une demande d'article datée du jour est déjà ouverte.
+  Le 1er du mois, elle produit à la place le livre blanc et la newsletter du mois
+  (branche `livre-blanc/AAAA-MM-JJ-<slug>`). Elle ne fait rien si une demande datée du
+  jour est déjà ouverte.
 - **06 h 00 — e-mail de relecture** : une tâche envoie depuis Gmail, à
   papisdieme79@gmail.com, un e-mail mis en forme (couverture, points clés, bouton de
-  téléchargement du PDF, lien de la demande), plus une notification.
-- **08 h 00 — publication** : une tâche fusionne les demandes `article/...` ouvertes,
-  **sauf** si elles ont reçu un commentaire ou un avis, portent l'étiquette `attendre`
-  ou ont été fermées. Pour bloquer une publication, il suffit de commenter la demande
-  de fusion (par exemple « stop »). Les tâches automatiques ne commentent jamais les
-  demandes de fusion, pour ne pas se bloquer elles-mêmes.
+  téléchargement du PDF, lien de la demande ; le 1er du mois, aussi l'aperçu de la
+  newsletter), plus une notification.
+- **08 h 00 — publication** : une tâche fusionne les demandes `article/...` et
+  `livre-blanc/...` ouvertes, **sauf** si elles ont reçu un commentaire ou un avis,
+  portent l'étiquette `attendre` ou ont été fermées. Après un livre blanc, elle envoie la
+  newsletter du mois (brouillon de campagne Brevo si le connecteur est disponible, sinon
+  e-mail à Goradieme avec la newsletter prête à importer dans Brevo). Pour bloquer une
+  publication, il suffit de commenter la demande de fusion (par exemple « stop »). Les
+  tâches automatiques ne commentent jamais les demandes de fusion.
 
 ## Exigences éditoriales
 
