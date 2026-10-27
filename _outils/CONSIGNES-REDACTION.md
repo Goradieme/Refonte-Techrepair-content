@@ -261,6 +261,11 @@ API ; ne pas les appeler) :
   et cybersécurité en priorité (marketing, growth, product marketing, fondateurs,
   direction commerciale), puis e-commerce tech et RH tech, en France et dans la
   francophonie. Voir « Ligne éditoriale ».
+- **Voix du site (choix de Goradieme)** : TechRepair Content parle à la première
+  personne du pluriel (« nous », « notre méthode », « nos contenus »), jamais au « je »,
+  sauf dans une citation du fondateur. Rester honnête : ne jamais inventer d'équipe,
+  de « rédacteurs », d'« experts » tiers ni de chiffres clients ; Gora Dieme, fondateur,
+  rédige et suit chaque mission, sans sous-traitance.
 - **Honnêteté** : distinguer ce qui est documenté de ce qui est une hypothèse ; signaler
   les limites d'une étude (un seul site, échantillon réduit…). Aucune promesse de
   position Google ou de citation IA.
