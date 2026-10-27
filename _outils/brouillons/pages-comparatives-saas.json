@@ -1,0 +1,33 @@
+{
+  "slug": "pages-comparatives-saas",
+  "categorie": "saas",
+  "date": "2026-10-27",
+  "titre": "Pages comparatives SaaS : gagner les prospects qui vous comparent à vos concurrents",
+  "titreSeo": "Pages comparatives SaaS : gagner les prospects qui hésitent",
+  "h1": "Pages comparatives SaaS : gagner les prospects qui vous comparent à vos concurrents",
+  "filAriane": "Pages comparatives SaaS",
+  "motCle": "pages comparatives SaaS",
+  "metaDesc": "Pages « alternative à » et « vs » : repérer les comparaisons perdues, choisir le format, citer un concurrent sans risque et rédiger une page qui convertit.",
+  "extrait": "Vos prospects vous comparent à vos concurrents avant la première démo. Diagnostic, formats, cadre de la publicité comparative et gabarit de page « alternative à » prêt à remplir.",
+  "image": "articles/pages-comparatives-saas-cover.jpg",
+  "imageAlt": "Pages comparatives SaaS : gagner les prospects qui vous comparent à vos concurrents",
+  "sommaireCourt": {
+    "ch1": "1. Qui écrit la comparaison",
+    "ch2": "2. Le diagnostic",
+    "ch3": "3. Choisir le format",
+    "ch4": "4. Citer un concurrent",
+    "ch5": "5. Le tableau comparatif",
+    "ch6": "6. Gabarit et exemple",
+    "ch7": "7. Cinq erreurs",
+    "ch8": "8. Mesurer",
+    "faq": "FAQ",
+    "sources": "Sources"
+  },
+  "ctaLateral": {
+    "titre": "Vos pages comparatives, sourcées",
+    "texte": "Pages « alternative à », face-à-face et comparatifs de catégorie rédigés avec vos équipes, preuves archivées et mises à jour planifiées.",
+    "lien": "/service-articles-seo",
+    "bouton": "Découvrir le service"
+  },
+  "remplacer": true
+}
