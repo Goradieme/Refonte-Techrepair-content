@@ -156,7 +156,7 @@ const ARTICLES = [
     categorie:"saas",
     lecture:  "12 min",
     lien:     "articles/article-pages-comparatives-saas.html",
-    image:    "articles/pages-comparatives-saas-cover.jpg",
+    image:    "articles/pages-comparatives-saas-cover-v2.jpg",
     slug:     "pages-comparatives-saas",
     motCle:   "pages comparatives SaaS",
     metaDesc: "Pages « alternative à » et « vs » : repérer les comparaisons perdues, choisir le format, citer un concurrent sans risque et rédiger une page qui convertit."
