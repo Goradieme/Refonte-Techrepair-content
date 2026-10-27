@@ -87,6 +87,22 @@ def main(chemin):
     print(f"3. Sources externes à vérifier avec WebFetch ({len(ext)}) :")
     for url, lib in ext:
         print(f"   - {texte(lib).strip()} → {url}")
+    # Règle de Goradieme : au plus 1 lien sortant dans le corps, toutes les sources en fin
+    # d'article avec rel="nofollow noopener".
+    corps_txt, _, fin = src.partition('<h2 id="sources"')
+    sortants = re.findall(r'<a [^>]*href="https?://(?!(?:www\.)?techrepaircontent\.com)[^"]+"', corps_txt)
+    print(f"   liens sortants dans le corps : {len(sortants)} (maximum 1)")
+    if len(sortants) > 1:
+        print("   ✗ plus d'un lien sortant dans le corps : citer les sources sans lien et les regrouper dans la liste Sources")
+        erreurs += 1
+    if not fin:
+        print('   ✗ liste des sources absente en fin d\'article (<h2 id="sources">)')
+        erreurs += 1
+    else:
+        for a in re.findall(r'<a [^>]*href="https?://[^"]+"[^>]*>', fin):
+            if 'nofollow' not in a:
+                print(f"   ✗ lien de source sans rel=\"nofollow noopener\" : {a[:90]}")
+                erreurs += 1
 
     # 4. Liens internes
     print("4. Liens internes :")

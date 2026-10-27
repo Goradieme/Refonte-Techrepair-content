@@ -275,7 +275,13 @@ API ; ne pas les appeler) :
   au moins un tableau ou une liste d'étapes, un `<div class="callout">`.
 - Réponse directe dans les deux premières phrases de chaque partie ; passages
   autonomes, citables tels quels.
-- 4 à 8 liens externes vers les sources primaires : `class="src" target="_blank" rel="noopener"`.
+- **Liens sortants (règle stricte de Goradieme)** : dans le corps de l'article, **un seul
+  lien externe au maximum**, et aucun s'il n'est pas indispensable au lecteur (par exemple
+  le texte officiel qu'il doit consulter) : `class="src" target="_blank" rel="noopener"`.
+  Les autres sources se citent dans le texte sans lien (« selon l'ANSSI (2026) »,
+  « d'après le rapport annuel de la Banque de France ») et sont toutes regroupées en fin
+  d'article dans la liste `Sources`, avec des liens `rel="nofollow noopener"`. Les liens
+  internes, eux, restent nombreux (voir Maillage interne).
 - **Maillage interne (obligatoire)** :
   - dans le nouvel article, 4 à 6 liens internes contextuels : la page service liée
     (`pagesLiees`), la page secteur, **au moins deux articles existants du blog** dont
@@ -301,7 +307,8 @@ API ; ne pas les appeler) :
 - Au moins une rangée de chiffres clés `<div class="stat-row">` avec 3 `<div class="stat"><b>chiffre</b><span>légende sourcée et datée</span></div>`.
 - Conclusion `<div class="conclusion-box">` avec un appel à l'action vers la page service,
   puis en toute fin `<h2 id="sources">Sources</h2><ol class="sources">` : une ligne par
-  source (auteur ou organisme, « titre », date, lien sur le nom de domaine). Cette liste
+  source (auteur ou organisme, « titre », date, lien sur le nom de domaine avec
+  `target="_blank" rel="nofollow noopener"`). Toutes les sources vérifiées y figurent. Cette liste
   n'est pas comptée dans les 1 800 à 2 500 mots.
 
 ## Niveau d'exigence
