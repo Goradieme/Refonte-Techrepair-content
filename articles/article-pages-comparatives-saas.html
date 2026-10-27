@@ -1,0 +1,702 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Pages comparatives SaaS : gagner les prospects qui hésitent | TechRepair Content</title>
+<meta name="description" content="Pages « alternative à » et « vs » : repérer les comparaisons perdues, choisir le format, citer un concurrent sans risque et rédiger une page qui convertit."/>
+<meta name="author" content="Goradieme"/>
+<link rel="canonical" href="https://www.techrepaircontent.com/articles/article-pages-comparatives-saas.html"/>
+<meta property="og:title" content="Pages comparatives SaaS : gagner les prospects qui vous comparent à vos concurrents"/>
+<meta property="og:description" content="Pages « alternative à » et « vs » : repérer les comparaisons perdues, choisir le format, citer un concurrent sans risque et rédiger une page qui convertit."/>
+<meta property="og:type" content="article"/>
+<meta property="og:url" content="https://www.techrepaircontent.com/articles/article-pages-comparatives-saas.html"/>
+<meta property="og:locale" content="fr_FR"/>
+<meta property="og:site_name" content="TechRepair Content"/>
+<meta property="og:image" content="https://www.techrepaircontent.com/articles/pages-comparatives-saas-cover.jpg"/>
+<meta property="article:published_time" content="2026-10-27"/>
+<meta name="twitter:card" content="summary_large_image"/>
+
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet"/>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --blue:#1A56DB;--blue-dark:#1342b0;--blue-light:#EFF6FF;
+  --navy:#0F1B3D;--text:#1e293b;--muted:#64748b;
+  --border:#e2e8f0;--green:#10b981;--orange:#f97316;--purple:#7c3aed;
+  --radius:12px;
+}
+html{scroll-behavior:smooth}
+body{font-family:'Manrope',sans-serif;color:var(--text);background:#fff;font-size:15px;line-height:1.6}
+a{text-decoration:none;color:inherit}
+nav{position:sticky;top:0;z-index:200;background:#fff;border-bottom:1px solid var(--border);padding:0 32px;display:flex;align-items:center;gap:20px;height:62px;}
+.logo{display:flex;align-items:center;gap:10px;flex-shrink:0}
+.logo-box{width:36px;height:36px;background:var(--blue);border-radius:7px;display:grid;place-items:center;color:#fff;font-weight:800;font-size:13px;letter-spacing:-.5px}
+.logo-text{font-size:13px;font-weight:700;line-height:1.2;color:var(--navy)}
+.logo-text span{display:block;color:var(--muted);font-weight:500;font-size:11px}
+.nav-links{display:flex;gap:22px;margin-left:auto;align-items:center}
+.nav-links a{font-size:13.5px;font-weight:500;color:var(--muted);transition:color .2s}
+.nav-links a:hover,.nav-links a.active{color:var(--blue)}
+.nav-links a.active{border-bottom:2px solid var(--blue);padding-bottom:1px}
+.btn-nav{background:var(--blue);color:#fff;border:none;border-radius:8px;padding:9px 18px;font-weight:700;font-size:13.5px;cursor:pointer;white-space:nowrap;font-family:inherit}
+@media(max-width:600px){nav{padding:0 16px}.nav-links a:not(:last-child){display:none}}
+.hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;background:none;border:none;padding:4px}
+.hamburger span{display:block;width:24px;height:2px;background:var(--navy);border-radius:2px;transition:all .3s}
+.hamburger.open span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+.hamburger.open span:nth-child(2){opacity:0}
+.hamburger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+.mobile-menu{display:none;position:fixed;top:62px;left:0;right:0;background:#fff;border-bottom:1px solid var(--border);padding:16px 24px;flex-direction:column;gap:4px;z-index:199;box-shadow:0 8px 24px rgba(0,0,0,.08)}
+.mobile-menu.open{display:flex}
+.mobile-menu a{font-size:15px;font-weight:600;color:var(--muted);padding:10px 0;border-bottom:1px solid var(--border);transition:color .2s}
+.mobile-menu a:last-of-type{border-bottom:none}
+.mobile-menu a:hover,.mobile-menu a.active{color:var(--blue)}
+.mobile-menu .btn-nav-mobile{margin-top:10px;background:var(--blue);color:#fff;border:none;border-radius:8px;padding:12px;font-weight:700;font-size:14px;cursor:pointer;font-family:inherit;width:100%}
+@media(max-width:768px){.hamburger{display:flex}.nav-links{display:none}}
+
+.breadcrumb{max-width:1100px;margin:0 auto;padding:18px 32px 0;font-size:12.5px;color:var(--muted)}
+.breadcrumb a{color:var(--muted)}
+.breadcrumb a:hover{color:var(--blue)}
+
+.article-hero{max-width:1100px;margin:0 auto;padding:24px 32px 0}
+.ah-badge{display:inline-flex;align-items:center;gap:5px;background:#F5F3FF;color:var(--purple);font-size:11px;font-weight:700;padding:4px 12px;border-radius:20px;margin-bottom:16px}
+.article-hero h1{font-size:34px;font-weight:800;line-height:1.2;color:var(--navy);max-width:820px;margin-bottom:16px}
+.ah-meta{display:flex;align-items:center;gap:12px;font-size:13px;color:var(--muted);margin-bottom:24px;flex-wrap:wrap}
+.ah-dot{width:4px;height:4px;border-radius:50%;background:var(--border)}
+.ah-cover{width:100%;border-radius:20px;overflow:hidden;margin-bottom:8px;border:1px solid var(--border)}
+.ah-cover img{width:100%;height:auto;display:block}
+
+.layout{max-width:1100px;margin:0 auto;padding:40px 32px 56px;display:grid;grid-template-columns:1fr 300px;gap:44px;align-items:start}
+.content h2{font-size:24px;font-weight:800;color:var(--navy);margin:40px 0 14px;line-height:1.3}
+.content h3{font-size:18px;font-weight:800;color:var(--navy);margin:28px 0 10px;line-height:1.3}
+.content p{margin-bottom:14px;color:var(--text);font-size:15px;line-height:1.75}
+.content ul,.content ol{margin:0 0 16px 20px;color:var(--text)}
+.content li{margin-bottom:7px;line-height:1.7}
+.content strong{color:var(--navy)}
+.content em{color:var(--muted)}
+.content hr{border:none;border-top:1px solid var(--border);margin:36px 0}
+.intro-lead{font-size:16.5px;color:var(--muted);line-height:1.8;margin-bottom:20px}
+.toc-box{background:var(--blue-light);border:1px solid #c3d6f8;border-radius:16px;padding:22px 24px;margin:24px 0 36px}
+.toc-box h3{margin:0 0 12px;font-size:14px;color:var(--navy)}
+.toc-box ol{margin:0 0 0 18px}
+.toc-box li{font-size:13.5px;margin-bottom:6px}
+.toc-box a{color:var(--blue-dark);font-weight:600}
+.toc-box a:hover{text-decoration:underline}
+.callout{background:#f8fafc;border-left:3px solid var(--blue);border-radius:8px;padding:16px 20px;margin:18px 0;font-size:14px}
+.callout strong{display:block;margin-bottom:4px;color:var(--navy)}
+.benefit{font-size:13.5px;color:var(--muted);font-style:italic;margin:-6px 0 16px}
+table{width:100%;border-collapse:collapse;margin:18px 0 22px;font-size:13.5px}
+th,td{border:1px solid var(--border);padding:10px 12px;text-align:left;vertical-align:top}
+th{background:#f8fafc;color:var(--navy);font-weight:700}
+.case-card{border:1px solid var(--border);border-radius:14px;padding:20px 22px;margin-bottom:18px;background:#fafbfc}
+.case-card h3{margin-top:0}
+.faq-item{border-bottom:1px solid var(--border);padding:16px 0}
+.faq-item:last-child{border-bottom:none}
+.faq-item p.question{font-weight:800;color:var(--navy);margin-bottom:6px;font-size:15px}
+.conclusion-box{background:linear-gradient(135deg,var(--navy),#1e3a6e);border-radius:18px;padding:32px;margin-top:32px;color:#fff}
+.conclusion-box p{color:#cbd5e1}
+.conclusion-box strong{color:#fff}
+.conclusion-box .final-cta{display:inline-block;margin-top:14px;background:var(--blue);color:#fff;border-radius:8px;padding:12px 22px;font-weight:700;font-size:14px}
+
+.sidebar{display:flex;flex-direction:column;gap:20px;position:sticky;top:80px}
+.sidebar-card{background:#f8fafc;border:1px solid var(--border);border-radius:16px;padding:20px}
+.sidebar-card h3{font-size:12.5px;font-weight:800;color:var(--navy);margin-bottom:14px;text-transform:uppercase;letter-spacing:.4px}
+.mini-toc{display:flex;flex-direction:column;gap:9px}
+.mini-toc a{font-size:12.5px;color:var(--muted);line-height:1.5}
+.mini-toc a:hover{color:var(--blue)}
+.author-card{display:flex;gap:10px;align-items:center}
+.author-avatar{width:38px;height:38px;border-radius:50%;background:var(--blue);color:#fff;display:grid;place-items:center;font-weight:800;font-size:13px}
+.author-name{font-size:13px;font-weight:700;color:var(--navy)}
+.author-role{font-size:11.5px;color:var(--muted)}
+.guide-card{background:linear-gradient(135deg,#f0f5ff,#dce9ff);border-color:#c3d6f8}
+.guide-card p{font-size:12.5px;color:var(--muted);line-height:1.6;margin-bottom:14px}
+.guide-btn{display:block;text-align:center;background:var(--blue);color:#fff;border-radius:8px;padding:11px;font-size:13px;font-weight:700;transition:background .2s}
+.guide-btn:hover{background:var(--blue-dark)}
+
+.nl-band{background:var(--blue);padding:48px 32px}
+.nl-band-inner{max-width:700px;margin:0 auto;text-align:center}
+.nl-band h2{font-size:26px;font-weight:800;color:#fff;margin-bottom:10px}
+.nl-band p{color:rgba(255,255,255,.8);font-size:14px;margin-bottom:24px}
+.nl-band-form{display:flex;gap:10px;max-width:440px;margin:0 auto;flex-wrap:wrap}
+.nl-band-input{flex:1;border:none;border-radius:8px;padding:12px 16px;font-size:14px;font-family:inherit;outline:none;min-width:200px}
+.nl-band-btn{background:var(--navy);color:#fff;border:none;border-radius:8px;padding:12px 20px;font-size:14px;font-weight:700;cursor:pointer;font-family:inherit;white-space:nowrap}
+.nl-band-note{font-size:11.5px;color:rgba(255,255,255,.6);margin-top:10px}
+
+.cta-band{background:var(--navy);padding:60px 32px}
+.cta-inner{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:1fr auto;gap:48px;align-items:center}
+.cta-band h2{font-size:28px;font-weight:800;color:#fff;margin-bottom:9px}
+.cta-band>div>p{color:#94a3b8;font-size:13.5px;margin-bottom:24px;max-width:380px}
+.cta-btns{display:flex;gap:10px;flex-wrap:wrap}
+.btn-white{background:#fff;color:var(--navy);border-radius:8px;padding:11px 20px;font-weight:700;font-size:13.5px;display:inline-flex;align-items:center;gap:7px;cursor:pointer;border:none;font-family:inherit}
+.btn-ghost-cta{background:transparent;color:#fff;border:1.5px solid rgba(255,255,255,.3);border-radius:8px;padding:11px 20px;font-weight:700;font-size:13.5px;cursor:pointer;font-family:inherit}
+.btn-ghost-cta:hover{border-color:#fff}
+.cta-checks{display:flex;flex-direction:column;gap:11px;flex-shrink:0}
+.cta-check{display:flex;align-items:center;gap:9px;color:#cbd5e1;font-size:13px}
+.cta-ci{color:var(--green);font-weight:700}
+
+footer{background:var(--navy);border-top:1px solid rgba(255,255,255,.07);padding:44px 32px 26px}
+.footer-inner{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:2fr 1fr 1fr 1fr 1fr;gap:32px}
+.footer-brand p{color:#64748b;font-size:12px;margin-top:8px;max-width:185px;line-height:1.7}
+footer h4{font-size:10.5px;font-weight:700;color:#94a3b8;text-transform:uppercase;letter-spacing:.5px;margin-bottom:13px}
+.flinks{list-style:none}
+.flinks li{margin-bottom:8px}
+.flinks a{color:#64748b;font-size:12px;transition:color .2s}
+.flinks a:hover{color:#fff}
+.fsocial{display:flex;gap:7px;margin-top:11px}
+.fsoc{width:29px;height:29px;border-radius:6px;background:rgba(255,255,255,.07);display:grid;place-items:center;font-size:11px;color:#94a3b8;transition:background .2s}
+.fsoc:hover{background:var(--blue);color:#fff}
+.footer-bottom{max-width:1100px;margin:24px auto 0;padding-top:16px;border-top:1px solid rgba(255,255,255,.07);display:flex;justify-content:space-between;color:#475569;font-size:11px;flex-wrap:wrap;gap:8px}
+
+@media(max-width:960px){.layout{grid-template-columns:1fr}.sidebar{position:static;display:grid;grid-template-columns:1fr 1fr;gap:16px}.cta-inner{grid-template-columns:1fr}.footer-inner{grid-template-columns:1fr 1fr}}
+@media(max-width:600px){.article-hero h1{font-size:26px}.sidebar{grid-template-columns:1fr}.nl-band-form{flex-direction:column}.footer-inner{grid-template-columns:1fr}}
+
+.btn-demo{position:relative;background:var(--blue);color:#fff;border:none;border-radius:8px;padding:9px 16px;font-weight:800;font-size:13.5px;white-space:nowrap;font-family:inherit;display:inline-flex;align-items:center;gap:6px;text-decoration:none;cursor:pointer;transition:background .2s,transform .2s}
+.btn-demo:hover{background:var(--blue-dark);transform:translateY(-1px)}
+.btn-demo .star{color:#fff;font-size:14px;line-height:1;font-weight:800}
+.btn-demo-badge{position:absolute;top:-9px;right:-8px;background:#F59E0B;color:#fff;font-size:8.5px;font-weight:800;padding:2px 6px;border-radius:999px;letter-spacing:.3px;box-shadow:0 2px 6px rgba(245,158,11,.45);animation:demoPulse 2.2s ease-in-out infinite}
+@keyframes demoPulse{0%,100%{transform:scale(1)}50%{transform:scale(1.1)}}
+.nav-tools{position:relative;display:inline-block}
+.nav-tools .chevron{font-size:10px;margin-left:2px;transition:transform .15s}
+.nav-tools:hover .chevron{transform:rotate(180deg)}
+.nav-tools-menu{display:none;position:absolute;top:calc(100% + 8px);right:0;background:#fff;border:1px solid var(--border);border-radius:12px;box-shadow:0 12px 32px rgba(15,27,61,.15);min-width:220px;padding:6px;z-index:260}
+.nav-tools:hover .nav-tools-menu,.nav-tools:focus-within .nav-tools-menu{display:block}
+.nav-tools-menu a{display:flex;align-items:center;gap:9px;padding:10px 12px;border-radius:8px;font-size:13.5px;font-weight:600;color:var(--navy);text-decoration:none;white-space:nowrap}
+.nav-tools-menu a:hover{background:var(--blue-light);color:var(--blue)}
+.nav-tools-menu a .ico{font-size:15px}
+.btn-demo-mobile{position:relative;margin-top:10px;background:var(--blue);color:#fff;border-radius:8px;padding:12px;font-weight:800;font-size:14px;font-family:inherit;width:100%;display:flex;align-items:center;justify-content:center;gap:7px;text-decoration:none;border-bottom:none!important}
+.btn-demo-mobile .star{color:#fff;font-size:15px;font-weight:800}
+.mobile-menu a.btn-demo-mobile{color:#fff}
+.btn-demo-mobile .btn-demo-badge{top:-9px;right:14px;animation:none}
+
+/* ══ Liens vers les sources citées ══ */
+a.src{color:var(--blue);font-weight:600;text-decoration:underline;text-underline-offset:2px;text-decoration-thickness:1px;transition:color .2s}
+a.src:hover{color:var(--blue-dark);text-decoration-thickness:2px}
+/* ══ Mise en forme éditoriale (gabarit 2026) ══ */
+.ah-cover{max-width:960px;box-shadow:0 18px 50px rgba(15,27,61,.18);border:none}
+.key-points{border:1px solid var(--border);border-top:3px solid var(--blue);border-radius:0 0 14px 14px;padding:20px 24px 8px;margin:6px 0 30px;background:#fff}
+.key-points h3{margin:0 0 12px!important;font-size:12px!important;letter-spacing:1.4px;text-transform:uppercase;color:var(--blue-dark)!important}
+.key-points ul{margin-left:18px}
+.key-points li{margin-bottom:10px}
+.stat-row{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:14px;margin:20px 0 24px}
+.stat{border-left:3px solid var(--blue);padding:4px 0 4px 14px}
+.stat b{display:block;font-size:30px;font-weight:800;color:var(--navy);line-height:1.1}
+.stat span{font-size:12.5px;color:var(--muted);line-height:1.45;display:block;margin-top:4px}
+.content table th{font-size:12.5px;text-transform:uppercase;letter-spacing:.4px}
+.content table tr:nth-child(even) td{background:#fafbfd}
+.sources{font-size:13px;color:var(--muted);margin-left:20px}
+.sources li{margin-bottom:6px;line-height:1.6}
+.sources a{color:var(--blue-dark);text-decoration:underline;text-underline-offset:2px}
+@media(max-width:600px){.content table{display:block;overflow-x:auto}.stat b{font-size:26px}}
+.content p a:not(.final-cta),.content li a,.content td a{color:var(--blue);font-weight:600;text-decoration:underline;text-underline-offset:2px;text-decoration-thickness:1px}
+.content p a:not(.final-cta):hover,.content li a:hover,.content td a:hover{color:var(--blue-dark);text-decoration-thickness:2px}
+</style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "BlogPosting",
+      "headline": "Pages comparatives SaaS : gagner les prospects qui vous comparent à vos concurrents",
+      "description": "Pages « alternative à » et « vs » : repérer les comparaisons perdues, choisir le format, citer un concurrent sans risque et rédiger une page qui convertit.",
+      "datePublished": "2026-10-27",
+      "dateModified": "2026-10-27",
+      "author": {
+        "@type": "Person",
+        "name": "Goradieme",
+        "url": "https://www.techrepaircontent.com/apropos"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "TechRepair Content",
+        "url": "https://www.techrepaircontent.com/"
+      },
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://www.techrepaircontent.com/articles/article-pages-comparatives-saas.html"
+      },
+      "inLanguage": "fr-FR",
+      "keywords": "pages comparatives SaaS",
+      "articleSection": "SaaS B2B",
+      "wordCount": 2492,
+      "image": "https://www.techrepaircontent.com/articles/pages-comparatives-saas-cover.jpg"
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Comment faire une page comparatif concurrent qui convertit ?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Qualifiez le lecteur dès l'ouverture, reconnaissez les cas où le concurrent convient mieux, comparez huit à douze critères sourcés et datés, chiffrez la migration et proposez une démonstration de migration."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Peut-on utiliser le nom d'un concurrent dans le titre de sa page ?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Oui, si la page compare objectivement des caractéristiques vérifiables, sans dénigrement ni confusion possible entre les deux entreprises. Datez la comparaison et n'utilisez pas son logo."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Comment comparer deux logiciels de façon objective ?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Partez des critères de décision de l'acheteur, appuyez chaque réponse sur une page publique de l'éditeur ou sur un compte d'essai, et utilisez des valeurs explicites (inclus, en option, absent) plutôt que des notes ou des coches."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Combien de pages comparatives faut-il créer ?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Deux ou trois pour commencer, sur les concurrents les plus cités par vos commerciaux, puis seulement celles que vous pourrez tenir à jour chaque trimestre."
+          }
+        }
+      ]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Accueil",
+          "item": "https://www.techrepaircontent.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Blog",
+          "item": "https://www.techrepaircontent.com/blog"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Pages comparatives SaaS",
+          "item": "https://www.techrepaircontent.com/articles/article-pages-comparatives-saas.html"
+        }
+      ]
+    }
+  ]
+}
+</script>
+</head>
+<body>
+
+<nav>
+  <div class="logo">
+    <div class="logo-box">TRD</div>
+    <div class="logo-text">TechRepair<span>Content</span></div>
+  </div>
+  <div class="nav-links">
+    <a href="/">Accueil</a>
+    <a href="/services">Services</a>
+    <a href="/secteurs">Secteurs</a>
+    <a href="/apropos">À propos</a>
+    <a href="/blog" class="active">Blog</a>
+    <div class="nav-tools">
+      <button class="btn-demo" type="button"><span class="star">★</span>Outils IA<span class="btn-demo-badge">Nouveau</span><span class="chevron">▾</span></button>
+      <div class="nav-tools-menu">
+        <a href="/agents-ia"><span class="ico">⚙️</span> Agents IA sur mesure</a>
+        <a href="/visibilite-ia"><span class="ico">💬</span> Visibilité dans les IA</a>
+        <a href="/calculateur-temps-perdu"><span class="ico">⏱️</span> Calculateur de temps perdu</a>
+        <a href="https://demo.techrepaircontent.com"><span class="ico">🤖</span> Démo avec Ted</a>
+        <a href="https://demo.techrepaircontent.com/audit-ia.html"><span class="ico">🔍</span> Audit IA gratuit</a>
+      </div>
+    </div>
+    <button class="btn-nav" onclick="window.location='/devis'">Obtenir un devis</button>
+  </div>
+  <button class="hamburger" id="hamburger" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<div class="mobile-menu" id="mobileMenu">
+  <a href="/">Accueil</a>
+  <a href="/services">Services</a>
+  <a href="/secteurs">Secteurs</a>
+  <a href="/apropos">À propos</a>
+  <a href="/blog" class="active">Blog</a>
+  <a href="https://demo.techrepaircontent.com" class="btn-demo-mobile"><span class="star">★</span>Démo avec Ted<span class="btn-demo-badge">Nouveau</span></a>
+  <a href="https://demo.techrepaircontent.com/audit-ia.html" class="btn-demo-mobile"><span class="star">★</span>Audit IA gratuit</a>
+  <button class="btn-nav-mobile" onclick="window.location='/devis'">Obtenir un devis</button>
+</div>
+
+<div class="breadcrumb">
+  <a href="/">Accueil</a> / <a href="/blog">Blog</a> / <span style="color:var(--navy)">Pages comparatives SaaS</span>
+</div>
+
+<div class="article-hero">
+  <span class="ah-badge" style="background:#EFF6FF;color:var(--blue-dark)">☁️ SaaS B2B</span>
+  <h1>Pages comparatives SaaS : gagner les prospects qui vous comparent à vos concurrents</h1>
+  <div class="ah-meta">
+    <span>✍️ Goradieme</span>
+    <div class="ah-dot"></div>
+    <span>Publié le 27 octobre 2026</span>
+    <div class="ah-dot"></div>
+    <span>⏱ 12 min de lecture</span>
+  </div>
+  <div class="ah-cover"><img src="pages-comparatives-saas-cover.jpg" alt="Pages comparatives SaaS : gagner les prospects qui vous comparent à vos concurrents" width="1200" height="630" loading="eager"/></div>
+</div>
+
+<div class="layout">
+  <main class="content">
+
+<p class="intro-lead">Faites l'essai maintenant : tapez dans Google le nom de votre principal concurrent suivi du mot « alternative ». Si votre logiciel n'apparaît pas en première page, ou s'il y est présenté par un comparateur qui ne l'a jamais utilisé, un prospect prêt à changer d'outil est en train de choisir sans vous.</p>
+
+    <p>Les <strong>pages comparatives SaaS</strong> (« alternative à X », « X vs Y », « meilleurs logiciels de… ») ciblent des recherches peu nombreuses mais tapées au moment où l'acheteur arbitre entre deux ou trois noms. Voici comment repérer les comparaisons que vous perdez, choisir le bon format, rester dans le cadre de la publicité comparative et rédiger une page qui transforme ce trafic en démos, avec un gabarit prêt à remplir.</p>
+
+    <div class="key-points">
+      <h3>Points clés</h3>
+      <ul>
+        <li><strong>La comparaison a lieu avant le premier rendez-vous :</strong> dans l'enquête 2025 de 6sense, le fournisseur retenu figurait déjà sur la liste initiale de l'acheteur dans 95 % des cas.</li>
+        <li><strong>Chaque requête comparative a son format :</strong> une page « alternative à », un face-à-face « vous contre X » et un comparatif de catégorie ne répondent pas au même besoin.</li>
+        <li><strong>Citer un concurrent est permis, sous conditions :</strong> comparer objectivement des caractéristiques vérifiables, sans dénigrer ni créer de confusion, et dater chaque affirmation.</li>
+        <li><strong>La crédibilité fait la conversion :</strong> une page qui reconnaît les points forts du concurrent et dit pour qui il reste le meilleur choix inspire davantage confiance qu'un tableau où vous gagnez sur toutes les lignes.</li>
+      </ul>
+    </div>
+
+    <div class="toc-box">
+      <h3>📋 Sommaire</h3>
+      <ol>
+        <li><a href="#ch1">Qui écrit la comparaison quand vous ne l'écrivez pas</a></li>
+        <li><a href="#ch2">Repérer les comparaisons que vous perdez déjà</a></li>
+        <li><a href="#ch3">Page alternative, face-à-face ou comparatif de catégorie</a></li>
+        <li><a href="#ch4">A-t-on le droit de citer un concurrent sur son site ?</a></li>
+        <li><a href="#ch5">Comment faire un tableau comparatif concurrentiel crédible</a></li>
+        <li><a href="#ch6">Gabarit d'une page « alternative à » et exemple réécrit</a></li>
+        <li><a href="#ch7">Cinq erreurs qui ruinent une page comparative</a></li>
+        <li><a href="#ch8">Suivre les résultats et décider de la suite</a></li>
+        <li><a href="#faq">Questions fréquentes</a></li>
+        <li><a href="#sources">Sources</a></li>
+      </ol>
+    </div>
+
+    <h2 id="ch1">1. Qui écrit la comparaison quand vous ne l'écrivez pas</h2>
+
+    <p>Quand un éditeur ne publie pas sa propre comparaison, les places de marché d'avis, les sites d'affiliation et parfois ses concurrents la publient à sa place, et aucun d'eux n'a intérêt à décrire son produit avec exactitude.</p>
+
+    <p>L'enjeu tient au moment de la recherche. Un acheteur qui tape « [concurrent] alternative » connaît déjà la catégorie et cherche une raison de changer ou de trancher. Or cette phase décide de presque tout :</p>
+
+    <div class="stat-row">
+      <div class="stat"><b>95 %</b><span>des achats B2B reviennent à un fournisseur déjà présent sur la liste initiale (6sense, 2025)</span></div>
+      <div class="stat"><b>83 %</b><span>des acheteurs de logiciels n'ont présélectionné que trois produits ou moins (TrustRadius, 2026)</span></div>
+      <div class="stat"><b>94 %</b><span>des acheteurs B2B utilisent un modèle de langage, surtout pour comparer les offres (6sense, 2025)</span></div>
+    </div>
+
+    <p>Selon le <a href="https://6sense.com/b2b-buyer-experience-report/" class="src" target="_blank" rel="noopener">rapport 2025 de 6sense sur l'expérience d'achat B2B</a>, fondé sur près de 4 000 acheteurs, les comités évaluent en moyenne 5,1 fournisseurs, et le gagnant figurait déjà sur la liste du premier jour dans 95 % des cas. Les acheteurs n'appellent un commercial qu'à 61 % de leur parcours : l'essentiel du tri s'est fait sans vous parler. Le <a href="https://www.trustradius.com/blog/beyond-the-hype" class="src" target="_blank" rel="noopener">B2B Buying Disconnect 2026 de TrustRadius</a> (1 862 acheteurs de technologies interrogés en janvier 2026) ajoute que 83 % des acheteurs n'ont présélectionné que trois produits ou moins, et que la transparence des prix arrive en tête des changements qu'ils attendent des éditeurs (citée par 59 % d'entre eux).</p>
+
+    <p>Ces études portent surtout sur des acheteurs nord-américains et britanniques, pas sur le marché français, mais tout commercial SaaS reconnaît le mécanisme : le prospect arrive en démo avec un tableau comparatif déjà en tête. Une partie de ce tri se fait aussi hors des canaux mesurables, dans des messageries et des communautés, comme le détaille notre analyse du <a href="/articles/article-dark-social-saas-b2b.html">dark social dans le funnel d'achat SaaS</a>. La page comparative est l'un des rares moments où vous pouvez peser sur ce tableau.</p>
+
+    <h2 id="ch2">2. Repérer les comparaisons que vous perdez déjà</h2>
+
+    <p>Une demi-journée et des outils gratuits suffisent pour savoir sur quelles comparaisons vos prospects tombent, et qui leur répond aujourd'hui.</p>
+
+    <ol>
+      <li><strong>Interroger les commerciaux (1 heure).</strong> Demandez la liste des concurrents cités dans les dix dernières affaires gagnées et perdues, et l'argument qui a fait basculer chaque décision. Ce sont vos premières pages à écrire.</li>
+      <li><strong>Lire la Search Console (30 minutes).</strong> Dans le rapport Performances, filtrez les requêtes avec l'option « Expression régulière » et une formule comme <code>vs|alternative</code>, enrichie de « comparatif », de « concurrent » et des noms de vos concurrents. Une requête affichée sans clic signale une page absente ou mal adaptée.</li>
+      <li><strong>Observer la première page de Google (1 heure).</strong> Pour chaque concurrent, tapez « [concurrent] alternative », « [concurrent] avis » et « [concurrent] vs [vous] ». Classez les résultats : sites d'avis, sites d'affiliation, pages d'éditeurs.</li>
+      <li><strong>Interroger les assistants IA (30 minutes).</strong> Posez à ChatGPT, Perplexity ou Gemini la question « Quelle alternative à [concurrent] pour [votre cible] ? ». Notez si vous êtes cité et avec quelles sources. Notre méthode pour <a href="/articles/article-geo-etre-cite-par-chatgpt.html">mesurer sa présence dans les réponses des IA</a> donne une grille plus complète.</li>
+    </ol>
+
+    <table>
+      <tr><th>Indicateur relevé</th><th>Lecture</th><th>Priorité</th></tr>
+      <tr><td>Concurrent cité dans au moins trois affaires sur dix</td><td>Comparaison réelle et fréquente</td><td>Page à créer en premier</td></tr>
+      <tr><td>Requête comparative avec des impressions et moins de 1 % de clics</td><td>Google vous associe déjà au sujet, sans page dédiée</td><td>Haute</td></tr>
+      <tr><td>Page « [vous] alternative » publiée par un concurrent</td><td>Votre récit est écrit par un autre</td><td>Haute</td></tr>
+      <tr><td>Seuls des sites d'affiliation en première page</td><td>Place libre pour une page d'éditeur argumentée</td><td>Moyenne</td></tr>
+    </table>
+
+    <h2 id="ch3">3. Page alternative, face-à-face ou comparatif de catégorie</h2>
+
+    <p>Chaque requête comparative appelle un format distinct : choisissez à partir de l'intention de l'internaute, pas de ce que vous avez envie de dire.</p>
+
+    <table>
+      <tr><th>Format et requête type</th><th>Lecteur</th><th>Ce que la page doit faire</th></tr>
+      <tr><td><strong>Page « alternative à »</strong> : « [concurrent] alternative »</td><td>Client du concurrent, insatisfait</td><td>Nommer les raisons de partir, montrer le coût du changement, rassurer sur la migration</td></tr>
+      <tr><td><strong>Face-à-face</strong> : « [vous] vs [concurrent] »</td><td>Prospect qui hésite entre deux noms</td><td>Comparer ligne à ligne et dire pour quel profil chaque outil est le meilleur</td></tr>
+      <tr><td><strong>Comparatif de deux concurrents</strong> : « [concurrent A] vs [concurrent B] »</td><td>Acheteur qui ne vous connaît pas encore</td><td>Répondre honnêtement, puis présenter une troisième voie</td></tr>
+      <tr><td><strong>Comparatif de catégorie</strong> : « meilleur logiciel de [catégorie] »</td><td>Acheteur en début d'évaluation</td><td>Fournir des critères de choix et une sélection argumentée</td></tr>
+    </table>
+
+    <p>Commencez par les pages « alternative à » et les face-à-face sur vos deux ou trois concurrents les plus cités : leur volume est faible, mais chaque visite vient d'un acheteur qui a déjà un budget et un outil à remplacer. Le comparatif de catégorie, plus long à rendre crédible, vient ensuite.</p>
+
+    <h3>Le cas du comparatif téléchargeable</h3>
+
+    <p>Pour les catégories complexes (sécurité, paiement, paie), un guide d'achat téléchargeable avec grille d'évaluation complète utilement les pages comparatives. Un <a href="/service-livres-blancs">livre blanc conçu comme une grille de choix</a> attire des liens de sites spécialisés, alimente plusieurs pages satellites, recueille l'adresse e-mail des acheteurs en pleine évaluation et sert de source de référence aux moteurs IA qui comparent des offres.</p>
+
+    <h2 id="ch4">4. A-t-on le droit de citer un concurrent sur son site ?</h2>
+
+    <p>Oui. Nommer un concurrent pour vous comparer à lui relève de la publicité comparative, autorisée à des conditions précises. La <a href="https://www.wipo.int/wipolex/en/text/474131" class="src" target="_blank" rel="noopener">directive 2006/114/CE</a>, qui protège les professionnels et s'applique donc aux échanges entre entreprises, fixe ces conditions à son article 4 ; le Code de la consommation les reprend aux articles L122-1 à L122-7. La comparaison est licite si elle :</p>
+
+    <ul>
+      <li>n'est pas trompeuse ;</li>
+      <li>porte sur des produits qui répondent aux mêmes besoins ou ont le même objectif ;</li>
+      <li>compare objectivement des caractéristiques essentielles, pertinentes, vérifiables et représentatives, dont le prix peut faire partie ;</li>
+      <li>ne dénigre ni les marques, ni les produits, ni la situation du concurrent ;</li>
+      <li>ne tire pas indûment profit de sa notoriété et n'entraîne pas de confusion entre les entreprises.</li>
+    </ul>
+
+    <p>Pour une page SaaS, cela donne quatre règles : chaque ligne du tableau s'appuie sur une page publique du concurrent (tarifs, documentation, notes de version) conservée en capture datée ; le tableau compare des fonctionnalités, jamais des jugements comme « interface vieillissante » ; la page affiche sa dernière révision ; le nom du concurrent suffit, sans son logo ni sa charte graphique.</p>
+
+    <div class="callout">
+      <strong>Publicité payante : une règle différente</strong>
+      La <a href="https://support.google.com/adspolicy/answer/6118?hl=en" class="src" target="_blank" rel="noopener">politique de Google Ads sur les marques</a> ne restreint pas l'achat du nom d'un concurrent comme mot-clé. En revanche, Google peut restreindre son usage dans le texte de l'annonce si le titulaire de la marque se plaint. Gardez donc le nom du concurrent dans la page et des formulations génériques dans l'annonce, et faites relire par un juriste toute affirmation qui vous laisse un doute.
+    </div>
+
+    <h2 id="ch5">5. Comment faire un tableau comparatif concurrentiel crédible</h2>
+
+    <p>Un tableau comparatif est crédible quand il compare ce qui compte pour l'acheteur et qu'il laisse au concurrent les lignes où il est meilleur. Les <a href="https://developers.google.com/search/docs/specialty/ecommerce/write-high-quality-reviews?hl=fr" class="src" target="_blank" rel="noopener">recommandations de Google sur les avis de qualité</a>, qui visent aussi les services, vont dans le même sens : expliquer ce qui distingue un produit de ses concurrents, dire lequel convient le mieux à quel usage, présenter avantages et inconvénients à partir de ses propres recherches et apporter des preuves d'utilisation réelle.</p>
+
+    <h3>La méthode en six étapes</h3>
+
+    <ol>
+      <li><strong>Lister les critères de décision (product marketing, 2 heures).</strong> Partez des objections entendues en rendez-vous et des grilles d'appel d'offres, pas de votre liste de fonctionnalités.</li>
+      <li><strong>Collecter les preuves (product marketing, une demi-journée par concurrent).</strong> Pour chaque critère, notez l'URL publique qui fonde la réponse et faites une capture datée. Ouvrez un compte d'essai quand l'offre le permet.</li>
+      <li><strong>Rédiger les verdicts (rédacteur, une journée).</strong> Une phrase factuelle par critère : « inclus dès l'offre Starter », « en option à partir de 50 utilisateurs ».</li>
+      <li><strong>Faire relire par un commercial et un expert produit (1 heure).</strong> Le premier vérifie que les objections réelles sont traitées, le second que rien n'est inexact.</li>
+      <li><strong>Faire valider les affirmations sensibles (juriste ou direction, 30 minutes).</strong> Tarifs, conformité, certifications : tout ce qui peut être contesté doit être sourcé.</li>
+      <li><strong>Programmer la mise à jour (15 minutes).</strong> Une revue trimestrielle, et une revue immédiate à chaque changement de prix du concurrent.</li>
+    </ol>
+
+    <p>Qualifiez chaque critère par trois valeurs explicites (« inclus », « en option payante », « absent ») plutôt que par des coches, qui écrasent les nuances.</p>
+
+    <h2 id="ch6">6. Gabarit d'une page « alternative à » et exemple réécrit</h2>
+
+    <p>Le plan type ci-dessous a été conçu pour cet article ; il convient à une page de 1 200 à 2 000 mots et peut être repris tel quel.</p>
+
+    <ol>
+      <li><strong>Titre et chapeau</strong> : « Alternative à [concurrent] pour [cible] » ; deux phrases sur le problème qui pousse à chercher une alternative, sans attaque.</li>
+      <li><strong>Pour qui [concurrent] reste un bon choix</strong> : trois cas où il convient mieux que vous. C'est le bloc qui crée la confiance.</li>
+      <li><strong>Les trois raisons les plus citées de partir</strong> : tirées des avis publics et des retours de vos commerciaux, chacune avec sa preuve.</li>
+      <li><strong>Tableau comparatif</strong> : huit à douze critères, valeurs explicites, sources et date de mise à jour.</li>
+      <li><strong>Le coût réel du changement</strong> : durée de migration, import des données, formation, période de double abonnement éventuelle.</li>
+      <li><strong>La preuve</strong> : une étude de cas client documentée, un extrait de documentation ou une démonstration vidéo.</li>
+      <li><strong>Appel à l'action adapté</strong> : démo de migration ou essai avec import des données, plutôt qu'un « contactez-nous » générique.</li>
+      <li><strong>FAQ</strong> : questions de migration, de contrat et de tarification.</li>
+    </ol>
+
+    <h3>Avant et après : le paragraphe d'ouverture</h3>
+
+    <p>Exemple rédigé pour cet article, avec des noms génériques.</p>
+
+    <table>
+      <tr><th>Version qui fait fuir</th><th>Version qui retient</th></tr>
+      <tr><td>« Vous en avez assez de [concurrent] ? Découvrez [votre logiciel], la solution n° 1, plus simple, plus rapide et moins chère. »</td><td>« [Concurrent] convient très bien aux équipes de plus de 200 personnes qui ont besoin de flux de validation complexes. Si vous êtes une équipe de 10 à 50 personnes et que l'abonnement par utilisateur pèse sur votre budget, voici ce qui change avec [votre logiciel], ce qui ne change pas, et combien de temps prend une migration. »</td></tr>
+    </table>
+
+    <p>La seconde version qualifie le lecteur, reconnaît une force du concurrent et promet des éléments vérifiables. Elle écarte aussi le prospect hors cible, ce qui épargne des démos inutiles.</p>
+
+    <h2 id="ch7">7. Cinq erreurs qui ruinent une page comparative</h2>
+
+    <ul>
+      <li><strong>Gagner sur toutes les lignes.</strong> Un tableau où vous l'emportez partout est lu comme une publicité. Laissez au concurrent les critères où il est réellement meilleur.</li>
+      <li><strong>Publier puis oublier.</strong> Un tarif périmé suffit à rendre la page trompeuse.</li>
+      <li><strong>Dupliquer la même page pour dix concurrents.</strong> Changer seulement le nom produit des pages quasi identiques, que Google peut traiter comme du contenu dupliqué et que les lecteurs repèrent vite. Chaque page doit traiter les raisons propres à ce concurrent.</li>
+      <li><strong>Cacher les prix.</strong> Les acheteurs placent la transparence tarifaire en tête de leurs attentes : affichez au moins une fourchette ou le mode de facturation.</li>
+      <li><strong>Isoler la page du reste du site.</strong> Reliez-la à la page tarifs, aux études de cas et à une rubrique « Comparer » accessible depuis le pied de page.</li>
+    </ul>
+
+    <h2 id="ch8">8. Suivre les résultats et décider de la suite</h2>
+
+    <p>Une page comparative se juge à ses démos, pas à son trafic. Fixez quatre indicateurs et laissez trois mois à Google avant de conclure :</p>
+
+    <ul>
+      <li><strong>Position et clics</strong> sur la requête « [concurrent] alternative » dans la Search Console ;</li>
+      <li><strong>Taux de conversion de la page</strong> en demandes de démo ou en essais, à comparer à celui de votre page d'accueil ;</li>
+      <li><strong>Affaires influencées</strong> : nombre d'opportunités dont le parcours CRM contient la page ;</li>
+      <li><strong>Taux de gain contre ce concurrent</strong>, suivi trimestre par trimestre par l'équipe commerciale.</li>
+    </ul>
+
+    <p>Une page qui se classe sans convertir appelle un travail sur le bloc « pour qui » et l'appel à l'action ; une page qui convertit sans se classer, un meilleur maillage interne.</p>
+
+    <h3>Faire en interne ou se faire accompagner</h3>
+
+    <p>Une équipe marketing peut produire seule ses deux premières pages, si un product marketing y consacre quatre à cinq jours. Au-delà de trois concurrents, les mises à jour trimestrielles alourdissent la charge. C'est ce que prend en charge notre service de <a href="/service-articles-seo">rédaction d'articles et de pages SEO</a> : recherche des requêtes comparatives, collecte et archivage des preuves, rédaction avec vos experts et mise à jour planifiée. Nos <a href="/secteur-saas">contenus pour éditeurs SaaS</a> suivent le même principe de sources vérifiables.</p>
+
+    <h2 id="faq">Questions fréquentes</h2>
+
+    <div class="faq-item">
+      <h3>Comment faire une page comparatif concurrent qui convertit ?</h3>
+      <p>Qualifiez le lecteur dès l'ouverture, reconnaissez les cas où le concurrent convient mieux, comparez huit à douze critères sourcés et datés, chiffrez la migration et proposez une démonstration de migration.</p>
+    </div>
+
+    <div class="faq-item">
+      <h3>Peut-on utiliser le nom d'un concurrent dans le titre de sa page ?</h3>
+      <p>Oui, si la page compare objectivement des caractéristiques vérifiables, sans dénigrement ni confusion possible entre les deux entreprises. Datez la comparaison et n'utilisez pas son logo.</p>
+    </div>
+
+    <div class="faq-item">
+      <h3>Comment comparer deux logiciels de façon objective ?</h3>
+      <p>Partez des critères de décision de l'acheteur, appuyez chaque réponse sur une page publique de l'éditeur ou sur un compte d'essai, et utilisez des valeurs explicites (inclus, en option, absent) plutôt que des notes ou des coches.</p>
+    </div>
+
+    <div class="faq-item">
+      <h3>Combien de pages comparatives faut-il créer ?</h3>
+      <p>Deux ou trois pour commencer, sur les concurrents les plus cités par vos commerciaux, puis seulement celles que vous pourrez tenir à jour chaque trimestre.</p>
+    </div>
+
+    <div class="conclusion-box">
+      <p><strong>En résumé</strong></p>
+      <p>Vos prospects vous comparent, que vous publiiez ou non. Une page comparative honnête, sourcée et tenue à jour rend la décision plus facile pour les acheteurs qui vous correspondent et écarte les autres avant la démo. Commencez par le concurrent que vos commerciaux citent le plus souvent : la page peut être en ligne en deux semaines.</p>
+      <a href="/devis" class="final-cta">Demander un diagnostic de vos requêtes comparatives →</a>
+    </div>
+
+    <h2 id="sources">Sources</h2>
+    <ol class="sources">
+      <li>6sense, « 2025 B2B Buyer Experience Report », 2025. <a href="https://6sense.com/b2b-buyer-experience-report/" target="_blank" rel="noopener">6sense.com</a></li>
+      <li>Allison K., TrustRadius, « Beyond the Hype: The AI Bubble that Isn't Bursting (Yet) », B2B Buying Disconnect 2026, 15 juillet 2026. <a href="https://www.trustradius.com/blog/beyond-the-hype" target="_blank" rel="noopener">trustradius.com</a></li>
+      <li>Parlement européen et Conseil, « Directive 2006/114/CE du 12 décembre 2006 en matière de publicité trompeuse et de publicité comparative », via WIPO Lex. <a href="https://www.wipo.int/wipolex/en/text/474131" target="_blank" rel="noopener">wipo.int</a></li>
+      <li>Google Search Central, « Rédiger des avis de haute qualité », mis à jour le 18 décembre 2025. <a href="https://developers.google.com/search/docs/specialty/ecommerce/write-high-quality-reviews?hl=fr" target="_blank" rel="noopener">developers.google.com</a></li>
+      <li>Google, « Trademarks », règles publicitaires Google Ads. <a href="https://support.google.com/adspolicy/answer/6118?hl=en" target="_blank" rel="noopener">support.google.com</a></li>
+    </ol>
+
+  <!-- maillage:debut -->
+<section class="maillage" aria-label="Articles liés">
+<style>
+.maillage{margin:44px 0 8px;padding-top:28px;border-top:1px solid #e2e8f0;font-family:inherit}
+.maillage h2{font-size:20px!important;font-weight:800;color:#0F1B3D;margin:0 0 16px!important}
+.mi-grille{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:14px}
+.mi-carte{display:flex;flex-direction:column;gap:8px;border:1px solid #e2e8f0;border-radius:14px;padding:16px 18px;background:#fff;text-decoration:none!important;transition:border-color .2s,box-shadow .2s,transform .2s}
+.mi-carte:hover{border-color:#1A56DB;box-shadow:0 8px 24px rgba(26,86,219,.10);transform:translateY(-2px)}
+.mi-cat{font-size:10.5px;font-weight:800;letter-spacing:1.2px;text-transform:uppercase;color:#1342b0}
+.mi-titre{font-size:14.5px;font-weight:700;line-height:1.4;color:#0F1B3D}
+.mi-lire{margin-top:auto;font-size:12px;color:#64748b}
+</style>
+<h2>À lire aussi</h2>
+<div class="mi-grille"><a class="mi-carte" href="/articles/article-dark-social-saas-b2b.html"><span class="mi-cat">SaaS B2B</span><span class="mi-titre">Dark social : le vrai funnel d&#x27;achat SaaS que Google Analytics ne voit pas</span><span class="mi-lire">Lire l'article · 15 min</span></a><a class="mi-carte" href="/articles/article-transparence-salariale-offres-emploi.html"><span class="mi-cat">RH Tech</span><span class="mi-titre">Transparence salariale : ce que vos offres d&#x27;emploi et vos grilles doivent changer</span><span class="mi-lire">Lire l'article · 12 min</span></a><a class="mi-carte" href="/articles/article-geo-etre-cite-par-chatgpt.html"><span class="mi-cat">SEO</span><span class="mi-titre">GEO : comment faire citer votre entreprise B2B par ChatGPT, Perplexity et Gemini</span><span class="mi-lire">Lire l'article · 12 min</span></a></div>
+</section>
+<!-- maillage:fin -->
+</main>
+
+  <aside class="sidebar">
+    <div class="sidebar-card">
+      <h3>Sommaire</h3>
+      <div class="mini-toc">
+        <a href="#ch1">1. Qui écrit la comparaison</a>
+        <a href="#ch2">2. Le diagnostic</a>
+        <a href="#ch3">3. Choisir le format</a>
+        <a href="#ch4">4. Citer un concurrent</a>
+        <a href="#ch5">5. Le tableau comparatif</a>
+        <a href="#ch6">6. Gabarit et exemple</a>
+        <a href="#ch7">7. Cinq erreurs</a>
+        <a href="#ch8">8. Mesurer</a>
+        <a href="#faq">FAQ</a>
+        <a href="#sources">Sources</a>
+      </div>
+    </div>
+    <div class="sidebar-card">
+      <div class="author-card">
+        <div class="author-avatar">GD</div>
+        <div>
+          <div class="author-name">Goradieme</div>
+          <div class="author-role">Rédacteur SEO tech B2B · TechRepair Content</div>
+        </div>
+      </div>
+    </div>
+    <div class="sidebar-card guide-card">
+      <h3>Vos pages comparatives, sourcées</h3>
+      <p>Pages « alternative à », face-à-face et comparatifs de catégorie rédigés avec vos équipes, preuves archivées et mises à jour planifiées.</p>
+      <a href="/service-articles-seo" class="guide-btn">Découvrir le service</a>
+    </div>
+  </aside>
+</div>
+
+<div class="nl-band">
+  <div class="nl-band-inner">
+    <h2>📩 La newsletter SEO Tech B2B</h2>
+    <p>Chaque semaine, une stratégie actionnable et une opportunité SEO dans votre secteur.</p>
+    <div class="nl-band-form">
+      <input type="email" class="nl-band-input" id="nlBandEmail" placeholder="votre@email.com"/>
+      <button class="nl-band-btn" id="nlBandBtn" type="button">S'abonner →</button>
+    </div>
+    <p id="nlBandMsg" style="display:none;font-size:12px;color:#fff;margin-top:8px"></p>
+    <p class="nl-band-note">✓ Gratuit · ✓ Sans spam · ✓ Désabonnement en 1 clic</p>
+  </div>
+</div>
+
+<div class="cta-band">
+  <div class="cta-inner">
+    <div>
+      <h2>Du contenu qui performe, pas qui remplit des pages</h2>
+      <p>Vous voulez une stratégie de contenu sur mesure pour votre secteur tech B2B ? Parlons-en.</p>
+      <div class="cta-btns">
+        <button class="btn-white" onclick="window.location='/devis'">Obtenir un devis gratuit →</button>
+        <button class="btn-ghost-cta" onclick="window.location='/services'">Voir nos services →</button>
+      </div>
+    </div>
+    <div class="cta-checks">
+      <div class="cta-check"><span class="cta-ci">✓</span> Réponse sous 24h</div>
+      <div class="cta-check"><span class="cta-ci">✓</span> Audit SEO gratuit</div>
+      <div class="cta-check"><span class="cta-ci">✓</span> Sans engagement</div>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <div class="logo"><div class="logo-box">TRD</div><div class="logo-text" style="color:#fff">TechRepair<span>Content</span></div></div>
+      <p>Rédaction SEO & technique pour entreprises SaaS, Tech et E-commerce.</p>
+    </div>
+    <div><h4>Navigation</h4><ul class="flinks"><li><a href="/">Accueil</a></li><li><a href="/apropos">À propos</a></li><li><a href="/services">Services</a></li><li><a href="/secteurs">Secteurs</a></li><li><a href="/blog">Blog</a></li></ul></div>
+    <div><h4>Ressources</h4><ul class="flinks"><li><a href="/agents-ia">Agents IA</a></li><li><a href="/visibilite-ia">Visibilité dans les IA</a></li><li><a href="/faq">FAQ</a></li><li><a href="/confidentialite">Confidentialité</a></li><li><a href="/mentions-legales">Mentions légales</a></li></ul></div>
+    <div>
+      <h4>Contact</h4>
+      <ul class="flinks"><li><a href="mailto:contact@techrepaircontent.com">contact@techrepaircontent.com</a></li><li><a href="#">Réponse sous 24h</a></li></ul>
+      <div class="fsocial"><a class="fsoc" href="https://www.linkedin.com/in/techrepair-content" target="_blank" rel="noopener">in</a><a class="fsoc" href="mailto:contact@techrepaircontent.com">✉</a></div>
+    </div>
+    <div><h4>Basé en France</h4><div style="font-size:22px">🇫🇷</div></div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2026 TechRepair Content. Tous droits réservés.</span>
+    <span>Fait avec ❤️ en France</span>
+  </div>
+</footer>
+
+<script>
+const hamburger = document.getElementById('hamburger');
+const mobileMenu = document.getElementById('mobileMenu');
+hamburger.addEventListener('click', () => {
+  hamburger.classList.toggle('open');
+  mobileMenu.classList.toggle('open');
+});
+mobileMenu.querySelectorAll('a').forEach(link => {
+  link.addEventListener('click', () => {
+    hamburger.classList.remove('open');
+    mobileMenu.classList.remove('open');
+  });
+});
+
+const BREVO_FORM_ACTION = 'https://a41ce724.sibforms.com/serve/MUIFAEGqDW1rbNTL0uU5ym6Ux5qJ7TJpdETsCjqRumOCnr-gRU8IGKx8Ic-JLjScrVVWrJVx_YXawDF8ao6y5hYLPvy7h8UJCk3gg9gTHcTaNAWQzbjwLnHO6DPk_HzPb7XY28rHy9JtEMuP-euST6RZutJ_bWOfqZFEtI-UUs9G4HA-O5V8JPwb3jLz0jhwuISuUqZ3Iok5IEyYHg==';
+
+function subscribeToNewsletter(emailInput, msgEl, btnEl) {
+  const email = emailInput.value.trim();
+  const isValidEmail = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+  msgEl.style.display = 'block';
+  if (!isValidEmail) {
+    msgEl.style.color = '#dc2626';
+    msgEl.textContent = "Merci d'entrer une adresse email valide.";
+    return;
+  }
+  const formData = new FormData();
+  formData.append('EMAIL', email);
+  formData.append('email_address_check', '');
+  formData.append('locale', 'fr');
+  formData.append('html_type', 'simple');
+  fetch(BREVO_FORM_ACTION, { method: 'POST', mode: 'no-cors', body: formData }).catch(() => {});
+  msgEl.style.color = '#10b981';
+  msgEl.textContent = 'Merci ! Vérifiez votre boîte mail pour confirmer.';
+  btnEl.textContent = 'Inscription envoyée ✓';
+  btnEl.disabled = true;
+}
+
+const nlBandBtn = document.getElementById('nlBandBtn');
+nlBandBtn.addEventListener('click', () => {
+  subscribeToNewsletter(document.getElementById('nlBandEmail'), document.getElementById('nlBandMsg'), nlBandBtn);
+});
+</script>
+</body>
+</html>

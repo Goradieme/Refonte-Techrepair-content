@@ -148,4 +148,17 @@ const ARTICLES = [
     motCle:   "DSP3",
     metaDesc: "Texte arrêté par le Conseil le 21 octobre 2026 : remboursement de la fraude par usurpation, vérification du bénéficiaire, agrément. Les chantiers DSP3 à ouvrir."
   },
+  {
+    titre:    "Pages comparatives SaaS : gagner les prospects qui vous comparent à vos concurrents",
+    extrait:  "Vos prospects vous comparent à vos concurrents avant la première démo. Diagnostic, formats, cadre de la publicité comparative et gabarit de page « alternative à » prêt à remplir.",
+    auteur:   "Goradieme",
+    date:     "2026-10-27",
+    categorie:"saas",
+    lecture:  "12 min",
+    lien:     "articles/article-pages-comparatives-saas.html",
+    image:    "articles/pages-comparatives-saas-cover.jpg",
+    slug:     "pages-comparatives-saas",
+    motCle:   "pages comparatives SaaS",
+    metaDesc: "Pages « alternative à » et « vs » : repérer les comparaisons perdues, choisir le format, citer un concurrent sans risque et rédiger une page qui convertit."
+  },
 ];
