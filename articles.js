@@ -10,7 +10,7 @@ const ARTICLES = [
   {
     titre:    "Comment survivre aux AI Overviews de Google en 2025 : le guide des contenus qui résistent",
     extrait:  "Les AI Overviews cannibalisent votre trafic SEO ? Voici la méthode exacte pour produire des contenus que Google cite — et non remplace — dans ses résultats IA.",
-    auteur:   "Goradieme",
+    auteur:   "Rédaction TechRepair Content",
     date:     "2025-06-07",
     categorie:"seo",
     lecture:  "11 min",
@@ -22,7 +22,7 @@ const ARTICLES = [
   {
     titre:    "Facturation électronique 2026 : comprendre la réforme et savoir où s'inscrire",
     extrait:  "Calendrier exact, formats acceptés, plateformes agréées réelles et sanctions : le guide complet de la réforme pour les entreprises françaises.",
-    auteur:   "Goradieme",
+    auteur:   "Rédaction TechRepair Content",
     date:     "2026-07-15",
     categorie:"fintech",
     lecture:  "12 min",
@@ -34,7 +34,7 @@ const ARTICLES = [
   {
     titre:    "Le Commerce Agentique : le guide complet",
     extrait:  "AEO, GEO, schema.org : comment rendre votre e-commerce visible par les agents IA (ChatGPT, Gemini, Copilot). Guide complet avec études indépendantes et checklist actionnable.",
-    auteur:   "Goradieme",
+    auteur:   "Rédaction TechRepair Content",
     date:     "2026-08-15",
     categorie:"ecommerce",
     lecture:  "18 min",
@@ -47,7 +47,7 @@ const ARTICLES = [
    {
     titre:    "Identités Non-Humaines : sécuriser l'explosion des agents IA",
     extrait:  "Agents IA, clés API, tokens : les identités non-humaines dépassent déjà les identités humaines dans les entreprises. Guide complet sur les risques réels, incidents documentés et le standard émergent AIMS pour les sécuriser.",
-    auteur:   "Goradieme",
+    auteur:   "Rédaction TechRepair Content",
     date:     "2026-08-31",
     categorie:"cyber",
     lecture:  "16 min",
@@ -60,7 +60,7 @@ const ARTICLES = [
        {
       titre:     "Agents IA en RH : le guide complet",
       extrait:   "Recrutement, onboarding, rétention, paie : comment les agents IA transforment concrètement la fonction RH, avec cas d'usage, ROI et cadre légal.",
-      auteur:    "Goradieme",
+      auteur:    "Rédaction TechRepair Content",
       date:      "2026-07-21",
       categorie: "rh",
       lecture:   "12 min",
@@ -73,7 +73,7 @@ const ARTICLES = [
        {
       titre:     "Dark social : le vrai funnel d'achat SaaS que Google Analytics ne voit pas",
       extrait:   "Slack, Discord, LinkedIn, WhatsApp : jusqu'à 84% des échanges B2B autour de votre produit échappent à vos outils d'analyse. Comprendre le dark social et agir dessus.",
-      auteur:    "Goradieme",
+      auteur:    "Rédaction TechRepair Content",
       date:      "2026-09-16",
       categorie: "saas",
       lecture:   "15 min",
@@ -86,7 +86,7 @@ const ARTICLES = [
   {
     titre:    "GEO : comment faire citer votre entreprise B2B par ChatGPT, Perplexity et Gemini",
     extrait:  "Robots à autoriser, écriture vérifiable, mentions tierces et mesure des citations : la méthode documentée pour que les assistants IA citent votre entreprise B2B.",
-    auteur:   "Goradieme",
+    auteur:   "Rédaction TechRepair Content",
     date:     "2026-10-22",
     categorie:"seo",
     lecture:  "12 min",
@@ -99,7 +99,7 @@ const ARTICLES = [
   {
     titre:    "NIS2 en France : entreprises concernées et plan d'action avant la loi Résilience",
     extrait:  "La transposition de NIS2 est de nouveau reportée à l'Assemblée. Seuils, secteurs, obligations, référentiel ReCyF de l'ANSSI : qui est concerné et quoi faire dès maintenant.",
-    auteur:   "Goradieme",
+    auteur:   "Rédaction TechRepair Content",
     date:     "2026-10-23",
     categorie:"cyber",
     lecture:  "12 min",
@@ -112,7 +112,7 @@ const ARTICLES = [
   {
     titre:    "Allégations environnementales : ce qu'il faut changer sur vos fiches produits",
     extrait:  "L'échéance européenne contre l'écoblanchiment est passée, la loi française attend à l'Assemblée. Ce qui sera interdit, ce qui est déjà sanctionné et comment réécrire vos fiches produits.",
-    auteur:   "Goradieme",
+    auteur:   "Rédaction TechRepair Content",
     date:     "2026-10-24",
     categorie:"ecommerce",
     lecture:  "12 min",
@@ -125,7 +125,7 @@ const ARTICLES = [
   {
     titre:    "Transparence salariale : ce que vos offres d'emploi et vos grilles doivent changer",
     extrait:  "Le projet de loi de transposition attend son examen au Parlement. Fourchettes dans les offres, fin des questions sur le salaire passé, catégories de valeur égale : l'ordre dans lequel s'y préparer.",
-    auteur:   "Goradieme",
+    auteur:   "Rédaction TechRepair Content",
     date:     "2026-10-25",
     categorie:"rh",
     lecture:  "12 min",
@@ -138,7 +138,7 @@ const ARTICLES = [
   {
     titre:    "DSP3 et règlement PSR : ce que les fintechs de paiement doivent préparer",
     extrait:  "Le Conseil a arrêté sa position sur la DSP3 et le PSR. Remboursement des victimes de faux conseillers, vérification du bénéficiaire, nouvel agrément : l'ordre dans lequel s'y préparer.",
-    auteur:   "Goradieme",
+    auteur:   "Rédaction TechRepair Content",
     date:     "2026-10-26",
     categorie:"fintech",
     lecture:  "12 min",
@@ -151,7 +151,7 @@ const ARTICLES = [
   {
     titre:    "Pages comparatives SaaS : gagner les prospects qui vous comparent à vos concurrents",
     extrait:  "Vos prospects vous comparent à vos concurrents avant la première démo. Diagnostic, formats, cadre de la publicité comparative et gabarit de page « alternative à » prêt à remplir.",
-    auteur:   "Goradieme",
+    auteur:   "Rédaction TechRepair Content",
     date:     "2026-10-27",
     categorie:"saas",
     lecture:  "12 min",
