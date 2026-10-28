@@ -164,7 +164,7 @@ const ARTICLES = [
   {
     titre:    "Marketing fintech : les contenus qui créent la confiance avant la première démo",
     extrait:  "Vos prospects vérifient votre agrément et la protection de leurs fonds avant de demander une démo. Le test des douze questions, cinq contenus à produire et un modèle de page prêt à adapter.",
-    auteur:   "Goradieme",
+    auteur:   "Rédaction TechRepair Content",
     date:     "2026-10-28",
     categorie:"fintech",
     lecture:  "12 min",
