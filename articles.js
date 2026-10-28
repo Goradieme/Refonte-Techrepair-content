@@ -161,4 +161,17 @@ const ARTICLES = [
     motCle:   "pages comparatives SaaS",
     metaDesc: "Pages « alternative à » et « vs » : repérer les comparaisons perdues, choisir le format, citer un concurrent sans risque et rédiger une page qui convertit."
   },
+  {
+    titre:    "Marketing fintech : les contenus qui créent la confiance avant la première démo",
+    extrait:  "Vos prospects vérifient votre agrément et la protection de leurs fonds avant de demander une démo. Le test des douze questions, cinq contenus à produire et un modèle de page prêt à adapter.",
+    auteur:   "Goradieme",
+    date:     "2026-10-28",
+    categorie:"fintech",
+    lecture:  "12 min",
+    lien:     "articles/article-marketing-fintech-contenus-confiance.html",
+    image:    "articles/marketing-fintech-contenus-confiance-cover.jpg",
+    slug:     "marketing-fintech-contenus-confiance",
+    motCle:   "marketing fintech",
+    metaDesc: "Agrément, protection des fonds, sécurité, tarifs, études de cas : les contenus qu'un DAF vérifie avant de contacter une fintech B2B, avec grille et modèle."
+  },
 ];
