@@ -169,7 +169,7 @@ const ARTICLES = [
     categorie:"fintech",
     lecture:  "12 min",
     lien:     "articles/article-marketing-fintech-contenus-confiance.html",
-    image:    "articles/marketing-fintech-contenus-confiance-cover-v2.jpg",
+    image:    "articles/marketing-fintech-contenus-confiance-cover-v3.jpg",
     slug:     "marketing-fintech-contenus-confiance",
     motCle:   "marketing fintech",
     metaDesc: "Agrément, protection des fonds, sécurité, tarifs, études de cas : les contenus qu'un DAF vérifie avant de contacter une fintech B2B, avec grille et modèle."
