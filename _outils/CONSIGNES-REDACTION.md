@@ -266,6 +266,14 @@ API ; ne pas les appeler) :
   sauf dans une citation du fondateur. Rester honnête : ne jamais inventer d'équipe,
   de « rédacteurs », d'« experts » tiers ni de chiffres clients ; Gora Dieme, fondateur,
   rédige et suit chaque mission, sans sous-traitance.
+- **Articles du blog : voix neutre (choix de Goradieme)**. Le « nous » ci-dessus vaut pour
+  les pages du site, pas pour les articles. Dans un article : aucun « nous », « nos »,
+  « notre » désignant TechRepair Content (seule exception : un modèle ou un exemple écrit
+  au nom de l'entreprise cible, ex. « Comment nous protégeons vos fonds »), aucun nom ni
+  prénom du fondateur, aucun éloge de nos services. Auteur affiché : « Rédaction
+  TechRepair Content » (schéma `Organization`). Les liens internes se glissent dans une
+  phrase qui informe le lecteur, l'ancre décrivant ce qu'il trouvera : jamais « nous avons
+  détaillé dans notre analyse… », « notre guide », « notre service ».
 - **Honnêteté** : distinguer ce qui est documenté de ce qui est une hypothèse ; signaler
   les limites d'une étude (un seul site, échantillon réduit…). Aucune promesse de
   position Google ou de citation IA.

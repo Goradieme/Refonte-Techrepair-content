@@ -99,7 +99,7 @@ def main(chemin_meta: str) -> None:
         "description": m["metaDesc"],
         "datePublished": date,
         "dateModified": m.get("dateModification", date),
-        "author": {"@type": "Person", "name": "Goradieme", "url": f"{SITE}/apropos"},
+        "author": {"@type": "Organization", "name": "TechRepair Content", "url": f"{SITE}/apropos"},
         "publisher": {"@type": "Organization", "name": "TechRepair Content", "url": f"{SITE}/"},
         "mainEntityOfPage": {"@type": "WebPage", "@id": url},
         "inLanguage": "fr-FR",
@@ -169,7 +169,7 @@ def main(chemin_meta: str) -> None:
     contenu = aj.read_text(encoding="utf-8")
     if f'"articles/{fichier}"' not in contenu:
         champs = [
-            ("titre", m["titre"]), ("extrait", m["extrait"]), ("auteur", "Goradieme"),
+            ("titre", m["titre"]), ("extrait", m["extrait"]), ("auteur", "Rédaction TechRepair Content"),
             ("date", date), ("categorie", cat), ("lecture", lecture),
             ("lien", f"articles/{fichier}"),
         ]
