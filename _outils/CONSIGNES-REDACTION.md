@@ -305,6 +305,14 @@ API ; ne pas les appeler) :
     comment un agent IA ou un service de TechRepair Content résout un point précis de
     l'article, avec un lien vers `/agents-ia`, `/calculateur-temps-perdu` ou la page
     service concernée. Une seule mention, factuelle, jamais publicitaire ;
+  - **liens vers nos pages : un conseil d'abord, jamais une réclame** (Google pénalise les
+    contenus écrits pour vendre plutôt que pour aider). La phrase doit rester utile si on
+    retire le lien ; l'ancre décrit ce que le lecteur va trouver (« ce qu'un livre blanc
+    B2B doit contenir », « les contraintes propres aux contenus fintech »), pas notre offre.
+    Formulations interdites : « C'est le cœur de notre service… », « notre offre de … applique… »,
+    « Nous rédigeons ces contenus… », « Ce que nous prenons en charge », le nom du fondateur
+    dans le corps de l'article. Une section « faire en interne ou externaliser » donne des
+    critères de choix neutres, sans se citer ;
   - le bloc « À lire aussi » (3 articles proches) est recalculé automatiquement sur
     toutes les pages par `_outils/maillage.py`, lancé par `publier_article.py`.
 - FAQ finale `<h2 id="faq">` avec 3 à 5 `<div class="faq-item"><h3>…</h3><p>…</p></div>`
