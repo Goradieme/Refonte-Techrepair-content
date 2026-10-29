@@ -212,7 +212,7 @@
 
     fetch(API, {
       method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
+      headers: { 'Content-Type': 'text/plain;charset=UTF-8' }, // requête « simple » : pas de pré-vérification CORS
       body: JSON.stringify({ messages: etat.messages.slice(-12) }),
       signal: controle ? controle.signal : undefined
     })
