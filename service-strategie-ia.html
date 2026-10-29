@@ -429,4 +429,59 @@ const hamburger = document.getElementById('hamburger');
 const mobileMenu = document.getElementById('mobileMenu');
 hamburger.addEventListener('click', () => { hamburger.classList.toggle('open'); mobileMenu.classList.toggle('open'); });
 mobileMenu.querySelectorAll('a').forEach(link => { link.addEventListener('click', () => { hamburger.classList.remove('open'); mobileMenu.classList.remove('open'); }); });
-document.querySelectorAll('.faq-q').forEach(btn => { btn.addEventListener('click', () => { const item = btn.parentElement; const isOpen = item.
+document.querySelectorAll('.faq-q').forEach(btn => { btn.addEventListener('click', () => { const item = btn.parentElement; const isOpen = item.classList.contains('open'); document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open')); if (!isOpen) item.classList.add('open'); }); });
+</script>
+<!-- ══ Tarteaucitron : gestion du consentement cookies (RGPD) ══ -->
+<script src="https://cdn.jsdelivr.net/gh/AmauriC/tarteaucitron.js/tarteaucitron.min.js" defer></script>
+<script>
+document.addEventListener("DOMContentLoaded", function(){
+tarteaucitron.init({
+  "privacyUrl": "/confidentialite",
+  "hashtag": "#tarteaucitron",
+  "cookieName": "tarteaucitron",
+  "orientation": "bottom",
+  "showAlertSmall": false,
+  "cookieslist": false,
+  "showIcon": true,
+  "iconPosition": "BottomRight",
+  "adblocker": false,
+  "DenyAllCta": true,
+  "AcceptAllCta": true,
+  "highPrivacy": true,
+  "handleBrowserDNTRequest": false,
+  "removeCredit": true,
+  "moreInfoLink": true,
+  "useExternalCss": false,
+  "mandatory": false
+});
+
+tarteaucitron.user.gtagUa = 'G-B1MRFH8WRQ';
+tarteaucitron.user.gtagMore = function () { };
+// Charge le tracking (GTM/gtag) seulement après une vraie interaction,
+// pour ne pas pénaliser le chargement initial de la page (perf).
+function trdLoadAnalytics(){
+  (tarteaucitron.job = tarteaucitron.job || []).push('gtag');
+  trdInteractionEvents.forEach(evt => window.removeEventListener(evt, trdLoadAnalytics));
+  clearTimeout(trdAnalyticsFallback);
+}
+const trdInteractionEvents = ['scroll','mousemove','touchstart','keydown'];
+trdInteractionEvents.forEach(evt => window.addEventListener(evt, trdLoadAnalytics, {once:true, passive:true}));
+const trdAnalyticsFallback = setTimeout(trdLoadAnalytics, 5000);
+});
+</script>
+
+<!-- Personnalisation couleurs TechRepairContent (navy/bleu) -->
+<style>
+#tarteaucitronRoot #tarteaucitronAlertBig{background:#0F1B3D!important}
+#tarteaucitronRoot #tarteaucitronAlertBig p,
+#tarteaucitronRoot #tarteaucitronAlertBig a{color:#fff!important}
+#tarteaucitronDisclaimerAlert,#tarteaucitronDisclaimerAlert strong,#tarteaucitronDisclaimerAlert a{color:#fff!important}
+#tarteaucitronAllAllowed,.tarteaucitronAllow{background:#1A56DB!important;color:#fff!important;border-color:#1A56DB!important}
+#tarteaucitronAllDenied,.tarteaucitronDeny{background:transparent!important;color:#fff!important;border:1px solid #fff!important}
+#tarteaucitronPersonalize2{background:transparent!important;color:#fff!important;border:1px solid #fff!important}
+#tarteaucitronIcon{background:#1A56DB!important}
+#tarteaucitronRoot .tarteaucitronCTAButton{background:#1A56DB!important}
+#tarteaucitronPrivacyUrl{color:#fff!important}
+</style>
+</body>
+</html>

@@ -1821,4 +1821,27 @@ tarteaucitron.user.gtagMore = function () { };
 // pour ne pas pénaliser le chargement initial de la page (perf).
 function trdLoadAnalytics(){
   (tarteaucitron.job = tarteaucitron.job || []).push('gtag');
-  trdInteractionEvents.forEach(evt => window.removeEventListener(evt, 
+  trdInteractionEvents.forEach(evt => window.removeEventListener(evt, trdLoadAnalytics));
+  clearTimeout(trdAnalyticsFallback);
+}
+const trdInteractionEvents = ['scroll','mousemove','touchstart','keydown'];
+trdInteractionEvents.forEach(evt => window.addEventListener(evt, trdLoadAnalytics, {once:true, passive:true}));
+const trdAnalyticsFallback = setTimeout(trdLoadAnalytics, 5000);
+});
+</script>
+
+<!-- Personnalisation couleurs TechRepairContent (navy/bleu) -->
+<style>
+#tarteaucitronRoot #tarteaucitronAlertBig{background:#0F1B3D!important}
+#tarteaucitronRoot #tarteaucitronAlertBig p,
+#tarteaucitronRoot #tarteaucitronAlertBig a{color:#fff!important}
+#tarteaucitronDisclaimerAlert,#tarteaucitronDisclaimerAlert strong,#tarteaucitronDisclaimerAlert a{color:#fff!important}
+#tarteaucitronAllAllowed,.tarteaucitronAllow{background:#1A56DB!important;color:#fff!important;border-color:#1A56DB!important}
+#tarteaucitronAllDenied,.tarteaucitronDeny{background:transparent!important;color:#fff!important;border:1px solid #fff!important}
+#tarteaucitronPersonalize2{background:transparent!important;color:#fff!important;border:1px solid #fff!important}
+#tarteaucitronIcon{background:#1A56DB!important}
+#tarteaucitronRoot .tarteaucitronCTAButton{background:#1A56DB!important}
+#tarteaucitronPrivacyUrl{color:#fff!important}
+</style>
+</body>
+</html>
