@@ -217,10 +217,12 @@
       signal: controle ? controle.signal : undefined
     })
       .then(function (r) {
-        return r.json().catch(function () { return {}; }).then(function (d) { return { ok: r.ok, d: d }; });
+        return r.json().catch(function () { return {}; }).then(function (d) { return { ok: r.ok, statut: r.status, d: d }; });
       })
       .then(function (res) {
-        var rep = res.ok && res.d && res.d.reply ? res.d.reply : (res.d && res.d.error && !res.ok && /contact@/.test(res.d.error) ? res.d.error : ERREUR);
+        var rep = res.ok && res.d && res.d.reply ? res.d.reply
+          : (res.d && res.d.error && /contact@/.test(res.d.error) ? res.d.error
+          : ERREUR + ' (réf. ' + res.statut + (res.d && res.d.type ? ' ' + res.d.type : '') + ')');
         if (res.ok && res.d && res.d.reply) {
           etat.messages.push({ role: 'assistant', content: rep });
         } else {
@@ -230,11 +232,11 @@
         attente.remove();
         bulle('assistant', rep);
       })
-      .catch(function () {
+      .catch(function (err) {
         etat.messages.pop();
         sauver();
         attente.remove();
-        bulle('assistant', ERREUR);
+        bulle('assistant', ERREUR + ' (réf. ' + (err && err.name === 'AbortError' ? 'délai' : 'réseau') + ')');
       })
       .then(function () {
         clearTimeout(minuteur);
