@@ -303,6 +303,16 @@ API ; ne pas les appeler) :
     insérées là où le lecteur en a besoin, et **réparties dans tout l'article** : au moins
     un lien dans chaque tiers (début, milieu, fin), jamais deux liens vers d'autres
     articles dans la même partie (contrôlé par `verifier_article.py`) ;
+  - **liens naturels (exigence de Goradieme)** : le lien porte sur un mot ou un groupe
+    de mots que la phrase contient déjà pour son propre sens (« le dark social », « un
+    livre blanc », « vos pages comparatives »), avec une ancre courte (2 à 6 mots).
+    Interdits : les formules d'aiguillage (« comme le montre l'analyse de… », « voir la
+    méthode de… », « en vous appuyant sur… », parenthèses de renvoi), les phrases
+    ajoutées uniquement pour placer un lien, les questions rhétoriques qui amènent un
+    outil, les paragraphes isolés qui ne servent qu'au lien, les ancres longues qui
+    résument la page cible. Test : si l'on retire le lien, la phrase doit rester utile
+    telle quelle. Un lien de service se place là où le lecteur se demande « comment
+    faire ? », par exemple dans une étape de méthode ou une ligne de tableau ;
   - en retour, ajouter **un lien contextuel vers le nouvel article dans les deux
     articles existants les plus proches** : une phrase naturelle et utile, dans la
     partie pertinente. Si l'article existant a un brouillon dans `_outils/brouillons/`,
