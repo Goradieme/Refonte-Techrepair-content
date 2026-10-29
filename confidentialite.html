@@ -385,11 +385,14 @@ footer h3{font-size:10.5px;font-weight:700;color:#94a3b8;text-transform:uppercas
   <h3>c) Mesure d'audience (Google Analytics)</h3>
   <p>Avec votre consentement (recueilli via notre bandeau cookies), nous utilisons <strong>Google Analytics 4</strong> pour mesurer la fréquentation du site (pages consultées, provenance du trafic, comportement de navigation). Ces données sont traitées par Google Ireland Limited, et peuvent faire l'objet d'un transfert vers les États-Unis, encadré par les clauses contractuelles types de la Commission européenne.</p>
 
+  <h3>d) Assistant de discussion (Ted)</h3>
+  <p>Si vous utilisez l'assistant de discussion affiché sur le site, les messages que vous écrivez sont transmis à notre service d'hébergement applicatif, <strong>Vercel Inc.</strong>, puis à <strong>Anthropic PBC</strong>, qui fournit le modèle d'IA générant les réponses. Nous ne conservons pas ces conversations. Leur historique reste dans votre navigateur le temps de la visite et disparaît à la fermeture de l'onglet. Anthropic ne les utilise pas pour entraîner ses modèles. Ces prestataires étant établis aux États-Unis, ce transfert est encadré par les clauses contractuelles types de la Commission européenne. Merci de ne pas saisir de données sensibles dans l'assistant.</p>
+
   <h2>3. Base légale des traitements</h2>
   <ul>
     <li><strong>Consentement</strong> : pour les cookies de mesure d'audience et l'inscription à la newsletter.</li>
     <li><strong>Exécution de mesures précontractuelles</strong> : pour le traitement des demandes de devis.</li>
-    <li><strong>Intérêt légitime</strong> : pour l'amélioration du site et la sécurité technique.</li>
+    <li><strong>Intérêt légitime</strong> : pour l'amélioration du site, la sécurité technique et les réponses apportées par l'assistant de discussion.</li>
   </ul>
 
   <h2>4. Durée de conservation</h2>
@@ -397,6 +400,7 @@ footer h3{font-size:10.5px;font-weight:700;color:#94a3b8;text-transform:uppercas
     <li>Données du formulaire de contact/devis : 3 ans à compter du dernier échange, en l'absence de relation contractuelle.</li>
     <li>Adresse email newsletter : jusqu'à désinscription, ou 3 ans après le dernier contact actif.</li>
     <li>Données de mesure d'audience (Google Analytics) : 14 mois maximum.</li>
+    <li>Conversations avec l'assistant : non conservées par nos soins ; historique gardé dans votre navigateur jusqu'à la fermeture de l'onglet.</li>
   </ul>
 
   <h2>5. Destinataires des données</h2>
@@ -406,6 +410,7 @@ footer h3{font-size:10.5px;font-weight:700;color:#94a3b8;text-transform:uppercas
     <li><strong>Google LLC</strong> (mesure d'audience via Google Analytics 4)</li>
     <li><strong>GitHub, Inc.</strong> (hébergement technique du site)</li>
     <li><strong>Cloudflare, Inc.</strong> (diffusion et protection technique du site)</li>
+    <li><strong>Vercel Inc.</strong> et <strong>Anthropic PBC</strong> (fonctionnement de l'assistant de discussion)</li>
   </ul>
 
   <h2>6. Cookies</h2>
@@ -511,7 +516,7 @@ tarteaucitron.init({
   "showAlertSmall": false,
   "cookieslist": false,
   "showIcon": true,
-  "iconPosition": "BottomRight",
+  "iconPosition": "BottomLeft",
   "adblocker": false,
   "DenyAllCta": true,
   "AcceptAllCta": true,
@@ -551,5 +556,6 @@ const trdAnalyticsFallback = setTimeout(trdLoadAnalytics, 5000);
 #tarteaucitronRoot .tarteaucitronCTAButton{background:#1A56DB!important}
 #tarteaucitronPrivacyUrl{color:#fff!important}
 </style>
+<script src="/chatbot.js" defer></script>
 </body>
 </html>
