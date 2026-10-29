@@ -8,7 +8,7 @@
 
 const ARTICLES = [
   {
-    titre:    "Comment survivre aux AI Overviews de Google en 2025 : le guide des contenus qui résistent",
+    titre:    "AI Overviews et GEO : le guide complet pour dominer les résultats IA en 2026",
     extrait:  "Les AI Overviews cannibalisent votre trafic SEO ? Voici la méthode exacte pour produire des contenus que Google cite — et non remplace — dans ses résultats IA.",
     auteur:   "Rédaction TechRepair Content",
     date:     "2025-06-07",

@@ -205,8 +205,8 @@ def main(chemin):
     mots = compter_mots(corps)
     if not (MIN_MOTS <= mots <= MAX_MOTS):
         sys.exit(f"Longueur hors limites : {mots} mots (attendu {MIN_MOTS}-{MAX_MOTS}).")
-    if len(m["titreSeo"]) > 65:
-        sys.exit(f"Titre SEO trop long ({len(m['titreSeo'])} > 65 caractères).")
+    if len(m["titreSeo"]) > 60:
+        sys.exit(f"Titre SEO trop long ({len(m['titreSeo'])} > 60 caractères).")
     if len(m["metaDesc"]) > 160:
         sys.exit(f"Meta description trop longue ({len(m['metaDesc'])} > 160 caractères).")
     chapitres = re.findall(r'<h2 id="(ch\d+)">([\s\S]*?)</h2>', corps)
@@ -305,7 +305,7 @@ def main(chemin):
   <h2>Besoin d'aller plus vite ?</h2>
   <div class="content lb-extrait"><p>{esc(m.get('ctaTexte') or "Ce livre blanc donne la méthode complète pour la mettre en œuvre en interne. Si vous préférez qu'un expert l'applique à votre entreprise, TechRepair Content peut s'en charger.")} Découvrez le service <a href="{lien_service}">{esc(nom_service)}</a>, l'offre pour le secteur <a href="{SECTEURS[m['categorie']]}">{esc(CATS[m['categorie']])}</a>, ou <a href="/devis">demandez un diagnostic gratuit</a>.</p></div>
 </section>"""
-    titre_balise = f"{m['titreSeo']} | TechRepair Content"
+    titre_balise = m["titreSeo"] if len(m["titreSeo"]) > 47 else f"{m['titreSeo']} | TechRepair"
     html_page.write_text(page(titre_balise, m["metaDesc"], url, f"{SITE}/livres-blancs/{slug}-og.jpg", jsonld,
                               contenu, accent, style, nav, pied, script_menu, SCRIPT_FORM), encoding="utf-8")
 

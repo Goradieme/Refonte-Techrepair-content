@@ -74,9 +74,10 @@ def main(chemin_meta: str) -> None:
         sys.exit(f"Longueur hors limites : {mots} mots (attendu {MIN_MOTS}-{MAX_MOTS}).")
     if len(m["metaDesc"]) > 160:
         sys.exit(f"Meta description trop longue ({len(m['metaDesc'])} > 160 caractères).")
-    title_tag = f"{m['titreSeo']} | TechRepair Content"
-    if len(m["titreSeo"]) > 65:
-        sys.exit(f"Titre SEO trop long ({len(m['titreSeo'])} > 65 caractères).")
+    if len(m["titreSeo"]) > 60:
+        sys.exit(f"Titre SEO trop long ({len(m['titreSeo'])} > 60 caractères).")
+    # La marque n'est ajoutée que si la balise <title> reste sous 60 caractères.
+    title_tag = m["titreSeo"] if len(m["titreSeo"]) > 47 else f"{m['titreSeo']} | TechRepair"
     if (RACINE / "articles" / fichier).exists() and not m.get("remplacer"):
         sys.exit(f"{fichier} existe déjà.")
     if "<h1" in corps:

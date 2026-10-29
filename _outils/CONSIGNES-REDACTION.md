@@ -105,7 +105,7 @@ la page du service et `/devis`.
 **Fichiers** : `_outils/livres-blancs/<slug>.html` (corps) et `<slug>.json` avec : `slug`,
 `date`, `categorie`, `service`, `couleur` (bleu, orange, vert, violet ; différente du mois
 précédent), `titre`, `titreCouverture` (≤ 60 caractères), `titreCourt`, `sousTitre`,
-`titreSeo` (≤ 65), `metaDesc` (≤ 160), `motCle`, `resume` (1 à 2 phrases), `apprendre`
+`titreSeo` (≤ 60), `metaDesc` (≤ 160), `motCle`, `resume` (1 à 2 phrases), `apprendre`
 (4 à 6 bénéfices concrets), `pourQui` (3 profils), `pointsCles` (4 conclusions, pour
 l'e-mail de relecture), et en option `ctaTitre`, `ctaTexte`.
 
@@ -280,7 +280,7 @@ API ; ne pas les appeler) :
 
 ## Exigences SEO et GEO
 
-- Mot-clé principal dans : titre SEO (≤ 65 caractères), H1, meta description
+- Mot-clé principal dans : titre SEO (≤ 60 caractères, la marque « | TechRepair » est ajoutée seulement s’il reste la place), H1, meta description
   (≤ 160 caractères), introduction et au moins un H2. Pas de bourrage.
 - Structure, dans cet ordre : `<p class="intro-lead">`, un paragraphe d'introduction,
   un encadré `<div class="key-points"><h3>Points clés</h3><ul>…</ul></div>` (4 conclusions
