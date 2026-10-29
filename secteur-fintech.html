@@ -680,4 +680,69 @@ footer h3{font-size:10.5px;font-weight:700;color:#94a3b8;text-transform:uppercas
   <div class="footer-inner">
     <div class="footer-brand"><a class="logo" href="/" aria-label="TechRepair Content, retour à l'accueil"><div class="logo-box">TRD</div><div class="logo-text" style="color:#fff">TechRepair<span>Content</span></div></a><p>Rédaction SEO & technique pour entreprises SaaS, Tech et E-commerce.</p></div>
     <div><h3>Secteurs</h3><ul class="flinks"><li><a href="/secteur-saas">SaaS B2B</a></li><li><a href="/secteur-ecommerce">E-commerce Tech</a></li><li><a href="/secteur-cybersecurite">Cybersécurité</a></li><li><a href="/secteur-fintech">Fintech</a></li><li><a href="/secteur-rh-tech">RH Tech</a></li></ul></div>
-    <div><h3>Services</h3><ul class="flinks"><li><a href="/service-articles-seo">Articles SEO</a></li
+    <div><h3>Services</h3><ul class="flinks"><li><a href="/service-articles-seo">Articles SEO</a></li><li><a href="/service-fiches-produits">Fiches produits</a></li><li><a href="/service-livres-blancs">Livres blancs</a></li><li><a href="/service-strategie-ia">Stratégie IA</a></li></ul></div>
+    <div><h3>Ressources</h3><ul class="flinks"><li><a href="/faq">FAQ</a></li><li><a href="/confidentialite">Confidentialité</a></li><li><a href="/mentions-legales">Mentions légales</a></li></ul></div><div><h3>Contact</h3><ul class="flinks"><li><a href="mailto:contact@techrepaircontent.com">contact@techrepaircontent.com</a></li><li><a href="tel:0758383635">07 58 38 36 35</a></li></ul><div class="fsocial"><a class="fsoc" href="https://www.linkedin.com/in/techrepair-content" target="_blank" rel="noopener">in</a><a class="fsoc" href="mailto:contact@techrepaircontent.com">✉</a></div></div>
+  </div>
+  <div class="footer-bottom"><span>© 2026 TechRepair Content. Tous droits réservés.</span><span>Fait avec ❤️ en France</span></div>
+</footer>
+
+<script>
+const hamburger = document.getElementById('hamburger');
+const mobileMenu = document.getElementById('mobileMenu');
+hamburger.addEventListener('click', () => { hamburger.classList.toggle('open'); mobileMenu.classList.toggle('open'); });
+mobileMenu.querySelectorAll('a').forEach(link => { link.addEventListener('click', () => { hamburger.classList.remove('open'); mobileMenu.classList.remove('open'); }); });
+</script>
+<!-- ══ Tarteaucitron : gestion du consentement cookies (RGPD) ══ -->
+<script src="https://cdn.jsdelivr.net/gh/AmauriC/tarteaucitron.js/tarteaucitron.min.js" defer></script>
+<script>
+document.addEventListener("DOMContentLoaded", function(){
+tarteaucitron.init({
+  "privacyUrl": "/confidentialite",
+  "hashtag": "#tarteaucitron",
+  "cookieName": "tarteaucitron",
+  "orientation": "bottom",
+  "showAlertSmall": false,
+  "cookieslist": false,
+  "showIcon": true,
+  "iconPosition": "BottomRight",
+  "adblocker": false,
+  "DenyAllCta": true,
+  "AcceptAllCta": true,
+  "highPrivacy": true,
+  "handleBrowserDNTRequest": false,
+  "removeCredit": true,
+  "moreInfoLink": true,
+  "useExternalCss": false,
+  "mandatory": false
+});
+
+tarteaucitron.user.gtagUa = 'G-B1MRFH8WRQ';
+tarteaucitron.user.gtagMore = function () { };
+// Charge le tracking (GTM/gtag) seulement après une vraie interaction,
+// pour ne pas pénaliser le chargement initial de la page (perf).
+function trdLoadAnalytics(){
+  (tarteaucitron.job = tarteaucitron.job || []).push('gtag');
+  trdInteractionEvents.forEach(evt => window.removeEventListener(evt, trdLoadAnalytics));
+  clearTimeout(trdAnalyticsFallback);
+}
+const trdInteractionEvents = ['scroll','mousemove','touchstart','keydown'];
+trdInteractionEvents.forEach(evt => window.addEventListener(evt, trdLoadAnalytics, {once:true, passive:true}));
+const trdAnalyticsFallback = setTimeout(trdLoadAnalytics, 5000);
+});
+</script>
+
+<!-- Personnalisation couleurs TechRepairContent (navy/bleu) -->
+<style>
+#tarteaucitronRoot #tarteaucitronAlertBig{background:#0F1B3D!important}
+#tarteaucitronRoot #tarteaucitronAlertBig p,
+#tarteaucitronRoot #tarteaucitronAlertBig a{color:#fff!important}
+#tarteaucitronDisclaimerAlert,#tarteaucitronDisclaimerAlert strong,#tarteaucitronDisclaimerAlert a{color:#fff!important}
+#tarteaucitronAllAllowed,.tarteaucitronAllow{background:#1A56DB!important;color:#fff!important;border-color:#1A56DB!important}
+#tarteaucitronAllDenied,.tarteaucitronDeny{background:transparent!important;color:#fff!important;border:1px solid #fff!important}
+#tarteaucitronPersonalize2{background:transparent!important;color:#fff!important;border:1px solid #fff!important}
+#tarteaucitronIcon{background:#1A56DB!important}
+#tarteaucitronRoot .tarteaucitronCTAButton{background:#1A56DB!important}
+#tarteaucitronPrivacyUrl{color:#fff!important}
+</style>
+</body>
+</html>
