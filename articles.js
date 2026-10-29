@@ -182,7 +182,7 @@ const ARTICLES = [
     categorie:"saas",
     lecture:  "12 min",
     lien:     "articles/article-agent-relance-leads-saas.html",
-    image:    "articles/agent-relance-leads-saas-cover.jpg",
+    image:    "articles/agent-relance-leads-saas-cover-v2-carte.jpg",
     slug:     "agent-relance-leads-saas",
     motCle:   "lead nurturing",
     metaDesc: "Lead nurturing SaaS : diagnostic en une heure, délai de relance par signal, séquences, agent IA validé par un humain et règles CNIL, matrice prête à copier."
