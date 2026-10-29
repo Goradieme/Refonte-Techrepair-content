@@ -174,4 +174,17 @@ const ARTICLES = [
     motCle:   "marketing fintech",
     metaDesc: "Agrément, protection des fonds, sécurité, tarifs, études de cas : les contenus qu'un DAF vérifie avant de contacter une fintech B2B, avec grille et modèle."
   },
+  {
+    titre:    "Lead nurturing SaaS : relancer vos téléchargements et vos essais avant qu'ils refroidissent",
+    extrait:  "Vos téléchargements de livres blancs et vos essais gratuits refroidissent faute de relance au bon moment. Diagnostic, méthode en six étapes, matrice de relance par signal et exemple d'e-mail réécrit.",
+    auteur:   "Rédaction TechRepair Content",
+    date:     "2026-10-29",
+    categorie:"saas",
+    lecture:  "12 min",
+    lien:     "articles/article-agent-relance-leads-saas.html",
+    image:    "articles/agent-relance-leads-saas-cover.jpg",
+    slug:     "agent-relance-leads-saas",
+    motCle:   "lead nurturing",
+    metaDesc: "Lead nurturing SaaS : diagnostic en une heure, délai de relance par signal, séquences, agent IA validé par un humain et règles CNIL, matrice prête à copier."
+  },
 ];

@@ -1,0 +1,33 @@
+{
+  "slug": "agent-relance-leads-saas",
+  "categorie": "saas",
+  "date": "2026-10-29",
+  "titre": "Lead nurturing SaaS : relancer vos téléchargements et vos essais avant qu'ils refroidissent",
+  "titreSeo": "Lead nurturing SaaS : relancer leads et essais gratuits à temps",
+  "h1": "Lead nurturing SaaS : relancer vos téléchargements et vos essais avant qu'ils refroidissent",
+  "filAriane": "Lead nurturing SaaS",
+  "motCle": "lead nurturing",
+  "metaDesc": "Lead nurturing SaaS : diagnostic en une heure, délai de relance par signal, séquences, agent IA validé par un humain et règles CNIL, matrice prête à copier.",
+  "extrait": "Vos téléchargements de livres blancs et vos essais gratuits refroidissent faute de relance au bon moment. Diagnostic, méthode en six étapes, matrice de relance par signal et exemple d'e-mail réécrit.",
+  "image": "articles/agent-relance-leads-saas-cover.jpg",
+  "imageAlt": "Lead nurturing SaaS : relancer les leads avant qu'ils refroidissent",
+  "sommaireCourt": {
+    "ch1": "1. Pourquoi ils refroidissent",
+    "ch2": "2. Le diagnostic",
+    "ch3": "3. Nurturing et scoring",
+    "ch4": "4. Six étapes",
+    "ch5": "5. Matrice de relance",
+    "ch6": "6. Règles CNIL",
+    "ch7": "7. Les pièges",
+    "ch8": "8. Indicateurs",
+    "faq": "FAQ",
+    "sources": "Sources"
+  },
+  "ctaLateral": {
+    "titre": "Plus aucun lead oublié",
+    "texte": "Un agent IA relié à votre CRM détecte les signaux, rédige les relances et vous laisse valider avant envoi.",
+    "lien": "/agents-ia",
+    "bouton": "Voir l'agent de relance"
+  },
+  "remplacer": true
+}
