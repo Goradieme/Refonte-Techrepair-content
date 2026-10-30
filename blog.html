@@ -408,9 +408,10 @@ function formatDate(dateStr) {
   return new Date(dateStr).toLocaleDateString('fr-FR', { day: 'numeric', month: 'long', year: 'numeric' });
 }
 
-const sorted = [...ARTICLES].sort((a, b) => new Date(a.date) - new Date(b.date));
-const featured = sorted.length > 0 ? sorted[sorted.length - 1] : null;
-const gridArticles = sorted.length > 1 ? sorted.slice(0, sorted.length - 1) : [];
+// Du plus récent au plus ancien : l'article le plus récent en vedette, les autres dans la grille.
+const sorted = [...ARTICLES].sort((a, b) => new Date(b.date) - new Date(a.date));
+const featured = sorted.length > 0 ? sorted[0] : null;
+const gridArticles = sorted.slice(1);
 
 const featuredZone = document.getElementById('featuredZone');
 if (featured) {
