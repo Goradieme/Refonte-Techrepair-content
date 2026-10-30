@@ -187,4 +187,17 @@ const ARTICLES = [
     motCle:   "lead nurturing",
     metaDesc: "Lead nurturing SaaS : diagnostic en une heure, délai de relance par signal, séquences, agent IA validé par un humain et règles CNIL, matrice prête à copier."
   },
+  {
+    titre:    "Marketing cybersécurité : convaincre un RSSI sans jouer sur la peur",
+    extrait:  "Le discours alarmiste ne convainc plus les RSSI : ils réclament des preuves. Audit en une matinée, six contenus à produire dans l'ordre, grille de crédibilité en dix critères et accroche réécrite.",
+    auteur:   "Rédaction TechRepair Content",
+    date:     "2026-10-30",
+    categorie:"cyber",
+    lecture:  "12 min",
+    lien:     "articles/article-marketing-contenu-cybersecurite.html",
+    image:    "articles/marketing-contenu-cybersecurite-cover.jpg",
+    slug:     "marketing-contenu-cybersecurite",
+    motCle:   "marketing cybersécurité",
+    metaDesc: "Marketing cybersécurité : auditer vos contenus, les six formats qui convainquent un RSSI, une grille de crédibilité en dix critères et un exemple réécrit."
+  },
 ];
