@@ -195,7 +195,7 @@ const ARTICLES = [
     categorie:"cyber",
     lecture:  "12 min",
     lien:     "articles/article-marketing-contenu-cybersecurite.html",
-    image:    "articles/marketing-contenu-cybersecurite-cover.jpg",
+    image:    "articles/marketing-contenu-cybersecurite-cover-v2-carte.jpg",
     slug:     "marketing-contenu-cybersecurite",
     motCle:   "marketing cybersécurité",
     metaDesc: "Marketing cybersécurité : auditer vos contenus, les six formats qui convainquent un RSSI, une grille de crédibilité en dix critères et un exemple réécrit."
