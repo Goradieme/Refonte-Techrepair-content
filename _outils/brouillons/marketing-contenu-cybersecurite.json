@@ -1,0 +1,33 @@
+{
+  "slug": "marketing-contenu-cybersecurite",
+  "categorie": "cyber",
+  "date": "2026-10-30",
+  "titre": "Marketing cybersécurité : convaincre un RSSI sans jouer sur la peur",
+  "titreSeo": "Marketing cybersécurité : convaincre un RSSI sans la peur",
+  "h1": "Marketing cybersécurité : convaincre un RSSI sans jouer sur la peur",
+  "filAriane": "Marketing cybersécurité",
+  "motCle": "marketing cybersécurité",
+  "metaDesc": "Marketing cybersécurité : auditer vos contenus, les six formats qui convainquent un RSSI, une grille de crédibilité en dix critères et un exemple réécrit.",
+  "extrait": "Le discours alarmiste ne convainc plus les RSSI : ils réclament des preuves. Audit en une matinée, six contenus à produire dans l'ordre, grille de crédibilité en dix critères et accroche réécrite.",
+  "image": "articles/marketing-contenu-cybersecurite-cover.jpg",
+  "imageAlt": "Marketing cybersécurité : convaincre un RSSI sans jouer sur la peur",
+  "sommaireCourt": {
+    "ch1": "1. La peur ne passe plus",
+    "ch2": "2. L'audit",
+    "ch3": "3. Ce que cherche un RSSI",
+    "ch4": "4. Six contenus",
+    "ch5": "5. Grille en dix critères",
+    "ch6": "6. Accroche réécrite",
+    "ch7": "7. Cinq réflexes à proscrire",
+    "ch8": "8. Mesurer",
+    "faq": "FAQ",
+    "sources": "Sources"
+  },
+  "ctaLateral": {
+    "titre": "Des contenus qu'un RSSI prend au sérieux",
+    "texte": "Articles techniques, comparatifs et pages produit sourcés, relus par vos ingénieurs avant publication.",
+    "lien": "/service-articles-seo",
+    "bouton": "Voir les articles SEO"
+  },
+  "remplacer": true
+}
