@@ -1,0 +1,720 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Charte éditoriale : exemple et modèle pour une marque B2B</title>
+<meta name="description" content="Charte éditoriale B2B : audit de vingt contenus, méthode en six étapes, modèle en neuf rubriques et exemple réécrit pour que vos auteurs parlent d&#x27;une voix."/>
+<meta name="author" content="TechRepair Content"/>
+<link rel="canonical" href="https://www.techrepaircontent.com/articles/article-charte-editoriale-b2b-modele.html"/>
+<meta property="og:title" content="Charte éditoriale B2B : le modèle pour qu&#x27;une marque tech parle d&#x27;une seule voix"/>
+<meta property="og:description" content="Charte éditoriale B2B : audit de vingt contenus, méthode en six étapes, modèle en neuf rubriques et exemple réécrit pour que vos auteurs parlent d&#x27;une voix."/>
+<meta property="og:type" content="article"/>
+<meta property="og:url" content="https://www.techrepaircontent.com/articles/article-charte-editoriale-b2b-modele.html"/>
+<meta property="og:locale" content="fr_FR"/>
+<meta property="og:site_name" content="TechRepair Content"/>
+<meta property="og:image" content="https://www.techrepaircontent.com/articles/charte-editoriale-b2b-modele-cover.jpg"/>
+<meta property="article:published_time" content="2026-10-31"/>
+<meta name="twitter:card" content="summary_large_image"/>
+
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet"/>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --blue:#1A56DB;--blue-dark:#1342b0;--blue-light:#EFF6FF;
+  --navy:#0F1B3D;--text:#1e293b;--muted:#64748b;
+  --border:#e2e8f0;--green:#10b981;--orange:#f97316;--purple:#7c3aed;
+  --radius:12px;
+}
+html{scroll-behavior:smooth}
+body{font-family:'Manrope',sans-serif;color:var(--text);background:#fff;font-size:15px;line-height:1.6}
+a{text-decoration:none;color:inherit}
+nav{position:sticky;top:0;z-index:200;background:#fff;border-bottom:1px solid var(--border);padding:0 32px;display:flex;align-items:center;gap:20px;height:62px;}
+.logo{display:flex;align-items:center;gap:10px;flex-shrink:0}
+.logo-box{width:36px;height:36px;background:var(--blue);border-radius:7px;display:grid;place-items:center;color:#fff;font-weight:800;font-size:13px;letter-spacing:-.5px}
+.logo-text{font-size:13px;font-weight:700;line-height:1.2;color:var(--navy)}
+.logo-text span{display:block;color:var(--muted);font-weight:500;font-size:11px}
+.nav-links{display:flex;gap:22px;margin-left:auto;align-items:center}
+.nav-links a{font-size:13.5px;font-weight:500;color:var(--muted);transition:color .2s}
+.nav-links a:hover,.nav-links a.active{color:var(--blue)}
+.nav-links a.active{border-bottom:2px solid var(--blue);padding-bottom:1px}
+.btn-nav{background:var(--blue);color:#fff;border:none;border-radius:8px;padding:9px 18px;font-weight:700;font-size:13.5px;cursor:pointer;white-space:nowrap;font-family:inherit}
+@media(max-width:600px){nav{padding:0 16px}.nav-links a:not(:last-child){display:none}}
+.hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;background:none;border:none;padding:4px}
+.hamburger span{display:block;width:24px;height:2px;background:var(--navy);border-radius:2px;transition:all .3s}
+.hamburger.open span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+.hamburger.open span:nth-child(2){opacity:0}
+.hamburger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+.mobile-menu{display:none;position:fixed;top:62px;left:0;right:0;background:#fff;border-bottom:1px solid var(--border);padding:16px 24px;flex-direction:column;gap:4px;z-index:199;box-shadow:0 8px 24px rgba(0,0,0,.08)}
+.mobile-menu.open{display:flex}
+.mobile-menu a{font-size:15px;font-weight:600;color:var(--muted);padding:10px 0;border-bottom:1px solid var(--border);transition:color .2s}
+.mobile-menu a:last-of-type{border-bottom:none}
+.mobile-menu a:hover,.mobile-menu a.active{color:var(--blue)}
+.mobile-menu .btn-nav-mobile{margin-top:10px;background:var(--blue);color:#fff;border:none;border-radius:8px;padding:12px;font-weight:700;font-size:14px;cursor:pointer;font-family:inherit;width:100%}
+@media(max-width:768px){.hamburger{display:flex}.nav-links{display:none}}
+
+.breadcrumb{max-width:1100px;margin:0 auto;padding:18px 32px 0;font-size:12.5px;color:var(--muted)}
+.breadcrumb a{color:var(--muted)}
+.breadcrumb a:hover{color:var(--blue)}
+
+.article-hero{max-width:1100px;margin:0 auto;padding:24px 32px 0}
+.ah-badge{display:inline-flex;align-items:center;gap:5px;background:#F5F3FF;color:var(--purple);font-size:11px;font-weight:700;padding:4px 12px;border-radius:20px;margin-bottom:16px}
+.article-hero h1{font-size:34px;font-weight:800;line-height:1.2;color:var(--navy);max-width:820px;margin-bottom:16px}
+.ah-meta{display:flex;align-items:center;gap:12px;font-size:13px;color:var(--muted);margin-bottom:24px;flex-wrap:wrap}
+.ah-dot{width:4px;height:4px;border-radius:50%;background:var(--border)}
+.ah-cover{width:100%;border-radius:20px;overflow:hidden;margin-bottom:8px;border:1px solid var(--border)}
+.ah-cover img{width:100%;height:auto;display:block}
+
+.layout{max-width:1100px;margin:0 auto;padding:40px 32px 56px;display:grid;grid-template-columns:1fr 300px;gap:44px;align-items:start}
+.content h2{font-size:24px;font-weight:800;color:var(--navy);margin:40px 0 14px;line-height:1.3}
+.content h3{font-size:18px;font-weight:800;color:var(--navy);margin:28px 0 10px;line-height:1.3}
+.content p{margin-bottom:14px;color:var(--text);font-size:15px;line-height:1.75}
+.content ul,.content ol{margin:0 0 16px 20px;color:var(--text)}
+.content li{margin-bottom:7px;line-height:1.7}
+.content strong{color:var(--navy)}
+.content em{color:var(--muted)}
+.content hr{border:none;border-top:1px solid var(--border);margin:36px 0}
+.intro-lead{font-size:16.5px;color:var(--muted);line-height:1.8;margin-bottom:20px}
+.toc-box{background:var(--blue-light);border:1px solid #c3d6f8;border-radius:16px;padding:22px 24px;margin:24px 0 36px}
+.toc-box h3{margin:0 0 12px;font-size:14px;color:var(--navy)}
+.toc-box ol{margin:0 0 0 18px}
+.toc-box li{font-size:13.5px;margin-bottom:6px}
+.toc-box a{color:var(--blue-dark);font-weight:600}
+.toc-box a:hover{text-decoration:underline}
+.callout{background:#f8fafc;border-left:3px solid var(--blue);border-radius:8px;padding:16px 20px;margin:18px 0;font-size:14px}
+.callout strong{display:block;margin-bottom:4px;color:var(--navy)}
+.benefit{font-size:13.5px;color:var(--muted);font-style:italic;margin:-6px 0 16px}
+table{width:100%;border-collapse:collapse;margin:18px 0 22px;font-size:13.5px}
+th,td{border:1px solid var(--border);padding:10px 12px;text-align:left;vertical-align:top}
+th{background:#f8fafc;color:var(--navy);font-weight:700}
+.case-card{border:1px solid var(--border);border-radius:14px;padding:20px 22px;margin-bottom:18px;background:#fafbfc}
+.case-card h3{margin-top:0}
+.faq-item{border-bottom:1px solid var(--border);padding:16px 0}
+.faq-item:last-child{border-bottom:none}
+.faq-item p.question{font-weight:800;color:var(--navy);margin-bottom:6px;font-size:15px}
+.conclusion-box{background:linear-gradient(135deg,var(--navy),#1e3a6e);border-radius:18px;padding:32px;margin-top:32px;color:#fff}
+.conclusion-box p{color:#cbd5e1}
+.conclusion-box strong{color:#fff}
+.conclusion-box .final-cta{display:inline-block;margin-top:14px;background:var(--blue);color:#fff;border-radius:8px;padding:12px 22px;font-weight:700;font-size:14px}
+
+.sidebar{display:flex;flex-direction:column;gap:20px;position:sticky;top:80px}
+.sidebar-card{background:#f8fafc;border:1px solid var(--border);border-radius:16px;padding:20px}
+.sidebar-card h3{font-size:12.5px;font-weight:800;color:var(--navy);margin-bottom:14px;text-transform:uppercase;letter-spacing:.4px}
+.mini-toc{display:flex;flex-direction:column;gap:9px}
+.mini-toc a{font-size:12.5px;color:var(--muted);line-height:1.5}
+.mini-toc a:hover{color:var(--blue)}
+.author-card{display:flex;gap:10px;align-items:center}
+.author-avatar{width:38px;height:38px;border-radius:50%;background:var(--blue);color:#fff;display:grid;place-items:center;font-weight:800;font-size:13px}
+.author-name{font-size:13px;font-weight:700;color:var(--navy)}
+.author-role{font-size:11.5px;color:var(--muted)}
+.guide-card{background:linear-gradient(135deg,#f0f5ff,#dce9ff);border-color:#c3d6f8}
+.guide-card p{font-size:12.5px;color:var(--muted);line-height:1.6;margin-bottom:14px}
+.guide-btn{display:block;text-align:center;background:var(--blue);color:#fff;border-radius:8px;padding:11px;font-size:13px;font-weight:700;transition:background .2s}
+.guide-btn:hover{background:var(--blue-dark)}
+
+.nl-band{background:var(--blue);padding:48px 32px}
+.nl-band-inner{max-width:700px;margin:0 auto;text-align:center}
+.nl-band h2{font-size:26px;font-weight:800;color:#fff;margin-bottom:10px}
+.nl-band p{color:rgba(255,255,255,.8);font-size:14px;margin-bottom:24px}
+.nl-band-form{display:flex;gap:10px;max-width:440px;margin:0 auto;flex-wrap:wrap}
+.nl-band-input{flex:1;border:none;border-radius:8px;padding:12px 16px;font-size:14px;font-family:inherit;outline:none;min-width:200px}
+.nl-band-btn{background:var(--navy);color:#fff;border:none;border-radius:8px;padding:12px 20px;font-size:14px;font-weight:700;cursor:pointer;font-family:inherit;white-space:nowrap}
+.nl-band-note{font-size:11.5px;color:rgba(255,255,255,.6);margin-top:10px}
+
+.cta-band{background:var(--navy);padding:60px 32px}
+.cta-inner{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:1fr auto;gap:48px;align-items:center}
+.cta-band h2{font-size:28px;font-weight:800;color:#fff;margin-bottom:9px}
+.cta-band>div>p{color:#94a3b8;font-size:13.5px;margin-bottom:24px;max-width:380px}
+.cta-btns{display:flex;gap:10px;flex-wrap:wrap}
+.btn-white{background:#fff;color:var(--navy);border-radius:8px;padding:11px 20px;font-weight:700;font-size:13.5px;display:inline-flex;align-items:center;gap:7px;cursor:pointer;border:none;font-family:inherit}
+.btn-ghost-cta{background:transparent;color:#fff;border:1.5px solid rgba(255,255,255,.3);border-radius:8px;padding:11px 20px;font-weight:700;font-size:13.5px;cursor:pointer;font-family:inherit}
+.btn-ghost-cta:hover{border-color:#fff}
+.cta-checks{display:flex;flex-direction:column;gap:11px;flex-shrink:0}
+.cta-check{display:flex;align-items:center;gap:9px;color:#cbd5e1;font-size:13px}
+.cta-ci{color:var(--green);font-weight:700}
+
+footer{background:var(--navy);border-top:1px solid rgba(255,255,255,.07);padding:44px 32px 26px}
+.footer-inner{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:2fr 1fr 1fr 1fr 1fr;gap:32px}
+.footer-brand p{color:#64748b;font-size:12px;margin-top:8px;max-width:185px;line-height:1.7}
+footer h4{font-size:10.5px;font-weight:700;color:#94a3b8;text-transform:uppercase;letter-spacing:.5px;margin-bottom:13px}
+.flinks{list-style:none}
+.flinks li{margin-bottom:8px}
+.flinks a{color:#64748b;font-size:12px;transition:color .2s}
+.flinks a:hover{color:#fff}
+.fsocial{display:flex;gap:7px;margin-top:11px}
+.fsoc{width:29px;height:29px;border-radius:6px;background:rgba(255,255,255,.07);display:grid;place-items:center;font-size:11px;color:#94a3b8;transition:background .2s}
+.fsoc:hover{background:var(--blue);color:#fff}
+.footer-bottom{max-width:1100px;margin:24px auto 0;padding-top:16px;border-top:1px solid rgba(255,255,255,.07);display:flex;justify-content:space-between;color:#475569;font-size:11px;flex-wrap:wrap;gap:8px}
+
+@media(max-width:960px){.layout{grid-template-columns:1fr}.sidebar{position:static;display:grid;grid-template-columns:1fr 1fr;gap:16px}.cta-inner{grid-template-columns:1fr}.footer-inner{grid-template-columns:1fr 1fr}}
+@media(max-width:600px){.article-hero h1{font-size:26px}.sidebar{grid-template-columns:1fr}.nl-band-form{flex-direction:column}.footer-inner{grid-template-columns:1fr}}
+
+.btn-demo{position:relative;background:var(--blue);color:#fff;border:none;border-radius:8px;padding:9px 16px;font-weight:800;font-size:13.5px;white-space:nowrap;font-family:inherit;display:inline-flex;align-items:center;gap:6px;text-decoration:none;cursor:pointer;transition:background .2s,transform .2s}
+.btn-demo:hover{background:var(--blue-dark);transform:translateY(-1px)}
+.btn-demo .star{color:#fff;font-size:14px;line-height:1;font-weight:800}
+.btn-demo-badge{position:absolute;top:-9px;right:-8px;background:#F59E0B;color:#fff;font-size:8.5px;font-weight:800;padding:2px 6px;border-radius:999px;letter-spacing:.3px;box-shadow:0 2px 6px rgba(245,158,11,.45);animation:demoPulse 2.2s ease-in-out infinite}
+@keyframes demoPulse{0%,100%{transform:scale(1)}50%{transform:scale(1.1)}}
+.nav-tools{position:relative;display:inline-block}
+.nav-tools .chevron{font-size:10px;margin-left:2px;transition:transform .15s}
+.nav-tools:hover .chevron{transform:rotate(180deg)}
+.nav-tools-menu{display:none;position:absolute;top:calc(100% + 8px);right:0;background:#fff;border:1px solid var(--border);border-radius:12px;box-shadow:0 12px 32px rgba(15,27,61,.15);min-width:220px;padding:6px;z-index:260}
+.nav-tools:hover .nav-tools-menu,.nav-tools:focus-within .nav-tools-menu{display:block}
+.nav-tools-menu a{display:flex;align-items:center;gap:9px;padding:10px 12px;border-radius:8px;font-size:13.5px;font-weight:600;color:var(--navy);text-decoration:none;white-space:nowrap}
+.nav-tools-menu a:hover{background:var(--blue-light);color:var(--blue)}
+.nav-tools-menu a .ico{font-size:15px}
+.btn-demo-mobile{position:relative;margin-top:10px;background:var(--blue);color:#fff;border-radius:8px;padding:12px;font-weight:800;font-size:14px;font-family:inherit;width:100%;display:flex;align-items:center;justify-content:center;gap:7px;text-decoration:none;border-bottom:none!important}
+.btn-demo-mobile .star{color:#fff;font-size:15px;font-weight:800}
+.mobile-menu a.btn-demo-mobile{color:#fff}
+.btn-demo-mobile .btn-demo-badge{top:-9px;right:14px;animation:none}
+
+/* ══ Liens vers les sources citées ══ */
+a.src{color:var(--blue);font-weight:600;text-decoration:underline;text-underline-offset:2px;text-decoration-thickness:1px;transition:color .2s}
+a.src:hover{color:var(--blue-dark);text-decoration-thickness:2px}
+/* ══ Mise en forme éditoriale (gabarit 2026) ══ */
+.ah-cover{max-width:960px;box-shadow:0 18px 50px rgba(15,27,61,.18);border:none}
+.key-points{border:1px solid var(--border);border-top:3px solid var(--blue);border-radius:0 0 14px 14px;padding:20px 24px 8px;margin:6px 0 30px;background:#fff}
+.key-points h3{margin:0 0 12px!important;font-size:12px!important;letter-spacing:1.4px;text-transform:uppercase;color:var(--blue-dark)!important}
+.key-points ul{margin-left:18px}
+.key-points li{margin-bottom:10px}
+.stat-row{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:14px;margin:20px 0 24px}
+.stat{border-left:3px solid var(--blue);padding:4px 0 4px 14px}
+.stat b{display:block;font-size:30px;font-weight:800;color:var(--navy);line-height:1.1}
+.stat span{font-size:12.5px;color:var(--muted);line-height:1.45;display:block;margin-top:4px}
+.content table th{font-size:12.5px;text-transform:uppercase;letter-spacing:.4px}
+.content table tr:nth-child(even) td{background:#fafbfd}
+.sources{font-size:13px;color:var(--muted);margin-left:20px}
+.sources li{margin-bottom:6px;line-height:1.6}
+.sources a{color:var(--blue-dark);text-decoration:underline;text-underline-offset:2px}
+@media(max-width:600px){.content table{display:block;overflow-x:auto}.stat b{font-size:26px}}
+.content p a:not(.final-cta),.content li a,.content td a{color:var(--blue);font-weight:600;text-decoration:underline;text-underline-offset:2px;text-decoration-thickness:1px}
+.content p a:not(.final-cta):hover,.content li a:hover,.content td a:hover{color:var(--blue-dark);text-decoration-thickness:2px}
+</style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "BlogPosting",
+      "headline": "Charte éditoriale B2B : le modèle pour qu'une marque tech parle d'une seule voix",
+      "description": "Charte éditoriale B2B : audit de vingt contenus, méthode en six étapes, modèle en neuf rubriques et exemple réécrit pour que vos auteurs parlent d'une voix.",
+      "datePublished": "2026-10-31",
+      "dateModified": "2026-10-31",
+      "author": {
+        "@type": "Organization",
+        "name": "TechRepair Content",
+        "url": "https://www.techrepaircontent.com/apropos"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "TechRepair Content",
+        "url": "https://www.techrepaircontent.com/"
+      },
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://www.techrepaircontent.com/articles/article-charte-editoriale-b2b-modele.html"
+      },
+      "inLanguage": "fr-FR",
+      "keywords": "charte éditoriale",
+      "articleSection": "SEO",
+      "wordCount": 2469,
+      "image": "https://www.techrepaircontent.com/articles/charte-editoriale-b2b-modele-cover.jpg"
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Que contient une charte éditoriale ?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Elle contient la raison d'écrire, les lecteurs, trois traits de voix illustrés, le ton par format, un lexique, la grammaire de marque, les règles de preuve, des gabarits et le circuit de validation."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Quelle est la différence entre charte éditoriale et ligne éditoriale ?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "La ligne éditoriale définit les sujets, les publics et les objectifs des contenus. La charte éditoriale définit la manière de les écrire : ton, vocabulaire, structure."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Comment rédiger une charte éditoriale ?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Auditez vingt contenus, interrogez quatre personnes clés, définissez trois traits de voix, rédigez les règles avec exemples, testez-les sur deux réécritures, puis validez et diffusez : deux à trois semaines."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "À quoi sert une charte éditoriale en B2B ?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Elle fait écrire d'une même voix salariés, pigistes, experts produit et outils d'IA, réduit les relectures et évite les promesses non prouvées, risquées en fintech comme en cybersécurité."
+          }
+        }
+      ]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Accueil",
+          "item": "https://www.techrepaircontent.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Blog",
+          "item": "https://www.techrepaircontent.com/blog"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Charte éditoriale B2B",
+          "item": "https://www.techrepaircontent.com/articles/article-charte-editoriale-b2b-modele.html"
+        }
+      ]
+    }
+  ]
+}
+</script>
+</head>
+<body>
+
+<nav>
+  <div class="logo">
+    <div class="logo-box">TRD</div>
+    <div class="logo-text">TechRepair<span>Content</span></div>
+  </div>
+  <div class="nav-links">
+    <a href="/">Accueil</a>
+    <a href="/services">Services</a>
+    <a href="/secteurs">Secteurs</a>
+    <a href="/apropos">À propos</a>
+    <a href="/blog" class="active">Blog</a>
+    <div class="nav-tools">
+      <button class="btn-demo" type="button"><span class="star">★</span>Outils IA<span class="btn-demo-badge">Nouveau</span><span class="chevron">▾</span></button>
+      <div class="nav-tools-menu">
+        <a href="/agents-ia"><span class="ico">⚙️</span> Agents IA sur mesure</a>
+        <a href="/visibilite-ia"><span class="ico">💬</span> Visibilité dans les IA</a>
+        <a href="/calculateur-temps-perdu"><span class="ico">⏱️</span> Calculateur de temps perdu</a>
+        <a href="https://demo.techrepaircontent.com"><span class="ico">🤖</span> Démo avec Ted</a>
+        <a href="https://demo.techrepaircontent.com/audit-ia.html"><span class="ico">🔍</span> Audit IA gratuit</a>
+      </div>
+    </div>
+    <button class="btn-nav" onclick="window.location='/devis'">Obtenir un devis</button>
+  </div>
+  <button class="hamburger" id="hamburger" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<div class="mobile-menu" id="mobileMenu">
+  <a href="/">Accueil</a>
+  <a href="/services">Services</a>
+  <a href="/secteurs">Secteurs</a>
+  <a href="/apropos">À propos</a>
+  <a href="/blog" class="active">Blog</a>
+  <a href="https://demo.techrepaircontent.com" class="btn-demo-mobile"><span class="star">★</span>Démo avec Ted<span class="btn-demo-badge">Nouveau</span></a>
+  <a href="https://demo.techrepaircontent.com/audit-ia.html" class="btn-demo-mobile"><span class="star">★</span>Audit IA gratuit</a>
+  <button class="btn-nav-mobile" onclick="window.location='/devis'">Obtenir un devis</button>
+</div>
+
+<div class="breadcrumb">
+  <a href="/">Accueil</a> / <a href="/blog">Blog</a> / <span style="color:var(--navy)">Charte éditoriale B2B</span>
+</div>
+
+<div class="article-hero">
+  <span class="ah-badge" style="background:#EFF6FF;color:var(--blue-dark)">📊 SEO</span>
+  <h1>Charte éditoriale B2B : le modèle pour qu&#x27;une marque tech parle d&#x27;une seule voix</h1>
+  <div class="ah-meta">
+    <span>✍️ Rédaction TechRepair Content</span>
+    <div class="ah-dot"></div>
+    <span>Publié le 31 octobre 2026</span>
+    <div class="ah-dot"></div>
+    <span>⏱ 12 min de lecture</span>
+  </div>
+  <div class="ah-cover"><img src="charte-editoriale-b2b-modele-cover.jpg" alt="Charte éditoriale : une seule voix pour tous vos contenus" width="1200" height="630" loading="eager"/></div>
+</div>
+
+<div class="layout">
+  <main class="content">
+
+<p class="intro-lead">89 % des marketeurs B2B qui utilisent l'IA s'en servent déjà pour créer du contenu, selon l'enquête 2026 du Content Marketing Institute ; 12 % d'entre eux voient la qualité baisser. Les éditeurs SaaS, les fintechs et les sociétés de cybersécurité connaissent l'explication : plus il y a de mains (et de machines) pour écrire, moins la marque ressemble à elle-même.</p>
+
+    <p>Une <strong>charte éditoriale</strong> règle ce problème si elle est conçue comme un outil de production, pas comme un document de marque qu'on range après l'avoir validé. Au programme : un audit de l'écart actuel, la méthode en six étapes, un modèle en neuf rubriques et un exemple réécrit.</p>
+
+    <div class="key-points">
+      <h3>Points clés</h3>
+      <ul>
+        <li><strong>Une voix incohérente coûte de la confiance :</strong> dans l'étude de Nielsen Norman Group sur le ton, la confiance explique en moyenne 52 % de l'envie de recommander une marque.</li>
+        <li><strong>La charte n'est pas la ligne éditoriale :</strong> la ligne dit de quoi vous parlez et pour qui ; la charte dit comment vous l'écrivez, mot par mot.</li>
+        <li><strong>Six à huit pages suffisent :</strong> neuf rubriques, des exemples plutôt que des adjectifs.</li>
+        <li><strong>Elle sert aussi de consigne à l'IA :</strong> lexique, mots interdits et exemples nourrissent les prompts et la relecture.</li>
+      </ul>
+    </div>
+
+    <div class="toc-box">
+      <h3>📋 Sommaire</h3>
+      <ol>
+        <li><a href="#ch1">Un blog, cinq voix : le coût d'une marque qui change de ton</a></li>
+        <li><a href="#ch2">Charte éditoriale, ligne éditoriale, charte graphique : qui décide quoi</a></li>
+        <li><a href="#ch3">Mesurer l'écart : l'audit de vingt contenus</a></li>
+        <li><a href="#ch4">Comment rédiger une charte éditoriale en six étapes</a></li>
+        <li><a href="#ch5">Le modèle de charte éditoriale B2B en neuf rubriques</a></li>
+        <li><a href="#ch6">Exemple : trois paragraphes ramenés à une seule voix</a></li>
+        <li><a href="#ch7">Brief, relecture, IA : faire appliquer la charte au quotidien</a></li>
+        <li><a href="#ch8">Quatre façons de rater sa charte</a></li>
+        <li><a href="#ch9">Trois mois plus tard : la charte est-elle appliquée ?</a></li>
+        <li><a href="#faq">Questions fréquentes</a></li>
+        <li><a href="#sources">Sources</a></li>
+      </ol>
+    </div>
+
+    <h2 id="ch1">1. Un blog, cinq voix : le coût d'une marque qui change de ton</h2>
+
+    <p>Lisez d'affilée cinq contenus récents d'une entreprise. La page d'accueil vouvoie, la newsletter tutoie. Un article de blog promet une « plateforme révolutionnaire », la documentation parle sobrement de « module ». Le cas client écrit « clients », le livre blanc « utilisateurs », la page tarifs « comptes ». Chaque texte est correct ; ensemble, ils dessinent une entreprise qui ne sait pas qui elle est.</p>
+
+    <p>Le phénomène croît avec l'entreprise : un éditeur SaaS de cinquante personnes publie avec un responsable contenu, des pigistes, des ingénieurs avant-vente, un fondateur actif sur LinkedIn et des outils d'IA générative. Sans règle commune, chacun écrit dans sa propre langue.</p>
+
+    <h3>Ce que l'incohérence coûte</h3>
+
+    <p>Premier coût : la confiance. Nielsen Norman Group a testé auprès d'internautes américains des textes presque identiques, sauf par le ton : en moyenne, 52 % de la variation de l'envie de recommander une marque s'expliquait par la confiance qu'elle inspirait. Une voix qui change d'une page à l'autre affaiblit précisément ce levier. En cybersécurité, où un RSSI cherche des signes de rigueur, une page alarmiste à côté d'une documentation sobre suffit à <a href="/articles/article-marketing-contenu-cybersecurite.html">éveiller sa méfiance</a>.</p>
+
+    <p>Le second coût est opérationnel : sans règle commune, chaque texte revient en relecture, car le fondateur, le produit et le juridique corrigent chacun selon leurs goûts. Le Content Marketing Institute relève que 28 % des marketeurs B2B placent la difficulté à produire assez de contenus de qualité parmi leurs trois principaux obstacles.</p>
+
+    <div class="stat-row">
+      <div class="stat"><b>89 %</b><span>des marketeurs B2B qui utilisent l'IA s'en servent pour créer du contenu (CMI, enquête 2026, 1 015 répondants, été 2025)</span></div>
+      <div class="stat"><b>12 %</b><span>de ces utilisateurs constatent une baisse de la qualité de leurs contenus (CMI, octobre 2025)</span></div>
+      <div class="stat"><b>52 %</b><span>de l'envie de recommander une marque expliqués par la confiance qu'elle inspire (Nielsen Norman Group)</span></div>
+    </div>
+
+    <h2 id="ch2">2. Charte éditoriale, ligne éditoriale, charte graphique : qui décide quoi</h2>
+
+    <p>La ligne éditoriale fixe le fond : les sujets traités, les publics visés, les angles et les objectifs. La charte éditoriale fixe la forme écrite : le ton, le vocabulaire, la grammaire de marque, la structure des contenus. La charte graphique, enfin, règle l'apparence visuelle. Confondre les deux premières produit des chartes inutiles.</p>
+
+    <table>
+      <thead>
+        <tr><th>Document</th><th>Question à laquelle il répond</th><th>Exemple de règle pour un éditeur SaaS</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Ligne éditoriale</td><td>De quoi parle-t-on, à qui, pourquoi ?</td><td>« Le blog traite la gestion des notes de frais pour les DAF de PME de 50 à 500 salariés. »</td></tr>
+        <tr><td>Charte éditoriale</td><td>Comment l'écrit-on ?</td><td>« On écrit “note de frais”, jamais “expense report” ; on vouvoie ; un chiffre est toujours sourcé et daté. »</td></tr>
+        <tr><td>Charte graphique</td><td>À quoi cela ressemble-t-il ?</td><td>« Titres en Inter Bold, captures d'écran avec un cadre gris clair. »</td></tr>
+      </tbody>
+    </table>
+
+    <p>En B2B tech, la charte couvre des registres très éloignés, de la page de vente à la documentation d'API, sans que la marque change de personnalité. Les contraintes propres à chaque <a href="/secteurs">secteur d'activité</a> s'y ajoutent : vocabulaire réglementé en fintech, précision technique en cybersécurité, terminologie produit stable en SaaS.</p>
+
+    <h2 id="ch3">3. Mesurer l'écart : l'audit de vingt contenus</h2>
+
+    <p>Avant d'écrire la moindre règle, mesurez où en est votre marque. En une demi-journée, choisissez vingt contenus des douze derniers mois, tous formats mêlés (pages produit, articles, e-mails, cas clients, documentation, LinkedIn), et remplissez un tableur : une ligne par contenu, six colonnes.</p>
+
+    <ol>
+      <li><strong>Adresse au lecteur :</strong> vouvoiement, tutoiement ou forme impersonnelle ?</li>
+      <li><strong>Désignation de l'entreprise :</strong> « nous », le nom de la marque, ou les deux ?</li>
+      <li><strong>Noms du produit et des fonctionnalités :</strong> chaque variante.</li>
+      <li><strong>Désignation du client :</strong> client, utilisateur, compte, membre, partenaire ?</li>
+      <li><strong>Anglicismes :</strong> ceux qui ont un équivalent français courant.</li>
+      <li><strong>Promesses non prouvées :</strong> superlatifs (« leader », « le plus sécurisé ») sans source.</li>
+    </ol>
+
+    <p>Lecture du résultat : si une colonne affiche plus de deux variantes sur vingt contenus, la règle correspondante manque. Trois colonnes ou plus dans ce cas signalent un chantier prioritaire. Gardez le tableau : il servira de point de départ chiffré.</p>
+
+    <h2 id="ch4">4. Comment rédiger une charte éditoriale en six étapes</h2>
+
+    <p>Rédiger une charte éditoriale prend deux à trois semaines, dont dix jours de travail effectif. Le responsable contenu pilote, avec un sponsor de la direction sans lequel les arbitrages sur le ton ne tiendront pas.</p>
+
+    <ol>
+      <li><strong>Collecter (deux jours).</strong> Rassemblez l'audit, la plateforme de marque, les personas et des verbatims de clients tirés des appels commerciaux ou des tickets de support : leurs mots valent mieux que ceux de la direction.</li>
+      <li><strong>Interroger (deux jours).</strong> Trente minutes avec le fondateur, un commercial, le produit et le support : quels mots détestez-vous lire chez nous ? quel concurrent écrit bien ?</li>
+      <li><strong>Définir trois traits de voix (une journée).</strong> Par exemple « précis, direct, pédagogue ». Précisez ce que chacun exclut : « direct » ne veut pas dire « familier ».</li>
+      <li><strong>Écrire les règles (trois jours).</strong> Remplissez les neuf rubriques du modèle ci-dessous, avec un exemple et un contre-exemple par règle importante.</li>
+      <li><strong>Tester (deux jours).</strong> Faites réécrire deux contenus par deux personnes, charte en main. Là où les versions divergent, la règle est floue.</li>
+      <li><strong>Valider et diffuser (une journée).</strong> Validation par le sponsor, puis trente minutes de présentation à tous ceux qui écrivent, pigistes compris. Rangez la charte là où se rédigent les briefs.</li>
+    </ol>
+
+    <div class="callout">
+      <p><strong>Le critère de décision quand les avis divergent :</strong> tranchez en faveur du lecteur le plus exigeant de votre cycle de vente. Pour un logiciel de paie, c'est souvent le DAF ; pour une solution de détection, le RSSI. Une règle qui le ferait décrocher ne passe pas.</p>
+    </div>
+
+    <h2 id="ch5">5. Le modèle de charte éditoriale B2B en neuf rubriques</h2>
+
+    <p>Voici le plan type, chaque rubrique illustrée par une règle rédigée pour l'article au nom d'un éditeur fictif de logiciel de notes de frais.</p>
+
+    <table>
+      <thead>
+        <tr><th>Rubrique</th><th>Contenu</th><th>Exemple de règle</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>1. Raison d'écrire</td><td>À quoi servent nos contenus, en deux phrases</td><td>« Aider un DAF à décider vite et sans risque. »</td></tr>
+        <tr><td>2. Lecteurs</td><td>Trois profils, leur niveau technique, leurs objections</td><td>« Le contrôleur de gestion connaît la comptabilité, pas l'informatique. »</td></tr>
+        <tr><td>3. Traits de voix</td><td>Trois adjectifs, chacun avec «&nbsp;oui&nbsp;» et «&nbsp;non&nbsp;»</td><td>« Pédagogue : oui aux exemples chiffrés, non au ton professoral. »</td></tr>
+        <tr><td>4. Ton selon le contexte</td><td>Le curseur par format : vente, documentation, incident, réseaux sociaux</td><td>« En cas d'incident : faits, heure, prochaine mise à jour ; aucun humour. »</td></tr>
+        <tr><td>5. Lexique</td><td>Termes imposés, termes interdits, noms des fonctionnalités</td><td>« Dire “justificatif”, jamais “receipt” ; la fonctionnalité s'appelle partout “lecture automatique des justificatifs”. »</td></tr>
+        <tr><td>6. Grammaire de marque</td><td>Vouvoiement, «&nbsp;nous&nbsp;», écriture des chiffres, typographie</td><td>« Espace insécable avant les deux-points ; pourcentages en chiffres. »</td></tr>
+        <tr><td>7. Preuves et promesses</td><td>Ce qu'on peut affirmer, comment on source</td><td>« Pas de “n°&nbsp;1” sans classement public cité et daté. »</td></tr>
+        <tr><td>8. Structure par format</td><td>Gabarit d'article, de cas client, de page produit</td><td>« Un cas client s'ouvre sur le problème du client, pas sur le produit. »</td></tr>
+        <tr><td>9. Circuit de validation</td><td>Qui relit quoi, en combien de temps</td><td>« Le produit valide l'exactitude en 48 heures ; il ne réécrit pas le style. »</td></tr>
+      </tbody>
+    </table>
+
+    <h3>Les ajouts propres à chaque secteur</h3>
+
+    <p>En fintech, la rubrique 7 pèse le plus : formulations interdites sur la sécurité des fonds ou les rendements, phrases soumises à la conformité, écriture du statut réglementaire. C'est là que se jouent <a href="/articles/article-marketing-fintech-contenus-confiance.html">les phrases qui rassurent sans tromper</a>. En cybersécurité, le lexique tranche entre termes anglais et français pour chaque concept et proscrit les promesses absolues. En SaaS, il stabilise les noms de fonctionnalités entre site, interface et centre d'aide.</p>
+
+    <p>Le lexique a aussi une portée juridique en France : la loi du 4 août 1994 rend le français obligatoire dans la désignation, la présentation et la publicité des biens et services, y compris sur les sites de vente en ligne, rappelle le ministère de la Culture. Faites confirmer sa portée pour vos offres B2B par un juriste, puis listez les équivalents français de vos anglicismes récurrents.</p>
+
+    <h2 id="ch6">6. Exemple : trois paragraphes ramenés à une seule voix</h2>
+
+    <p>Exemple rédigé pour l'article : une même fonctionnalité d'un éditeur fictif, décrite par trois auteurs.</p>
+
+    <h3>Avant : trois auteurs, trois marques</h3>
+
+    <p><em>Page produit :</em> « Notre solution best-in-class révolutionne le process de notes de frais grâce à une IA de pointe. »<br>
+    <em>Article de blog :</em> « Tu perds des heures à scanner tes tickets ? Avec l'app, c'est fini ! »<br>
+    <em>Documentation :</em> « Le module OCR permet l'extraction automatisée des données des receipts. »</p>
+
+    <h3>Après : la voix « précis, direct, pédagogue »</h3>
+
+    <p><em>Page produit :</em> « Photographiez le justificatif : le montant, la date et la TVA sont saisis automatiquement. Vos collaborateurs n'ont plus rien à recopier. »<br>
+    <em>Article de blog :</em> « Saisir une note de frais à la main prend du temps et produit des erreurs. La lecture automatique des justificatifs supprime cette étape. »<br>
+    <em>Documentation :</em> « La lecture automatique des justificatifs extrait le montant, la date et la TVA. Vérifiez les champs avant validation. »</p>
+
+    <p>Chaque texte garde son registre, mais tous partagent le vouvoiement, un seul nom de fonctionnalité, le mot « justificatif » et aucune promesse invérifiable. Le lecteur qui passe de la page produit à la documentation lit la même entreprise.</p>
+
+    <h2 id="ch7">7. Brief, relecture, IA : faire appliquer la charte au quotidien</h2>
+
+    <p>Une charte n'est appliquée que si elle entre dans les outils de production, à trois endroits.</p>
+
+    <h3>Dans chaque brief</h3>
+
+    <p>Chaque brief rappelle les trois traits de voix, le lexique du sujet et le gabarit du format, et renvoie à la charte sans la recopier. Cela vaut pour les formats longs : un livre blanc, par exemple, sert de source de référence citée, nourrit des articles satellites et capte l'adresse e-mail de lecteurs qualifiés ; <a href="/service-livres-blancs">un livre blanc B2B qui génère des leads</a> doit donc parler exactement comme le reste du site.</p>
+
+    <h3>Dans la relecture</h3>
+
+    <p>Transformez la charte en questions fermées, à cocher avant publication :</p>
+
+    <ul class="checklist">
+      <li>Le lecteur est-il vouvoyé de bout en bout ?</li>
+      <li>Les noms du produit et des fonctionnalités sont-ils ceux du lexique ?</li>
+      <li>Chaque anglicisme a-t-il été remplacé quand un équivalent figure au lexique ?</li>
+      <li>Chaque chiffre est-il sourcé et daté ?</li>
+      <li>Aucun superlatif sans preuve ?</li>
+      <li>Le texte suit-il le gabarit du format ?</li>
+      <li>Le titre, la meta description et le texte alternatif des images respectent-ils les mêmes règles ?</li>
+    </ul>
+
+    <h3>Dans les outils d'IA</h3>
+
+    <p>Les rubriques 3, 5, 6 et 7 deviennent presque telles quelles les consignes d'un assistant de rédaction, complétées par deux ou trois extraits de vos meilleurs contenus comme modèles de style. La relecture humaine reste indispensable : Google demande, dans sa documentation sur le contenu généré par IA mise à jour le 1er octobre 2026, de vérifier manuellement l'exactitude de tout contenu produit par IA avant publication, métadonnées comprises, et rappelle que générer de nombreuses pages sans valeur ajoutée peut enfreindre ses règles contre le contenu produit à grande échelle. Bâtir <a href="/service-strategie-ia">un processus éditorial assisté par l'IA</a>, c'est articuler ces consignes, la production et cette relecture.</p>
+
+    <h2 id="ch8">8. Quatre façons de rater sa charte</h2>
+
+    <p><strong>Les adjectifs sans exemples.</strong> « Innovant, humain, expert » : toute entreprise tech se décrit ainsi, et aucun rédacteur ne sait quoi en faire.</p>
+
+    <p><strong>Le document de cinquante pages.</strong> Superbement mis en page, il n'est plus ouvert après la présentation. Visez court et renvoyez les détails au lexique.</p>
+
+    <p><strong>L'oubli des contenus « non marketing ».</strong> Documentation, e-mails de facturation, messages d'erreur : vos clients les lisent plus que vos articles. Une charte qui les ignore laisse la moitié de la marque hors champ.</p>
+
+    <p><strong>L'absence de propriétaire.</strong> Une fonctionnalité change de nom, le lexique ne suit pas, et l'incohérence revient. Nommez un responsable et révisez le lexique chaque trimestre, au rythme des versions produit.</p>
+
+    <h2 id="ch9">9. Trois mois plus tard : la charte est-elle appliquée ?</h2>
+
+    <p>Refaites l'audit sur vingt textes publiés après la diffusion de la charte. Objectif réaliste à trois mois : deux variantes au plus par colonne, aucune promesse non prouvée. Suivez aussi, dans votre outil de gestion de projet, le nombre d'allers-retours de relecture par contenu et le délai entre premier jet et publication : une charte efficace fait baisser les deux.</p>
+
+    <p>Restez prudent sur les résultats : une voix cohérente ne fait pas, seule, progresser la conversion. Elle retire un motif de doute à l'acheteur qui compare et permet de publier plus sans perdre en qualité.</p>
+
+    <h3>Écrire la charte soi-même ou se faire aider</h3>
+
+    <p>Un responsable contenu disposant de dix jours et d'un sponsor peut mener la démarche seul. Un appui extérieur se justifie si personne n'a le temps de l'audit et des entretiens, si les désaccords sur le ton bloquent la décision, ou si la charte doit aussitôt être déclinée en briefs, en consignes pour l'IA et en premiers contenus.</p>
+
+    <div class="conclusion-box">
+      <p><strong>En résumé</strong></p>
+      <p>Une charte éditoriale utile part d'un audit chiffré, tient en neuf rubriques illustrées d'exemples et vit dans les briefs, la grille de relecture et les consignes données à l'IA. Commencez cette semaine par l'audit de vingt contenus. Pour déployer ensuite la charte dans une production régulière et relue, une <a href="/service-strategie-ia">stratégie de contenu IA augmentée</a> part de ces mêmes règles.</p>
+      <a href="/devis" class="final-cta">Demander l'audit de cohérence de vos vingt derniers contenus →</a>
+    </div>
+
+    <h2 id="faq">Questions fréquentes</h2>
+
+    <div class="faq-item">
+      <h3>Que contient une charte éditoriale ?</h3>
+      <p>Elle contient la raison d'écrire, les lecteurs, trois traits de voix illustrés, le ton par format, un lexique, la grammaire de marque, les règles de preuve, des gabarits et le circuit de validation.</p>
+    </div>
+
+    <div class="faq-item">
+      <h3>Quelle est la différence entre charte éditoriale et ligne éditoriale ?</h3>
+      <p>La ligne éditoriale définit les sujets, les publics et les objectifs des contenus. La charte éditoriale définit la manière de les écrire : ton, vocabulaire, structure.</p>
+    </div>
+
+    <div class="faq-item">
+      <h3>Comment rédiger une charte éditoriale ?</h3>
+      <p>Auditez vingt contenus, interrogez quatre personnes clés, définissez trois traits de voix, rédigez les règles avec exemples, testez-les sur deux réécritures, puis validez et diffusez : deux à trois semaines.</p>
+    </div>
+
+    <div class="faq-item">
+      <h3>À quoi sert une charte éditoriale en B2B ?</h3>
+      <p>Elle fait écrire d'une même voix salariés, pigistes, experts produit et outils d'IA, réduit les relectures et évite les promesses non prouvées, risquées en fintech comme en cybersécurité.</p>
+    </div>
+
+    <h2 id="sources">Sources</h2>
+    <ol class="sources">
+      <li>Rose R., « 9 Takeaways and Insights From the 2026 B2B Content and Marketing Trends Report », Content Marketing Institute et MarketingProfs, 8 octobre 2025 (enquête menée du 24 juin au 14 août 2025, 1 015 marketeurs B2B). <a href="https://contentmarketinginstitute.com/b2b-research/b2b-content-marketing-trends-research" target="_blank" rel="nofollow noopener">contentmarketinginstitute.com</a></li>
+      <li>Moran K., « The Impact of Tone of Voice on Users' Brand Perception », Nielsen Norman Group, 7 août 2016, revu le 30 janvier 2024. <a href="https://www.nngroup.com/articles/tone-voice-users/" target="_blank" rel="nofollow noopener">nngroup.com</a></li>
+      <li>Google Search Central, « Google Search's guidance on using generative AI content on your website », mise à jour du 1er octobre 2026. <a href="https://developers.google.com/search/docs/fundamentals/using-gen-ai-content" target="_blank" rel="nofollow noopener">developers.google.com</a></li>
+      <li>Ministère de la Culture, « Garantir l'emploi du français » (loi n° 94-665 du 4 août 1994). <a href="https://www.culture.gouv.fr/thematiques/langue-francaise-et-langues-de-france/agir-pour-les-langues/garantir-l-emploi-du-francais" target="_blank" rel="nofollow noopener">culture.gouv.fr</a></li>
+    </ol>
+
+  <!-- maillage:debut -->
+<section class="maillage" aria-label="Articles liés">
+<style>
+.maillage{margin:44px 0 8px;padding-top:28px;border-top:1px solid #e2e8f0;font-family:inherit}
+.maillage h2{font-size:20px!important;font-weight:800;color:#0F1B3D;margin:0 0 16px!important}
+.mi-grille{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:14px}
+.mi-carte{display:flex;flex-direction:column;gap:8px;border:1px solid #e2e8f0;border-radius:14px;padding:16px 18px;background:#fff;text-decoration:none!important;transition:border-color .2s,box-shadow .2s,transform .2s}
+.mi-carte:hover{border-color:#1A56DB;box-shadow:0 8px 24px rgba(26,86,219,.10);transform:translateY(-2px)}
+.mi-cat{font-size:10.5px;font-weight:800;letter-spacing:1.2px;text-transform:uppercase;color:#1342b0}
+.mi-titre{font-size:14.5px;font-weight:700;line-height:1.4;color:#0F1B3D}
+.mi-lire{margin-top:auto;font-size:12px;color:#64748b}
+</style>
+<h2>À lire aussi</h2>
+<div class="mi-grille"><a class="mi-carte" href="/articles/article-geo-etre-cite-par-chatgpt.html"><span class="mi-cat">SEO</span><span class="mi-titre">GEO : comment faire citer votre entreprise B2B par ChatGPT, Perplexity et Gemini</span><span class="mi-lire">Lire l'article · 12 min</span></a><a class="mi-carte" href="/articles/article-ai-overviews-seo.html"><span class="mi-cat">SEO</span><span class="mi-titre">AI Overviews et GEO : le guide complet pour dominer les résultats IA en 2026</span><span class="mi-lire">Lire l'article · 11 min</span></a><a class="mi-carte" href="/articles/article-agent-relance-leads-saas.html"><span class="mi-cat">SaaS B2B</span><span class="mi-titre">Lead nurturing SaaS : relancer vos téléchargements et vos essais avant qu&#x27;ils refroidissent</span><span class="mi-lire">Lire l'article · 12 min</span></a></div>
+</section>
+<!-- maillage:fin -->
+</main>
+
+  <aside class="sidebar">
+    <div class="sidebar-card">
+      <h3>Sommaire</h3>
+      <div class="mini-toc">
+        <a href="#ch1">1. Un blog, cinq voix</a>
+        <a href="#ch2">2. Charte ou ligne éditoriale</a>
+        <a href="#ch3">3. L'audit de vingt contenus</a>
+        <a href="#ch4">4. Six étapes</a>
+        <a href="#ch5">5. Modèle en neuf rubriques</a>
+        <a href="#ch6">6. Exemple réécrit</a>
+        <a href="#ch7">7. Brief, relecture, IA</a>
+        <a href="#ch8">8. Quatre échecs</a>
+        <a href="#ch9">9. Vérifier l'application</a>
+        <a href="#faq">FAQ</a>
+        <a href="#sources">Sources</a>
+      </div>
+    </div>
+    <div class="sidebar-card">
+      <div class="author-card">
+        <div class="author-avatar">TRD</div>
+        <div>
+          <div class="author-name">Rédaction TechRepair Content</div>
+          <div class="author-role">Rédaction SEO tech B2B</div>
+        </div>
+      </div>
+    </div>
+    <div class="sidebar-card guide-card">
+      <h3>Plus de contenus, une seule voix</h3>
+      <p>Charte éditoriale traduite en briefs et en consignes pour l'IA, puis chaque contenu relu à la main avant livraison.</p>
+      <a href="/service-strategie-ia" class="guide-btn">Voir la stratégie de contenu IA</a>
+    </div>
+  </aside>
+</div>
+
+<div class="nl-band">
+  <div class="nl-band-inner">
+    <h2>📩 La newsletter SEO Tech B2B</h2>
+    <p>Chaque semaine, une stratégie actionnable et une opportunité SEO dans votre secteur.</p>
+    <div class="nl-band-form">
+      <input type="email" class="nl-band-input" id="nlBandEmail" placeholder="votre@email.com"/>
+      <button class="nl-band-btn" id="nlBandBtn" type="button">S'abonner →</button>
+    </div>
+    <p id="nlBandMsg" style="display:none;font-size:12px;color:#fff;margin-top:8px"></p>
+    <p class="nl-band-note">✓ Gratuit · ✓ Sans spam · ✓ Désabonnement en 1 clic</p>
+  </div>
+</div>
+
+<div class="cta-band">
+  <div class="cta-inner">
+    <div>
+      <h2>Du contenu qui performe, pas qui remplit des pages</h2>
+      <p>Vous voulez une stratégie de contenu sur mesure pour votre secteur tech B2B ? Parlons-en.</p>
+      <div class="cta-btns">
+        <button class="btn-white" onclick="window.location='/devis'">Obtenir un devis gratuit →</button>
+        <button class="btn-ghost-cta" onclick="window.location='/services'">Voir nos services →</button>
+      </div>
+    </div>
+    <div class="cta-checks">
+      <div class="cta-check"><span class="cta-ci">✓</span> Réponse sous 24h</div>
+      <div class="cta-check"><span class="cta-ci">✓</span> Audit SEO gratuit</div>
+      <div class="cta-check"><span class="cta-ci">✓</span> Sans engagement</div>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <div class="logo"><div class="logo-box">TRD</div><div class="logo-text" style="color:#fff">TechRepair<span>Content</span></div></div>
+      <p>Rédaction SEO & technique pour entreprises SaaS, Tech et E-commerce.</p>
+    </div>
+    <div><h4>Navigation</h4><ul class="flinks"><li><a href="/">Accueil</a></li><li><a href="/apropos">À propos</a></li><li><a href="/services">Services</a></li><li><a href="/secteurs">Secteurs</a></li><li><a href="/blog">Blog</a></li></ul></div>
+    <div><h4>Ressources</h4><ul class="flinks"><li><a href="/agents-ia">Agents IA</a></li><li><a href="/visibilite-ia">Visibilité dans les IA</a></li><li><a href="/faq">FAQ</a></li><li><a href="/confidentialite">Confidentialité</a></li><li><a href="/mentions-legales">Mentions légales</a></li></ul></div>
+    <div>
+      <h4>Contact</h4>
+      <ul class="flinks"><li><a href="mailto:contact@techrepaircontent.com">contact@techrepaircontent.com</a></li><li><a href="/devis">Réponse sous 24h</a></li></ul>
+      <div class="fsocial"><a class="fsoc" href="https://www.linkedin.com/in/techrepair-content" target="_blank" rel="noopener">in</a><a class="fsoc" href="mailto:contact@techrepaircontent.com">✉</a></div>
+    </div>
+    <div><h4>Basé en France</h4><div style="font-size:22px">🇫🇷</div></div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2026 TechRepair Content. Tous droits réservés.</span>
+    <span>Fait avec ❤️ en France</span>
+  </div>
+</footer>
+
+<script>
+const hamburger = document.getElementById('hamburger');
+const mobileMenu = document.getElementById('mobileMenu');
+hamburger.addEventListener('click', () => {
+  hamburger.classList.toggle('open');
+  mobileMenu.classList.toggle('open');
+});
+mobileMenu.querySelectorAll('a').forEach(link => {
+  link.addEventListener('click', () => {
+    hamburger.classList.remove('open');
+    mobileMenu.classList.remove('open');
+  });
+});
+
+const BREVO_FORM_ACTION = 'https://a41ce724.sibforms.com/serve/MUIFAEGqDW1rbNTL0uU5ym6Ux5qJ7TJpdETsCjqRumOCnr-gRU8IGKx8Ic-JLjScrVVWrJVx_YXawDF8ao6y5hYLPvy7h8UJCk3gg9gTHcTaNAWQzbjwLnHO6DPk_HzPb7XY28rHy9JtEMuP-euST6RZutJ_bWOfqZFEtI-UUs9G4HA-O5V8JPwb3jLz0jhwuISuUqZ3Iok5IEyYHg==';
+
+function subscribeToNewsletter(emailInput, msgEl, btnEl) {
+  const email = emailInput.value.trim();
+  const isValidEmail = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+  msgEl.style.display = 'block';
+  if (!isValidEmail) {
+    msgEl.style.color = '#dc2626';
+    msgEl.textContent = "Merci d'entrer une adresse email valide.";
+    return;
+  }
+  const formData = new FormData();
+  formData.append('EMAIL', email);
+  formData.append('email_address_check', '');
+  formData.append('locale', 'fr');
+  formData.append('html_type', 'simple');
+  fetch(BREVO_FORM_ACTION, { method: 'POST', mode: 'no-cors', body: formData }).catch(() => {});
+  msgEl.style.color = '#10b981';
+  msgEl.textContent = 'Merci ! Vérifiez votre boîte mail pour confirmer.';
+  btnEl.textContent = 'Inscription envoyée ✓';
+  btnEl.disabled = true;
+}
+
+const nlBandBtn = document.getElementById('nlBandBtn');
+nlBandBtn.addEventListener('click', () => {
+  subscribeToNewsletter(document.getElementById('nlBandEmail'), document.getElementById('nlBandMsg'), nlBandBtn);
+});
+</script>
+<script src="/chatbot.js?v=3" defer></script>
+</body>
+</html>
