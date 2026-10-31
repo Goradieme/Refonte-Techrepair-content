@@ -200,4 +200,17 @@ const ARTICLES = [
     motCle:   "marketing cybersécurité",
     metaDesc: "Marketing cybersécurité : auditer vos contenus, les six formats qui convainquent un RSSI, une grille de crédibilité en dix critères et un exemple réécrit."
   },
+  {
+    titre:    "Charte éditoriale B2B : le modèle pour qu'une marque tech parle d'une seule voix",
+    extrait:  "Pigistes, experts produit, fondateur et IA écrivent chacun à leur façon. Audit en une demi-journée, méthode en six étapes, modèle de charte éditoriale en neuf rubriques et exemple réécrit.",
+    auteur:   "Rédaction TechRepair Content",
+    date:     "2026-10-31",
+    categorie:"seo",
+    lecture:  "12 min",
+    lien:     "articles/article-charte-editoriale-b2b-modele.html",
+    image:    "articles/charte-editoriale-b2b-modele-cover.jpg",
+    slug:     "charte-editoriale-b2b-modele",
+    motCle:   "charte éditoriale",
+    metaDesc: "Charte éditoriale B2B : audit de vingt contenus, méthode en six étapes, modèle en neuf rubriques et exemple réécrit pour que vos auteurs parlent d'une voix."
+  },
 ];
