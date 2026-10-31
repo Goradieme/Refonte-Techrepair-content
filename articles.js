@@ -208,7 +208,7 @@ const ARTICLES = [
     categorie:"seo",
     lecture:  "12 min",
     lien:     "articles/article-charte-editoriale-b2b-modele.html",
-    image:    "articles/charte-editoriale-b2b-modele-cover-v2-carte.jpg",
+    image:    "articles/charte-editoriale-b2b-modele-cover-v3-carte.jpg",
     slug:     "charte-editoriale-b2b-modele",
     motCle:   "charte éditoriale",
     metaDesc: "Charte éditoriale B2B : audit de vingt contenus, méthode en six étapes, modèle en neuf rubriques et exemple réécrit pour que vos auteurs parlent d'une voix."
