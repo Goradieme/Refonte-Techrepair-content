@@ -113,10 +113,10 @@ def main(chemin):
   </td></tr>
 
   <tr><td style="padding:26px 32px">
-    <table role="presentation" width="100%" style="background:{NAVY};border-radius:12px"><tr><td style="padding:22px 24px">
-      <div style="font-size:11px;font-weight:bold;letter-spacing:1px;text-transform:uppercase;color:#FBBF24;margin-bottom:6px">Le conseil du mois</div>
+    <table role="presentation" width="100%" bgcolor="#EA580C" style="background:#EA580C;background-image:linear-gradient(135deg,#F97316 0%,#C2410C 100%);border-radius:12px"><tr><td style="padding:22px 24px">
+      <div style="font-size:11px;font-weight:bold;letter-spacing:1px;text-transform:uppercase;color:#FFEDD5;margin-bottom:6px">Le conseil du mois</div>
       <div style="font-size:17px;font-weight:bold;color:#FFFFFF;margin-bottom:8px">{esc(n['conseil']['titre'])}</div>
-      <div style="font-size:14px;line-height:1.6;color:#CBD5E1">{esc(n['conseil']['texte'])}</div>
+      <div style="font-size:14px;line-height:1.6;color:#FFF7ED">{esc(n['conseil']['texte'])}</div>
     </td></tr></table>
   </td></tr>
 
