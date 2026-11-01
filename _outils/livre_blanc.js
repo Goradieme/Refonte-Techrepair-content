@@ -92,7 +92,7 @@ function lumieres(l, h, v = 0, ymin = 0.1, ymax = 0.45) {
 // Fonds sombres précalculés en JPEG (le flou des flux lumineux alourdirait le PDF).
 const FONDS = {};
 async function preparerFonds(page) {
-  const vues = { couv: [1, 0.06, 0.40], ouv: [3, 0.03, 0.30], dos: [4, 0.50, 0.85] };
+  const vues = { couv: [1, 0.06, 0.40], ouv: [3, 0.03, 0.30], dos: [4, 0.50, 0.85], concl: [5, 0.60, 0.86] };
   await page.setViewportSize({ width: 794, height: 1123 });
   for (const [cle, [v, a, b]] of Object.entries(vues)) {
     await page.setContent(`<!doctype html><html><head><style>*{margin:0}body{width:210mm;height:297mm;background:${FOND};overflow:hidden}svg{position:absolute;left:0;top:0;width:100%;height:100%}</style></head><body>${lumieres(210, 297, v, a, b)}</body></html>`);
@@ -270,12 +270,13 @@ const CSS = (A, AC) => `${POLICES}
   .faq-item h3{font-size:10.8pt!important;margin:0 0 2mm!important}
   .faq-item h3{background:none!important;padding-top:0!important}
 
-  .conclusion-box{break-before:page;background:${FOND};color:#C7D2E5;border-radius:2mm;padding:16mm 14mm 12mm;margin:28mm 0 4mm;break-inside:avoid;font-size:11pt;line-height:1.7;position:relative;overflow:hidden}
-  .conclusion-box::before{content:"Conclusion";display:block;font-size:7.5pt;font-weight:800;letter-spacing:1.6pt;text-transform:uppercase;color:var(--ac);margin-bottom:5mm}
-  .conclusion-box::after{content:"";position:absolute;right:-30mm;bottom:-30mm;width:90mm;height:90mm;border-radius:50%;background:radial-gradient(circle,color-mix(in srgb,${A} 50%,transparent),transparent 70%)}
-  .conclusion-box>*{position:relative;z-index:1}
-  .conclusion-box h3{color:#fff!important;font-size:22pt!important;line-height:1.15!important;margin:0 0 6mm!important;padding-top:5mm!important;background:linear-gradient(var(--ac),var(--ac)) no-repeat 0 0/10mm 1.2mm!important}
-  .conclusion-box p{max-width:none!important}
+  /* Conclusion : page pleine, même fond que la couverture et les ouvertures de chapitre */
+  .conclu-page{page:plein;width:210mm;height:296.6mm;position:relative;overflow:hidden;break-before:page;break-after:page;background:#03143C url(${FONDS.concl}) 0 0/100% 100% no-repeat;color:#C7D2E5}
+  .conclusion-box{position:absolute;left:26mm;right:26mm;top:52mm;font-size:12pt;line-height:1.7;color:#C7D2E5}
+  .conclusion-box::before{content:"Conclusion";display:block;font-size:7.5pt;font-weight:800;letter-spacing:1.6pt;text-transform:uppercase;color:var(--ac);margin-bottom:6mm}
+  .conclusion-box h3{color:#fff!important;font-size:28pt!important;line-height:1.1!important;letter-spacing:-.5pt;margin:0 0 9mm!important;padding:0 0 9mm!important;max-width:150mm!important;background:linear-gradient(var(--ac),var(--ac)) no-repeat 0 100%/22mm 1.6mm!important;text-wrap:balance}
+  .conclusion-box p{max-width:150mm!important;margin-bottom:5mm}
+  .conclu-page .folio{position:absolute;left:26mm;bottom:18mm;font-size:7pt;font-weight:700;letter-spacing:.6pt;text-transform:uppercase;color:#94A3B8}
   .conclusion-box strong{color:#fff}.conclusion-box a{color:var(--ac)}
 
   .section-annexe{break-before:page}
@@ -291,8 +292,7 @@ const CSS = (A, AC) => `${POLICES}
   .services{display:grid;grid-template-columns:1fr 1fr;gap:0 9mm;margin:7mm 0 0;border-top:1.5pt solid var(--navy)}
   .services a{display:block;padding:3mm 0;border-bottom:.5pt solid var(--rule);color:var(--navy);font-weight:700;font-size:9.4pt}
   .services a::before{content:"→  ";color:var(--a)}
-  .cta-final{background:${FOND};color:#C7D2E5;border-radius:2mm;padding:10mm;margin-top:12mm;position:relative;overflow:hidden}
-  .cta-final::after{content:"";position:absolute;right:-25mm;top:-25mm;width:70mm;height:70mm;border-radius:50%;background:radial-gradient(circle,color-mix(in srgb,${A} 55%,transparent),transparent 70%)}
+  .cta-final{background:#03143C url(${FONDS.concl}) center 85%/cover no-repeat;color:#C7D2E5;border-radius:2mm;padding:10mm;margin-top:12mm;position:relative;overflow:hidden}
   .cta-final h3{color:#fff;font-size:17pt;font-weight:800;margin:0 0 3mm;position:relative}
   .cta-final p{position:relative;max-width:130mm}
   .btn{display:inline-block;background:var(--a);color:#fff!important;font-weight:800;border-radius:1.5mm;padding:3.2mm 6mm;margin:5mm 3mm 0 0;font-size:9.4pt;position:relative}
@@ -397,6 +397,15 @@ function document_(m, corps, c, A, AC, pages) {
 // Retouches du corps dans le navigateur : figures numérotées, outils, liens absolus.
 function retoucher(site) {
   let f = 0, o = 0;
+  document.querySelectorAll('.conclusion-box').forEach(box => {
+    const sec = box.closest('section');
+    const page = document.createElement('section');
+    page.className = 'conclu-page';
+    sec.parentNode.insertBefore(page, sec.nextSibling);
+    page.appendChild(box);
+    const folio = document.querySelector('.ouv .folio');
+    if (folio) page.appendChild(folio.cloneNode(true));
+  });
   document.querySelectorAll('a[href^="/"]').forEach(a => { a.href = site + a.getAttribute('href'); });
   document.querySelectorAll('.key-points li>strong:first-child').forEach(st => { st.textContent = st.textContent.replace(/\s*:\s*$/, ''); });
   document.querySelectorAll('.outil').forEach(el => {
