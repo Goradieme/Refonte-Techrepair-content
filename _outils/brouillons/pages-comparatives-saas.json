@@ -24,10 +24,10 @@
     "sources": "Sources"
   },
   "ctaLateral": {
-    "titre": "Vos pages comparatives, sourcées",
-    "texte": "Pages « alternative à », face-à-face et comparatifs de catégorie rédigés avec vos équipes, preuves archivées et mises à jour planifiées.",
-    "lien": "/service-articles-seo",
-    "bouton": "Découvrir le service"
+    "titre": "Le guide B2B de la visibilité IA",
+    "texte": "Livre blanc gratuit : mesurer ce que ChatGPT, Perplexity et Gemini disent de votre marque, puis y être cité plus souvent.",
+    "lien": "/livres-blancs/visibilite-ia-b2b-guide.html",
+    "bouton": "Télécharger le livre blanc"
   },
   "remplacer": true
 }
