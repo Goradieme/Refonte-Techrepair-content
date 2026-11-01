@@ -328,7 +328,7 @@ def main(chemin):
   <div class="breadcrumb" style="padding:0 0 14px"><a href="/">Accueil</a> / <span style="color:var(--navy)">Livres blancs</span></div>
   <span class="lb-badge"><i></i>Ressources gratuites</span>
   <h1 style="font-size:34px;font-weight:800;color:var(--navy);line-height:1.2;margin-bottom:12px">Livres blancs pour les équipes marketing B2B tech</h1>
-  <p class="lb-sous" style="max-width:760px">Des guides complets et des outils prêts à l'emploi pour attirer et convertir vos acheteurs : SaaS B2B, fintech, cybersécurité, e-commerce tech. Un nouveau livre blanc chaque semaine.</p>
+  <p class="lb-sous" style="max-width:760px">Des guides complets et des outils prêts à l'emploi pour attirer et convertir vos acheteurs : SaaS B2B, fintech, cybersécurité, e-commerce tech. Un nouveau livre blanc chaque mois.</p>
 </div></div>
 <div class="lb-liste">{cartes}
 </div>"""

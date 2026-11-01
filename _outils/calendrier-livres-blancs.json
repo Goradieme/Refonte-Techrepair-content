@@ -1,14 +1,29 @@
 [
  {
   "mois": "2026-11",
-  "statut": "a_faire",
+  "statut": "publie",
   "categorie": "seo",
   "service": "visibilite-ia",
   "couleur": "violet",
   "slug": "visibilite-ia-b2b-guide",
   "titre": "Être recommandé par les IA : le guide B2B de la visibilité dans ChatGPT, Perplexity et Gemini",
   "motCle": "visibilité IA",
-  "probleme": "Les acheteurs B2B interrogent les IA, qui citent quelques marques et ignorent les autres."
+  "probleme": "Les acheteurs B2B interrogent les IA, qui citent quelques marques et ignorent les autres.",
+  "date": "2026-11-01",
+  "donneesMotCle": {
+   "volume": 50,
+   "sd": 29,
+   "cpc": 9.43,
+   "source": "Ubersuggest FR, 01/11/2026",
+   "associes": "geo référencement 170 (SD 29, CPC 1,62), GEO référencement 210 (SD 31), geo référencement ia 40 (SD 27), consultant visibilité ia 10 (SD 13)"
+  },
+  "questionsReelles": [
+   "comment être référencé sur ChatGPT (Google Suggest)",
+   "différence GEO et SEO / geo ou seo (Google Suggest)",
+   "geo remplace le seo (Google Suggest)",
+   "outil visibilité IA (Ubersuggest)",
+   "audit visibilité IA (Ubersuggest)"
+  ]
  },
  {
   "mois": "2026-12",

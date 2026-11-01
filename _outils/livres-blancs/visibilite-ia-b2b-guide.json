@@ -1,0 +1,37 @@
+{
+  "slug": "visibilite-ia-b2b-guide",
+  "date": "2026-11-01",
+  "categorie": "seo",
+  "service": "visibilite-ia",
+  "couleur": "violet",
+  "titre": "Être recommandé par les IA : le guide B2B de la visibilité dans ChatGPT, Perplexity et Gemini",
+  "titreCouverture": "Visibilité IA : être recommandé par ChatGPT et Gemini",
+  "titreCourt": "Le guide B2B de la visibilité IA",
+  "sousTitre": "Mesurer, corriger et développer la présence de votre marque dans les réponses des assistants IA : méthode, outils et plan de 90 jours pour le SaaS, la fintech et la cybersécurité.",
+  "titreSeo": "Visibilité IA : le guide B2B pour être cité par les IA",
+  "metaDesc": "Livre blanc gratuit : mesurez et améliorez la visibilité IA de votre marque B2B dans ChatGPT, Perplexity et Gemini. Méthode, outils, plan à 90 jours.",
+  "motCle": "visibilité IA",
+  "resume": "La moitié des acheteurs de logiciels B2B commencent désormais leur recherche dans un assistant IA. Ce livre blanc donne la méthode complète pour mesurer ce que ChatGPT, Perplexity, Gemini et Copilot disent de votre marque, puis pour y être cité plus souvent et plus justement.",
+  "apprendre": [
+    "Construire un panel de 30 questions d'acheteurs et calculer votre taux de présence dans cinq assistants",
+    "Vérifier en une heure que les robots d'OpenAI, de Perplexity, de Google et de Bing accèdent à vos pages",
+    "Réécrire vos pages clés en passages factuels que les IA peuvent reprendre",
+    "Identifier les sites tiers qui pèsent dans les réponses sur votre marché et y obtenir des mentions",
+    "Adapter la méthode aux contraintes du SaaS, de la fintech et de la cybersécurité",
+    "Piloter un plan de 90 jours avec des indicateurs et des seuils réalistes"
+  ],
+  "pourQui": [
+    "Responsables marketing, growth et product marketing d'entreprises SaaS B2B",
+    "Fondateurs et directions commerciales de fintechs et d'éditeurs de cybersécurité",
+    "Équipes SEO qui doivent intégrer les moteurs IA à leur feuille de route"
+  ],
+  "pointsCles": [
+    "51 % des acheteurs de logiciels B2B commencent leur recherche par un chatbot, et 69 % ont changé de fournisseur après une recommandation de l'IA (G2, mars 2026).",
+    "Les mentions de la marque sur le web sont trois fois plus corrélées à la présence dans les AI Overviews que les backlinks (Ahrefs, 75 000 marques).",
+    "Un site citable repose sur des robots autorisés, des pages factuelles (tarifs, intégrations, conformité) et des passages autonomes.",
+    "La mesure passe par un panel de 30 questions rejoué chaque mois dans cinq assistants, complété par le rapport AI Performance de Bing."
+  ],
+  "ctaTitre": "Savoir ce que les IA disent de votre marque",
+  "ctaTexte": "Décrivez votre marché et vos concurrents : vous recevez un premier relevé de votre visibilité dans les assistants IA et une proposition de plan chiffrée sous 24 h, sans engagement.",
+  "remplacer": true
+}
