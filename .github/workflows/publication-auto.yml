@@ -1,0 +1,66 @@
+# Publication automatique du contenu du jour (règle fixée par Goradieme) :
+# l'article ou le livre blanc est envoyé en relecture à 6 h ; sans réaction de sa part,
+# il est publié vers 8 h 30 (heure de Paris), avec une seconde passe vers 9 h 30.
+# Une demande de fusion n'est PAS publiée si elle porte l'étiquette « attendre »
+# ou si un humain l'a commentée ou relue (les robots comme netlify[bot] sont ignorés).
+name: Publication automatique du contenu du jour
+
+on:
+  schedule:
+    # Heures UTC : le script ne publie qu'à partir de 8 h 30, heure de Paris
+    # (06:30 UTC en été, 07:30 UTC en hiver ; 08:30 UTC = passe de secours).
+    - cron: "30 6 * * *"
+    - cron: "30 7 * * *"
+    - cron: "30 8 * * *"
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+  pull-requests: write
+  pages: write
+
+concurrency:
+  group: publication-auto
+  cancel-in-progress: false
+
+jobs:
+  publier:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Fusionner les demandes de fusion du jour
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          REPO: ${{ github.repository }}
+          MANUEL: ${{ github.event_name == 'workflow_dispatch' }}
+        run: |
+          set -u
+          heure=$(TZ=Europe/Paris date +%H%M)
+          if [ "$MANUEL" != "true" ] && [ "$heure" -lt 0830 ]; then
+            echo "Il est $heure à Paris : trop tôt, la relecture reste ouverte."; exit 0
+          fi
+          fusionne=0
+          for n in $(gh api "repos/$REPO/pulls?state=open&per_page=50" \
+                --jq '.[] | select(.head.ref | startswith("article/") or startswith("livre-blanc/")) | .number' | sort -n); do
+            if gh api "repos/$REPO/issues/$n/labels" --jq '.[].name' | grep -qx attendre; then
+              echo "#$n : étiquette « attendre », non publiée."; continue
+            fi
+            humains=$( { gh api "repos/$REPO/issues/$n/comments" --jq '.[].user | select(.type != "Bot") | .login';
+                         gh api "repos/$REPO/pulls/$n/comments" --jq '.[].user | select(.type != "Bot") | .login';
+                         gh api "repos/$REPO/pulls/$n/reviews" --jq '.[].user | select(.type != "Bot") | .login'; } \
+                       | grep -v '\[bot\]$' | wc -l )
+            if [ "$humains" -gt 0 ]; then
+              echo "#$n : réaction humaine, non publiée."; continue
+            fi
+            ok=0
+            for essai in 1 2 3; do
+              if gh api -X PUT "repos/$REPO/pulls/$n/merge" -f merge_method=squash; then ok=1; break; fi
+              sleep 20
+            done
+            if [ $ok -eq 1 ]; then echo "#$n publiée."; fusionne=1; else echo "::error::#$n : fusion impossible (conflit ?)."; fi
+          done
+          if [ $fusionne -eq 1 ]; then
+            # Une fusion faite avec le jeton du workflow ne relance pas toujours la mise en ligne :
+            # on la demande explicitement à GitHub Pages (sans effet bloquant si elle part déjà).
+            sleep 10
+            gh api -X POST "repos/$REPO/pages/builds" || echo "Reconstruction Pages non demandée (elle se fera à la prochaine modification)."
+          fi
