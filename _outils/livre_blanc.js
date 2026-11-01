@@ -67,6 +67,41 @@ function motif(accent, clair, l = 124, h = 104) {
   return `<svg viewBox="0 0 ${l} ${h}" width="${l}mm" height="${h}mm" xmlns="http://www.w3.org/2000/svg">${s}</svg>`;
 }
 
+// Flux lumineux bleus (repris du visuel de référence de Goradieme) : courbes qui
+// traversent la page, avec halo, trait lumineux et cœur presque blanc.
+function lumieres(l, h, v = 0, ymin = 0.1, ymax = 0.45) {
+  const courbes = [], bande = ymax - ymin;
+  for (let i = 0; i < 6; i++) {
+    const y0 = h * (ymin + bande * (0.35 + 0.13 * i)) + 4 * Math.sin(v + i);
+    const y3 = h * (ymin + bande * (0.05 + 0.12 * i)) + 5 * Math.cos(v * 1.3 + i);
+    const c1 = y0 + h * bande * (0.30 - 0.08 * i) * (i % 2 ? 1 : -1);
+    const c2 = y3 + h * bande * 0.30 * Math.sin(v + i * 0.7);
+    courbes.push(`M -5 ${y0.toFixed(1)} C ${(l * 0.35).toFixed(1)} ${c1.toFixed(1)}, ${(l * 0.6).toFixed(1)} ${c2.toFixed(1)}, ${(l + 5).toFixed(1)} ${y3.toFixed(1)}`);
+  }
+  const trait = (d, i) => {
+    const o = (0.55 + 0.45 * Math.sin(v * 2 + i)).toFixed(2);
+    return `<g opacity="${o}"><path d="${d}" stroke="#1D6BFF" stroke-width="2.6" fill="none" filter="url(#fl${v})" opacity=".55"/>
+      <path d="${d}" stroke="url(#gl${v})" stroke-width=".7" fill="none"/>
+      <path d="${d}" stroke="#D3F2FD" stroke-width=".22" fill="none" opacity=".9"/></g>`;
+  };
+  return `<svg class="lumieres" viewBox="0 0 ${l} ${h}" width="${l}mm" height="${h}mm" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+    <defs><filter id="fl${v}" x="-10%" y="-50%" width="120%" height="200%"><feGaussianBlur stdDeviation="1.6"/></filter>
+    <linearGradient id="gl${v}" x1="0" x2="1"><stop offset="0" stop-color="#63B8FD" stop-opacity="0"/><stop offset=".35" stop-color="#63B8FD"/><stop offset=".8" stop-color="#9DD7FF"/><stop offset="1" stop-color="#63B8FD" stop-opacity=".2"/></linearGradient></defs>
+    ${courbes.map(trait).join('')}</svg>`;
+}
+// Fonds sombres précalculés en JPEG (le flou des flux lumineux alourdirait le PDF).
+const FONDS = {};
+async function preparerFonds(page) {
+  const vues = { couv: [1, 0.06, 0.40], ouv: [3, 0.03, 0.30], dos: [4, 0.50, 0.85] };
+  await page.setViewportSize({ width: 794, height: 1123 });
+  for (const [cle, [v, a, b]] of Object.entries(vues)) {
+    await page.setContent(`<!doctype html><html><head><style>*{margin:0}body{width:210mm;height:297mm;background:${FOND};overflow:hidden}svg{position:absolute;left:0;top:0;width:100%;height:100%}</style></head><body>${lumieres(210, 297, v, a, b)}</body></html>`);
+    const buf = await page.screenshot({ type: 'jpeg', quality: 84, clip: { x: 0, y: 0, width: 794, height: 1123 } });
+    FONDS[cle] = 'data:image/jpeg;base64,' + buf.toString('base64');
+  }
+}
+const FOND = `radial-gradient(150mm 120mm at 88% 14%,#0E32A2 0%,rgba(14,50,162,0) 70%),radial-gradient(130mm 130mm at 6% 96%,#0A2A8C 0%,rgba(10,42,140,0) 70%),linear-gradient(165deg,#03143C 0%,#02246B 55%,#020845 100%)`;
+
 function contexte(m) {
   const d = new Date(m.date + 'T12:00:00');
   let numero = 1, suivant = null;
@@ -116,8 +151,8 @@ const CSS = (A, AC) => `${POLICES}
   .couv,.ouv,.dos,.bref{page:plein;width:210mm;height:296.6mm;position:relative;overflow:hidden;break-after:page}
 
   /* Couverture */
-  .couv{background:var(--navy);color:#fff}
-  .couv::before{content:"";position:absolute;inset:0;background:radial-gradient(120mm 120mm at 165mm 120mm,color-mix(in srgb,${A} 38%,transparent),transparent 70%)}
+  .couv{background:#03143C url(${FONDS.couv}) 0 0/100% 100% no-repeat;color:#fff}
+  .lumieres{position:absolute;left:0;top:0;width:100%;height:100%}
   .couv-motif{position:absolute;right:14mm;top:44mm}
   .couv-haut{position:absolute;left:22mm;right:22mm;top:20mm;display:flex;justify-content:space-between;align-items:center}
   .marque{display:flex;align-items:center;gap:3.5mm}
@@ -175,14 +210,19 @@ const CSS = (A, AC) => `${POLICES}
   .intro .key-points li strong{display:block;font-size:10.5pt;color:var(--navy);margin-bottom:1mm;line-height:1.35}
 
   /* Ouvertures de chapitre */
-  .ouv{background:var(--tint)}
-  .ouv::before{content:"";position:absolute;left:0;top:0;bottom:0;width:5mm;background:var(--a)}
-  .ouv .gros{position:absolute;right:16mm;top:16mm;font-size:120mm;line-height:.8;font-weight:800;letter-spacing:-6mm;color:transparent;-webkit-text-stroke:.5mm color-mix(in srgb,${A} 45%,#fff)}
+  .ouv{background:#03143C url(${FONDS.ouv}) 0 0/100% 100% no-repeat;color:#fff}
+  .ouv .gros{position:absolute;right:16mm;top:16mm;font-size:120mm;line-height:.8;font-weight:800;letter-spacing:-6mm;color:transparent;-webkit-text-stroke:.5mm rgba(99,184,253,.6)}
   .ouv .cont{position:absolute;left:26mm;right:26mm;top:118mm}
   .ouv .eyebrow{margin-bottom:5mm}
   .ouv h2{font-size:28pt;line-height:1.1;font-weight:800;color:var(--navy);letter-spacing:-.5pt;max-width:150mm;text-wrap:balance}
   .ouv .filet{width:22mm;height:1.6mm;background:var(--a);margin:9mm 0 9mm}
-  .ouv .dans{font-size:7.5pt;font-weight:800;letter-spacing:1.4pt;text-transform:uppercase;color:var(--navy);margin-bottom:3mm}
+  .ouv .dans{font-size:7.5pt;font-weight:800;letter-spacing:1.4pt;text-transform:uppercase;color:#fff;margin-bottom:3mm}
+  .ouv .eyebrow{color:var(--ac)}
+  .ouv h2{color:#fff!important}
+  .ouv .filet{background:var(--ac)!important}
+  .ouv ul{border-top-color:rgba(255,255,255,.18)!important}
+  .ouv ul li{color:#D6E2F5!important;border-bottom-color:rgba(255,255,255,.18)!important}
+  .ouv ul li::before{color:var(--ac)!important}
   .ouv ul{list-style:none;max-width:140mm;border-top:.5pt solid #CBD5E1}
   .ouv ul li{padding:2.6mm 0 2.6mm 7mm;border-bottom:.5pt solid #CBD5E1;font-size:10pt;font-weight:600;color:#334155;position:relative}
   .ouv ul li::before{content:"→";position:absolute;left:0;color:var(--a);font-weight:800}
@@ -217,7 +257,7 @@ const CSS = (A, AC) => `${POLICES}
   tr{break-inside:avoid}
 
   .outil{margin:8mm 0;border:.6pt solid #CBD5E1;border-radius:2mm;overflow:hidden;break-inside:avoid}
-  .outil>h3,.outil>h4{margin:0!important;background:var(--navy);color:#fff;padding:4mm 6mm;font-size:11pt;font-weight:800;display:flex;align-items:center;gap:3mm;max-width:none}
+  .outil>h3,.outil>h4{margin:0!important;background:linear-gradient(100deg,#03143C,#0E32A2);color:#fff;padding:4mm 6mm;font-size:11pt;font-weight:800;display:flex;align-items:center;gap:3mm;max-width:none}
   .outil>h3::before,.outil>h4::before{content:attr(data-lab);display:inline-block;width:auto;height:auto;background:var(--ac);color:var(--navy);font-size:6.8pt;letter-spacing:1pt;padding:1mm 2mm;border-radius:.8mm;margin:0}
   .outil>*:not(h3):not(h4){margin-left:6mm;margin-right:6mm;max-width:none}
   .outil>*:nth-child(2){margin-top:5mm}.outil>*:last-child{margin-bottom:5mm}
@@ -230,7 +270,7 @@ const CSS = (A, AC) => `${POLICES}
   .faq-item h3{font-size:10.8pt!important;margin:0 0 2mm!important}
   .faq-item h3{background:none!important;padding-top:0!important}
 
-  .conclusion-box{break-before:page;background:var(--navy);color:#C7D2E5;border-radius:2mm;padding:16mm 14mm 12mm;margin:28mm 0 4mm;break-inside:avoid;font-size:11pt;line-height:1.7;position:relative;overflow:hidden}
+  .conclusion-box{break-before:page;background:${FOND};color:#C7D2E5;border-radius:2mm;padding:16mm 14mm 12mm;margin:28mm 0 4mm;break-inside:avoid;font-size:11pt;line-height:1.7;position:relative;overflow:hidden}
   .conclusion-box::before{content:"Conclusion";display:block;font-size:7.5pt;font-weight:800;letter-spacing:1.6pt;text-transform:uppercase;color:var(--ac);margin-bottom:5mm}
   .conclusion-box::after{content:"";position:absolute;right:-30mm;bottom:-30mm;width:90mm;height:90mm;border-radius:50%;background:radial-gradient(circle,color-mix(in srgb,${A} 50%,transparent),transparent 70%)}
   .conclusion-box>*{position:relative;z-index:1}
@@ -251,7 +291,7 @@ const CSS = (A, AC) => `${POLICES}
   .services{display:grid;grid-template-columns:1fr 1fr;gap:0 9mm;margin:7mm 0 0;border-top:1.5pt solid var(--navy)}
   .services a{display:block;padding:3mm 0;border-bottom:.5pt solid var(--rule);color:var(--navy);font-weight:700;font-size:9.4pt}
   .services a::before{content:"→  ";color:var(--a)}
-  .cta-final{background:var(--navy);color:#C7D2E5;border-radius:2mm;padding:10mm;margin-top:12mm;position:relative;overflow:hidden}
+  .cta-final{background:${FOND};color:#C7D2E5;border-radius:2mm;padding:10mm;margin-top:12mm;position:relative;overflow:hidden}
   .cta-final::after{content:"";position:absolute;right:-25mm;top:-25mm;width:70mm;height:70mm;border-radius:50%;background:radial-gradient(circle,color-mix(in srgb,${A} 55%,transparent),transparent 70%)}
   .cta-final h3{color:#fff;font-size:17pt;font-weight:800;margin:0 0 3mm;position:relative}
   .cta-final p{position:relative;max-width:130mm}
@@ -259,8 +299,7 @@ const CSS = (A, AC) => `${POLICES}
   .btn.sec{background:transparent;border:.8pt solid rgba(255,255,255,.45)}
 
   /* Quatrième de couverture */
-  .dos{background:var(--navy);color:#fff}
-  .dos::before{content:"";position:absolute;inset:0;background:radial-gradient(130mm 130mm at 40mm 250mm,color-mix(in srgb,${A} 30%,transparent),transparent 70%)}
+  .dos{background:#03143C url(${FONDS.dos}) 0 0/100% 100% no-repeat;color:#fff}
   .dos .motif{position:absolute;right:16mm;top:132mm;opacity:.6}
   .dos .bloc{position:absolute;left:22mm;right:22mm;top:30mm}
   .dos .prochain{font-size:7.5pt;font-weight:800;letter-spacing:1.6pt;text-transform:uppercase;color:var(--ac);margin-bottom:5mm}
@@ -383,8 +422,10 @@ function retoucher(site) {
   if (!meta) { console.error('Usage : node _outils/livre_blanc.js _outils/livres-blancs/<slug>.json'); process.exit(1); }
   const m = JSON.parse(fs.readFileSync(meta, 'utf8'));
   const corps = fs.readFileSync(meta.replace(/\.json$/, '.html'), 'utf8');
-  const A = COULEURS[m.couleur] || COULEURS.bleu;
-  const AC = CLAIRS[m.couleur] || CLAIRS.bleu;
+  // Codes couleur de TechRepair Content pour tous les numéros (choix de Goradieme, 01/11/2026) :
+  // bleu du site sur fond clair, bleu lumineux sur fond sombre.
+  const A = '#1A56DB';
+  const AC = '#63B8FD';
   const c = contexte(m);
   const sortie = path.join(RACINE, 'livres-blancs');
   fs.mkdirSync(sortie, { recursive: true });
@@ -394,6 +435,7 @@ function retoucher(site) {
   const ctx = await b.newContext({ deviceScaleFactor: 2 });
   const p = await ctx.newPage();
   await p.route('**/*', r => r.request().url().startsWith('data:') || r.request().url().startsWith('about:') ? r.continue() : r.abort());
+  await preparerFonds(p);
 
   const rendre = async (pages, fichier) => {
     await p.setContent(document_(m, corps, c, A, AC, pages), { waitUntil: 'load' });
