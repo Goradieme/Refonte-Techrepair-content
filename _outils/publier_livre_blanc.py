@@ -358,6 +358,18 @@ def main(chemin):
         b = _re.sub(r"<!-- livre-blanc-du-mois:debut -->[\s\S]*?<!-- livre-blanc-du-mois:fin -->", lambda _m: encart, b)
         bh.write_text(b, encoding="utf-8")
 
+    # --- Section « Notre livre blanc du mois » de la page service --------------------
+    sp = RACINE / "service-livres-blancs.html"
+    if sp.exists():
+        t = sp.read_text(encoding="utf-8")
+        if "<!-- livre-blanc-service:debut -->" in t:
+            bloc = _re.search(r"<!-- livre-blanc-service:debut -->[\s\S]*?<!-- livre-blanc-service:fin -->", t).group(0)
+            ancien = _re.search(r"/livres-blancs/([a-z0-9-]+)\.html", bloc).group(1)
+            nouveau = bloc.replace(ancien, slug)
+            nouveau = _re.sub(r"-cover\.jpg\?v=\d+", f"-cover.jpg?v={v if 'v' in dir() else 1}", nouveau)
+            nouveau = _re.sub(r'(<h2 class="section-title" style="color:#fff">)[\s\S]*?(</h2>)', lambda _m: _m.group(1) + esc(m["titre"]) + _m.group(2), nouveau)
+            sp.write_text(t.replace(bloc, nouveau), encoding="utf-8")
+
     # --- sitemap.xml -------------------------------------------------------------
     sm = RACINE / "sitemap.xml"
     s = sm.read_text(encoding="utf-8")
