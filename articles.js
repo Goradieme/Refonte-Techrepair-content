@@ -213,4 +213,17 @@ const ARTICLES = [
     motCle:   "charte éditoriale",
     metaDesc: "Charte éditoriale B2B : audit de vingt contenus, méthode en six étapes, modèle en neuf rubriques et exemple réécrit pour que vos auteurs parlent d'une voix."
   },
+  {
+    titre:    "Génération de leads B2B en SaaS : les contenus qui remplissent vraiment le pipeline",
+    extrait:  "Beaucoup de formulaires, peu de rendez-vous ? Audit CRM en une journée, définition du lead qualifié avec les ventes, trois couches de contenus et matrice contenu, signal, action.",
+    auteur:   "Rédaction TechRepair Content",
+    date:     "2026-11-02",
+    categorie:"saas",
+    lecture:  "12 min",
+    lien:     "articles/article-generation-leads-b2b-saas.html",
+    image:    "articles/generation-leads-b2b-saas-cover.jpg",
+    slug:     "generation-leads-b2b-saas",
+    motCle:   "génération de leads b2b",
+    metaDesc: "Génération de leads B2B en SaaS : audit des 90 derniers jours, définition du lead qualifié, trois couches de contenus et matrice signal-action prête à copier."
+  },
 ];

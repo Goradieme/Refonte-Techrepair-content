@@ -1,0 +1,716 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Génération de leads B2B : quels contenus produire en SaaS</title>
+<meta name="description" content="Génération de leads B2B en SaaS : audit des 90 derniers jours, définition du lead qualifié, trois couches de contenus et matrice signal-action prête à copier."/>
+<meta name="author" content="TechRepair Content"/>
+<link rel="canonical" href="https://www.techrepaircontent.com/articles/article-generation-leads-b2b-saas.html"/>
+<meta property="og:title" content="Génération de leads B2B en SaaS : les contenus qui remplissent vraiment le pipeline"/>
+<meta property="og:description" content="Génération de leads B2B en SaaS : audit des 90 derniers jours, définition du lead qualifié, trois couches de contenus et matrice signal-action prête à copier."/>
+<meta property="og:type" content="article"/>
+<meta property="og:url" content="https://www.techrepaircontent.com/articles/article-generation-leads-b2b-saas.html"/>
+<meta property="og:locale" content="fr_FR"/>
+<meta property="og:site_name" content="TechRepair Content"/>
+<meta property="og:image" content="https://www.techrepaircontent.com/articles/generation-leads-b2b-saas-cover.jpg"/>
+<meta property="article:published_time" content="2026-11-02"/>
+<meta name="twitter:card" content="summary_large_image"/>
+
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet"/>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --blue:#1A56DB;--blue-dark:#1342b0;--blue-light:#EFF6FF;
+  --navy:#0F1B3D;--text:#1e293b;--muted:#64748b;
+  --border:#e2e8f0;--green:#10b981;--orange:#f97316;--purple:#7c3aed;
+  --radius:12px;
+}
+html{scroll-behavior:smooth}
+body{font-family:'Manrope',sans-serif;color:var(--text);background:#fff;font-size:15px;line-height:1.6}
+a{text-decoration:none;color:inherit}
+nav{position:sticky;top:0;z-index:200;background:#fff;border-bottom:1px solid var(--border);padding:0 32px;display:flex;align-items:center;gap:20px;height:62px;}
+.logo{display:flex;align-items:center;gap:10px;flex-shrink:0}
+.logo-box{width:36px;height:36px;background:var(--blue);border-radius:7px;display:grid;place-items:center;color:#fff;font-weight:800;font-size:13px;letter-spacing:-.5px}
+.logo-text{font-size:13px;font-weight:700;line-height:1.2;color:var(--navy)}
+.logo-text span{display:block;color:var(--muted);font-weight:500;font-size:11px}
+.nav-links{display:flex;gap:22px;margin-left:auto;align-items:center}
+.nav-links a{font-size:13.5px;font-weight:500;color:var(--muted);transition:color .2s}
+.nav-links a:hover,.nav-links a.active{color:var(--blue)}
+.nav-links a.active{border-bottom:2px solid var(--blue);padding-bottom:1px}
+.btn-nav{background:var(--blue);color:#fff;border:none;border-radius:8px;padding:9px 18px;font-weight:700;font-size:13.5px;cursor:pointer;white-space:nowrap;font-family:inherit}
+@media(max-width:600px){nav{padding:0 16px}.nav-links a:not(:last-child){display:none}}
+.hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;background:none;border:none;padding:4px}
+.hamburger span{display:block;width:24px;height:2px;background:var(--navy);border-radius:2px;transition:all .3s}
+.hamburger.open span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+.hamburger.open span:nth-child(2){opacity:0}
+.hamburger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+.mobile-menu{display:none;position:fixed;top:62px;left:0;right:0;background:#fff;border-bottom:1px solid var(--border);padding:16px 24px;flex-direction:column;gap:4px;z-index:199;box-shadow:0 8px 24px rgba(0,0,0,.08)}
+.mobile-menu.open{display:flex}
+.mobile-menu a{font-size:15px;font-weight:600;color:var(--muted);padding:10px 0;border-bottom:1px solid var(--border);transition:color .2s}
+.mobile-menu a:last-of-type{border-bottom:none}
+.mobile-menu a:hover,.mobile-menu a.active{color:var(--blue)}
+.mobile-menu .btn-nav-mobile{margin-top:10px;background:var(--blue);color:#fff;border:none;border-radius:8px;padding:12px;font-weight:700;font-size:14px;cursor:pointer;font-family:inherit;width:100%}
+@media(max-width:768px){.hamburger{display:flex}.nav-links{display:none}}
+
+.breadcrumb{max-width:1100px;margin:0 auto;padding:18px 32px 0;font-size:12.5px;color:var(--muted)}
+.breadcrumb a{color:var(--muted)}
+.breadcrumb a:hover{color:var(--blue)}
+
+.article-hero{max-width:1100px;margin:0 auto;padding:24px 32px 0}
+.ah-badge{display:inline-flex;align-items:center;gap:5px;background:#F5F3FF;color:var(--purple);font-size:11px;font-weight:700;padding:4px 12px;border-radius:20px;margin-bottom:16px}
+.article-hero h1{font-size:34px;font-weight:800;line-height:1.2;color:var(--navy);max-width:820px;margin-bottom:16px}
+.ah-meta{display:flex;align-items:center;gap:12px;font-size:13px;color:var(--muted);margin-bottom:24px;flex-wrap:wrap}
+.ah-dot{width:4px;height:4px;border-radius:50%;background:var(--border)}
+.ah-cover{width:100%;border-radius:20px;overflow:hidden;margin-bottom:8px;border:1px solid var(--border)}
+.ah-cover img{width:100%;height:auto;display:block}
+
+.layout{max-width:1100px;margin:0 auto;padding:40px 32px 56px;display:grid;grid-template-columns:1fr 300px;gap:44px;align-items:start}
+.content h2{font-size:24px;font-weight:800;color:var(--navy);margin:40px 0 14px;line-height:1.3}
+.content h3{font-size:18px;font-weight:800;color:var(--navy);margin:28px 0 10px;line-height:1.3}
+.content p{margin-bottom:14px;color:var(--text);font-size:15px;line-height:1.75}
+.content ul,.content ol{margin:0 0 16px 20px;color:var(--text)}
+.content li{margin-bottom:7px;line-height:1.7}
+.content strong{color:var(--navy)}
+.content em{color:var(--muted)}
+.content hr{border:none;border-top:1px solid var(--border);margin:36px 0}
+.intro-lead{font-size:16.5px;color:var(--muted);line-height:1.8;margin-bottom:20px}
+.toc-box{background:var(--blue-light);border:1px solid #c3d6f8;border-radius:16px;padding:22px 24px;margin:24px 0 36px}
+.toc-box h3{margin:0 0 12px;font-size:14px;color:var(--navy)}
+.toc-box ol{margin:0 0 0 18px}
+.toc-box li{font-size:13.5px;margin-bottom:6px}
+.toc-box a{color:var(--blue-dark);font-weight:600}
+.toc-box a:hover{text-decoration:underline}
+.callout{background:#f8fafc;border-left:3px solid var(--blue);border-radius:8px;padding:16px 20px;margin:18px 0;font-size:14px}
+.callout strong{display:block;margin-bottom:4px;color:var(--navy)}
+.benefit{font-size:13.5px;color:var(--muted);font-style:italic;margin:-6px 0 16px}
+table{width:100%;border-collapse:collapse;margin:18px 0 22px;font-size:13.5px}
+th,td{border:1px solid var(--border);padding:10px 12px;text-align:left;vertical-align:top}
+th{background:#f8fafc;color:var(--navy);font-weight:700}
+.case-card{border:1px solid var(--border);border-radius:14px;padding:20px 22px;margin-bottom:18px;background:#fafbfc}
+.case-card h3{margin-top:0}
+.faq-item{border-bottom:1px solid var(--border);padding:16px 0}
+.faq-item:last-child{border-bottom:none}
+.faq-item p.question{font-weight:800;color:var(--navy);margin-bottom:6px;font-size:15px}
+.conclusion-box{background:linear-gradient(135deg,var(--navy),#1e3a6e);border-radius:18px;padding:32px;margin-top:32px;color:#fff}
+.conclusion-box p{color:#cbd5e1}
+.conclusion-box strong{color:#fff}
+.conclusion-box .final-cta{display:inline-block;margin-top:14px;background:var(--blue);color:#fff;border-radius:8px;padding:12px 22px;font-weight:700;font-size:14px}
+
+.sidebar{display:flex;flex-direction:column;gap:20px;position:sticky;top:80px}
+.sidebar-card{background:#f8fafc;border:1px solid var(--border);border-radius:16px;padding:20px}
+.sidebar-card h3{font-size:12.5px;font-weight:800;color:var(--navy);margin-bottom:14px;text-transform:uppercase;letter-spacing:.4px}
+.mini-toc{display:flex;flex-direction:column;gap:9px}
+.mini-toc a{font-size:12.5px;color:var(--muted);line-height:1.5}
+.mini-toc a:hover{color:var(--blue)}
+.author-card{display:flex;gap:10px;align-items:center}
+.author-avatar{width:38px;height:38px;border-radius:50%;background:var(--blue);color:#fff;display:grid;place-items:center;font-weight:800;font-size:13px}
+.author-name{font-size:13px;font-weight:700;color:var(--navy)}
+.author-role{font-size:11.5px;color:var(--muted)}
+.guide-card{background:linear-gradient(135deg,#f0f5ff,#dce9ff);border-color:#c3d6f8}
+.guide-card p{font-size:12.5px;color:var(--muted);line-height:1.6;margin-bottom:14px}
+.guide-btn{display:block;text-align:center;background:var(--blue);color:#fff;border-radius:8px;padding:11px;font-size:13px;font-weight:700;transition:background .2s}
+.guide-btn:hover{background:var(--blue-dark)}
+
+.nl-band{background:var(--blue);padding:48px 32px}
+.nl-band-inner{max-width:700px;margin:0 auto;text-align:center}
+.nl-band h2{font-size:26px;font-weight:800;color:#fff;margin-bottom:10px}
+.nl-band p{color:rgba(255,255,255,.8);font-size:14px;margin-bottom:24px}
+.nl-band-form{display:flex;gap:10px;max-width:440px;margin:0 auto;flex-wrap:wrap}
+.nl-band-input{flex:1;border:none;border-radius:8px;padding:12px 16px;font-size:14px;font-family:inherit;outline:none;min-width:200px}
+.nl-band-btn{background:var(--navy);color:#fff;border:none;border-radius:8px;padding:12px 20px;font-size:14px;font-weight:700;cursor:pointer;font-family:inherit;white-space:nowrap}
+.nl-band-note{font-size:11.5px;color:rgba(255,255,255,.6);margin-top:10px}
+
+.cta-band{background:var(--navy);padding:60px 32px}
+.cta-inner{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:1fr auto;gap:48px;align-items:center}
+.cta-band h2{font-size:28px;font-weight:800;color:#fff;margin-bottom:9px}
+.cta-band>div>p{color:#94a3b8;font-size:13.5px;margin-bottom:24px;max-width:380px}
+.cta-btns{display:flex;gap:10px;flex-wrap:wrap}
+.btn-white{background:#fff;color:var(--navy);border-radius:8px;padding:11px 20px;font-weight:700;font-size:13.5px;display:inline-flex;align-items:center;gap:7px;cursor:pointer;border:none;font-family:inherit}
+.btn-ghost-cta{background:transparent;color:#fff;border:1.5px solid rgba(255,255,255,.3);border-radius:8px;padding:11px 20px;font-weight:700;font-size:13.5px;cursor:pointer;font-family:inherit}
+.btn-ghost-cta:hover{border-color:#fff}
+.cta-checks{display:flex;flex-direction:column;gap:11px;flex-shrink:0}
+.cta-check{display:flex;align-items:center;gap:9px;color:#cbd5e1;font-size:13px}
+.cta-ci{color:var(--green);font-weight:700}
+
+footer{background:var(--navy);border-top:1px solid rgba(255,255,255,.07);padding:44px 32px 26px}
+.footer-inner{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:2fr 1fr 1fr 1fr 1fr;gap:32px}
+.footer-brand p{color:#64748b;font-size:12px;margin-top:8px;max-width:185px;line-height:1.7}
+footer h4{font-size:10.5px;font-weight:700;color:#94a3b8;text-transform:uppercase;letter-spacing:.5px;margin-bottom:13px}
+.flinks{list-style:none}
+.flinks li{margin-bottom:8px}
+.flinks a{color:#64748b;font-size:12px;transition:color .2s}
+.flinks a:hover{color:#fff}
+.fsocial{display:flex;gap:7px;margin-top:11px}
+.fsoc{width:29px;height:29px;border-radius:6px;background:rgba(255,255,255,.07);display:grid;place-items:center;font-size:11px;color:#94a3b8;transition:background .2s}
+.fsoc:hover{background:var(--blue);color:#fff}
+.footer-bottom{max-width:1100px;margin:24px auto 0;padding-top:16px;border-top:1px solid rgba(255,255,255,.07);display:flex;justify-content:space-between;color:#475569;font-size:11px;flex-wrap:wrap;gap:8px}
+
+@media(max-width:960px){.layout{grid-template-columns:1fr}.sidebar{position:static;display:grid;grid-template-columns:1fr 1fr;gap:16px}.cta-inner{grid-template-columns:1fr}.footer-inner{grid-template-columns:1fr 1fr}}
+@media(max-width:600px){.article-hero h1{font-size:26px}.sidebar{grid-template-columns:1fr}.nl-band-form{flex-direction:column}.footer-inner{grid-template-columns:1fr}}
+
+.btn-demo{position:relative;background:var(--blue);color:#fff;border:none;border-radius:8px;padding:9px 16px;font-weight:800;font-size:13.5px;white-space:nowrap;font-family:inherit;display:inline-flex;align-items:center;gap:6px;text-decoration:none;cursor:pointer;transition:background .2s,transform .2s}
+.btn-demo:hover{background:var(--blue-dark);transform:translateY(-1px)}
+.btn-demo .star{color:#fff;font-size:14px;line-height:1;font-weight:800}
+.btn-demo-badge{position:absolute;top:-9px;right:-8px;background:#F59E0B;color:#fff;font-size:8.5px;font-weight:800;padding:2px 6px;border-radius:999px;letter-spacing:.3px;box-shadow:0 2px 6px rgba(245,158,11,.45);animation:demoPulse 2.2s ease-in-out infinite}
+@keyframes demoPulse{0%,100%{transform:scale(1)}50%{transform:scale(1.1)}}
+.nav-tools{position:relative;display:inline-block}
+.nav-tools .chevron{font-size:10px;margin-left:2px;transition:transform .15s}
+.nav-tools:hover .chevron{transform:rotate(180deg)}
+.nav-tools-menu{display:none;position:absolute;top:calc(100% + 8px);right:0;background:#fff;border:1px solid var(--border);border-radius:12px;box-shadow:0 12px 32px rgba(15,27,61,.15);min-width:220px;padding:6px;z-index:260}
+.nav-tools:hover .nav-tools-menu,.nav-tools:focus-within .nav-tools-menu{display:block}
+.nav-tools-menu a{display:flex;align-items:center;gap:9px;padding:10px 12px;border-radius:8px;font-size:13.5px;font-weight:600;color:var(--navy);text-decoration:none;white-space:nowrap}
+.nav-tools-menu a:hover{background:var(--blue-light);color:var(--blue)}
+.nav-tools-menu a .ico{font-size:15px}
+.btn-demo-mobile{position:relative;margin-top:10px;background:var(--blue);color:#fff;border-radius:8px;padding:12px;font-weight:800;font-size:14px;font-family:inherit;width:100%;display:flex;align-items:center;justify-content:center;gap:7px;text-decoration:none;border-bottom:none!important}
+.btn-demo-mobile .star{color:#fff;font-size:15px;font-weight:800}
+.mobile-menu a.btn-demo-mobile{color:#fff}
+.btn-demo-mobile .btn-demo-badge{top:-9px;right:14px;animation:none}
+
+/* ══ Liens vers les sources citées ══ */
+a.src{color:var(--blue);font-weight:600;text-decoration:underline;text-underline-offset:2px;text-decoration-thickness:1px;transition:color .2s}
+a.src:hover{color:var(--blue-dark);text-decoration-thickness:2px}
+/* ══ Mise en forme éditoriale (gabarit 2026) ══ */
+.ah-cover{max-width:960px;box-shadow:0 18px 50px rgba(15,27,61,.18);border:none}
+.key-points{border:1px solid var(--border);border-top:3px solid var(--blue);border-radius:0 0 14px 14px;padding:20px 24px 8px;margin:6px 0 30px;background:#fff}
+.key-points h3{margin:0 0 12px!important;font-size:12px!important;letter-spacing:1.4px;text-transform:uppercase;color:var(--blue-dark)!important}
+.key-points ul{margin-left:18px}
+.key-points li{margin-bottom:10px}
+.stat-row{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:14px;margin:20px 0 24px}
+.stat{border-left:3px solid var(--blue);padding:4px 0 4px 14px}
+.stat b{display:block;font-size:30px;font-weight:800;color:var(--navy);line-height:1.1}
+.stat span{font-size:12.5px;color:var(--muted);line-height:1.45;display:block;margin-top:4px}
+.content table th{font-size:12.5px;text-transform:uppercase;letter-spacing:.4px}
+.content table tr:nth-child(even) td{background:#fafbfd}
+.sources{font-size:13px;color:var(--muted);margin-left:20px}
+.sources li{margin-bottom:6px;line-height:1.6}
+.sources a{color:var(--blue-dark);text-decoration:underline;text-underline-offset:2px}
+@media(max-width:600px){.content table{display:block;overflow-x:auto}.stat b{font-size:26px}}
+.content p a:not(.final-cta),.content li a,.content td a{color:var(--blue);font-weight:600;text-decoration:underline;text-underline-offset:2px;text-decoration-thickness:1px}
+.content p a:not(.final-cta):hover,.content li a:hover,.content td a:hover{color:var(--blue-dark);text-decoration-thickness:2px}
+</style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "BlogPosting",
+      "headline": "Génération de leads B2B en SaaS : les contenus qui remplissent vraiment le pipeline",
+      "description": "Génération de leads B2B en SaaS : audit des 90 derniers jours, définition du lead qualifié, trois couches de contenus et matrice signal-action prête à copier.",
+      "datePublished": "2026-11-02",
+      "dateModified": "2026-11-02",
+      "author": {
+        "@type": "Organization",
+        "name": "TechRepair Content",
+        "url": "https://www.techrepaircontent.com/apropos"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "TechRepair Content",
+        "url": "https://www.techrepaircontent.com/"
+      },
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://www.techrepaircontent.com/articles/article-generation-leads-b2b-saas.html"
+      },
+      "inLanguage": "fr-FR",
+      "keywords": "génération de leads b2b",
+      "articleSection": "SaaS B2B",
+      "wordCount": 2492,
+      "image": "https://www.techrepaircontent.com/articles/generation-leads-b2b-saas-cover.jpg"
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Comment générer des leads B2B avec le contenu ?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "En combinant des pages pour les acheteurs qui comparent, un actif téléchargeable (livre blanc, benchmark, modèle) qui identifie les visiteurs sérieux et des preuves pour le comité d'achat. Chaque contenu se juge au nombre de leads acceptés par les ventes."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Qu'est-ce qu'un lead qualifié en B2B ?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Un contact qui correspond à votre cible (taille, secteur, fonction) et qui cherche activement une solution : comparatif, page tarifs ou étude de cas consultés, visites répétées. La définition s'écrit avec l'équipe commerciale."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Faut-il mettre son livre blanc derrière un formulaire ?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Oui pour identifier des comptes en recherche active avec un contenu rare ; non si la priorité est l'audience et les liens. Le compromis courant : un premier chapitre en accès libre, le document complet contre un e-mail."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Quels outils de génération de leads B2B utiliser ?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Le CRM d'abord, qui porte la définition du lead qualifié et le statut donné par les ventes ; puis un outil de formulaires et d'automatisation des e-mails, et un outil d'analyse d'audience. La règle commune entre marketing et ventes compte plus que les outils."
+          }
+        }
+      ]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Accueil",
+          "item": "https://www.techrepaircontent.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Blog",
+          "item": "https://www.techrepaircontent.com/blog"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Génération de leads B2B",
+          "item": "https://www.techrepaircontent.com/articles/article-generation-leads-b2b-saas.html"
+        }
+      ]
+    }
+  ]
+}
+</script>
+</head>
+<body>
+
+<nav>
+  <div class="logo">
+    <div class="logo-box">TRD</div>
+    <div class="logo-text">TechRepair<span>Content</span></div>
+  </div>
+  <div class="nav-links">
+    <a href="/">Accueil</a>
+    <a href="/services">Services</a>
+    <a href="/secteurs">Secteurs</a>
+    <a href="/apropos">À propos</a>
+    <a href="/blog" class="active">Blog</a>
+    <div class="nav-tools">
+      <button class="btn-demo" type="button"><span class="star">★</span>Outils IA<span class="btn-demo-badge">Nouveau</span><span class="chevron">▾</span></button>
+      <div class="nav-tools-menu">
+        <a href="/agents-ia"><span class="ico">⚙️</span> Agents IA sur mesure</a>
+        <a href="/visibilite-ia"><span class="ico">💬</span> Visibilité dans les IA</a>
+        <a href="/calculateur-temps-perdu"><span class="ico">⏱️</span> Calculateur de temps perdu</a>
+        <a href="https://demo.techrepaircontent.com"><span class="ico">🤖</span> Démo avec Ted</a>
+        <a href="https://demo.techrepaircontent.com/audit-ia.html"><span class="ico">🔍</span> Audit IA gratuit</a>
+      </div>
+    </div>
+    <button class="btn-nav" onclick="window.location='/devis'">Obtenir un devis</button>
+  </div>
+  <button class="hamburger" id="hamburger" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<div class="mobile-menu" id="mobileMenu">
+  <a href="/">Accueil</a>
+  <a href="/services">Services</a>
+  <a href="/secteurs">Secteurs</a>
+  <a href="/apropos">À propos</a>
+  <a href="/blog" class="active">Blog</a>
+  <a href="https://demo.techrepaircontent.com" class="btn-demo-mobile"><span class="star">★</span>Démo avec Ted<span class="btn-demo-badge">Nouveau</span></a>
+  <a href="https://demo.techrepaircontent.com/audit-ia.html" class="btn-demo-mobile"><span class="star">★</span>Audit IA gratuit</a>
+  <button class="btn-nav-mobile" onclick="window.location='/devis'">Obtenir un devis</button>
+</div>
+
+<div class="breadcrumb">
+  <a href="/">Accueil</a> / <a href="/blog">Blog</a> / <span style="color:var(--navy)">Génération de leads B2B</span>
+</div>
+
+<div class="article-hero">
+  <span class="ah-badge" style="background:#EFF6FF;color:var(--blue-dark)">☁️ SaaS B2B</span>
+  <h1>Génération de leads B2B en SaaS : les contenus qui remplissent vraiment le pipeline</h1>
+  <div class="ah-meta">
+    <span>✍️ Rédaction TechRepair Content</span>
+    <div class="ah-dot"></div>
+    <span>Publié le 2 novembre 2026</span>
+    <div class="ah-dot"></div>
+    <span>⏱ 12 min de lecture</span>
+  </div>
+  <div class="ah-cover"><img src="generation-leads-b2b-saas-cover.jpg" alt="Génération de leads B2B : les contenus qui remplissent le pipeline d&#x27;un éditeur SaaS" width="1200" height="630" loading="eager"/></div>
+</div>
+
+<div class="layout">
+  <main class="content">
+
+<p class="intro-lead">Sur les leads que votre marketing a transmis le trimestre dernier, combien vos commerciaux ont-ils réellement rappelés&nbsp;? Et combien sont devenus des opportunités inscrites au CRM&nbsp;? Chez beaucoup d'éditeurs SaaS, personne ne connaît ces deux chiffres, alors que le tableau de bord affiche fièrement le nombre de formulaires remplis.</p>
+
+    <p>La <strong>génération de leads B2B</strong> par le contenu ne se juge pas au volume de contacts, mais à la part d'entre eux que l'équipe commerciale accepte et transforme. Le blocage tient rarement au manque de contenus, plutôt à des sujets qui attirent des curieux, à un actif de captation mal choisi et à l'absence de règle commune entre marketing et ventes. Le diagnostic prend une journée&nbsp;; le dispositif, un trimestre.</p>
+
+    <div class="key-points">
+      <h3>Points clés</h3>
+      <ul>
+        <li><strong>L'acheteur arrive avec une liste courte&nbsp;:</strong> selon 6sense (2025), 94 % des groupes d'achat ont classé leurs fournisseurs préférés avant tout premier contact avec un commercial.</li>
+        <li><strong>Un lead se mesure à son acceptation&nbsp;:</strong> l'indicateur à suivre est la part de leads que les ventes acceptent, contenu par contenu, et non le nombre de formulaires.</li>
+        <li><strong>Trois couches de contenus, trois rôles&nbsp;:</strong> des pages qui captent une intention d'achat, un actif téléchargeable qui identifie le visiteur, des preuves qui rassurent le groupe d'achat.</li>
+        <li><strong>Le signal compte plus que le canal&nbsp;:</strong> une matrice qui associe chaque contenu consommé à une action marketing ou commerciale évite les relances à l'aveugle.</li>
+      </ul>
+    </div>
+
+    <div class="toc-box">
+      <h3>📋 Sommaire</h3>
+      <ol>
+        <li><a href="#ch1">Des formulaires remplis, un pipeline vide</a></li>
+        <li><a href="#ch2">L'audit des 90 derniers jours</a></li>
+        <li><a href="#ch3">Qu'est-ce qu'un lead qualifié pour un éditeur SaaS&nbsp;?</a></li>
+        <li><a href="#ch4">Les trois couches de contenus qui génèrent des leads B2B</a></li>
+        <li><a href="#ch5">Monter le dispositif en six étapes</a></li>
+        <li><a href="#ch6">La matrice contenu, signal, action</a></li>
+        <li><a href="#ch7">Cinq raisons pour lesquelles le dispositif cale</a></li>
+        <li><a href="#ch8">Prouver que le pipeline se remplit</a></li>
+        <li><a href="#faq">Questions fréquentes</a></li>
+        <li><a href="#sources">Sources</a></li>
+      </ol>
+    </div>
+
+    <h2 id="ch1">1. Des formulaires remplis, un pipeline vide</h2>
+
+    <p>Un dispositif de contenus qui génère des leads sans générer de rendez-vous produit des contacts arrivés trop tôt, ou pour une mauvaise raison. Symptômes typiques&nbsp;: des téléchargements d'étudiants et de consultants, des commerciaux qui ne rappellent plus les leads «&nbsp;marketing&nbsp;», un coût par opportunité introuvable.</p>
+
+    <p>La cause tient au comportement des acheteurs. Le rapport 2025 de 6sense, fondé sur plus de 4 000 acheteurs en Amérique du Nord, dans la zone Europe, Moyen-Orient et Afrique et en Asie-Pacifique, indique que 94 % des groupes d'achat ont déjà classé leurs fournisseurs préférés avant le premier contact, et que ce favori l'emporte dans la grande majorité des cas. Du côté de Gartner, une enquête menée auprès de 632 acheteurs B2B montre que 61 % préfèrent acheter sans passer par un commercial, et que 73 % évitent les fournisseurs dont la prospection leur paraît hors sujet.</p>
+
+    <div class="stat-row">
+      <div class="stat"><b>94 %</b><span>des groupes d'achat ont classé leurs fournisseurs préférés avant le premier contact (6sense, novembre 2025)</span></div>
+      <div class="stat"><b>61 %</b><span>des acheteurs B2B préfèrent une expérience d'achat sans commercial (Gartner, juin 2025)</span></div>
+      <div class="stat"><b>53 %</b><span>des marketeurs B2B citent les études de cas parmi les contenus aux meilleurs résultats (CMI, octobre 2024)</span></div>
+    </div>
+
+    <p>Pour un éditeur de logiciel, la liste courte se forme donc pendant que l'acheteur lit, compare et télécharge. Les contenus étrangers à cette phase remplissent le CRM de contacts qui n'achèteront jamais, pendant que les vrais acheteurs se forgent un avis ailleurs. Les spécificités du cycle d'achat logiciel (essai, démo, comité de décision) sont décrites sur la page consacrée au <a href="/secteur-saas">marketing de contenu SaaS</a>.</p>
+
+    <h2 id="ch2">2. L'audit des 90 derniers jours</h2>
+
+    <p>Une journée et un export du CRM (HubSpot, Salesforce, Pipedrive ou équivalent) suffisent pour savoir quels contenus produisent des leads utiles aux commerciaux, et lesquels produisent du bruit.</p>
+
+    <ol>
+      <li><strong>Exportez</strong> les leads du dernier trimestre, chacun avec son point de conversion (formulaire, page, contenu téléchargé), son statut commercial et la date de son premier rendez-vous éventuel.</li>
+      <li><strong>Regroupez</strong> les sources par contenu d'origine&nbsp;: chaque livre blanc, chaque webinaire, la demande de démo, l'essai gratuit, la newsletter.</li>
+      <li><strong>Demandez aux commerciaux</strong> de marquer chaque lead d'un statut simple&nbsp;: accepté (il mérite un appel), rejeté (hors cible) ou à mûrir.</li>
+      <li><strong>Calculez</strong> trois ratios par contenu, présentés dans le tableau ci-dessous.</li>
+    </ol>
+
+    <table>
+      <thead>
+        <tr><th>Indicateur</th><th>Calcul</th><th>Signal d'alerte</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Taux d'acceptation</td><td>Leads acceptés par les ventes ÷ leads créés</td><td>Un contenu dont la majorité des leads est rejetée attire hors cible</td></tr>
+        <tr><td>Taux de rendez-vous</td><td>Leads avec un premier rendez-vous ÷ leads acceptés</td><td>Leads acceptés mais jamais rencontrés&nbsp;: le suivi est en cause, pas le contenu</td></tr>
+        <tr><td>Délai de traitement</td><td>Jours entre la conversion et le premier contact</td><td>Au-delà d'une semaine, l'intérêt du visiteur est déjà retombé</td></tr>
+      </tbody>
+    </table>
+
+    <p>Le résultat tient souvent en une phrase&nbsp;: un ou deux contenus produisent l'essentiel des leads acceptés. Ce constat, et non une intuition, décide de la suite.</p>
+
+    <h2 id="ch3">3. Qu'est-ce qu'un lead qualifié pour un éditeur SaaS&nbsp;?</h2>
+
+    <p>Un lead qualifié est un contact qui correspond à votre cible et qui a montré, par ses actions, qu'il cherche à résoudre le problème que traite votre logiciel. Les deux conditions sont nécessaires&nbsp;: un directeur financier d'une PME cible qui lit un article de culture générale n'est pas encore un lead qualifié, un étudiant qui télécharge votre benchmark non plus.</p>
+
+    <p>La définition doit être écrite et validée par les ventes au cours d'un atelier d'une heure. Elle combine trois familles de critères&nbsp;:</p>
+
+    <ul>
+      <li><strong>L'adéquation&nbsp;:</strong> taille d'entreprise, secteur, pays, fonction du contact (par exemple, entreprises de 50 à 500 salariés, fonction finance ou direction générale).</li>
+      <li><strong>Le signal&nbsp;:</strong> le contenu consommé et sa position dans le parcours. Une visite de la page tarifs, la lecture d'une étude de cas ou d'un comparatif pèsent plus qu'un article de blog.</li>
+      <li><strong>Le moment&nbsp;:</strong> la répétition des visites sur une courte période, plusieurs personnes d'une même entreprise, une demande explicite.</li>
+    </ul>
+
+    <p>Ajoutez un statut intermédiaire, «&nbsp;accepté par les ventes&nbsp;», à prononcer sous un délai convenu (deux jours ouvrés, par exemple)&nbsp;: c'est le seul retour qui permette au marketing d'améliorer ses contenus.</p>
+
+    <h2 id="ch4">4. Les trois couches de contenus qui génèrent des leads B2B</h2>
+
+    <p>Pour générer des leads B2B avec le contenu, trois couches sont nécessaires&nbsp;: capter une intention, identifier le visiteur, rassurer le groupe d'achat. La plupart des blogs SaaS n'en couvrent qu'une, avec des sujets trop larges.</p>
+
+    <table>
+      <thead>
+        <tr><th>Couche</th><th>Formats</th><th>Rôle et appel à l'action</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>1. Intention d'achat</td><td>Pages «&nbsp;alternative à&nbsp;», comparatifs, pages d'intégration, guides «&nbsp;comment choisir&nbsp;»</td><td>Être présent quand l'acheteur compare&nbsp;; essai, démo ou téléchargement de l'actif</td></tr>
+        <tr><td>2. Actif de captation</td><td>Livre blanc, benchmark chiffré, modèle de business case, grille d'évaluation</td><td>Obtenir un e-mail professionnel contre une valeur réelle&nbsp;; formulaire court</td></tr>
+        <tr><td>3. Preuve</td><td>Études de cas, page sécurité, calcul du retour sur investissement</td><td>Convaincre les autres membres du comité&nbsp;; rendez-vous avec un commercial</td></tr>
+      </tbody>
+    </table>
+
+    <h3>La couche d'intention&nbsp;: écrire pour celui qui compare</h3>
+
+    <p>Les requêtes les plus rentables d'un éditeur sont souvent tapées par quelques dizaines d'acheteurs en pleine évaluation chaque mois&nbsp;: le nom d'un concurrent suivi d'«&nbsp;alternative&nbsp;», «&nbsp;logiciel de [catégorie] pour PME&nbsp;», «&nbsp;[votre outil] et [outil voisin] intégration&nbsp;». Des <a href="/articles/article-pages-comparatives-saas.html">pages comparatives honnêtes</a> y répondent mieux qu'un article de blog générique, et elles alimentent la liste courte au moment où elle se forme.</p>
+
+    <h3>L'actif de captation&nbsp;: un livre blanc qui mérite l'e-mail</h3>
+
+    <p>Le visiteur ne laisse son adresse professionnelle que contre un contenu introuvable ailleurs&nbsp;: des données propres, une méthode complète, un modèle utilisable. Un livre blanc bien choisi sert aussi le référencement&nbsp;: sites spécialisés et médias le citent et le lient, il nourrit une série d'articles satellites et offre une source de référence aux assistants qui cherchent à <a href="/livres-blancs/visibilite-ia-b2b-guide.html">recommander un fournisseur B2B</a>. <a href="/service-livres-blancs">Un livre blanc B2B qui convertit</a> part toujours d'une objection commerciale réelle, pas d'un thème choisi en réunion.</p>
+
+    <h3>La couche de preuve&nbsp;: répondre au reste du comité</h3>
+
+    <p>Votre lead ne décide pas seul&nbsp;: son directeur financier voudra un retour sur investissement chiffré, son responsable sécurité le détail de l'hébergement et des accès. L'enquête du Content Marketing Institute publiée en octobre 2024 place d'ailleurs les études de cas (53 %) juste derrière la vidéo (58 %) parmi les formats aux meilleurs résultats, devant les livres blancs et les rapports de recherche (45 % chacun).</p>
+
+    <h2 id="ch5">5. Monter le dispositif en six étapes</h2>
+
+    <p>Comptez un trimestre, une personne côté marketing et un commercial disponible deux heures par semaine.</p>
+
+    <ol>
+      <li><strong>Semaine 1, l'audit&nbsp;:</strong> l'export CRM et les trois ratios de la partie 2, réalisés par le responsable marketing ou le marketing ops.</li>
+      <li><strong>Semaine 1, la définition&nbsp;:</strong> l'atelier d'une heure avec les ventes, conclu par une définition écrite du lead qualifié et un délai de prise en charge.</li>
+      <li><strong>Semaine 2, le sujet de l'actif&nbsp;:</strong> relevez les objections des dix dernières affaires perdues et des enregistrements d'appels de découverte. L'objection la plus fréquente devient le sujet du livre blanc ou du modèle à produire.</li>
+      <li><strong>Semaines 3 à 8, la production&nbsp;:</strong> l'actif (12 à 20 pages pour un livre blanc), sa page de téléchargement indexable et trois e-mails de suivi. Prévoyez deux entretiens d'experts internes et une relecture commerciale.</li>
+      <li><strong>Semaines 6 à 12, les satellites&nbsp;:</strong> cinq à huit articles et pages d'intention qui traitent chacun une sous-question de l'actif et y renvoient.</li>
+      <li><strong>Semaine 9, le branchement&nbsp;:</strong> les règles de routage dans le CRM, le score et la relance des téléchargements, pour que <a href="/articles/article-agent-relance-leads-saas.html">le suivi des leads téléchargés</a> ne dépende plus de la mémoire d'un commercial.</li>
+    </ol>
+
+    <h3>Formulaire ou accès libre&nbsp;: le critère de décision</h3>
+
+    <p>Le formulaire se justifie quand il s'agit d'identifier des comptes en recherche active avec un contenu rare. L'accès libre sert mieux l'audience, les liens et la citation par les moteurs IA. La formule hybride concilie les deux&nbsp;: sommaire et premier chapitre en page ouverte, document complet contre un e-mail.</p>
+
+    <div class="callout">
+      <p><strong>Ce que la CNIL autorise après un téléchargement</strong></p>
+      <p>En B2B, le consentement préalable n'est pas systématiquement requis pour prospecter par e-mail, selon les <a href="https://www.cnil.fr/fr/communication-electronique-quelles-regles" class="src" target="_blank" rel="noopener">règles rappelées par la CNIL</a> en juin 2026, à trois conditions&nbsp;: le message est en lien avec l'activité professionnelle de la personne, elle est informée de l'origine de ses données et de la finalité du message, et elle peut s'opposer simplement aux sollicitations suivantes. Indiquez-le dès le formulaire.</p>
+    </div>
+
+    <h2 id="ch6">6. La matrice contenu, signal, action</h2>
+
+    <p>Rédigée pour cet article, cette matrice se copie dans votre outil de suivi, puis s'ajuste avec les ventes. Chaque comportement y reçoit sa réaction, à la place d'une relance générique.</p>
+
+    <table>
+      <thead>
+        <tr><th>Signal observé</th><th>Ce qu'il indique</th><th>Réaction marketing, puis commerciale</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Lecture d'un article de méthode</td><td>Intérêt pour le problème&nbsp;; pas encore un lead qualifié</td><td>Proposer l'actif de captation lié&nbsp;; aucune action commerciale</td></tr>
+        <tr><td>Téléchargement du livre blanc</td><td>Recherche active&nbsp;; lead qualifié si l'adéquation est bonne</td><td>Séquence de trois e-mails utiles&nbsp;; pas d'appel avant un second signal</td></tr>
+        <tr><td>Consultation d'un comparatif</td><td>Évaluation de fournisseurs&nbsp;; lead qualifié avec adéquation</td><td>Envoyer l'étude de cas la plus proche&nbsp;; appel sous deux jours ouvrés</td></tr>
+        <tr><td>Page tarifs consultée plusieurs fois</td><td>Préparation d'un budget&nbsp;; lead qualifié</td><td>Proposer le modèle de business case&nbsp;; appel sous 24 heures</td></tr>
+        <tr><td>Plusieurs visiteurs d'un même compte</td><td>Comité en formation&nbsp;; lead qualifié</td><td>Contenus de preuve pour chaque fonction&nbsp;; approche du compte</td></tr>
+        <tr><td>Essai ouvert sans activation</td><td>Blocage à la prise en main&nbsp;; lead qualifié</td><td>Guide de démarrage ciblé&nbsp;; proposition d'aide de 15 minutes</td></tr>
+      </tbody>
+    </table>
+
+    <h3>Avant, après&nbsp;: l'appel à l'action d'un livre blanc</h3>
+
+    <p>Exemple rédigé pour l'article, pour un éditeur de logiciel de gestion des notes de frais.</p>
+
+    <p><strong>Avant&nbsp;:</strong> «&nbsp;Téléchargez notre livre blanc pour tout savoir sur les notes de frais.&nbsp;»</p>
+
+    <p><strong>Après&nbsp;:</strong> «&nbsp;Le dossier que votre DAF vous demandera&nbsp;: le coût réel d'une note de frais traitée à la main, poste par poste, avec une grille de calcul à remplir en dix minutes.&nbsp;»</p>
+
+    <p>La seconde version nomme le décideur interne et promet un résultat utilisable&nbsp;: moins de curieux, plus de visiteurs qui préparent un projet.</p>
+
+    <h2 id="ch7">7. Cinq raisons pour lesquelles le dispositif cale</h2>
+
+    <ul>
+      <li><strong>Piloter au nombre de leads&nbsp;:</strong> un objectif de volume pousse aux contenus faciles. Visez des leads acceptés par les ventes.</li>
+      <li><strong>Mettre tout derrière un formulaire&nbsp;:</strong> un article ou une page comparative fermés perdent leur trafic et leurs liens. Seul l'actif principal mérite un formulaire.</li>
+      <li><strong>Écrire un catalogue déguisé&nbsp;:</strong> un livre blanc centré sur le produit est survolé puis oublié. Le produit n'apparaît qu'en fin de document.</li>
+      <li><strong>Demander dix champs&nbsp;:</strong> nom, e-mail professionnel, entreprise et fonction suffisent&nbsp;; les données d'enrichissement font le reste.</li>
+      <li><strong>Laisser le site contredire les commerciaux&nbsp;:</strong> selon Gartner, 69 % des acheteurs trouvent sur le site d'un fournisseur des informations qui contredisent ce que leur disent ses vendeurs. Faites relire chaque contenu de preuve par un commercial avant publication.</li>
+    </ul>
+
+    <h2 id="ch8">8. Prouver que le pipeline se remplit</h2>
+
+    <p>Un dispositif qui fonctionne se voit d'abord dans le taux d'acceptation, puis dans les opportunités. Suivez quatre indicateurs, contenu par contenu, chaque mois&nbsp;:</p>
+
+    <ul>
+      <li>le taux d'acceptation des leads par les ventes, comparé à celui mesuré lors de l'audit&nbsp;;</li>
+      <li>le délai entre la conversion et le premier contact commercial&nbsp;;</li>
+      <li>le nombre d'opportunités dont au moins un contact a consommé un contenu de preuve&nbsp;;</li>
+      <li>la réponse à la question «&nbsp;comment nous avez-vous connus&nbsp;?&nbsp;» posée en rendez-vous, qui capte ce que l'outil d'analyse ne voit pas.</li>
+    </ul>
+
+    <p>Ce dernier point compte, car une part des recommandations passe par des messageries et des communautés privées que l'attribution ignore&nbsp;: <a href="/articles/article-dark-social-saas-b2b.html">le dark social</a>. Quant au délai d'observation, 6sense estime le cycle d'achat moyen à environ dix mois en 2025&nbsp;: jugez le taux d'acceptation après un trimestre, les opportunités après un cycle de vente complet.</p>
+
+    <h3>Garder la main ou déléguer l'actif principal</h3>
+
+    <p>L'audit, la définition du lead qualifié et la matrice se font en interne. L'actif de captation est le point où beaucoup d'équipes calent. Deux critères pour trancher&nbsp;: disposez-vous d'une personne libre quinze à vingt jours sur deux mois, et capable d'écrire pour un DAF ou un RSSI&nbsp;? Si la réponse est non, la rédaction de <a href="/service-livres-blancs">livres blancs et d'études de cas B2B</a> peut être confiée à un rédacteur spécialisé, l'équipe gardant la main sur le sujet et la validation.</p>
+
+    <h2 id="faq">Questions fréquentes</h2>
+
+    <div class="faq-item">
+      <h3>Comment générer des leads B2B avec le contenu&nbsp;?</h3>
+      <p>En combinant des pages pour les acheteurs qui comparent, un actif téléchargeable (livre blanc, benchmark, modèle) qui identifie les visiteurs sérieux et des preuves pour le comité d'achat. Chaque contenu se juge au nombre de leads acceptés par les ventes.</p>
+    </div>
+
+    <div class="faq-item">
+      <h3>Qu'est-ce qu'un lead qualifié en B2B&nbsp;?</h3>
+      <p>Un contact qui correspond à votre cible (taille, secteur, fonction) et qui cherche activement une solution&nbsp;: comparatif, page tarifs ou étude de cas consultés, visites répétées. La définition s'écrit avec l'équipe commerciale.</p>
+    </div>
+
+    <div class="faq-item">
+      <h3>Faut-il mettre son livre blanc derrière un formulaire&nbsp;?</h3>
+      <p>Oui pour identifier des comptes en recherche active avec un contenu rare&nbsp;; non si la priorité est l'audience et les liens. Le compromis courant&nbsp;: un premier chapitre en accès libre, le document complet contre un e-mail.</p>
+    </div>
+
+    <div class="faq-item">
+      <h3>Quels outils de génération de leads B2B utiliser&nbsp;?</h3>
+      <p>Le CRM d'abord, qui porte la définition du lead qualifié et le statut donné par les ventes&nbsp;; puis un outil de formulaires et d'automatisation des e-mails, et un outil d'analyse d'audience. La règle commune entre marketing et ventes compte plus que les outils.</p>
+    </div>
+
+    <div class="conclusion-box">
+      <p><strong>En résumé</strong></p>
+      <p>Un pipeline se remplit quand chaque contenu a un rôle précis&nbsp;: capter l'intention de ceux qui comparent, identifier les visiteurs sérieux grâce à un actif qui mérite leur e-mail, rassurer le comité d'achat avec des preuves. Commencez par l'audit des 90 derniers jours et la définition partagée du lead qualifié&nbsp;; ils indiqueront quel livre blanc ou quelle étude de cas produire en premier.</p>
+      <a href="/devis" class="final-cta">Demander un diagnostic de vos contenus de génération de leads →</a>
+    </div>
+
+    <h2 id="sources">Sources</h2>
+    <ol class="sources">
+      <li>6sense, rapport 2025 sur l'expérience d'achat des acheteurs B2B, communiqué diffusé par Business Wire, 12 novembre 2025. <a href="https://www.businesswire.com/news/home/20251112018032/en" target="_blank" rel="nofollow noopener">businesswire.com</a></li>
+      <li>Gartner, résultats d'un sondage de 632 acheteurs B2B réalisé en août et septembre 2024, diffusés le 25 juin 2025. <a href="https://www.gartner.com/en/newsroom/press-releases/2025-06-25-gartner-sales-survey-finds-61-percent-of-b2b-buyers-prefer-a-rep-free-buying-experience" target="_blank" rel="nofollow noopener">gartner.com</a></li>
+      <li>Content Marketing Institute et MarketingProfs, «&nbsp;B2B Content Marketing Benchmarks, Budgets, and Trends: Outlook for 2025&nbsp;», 9 octobre 2024. <a href="https://contentmarketinginstitute.com/b2b-research/b2b-content-marketing-trends-research-2025" target="_blank" rel="nofollow noopener">contentmarketinginstitute.com</a></li>
+      <li>CNIL, «&nbsp;Communications par voie électronique aux prospects et clients&nbsp;: quelles règles respecter&nbsp;?&nbsp;», 10 juin 2026. <a href="https://www.cnil.fr/fr/communication-electronique-quelles-regles" target="_blank" rel="nofollow noopener">cnil.fr</a></li>
+    </ol>
+
+  <!-- maillage:debut -->
+<section class="maillage" aria-label="Articles liés">
+<style>
+.maillage{margin:44px 0 8px;padding-top:28px;border-top:1px solid #e2e8f0;font-family:inherit}
+.maillage h2{font-size:20px!important;font-weight:800;color:#0F1B3D;margin:0 0 16px!important}
+.mi-grille{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:14px}
+.mi-carte{display:flex;flex-direction:column;gap:8px;border:1px solid #e2e8f0;border-radius:14px;padding:16px 18px;background:#fff;text-decoration:none!important;transition:border-color .2s,box-shadow .2s,transform .2s}
+.mi-carte:hover{border-color:#1A56DB;box-shadow:0 8px 24px rgba(26,86,219,.10);transform:translateY(-2px)}
+.mi-cat{font-size:10.5px;font-weight:800;letter-spacing:1.2px;text-transform:uppercase;color:#1342b0}
+.mi-titre{font-size:14.5px;font-weight:700;line-height:1.4;color:#0F1B3D}
+.mi-lire{margin-top:auto;font-size:12px;color:#64748b}
+</style>
+<h2>À lire aussi</h2>
+<div class="mi-grille"><a class="mi-carte" href="/articles/article-agent-relance-leads-saas.html"><span class="mi-cat">SaaS B2B</span><span class="mi-titre">Lead nurturing SaaS : relancer vos téléchargements et vos essais avant qu&#x27;ils refroidissent</span><span class="mi-lire">Lire l'article · 12 min</span></a><a class="mi-carte" href="/articles/article-pages-comparatives-saas.html"><span class="mi-cat">SaaS B2B</span><span class="mi-titre">Pages comparatives SaaS : gagner les prospects qui vous comparent à vos concurrents</span><span class="mi-lire">Lire l'article · 12 min</span></a><a class="mi-carte" href="/articles/article-dark-social-saas-b2b.html"><span class="mi-cat">SaaS B2B</span><span class="mi-titre">Dark social : le vrai funnel d&#x27;achat SaaS que Google Analytics ne voit pas</span><span class="mi-lire">Lire l'article · 15 min</span></a></div>
+</section>
+<!-- maillage:fin -->
+</main>
+
+  <aside class="sidebar">
+    <div class="sidebar-card">
+      <h3>Sommaire</h3>
+      <div class="mini-toc">
+        <a href="#ch1">1. Un pipeline vide</a>
+        <a href="#ch2">2. L'audit des 90 jours</a>
+        <a href="#ch3">3. Le lead qualifié</a>
+        <a href="#ch4">4. Trois couches de contenus</a>
+        <a href="#ch5">5. Six étapes</a>
+        <a href="#ch6">6. La matrice signal-action</a>
+        <a href="#ch7">7. Cinq blocages</a>
+        <a href="#ch8">8. Mesurer le pipeline</a>
+        <a href="#faq">FAQ</a>
+        <a href="#sources">Sources</a>
+      </div>
+    </div>
+    <div class="sidebar-card">
+      <div class="author-card">
+        <div class="author-avatar">TRD</div>
+        <div>
+          <div class="author-name">Rédaction TechRepair Content</div>
+          <div class="author-role">Rédaction SEO tech B2B</div>
+        </div>
+      </div>
+    </div>
+    <div class="sidebar-card guide-card">
+      <h3>Le guide B2B de la visibilité IA</h3>
+      <p>Livre blanc gratuit : savoir ce que ChatGPT, Perplexity et Gemini disent de votre logiciel, puis devenir une source qu'ils citent.</p>
+      <a href="/livres-blancs/visibilite-ia-b2b-guide.html" class="guide-btn">Télécharger le livre blanc</a>
+    </div>
+  </aside>
+</div>
+
+<div class="nl-band">
+  <div class="nl-band-inner">
+    <h2>📩 La newsletter SEO Tech B2B</h2>
+    <p>Chaque semaine, une stratégie actionnable et une opportunité SEO dans votre secteur.</p>
+    <div class="nl-band-form">
+      <input type="email" class="nl-band-input" id="nlBandEmail" placeholder="votre@email.com"/>
+      <button class="nl-band-btn" id="nlBandBtn" type="button">S'abonner →</button>
+    </div>
+    <p id="nlBandMsg" style="display:none;font-size:12px;color:#fff;margin-top:8px"></p>
+    <p class="nl-band-note">✓ Gratuit · ✓ Sans spam · ✓ Désabonnement en 1 clic</p>
+  </div>
+</div>
+
+<div class="cta-band">
+  <div class="cta-inner">
+    <div>
+      <h2>Du contenu qui performe, pas qui remplit des pages</h2>
+      <p>Vous voulez une stratégie de contenu sur mesure pour votre secteur tech B2B ? Parlons-en.</p>
+      <div class="cta-btns">
+        <button class="btn-white" onclick="window.location='/devis'">Obtenir un devis gratuit →</button>
+        <button class="btn-ghost-cta" onclick="window.location='/services'">Voir nos services →</button>
+      </div>
+    </div>
+    <div class="cta-checks">
+      <div class="cta-check"><span class="cta-ci">✓</span> Réponse sous 24h</div>
+      <div class="cta-check"><span class="cta-ci">✓</span> Audit SEO gratuit</div>
+      <div class="cta-check"><span class="cta-ci">✓</span> Sans engagement</div>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <div class="logo"><div class="logo-box">TRD</div><div class="logo-text" style="color:#fff">TechRepair<span>Content</span></div></div>
+      <p>Rédaction SEO & technique pour entreprises SaaS, Tech et E-commerce.</p>
+    </div>
+    <div><h4>Navigation</h4><ul class="flinks"><li><a href="/">Accueil</a></li><li><a href="/apropos">À propos</a></li><li><a href="/services">Services</a></li><li><a href="/secteurs">Secteurs</a></li><li><a href="/blog">Blog</a></li></ul></div>
+    <div><h4>Ressources</h4><ul class="flinks"><li><a href="/agents-ia">Agents IA</a></li><li><a href="/visibilite-ia">Visibilité dans les IA</a></li><li><a href="/faq">FAQ</a></li><li><a href="/confidentialite">Confidentialité</a></li><li><a href="/mentions-legales">Mentions légales</a></li></ul></div>
+    <div>
+      <h4>Contact</h4>
+      <ul class="flinks"><li><a href="mailto:contact@techrepaircontent.com">contact@techrepaircontent.com</a></li><li><a href="/devis">Réponse sous 24h</a></li></ul>
+      <div class="fsocial"><a class="fsoc" href="https://www.linkedin.com/in/techrepair-content" target="_blank" rel="noopener">in</a><a class="fsoc" href="mailto:contact@techrepaircontent.com">✉</a></div>
+    </div>
+    <div><h4>Basé en France</h4><div style="font-size:22px">🇫🇷</div></div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2026 TechRepair Content. Tous droits réservés.</span>
+    <span>Fait avec ❤️ en France</span>
+  </div>
+</footer>
+
+<script>
+const hamburger = document.getElementById('hamburger');
+const mobileMenu = document.getElementById('mobileMenu');
+hamburger.addEventListener('click', () => {
+  hamburger.classList.toggle('open');
+  mobileMenu.classList.toggle('open');
+});
+mobileMenu.querySelectorAll('a').forEach(link => {
+  link.addEventListener('click', () => {
+    hamburger.classList.remove('open');
+    mobileMenu.classList.remove('open');
+  });
+});
+
+const BREVO_FORM_ACTION = 'https://a41ce724.sibforms.com/serve/MUIFAEGqDW1rbNTL0uU5ym6Ux5qJ7TJpdETsCjqRumOCnr-gRU8IGKx8Ic-JLjScrVVWrJVx_YXawDF8ao6y5hYLPvy7h8UJCk3gg9gTHcTaNAWQzbjwLnHO6DPk_HzPb7XY28rHy9JtEMuP-euST6RZutJ_bWOfqZFEtI-UUs9G4HA-O5V8JPwb3jLz0jhwuISuUqZ3Iok5IEyYHg==';
+
+function subscribeToNewsletter(emailInput, msgEl, btnEl) {
+  const email = emailInput.value.trim();
+  const isValidEmail = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+  msgEl.style.display = 'block';
+  if (!isValidEmail) {
+    msgEl.style.color = '#dc2626';
+    msgEl.textContent = "Merci d'entrer une adresse email valide.";
+    return;
+  }
+  const formData = new FormData();
+  formData.append('EMAIL', email);
+  formData.append('email_address_check', '');
+  formData.append('locale', 'fr');
+  formData.append('html_type', 'simple');
+  fetch(BREVO_FORM_ACTION, { method: 'POST', mode: 'no-cors', body: formData }).catch(() => {});
+  msgEl.style.color = '#10b981';
+  msgEl.textContent = 'Merci ! Vérifiez votre boîte mail pour confirmer.';
+  btnEl.textContent = 'Inscription envoyée ✓';
+  btnEl.disabled = true;
+}
+
+const nlBandBtn = document.getElementById('nlBandBtn');
+nlBandBtn.addEventListener('click', () => {
+  subscribeToNewsletter(document.getElementById('nlBandEmail'), document.getElementById('nlBandMsg'), nlBandBtn);
+});
+</script>
+<script src="/chatbot.js?v=3" defer></script>
+</body>
+</html>
