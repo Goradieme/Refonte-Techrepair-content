@@ -367,7 +367,15 @@ def main(chemin):
             ancien = _re.search(r"/livres-blancs/([a-z0-9-]+)\.html", bloc).group(1)
             nouveau = bloc.replace(ancien, slug)
             nouveau = _re.sub(r"-cover\.jpg\?v=\d+", f"-cover.jpg?v={v if 'v' in dir() else 1}", nouveau)
-            nouveau = _re.sub(r'(<h2 class="section-title" style="color:#fff">)[\s\S]*?(</h2>)', lambda _m: _m.group(1) + esc(m["titre"]) + _m.group(2), nouveau)
+            nouveau = _re.sub(r'(<h3 class="lb-titre"[^>]*>)[\s\S]*?(</h3>)', lambda _m: _m.group(1) + esc(m["titre"]) + _m.group(2), nouveau)
+            mois = ["janvier", "février", "mars", "avril", "mai", "juin", "juillet", "août", "septembre", "octobre", "novembre", "décembre"]
+            try:
+                _cal = json.loads((RACINE / "_outils" / "calendrier-livres-blancs.json").read_text(encoding="utf-8"))
+                _num = next(i for i, x in enumerate(_cal, 1) if x.get("slug") == slug)
+            except Exception:
+                _num = 1
+            _an, _mo = m["date"][:4], int(m["date"][5:7])
+            nouveau = _re.sub(r"Livre blanc N° \d+ · [a-zéû]+ \d{4}", f"Livre blanc N° {_num:02d} · {mois[_mo - 1]} {_an}", nouveau)
             sp.write_text(t.replace(bloc, nouveau), encoding="utf-8")
 
     # --- sitemap.xml -------------------------------------------------------------
