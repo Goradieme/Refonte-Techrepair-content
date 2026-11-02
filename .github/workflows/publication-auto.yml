@@ -7,11 +7,14 @@ name: Publication automatique du contenu du jour
 
 on:
   schedule:
-    # Heures UTC : le script ne publie qu'à partir de 8 h 30, heure de Paris
-    # (06:30 UTC en été, 07:30 UTC en hiver ; 08:30 UTC = passe de secours).
-    - cron: "30 6 * * *"
-    - cron: "30 7 * * *"
-    - cron: "30 8 * * *"
+    # Heures UTC, à des minutes peu chargées (GitHub retarde souvent les passes à :00 et :30).
+    # Le script ne publie qu'à partir de 8 h 30, heure de Paris. En complément, la tâche
+    # Claude de 9 h déclenche cette action à la main si l'article n'est pas encore en ligne.
+    - cron: "41 6 * * *"
+    - cron: "41 7 * * *"
+    - cron: "13 8 * * *"
+    - cron: "43 8 * * *"
+    - cron: "17 10 * * *"
   workflow_dispatch: {}
 
 permissions:
