@@ -338,6 +338,26 @@ def main(chemin):
              f"{SITE}/livres-blancs/", f"{SITE}/livres-blancs/{tous[0]['slug']}-og.jpg" if tous else "", jl_index,
              contenu_index, COULEURS["bleu"], style, nav, pied, script_menu), encoding="utf-8")
 
+    # --- Encart « Livre blanc du mois » de blog.html ----------------------------------
+    bh = RACINE / "blog.html"
+    b = bh.read_text(encoding="utf-8")
+    import re as _re, time as _t
+    if "<!-- livre-blanc-du-mois:debut -->" in b:
+        v = int(_t.time()) // 3600
+        encart = f'''<!-- livre-blanc-du-mois:debut -->
+    <a class="sidebar-card lb-mois" href="/livres-blancs/{slug}.html" style="display:block;text-decoration:none;color:inherit;padding:0;overflow:hidden">
+      <img src="/livres-blancs/{slug}-cover.jpg?v={v}" alt="Couverture du livre blanc du mois" loading="lazy" style="display:block;width:100%;aspect-ratio:900/1273;object-fit:cover;border-bottom:1px solid var(--border)"/>
+      <div style="padding:18px 20px 20px">
+        <div style="font-size:11px;font-weight:800;letter-spacing:1.2px;text-transform:uppercase;color:#1A56DB;margin-bottom:6px">📘 Livre blanc du mois</div>
+        <div style="font-weight:800;color:var(--navy);line-height:1.35;margin-bottom:12px">{esc(m["titre"])}</div>
+        <span style="display:inline-block;background:#1A56DB;color:#fff;font-weight:700;font-size:13px;border-radius:8px;padding:9px 14px">Télécharger gratuitement →</span>
+        <div style="margin-top:10px;font-size:12.5px"><span style="color:#64748b">Tous les livres blancs :</span> <span style="color:#1A56DB;font-weight:700">voir la collection</span></div>
+      </div>
+    </a>
+    <!-- livre-blanc-du-mois:fin -->'''
+        b = _re.sub(r"<!-- livre-blanc-du-mois:debut -->[\s\S]*?<!-- livre-blanc-du-mois:fin -->", lambda _m: encart, b)
+        bh.write_text(b, encoding="utf-8")
+
     # --- sitemap.xml -------------------------------------------------------------
     sm = RACINE / "sitemap.xml"
     s = sm.read_text(encoding="utf-8")
