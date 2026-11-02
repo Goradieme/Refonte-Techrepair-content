@@ -1,7 +1,9 @@
 /* chatbot.js — Ted, l'assistant de chat de techrepaircontent.com
  * Affiche un message d'accueil aux visiteurs puis répond à leurs questions.
  * Les réponses viennent de https://demo.techrepaircontent.com/api/assistant (projet Vercel),
- * qui garde la clé API côté serveur.
+ * qui garde la clé API côté serveur. L'appel passe par une iframe cachée
+ * (demo.techrepaircontent.com/relais.html) pour partir du même site que le serveur,
+ * comme la démo Ted ; l'appel direct ne sert qu'en secours.
  * Inclusion : <script src="/chatbot.js" defer></script> avant </body>.
  */
 (function () {
@@ -10,6 +12,8 @@
   window.__trcChat = true;
 
   var API = 'https://demo.techrepaircontent.com/api/assistant';
+  var RELAIS = 'https://demo.techrepaircontent.com/relais.html?v=1';
+  var ORIGINE_RELAIS = 'https://demo.techrepaircontent.com';
   var DELAI_ACCUEIL = 6000; // ms avant d'afficher la bulle d'accueil
   var CLE = 'trc-chat-v1';
   var ACCUEIL = "Bonjour 👋 Je suis Ted, l'assistant de TechRepair Content. Une question sur nos services, nos délais ou notre façon de travailler ? Posez-la ici, je vous réponds tout de suite.";
@@ -187,6 +191,61 @@
     if (e.key === 'Escape' && racine.classList.contains('open')) fermer();
   });
 
+  // ── Relais (iframe cachée sur le site du serveur) ──
+  var relais = null, relaisPret = false, attentes = {}, compteur = 0;
+  function chargerRelais() {
+    if (relais) return;
+    relais = document.createElement('iframe');
+    relais.src = RELAIS;
+    relais.title = 'Relais du chat';
+    relais.setAttribute('aria-hidden', 'true');
+    relais.tabIndex = -1;
+    relais.style.cssText = 'position:absolute;width:0;height:0;border:0;visibility:hidden';
+    document.body.appendChild(relais);
+  }
+  window.addEventListener('message', function (e) {
+    if (e.origin !== ORIGINE_RELAIS || !e.data) return;
+    if (e.data.type === 'trc-pret') { relaisPret = true; return; }
+    if (e.data.type === 'trc-reponse' && attentes[e.data.id]) {
+      var f = attentes[e.data.id]; delete attentes[e.data.id];
+      f(e.data);
+    }
+  });
+  function viaRelais(messages, delai) {
+    return new Promise(function (resoudre, rejeter) {
+      var id = 'q' + (++compteur) + Date.now();
+      var minuteur = setTimeout(function () { delete attentes[id]; rejeter(new Error('relais')); }, delai);
+      attentes[id] = function (r) { clearTimeout(minuteur); resoudre(r); };
+      relais.contentWindow.postMessage({ type: 'trc-question', id: id, messages: messages }, ORIGINE_RELAIS);
+    });
+  }
+  function attendreRelais(ms) {
+    return new Promise(function (resoudre) {
+      var debut = Date.now();
+      (function verifier() {
+        if (relaisPret || Date.now() - debut > ms) return resoudre(relaisPret);
+        setTimeout(verifier, 100);
+      })();
+    });
+  }
+  function viaDirect(messages, signal) {
+    return fetch(API, {
+      method: 'POST',
+      headers: { 'Content-Type': 'text/plain;charset=UTF-8' }, // requête « simple » : pas de pré-vérification CORS
+      body: JSON.stringify({ messages: messages }),
+      signal: signal
+    }).then(function (r) {
+      return r.json().catch(function () { return {}; }).then(function (d) { return { ok: r.ok, statut: r.status, d: d }; });
+    });
+  }
+  function demander(messages, signal) {
+    chargerRelais();
+    return attendreRelais(5000).then(function (pret) {
+      return pret ? viaRelais(messages, 30000) : viaDirect(messages, signal);
+    });
+  }
+  chargerRelais();
+
   // ── Envoi ──
   function envoyer(texte) {
     texte = (texte || '').trim();
@@ -210,15 +269,7 @@
     var controle = typeof AbortController !== 'undefined' ? new AbortController() : null;
     var minuteur = setTimeout(function () { if (controle) controle.abort(); }, 30000);
 
-    fetch(API, {
-      method: 'POST',
-      headers: { 'Content-Type': 'text/plain;charset=UTF-8' }, // requête « simple » : pas de pré-vérification CORS
-      body: JSON.stringify({ messages: etat.messages.slice(-12) }),
-      signal: controle ? controle.signal : undefined
-    })
-      .then(function (r) {
-        return r.json().catch(function () { return {}; }).then(function (d) { return { ok: r.ok, statut: r.status, d: d }; });
-      })
+    demander(etat.messages.slice(-12), controle ? controle.signal : undefined)
       .then(function (res) {
         var rep = res.ok && res.d && res.d.reply ? res.d.reply
           : (res.d && res.d.error && /contact@/.test(res.d.error) ? res.d.error
@@ -236,7 +287,7 @@
         etat.messages.pop();
         sauver();
         attente.remove();
-        bulle('assistant', ERREUR + ' (réf. ' + (err && err.name === 'AbortError' ? 'délai' : 'réseau') + ')');
+        bulle('assistant', ERREUR + ' (réf. ' + (err && err.name === 'AbortError' ? 'délai' : (err && err.message === 'relais' ? 'relais' : 'réseau')) + ')');
       })
       .then(function () {
         clearTimeout(minuteur);
