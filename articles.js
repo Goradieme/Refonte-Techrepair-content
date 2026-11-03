@@ -226,4 +226,17 @@ const ARTICLES = [
     motCle:   "génération de leads b2b",
     metaDesc: "Génération de leads B2B en SaaS : audit des 90 derniers jours, définition du lead qualifié, trois couches de contenus et matrice signal-action prête à copier."
   },
+  {
+    titre:    "Consultant SEO SaaS : comment le choisir et ce qu'il doit livrer",
+    extrait:  "Avant de signer, qualifiez votre besoin en deux heures, comparez profils et tarifs, notez chaque candidat sur 100 points et fixez les livrables à 30, 60 et 90 jours.",
+    auteur:   "Rédaction TechRepair Content",
+    date:     "2026-11-03",
+    categorie:"seo",
+    lecture:  "12 min",
+    lien:     "articles/article-consultant-seo-saas-choisir.html",
+    image:    "articles/consultant-seo-saas-choisir-cover.jpg",
+    slug:     "consultant-seo-saas-choisir",
+    motCle:   "consultant seo saas",
+    metaDesc: "Consultant SEO SaaS : qualifier votre besoin, comparer profils et tarifs, grille de choix sur 100 points, questions d'entretien et livrables à 30, 60, 90 jours."
+  },
 ];
