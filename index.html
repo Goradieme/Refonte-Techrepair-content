@@ -1307,23 +1307,6 @@ footer h3{font-size:10.5px;font-weight:700;color:#94a3b8;text-transform:uppercas
   </div>
 </footer>
 
-<!-- ══ EXIT INTENT POPUP ══ -->
-<div class="popup-overlay" id="popupOverlay">
-  <div class="popup-box">
-    <button class="popup-close" id="popupClose" type="button" aria-label="Fermer">✕</button>
-    <div class="popup-icon">🎁</div>
-    <h3 class="popup-title" id="popupTitle">Avant de partir…</h3>
-    <p class="popup-text">Recevez gratuitement notre <strong>guide SEO pour le B2B tech</strong> : les erreurs qui coûtent des clients, et comment les corriger.</p>
-    <div class="popup-form">
-      <input type="email" class="popup-input" id="popupEmail" placeholder="votre@email.com" required aria-label="Adresse email pour recevoir le guide"/>
-      <button class="popup-btn" id="popupSubmit" type="button">Recevoir le guide gratuit →</button>
-      <p id="popupError" style="display:none;color:#dc2626;font-size:12px;margin:2px 0 0;"></p>
-    </div>
-    <p class="popup-note">✓ Sans spam · ✓ Désabonnement en 1 clic</p>
-    <p class="popup-legal">Votre email sert à vous envoyer le guide et nos conseils SEO. <a href="/confidentialite">Confidentialité</a></p>
-  </div>
-</div>
-
 <style>
 /* ══ LOGOS BAR ══ */
 .logos-bar{background:#fff;border-top:1px solid var(--border);border-bottom:1px solid var(--border);padding:14px 32px;overflow:hidden}
@@ -1684,74 +1667,9 @@ function calcROI() {
   document.getElementById(id).addEventListener('input', calcROI);
 });
 calcROI();
-const overlay = document.getElementById('popupOverlay');
-const closeBtn = document.getElementById('popupClose');
-// Une seule fois par session, jamais dans les 15 premières secondes
-let popupShown = false;
-try { popupShown = sessionStorage.getItem('trdPopupSeen') === '1'; } catch (e) {}
-const pageStart = Date.now();
-function showPopup() {
-  if (popupShown || Date.now() - pageStart < 15000) return;
-  popupShown = true;
-  try { sessionStorage.setItem('trdPopupSeen', '1'); } catch (e) {}
-  overlay.classList.add('active');
-}
-// Ordinateur : quand la souris quitte la page par le haut
-document.addEventListener('mouseleave', (e) => { if (e.clientY < 10) showPopup(); });
-// Mobile : après avoir lu 70 % de la page (pas de fenêtre imposée à l'arrivée)
-if (window.matchMedia('(hover: none)').matches) {
-  window.addEventListener('scroll', () => {
-    const h = document.documentElement;
-    if ((h.scrollTop + window.innerHeight) / h.scrollHeight > 0.7) showPopup();
-  }, { passive: true });
-}
-// Fermer : bouton, clic à côté, touche Échap
-closeBtn.addEventListener('click', () => overlay.classList.remove('active'));
-overlay.addEventListener('click', (e) => { if(e.target === overlay) overlay.classList.remove('active'); });
+// Fermer les fenêtres avec la touche Échap
 document.addEventListener('keydown', (e) => {
   if (e.key === 'Escape') document.querySelectorAll('.popup-overlay.active').forEach(o => o.classList.remove('active'));
-});
-
-// ── Formulaire popup : capture email (Brevo) + téléchargement immédiat du guide ──
-const GUIDE_URL = 'https://www.techrepaircontent.com/guide-seo-b2b.pdf';
-
-const BREVO_FORM_ACTION = 'https://a41ce724.sibforms.com/serve/MUIFAEGqDW1rbNTL0uU5ym6Ux5qJ7TJpdETsCjqRumOCnr-gRU8IGKx8Ic-JLjScrVVWrJVx_YXawDF8ao6y5hYLPvy7h8UJCk3gg9gTHcTaNAWQzbjwLnHO6DPk_HzPb7XY28rHy9JtEMuP-euST6RZutJ_bWOfqZFEtI-UUs9G4HA-O5V8JPwb3jLz0jhwuISuUqZ3Iok5IEyYHg==';
-const BREVO_EMAIL_FIELD = 'EMAIL';
-
-const popupEmailInput = document.getElementById('popupEmail');
-const popupSubmitBtn  = document.getElementById('popupSubmit');
-const popupErrorMsg   = document.getElementById('popupError');
-
-popupSubmitBtn.addEventListener('click', () => {
-  const email = popupEmailInput.value.trim();
-  const isValidEmail = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
-
-  if (!isValidEmail) {
-    popupErrorMsg.textContent = "Merci d'entrer une adresse email valide.";
-    popupErrorMsg.style.display = 'block';
-    return;
-  }
-  popupErrorMsg.style.display = 'none';
-
-  // Envoi de l'email à Brevo en arrière-plan (n'empêche pas le téléchargement si ça échoue)
-  const formData = new FormData();
-  formData.append(BREVO_EMAIL_FIELD, email);
-  formData.append('email_address_check', ''); // anti-spam (doit rester vide)
-  formData.append('locale', 'fr');
-  formData.append('html_type', 'simple');
-  fetch(BREVO_FORM_ACTION, { method: 'POST', mode: 'no-cors', body: formData }).catch(() => {});
-
-  // Téléchargement immédiat du guide, sans attendre l'email automatique
-  const link = document.createElement('a');
-  link.href = GUIDE_URL;
-  link.download = 'guide-seo-b2b.pdf';
-  document.body.appendChild(link);
-  link.click();
-  document.body.removeChild(link);
-
-  // Confirmation visuelle puis fermeture du popup
-  popupSubmitBtn.textContent = 'Merci ! Téléchargement en cours…';
-  setTimeout(() => overlay.classList.remove('active'), 1500);
 });
 
 // ── Hamburger menu ──
