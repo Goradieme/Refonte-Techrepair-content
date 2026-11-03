@@ -30,5 +30,6 @@
     "bouton": "Télécharger le livre blanc"
   },
   "service": "livres-blancs",
-  "remplacer": true
+  "remplacer": true,
+  "dateModification": "2026-11-03"
 }
