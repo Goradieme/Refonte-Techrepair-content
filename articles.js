@@ -247,7 +247,7 @@ const ARTICLES = [
     categorie:"fintech",
     lecture:  "12 min",
     lien:     "articles/article-etude-de-cas-client-fintech.html",
-    image:    "articles/etude-de-cas-client-fintech-cover.jpg",
+    image:    "articles/etude-de-cas-client-fintech-cover-v2-carte.jpg",
     slug:     "etude-de-cas-client-fintech",
     motCle:   "étude de cas client",
     metaDesc: "Étude de cas client en fintech : secret professionnel, accord exprès, cinq niveaux de preuve, questions d'entretien, plan type et exemple anonymisé."
