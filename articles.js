@@ -239,4 +239,17 @@ const ARTICLES = [
     motCle:   "consultant seo saas",
     metaDesc: "Consultant SEO SaaS : qualifier votre besoin, comparer profils et tarifs, grille de choix sur 100 points, questions d'entretien et livrables à 30, 60, 90 jours."
   },
+  {
+    titre:    "Étude de cas client en fintech : prouver sans trahir le secret client",
+    extrait:  "Vos clients refusent d'être cités ? Graduez l'autorisation, respectez le secret professionnel et publiez une preuve vérifiable à chaque niveau, avec un plan type et un exemple réécrit.",
+    auteur:   "Rédaction TechRepair Content",
+    date:     "2026-11-04",
+    categorie:"fintech",
+    lecture:  "12 min",
+    lien:     "articles/article-etude-de-cas-client-fintech.html",
+    image:    "articles/etude-de-cas-client-fintech-cover.jpg",
+    slug:     "etude-de-cas-client-fintech",
+    motCle:   "étude de cas client",
+    metaDesc: "Étude de cas client en fintech : secret professionnel, accord exprès, cinq niveaux de preuve, questions d'entretien, plan type et exemple anonymisé."
+  },
 ];
