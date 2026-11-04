@@ -1,4 +1,5 @@
-# Publication automatique du contenu du jour (règle fixée par Goradieme) :
+# Passe de SECOURS de la publication du contenu du jour (la publication principale est
+# publication-pr.yml, qui attend 8 h dès l'ouverture de la demande). Règle de Goradieme :
 # l'article ou le livre blanc est envoyé en relecture à 6 h ; sans réaction de sa part,
 # il est publié vers 8 h 30 (heure de Paris), avec une seconde passe vers 9 h 30.
 # Une demande de fusion n'est PAS publiée si elle porte l'étiquette « attendre »

@@ -1,0 +1,71 @@
+# Publication à 8 h (heure de Paris) du contenu du jour, règle fixée par Goradieme :
+# l'article ou le livre blanc est envoyé en relecture à 6 h ; sans réaction de sa part,
+# il est publié à 8 h.
+#
+# Pourquoi ce fichier : les passes planifiées (« schedule ») de GitHub partent souvent avec
+# plusieurs heures de retard. Ici, l'action démarre dès l'ouverture de la demande de fusion
+# (vers 4 h du matin), attend jusqu'à 8 h, puis publie. Aucune dépendance aux horaires de GitHub.
+#
+# Pas de publication si la demande porte l'étiquette « attendre » ou si un humain l'a
+# commentée ou relue (les robots comme netlify[bot] sont ignorés).
+name: Publication à 8 h de la demande du jour
+
+on:
+  pull_request:
+    types: [opened, reopened, synchronize, ready_for_review]
+    branches: [main]
+
+permissions:
+  contents: write
+  pull-requests: write
+  pages: write
+
+concurrency:
+  group: publication-pr-${{ github.event.pull_request.number }}
+  cancel-in-progress: true
+
+jobs:
+  publier:
+    if: startsWith(github.head_ref, 'article/') || startsWith(github.head_ref, 'livre-blanc/')
+    runs-on: ubuntu-latest
+    timeout-minutes: 355
+    steps:
+      - name: Attendre 8 h (heure de Paris), puis publier sans réaction humaine
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          REPO: ${{ github.repository }}
+          N: ${{ github.event.pull_request.number }}
+        run: |
+          set -u
+          cible=$(TZ=Europe/Paris date -d "$(TZ=Europe/Paris date +%F) 08:00" +%s)
+          maintenant=$(date +%s)
+          if [ "$maintenant" -lt "$cible" ]; then
+            attente=$((cible - maintenant))
+            echo "Attente de $((attente / 60)) min, jusqu'à 8 h à Paris."
+            sleep "$attente"
+          fi
+          etat=$(gh api "repos/$REPO/pulls/$N" --jq '.state + " " + (.merged|tostring)')
+          echo "Demande #$N : $etat"
+          case "$etat" in open*) ;; *) echo "Déjà fusionnée ou fermée."; exit 0 ;; esac
+          if gh api "repos/$REPO/issues/$N/labels" --jq '.[].name' | grep -qx attendre; then
+            echo "Étiquette « attendre » : non publiée."; exit 0
+          fi
+          humains=$( { gh api "repos/$REPO/issues/$N/comments" --jq '.[].user | select(.type != "Bot") | .login';
+                       gh api "repos/$REPO/pulls/$N/comments" --jq '.[].user | select(.type != "Bot") | .login';
+                       gh api "repos/$REPO/pulls/$N/reviews" --jq '.[].user | select(.type != "Bot") | .login'; } \
+                     | grep -v '\[bot\]$' | wc -l )
+          if [ "$humains" -gt 0 ]; then
+            echo "Réaction humaine sur la demande : non publiée."; exit 0
+          fi
+          for essai in 1 2 3 4 5; do
+            if gh api -X PUT "repos/$REPO/pulls/$N/merge" -f merge_method=squash; then
+              echo "#$N publiée."
+              sleep 10
+              gh api -X POST "repos/$REPO/pages/builds" || true
+              exit 0
+            fi
+            echo "Fusion refusée (essai $essai), nouvel essai dans 2 min."
+            sleep 120
+          done
+          echo "::error::#$N : fusion impossible (conflit ?). La tâche Claude de 9 h le signalera."
+          exit 1
