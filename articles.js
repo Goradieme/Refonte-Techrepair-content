@@ -221,7 +221,7 @@ const ARTICLES = [
     categorie:"saas",
     lecture:  "12 min",
     lien:     "articles/article-generation-leads-b2b-saas.html",
-    image:    "articles/generation-leads-b2b-saas-cover-v3-carte.jpg",
+    image:    "articles/generation-leads-b2b-saas-cover-v4-carte.jpg",
     slug:     "generation-leads-b2b-saas",
     motCle:   "génération de leads b2b",
     metaDesc: "Génération de leads B2B en SaaS : audit des 90 derniers jours, définition du lead qualifié, trois couches de contenus et matrice signal-action prête à copier."
