@@ -1,0 +1,711 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Étude de cas client fintech : publier sans trahir le secret</title>
+<meta name="description" content="Étude de cas client en fintech : secret professionnel, accord exprès, cinq niveaux de preuve, questions d&#x27;entretien, plan type et exemple anonymisé."/>
+<meta name="author" content="TechRepair Content"/>
+<link rel="canonical" href="https://www.techrepaircontent.com/articles/article-etude-de-cas-client-fintech.html"/>
+<meta property="og:title" content="Étude de cas client en fintech : prouver sans trahir le secret client"/>
+<meta property="og:description" content="Étude de cas client en fintech : secret professionnel, accord exprès, cinq niveaux de preuve, questions d&#x27;entretien, plan type et exemple anonymisé."/>
+<meta property="og:type" content="article"/>
+<meta property="og:url" content="https://www.techrepaircontent.com/articles/article-etude-de-cas-client-fintech.html"/>
+<meta property="og:locale" content="fr_FR"/>
+<meta property="og:site_name" content="TechRepair Content"/>
+<meta property="og:image" content="https://www.techrepaircontent.com/articles/etude-de-cas-client-fintech-cover.jpg"/>
+<meta property="article:published_time" content="2026-11-04"/>
+<meta name="twitter:card" content="summary_large_image"/>
+
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet"/>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --blue:#1A56DB;--blue-dark:#1342b0;--blue-light:#EFF6FF;
+  --navy:#0F1B3D;--text:#1e293b;--muted:#64748b;
+  --border:#e2e8f0;--green:#10b981;--orange:#f97316;--purple:#7c3aed;
+  --radius:12px;
+}
+html{scroll-behavior:smooth}
+body{font-family:'Manrope',sans-serif;color:var(--text);background:#fff;font-size:15px;line-height:1.6}
+a{text-decoration:none;color:inherit}
+nav{position:sticky;top:0;z-index:200;background:#fff;border-bottom:1px solid var(--border);padding:0 32px;display:flex;align-items:center;gap:20px;height:62px;}
+.logo{display:flex;align-items:center;gap:10px;flex-shrink:0}
+.logo-box{width:36px;height:36px;background:var(--blue);border-radius:7px;display:grid;place-items:center;color:#fff;font-weight:800;font-size:13px;letter-spacing:-.5px}
+.logo-text{font-size:13px;font-weight:700;line-height:1.2;color:var(--navy)}
+.logo-text span{display:block;color:var(--muted);font-weight:500;font-size:11px}
+.nav-links{display:flex;gap:22px;margin-left:auto;align-items:center}
+.nav-links a{font-size:13.5px;font-weight:500;color:var(--muted);transition:color .2s}
+.nav-links a:hover,.nav-links a.active{color:var(--blue)}
+.nav-links a.active{border-bottom:2px solid var(--blue);padding-bottom:1px}
+.btn-nav{background:var(--blue);color:#fff;border:none;border-radius:8px;padding:9px 18px;font-weight:700;font-size:13.5px;cursor:pointer;white-space:nowrap;font-family:inherit}
+@media(max-width:600px){nav{padding:0 16px}.nav-links a:not(:last-child){display:none}}
+.hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;background:none;border:none;padding:4px}
+.hamburger span{display:block;width:24px;height:2px;background:var(--navy);border-radius:2px;transition:all .3s}
+.hamburger.open span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+.hamburger.open span:nth-child(2){opacity:0}
+.hamburger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+.mobile-menu{display:none;position:fixed;top:62px;left:0;right:0;background:#fff;border-bottom:1px solid var(--border);padding:16px 24px;flex-direction:column;gap:4px;z-index:199;box-shadow:0 8px 24px rgba(0,0,0,.08)}
+.mobile-menu.open{display:flex}
+.mobile-menu a{font-size:15px;font-weight:600;color:var(--muted);padding:10px 0;border-bottom:1px solid var(--border);transition:color .2s}
+.mobile-menu a:last-of-type{border-bottom:none}
+.mobile-menu a:hover,.mobile-menu a.active{color:var(--blue)}
+.mobile-menu .btn-nav-mobile{margin-top:10px;background:var(--blue);color:#fff;border:none;border-radius:8px;padding:12px;font-weight:700;font-size:14px;cursor:pointer;font-family:inherit;width:100%}
+@media(max-width:768px){.hamburger{display:flex}.nav-links{display:none}}
+
+.breadcrumb{max-width:1100px;margin:0 auto;padding:18px 32px 0;font-size:12.5px;color:var(--muted)}
+.breadcrumb a{color:var(--muted)}
+.breadcrumb a:hover{color:var(--blue)}
+
+.article-hero{max-width:1100px;margin:0 auto;padding:24px 32px 0}
+.ah-badge{display:inline-flex;align-items:center;gap:5px;background:#F5F3FF;color:var(--purple);font-size:11px;font-weight:700;padding:4px 12px;border-radius:20px;margin-bottom:16px}
+.article-hero h1{font-size:34px;font-weight:800;line-height:1.2;color:var(--navy);max-width:820px;margin-bottom:16px}
+.ah-meta{display:flex;align-items:center;gap:12px;font-size:13px;color:var(--muted);margin-bottom:24px;flex-wrap:wrap}
+.ah-dot{width:4px;height:4px;border-radius:50%;background:var(--border)}
+.ah-cover{width:100%;border-radius:20px;overflow:hidden;margin-bottom:8px;border:1px solid var(--border)}
+.ah-cover img{width:100%;height:auto;display:block}
+
+.layout{max-width:1100px;margin:0 auto;padding:40px 32px 56px;display:grid;grid-template-columns:1fr 300px;gap:44px;align-items:start}
+.content h2{font-size:24px;font-weight:800;color:var(--navy);margin:40px 0 14px;line-height:1.3}
+.content h3{font-size:18px;font-weight:800;color:var(--navy);margin:28px 0 10px;line-height:1.3}
+.content p{margin-bottom:14px;color:var(--text);font-size:15px;line-height:1.75}
+.content ul,.content ol{margin:0 0 16px 20px;color:var(--text)}
+.content li{margin-bottom:7px;line-height:1.7}
+.content strong{color:var(--navy)}
+.content em{color:var(--muted)}
+.content hr{border:none;border-top:1px solid var(--border);margin:36px 0}
+.intro-lead{font-size:16.5px;color:var(--muted);line-height:1.8;margin-bottom:20px}
+.toc-box{background:var(--blue-light);border:1px solid #c3d6f8;border-radius:16px;padding:22px 24px;margin:24px 0 36px}
+.toc-box h3{margin:0 0 12px;font-size:14px;color:var(--navy)}
+.toc-box ol{margin:0 0 0 18px}
+.toc-box li{font-size:13.5px;margin-bottom:6px}
+.toc-box a{color:var(--blue-dark);font-weight:600}
+.toc-box a:hover{text-decoration:underline}
+.callout{background:#f8fafc;border-left:3px solid var(--blue);border-radius:8px;padding:16px 20px;margin:18px 0;font-size:14px}
+.callout strong{display:block;margin-bottom:4px;color:var(--navy)}
+.benefit{font-size:13.5px;color:var(--muted);font-style:italic;margin:-6px 0 16px}
+table{width:100%;border-collapse:collapse;margin:18px 0 22px;font-size:13.5px}
+th,td{border:1px solid var(--border);padding:10px 12px;text-align:left;vertical-align:top}
+th{background:#f8fafc;color:var(--navy);font-weight:700}
+.case-card{border:1px solid var(--border);border-radius:14px;padding:20px 22px;margin-bottom:18px;background:#fafbfc}
+.case-card h3{margin-top:0}
+.faq-item{border-bottom:1px solid var(--border);padding:16px 0}
+.faq-item:last-child{border-bottom:none}
+.faq-item p.question{font-weight:800;color:var(--navy);margin-bottom:6px;font-size:15px}
+.conclusion-box{background:linear-gradient(135deg,var(--navy),#1e3a6e);border-radius:18px;padding:32px;margin-top:32px;color:#fff}
+.conclusion-box p{color:#cbd5e1}
+.conclusion-box strong{color:#fff}
+.conclusion-box .final-cta{display:inline-block;margin-top:14px;background:var(--blue);color:#fff;border-radius:8px;padding:12px 22px;font-weight:700;font-size:14px}
+
+.sidebar{display:flex;flex-direction:column;gap:20px;position:sticky;top:80px}
+.sidebar-card{background:#f8fafc;border:1px solid var(--border);border-radius:16px;padding:20px}
+.sidebar-card h3{font-size:12.5px;font-weight:800;color:var(--navy);margin-bottom:14px;text-transform:uppercase;letter-spacing:.4px}
+.mini-toc{display:flex;flex-direction:column;gap:9px}
+.mini-toc a{font-size:12.5px;color:var(--muted);line-height:1.5}
+.mini-toc a:hover{color:var(--blue)}
+.author-card{display:flex;gap:10px;align-items:center}
+.author-avatar{width:38px;height:38px;border-radius:50%;background:var(--blue);color:#fff;display:grid;place-items:center;font-weight:800;font-size:13px}
+.author-name{font-size:13px;font-weight:700;color:var(--navy)}
+.author-role{font-size:11.5px;color:var(--muted)}
+.guide-card{background:linear-gradient(135deg,#f0f5ff,#dce9ff);border-color:#c3d6f8}
+.guide-card p{font-size:12.5px;color:var(--muted);line-height:1.6;margin-bottom:14px}
+.guide-btn{display:block;text-align:center;background:var(--blue);color:#fff;border-radius:8px;padding:11px;font-size:13px;font-weight:700;transition:background .2s}
+.guide-btn:hover{background:var(--blue-dark)}
+
+.nl-band{background:var(--blue);padding:48px 32px}
+.nl-band-inner{max-width:700px;margin:0 auto;text-align:center}
+.nl-band h2{font-size:26px;font-weight:800;color:#fff;margin-bottom:10px}
+.nl-band p{color:rgba(255,255,255,.8);font-size:14px;margin-bottom:24px}
+.nl-band-form{display:flex;gap:10px;max-width:440px;margin:0 auto;flex-wrap:wrap}
+.nl-band-input{flex:1;border:none;border-radius:8px;padding:12px 16px;font-size:14px;font-family:inherit;outline:none;min-width:200px}
+.nl-band-btn{background:var(--navy);color:#fff;border:none;border-radius:8px;padding:12px 20px;font-size:14px;font-weight:700;cursor:pointer;font-family:inherit;white-space:nowrap}
+.nl-band-note{font-size:11.5px;color:rgba(255,255,255,.6);margin-top:10px}
+
+.cta-band{background:var(--navy);padding:60px 32px}
+.cta-inner{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:1fr auto;gap:48px;align-items:center}
+.cta-band h2{font-size:28px;font-weight:800;color:#fff;margin-bottom:9px}
+.cta-band>div>p{color:#94a3b8;font-size:13.5px;margin-bottom:24px;max-width:380px}
+.cta-btns{display:flex;gap:10px;flex-wrap:wrap}
+.btn-white{background:#fff;color:var(--navy);border-radius:8px;padding:11px 20px;font-weight:700;font-size:13.5px;display:inline-flex;align-items:center;gap:7px;cursor:pointer;border:none;font-family:inherit}
+.btn-ghost-cta{background:transparent;color:#fff;border:1.5px solid rgba(255,255,255,.3);border-radius:8px;padding:11px 20px;font-weight:700;font-size:13.5px;cursor:pointer;font-family:inherit}
+.btn-ghost-cta:hover{border-color:#fff}
+.cta-checks{display:flex;flex-direction:column;gap:11px;flex-shrink:0}
+.cta-check{display:flex;align-items:center;gap:9px;color:#cbd5e1;font-size:13px}
+.cta-ci{color:var(--green);font-weight:700}
+
+footer{background:var(--navy);border-top:1px solid rgba(255,255,255,.07);padding:44px 32px 26px}
+.footer-inner{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:2fr 1fr 1fr 1fr 1fr;gap:32px}
+.footer-brand p{color:#64748b;font-size:12px;margin-top:8px;max-width:185px;line-height:1.7}
+footer h4{font-size:10.5px;font-weight:700;color:#94a3b8;text-transform:uppercase;letter-spacing:.5px;margin-bottom:13px}
+.flinks{list-style:none}
+.flinks li{margin-bottom:8px}
+.flinks a{color:#64748b;font-size:12px;transition:color .2s}
+.flinks a:hover{color:#fff}
+.fsocial{display:flex;gap:7px;margin-top:11px}
+.fsoc{width:29px;height:29px;border-radius:6px;background:rgba(255,255,255,.07);display:grid;place-items:center;font-size:11px;color:#94a3b8;transition:background .2s}
+.fsoc:hover{background:var(--blue);color:#fff}
+.footer-bottom{max-width:1100px;margin:24px auto 0;padding-top:16px;border-top:1px solid rgba(255,255,255,.07);display:flex;justify-content:space-between;color:#475569;font-size:11px;flex-wrap:wrap;gap:8px}
+
+@media(max-width:960px){.layout{grid-template-columns:1fr}.sidebar{position:static;display:grid;grid-template-columns:1fr 1fr;gap:16px}.cta-inner{grid-template-columns:1fr}.footer-inner{grid-template-columns:1fr 1fr}}
+@media(max-width:600px){.article-hero h1{font-size:26px}.sidebar{grid-template-columns:1fr}.nl-band-form{flex-direction:column}.footer-inner{grid-template-columns:1fr}}
+
+.btn-demo{position:relative;background:var(--blue);color:#fff;border:none;border-radius:8px;padding:9px 16px;font-weight:800;font-size:13.5px;white-space:nowrap;font-family:inherit;display:inline-flex;align-items:center;gap:6px;text-decoration:none;cursor:pointer;transition:background .2s,transform .2s}
+.btn-demo:hover{background:var(--blue-dark);transform:translateY(-1px)}
+.btn-demo .star{color:#fff;font-size:14px;line-height:1;font-weight:800}
+.btn-demo-badge{position:absolute;top:-9px;right:-8px;background:#F59E0B;color:#fff;font-size:8.5px;font-weight:800;padding:2px 6px;border-radius:999px;letter-spacing:.3px;box-shadow:0 2px 6px rgba(245,158,11,.45);animation:demoPulse 2.2s ease-in-out infinite}
+@keyframes demoPulse{0%,100%{transform:scale(1)}50%{transform:scale(1.1)}}
+.nav-tools{position:relative;display:inline-block}
+.nav-tools .chevron{font-size:10px;margin-left:2px;transition:transform .15s}
+.nav-tools:hover .chevron{transform:rotate(180deg)}
+.nav-tools-menu{display:none;position:absolute;top:calc(100% + 8px);right:0;background:#fff;border:1px solid var(--border);border-radius:12px;box-shadow:0 12px 32px rgba(15,27,61,.15);min-width:220px;padding:6px;z-index:260}
+.nav-tools:hover .nav-tools-menu,.nav-tools:focus-within .nav-tools-menu{display:block}
+.nav-tools-menu a{display:flex;align-items:center;gap:9px;padding:10px 12px;border-radius:8px;font-size:13.5px;font-weight:600;color:var(--navy);text-decoration:none;white-space:nowrap}
+.nav-tools-menu a:hover{background:var(--blue-light);color:var(--blue)}
+.nav-tools-menu a .ico{font-size:15px}
+.btn-demo-mobile{position:relative;margin-top:10px;background:var(--blue);color:#fff;border-radius:8px;padding:12px;font-weight:800;font-size:14px;font-family:inherit;width:100%;display:flex;align-items:center;justify-content:center;gap:7px;text-decoration:none;border-bottom:none!important}
+.btn-demo-mobile .star{color:#fff;font-size:15px;font-weight:800}
+.mobile-menu a.btn-demo-mobile{color:#fff}
+.btn-demo-mobile .btn-demo-badge{top:-9px;right:14px;animation:none}
+
+/* ══ Liens vers les sources citées ══ */
+a.src{color:var(--blue);font-weight:600;text-decoration:underline;text-underline-offset:2px;text-decoration-thickness:1px;transition:color .2s}
+a.src:hover{color:var(--blue-dark);text-decoration-thickness:2px}
+/* ══ Mise en forme éditoriale (gabarit 2026) ══ */
+.ah-cover{max-width:960px;box-shadow:0 18px 50px rgba(15,27,61,.18);border:none}
+.key-points{border:1px solid var(--border);border-top:3px solid var(--blue);border-radius:0 0 14px 14px;padding:20px 24px 8px;margin:6px 0 30px;background:#fff}
+.key-points h3{margin:0 0 12px!important;font-size:12px!important;letter-spacing:1.4px;text-transform:uppercase;color:var(--blue-dark)!important}
+.key-points ul{margin-left:18px}
+.key-points li{margin-bottom:10px}
+.stat-row{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:14px;margin:20px 0 24px}
+.stat{border-left:3px solid var(--blue);padding:4px 0 4px 14px}
+.stat b{display:block;font-size:30px;font-weight:800;color:var(--navy);line-height:1.1}
+.stat span{font-size:12.5px;color:var(--muted);line-height:1.45;display:block;margin-top:4px}
+.content table th{font-size:12.5px;text-transform:uppercase;letter-spacing:.4px}
+.content table tr:nth-child(even) td{background:#fafbfd}
+.sources{font-size:13px;color:var(--muted);margin-left:20px}
+.sources li{margin-bottom:6px;line-height:1.6}
+.sources a{color:var(--blue-dark);text-decoration:underline;text-underline-offset:2px}
+@media(max-width:600px){.content table{display:block;overflow-x:auto}.stat b{font-size:26px}}
+.content p a:not(.final-cta),.content li a,.content td a{color:var(--blue);font-weight:600;text-decoration:underline;text-underline-offset:2px;text-decoration-thickness:1px}
+.content p a:not(.final-cta):hover,.content li a:hover,.content td a:hover{color:var(--blue-dark);text-decoration-thickness:2px}
+</style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "BlogPosting",
+      "headline": "Étude de cas client en fintech : prouver sans trahir le secret client",
+      "description": "Étude de cas client en fintech : secret professionnel, accord exprès, cinq niveaux de preuve, questions d'entretien, plan type et exemple anonymisé.",
+      "datePublished": "2026-11-04",
+      "dateModified": "2026-11-04",
+      "author": {
+        "@type": "Organization",
+        "name": "TechRepair Content",
+        "url": "https://www.techrepaircontent.com/apropos"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "TechRepair Content",
+        "url": "https://www.techrepaircontent.com/"
+      },
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://www.techrepaircontent.com/articles/article-etude-de-cas-client-fintech.html"
+      },
+      "inLanguage": "fr-FR",
+      "keywords": "étude de cas client",
+      "articleSection": "Fintech",
+      "wordCount": 2464,
+      "image": "https://www.techrepaircontent.com/articles/etude-de-cas-client-fintech-cover.jpg"
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Comment rédiger une étude de cas client ?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Choisissez un client dont le problème ressemble à celui de vos prospects, obtenez son accord écrit, menez un entretien de 45 minutes, vérifiez chaque chiffre, puis rédigez en six blocs : profil, situation de départ, choix, mise en œuvre, résultats datés, limites."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Quelles questions poser pour un témoignage client ?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Interrogez la situation de départ, les alternatives écartées, les craintes avant la signature, la mise en service, le chiffre suivi et ce qui reste à améliorer."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Peut-on publier une étude de cas sans nommer le client ?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Oui, si le client l'a accepté par écrit et qu'il reste impossible à identifier : profil en fourchettes, aucun détail qui le désigne, relecture par une personne qui ne le connaît pas."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Que faire si aucun client n'accepte d'être cité ?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Proposez des paliers : étude anonymisée, résultats agrégés sur plusieurs clients ou appel de référence privé. Ajoutez une clause d'autorisation graduée à vos nouveaux contrats pour constituer un stock de preuves au fil des signatures."
+          }
+        }
+      ]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Accueil",
+          "item": "https://www.techrepaircontent.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Blog",
+          "item": "https://www.techrepaircontent.com/blog"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Étude de cas client fintech",
+          "item": "https://www.techrepaircontent.com/articles/article-etude-de-cas-client-fintech.html"
+        }
+      ]
+    }
+  ]
+}
+</script>
+</head>
+<body>
+
+<nav>
+  <div class="logo">
+    <div class="logo-box">TRD</div>
+    <div class="logo-text">TechRepair<span>Content</span></div>
+  </div>
+  <div class="nav-links">
+    <a href="/">Accueil</a>
+    <a href="/services">Services</a>
+    <a href="/secteurs">Secteurs</a>
+    <a href="/apropos">À propos</a>
+    <a href="/blog" class="active">Blog</a>
+    <div class="nav-tools">
+      <button class="btn-demo" type="button"><span class="star">★</span>Outils IA<span class="btn-demo-badge">Nouveau</span><span class="chevron">▾</span></button>
+      <div class="nav-tools-menu">
+        <a href="/agents-ia"><span class="ico">⚙️</span> Agents IA sur mesure</a>
+        <a href="/visibilite-ia"><span class="ico">💬</span> Visibilité dans les IA</a>
+        <a href="/calculateur-temps-perdu"><span class="ico">⏱️</span> Calculateur de temps perdu</a>
+        <a href="https://demo.techrepaircontent.com"><span class="ico">🤖</span> Démo avec Ted</a>
+        <a href="https://demo.techrepaircontent.com/audit-ia.html"><span class="ico">🔍</span> Audit IA gratuit</a>
+      </div>
+    </div>
+    <button class="btn-nav" onclick="window.location='/devis'">Obtenir un devis</button>
+  </div>
+  <button class="hamburger" id="hamburger" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<div class="mobile-menu" id="mobileMenu">
+  <a href="/">Accueil</a>
+  <a href="/services">Services</a>
+  <a href="/secteurs">Secteurs</a>
+  <a href="/apropos">À propos</a>
+  <a href="/blog" class="active">Blog</a>
+  <a href="https://demo.techrepaircontent.com" class="btn-demo-mobile"><span class="star">★</span>Démo avec Ted<span class="btn-demo-badge">Nouveau</span></a>
+  <a href="https://demo.techrepaircontent.com/audit-ia.html" class="btn-demo-mobile"><span class="star">★</span>Audit IA gratuit</a>
+  <button class="btn-nav-mobile" onclick="window.location='/devis'">Obtenir un devis</button>
+</div>
+
+<div class="breadcrumb">
+  <a href="/">Accueil</a> / <a href="/blog">Blog</a> / <span style="color:var(--navy)">Étude de cas client fintech</span>
+</div>
+
+<div class="article-hero">
+  <span class="ah-badge" style="background:#ECFDF5;color:#047857">💳 Fintech</span>
+  <h1>Étude de cas client en fintech : prouver votre fiabilité sans trahir le secret client</h1>
+  <div class="ah-meta">
+    <span>✍️ Rédaction TechRepair Content</span>
+    <div class="ah-dot"></div>
+    <span>Publié le 4 novembre 2026</span>
+    <div class="ah-dot"></div>
+    <span>⏱ 12 min de lecture</span>
+  </div>
+  <div class="ah-cover"><img src="etude-de-cas-client-fintech-cover.jpg" alt="Étude de cas client en fintech : prouver votre fiabilité sans trahir le secret client" width="1200" height="630" loading="eager"/></div>
+</div>
+
+<div class="layout">
+  <main class="content">
+
+<p class="intro-lead">Comité de sélection, dernière réunion. Le directeur financier du prospect pose sa question&nbsp;: «&nbsp;Qui, parmi des entreprises comme la nôtre, utilise déjà votre solution&nbsp;?&nbsp;» Votre fintech compte quarante clients satisfaits. Aucun n'a accepté d'apparaître sur votre site.</p>
+
+    <p>Le blocage a une cause précise&nbsp;: une <strong>étude de cas client</strong> dans la finance touche au secret professionnel, aux clauses de confidentialité et aux services juridiques des clients. La réponse consiste à graduer ce que chaque client accepte de voir publié, puis à rédiger une preuve vérifiable à chaque niveau&nbsp;: méthode, cadre juridique, plan type et exemple réécrit.</p>
+
+    <div class="key-points">
+      <h3>Points clés</h3>
+      <ul>
+        <li><strong>Le refus porte rarement sur tout&nbsp;:</strong> un client qui refuse son logo accepte souvent un profil anonymisé, des chiffres arrondis ou un appel de référence privé.</li>
+        <li><strong>Le secret professionnel impose un accord exprès&nbsp;:</strong> hors des cas prévus par la loi, un établissement de paiement ne divulgue des informations sur un client que si celui-ci l'a expressément permis.</li>
+        <li><strong>Anonymiser ne suffit pas toujours&nbsp;:</strong> si le profil décrit ne correspond qu'à une seule entreprise de votre marché, le client reste identifiable.</li>
+        <li><strong>Une preuve invérifiable se retourne contre vous&nbsp;:</strong> les règles sur les pratiques commerciales trompeuses s'appliquent aussi entre professionnels.</li>
+      </ul>
+    </div>
+
+    <div class="toc-box">
+      <h3>📋 Sommaire</h3>
+      <ol>
+        <li><a href="#ch1">Quarante clients, zéro référence publiable</a></li>
+        <li><a href="#ch2">L'inventaire de vos preuves en une heure</a></li>
+        <li><a href="#ch3">Ce que le droit vous laisse publier</a></li>
+        <li><a href="#ch4">Comment rédiger une étude de cas client en fintech&nbsp;: six étapes</a></li>
+        <li><a href="#ch5">Cinq niveaux de preuve, du logo à l'appel privé</a></li>
+        <li><a href="#ch6">Plan type et exemple d'étude de cas anonymisée</a></li>
+        <li><a href="#ch7">Les cinq fautes qui ruinent une étude de cas</a></li>
+        <li><a href="#ch8">Savoir si vos preuves font avancer les ventes</a></li>
+        <li><a href="#faq">Questions fréquentes</a></li>
+        <li><a href="#sources">Sources</a></li>
+      </ol>
+    </div>
+
+    <h2 id="ch1">1. Quarante clients, zéro référence publiable</h2>
+
+    <p>Les clients d'une fintech refusent souvent d'être cités, car la publication les expose&nbsp;: leurs volumes, leurs prestataires et parfois leurs difficultés passées deviennent visibles de leurs concurrents. Le refus vient souvent du service juridique, pas de l'utilisateur satisfait.</p>
+
+    <p>Les symptômes sont connus&nbsp;: une page «&nbsp;Clients&nbsp;» réduite à des logos flous, des commerciaux qui promettent «&nbsp;des références sur demande&nbsp;» sans savoir qui appeler, une rubrique «&nbsp;références&nbsp;» indigente dans les appels d'offres. Pour une <a href="/secteur-fintech">fintech B2B</a>, ce manque pèse d'autant plus que l'acheteur confie de l'argent ou des données financières.</p>
+
+    <div class="stat-row">
+      <div class="stat"><b>3</b><span>critères posés par la CNIL pour qu'une donnée soit vraiment anonyme (2020)</span></div>
+      <div class="stat"><b>54&nbsp;%</b><span>des acheteurs de logiciels parlent à un utilisateur avant d'acheter, quand les éditeurs l'estiment à 38&nbsp;% (TrustRadius, 2025)</span></div>
+      <div class="stat"><b>74&nbsp;%</b><span>des acheteurs de technologies s'appuient sur des avis pour décider (TrustRadius, 1&nbsp;862 acheteurs, janvier 2026)</span></div>
+    </div>
+
+    <p>Les enquêtes de TrustRadius portent sur les achats de technologie en général, pas spécifiquement sur la fintech. Elles montrent pourtant que l'acheteur cherche la parole d'autres clients&nbsp;; si votre site ne lui en donne aucune, il retiendra un concurrent qui en publie.</p>
+
+    <h2 id="ch2">2. L'inventaire de vos preuves en une heure</h2>
+
+    <p>Avant d'écrire, mesurez ce dont vous disposez réellement. Un tableur, la liste des clients actifs et une heure avec le responsable du succès client suffisent.</p>
+
+    <ol>
+      <li><strong>Lister les clients actifs depuis plus de six mois</strong>, avec leur secteur, leur taille et le produit utilisé.</li>
+      <li><strong>Relire le contrat de chacun</strong>&nbsp;: existe-t-il une clause de référence commerciale, une clause de confidentialité qui l'interdit, ou rien&nbsp;?</li>
+      <li><strong>Noter la satisfaction connue</strong>&nbsp;: renouvellement, extension, incident récent.</li>
+      <li><strong>Repérer les chiffres disponibles dans vos propres outils</strong>&nbsp;: volumes traités, délais, taux d'erreur avant et après, sans rien demander au client.</li>
+      <li><strong>Classer chaque client</strong> sur l'un des cinq niveaux de preuve décrits plus bas.</li>
+    </ol>
+
+    <p>Le résultat se lit vite. Moins de trois clients aux deux premiers niveaux&nbsp;: votre priorité est la négociation des autorisations, pas la rédaction. Beaucoup de clients sans clause&nbsp;: corrigez d'abord le modèle de contrat. La preuve client vient après les <a href="/articles/article-marketing-fintech-contenus-confiance.html">contenus de confiance d'une fintech</a>, qui lèvent d'abord les objections éliminatoires.</p>
+
+    <h2 id="ch3">3. Ce que le droit vous laisse publier</h2>
+
+    <p>Une fintech peut publier une étude de cas dès lors que le client a donné son accord exprès, que les faits sont exacts et vérifiables, et qu'aucune donnée personnelle n'est exposée sans base légale. Trois corps de règles s'appliquent.</p>
+
+    <h3>Le secret professionnel et l'accord exprès</h3>
+
+    <p>L'article L.&nbsp;522-19 du Code monétaire et financier soumet les dirigeants et salariés d'un établissement de paiement au secret professionnel. Hors des cas prévus par la loi, l'établissement ne peut communiquer des informations couvertes par ce secret que lorsque les personnes concernées le lui ont expressément permis. Pour une étude de cas, il faut donc un accord écrit, précis sur ce qui sera publié&nbsp;: nom, logo, chiffres, citations. Si votre fintech a un autre statut, faites vérifier les règles qui s'appliquent par votre juriste.</p>
+
+    <h3>L'exactitude, y compris entre professionnels</h3>
+
+    <p>L'article L.&nbsp;121-5 du Code de la consommation étend aux pratiques qui visent des professionnels les règles sur les pratiques commerciales trompeuses. Un gain arrondi vers le haut ou un résultat d'un seul mois présenté comme durable exposent donc l'éditeur, même en B2B. Si vous êtes soumis au contrôle de l'ACPR, sa recommandation 2016-R-01 sur les réseaux sociaux cite la diffusion d'avis trompeurs, «&nbsp;y compris de fausses recommandations&nbsp;», et vous rend responsable des contenus que vous relayez. Le repartage d'un témoignage client sur LinkedIn est donc concerné.</p>
+
+    <h3>Les données personnelles et l'anonymisation</h3>
+
+    <p>Une citation signée ou une photo sont des données personnelles. Selon la CNIL, des données ne sont <a href="https://www.cnil.fr/lanonymisation-de-donnees-personnelles" class="src" target="_blank" rel="noopener">réellement anonymes</a> que s'il est impossible d'isoler une personne, de relier des informations la concernant ou d'en déduire de nouvelles informations de façon quasi certaine. Ces trois critères donnent un bon test pour une étude de cas anonymisée, même si le secret de l'entreprise cliente relève, lui, du contrat et du secret professionnel.</p>
+
+    <div class="callout">
+      <p><strong>Le test du concurrent.</strong> Faites lire la version anonymisée à un commercial qui ne connaît pas le client. S'il devine son nom en moins d'une minute à partir du secteur, de la ville et des volumes, l'anonymisation a échoué&nbsp;: élargissez la fourchette de taille, retirez la région ou arrondissez les volumes.</p>
+    </div>
+
+    <h2 id="ch4">4. Comment rédiger une étude de cas client en fintech&nbsp;: six étapes</h2>
+
+    <p>Comptez quatre à six semaines entre le premier contact et la publication, dont l'essentiel en attente de validation. La rédaction elle-même prend deux à trois jours.</p>
+
+    <ol>
+      <li><strong>Choisir le candidat (responsable du succès client, une heure).</strong> Retenez un client qui a renouvelé, dont le problème ressemble à celui de vos prospects et dont les résultats se mesurent dans vos données.</li>
+      <li><strong>Négocier le niveau de publication (commercial et juriste, une à deux semaines).</strong> Proposez plusieurs paliers plutôt qu'un oui ou non, pour obtenir au moins un accord partiel.</li>
+      <li><strong>Mener l'entretien (marketing, 45 minutes).</strong> Interrogez l'utilisateur métier, pas seulement le décideur. Enregistrez avec son accord.</li>
+      <li><strong>Vérifier chaque chiffre (marketing et équipe produit, deux jours).</strong> Un chiffre n'entre dans le texte que s'il sort de vos outils ou d'un document du client, avec sa période de mesure.</li>
+      <li><strong>Rédiger en 800 à 1&nbsp;200 mots (deux à trois jours).</strong> Ajoutez une version de 150 mots pour les commerciaux et les appels d'offres.</li>
+      <li><strong>Faire valider deux fois (client, puis conformité interne, une à trois semaines).</strong> Archivez la version validée avec l'accord écrit et sa date.</li>
+    </ol>
+
+    <h3>Les dix questions de l'entretien client</h3>
+
+    <ul>
+      <li>Quelle tâche ou quel risque vous a fait chercher une solution&nbsp;?</li>
+      <li>Comment faisiez-vous avant, et combien de personnes y passaient du temps&nbsp;?</li>
+      <li>Quelles autres solutions avez-vous étudiées, et pourquoi les avoir écartées&nbsp;?</li>
+      <li>Qu'est-ce qui vous inquiétait avant de signer&nbsp;?</li>
+      <li>Comment s'est passée la mise en service, et qu'est-ce qui a pris plus de temps que prévu&nbsp;?</li>
+      <li>Qui, dans votre équipe, utilise l'outil chaque jour&nbsp;?</li>
+      <li>Qu'est-ce qui a changé dans votre clôture, vos rapprochements ou vos contrôles&nbsp;?</li>
+      <li>Quel chiffre suivez-vous pour juger que cela fonctionne&nbsp;?</li>
+      <li>Que diriez-vous à un directeur financier qui hésite&nbsp;?</li>
+      <li>Qu'aimeriez-vous que nous améliorions&nbsp;?</li>
+    </ul>
+
+    <p>La dernière question produit souvent la phrase la plus crédible&nbsp;: un acheteur financier se méfie d'un récit sans réserve.</p>
+
+    <h2 id="ch5">5. Cinq niveaux de preuve, du logo à l'appel privé</h2>
+
+    <p>Le choix ne se résume pas à «&nbsp;nommé&nbsp;» ou «&nbsp;rien&nbsp;». Chaque niveau a un usage commercial propre&nbsp;; l'objectif est d'avoir au moins une preuve à chacun des trois premiers.</p>
+
+    <table>
+      <tr><th>Niveau et usage</th><th>Ce qui est publié</th><th>Point de vigilance</th></tr>
+      <tr><td><strong>1. Étude nommée</strong><br>Site, appels d'offres, salons</td><td>Nom, logo, citations signées, chiffres</td><td>Accord écrit sur chaque chiffre cité</td></tr>
+      <tr><td><strong>2. Nommée sans chiffres</strong><br>Page clients, présentations</td><td>Nom et récit, résultats qualitatifs</td><td>Ne pas laisser deviner les volumes</td></tr>
+      <tr><td><strong>3. Anonymisée</strong><br>Site, articles, livre blanc</td><td>Profil (secteur, taille en fourchette), chiffres arrondis</td><td>Test du concurrent, période de mesure indiquée</td></tr>
+      <tr><td><strong>4. Agrégée</strong><br>Page produit, argumentaire</td><td>Résultat moyen sur plusieurs clients</td><td>Indiquer le nombre de clients et la méthode</td></tr>
+      <tr><td><strong>5. Référence privée</strong><br>Fin de cycle, comité d'achat</td><td>Rien en ligne, appel ou visite sur demande</td><td>Ne pas solliciter le même client plus de deux fois par trimestre</td></tr>
+    </table>
+
+    <p>Le niveau 4 est le plus négligé. Une phrase comme «&nbsp;sur nos douze clients de l'industrie, le délai moyen de rapprochement est passé de cinq à deux jours entre 2025 et 2026&nbsp;» ne trahit personne et se vérifie dans vos données. Les mêmes niveaux s'appliquent aux <a href="/articles/article-pages-comparatives-saas.html">pages comparatives</a>, où une preuve agrégée vaut mieux qu'une affirmation sans source face à un concurrent.</p>
+
+    <h2 id="ch6">6. Plan type et exemple d'étude de cas anonymisée</h2>
+
+    <p>Ce plan tient sur deux pages et convient aux niveaux 1 à 3. L'exemple qui suit est fictif, entreprise et chiffres compris.</p>
+
+    <h3>Le plan en six blocs</h3>
+
+    <ol>
+      <li><strong>Profil</strong>&nbsp;: secteur, taille en fourchette, pays, produit utilisé, date de début.</li>
+      <li><strong>Situation de départ</strong>&nbsp;: la tâche, le temps qu'elle prenait, le risque qu'elle faisait courir.</li>
+      <li><strong>Critères de choix</strong>&nbsp;: les solutions étudiées et la raison de la décision.</li>
+      <li><strong>Mise en œuvre</strong>&nbsp;: durée, équipes mobilisées, difficulté rencontrée.</li>
+      <li><strong>Résultats</strong>&nbsp;: deux ou trois chiffres avec leur période et leur source.</li>
+      <li><strong>Limites et suite</strong>&nbsp;: ce qui reste à améliorer, prochaine étape.</li>
+    </ol>
+
+    <h3>Avant, après&nbsp;: la même preuve réécrite</h3>
+
+    <p><strong>Avant</strong>&nbsp;: «&nbsp;Un grand groupe industriel a révolutionné sa gestion de trésorerie grâce à notre plateforme et gagné un temps considérable.&nbsp;»</p>
+
+    <p><strong>Après</strong>&nbsp;: «&nbsp;Un groupe industriel français de 1&nbsp;000 à 2&nbsp;000 salariés, présent dans six pays, rapprochait ses relevés de quatorze comptes bancaires à la main. La clôture mensuelle mobilisait deux comptables pendant quatre jours. Après trois mois d'utilisation, mesurés de janvier à mars 2026 dans les journaux de la plateforme, 92&nbsp;% des opérations sont rapprochées automatiquement et la clôture prend un jour et demi. Les virements internationaux restent à contrôler à la main.&nbsp;»</p>
+
+    <p>La seconde version donne un profil sans nom, des chiffres datés et sourcés, une limite assumée&nbsp;: un directeur financier peut la comparer à sa situation.</p>
+
+    <div class="callout">
+      <p><strong>Modèle de clause d'autorisation par paliers.</strong> «&nbsp;Le Client autorise le Prestataire à le citer comme référence selon le niveau coché&nbsp;: ☐ nom et logo&nbsp;; ☐ étude de cas nommée après validation écrite du texte&nbsp;; ☐ étude de cas anonymisée après validation écrite du texte&nbsp;; ☐ intégration dans des statistiques agrégées&nbsp;; ☐ contact de référence sur demande, au plus deux fois par trimestre. Cette autorisation est révocable par écrit à tout moment.&nbsp;» Ce modèle est un point de départ à faire relire par votre juriste.</p>
+    </div>
+
+    <h2 id="ch7">7. Les cinq fautes qui ruinent une étude de cas</h2>
+
+    <ul>
+      <li><strong>Demander l'accord à la fin.</strong> Présenté après la rédaction, le texte revient refusé par le juriste du client.</li>
+      <li><strong>Publier un chiffre sans période.</strong> «&nbsp;Réduction de 70&nbsp;% des erreurs&nbsp;» n'a pas de sens sans durée de mesure ni base de départ&nbsp;; c'est aussi la phrase la plus exposée au grief de pratique trompeuse.</li>
+      <li><strong>Anonymiser à moitié.</strong> «&nbsp;Une néobanque lyonnaise de 300 salariés&nbsp;» désigne souvent une seule entreprise.</li>
+      <li><strong>Écrire pour le client plutôt que pour le prospect.</strong> Remercier l'équipe du client ne lève aucune objection.</li>
+      <li><strong>Laisser l'étude au fond du site.</strong> Une étude de cas sert d'abord en rendez-vous et en relance commerciale&nbsp;; si les commerciaux ignorent son existence, elle ne convertit pas.</li>
+    </ul>
+
+    <p>Ce dernier point vaut pour tout le contenu de preuve. Rassemblées et sourcées dans un livre blanc sectoriel, plusieurs études anonymisées deviennent un actif de référencement&nbsp;: le document suscite des liens et des mentions, alimente des articles satellites, recueille les coordonnées de lecteurs qualifiés et offre aux moteurs IA une source qu'ils peuvent citer. Le <a href="/livres-blancs/visibilite-ia-b2b-guide.html">guide B2B de la visibilité IA</a> détaille ce dernier mécanisme.</p>
+
+    <h2 id="ch8">8. Savoir si vos preuves font avancer les ventes</h2>
+
+    <p>Une étude de cas se juge sur son usage commercial et sur les opportunités où elle intervient, pas sur ses pages vues. Faites un premier bilan à trois mois, un second au terme d'un cycle de vente entier.</p>
+
+    <table>
+      <tr><th>Indicateur</th><th>Où le lire</th><th>Seuil réaliste</th></tr>
+      <tr><td>Clients classés aux niveaux 1 à 3</td><td>Tableur d'inventaire</td><td>Au moins une preuve par segment cible en six mois</td></tr>
+      <tr><td>Études envoyées par les commerciaux</td><td>CRM, pièces jointes ou liens suivis</td><td>Présente dans la majorité des opportunités avancées</td></tr>
+      <tr><td>Taux de transformation des opportunités qui l'ont reçue</td><td>CRM, comparaison avec celles qui ne l'ont pas reçue</td><td>Comparer sur au moins un trimestre</td></tr>
+      <tr><td>Demandes d'appel de référence</td><td>Suivi du succès client</td><td>Moins de deux par client et par trimestre</td></tr>
+    </table>
+
+    <p>La comparaison reste indicative, car les opportunités qui reçoivent une étude sont souvent déjà avancées&nbsp;; elle repère au moins une étude que personne n'utilise.</p>
+
+    <h3>Produire seul ou se faire épauler</h3>
+
+    <p>Avec un responsable marketing produit, l'accès aux données de la plateforme et un juriste disponible, une équipe produit une étude par trimestre avec ce plan. L'appui d'un rédacteur extérieur se justifie quand le volume dépasse ce rythme, quand l'entretien demande une tierce personne neutre, ou quand plusieurs études doivent alimenter un livre blanc. Examinez alors la connaissance des contraintes fintech, la vérification des chiffres et la gestion de la validation, comme pour les <a href="/service-livres-blancs">études de cas et livres blancs B2B</a> rédigés sur mesure.</p>
+
+    <h2 id="faq">Questions fréquentes</h2>
+
+    <div class="faq-item">
+      <h3>Comment rédiger une étude de cas client&nbsp;?</h3>
+      <p>Choisissez un client dont le problème ressemble à celui de vos prospects, obtenez son accord écrit, menez un entretien de 45 minutes, vérifiez chaque chiffre, puis rédigez en six blocs&nbsp;: profil, situation de départ, choix, mise en œuvre, résultats datés, limites.</p>
+    </div>
+
+    <div class="faq-item">
+      <h3>Quelles questions poser pour un témoignage client&nbsp;?</h3>
+      <p>Interrogez la situation de départ, les alternatives écartées, les craintes avant la signature, la mise en service, le chiffre suivi et ce qui reste à améliorer.</p>
+    </div>
+
+    <div class="faq-item">
+      <h3>Peut-on publier une étude de cas sans nommer le client&nbsp;?</h3>
+      <p>Oui, si le client l'a accepté par écrit et qu'il reste impossible à identifier&nbsp;: profil en fourchettes, aucun détail qui le désigne, relecture par une personne qui ne le connaît pas.</p>
+    </div>
+
+    <div class="faq-item">
+      <h3>Que faire si aucun client n'accepte d'être cité&nbsp;?</h3>
+      <p>Proposez des paliers&nbsp;: étude anonymisée, résultats agrégés sur plusieurs clients ou appel de référence privé. Ajoutez une clause d'autorisation graduée à vos nouveaux contrats pour constituer un stock de preuves au fil des signatures.</p>
+    </div>
+
+    <div class="conclusion-box">
+      <p><strong>En résumé</strong></p>
+      <p>Une fintech ne manque pas de preuves, elle manque d'autorisations graduées et de méthode pour les publier. Faites l'inventaire de vos clients, négociez un palier avant l'entretien, vérifiez chaque chiffre, anonymisez jusqu'à passer le test du concurrent et suivez l'usage commercial de chaque étude. Pour transformer vos premiers accords en études de cas prêtes pour vos rendez-vous, demandez un diagnostic de vos preuves clients.</p>
+      <a href="/devis" class="final-cta">Faire le point sur vos preuves clients →</a>
+    </div>
+
+    <h2 id="sources">Sources</h2>
+    <ol class="sources">
+      <li>TrustRadius, «&nbsp;2025 Buyer Research Report: Top 10 Takeaways&nbsp;», 2025. <a href="https://go.trustradius.com/rs/827-FOI-687/images/TrustRadius-2025-Buyer-Research-Report-Top-10-Takeaways.pdf" target="_blank" rel="nofollow noopener">trustradius.com</a></li>
+      <li>HG Insights et TrustRadius, «&nbsp;TrustRadius 2026 B2B Buying Disconnect Report&nbsp;», communiqué du 15 juillet 2026. <a href="https://hginsights.com/news/trustradius-2026-b2b-buying-disconnect-report-reveals-ai-has-changed-how-buyers-research-but-not-what-they-trust/" target="_blank" rel="nofollow noopener">hginsights.com</a></li>
+      <li>Légifrance, Code monétaire et financier, article L.&nbsp;522-19 (secret professionnel des établissements de paiement), version en vigueur depuis le 13 janvier 2018. <a href="https://www.legifrance.gouv.fr/codes/id/LEGIARTI000035430758/2018-01-13" target="_blank" rel="nofollow noopener">legifrance.gouv.fr</a></li>
+      <li>Code de la consommation, article L.&nbsp;121-5 (pratiques commerciales trompeuses visant les professionnels), version en vigueur depuis le 23 février 2017, texte consulté sur French Business Law. <a href="https://french-business-law.com/rench-legislation-art/article-l121-5-of-the-french-consumer-code" target="_blank" rel="nofollow noopener">french-business-law.com</a></li>
+      <li>ACPR, Recommandation 2016-R-01 sur l'utilisation des réseaux sociaux numériques à des fins commerciales, 14 novembre 2016. <a href="https://cclrf.banque-france.fr/sites/default/files/media/2020/08/05/8._recommandation_2016-r-01.pdf" target="_blank" rel="nofollow noopener">banque-france.fr</a></li>
+      <li>CNIL, «&nbsp;L'anonymisation de données personnelles&nbsp;», 19 mai 2020. <a href="https://www.cnil.fr/lanonymisation-de-donnees-personnelles" target="_blank" rel="nofollow noopener">cnil.fr</a></li>
+    </ol>
+
+  <!-- maillage:debut -->
+<section class="maillage" aria-label="Articles liés">
+<style>
+.maillage{margin:44px 0 8px;padding-top:28px;border-top:1px solid #e2e8f0;font-family:inherit}
+.maillage h2{font-size:20px!important;font-weight:800;color:#0F1B3D;margin:0 0 16px!important}
+.mi-grille{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:14px}
+.mi-carte{display:flex;flex-direction:column;gap:8px;border:1px solid #e2e8f0;border-radius:14px;padding:16px 18px;background:#fff;text-decoration:none!important;transition:border-color .2s,box-shadow .2s,transform .2s}
+.mi-carte:hover{border-color:#1A56DB;box-shadow:0 8px 24px rgba(26,86,219,.10);transform:translateY(-2px)}
+.mi-cat{font-size:10.5px;font-weight:800;letter-spacing:1.2px;text-transform:uppercase;color:#1342b0}
+.mi-titre{font-size:14.5px;font-weight:700;line-height:1.4;color:#0F1B3D}
+.mi-lire{margin-top:auto;font-size:12px;color:#64748b}
+</style>
+<h2>À lire aussi</h2>
+<div class="mi-grille"><a class="mi-carte" href="/articles/article-marketing-fintech-contenus-confiance.html"><span class="mi-cat">Fintech</span><span class="mi-titre">Marketing fintech : les contenus qui créent la confiance avant la première démo</span><span class="mi-lire">Lire l'article · 12 min</span></a><a class="mi-carte" href="/articles/article-dsp3-psr-fintechs-preparer.html"><span class="mi-cat">Fintech</span><span class="mi-titre">DSP3 et règlement PSR : ce que les fintechs de paiement doivent préparer</span><span class="mi-lire">Lire l'article · 12 min</span></a><a class="mi-carte" href="/articles/article-facturation-electronique-2026.html"><span class="mi-cat">Fintech</span><span class="mi-titre">Facturation électronique 2026 : comprendre la réforme et savoir où s&#x27;inscrire</span><span class="mi-lire">Lire l'article · 12 min</span></a></div>
+</section>
+<!-- maillage:fin -->
+</main>
+
+  <aside class="sidebar">
+    <div class="sidebar-card">
+      <h3>Sommaire</h3>
+      <div class="mini-toc">
+        <a href="#ch1">1. Aucune référence</a>
+        <a href="#ch2">2. Inventaire</a>
+        <a href="#ch3">3. Le cadre juridique</a>
+        <a href="#ch4">4. Six étapes</a>
+        <a href="#ch5">5. Niveaux de preuve</a>
+        <a href="#ch6">6. Plan et exemple</a>
+        <a href="#ch7">7. Fautes à éviter</a>
+        <a href="#ch8">8. Mesurer</a>
+        <a href="#faq">FAQ</a>
+        <a href="#sources">Sources</a>
+      </div>
+    </div>
+    <div class="sidebar-card">
+      <div class="author-card">
+        <div class="author-avatar">TRD</div>
+        <div>
+          <div class="author-name">Rédaction TechRepair Content</div>
+          <div class="author-role">Rédaction SEO tech B2B</div>
+        </div>
+      </div>
+    </div>
+    <div class="sidebar-card guide-card">
+      <h3>Le guide B2B de la visibilité IA</h3>
+      <p>Livre blanc gratuit : savoir ce que ChatGPT, Perplexity et Gemini disent de votre fintech, puis devenir une source qu'ils citent.</p>
+      <a href="/livres-blancs/visibilite-ia-b2b-guide.html" class="guide-btn">Télécharger le livre blanc</a>
+    </div>
+  </aside>
+</div>
+
+<div class="nl-band">
+  <div class="nl-band-inner">
+    <h2>📩 La newsletter SEO Tech B2B</h2>
+    <p>Chaque semaine, une stratégie actionnable et une opportunité SEO dans votre secteur.</p>
+    <div class="nl-band-form">
+      <input type="email" class="nl-band-input" id="nlBandEmail" placeholder="votre@email.com"/>
+      <button class="nl-band-btn" id="nlBandBtn" type="button">S'abonner →</button>
+    </div>
+    <p id="nlBandMsg" style="display:none;font-size:12px;color:#fff;margin-top:8px"></p>
+    <p class="nl-band-note">✓ Gratuit · ✓ Sans spam · ✓ Désabonnement en 1 clic</p>
+  </div>
+</div>
+
+<div class="cta-band">
+  <div class="cta-inner">
+    <div>
+      <h2>Du contenu qui performe, pas qui remplit des pages</h2>
+      <p>Vous voulez une stratégie de contenu sur mesure pour votre secteur tech B2B ? Parlons-en.</p>
+      <div class="cta-btns">
+        <button class="btn-white" onclick="window.location='/devis'">Obtenir un devis gratuit →</button>
+        <button class="btn-ghost-cta" onclick="window.location='/services'">Voir nos services →</button>
+      </div>
+    </div>
+    <div class="cta-checks">
+      <div class="cta-check"><span class="cta-ci">✓</span> Réponse sous 24h</div>
+      <div class="cta-check"><span class="cta-ci">✓</span> Audit SEO gratuit</div>
+      <div class="cta-check"><span class="cta-ci">✓</span> Sans engagement</div>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <div class="logo"><div class="logo-box">TRD</div><div class="logo-text" style="color:#fff">TechRepair<span>Content</span></div></div>
+      <p>Rédaction SEO & technique pour entreprises SaaS, Tech et E-commerce.</p>
+    </div>
+    <div><h4>Navigation</h4><ul class="flinks"><li><a href="/">Accueil</a></li><li><a href="/apropos">À propos</a></li><li><a href="/services">Services</a></li><li><a href="/secteurs">Secteurs</a></li><li><a href="/blog">Blog</a></li><li><a href="/livres-blancs/">Livres blancs</a></li></ul></div>
+    <div><h4>Ressources</h4><ul class="flinks"><li><a href="/agents-ia">Agents IA</a></li><li><a href="/visibilite-ia">Visibilité dans les IA</a></li><li><a href="/faq">FAQ</a></li><li><a href="/confidentialite">Confidentialité</a></li><li><a href="/mentions-legales">Mentions légales</a></li></ul></div>
+    <div>
+      <h4>Contact</h4>
+      <ul class="flinks"><li><a href="mailto:contact@techrepaircontent.com">contact@techrepaircontent.com</a></li><li><a href="/devis">Réponse sous 24h</a></li></ul>
+      <div class="fsocial"><a class="fsoc" href="https://www.linkedin.com/in/techrepair-content" target="_blank" rel="noopener">in</a><a class="fsoc" href="mailto:contact@techrepaircontent.com">✉</a></div>
+    </div>
+    <div><h4>Basé en France</h4><div style="font-size:22px">🇫🇷</div></div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2026 TechRepair Content. Tous droits réservés.</span>
+    <span>Fait avec ❤️ en France</span>
+  </div>
+</footer>
+
+<script>
+const hamburger = document.getElementById('hamburger');
+const mobileMenu = document.getElementById('mobileMenu');
+hamburger.addEventListener('click', () => {
+  hamburger.classList.toggle('open');
+  mobileMenu.classList.toggle('open');
+});
+mobileMenu.querySelectorAll('a').forEach(link => {
+  link.addEventListener('click', () => {
+    hamburger.classList.remove('open');
+    mobileMenu.classList.remove('open');
+  });
+});
+
+const BREVO_FORM_ACTION = 'https://a41ce724.sibforms.com/serve/MUIFAEGqDW1rbNTL0uU5ym6Ux5qJ7TJpdETsCjqRumOCnr-gRU8IGKx8Ic-JLjScrVVWrJVx_YXawDF8ao6y5hYLPvy7h8UJCk3gg9gTHcTaNAWQzbjwLnHO6DPk_HzPb7XY28rHy9JtEMuP-euST6RZutJ_bWOfqZFEtI-UUs9G4HA-O5V8JPwb3jLz0jhwuISuUqZ3Iok5IEyYHg==';
+
+function subscribeToNewsletter(emailInput, msgEl, btnEl) {
+  const email = emailInput.value.trim();
+  const isValidEmail = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+  msgEl.style.display = 'block';
+  if (!isValidEmail) {
+    msgEl.style.color = '#dc2626';
+    msgEl.textContent = "Merci d'entrer une adresse email valide.";
+    return;
+  }
+  const formData = new FormData();
+  formData.append('EMAIL', email);
+  formData.append('email_address_check', '');
+  formData.append('locale', 'fr');
+  formData.append('html_type', 'simple');
+  fetch(BREVO_FORM_ACTION, { method: 'POST', mode: 'no-cors', body: formData }).catch(() => {});
+  msgEl.style.color = '#10b981';
+  msgEl.textContent = 'Merci ! Vérifiez votre boîte mail pour confirmer.';
+  btnEl.textContent = 'Inscription envoyée ✓';
+  btnEl.disabled = true;
+}
+
+const nlBandBtn = document.getElementById('nlBandBtn');
+nlBandBtn.addEventListener('click', () => {
+  subscribeToNewsletter(document.getElementById('nlBandEmail'), document.getElementById('nlBandMsg'), nlBandBtn);
+});
+</script>
+</body>
+</html>
