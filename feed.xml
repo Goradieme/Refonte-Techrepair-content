@@ -5,8 +5,16 @@
     <link>https://www.techrepaircontent.com/blog</link>
     <description>Rédaction SEO et technique pour le SaaS, la tech et l'e-commerce.</description>
     <language>fr-FR</language>
-    <lastBuildDate>Wed, 04 Nov 2026 03:01:13 GMT</lastBuildDate>
+    <lastBuildDate>Thu, 05 Nov 2026 02:58:41 GMT</lastBuildDate>
     <atom:link href="https://www.techrepaircontent.com/feed.xml" rel="self" type="application/rss+xml"/>
+    <item>
+      <title>Landing page SaaS : la structure qui transforme les visites en démos</title>
+      <link>https://www.techrepaircontent.com/articles/article-landing-page-saas-conversion.html</link>
+      <guid isPermaLink="true">https://www.techrepaircontent.com/articles/article-landing-page-saas-conversion.html</guid>
+      <pubDate>Thu, 05 Nov 2026 07:00:00 GMT</pubDate>
+      <description>Moins de quatre visiteurs sur cent convertissent sur une page SaaS médiane. Diagnostiquez la vôtre en 45 minutes, reconstruisez-la en neuf blocs et mesurez-la en démos qualifiées.</description>
+      <enclosure url="https://www.techrepaircontent.com/articles/landing-page-saas-conversion-cover.jpg" type="image/jpeg"/>
+    </item>
     <item>
       <title>Étude de cas client en fintech : prouver sans trahir le secret client</title>
       <link>https://www.techrepaircontent.com/articles/article-etude-de-cas-client-fintech.html</link>
