@@ -1,0 +1,707 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Landing page SaaS : structure, exemple et taux de conversion</title>
+<meta name="description" content="Landing page SaaS : diagnostic en 45 minutes, structure en neuf blocs, choix entre essai et démo, gabarit, exemple avant / après et taux de conversion à viser."/>
+<meta name="author" content="TechRepair Content"/>
+<link rel="canonical" href="https://www.techrepaircontent.com/articles/article-landing-page-saas-conversion.html"/>
+<meta property="og:title" content="Landing page SaaS : la structure qui transforme les visites en démos"/>
+<meta property="og:description" content="Landing page SaaS : diagnostic en 45 minutes, structure en neuf blocs, choix entre essai et démo, gabarit, exemple avant / après et taux de conversion à viser."/>
+<meta property="og:type" content="article"/>
+<meta property="og:url" content="https://www.techrepaircontent.com/articles/article-landing-page-saas-conversion.html"/>
+<meta property="og:locale" content="fr_FR"/>
+<meta property="og:site_name" content="TechRepair Content"/>
+<meta property="og:image" content="https://www.techrepaircontent.com/articles/landing-page-saas-conversion-cover.jpg"/>
+<meta property="article:published_time" content="2026-11-05"/>
+<meta name="twitter:card" content="summary_large_image"/>
+
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet"/>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --blue:#1A56DB;--blue-dark:#1342b0;--blue-light:#EFF6FF;
+  --navy:#0F1B3D;--text:#1e293b;--muted:#64748b;
+  --border:#e2e8f0;--green:#10b981;--orange:#f97316;--purple:#7c3aed;
+  --radius:12px;
+}
+html{scroll-behavior:smooth}
+body{font-family:'Manrope',sans-serif;color:var(--text);background:#fff;font-size:15px;line-height:1.6}
+a{text-decoration:none;color:inherit}
+nav{position:sticky;top:0;z-index:200;background:#fff;border-bottom:1px solid var(--border);padding:0 32px;display:flex;align-items:center;gap:20px;height:62px;}
+.logo{display:flex;align-items:center;gap:10px;flex-shrink:0}
+.logo-box{width:36px;height:36px;background:var(--blue);border-radius:7px;display:grid;place-items:center;color:#fff;font-weight:800;font-size:13px;letter-spacing:-.5px}
+.logo-text{font-size:13px;font-weight:700;line-height:1.2;color:var(--navy)}
+.logo-text span{display:block;color:var(--muted);font-weight:500;font-size:11px}
+.nav-links{display:flex;gap:22px;margin-left:auto;align-items:center}
+.nav-links a{font-size:13.5px;font-weight:500;color:var(--muted);transition:color .2s}
+.nav-links a:hover,.nav-links a.active{color:var(--blue)}
+.nav-links a.active{border-bottom:2px solid var(--blue);padding-bottom:1px}
+.btn-nav{background:var(--blue);color:#fff;border:none;border-radius:8px;padding:9px 18px;font-weight:700;font-size:13.5px;cursor:pointer;white-space:nowrap;font-family:inherit}
+@media(max-width:600px){nav{padding:0 16px}.nav-links a:not(:last-child){display:none}}
+.hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;background:none;border:none;padding:4px}
+.hamburger span{display:block;width:24px;height:2px;background:var(--navy);border-radius:2px;transition:all .3s}
+.hamburger.open span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+.hamburger.open span:nth-child(2){opacity:0}
+.hamburger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+.mobile-menu{display:none;position:fixed;top:62px;left:0;right:0;background:#fff;border-bottom:1px solid var(--border);padding:16px 24px;flex-direction:column;gap:4px;z-index:199;box-shadow:0 8px 24px rgba(0,0,0,.08)}
+.mobile-menu.open{display:flex}
+.mobile-menu a{font-size:15px;font-weight:600;color:var(--muted);padding:10px 0;border-bottom:1px solid var(--border);transition:color .2s}
+.mobile-menu a:last-of-type{border-bottom:none}
+.mobile-menu a:hover,.mobile-menu a.active{color:var(--blue)}
+.mobile-menu .btn-nav-mobile{margin-top:10px;background:var(--blue);color:#fff;border:none;border-radius:8px;padding:12px;font-weight:700;font-size:14px;cursor:pointer;font-family:inherit;width:100%}
+@media(max-width:768px){.hamburger{display:flex}.nav-links{display:none}}
+
+.breadcrumb{max-width:1100px;margin:0 auto;padding:18px 32px 0;font-size:12.5px;color:var(--muted)}
+.breadcrumb a{color:var(--muted)}
+.breadcrumb a:hover{color:var(--blue)}
+
+.article-hero{max-width:1100px;margin:0 auto;padding:24px 32px 0}
+.ah-badge{display:inline-flex;align-items:center;gap:5px;background:#F5F3FF;color:var(--purple);font-size:11px;font-weight:700;padding:4px 12px;border-radius:20px;margin-bottom:16px}
+.article-hero h1{font-size:34px;font-weight:800;line-height:1.2;color:var(--navy);max-width:820px;margin-bottom:16px}
+.ah-meta{display:flex;align-items:center;gap:12px;font-size:13px;color:var(--muted);margin-bottom:24px;flex-wrap:wrap}
+.ah-dot{width:4px;height:4px;border-radius:50%;background:var(--border)}
+.ah-cover{width:100%;border-radius:20px;overflow:hidden;margin-bottom:8px;border:1px solid var(--border)}
+.ah-cover img{width:100%;height:auto;display:block}
+
+.layout{max-width:1100px;margin:0 auto;padding:40px 32px 56px;display:grid;grid-template-columns:1fr 300px;gap:44px;align-items:start}
+.content h2{font-size:24px;font-weight:800;color:var(--navy);margin:40px 0 14px;line-height:1.3}
+.content h3{font-size:18px;font-weight:800;color:var(--navy);margin:28px 0 10px;line-height:1.3}
+.content p{margin-bottom:14px;color:var(--text);font-size:15px;line-height:1.75}
+.content ul,.content ol{margin:0 0 16px 20px;color:var(--text)}
+.content li{margin-bottom:7px;line-height:1.7}
+.content strong{color:var(--navy)}
+.content em{color:var(--muted)}
+.content hr{border:none;border-top:1px solid var(--border);margin:36px 0}
+.intro-lead{font-size:16.5px;color:var(--muted);line-height:1.8;margin-bottom:20px}
+.toc-box{background:var(--blue-light);border:1px solid #c3d6f8;border-radius:16px;padding:22px 24px;margin:24px 0 36px}
+.toc-box h3{margin:0 0 12px;font-size:14px;color:var(--navy)}
+.toc-box ol{margin:0 0 0 18px}
+.toc-box li{font-size:13.5px;margin-bottom:6px}
+.toc-box a{color:var(--blue-dark);font-weight:600}
+.toc-box a:hover{text-decoration:underline}
+.callout{background:#f8fafc;border-left:3px solid var(--blue);border-radius:8px;padding:16px 20px;margin:18px 0;font-size:14px}
+.callout strong{display:block;margin-bottom:4px;color:var(--navy)}
+.benefit{font-size:13.5px;color:var(--muted);font-style:italic;margin:-6px 0 16px}
+table{width:100%;border-collapse:collapse;margin:18px 0 22px;font-size:13.5px}
+th,td{border:1px solid var(--border);padding:10px 12px;text-align:left;vertical-align:top}
+th{background:#f8fafc;color:var(--navy);font-weight:700}
+.case-card{border:1px solid var(--border);border-radius:14px;padding:20px 22px;margin-bottom:18px;background:#fafbfc}
+.case-card h3{margin-top:0}
+.faq-item{border-bottom:1px solid var(--border);padding:16px 0}
+.faq-item:last-child{border-bottom:none}
+.faq-item p.question{font-weight:800;color:var(--navy);margin-bottom:6px;font-size:15px}
+.conclusion-box{background:linear-gradient(135deg,var(--navy),#1e3a6e);border-radius:18px;padding:32px;margin-top:32px;color:#fff}
+.conclusion-box p{color:#cbd5e1}
+.conclusion-box strong{color:#fff}
+.conclusion-box .final-cta{display:inline-block;margin-top:14px;background:var(--blue);color:#fff;border-radius:8px;padding:12px 22px;font-weight:700;font-size:14px}
+
+.sidebar{display:flex;flex-direction:column;gap:20px;position:sticky;top:80px}
+.sidebar-card{background:#f8fafc;border:1px solid var(--border);border-radius:16px;padding:20px}
+.sidebar-card h3{font-size:12.5px;font-weight:800;color:var(--navy);margin-bottom:14px;text-transform:uppercase;letter-spacing:.4px}
+.mini-toc{display:flex;flex-direction:column;gap:9px}
+.mini-toc a{font-size:12.5px;color:var(--muted);line-height:1.5}
+.mini-toc a:hover{color:var(--blue)}
+.author-card{display:flex;gap:10px;align-items:center}
+.author-avatar{width:38px;height:38px;border-radius:50%;background:var(--blue);color:#fff;display:grid;place-items:center;font-weight:800;font-size:13px}
+.author-name{font-size:13px;font-weight:700;color:var(--navy)}
+.author-role{font-size:11.5px;color:var(--muted)}
+.guide-card{background:linear-gradient(135deg,#f0f5ff,#dce9ff);border-color:#c3d6f8}
+.guide-card p{font-size:12.5px;color:var(--muted);line-height:1.6;margin-bottom:14px}
+.guide-btn{display:block;text-align:center;background:var(--blue);color:#fff;border-radius:8px;padding:11px;font-size:13px;font-weight:700;transition:background .2s}
+.guide-btn:hover{background:var(--blue-dark)}
+
+.nl-band{background:var(--blue);padding:48px 32px}
+.nl-band-inner{max-width:700px;margin:0 auto;text-align:center}
+.nl-band h2{font-size:26px;font-weight:800;color:#fff;margin-bottom:10px}
+.nl-band p{color:rgba(255,255,255,.8);font-size:14px;margin-bottom:24px}
+.nl-band-form{display:flex;gap:10px;max-width:440px;margin:0 auto;flex-wrap:wrap}
+.nl-band-input{flex:1;border:none;border-radius:8px;padding:12px 16px;font-size:14px;font-family:inherit;outline:none;min-width:200px}
+.nl-band-btn{background:var(--navy);color:#fff;border:none;border-radius:8px;padding:12px 20px;font-size:14px;font-weight:700;cursor:pointer;font-family:inherit;white-space:nowrap}
+.nl-band-note{font-size:11.5px;color:rgba(255,255,255,.6);margin-top:10px}
+
+.cta-band{background:var(--navy);padding:60px 32px}
+.cta-inner{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:1fr auto;gap:48px;align-items:center}
+.cta-band h2{font-size:28px;font-weight:800;color:#fff;margin-bottom:9px}
+.cta-band>div>p{color:#94a3b8;font-size:13.5px;margin-bottom:24px;max-width:380px}
+.cta-btns{display:flex;gap:10px;flex-wrap:wrap}
+.btn-white{background:#fff;color:var(--navy);border-radius:8px;padding:11px 20px;font-weight:700;font-size:13.5px;display:inline-flex;align-items:center;gap:7px;cursor:pointer;border:none;font-family:inherit}
+.btn-ghost-cta{background:transparent;color:#fff;border:1.5px solid rgba(255,255,255,.3);border-radius:8px;padding:11px 20px;font-weight:700;font-size:13.5px;cursor:pointer;font-family:inherit}
+.btn-ghost-cta:hover{border-color:#fff}
+.cta-checks{display:flex;flex-direction:column;gap:11px;flex-shrink:0}
+.cta-check{display:flex;align-items:center;gap:9px;color:#cbd5e1;font-size:13px}
+.cta-ci{color:var(--green);font-weight:700}
+
+footer{background:var(--navy);border-top:1px solid rgba(255,255,255,.07);padding:44px 32px 26px}
+.footer-inner{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:2fr 1fr 1fr 1fr 1fr;gap:32px}
+.footer-brand p{color:#64748b;font-size:12px;margin-top:8px;max-width:185px;line-height:1.7}
+footer h4{font-size:10.5px;font-weight:700;color:#94a3b8;text-transform:uppercase;letter-spacing:.5px;margin-bottom:13px}
+.flinks{list-style:none}
+.flinks li{margin-bottom:8px}
+.flinks a{color:#64748b;font-size:12px;transition:color .2s}
+.flinks a:hover{color:#fff}
+.fsocial{display:flex;gap:7px;margin-top:11px}
+.fsoc{width:29px;height:29px;border-radius:6px;background:rgba(255,255,255,.07);display:grid;place-items:center;font-size:11px;color:#94a3b8;transition:background .2s}
+.fsoc:hover{background:var(--blue);color:#fff}
+.footer-bottom{max-width:1100px;margin:24px auto 0;padding-top:16px;border-top:1px solid rgba(255,255,255,.07);display:flex;justify-content:space-between;color:#475569;font-size:11px;flex-wrap:wrap;gap:8px}
+
+@media(max-width:960px){.layout{grid-template-columns:1fr}.sidebar{position:static;display:grid;grid-template-columns:1fr 1fr;gap:16px}.cta-inner{grid-template-columns:1fr}.footer-inner{grid-template-columns:1fr 1fr}}
+@media(max-width:600px){.article-hero h1{font-size:26px}.sidebar{grid-template-columns:1fr}.nl-band-form{flex-direction:column}.footer-inner{grid-template-columns:1fr}}
+
+.btn-demo{position:relative;background:var(--blue);color:#fff;border:none;border-radius:8px;padding:9px 16px;font-weight:800;font-size:13.5px;white-space:nowrap;font-family:inherit;display:inline-flex;align-items:center;gap:6px;text-decoration:none;cursor:pointer;transition:background .2s,transform .2s}
+.btn-demo:hover{background:var(--blue-dark);transform:translateY(-1px)}
+.btn-demo .star{color:#fff;font-size:14px;line-height:1;font-weight:800}
+.btn-demo-badge{position:absolute;top:-9px;right:-8px;background:#F59E0B;color:#fff;font-size:8.5px;font-weight:800;padding:2px 6px;border-radius:999px;letter-spacing:.3px;box-shadow:0 2px 6px rgba(245,158,11,.45);animation:demoPulse 2.2s ease-in-out infinite}
+@keyframes demoPulse{0%,100%{transform:scale(1)}50%{transform:scale(1.1)}}
+.nav-tools{position:relative;display:inline-block}
+.nav-tools .chevron{font-size:10px;margin-left:2px;transition:transform .15s}
+.nav-tools:hover .chevron{transform:rotate(180deg)}
+.nav-tools-menu{display:none;position:absolute;top:calc(100% + 8px);right:0;background:#fff;border:1px solid var(--border);border-radius:12px;box-shadow:0 12px 32px rgba(15,27,61,.15);min-width:220px;padding:6px;z-index:260}
+.nav-tools:hover .nav-tools-menu,.nav-tools:focus-within .nav-tools-menu{display:block}
+.nav-tools-menu a{display:flex;align-items:center;gap:9px;padding:10px 12px;border-radius:8px;font-size:13.5px;font-weight:600;color:var(--navy);text-decoration:none;white-space:nowrap}
+.nav-tools-menu a:hover{background:var(--blue-light);color:var(--blue)}
+.nav-tools-menu a .ico{font-size:15px}
+.btn-demo-mobile{position:relative;margin-top:10px;background:var(--blue);color:#fff;border-radius:8px;padding:12px;font-weight:800;font-size:14px;font-family:inherit;width:100%;display:flex;align-items:center;justify-content:center;gap:7px;text-decoration:none;border-bottom:none!important}
+.btn-demo-mobile .star{color:#fff;font-size:15px;font-weight:800}
+.mobile-menu a.btn-demo-mobile{color:#fff}
+.btn-demo-mobile .btn-demo-badge{top:-9px;right:14px;animation:none}
+
+/* ══ Liens vers les sources citées ══ */
+a.src{color:var(--blue);font-weight:600;text-decoration:underline;text-underline-offset:2px;text-decoration-thickness:1px;transition:color .2s}
+a.src:hover{color:var(--blue-dark);text-decoration-thickness:2px}
+/* ══ Mise en forme éditoriale (gabarit 2026) ══ */
+.ah-cover{max-width:960px;box-shadow:0 18px 50px rgba(15,27,61,.18);border:none}
+.key-points{border:1px solid var(--border);border-top:3px solid var(--blue);border-radius:0 0 14px 14px;padding:20px 24px 8px;margin:6px 0 30px;background:#fff}
+.key-points h3{margin:0 0 12px!important;font-size:12px!important;letter-spacing:1.4px;text-transform:uppercase;color:var(--blue-dark)!important}
+.key-points ul{margin-left:18px}
+.key-points li{margin-bottom:10px}
+.stat-row{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:14px;margin:20px 0 24px}
+.stat{border-left:3px solid var(--blue);padding:4px 0 4px 14px}
+.stat b{display:block;font-size:30px;font-weight:800;color:var(--navy);line-height:1.1}
+.stat span{font-size:12.5px;color:var(--muted);line-height:1.45;display:block;margin-top:4px}
+.content table th{font-size:12.5px;text-transform:uppercase;letter-spacing:.4px}
+.content table tr:nth-child(even) td{background:#fafbfd}
+.sources{font-size:13px;color:var(--muted);margin-left:20px}
+.sources li{margin-bottom:6px;line-height:1.6}
+.sources a{color:var(--blue-dark);text-decoration:underline;text-underline-offset:2px}
+@media(max-width:600px){.content table{display:block;overflow-x:auto}.stat b{font-size:26px}}
+.content p a:not(.final-cta),.content li a,.content td a{color:var(--blue);font-weight:600;text-decoration:underline;text-underline-offset:2px;text-decoration-thickness:1px}
+.content p a:not(.final-cta):hover,.content li a:hover,.content td a:hover{color:var(--blue-dark);text-decoration-thickness:2px}
+</style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "BlogPosting",
+      "headline": "Landing page SaaS : la structure qui transforme les visites en démos",
+      "description": "Landing page SaaS : diagnostic en 45 minutes, structure en neuf blocs, choix entre essai et démo, gabarit, exemple avant / après et taux de conversion à viser.",
+      "datePublished": "2026-11-05",
+      "dateModified": "2026-11-05",
+      "author": {
+        "@type": "Organization",
+        "name": "TechRepair Content",
+        "url": "https://www.techrepaircontent.com/apropos"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "TechRepair Content",
+        "url": "https://www.techrepaircontent.com/"
+      },
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://www.techrepaircontent.com/articles/article-landing-page-saas-conversion.html"
+      },
+      "inLanguage": "fr-FR",
+      "keywords": "landing page saas",
+      "articleSection": "SaaS B2B",
+      "wordCount": 2498,
+      "image": "https://www.techrepaircontent.com/articles/landing-page-saas-conversion-cover.jpg"
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Quelle différence entre une landing page et la page d'accueil d'un site SaaS ?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "La page d'accueil présente toute l'offre à tous les publics et ouvre de nombreux chemins. La landing page vise un seul segment, venu d'une seule source, et ne propose qu'une action."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Quelle est la structure d'une landing page SaaS efficace ?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Neuf blocs dans l'ordre des objections : titre et sous-titre, appel à l'action, preuve, problème, fonctionnement en trois étapes, intégrations, sécurité, prix et risques, puis FAQ et rappel de l'appel à l'action."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Combien de mots doit contenir une landing page SaaS ?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Les pages SaaS de 250 à 725 mots obtiennent les meilleurs résultats dans le rapport 2024 d'Unbounce. Le style pèse autant que la longueur : les textes lisibles par un élève de 10 à 13 ans y convertissent à 12,9 %, contre 2,1 % pour un style de niveau professionnel. C'est une corrélation, pas une preuve de cause, mais la consigne vaut pour un logiciel technique : phrases courtes, jargon expliqué."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Faut-il afficher le prix sur une landing page B2B ?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Oui, sous une forme ou une autre : prix d'appel, fourchette ou critères qui font varier le tarif. Sans aucune indication, l'acheteur suppose un prix élevé ou reporte le contact."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Où trouver un exemple de landing page SaaS qui convertit ?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "La partie 6 en propose un, avant et après réécriture. Observez aussi les pages de campagne de vos concurrents directs en cliquant sur leurs annonces : notez comment elles traitent prix, intégrations et sécurité."
+          }
+        }
+      ]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Accueil",
+          "item": "https://www.techrepaircontent.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Blog",
+          "item": "https://www.techrepaircontent.com/blog"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Landing page SaaS",
+          "item": "https://www.techrepaircontent.com/articles/article-landing-page-saas-conversion.html"
+        }
+      ]
+    }
+  ]
+}
+</script>
+</head>
+<body>
+
+<nav>
+  <div class="logo">
+    <div class="logo-box">TRD</div>
+    <div class="logo-text">TechRepair<span>Content</span></div>
+  </div>
+  <div class="nav-links">
+    <a href="/">Accueil</a>
+    <a href="/services">Services</a>
+    <a href="/secteurs">Secteurs</a>
+    <a href="/apropos">À propos</a>
+    <a href="/blog" class="active">Blog</a>
+    <div class="nav-tools">
+      <button class="btn-demo" type="button"><span class="star">★</span>Outils IA<span class="btn-demo-badge">Nouveau</span><span class="chevron">▾</span></button>
+      <div class="nav-tools-menu">
+        <a href="/agents-ia"><span class="ico">⚙️</span> Agents IA sur mesure</a>
+        <a href="/visibilite-ia"><span class="ico">💬</span> Visibilité dans les IA</a>
+        <a href="/calculateur-temps-perdu"><span class="ico">⏱️</span> Calculateur de temps perdu</a>
+        <a href="https://demo.techrepaircontent.com"><span class="ico">🤖</span> Démo avec Ted</a>
+        <a href="https://demo.techrepaircontent.com/audit-ia.html"><span class="ico">🔍</span> Audit IA gratuit</a>
+      </div>
+    </div>
+    <button class="btn-nav" onclick="window.location='/devis'">Obtenir un devis</button>
+  </div>
+  <button class="hamburger" id="hamburger" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<div class="mobile-menu" id="mobileMenu">
+  <a href="/">Accueil</a>
+  <a href="/services">Services</a>
+  <a href="/secteurs">Secteurs</a>
+  <a href="/apropos">À propos</a>
+  <a href="/blog" class="active">Blog</a>
+  <a href="https://demo.techrepaircontent.com" class="btn-demo-mobile"><span class="star">★</span>Démo avec Ted<span class="btn-demo-badge">Nouveau</span></a>
+  <a href="https://demo.techrepaircontent.com/audit-ia.html" class="btn-demo-mobile"><span class="star">★</span>Audit IA gratuit</a>
+  <button class="btn-nav-mobile" onclick="window.location='/devis'">Obtenir un devis</button>
+</div>
+
+<div class="breadcrumb">
+  <a href="/">Accueil</a> / <a href="/blog">Blog</a> / <span style="color:var(--navy)">Landing page SaaS</span>
+</div>
+
+<div class="article-hero">
+  <span class="ah-badge" style="background:#EFF6FF;color:var(--blue-dark)">☁️ SaaS B2B</span>
+  <h1>Landing page SaaS : la structure qui transforme les visites en démos</h1>
+  <div class="ah-meta">
+    <span>✍️ Rédaction TechRepair Content</span>
+    <div class="ah-dot"></div>
+    <span>Publié le 5 novembre 2026</span>
+    <div class="ah-dot"></div>
+    <span>⏱ 12 min de lecture</span>
+  </div>
+  <div class="ah-cover"><img src="landing-page-saas-conversion-cover.jpg" alt="Landing page SaaS : la structure qui transforme les visites en démos" width="1200" height="630" loading="eager"/></div>
+</div>
+
+<div class="layout">
+  <main class="content">
+
+<p class="intro-lead">3,8&nbsp;%&nbsp;: c'est le taux de conversion médian des landing pages SaaS mesuré par Unbounce, contre 6,6&nbsp;% tous secteurs confondus. Sur cent visiteurs payés, moins de quatre laissent leurs coordonnées&nbsp;; les autres repartent sans que personne sache pourquoi.</p>
+
+    <p>Une <strong>landing page SaaS</strong> qui convertit ne tient pas à un bouton plus coloré. Elle répond, dans l'ordre où il se les pose, aux questions d'un acheteur qui compare plusieurs logiciels, puis lui propose l'engagement adapté à son niveau de maturité&nbsp;: essai, démo ou ressource à télécharger. Voici comment diagnostiquer votre page en moins d'une heure, la reconstruire bloc par bloc, et vérifier que la nouvelle version produit davantage de rendez-vous qualifiés.</p>
+
+    <div class="key-points">
+      <h3>Points clés</h3>
+      <ul>
+        <li><strong>Un écart à combler&nbsp;:</strong> les pages SaaS convertissent moins que la moyenne, d'où l'intérêt de chaque point gagné sur un trafic déjà payé.</li>
+        <li><strong>Une page, une promesse, une action&nbsp;:</strong> le titre reprend les mots de l'annonce ou de la requête, et un seul appel à l'action domine.</li>
+        <li><strong>Neuf blocs dans l'ordre des objections&nbsp;:</strong> résultat promis, preuve, fonctionnement, intégrations, sécurité, prix, risques, puis action.</li>
+        <li><strong>Une mesure en démos qualifiées&nbsp;:</strong> un taux de formulaires en hausse ne vaut rien si l'équipe commerciale disqualifie les contacts.</li>
+      </ul>
+    </div>
+
+    <div class="toc-box">
+      <h3>📋 Sommaire</h3>
+      <ol>
+        <li><a href="#ch1">Des clics payés, peu de rendez-vous</a></li>
+        <li><a href="#ch2">Le diagnostic en 45 minutes</a></li>
+        <li><a href="#ch3">Quelle structure pour une landing page SaaS&nbsp;?</a></li>
+        <li><a href="#ch4">Essai gratuit, démo ou ressource&nbsp;: choisir l'engagement demandé</a></li>
+        <li><a href="#ch5">Reconstruire la page en cinq étapes</a></li>
+        <li><a href="#ch6">Le gabarit et un exemple avant / après</a></li>
+        <li><a href="#ch7">Six défauts qui font fuir un acheteur B2B</a></li>
+        <li><a href="#ch8">Quel est un bon taux de conversion pour une landing page SaaS&nbsp;?</a></li>
+        <li><a href="#ch9">Réécrire en interne ou confier la page</a></li>
+        <li><a href="#faq">Questions fréquentes</a></li>
+        <li><a href="#sources">Sources</a></li>
+      </ol>
+    </div>
+
+    <h2 id="ch1">1. Des clics payés, peu de rendez-vous</h2>
+
+    <p>Une landing page sous-performe quand elle parle du produit au lieu de répondre à l'acheteur qui vient de cliquer. Le coût se lit directement dans votre budget d'acquisition&nbsp;: chaque visite non convertie a été payée en annonce, en temps de rédaction ou en partenariat.</p>
+
+    <p>Les symptômes reviennent d'un éditeur à l'autre&nbsp;: un titre-slogan («&nbsp;La plateforme qui réinvente votre travail&nbsp;») qui ne dit pas ce que fait le logiciel, une liste de quinze fonctionnalités, trois boutons concurrents (essai, démo, contact), un formulaire de neuf champs et aucune réponse sur le prix ni sur l'hébergement des données. Pour l'acheteur d'un <a href="/secteur-saas">logiciel SaaS B2B</a>, chacun de ces points est une raison de reporter sa décision.</p>
+
+    <div class="stat-row">
+      <div class="stat"><b>3,8&nbsp;%</b><span>taux de conversion médian des landing pages SaaS (Unbounce, rapport de référence 2024)</span></div>
+      <div class="stat"><b>6,6&nbsp;%</b><span>taux médian tous secteurs, sur plus de 41&nbsp;000 pages et 57 millions de conversions (Unbounce, 2024)</span></div>
+      <div class="stat"><b>79&nbsp;%</b><span>des visites de landing pages SaaS se font sur mobile dans l'échantillon d'Unbounce (2024)</span></div>
+    </div>
+
+    <p>Ces chiffres portent sur les pages créées avec l'outil d'Unbounce&nbsp;: des repères, pas une norme pour un logiciel vendu à des DSI. Ils rappellent deux réalités. L'acheteur SaaS s'engage sur un outil qu'il devra installer, faire adopter et payer chaque année, ce qui explique sans doute une partie de l'écart. Et la part du mobile impose de concevoir la page pour un petit écran d'abord.</p>
+
+    <h2 id="ch2">2. Le diagnostic en 45 minutes</h2>
+
+    <p>Avant de réécrire quoi que ce soit, établissez où la page perd ses visiteurs. Quatre contrôles suffisent, et aucun ne demande d'outil payant.</p>
+
+    <ol>
+      <li><strong>Le test des cinq secondes (10 minutes).</strong> Montrez le haut de la page sur mobile à deux personnes extérieures au projet, cachez-le après cinq secondes, puis demandez&nbsp;: que vend cette entreprise, à qui, et que dois-je faire ensuite&nbsp;? Deux réponses floues signalent un problème de titre.</li>
+      <li><strong>La concordance avec la source (10 minutes).</strong> Placez côte à côte l'annonce, l'e-mail ou la requête Google qui amène le trafic, et le titre de la page. Si l'annonce parle de «&nbsp;planification des astreintes&nbsp;» et la page de «&nbsp;productivité des équipes&nbsp;», le visiteur croit s'être trompé.</li>
+      <li><strong>La conversion par source (15 minutes).</strong> Dans GA4, croisez la page avec la source de session et l'événement d'envoi du formulaire. Un écart fort entre recherche payante et réseaux sociaux révèle un message calibré pour un seul public. Le trafic «&nbsp;direct&nbsp;», lui, cache souvent <a href="/articles/article-dark-social-saas-b2b.html">le dark social</a>.</li>
+      <li><strong>Le défilement et les clics (10 minutes).</strong> Microsoft Clarity, gratuit, enregistre les cartes de défilement. Si la moitié des visiteurs mobiles s'arrête avant la section prix, déplacez les réponses décisives plus haut plutôt que d'allonger la page.</li>
+    </ol>
+
+    <p>Notez enfin combien de contacts deviennent des démos tenues et jugées qualifiées&nbsp;: ce chiffre servira de référence.</p>
+
+    <h2 id="ch3">3. Quelle structure pour une landing page SaaS&nbsp;?</h2>
+
+    <p>La structure efficace suit l'ordre des objections d'un acheteur B2B&nbsp;: «&nbsp;est-ce pour moi&nbsp;?&nbsp;», «&nbsp;est-ce que ça marche&nbsp;?&nbsp;», «&nbsp;est-ce que ça s'intègre&nbsp;?&nbsp;», «&nbsp;combien et quel risque&nbsp;?&nbsp;», puis «&nbsp;que dois-je faire&nbsp;?&nbsp;». Chaque bloc lève une objection précise.</p>
+
+    <table>
+      <tr><th>Bloc</th><th>Question de l'acheteur</th><th>Contenu attendu</th></tr>
+      <tr><td>1. Titre et sous-titre</td><td>Est-ce pour moi&nbsp;?</td><td>Le résultat obtenu, pour qui, en reprenant les mots de la source de trafic</td></tr>
+      <tr><td>2. Appel à l'action principal</td><td>Que puis-je faire maintenant&nbsp;?</td><td>Un bouton, un verbe précis, ce qui se passe après le clic</td></tr>
+      <tr><td>3. Preuve immédiate</td><td>Qui l'utilise déjà&nbsp;?</td><td>Logos autorisés, nombre de clients vérifiable, note sur une plateforme d'avis</td></tr>
+      <tr><td>4. Problème reformulé</td><td>Comprennent-ils ma situation&nbsp;?</td><td>Trois symptômes concrets, dans le vocabulaire du métier visé</td></tr>
+      <tr><td>5. Usage en trois étapes</td><td>Comment ça marche&nbsp;?</td><td>Captures annotées ou courte vidéo, pas une liste de fonctions</td></tr>
+      <tr><td>6. Intégrations</td><td>Est-ce compatible avec mes outils&nbsp;?</td><td>Les connecteurs réellement disponibles, avec leur niveau (natif, API, Zapier)</td></tr>
+      <tr><td>7. Sécurité et conformité</td><td>Le DSI va-t-il bloquer&nbsp;?</td><td>Hébergement, certifications détenues, RGPD, lien vers la page sécurité</td></tr>
+      <tr><td>8. Prix et risques</td><td>Combien, et si je me trompe&nbsp;?</td><td>Prix d'appel ou fourchette, durée d'engagement, accompagnement au démarrage</td></tr>
+      <tr><td>9. Questions et action finale</td><td>Ai-je oublié quelque chose&nbsp;?</td><td>Quatre à six questions réelles, puis le même appel à l'action qu'en haut</td></tr>
+    </table>
+
+    <p>Les blocs 6 et 7 manquent souvent, alors qu'ils conditionnent l'accord d'un acheteur technique. Face à un concurrent nommé, des <a href="/articles/article-pages-comparatives-saas.html">pages comparatives</a> dédiées valent mieux qu'un tableau face à face sur la landing page.</p>
+
+    <h2 id="ch4">4. Essai gratuit, démo ou ressource&nbsp;: choisir l'engagement demandé</h2>
+
+    <p>Le bon appel à l'action dépend de votre modèle de vente et du niveau de maturité du visiteur, pas d'une préférence de design. Demander une démo de quarante-cinq minutes à quelqu'un qui découvre la catégorie revient à lui demander de vous épouser au premier rendez-vous.</p>
+
+    <table>
+      <tr><th>Situation</th><th>Engagement à proposer</th><th>Formulaire</th></tr>
+      <tr><td>Produit simple, prise en main seule, panier mensuel faible</td><td>Essai gratuit sans carte bancaire</td><td>E-mail professionnel, mot de passe</td></tr>
+      <tr><td>Produit à paramétrer, plusieurs décideurs, contrat annuel</td><td>Démo personnalisée, créneau réservé en ligne</td><td>Nom, e-mail, entreprise, taille, besoin principal</td></tr>
+      <tr><td>Visiteur qui découvre le problème, trafic froid</td><td>Ressource&nbsp;: guide, modèle, livre blanc</td><td>E-mail professionnel, fonction</td></tr>
+      <tr><td>Produit ouvert à tous, adoption par usage</td><td>Freemium avec inscription directe</td><td>E-mail ou authentification unique</td></tr>
+    </table>
+
+    <p>La ligne «&nbsp;ressource&nbsp;» mérite attention. Une page de téléchargement adossée à <a href="/service-livres-blancs">un livre blanc B2B</a> recueille l'e-mail de visiteurs encore loin de l'achat, gagne des backlinks que les pages produit obtiennent rarement, et nourrit plusieurs articles satellites&nbsp;; le <a href="/livres-blancs/visibilite-ia-b2b-guide.html">guide sur la visibilité B2B dans les IA</a> fonctionne ainsi. Elle n'a de valeur que si les contacts recueillis sont ensuite <a href="/articles/article-agent-relance-leads-saas.html">relancés au bon moment</a>, avec un contenu lié à ce qu'ils ont téléchargé.</p>
+
+    <h2 id="ch5">5. Reconstruire la page en cinq étapes</h2>
+
+    <p>Comptez deux semaines à deux ou trois personnes, en commençant par le message, pas par la maquette.</p>
+
+    <ol>
+      <li><strong>Collecter les mots des clients (2 jours, product marketing).</strong> Relisez dix appels de découverte enregistrés et les avis publiés sur votre logiciel&nbsp;; notez mot pour mot problèmes et objections, qui nourriront le titre et le bloc problème.</li>
+      <li><strong>Choisir un segment et une source (une demi-journée, responsable acquisition).</strong> Une page par couple «&nbsp;persona et canal&nbsp;»&nbsp;: un directeur financier venu de Google Ads n'attend pas le même discours qu'un développeur venu d'une newsletter technique.</li>
+      <li><strong>Rédiger le texte avant le design (3 jours, rédacteur).</strong> Suivez les neuf blocs du tableau précédent, dans un document simple. Faites valider chaque affirmation technique par le produit et chaque mention de sécurité par le responsable concerné. Pour les pages qui doivent aussi se classer sur des recherches d'achat, une <a href="/service-articles-seo">rédaction SEO orientée conversion</a> évite d'écrire deux fois le même contenu.</li>
+      <li><strong>Maquetter d'abord sur mobile (3 jours, designer ou outil de création de pages).</strong> Webflow, Unbounce, HubSpot ou votre CMS&nbsp;: peu importe, tant que le titre, le bouton et la preuve tiennent dans le premier écran d'un téléphone.</li>
+      <li><strong>Brancher la mesure et lancer (1 jour, marketing ops).</strong> Événement GA4 sur l'envoi du formulaire, paramètres UTM sur chaque source, champ caché transmettant la source au CRM pour suivre le contact jusqu'à la démo tenue.</li>
+    </ol>
+
+    <div class="callout">
+      <p><strong>Critère de décision&nbsp;: refondre ou tester&nbsp;?</strong></p>
+      <p>Si le test des cinq secondes échoue ou si le titre ne correspond pas à la source, refondez la page entière&nbsp;: un test A/B sur la couleur d'un bouton ne sauvera pas une promesse confuse. Si la page est claire mais que la conversion stagne, testez un seul élément à la fois, en commençant par le titre puis l'appel à l'action.</p>
+    </div>
+
+    <h2 id="ch6">6. Le gabarit et un exemple avant / après</h2>
+
+    <p>Le gabarit ci-dessous se remplit en une heure à partir des verbatims collectés. L'exemple qui suit est une illustration écrite pour l'occasion, à propos d'un logiciel fictif de planification des astreintes pour équipes informatiques.</p>
+
+    <div class="callout">
+      <p><strong>Gabarit de landing page SaaS à remplir</strong></p>
+      <ul>
+        <li><strong>Titre (10 mots au plus)&nbsp;:</strong> [résultat mesurable] pour [fonction ou équipe], sans [contrainte redoutée].</li>
+        <li><strong>Sous-titre (25 mots au plus)&nbsp;:</strong> ce que fait le logiciel, en une phrase, avec un verbe d'action.</li>
+        <li><strong>Bouton&nbsp;:</strong> verbe + bénéfice + délai («&nbsp;Réserver une démo de 20 minutes&nbsp;»).</li>
+        <li><strong>Preuve&nbsp;:</strong> trois logos autorisés ou un chiffre vérifiable, avec sa date.</li>
+        <li><strong>Problème&nbsp;:</strong> trois symptômes repris des verbatims clients.</li>
+        <li><strong>Fonctionnement&nbsp;:</strong> trois étapes, une capture annotée par étape.</li>
+        <li><strong>Intégrations et sécurité&nbsp;:</strong> liste exacte, lieu d'hébergement, certifications réellement obtenues.</li>
+        <li><strong>Prix et risques&nbsp;:</strong> prix d'appel ou fourchette, engagement, aide au démarrage.</li>
+        <li><strong>FAQ&nbsp;:</strong> quatre à six objections entendues en rendez-vous.</li>
+      </ul>
+    </div>
+
+    <h3>Avant</h3>
+    <p><em>«&nbsp;La plateforme tout-en-un qui révolutionne la gestion de vos équipes. Découvrez une nouvelle façon de travailler.&nbsp;» Boutons&nbsp;: «&nbsp;Essai gratuit&nbsp;», «&nbsp;Demander une démo&nbsp;», «&nbsp;Nous contacter&nbsp;».</em></p>
+
+    <h3>Après</h3>
+    <p><em>«&nbsp;Des astreintes planifiées en dix minutes, sans tableur ni oubli de repos compensateur. Le logiciel génère le planning de votre équipe d'exploitation à partir des disponibilités et des règles de votre accord d'entreprise, puis alerte la bonne personne via Slack ou SMS.&nbsp;» Bouton unique&nbsp;: «&nbsp;Réserver une démo de 20 minutes&nbsp;». Lien discret&nbsp;: «&nbsp;Voir les tarifs&nbsp;».</em></p>
+
+    <p>La seconde version nomme le public, le résultat, la contrainte levée, les intégrations et la durée de l'engagement&nbsp;: le visiteur sait en une lecture s'il est concerné.</p>
+
+    <h2 id="ch7">7. Six défauts qui font fuir un acheteur B2B</h2>
+
+    <p>Ces erreurs reviennent sur la plupart des pages qui stagnent, et la plupart se corrigent en moins d'une journée.</p>
+
+    <ul>
+      <li><strong>La page d'accueil utilisée comme page de campagne.</strong> Elle s'adresse à tous les publics et propose dix chemins&nbsp;; une landing page n'en propose qu'un.</li>
+      <li><strong>Un formulaire qui interroge trop tôt.</strong> Budget, échéance et téléphone exigés avant la démo font fuir les moins avancés. Demandez le strict nécessaire pour qualifier, comme le veut d'ailleurs le principe de minimisation du RGPD.</li>
+      <li><strong>Des preuves invérifiables.</strong> «&nbsp;Des milliers d'entreprises nous font confiance&nbsp;», sans logo ni chiffre daté, ne rassure personne&nbsp;; un logo affiché sans accord du client expose à un conflit.</li>
+      <li><strong>Le silence sur le prix.</strong> Sans fourchette ni prix d'appel, l'acheteur suppose le pire ou attend de comparer. Même pour une offre sur devis, indiquez le point de départ ou les critères qui font varier le tarif.</li>
+      <li><strong>Une sécurité reléguée au pied de page.</strong> En B2B, le DSI ou le RSSI valide souvent l'achat. Hébergement et certifications doivent apparaître avant le dernier appel à l'action.</li>
+      <li><strong>Un trafic hors cible.</strong> Une excellente page ne convertit pas des visiteurs venus s'informer&nbsp;: corrigez alors le ciblage ou la <a href="/articles/article-generation-leads-b2b-saas.html">stratégie de génération de leads</a>, pas la page.</li>
+    </ul>
+
+    <h2 id="ch8">8. Quel est un bon taux de conversion pour une landing page SaaS&nbsp;?</h2>
+
+    <p>Il n'existe pas de bon taux universel&nbsp;: comparez votre page à elle-même, source par source, et jugez-la sur les démos qualifiées qu'elle produit. Le repère médian d'Unbounce, 3,8&nbsp;% pour le SaaS, sert seulement à situer un ordre de grandeur.</p>
+
+    <p>Trois indicateurs suffisent&nbsp;:</p>
+
+    <ul>
+      <li><strong>Le taux de conversion par source</strong>, suivi chaque semaine dans GA4&nbsp;;</li>
+      <li><strong>Le taux de qualification</strong>&nbsp;: part des contacts acceptés par l'équipe commerciale, lue dans le CRM&nbsp;;</li>
+      <li><strong>Le coût par démo tenue</strong>, qui rapproche le budget de campagne des rendez-vous réellement honorés.</li>
+    </ul>
+
+    <p>Laissez tourner la nouvelle version au moins quatre semaines, ou jusqu'à ce que chaque variante ait reçu plusieurs centaines de visites, avant de conclure&nbsp;: sur de petits volumes, un écart de quelques conversions peut relever du hasard. Si les formulaires montent mais que la qualification baisse, la page attire des curieux&nbsp;: resserrez la promesse.</p>
+
+    <h2 id="ch9">9. Réécrire en interne ou confier la page</h2>
+
+    <p>Avec un responsable product marketing, des enregistrements d'appels et un outil de création de pages, la méthode s'applique en interne. Faire appel à un prestataire se justifie quand personne n'a le temps de recueillir les verbatims, quand le produit exige une double compétence technique et rédactionnelle, ou quand plusieurs pages par segment et par langue doivent sortir ensemble. Exigez alors un texte livré bloc par bloc, une source pour chaque preuve et un plan de mesure relié au CRM, comme pour tout <a href="/articles/article-consultant-seo-saas-choisir.html">consultant SEO spécialisé SaaS</a>&nbsp;: des résultats jugés en démos, jamais en promesses de classement.</p>
+
+    <h2 id="faq">Questions fréquentes</h2>
+
+    <div class="faq-item">
+      <h3>Quelle différence entre une landing page et la page d'accueil d'un site SaaS&nbsp;?</h3>
+      <p>La page d'accueil présente toute l'offre à tous les publics et ouvre de nombreux chemins. La landing page vise un seul segment, venu d'une seule source, et ne propose qu'une action.</p>
+    </div>
+
+    <div class="faq-item">
+      <h3>Quelle est la structure d'une landing page SaaS efficace&nbsp;?</h3>
+      <p>Neuf blocs dans l'ordre des objections&nbsp;: titre et sous-titre, appel à l'action, preuve, problème, fonctionnement en trois étapes, intégrations, sécurité, prix et risques, puis FAQ et rappel de l'appel à l'action.</p>
+    </div>
+
+    <div class="faq-item">
+      <h3>Combien de mots doit contenir une landing page SaaS&nbsp;?</h3>
+      <p>Les pages SaaS de 250 à 725 mots obtiennent les meilleurs résultats dans le rapport 2024 d'Unbounce. Le style pèse autant que la longueur&nbsp;: les textes lisibles par un élève de 10 à 13 ans y convertissent à 12,9&nbsp;%, contre 2,1&nbsp;% pour un style de niveau professionnel. C'est une corrélation, pas une preuve de cause, mais la consigne vaut pour un logiciel technique&nbsp;: phrases courtes, jargon expliqué.</p>
+    </div>
+
+    <div class="faq-item">
+      <h3>Faut-il afficher le prix sur une landing page B2B&nbsp;?</h3>
+      <p>Oui, sous une forme ou une autre&nbsp;: prix d'appel, fourchette ou critères qui font varier le tarif. Sans aucune indication, l'acheteur suppose un prix élevé ou reporte le contact.</p>
+    </div>
+
+    <div class="faq-item">
+      <h3>Où trouver un exemple de landing page SaaS qui convertit&nbsp;?</h3>
+      <p>La partie 6 en propose un, avant et après réécriture. Observez aussi les pages de campagne de vos concurrents directs en cliquant sur leurs annonces&nbsp;: notez comment elles traitent prix, intégrations et sécurité.</p>
+    </div>
+
+    <div class="conclusion-box">
+      <p><strong>À retenir</strong></p>
+      <p>Une landing page SaaS gagne des rendez-vous quand elle répète la promesse qui a fait cliquer, lève dans l'ordre les objections d'un acheteur B2B et ne demande qu'un engagement adapté à son niveau de maturité. Diagnostiquez en 45 minutes, réécrivez à partir des mots de vos clients, puis jugez la nouvelle version sur les démos qualifiées qu'elle apporte.</p>
+      <a href="/devis" class="final-cta">Faire auditer votre landing page avant la prochaine campagne →</a>
+    </div>
+
+    <h2 id="sources">Sources</h2>
+    <ol class="sources">
+      <li>Unbounce, «&nbsp;Average SaaS conversion rate benchmark report&nbsp;», Conversion Benchmark Report 2024, page mise à jour le 25 février 2026. <a href="https://unbounce.com/conversion-benchmark-report/saas-conversion-rate/" target="_blank" rel="nofollow noopener">unbounce.com</a></li>
+      <li>Unbounce, «&nbsp;The Unbounce Conversion Benchmark Report 2024&nbsp;», analyse de plus de 41&nbsp;000 landing pages et 57 millions de conversions. <a href="https://unbounce.com/conversion-benchmark-report/" target="_blank" rel="nofollow noopener">unbounce.com</a></li>
+    </ol>
+
+  <!-- maillage:debut -->
+<section class="maillage" aria-label="Articles liés">
+<style>
+.maillage{margin:44px 0 8px;padding-top:28px;border-top:1px solid #e2e8f0;font-family:inherit}
+.maillage h2{font-size:20px!important;font-weight:800;color:#0F1B3D;margin:0 0 16px!important}
+.mi-grille{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:14px}
+.mi-carte{display:flex;flex-direction:column;gap:8px;border:1px solid #e2e8f0;border-radius:14px;padding:16px 18px;background:#fff;text-decoration:none!important;transition:border-color .2s,box-shadow .2s,transform .2s}
+.mi-carte:hover{border-color:#1A56DB;box-shadow:0 8px 24px rgba(26,86,219,.10);transform:translateY(-2px)}
+.mi-cat{font-size:10.5px;font-weight:800;letter-spacing:1.2px;text-transform:uppercase;color:#1342b0}
+.mi-titre{font-size:14.5px;font-weight:700;line-height:1.4;color:#0F1B3D}
+.mi-lire{margin-top:auto;font-size:12px;color:#64748b}
+</style>
+<h2>À lire aussi</h2>
+<div class="mi-grille"><a class="mi-carte" href="/articles/article-generation-leads-b2b-saas.html"><span class="mi-cat">SaaS B2B</span><span class="mi-titre">Génération de leads B2B en SaaS : les contenus qui remplissent vraiment le pipeline</span><span class="mi-lire">Lire l'article · 12 min</span></a><a class="mi-carte" href="/articles/article-agent-relance-leads-saas.html"><span class="mi-cat">SaaS B2B</span><span class="mi-titre">Lead nurturing SaaS : relancer vos téléchargements et vos essais avant qu&#x27;ils refroidissent</span><span class="mi-lire">Lire l'article · 12 min</span></a><a class="mi-carte" href="/articles/article-pages-comparatives-saas.html"><span class="mi-cat">SaaS B2B</span><span class="mi-titre">Pages comparatives SaaS : gagner les prospects qui vous comparent à vos concurrents</span><span class="mi-lire">Lire l'article · 12 min</span></a></div>
+</section>
+<!-- maillage:fin -->
+</main>
+
+  <aside class="sidebar">
+    <div class="sidebar-card">
+      <h3>Sommaire</h3>
+      <div class="mini-toc">
+        <a href="#ch1">1. Peu de rendez-vous</a>
+        <a href="#ch2">2. Diagnostic</a>
+        <a href="#ch3">3. Structure en 9 blocs</a>
+        <a href="#ch4">4. Essai ou démo</a>
+        <a href="#ch5">5. Cinq étapes</a>
+        <a href="#ch6">6. Gabarit et exemple</a>
+        <a href="#ch7">7. Six défauts</a>
+        <a href="#ch8">8. Taux de conversion</a>
+        <a href="#ch9">9. Interne ou externe</a>
+        <a href="#faq">FAQ</a>
+        <a href="#sources">Sources</a>
+      </div>
+    </div>
+    <div class="sidebar-card">
+      <div class="author-card">
+        <div class="author-avatar">TRD</div>
+        <div>
+          <div class="author-name">Rédaction TechRepair Content</div>
+          <div class="author-role">Rédaction SEO tech B2B</div>
+        </div>
+      </div>
+    </div>
+    <div class="sidebar-card guide-card">
+      <h3>Le guide B2B de la visibilité IA</h3>
+      <p>Livre blanc gratuit : savoir ce que ChatGPT, Perplexity et Gemini disent de votre logiciel, puis devenir une source qu'ils citent.</p>
+      <a href="/livres-blancs/visibilite-ia-b2b-guide.html" class="guide-btn">Télécharger le livre blanc</a>
+    </div>
+  </aside>
+</div>
+
+<div class="nl-band">
+  <div class="nl-band-inner">
+    <h2>📩 La newsletter SEO Tech B2B</h2>
+    <p>Chaque semaine, une stratégie actionnable et une opportunité SEO dans votre secteur.</p>
+    <div class="nl-band-form">
+      <input type="email" class="nl-band-input" id="nlBandEmail" placeholder="votre@email.com"/>
+      <button class="nl-band-btn" id="nlBandBtn" type="button">S'abonner →</button>
+    </div>
+    <p id="nlBandMsg" style="display:none;font-size:12px;color:#fff;margin-top:8px"></p>
+    <p class="nl-band-note">✓ Gratuit · ✓ Sans spam · ✓ Désabonnement en 1 clic</p>
+  </div>
+</div>
+
+<div class="cta-band">
+  <div class="cta-inner">
+    <div>
+      <h2>Du contenu qui performe, pas qui remplit des pages</h2>
+      <p>Vous voulez une stratégie de contenu sur mesure pour votre secteur tech B2B ? Parlons-en.</p>
+      <div class="cta-btns">
+        <button class="btn-white" onclick="window.location='/devis'">Obtenir un devis gratuit →</button>
+        <button class="btn-ghost-cta" onclick="window.location='/services'">Voir nos services →</button>
+      </div>
+    </div>
+    <div class="cta-checks">
+      <div class="cta-check"><span class="cta-ci">✓</span> Réponse sous 24h</div>
+      <div class="cta-check"><span class="cta-ci">✓</span> Audit SEO gratuit</div>
+      <div class="cta-check"><span class="cta-ci">✓</span> Sans engagement</div>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <div class="logo"><div class="logo-box">TRD</div><div class="logo-text" style="color:#fff">TechRepair<span>Content</span></div></div>
+      <p>Rédaction SEO & technique pour entreprises SaaS, Tech et E-commerce.</p>
+    </div>
+    <div><h4>Navigation</h4><ul class="flinks"><li><a href="/">Accueil</a></li><li><a href="/apropos">À propos</a></li><li><a href="/services">Services</a></li><li><a href="/secteurs">Secteurs</a></li><li><a href="/blog">Blog</a></li><li><a href="/livres-blancs/">Livres blancs</a></li></ul></div>
+    <div><h4>Ressources</h4><ul class="flinks"><li><a href="/agents-ia">Agents IA</a></li><li><a href="/visibilite-ia">Visibilité dans les IA</a></li><li><a href="/faq">FAQ</a></li><li><a href="/confidentialite">Confidentialité</a></li><li><a href="/mentions-legales">Mentions légales</a></li></ul></div>
+    <div>
+      <h4>Contact</h4>
+      <ul class="flinks"><li><a href="mailto:contact@techrepaircontent.com">contact@techrepaircontent.com</a></li><li><a href="/devis">Réponse sous 24h</a></li></ul>
+      <div class="fsocial"><a class="fsoc" href="https://www.linkedin.com/in/techrepair-content" target="_blank" rel="noopener">in</a><a class="fsoc" href="mailto:contact@techrepaircontent.com">✉</a></div>
+    </div>
+    <div><h4>Basé en France</h4><div style="font-size:22px">🇫🇷</div></div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2026 TechRepair Content. Tous droits réservés.</span>
+    <span>Fait avec ❤️ en France</span>
+  </div>
+</footer>
+
+<script>
+const hamburger = document.getElementById('hamburger');
+const mobileMenu = document.getElementById('mobileMenu');
+hamburger.addEventListener('click', () => {
+  hamburger.classList.toggle('open');
+  mobileMenu.classList.toggle('open');
+});
+mobileMenu.querySelectorAll('a').forEach(link => {
+  link.addEventListener('click', () => {
+    hamburger.classList.remove('open');
+    mobileMenu.classList.remove('open');
+  });
+});
+
+const BREVO_FORM_ACTION = 'https://a41ce724.sibforms.com/serve/MUIFAEGqDW1rbNTL0uU5ym6Ux5qJ7TJpdETsCjqRumOCnr-gRU8IGKx8Ic-JLjScrVVWrJVx_YXawDF8ao6y5hYLPvy7h8UJCk3gg9gTHcTaNAWQzbjwLnHO6DPk_HzPb7XY28rHy9JtEMuP-euST6RZutJ_bWOfqZFEtI-UUs9G4HA-O5V8JPwb3jLz0jhwuISuUqZ3Iok5IEyYHg==';
+
+function subscribeToNewsletter(emailInput, msgEl, btnEl) {
+  const email = emailInput.value.trim();
+  const isValidEmail = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+  msgEl.style.display = 'block';
+  if (!isValidEmail) {
+    msgEl.style.color = '#dc2626';
+    msgEl.textContent = "Merci d'entrer une adresse email valide.";
+    return;
+  }
+  const formData = new FormData();
+  formData.append('EMAIL', email);
+  formData.append('email_address_check', '');
+  formData.append('locale', 'fr');
+  formData.append('html_type', 'simple');
+  fetch(BREVO_FORM_ACTION, { method: 'POST', mode: 'no-cors', body: formData }).catch(() => {});
+  msgEl.style.color = '#10b981';
+  msgEl.textContent = 'Merci ! Vérifiez votre boîte mail pour confirmer.';
+  btnEl.textContent = 'Inscription envoyée ✓';
+  btnEl.disabled = true;
+}
+
+const nlBandBtn = document.getElementById('nlBandBtn');
+nlBandBtn.addEventListener('click', () => {
+  subscribeToNewsletter(document.getElementById('nlBandEmail'), document.getElementById('nlBandMsg'), nlBandBtn);
+});
+</script>
+</body>
+</html>

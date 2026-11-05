@@ -252,4 +252,17 @@ const ARTICLES = [
     motCle:   "étude de cas client",
     metaDesc: "Étude de cas client en fintech : secret professionnel, accord exprès, cinq niveaux de preuve, questions d'entretien, plan type et exemple anonymisé."
   },
+  {
+    titre:    "Landing page SaaS : la structure qui transforme les visites en démos",
+    extrait:  "Moins de quatre visiteurs sur cent convertissent sur une page SaaS médiane. Diagnostiquez la vôtre en 45 minutes, reconstruisez-la en neuf blocs et mesurez-la en démos qualifiées.",
+    auteur:   "Rédaction TechRepair Content",
+    date:     "2026-11-05",
+    categorie:"saas",
+    lecture:  "12 min",
+    lien:     "articles/article-landing-page-saas-conversion.html",
+    image:    "articles/landing-page-saas-conversion-cover.jpg",
+    slug:     "landing-page-saas-conversion",
+    motCle:   "landing page saas",
+    metaDesc: "Landing page SaaS : diagnostic en 45 minutes, structure en neuf blocs, choix entre essai et démo, gabarit, exemple avant / après et taux de conversion à viser."
+  },
 ];
