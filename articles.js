@@ -260,7 +260,7 @@ const ARTICLES = [
     categorie:"saas",
     lecture:  "12 min",
     lien:     "articles/article-landing-page-saas-conversion.html",
-    image:    "articles/landing-page-saas-conversion-cover.jpg",
+    image:    "articles/landing-page-saas-conversion-cover-v2-carte.jpg",
     slug:     "landing-page-saas-conversion",
     motCle:   "landing page saas",
     metaDesc: "Landing page SaaS : diagnostic en 45 minutes, structure en neuf blocs, choix entre essai et démo, gabarit, exemple avant / après et taux de conversion à viser."
