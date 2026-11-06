@@ -273,7 +273,7 @@ const ARTICLES = [
     categorie:"cyber",
     lecture:  "12 min",
     lien:     "articles/article-nis2-argument-commercial-editeurs.html",
-    image:    "articles/nis2-argument-commercial-editeurs-cover.jpg",
+    image:    "articles/nis2-argument-commercial-editeurs-cover-v2-carte.jpg",
     slug:     "nis2-argument-commercial-editeurs",
     motCle:   "conformité nis2",
     metaDesc: "Conformité NIS2 : transformer les questionnaires fournisseurs en argument commercial. Diagnostic, dix preuves publiables, plan de livre blanc, exemple réécrit."
