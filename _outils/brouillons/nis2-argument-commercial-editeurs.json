@@ -1,0 +1,35 @@
+{
+  "slug": "nis2-argument-commercial-editeurs",
+  "categorie": "cyber",
+  "date": "2026-11-06",
+  "titre": "Conformité NIS2 : en faire un argument commercial crédible face aux RSSI",
+  "titreSeo": "Conformité NIS2 : en faire un argument commercial crédible",
+  "h1": "Conformité NIS2 : en faire un argument commercial crédible face aux RSSI de vos clients",
+  "filAriane": "Conformité NIS2 et argument commercial",
+  "motCle": "conformité nis2",
+  "metaDesc": "Conformité NIS2 : transformer les questionnaires fournisseurs en argument commercial. Diagnostic, dix preuves publiables, plan de livre blanc, exemple réécrit.",
+  "extrait": "« Certifié NIS2 » ne veut rien dire. Ce qui convainc un RSSI, c'est une preuve datée pour chacune des dix mesures de l'article 21 : méthode en six étapes, tableau des preuves et plan de livre blanc fournisseur.",
+  "image": "articles/nis2-argument-commercial-editeurs-cover.jpg",
+  "imageAlt": "Conformité NIS2 : en faire un argument commercial crédible face aux RSSI",
+  "sommaireCourt": {
+    "ch1": "1. Questionnaires",
+    "ch2": "2. Diagnostic",
+    "ch3": "3. L'article 21",
+    "ch4": "4. Six étapes",
+    "ch5": "5. Dix preuves",
+    "ch6": "6. Plan et exemple",
+    "ch7": "7. Promesses à bannir",
+    "ch8": "8. Mesurer",
+    "ch9": "9. Seul ou accompagné",
+    "faq": "FAQ",
+    "sources": "Sources"
+  },
+  "ctaLateral": {
+    "titre": "Le guide B2B de la visibilité IA",
+    "texte": "Livre blanc gratuit : savoir ce que ChatGPT, Perplexity et Gemini disent de votre solution de cybersécurité, puis devenir une source qu'ils citent.",
+    "lien": "/livres-blancs/visibilite-ia-b2b-guide.html",
+    "bouton": "Télécharger le livre blanc"
+  },
+  "service": "livres-blancs",
+  "remplacer": true
+}

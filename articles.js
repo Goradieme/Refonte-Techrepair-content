@@ -265,4 +265,17 @@ const ARTICLES = [
     motCle:   "landing page saas",
     metaDesc: "Landing page SaaS : diagnostic en 45 minutes, structure en neuf blocs, choix entre essai et démo, gabarit, exemple avant / après et taux de conversion à viser."
   },
+  {
+    titre:    "Conformité NIS2 : en faire un argument commercial crédible face aux RSSI",
+    extrait:  "« Certifié NIS2 » ne veut rien dire. Ce qui convainc un RSSI, c'est une preuve datée pour chacune des dix mesures de l'article 21 : méthode en six étapes, tableau des preuves et plan de livre blanc fournisseur.",
+    auteur:   "Rédaction TechRepair Content",
+    date:     "2026-11-06",
+    categorie:"cyber",
+    lecture:  "12 min",
+    lien:     "articles/article-nis2-argument-commercial-editeurs.html",
+    image:    "articles/nis2-argument-commercial-editeurs-cover.jpg",
+    slug:     "nis2-argument-commercial-editeurs",
+    motCle:   "conformité nis2",
+    metaDesc: "Conformité NIS2 : transformer les questionnaires fournisseurs en argument commercial. Diagnostic, dix preuves publiables, plan de livre blanc, exemple réécrit."
+  },
 ];
