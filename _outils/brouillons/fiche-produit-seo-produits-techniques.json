@@ -1,0 +1,35 @@
+{
+  "slug": "fiche-produit-seo-produits-techniques",
+  "categorie": "ecommerce",
+  "date": "2026-11-07",
+  "titre": "Fiche produit SEO : optimiser vos produits techniques sans recopier le fabricant",
+  "titreSeo": "Fiche produit SEO : optimiser un catalogue technique",
+  "h1": "Fiche produit SEO : optimiser vos produits techniques sans recopier le fabricant",
+  "filAriane": "Fiche produit SEO et produits techniques",
+  "motCle": "fiche produit SEO",
+  "metaDesc": "Fiche produit SEO pour produits techniques : diagnostic du texte fabricant, priorités, méthode en six étapes, gabarit en sept blocs et exemple réécrit.",
+  "extrait": "Le texte du fabricant ne vous pénalise pas, il vous efface. Diagnostic en quatre contrôles, priorisation du catalogue, gabarit de fiche en sept blocs, exemple avant / après et indicateurs à suivre.",
+  "image": "articles/fiche-produit-seo-produits-techniques-cover.jpg",
+  "imageAlt": "Fiche produit SEO : optimiser vos produits techniques sans recopier le fabricant",
+  "sommaireCourt": {
+    "ch1": "1. Texte fabricant",
+    "ch2": "2. Diagnostic",
+    "ch3": "3. Fiche technique",
+    "ch4": "4. Priorités",
+    "ch5": "5. Six étapes",
+    "ch6": "6. Gabarit et exemple",
+    "ch7": "7. Pièges",
+    "ch8": "8. Indicateurs",
+    "ch9": "9. Interne ou externe",
+    "faq": "FAQ",
+    "sources": "Sources"
+  },
+  "ctaLateral": {
+    "titre": "Le guide B2B de la visibilité IA",
+    "texte": "Livre blanc gratuit : savoir ce que ChatGPT, Perplexity et Gemini répondent quand un acheteur cherche vos produits, puis devenir une source qu'ils citent.",
+    "lien": "/livres-blancs/visibilite-ia-b2b-guide.html",
+    "bouton": "Télécharger le livre blanc"
+  },
+  "service": "fiches-produits",
+  "remplacer": true
+}
