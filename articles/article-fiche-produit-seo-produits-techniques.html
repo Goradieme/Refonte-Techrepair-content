@@ -1,0 +1,687 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Fiche produit SEO : optimiser un catalogue technique</title>
+<meta name="description" content="Fiche produit SEO pour produits techniques : diagnostic du texte fabricant, priorités, méthode en six étapes, gabarit en sept blocs et exemple réécrit."/>
+<meta name="author" content="TechRepair Content"/>
+<link rel="canonical" href="https://www.techrepaircontent.com/articles/article-fiche-produit-seo-produits-techniques.html"/>
+<meta property="og:title" content="Fiche produit SEO : optimiser vos produits techniques sans recopier le fabricant"/>
+<meta property="og:description" content="Fiche produit SEO pour produits techniques : diagnostic du texte fabricant, priorités, méthode en six étapes, gabarit en sept blocs et exemple réécrit."/>
+<meta property="og:type" content="article"/>
+<meta property="og:url" content="https://www.techrepaircontent.com/articles/article-fiche-produit-seo-produits-techniques.html"/>
+<meta property="og:locale" content="fr_FR"/>
+<meta property="og:site_name" content="TechRepair Content"/>
+<meta property="og:image" content="https://www.techrepaircontent.com/articles/fiche-produit-seo-produits-techniques-cover.jpg"/>
+<meta property="article:published_time" content="2026-11-07"/>
+<meta name="twitter:card" content="summary_large_image"/>
+
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet"/>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --blue:#1A56DB;--blue-dark:#1342b0;--blue-light:#EFF6FF;
+  --navy:#0F1B3D;--text:#1e293b;--muted:#64748b;
+  --border:#e2e8f0;--green:#10b981;--orange:#f97316;--purple:#7c3aed;
+  --radius:12px;
+}
+html{scroll-behavior:smooth}
+body{font-family:'Manrope',sans-serif;color:var(--text);background:#fff;font-size:15px;line-height:1.6}
+a{text-decoration:none;color:inherit}
+nav{position:sticky;top:0;z-index:200;background:#fff;border-bottom:1px solid var(--border);padding:0 32px;display:flex;align-items:center;gap:20px;height:62px;}
+.logo{display:flex;align-items:center;gap:10px;flex-shrink:0}
+.logo-box{width:36px;height:36px;background:var(--blue);border-radius:7px;display:grid;place-items:center;color:#fff;font-weight:800;font-size:13px;letter-spacing:-.5px}
+.logo-text{font-size:13px;font-weight:700;line-height:1.2;color:var(--navy)}
+.logo-text span{display:block;color:var(--muted);font-weight:500;font-size:11px}
+.nav-links{display:flex;gap:22px;margin-left:auto;align-items:center}
+.nav-links a{font-size:13.5px;font-weight:500;color:var(--muted);transition:color .2s}
+.nav-links a:hover,.nav-links a.active{color:var(--blue)}
+.nav-links a.active{border-bottom:2px solid var(--blue);padding-bottom:1px}
+.btn-nav{background:var(--blue);color:#fff;border:none;border-radius:8px;padding:9px 18px;font-weight:700;font-size:13.5px;cursor:pointer;white-space:nowrap;font-family:inherit}
+@media(max-width:600px){nav{padding:0 16px}.nav-links a:not(:last-child){display:none}}
+.hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;background:none;border:none;padding:4px}
+.hamburger span{display:block;width:24px;height:2px;background:var(--navy);border-radius:2px;transition:all .3s}
+.hamburger.open span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+.hamburger.open span:nth-child(2){opacity:0}
+.hamburger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+.mobile-menu{display:none;position:fixed;top:62px;left:0;right:0;background:#fff;border-bottom:1px solid var(--border);padding:16px 24px;flex-direction:column;gap:4px;z-index:199;box-shadow:0 8px 24px rgba(0,0,0,.08)}
+.mobile-menu.open{display:flex}
+.mobile-menu a{font-size:15px;font-weight:600;color:var(--muted);padding:10px 0;border-bottom:1px solid var(--border);transition:color .2s}
+.mobile-menu a:last-of-type{border-bottom:none}
+.mobile-menu a:hover,.mobile-menu a.active{color:var(--blue)}
+.mobile-menu .btn-nav-mobile{margin-top:10px;background:var(--blue);color:#fff;border:none;border-radius:8px;padding:12px;font-weight:700;font-size:14px;cursor:pointer;font-family:inherit;width:100%}
+@media(max-width:768px){.hamburger{display:flex}.nav-links{display:none}}
+
+.breadcrumb{max-width:1100px;margin:0 auto;padding:18px 32px 0;font-size:12.5px;color:var(--muted)}
+.breadcrumb a{color:var(--muted)}
+.breadcrumb a:hover{color:var(--blue)}
+
+.article-hero{max-width:1100px;margin:0 auto;padding:24px 32px 0}
+.ah-badge{display:inline-flex;align-items:center;gap:5px;background:#F5F3FF;color:var(--purple);font-size:11px;font-weight:700;padding:4px 12px;border-radius:20px;margin-bottom:16px}
+.article-hero h1{font-size:34px;font-weight:800;line-height:1.2;color:var(--navy);max-width:820px;margin-bottom:16px}
+.ah-meta{display:flex;align-items:center;gap:12px;font-size:13px;color:var(--muted);margin-bottom:24px;flex-wrap:wrap}
+.ah-dot{width:4px;height:4px;border-radius:50%;background:var(--border)}
+.ah-cover{width:100%;border-radius:20px;overflow:hidden;margin-bottom:8px;border:1px solid var(--border)}
+.ah-cover img{width:100%;height:auto;display:block}
+
+.layout{max-width:1100px;margin:0 auto;padding:40px 32px 56px;display:grid;grid-template-columns:1fr 300px;gap:44px;align-items:start}
+.content h2{font-size:24px;font-weight:800;color:var(--navy);margin:40px 0 14px;line-height:1.3}
+.content h3{font-size:18px;font-weight:800;color:var(--navy);margin:28px 0 10px;line-height:1.3}
+.content p{margin-bottom:14px;color:var(--text);font-size:15px;line-height:1.75}
+.content ul,.content ol{margin:0 0 16px 20px;color:var(--text)}
+.content li{margin-bottom:7px;line-height:1.7}
+.content strong{color:var(--navy)}
+.content em{color:var(--muted)}
+.content hr{border:none;border-top:1px solid var(--border);margin:36px 0}
+.intro-lead{font-size:16.5px;color:var(--muted);line-height:1.8;margin-bottom:20px}
+.toc-box{background:var(--blue-light);border:1px solid #c3d6f8;border-radius:16px;padding:22px 24px;margin:24px 0 36px}
+.toc-box h3{margin:0 0 12px;font-size:14px;color:var(--navy)}
+.toc-box ol{margin:0 0 0 18px}
+.toc-box li{font-size:13.5px;margin-bottom:6px}
+.toc-box a{color:var(--blue-dark);font-weight:600}
+.toc-box a:hover{text-decoration:underline}
+.callout{background:#f8fafc;border-left:3px solid var(--blue);border-radius:8px;padding:16px 20px;margin:18px 0;font-size:14px}
+.callout strong{display:block;margin-bottom:4px;color:var(--navy)}
+.benefit{font-size:13.5px;color:var(--muted);font-style:italic;margin:-6px 0 16px}
+table{width:100%;border-collapse:collapse;margin:18px 0 22px;font-size:13.5px}
+th,td{border:1px solid var(--border);padding:10px 12px;text-align:left;vertical-align:top}
+th{background:#f8fafc;color:var(--navy);font-weight:700}
+.case-card{border:1px solid var(--border);border-radius:14px;padding:20px 22px;margin-bottom:18px;background:#fafbfc}
+.case-card h3{margin-top:0}
+.faq-item{border-bottom:1px solid var(--border);padding:16px 0}
+.faq-item:last-child{border-bottom:none}
+.faq-item p.question{font-weight:800;color:var(--navy);margin-bottom:6px;font-size:15px}
+.conclusion-box{background:linear-gradient(135deg,var(--navy),#1e3a6e);border-radius:18px;padding:32px;margin-top:32px;color:#fff}
+.conclusion-box p{color:#cbd5e1}
+.conclusion-box strong{color:#fff}
+.conclusion-box .final-cta{display:inline-block;margin-top:14px;background:var(--blue);color:#fff;border-radius:8px;padding:12px 22px;font-weight:700;font-size:14px}
+
+.sidebar{display:flex;flex-direction:column;gap:20px;position:sticky;top:80px}
+.sidebar-card{background:#f8fafc;border:1px solid var(--border);border-radius:16px;padding:20px}
+.sidebar-card h3{font-size:12.5px;font-weight:800;color:var(--navy);margin-bottom:14px;text-transform:uppercase;letter-spacing:.4px}
+.mini-toc{display:flex;flex-direction:column;gap:9px}
+.mini-toc a{font-size:12.5px;color:var(--muted);line-height:1.5}
+.mini-toc a:hover{color:var(--blue)}
+.author-card{display:flex;gap:10px;align-items:center}
+.author-avatar{width:38px;height:38px;border-radius:50%;background:var(--blue);color:#fff;display:grid;place-items:center;font-weight:800;font-size:13px}
+.author-name{font-size:13px;font-weight:700;color:var(--navy)}
+.author-role{font-size:11.5px;color:var(--muted)}
+.guide-card{background:linear-gradient(135deg,#f0f5ff,#dce9ff);border-color:#c3d6f8}
+.guide-card p{font-size:12.5px;color:var(--muted);line-height:1.6;margin-bottom:14px}
+.guide-btn{display:block;text-align:center;background:var(--blue);color:#fff;border-radius:8px;padding:11px;font-size:13px;font-weight:700;transition:background .2s}
+.guide-btn:hover{background:var(--blue-dark)}
+
+.nl-band{background:var(--blue);padding:48px 32px}
+.nl-band-inner{max-width:700px;margin:0 auto;text-align:center}
+.nl-band h2{font-size:26px;font-weight:800;color:#fff;margin-bottom:10px}
+.nl-band p{color:rgba(255,255,255,.8);font-size:14px;margin-bottom:24px}
+.nl-band-form{display:flex;gap:10px;max-width:440px;margin:0 auto;flex-wrap:wrap}
+.nl-band-input{flex:1;border:none;border-radius:8px;padding:12px 16px;font-size:14px;font-family:inherit;outline:none;min-width:200px}
+.nl-band-btn{background:var(--navy);color:#fff;border:none;border-radius:8px;padding:12px 20px;font-size:14px;font-weight:700;cursor:pointer;font-family:inherit;white-space:nowrap}
+.nl-band-note{font-size:11.5px;color:rgba(255,255,255,.6);margin-top:10px}
+
+.cta-band{background:var(--navy);padding:60px 32px}
+.cta-inner{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:1fr auto;gap:48px;align-items:center}
+.cta-band h2{font-size:28px;font-weight:800;color:#fff;margin-bottom:9px}
+.cta-band>div>p{color:#94a3b8;font-size:13.5px;margin-bottom:24px;max-width:380px}
+.cta-btns{display:flex;gap:10px;flex-wrap:wrap}
+.btn-white{background:#fff;color:var(--navy);border-radius:8px;padding:11px 20px;font-weight:700;font-size:13.5px;display:inline-flex;align-items:center;gap:7px;cursor:pointer;border:none;font-family:inherit}
+.btn-ghost-cta{background:transparent;color:#fff;border:1.5px solid rgba(255,255,255,.3);border-radius:8px;padding:11px 20px;font-weight:700;font-size:13.5px;cursor:pointer;font-family:inherit}
+.btn-ghost-cta:hover{border-color:#fff}
+.cta-checks{display:flex;flex-direction:column;gap:11px;flex-shrink:0}
+.cta-check{display:flex;align-items:center;gap:9px;color:#cbd5e1;font-size:13px}
+.cta-ci{color:var(--green);font-weight:700}
+
+footer{background:var(--navy);border-top:1px solid rgba(255,255,255,.07);padding:44px 32px 26px}
+.footer-inner{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:2fr 1fr 1fr 1fr 1fr;gap:32px}
+.footer-brand p{color:#64748b;font-size:12px;margin-top:8px;max-width:185px;line-height:1.7}
+footer h4{font-size:10.5px;font-weight:700;color:#94a3b8;text-transform:uppercase;letter-spacing:.5px;margin-bottom:13px}
+.flinks{list-style:none}
+.flinks li{margin-bottom:8px}
+.flinks a{color:#64748b;font-size:12px;transition:color .2s}
+.flinks a:hover{color:#fff}
+.fsocial{display:flex;gap:7px;margin-top:11px}
+.fsoc{width:29px;height:29px;border-radius:6px;background:rgba(255,255,255,.07);display:grid;place-items:center;font-size:11px;color:#94a3b8;transition:background .2s}
+.fsoc:hover{background:var(--blue);color:#fff}
+.footer-bottom{max-width:1100px;margin:24px auto 0;padding-top:16px;border-top:1px solid rgba(255,255,255,.07);display:flex;justify-content:space-between;color:#475569;font-size:11px;flex-wrap:wrap;gap:8px}
+
+@media(max-width:960px){.layout{grid-template-columns:1fr}.sidebar{position:static;display:grid;grid-template-columns:1fr 1fr;gap:16px}.cta-inner{grid-template-columns:1fr}.footer-inner{grid-template-columns:1fr 1fr}}
+@media(max-width:600px){.article-hero h1{font-size:26px}.sidebar{grid-template-columns:1fr}.nl-band-form{flex-direction:column}.footer-inner{grid-template-columns:1fr}}
+
+.btn-demo{position:relative;background:var(--blue);color:#fff;border:none;border-radius:8px;padding:9px 16px;font-weight:800;font-size:13.5px;white-space:nowrap;font-family:inherit;display:inline-flex;align-items:center;gap:6px;text-decoration:none;cursor:pointer;transition:background .2s,transform .2s}
+.btn-demo:hover{background:var(--blue-dark);transform:translateY(-1px)}
+.btn-demo .star{color:#fff;font-size:14px;line-height:1;font-weight:800}
+.btn-demo-badge{position:absolute;top:-9px;right:-8px;background:#F59E0B;color:#fff;font-size:8.5px;font-weight:800;padding:2px 6px;border-radius:999px;letter-spacing:.3px;box-shadow:0 2px 6px rgba(245,158,11,.45);animation:demoPulse 2.2s ease-in-out infinite}
+@keyframes demoPulse{0%,100%{transform:scale(1)}50%{transform:scale(1.1)}}
+.nav-tools{position:relative;display:inline-block}
+.nav-tools .chevron{font-size:10px;margin-left:2px;transition:transform .15s}
+.nav-tools:hover .chevron{transform:rotate(180deg)}
+.nav-tools-menu{display:none;position:absolute;top:calc(100% + 8px);right:0;background:#fff;border:1px solid var(--border);border-radius:12px;box-shadow:0 12px 32px rgba(15,27,61,.15);min-width:220px;padding:6px;z-index:260}
+.nav-tools:hover .nav-tools-menu,.nav-tools:focus-within .nav-tools-menu{display:block}
+.nav-tools-menu a{display:flex;align-items:center;gap:9px;padding:10px 12px;border-radius:8px;font-size:13.5px;font-weight:600;color:var(--navy);text-decoration:none;white-space:nowrap}
+.nav-tools-menu a:hover{background:var(--blue-light);color:var(--blue)}
+.nav-tools-menu a .ico{font-size:15px}
+.btn-demo-mobile{position:relative;margin-top:10px;background:var(--blue);color:#fff;border-radius:8px;padding:12px;font-weight:800;font-size:14px;font-family:inherit;width:100%;display:flex;align-items:center;justify-content:center;gap:7px;text-decoration:none;border-bottom:none!important}
+.btn-demo-mobile .star{color:#fff;font-size:15px;font-weight:800}
+.mobile-menu a.btn-demo-mobile{color:#fff}
+.btn-demo-mobile .btn-demo-badge{top:-9px;right:14px;animation:none}
+
+/* ══ Liens vers les sources citées ══ */
+a.src{color:var(--blue);font-weight:600;text-decoration:underline;text-underline-offset:2px;text-decoration-thickness:1px;transition:color .2s}
+a.src:hover{color:var(--blue-dark);text-decoration-thickness:2px}
+/* ══ Mise en forme éditoriale (gabarit 2026) ══ */
+.ah-cover{max-width:960px;box-shadow:0 18px 50px rgba(15,27,61,.18);border:none}
+.key-points{border:1px solid var(--border);border-top:3px solid var(--blue);border-radius:0 0 14px 14px;padding:20px 24px 8px;margin:6px 0 30px;background:#fff}
+.key-points h3{margin:0 0 12px!important;font-size:12px!important;letter-spacing:1.4px;text-transform:uppercase;color:var(--blue-dark)!important}
+.key-points ul{margin-left:18px}
+.key-points li{margin-bottom:10px}
+.stat-row{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:14px;margin:20px 0 24px}
+.stat{border-left:3px solid var(--blue);padding:4px 0 4px 14px}
+.stat b{display:block;font-size:30px;font-weight:800;color:var(--navy);line-height:1.1}
+.stat span{font-size:12.5px;color:var(--muted);line-height:1.45;display:block;margin-top:4px}
+.content table th{font-size:12.5px;text-transform:uppercase;letter-spacing:.4px}
+.content table tr:nth-child(even) td{background:#fafbfd}
+.sources{font-size:13px;color:var(--muted);margin-left:20px}
+.sources li{margin-bottom:6px;line-height:1.6}
+.sources a{color:var(--blue-dark);text-decoration:underline;text-underline-offset:2px}
+@media(max-width:600px){.content table{display:block;overflow-x:auto}.stat b{font-size:26px}}
+.content p a:not(.final-cta),.content li a,.content td a{color:var(--blue);font-weight:600;text-decoration:underline;text-underline-offset:2px;text-decoration-thickness:1px}
+.content p a:not(.final-cta):hover,.content li a:hover,.content td a:hover{color:var(--blue-dark);text-decoration-thickness:2px}
+</style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "BlogPosting",
+      "headline": "Fiche produit SEO : optimiser vos produits techniques sans recopier le fabricant",
+      "description": "Fiche produit SEO pour produits techniques : diagnostic du texte fabricant, priorités, méthode en six étapes, gabarit en sept blocs et exemple réécrit.",
+      "datePublished": "2026-11-07",
+      "dateModified": "2026-11-07",
+      "author": {
+        "@type": "Organization",
+        "name": "TechRepair Content",
+        "url": "https://www.techrepaircontent.com/apropos"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "TechRepair Content",
+        "url": "https://www.techrepaircontent.com/"
+      },
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://www.techrepaircontent.com/articles/article-fiche-produit-seo-produits-techniques.html"
+      },
+      "inLanguage": "fr-FR",
+      "keywords": "fiche produit SEO",
+      "articleSection": "E-commerce",
+      "wordCount": 2496,
+      "image": "https://www.techrepaircontent.com/articles/fiche-produit-seo-produits-techniques-cover.jpg"
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Peut-on garder la description fournie par le fabricant ?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Oui, aucune règle ne l'interdit et Google ne sanctionne pas ce contenu dupliqué. Mais il n'affichera qu'une des pages identiques. Gardez les caractéristiques du fabricant, vérifiées, et rédigez vous-même la promesse d'usage, la compatibilité et les réponses aux questions."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Quelle longueur pour une fiche produit SEO ?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Aucun seuil n'existe. Une fiche technique bien faite compte souvent quelques centaines de mots hors tableau, parce qu'elle doit couvrir l'usage, la compatibilité et trois à cinq questions. Une fiche plus longue n'est utile que si chaque phrase apporte une information que l'acheteur cherche."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Peut-on rédiger ses fiches produits avec l'IA ?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Oui, pour accélérer la mise en forme et les variantes, à condition de fournir à l'outil le gabarit, la charte et les questions réelles, puis de contrôler chaque valeur chiffrée. Le risque principal n'est pas le style, mais une caractéristique ou une compatibilité inventée."
+          }
+        }
+      ]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Accueil",
+          "item": "https://www.techrepaircontent.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Blog",
+          "item": "https://www.techrepaircontent.com/blog"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Fiche produit SEO et produits techniques",
+          "item": "https://www.techrepaircontent.com/articles/article-fiche-produit-seo-produits-techniques.html"
+        }
+      ]
+    }
+  ]
+}
+</script>
+</head>
+<body>
+
+<nav>
+  <div class="logo">
+    <div class="logo-box">TRD</div>
+    <div class="logo-text">TechRepair<span>Content</span></div>
+  </div>
+  <div class="nav-links">
+    <a href="/">Accueil</a>
+    <a href="/services">Services</a>
+    <a href="/secteurs">Secteurs</a>
+    <a href="/apropos">À propos</a>
+    <a href="/blog" class="active">Blog</a>
+    <div class="nav-tools">
+      <button class="btn-demo" type="button"><span class="star">★</span>Outils IA<span class="btn-demo-badge">Nouveau</span><span class="chevron">▾</span></button>
+      <div class="nav-tools-menu">
+        <a href="/agents-ia"><span class="ico">⚙️</span> Agents IA sur mesure</a>
+        <a href="/visibilite-ia"><span class="ico">💬</span> Visibilité dans les IA</a>
+        <a href="/calculateur-temps-perdu"><span class="ico">⏱️</span> Calculateur de temps perdu</a>
+        <a href="https://demo.techrepaircontent.com"><span class="ico">🤖</span> Démo avec Ted</a>
+        <a href="https://demo.techrepaircontent.com/audit-ia.html"><span class="ico">🔍</span> Audit IA gratuit</a>
+      </div>
+    </div>
+    <button class="btn-nav" onclick="window.location='/devis'">Obtenir un devis</button>
+  </div>
+  <button class="hamburger" id="hamburger" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<div class="mobile-menu" id="mobileMenu">
+  <a href="/">Accueil</a>
+  <a href="/services">Services</a>
+  <a href="/secteurs">Secteurs</a>
+  <a href="/apropos">À propos</a>
+  <a href="/blog" class="active">Blog</a>
+  <a href="https://demo.techrepaircontent.com" class="btn-demo-mobile"><span class="star">★</span>Démo avec Ted<span class="btn-demo-badge">Nouveau</span></a>
+  <a href="https://demo.techrepaircontent.com/audit-ia.html" class="btn-demo-mobile"><span class="star">★</span>Audit IA gratuit</a>
+  <button class="btn-nav-mobile" onclick="window.location='/devis'">Obtenir un devis</button>
+</div>
+
+<div class="breadcrumb">
+  <a href="/">Accueil</a> / <a href="/blog">Blog</a> / <span style="color:var(--navy)">Fiche produit SEO et produits techniques</span>
+</div>
+
+<div class="article-hero">
+  <span class="ah-badge" style="background:#FFF7ED;color:#C2410C">🛒 E-commerce Tech</span>
+  <h1>Fiche produit SEO : optimiser vos produits techniques sans recopier le fabricant</h1>
+  <div class="ah-meta">
+    <span>✍️ Rédaction TechRepair Content</span>
+    <div class="ah-dot"></div>
+    <span>Publié le 7 novembre 2026</span>
+    <div class="ah-dot"></div>
+    <span>⏱ 12 min de lecture</span>
+  </div>
+  <div class="ah-cover"><img src="fiche-produit-seo-produits-techniques-cover.jpg" alt="Fiche produit SEO : optimiser vos produits techniques sans recopier le fabricant" width="1200" height="630" loading="eager"/></div>
+</div>
+
+<div class="layout">
+  <main class="content">
+
+<p class="intro-lead">Faites l'essai avec une référence de votre catalogue&nbsp;: copiez la première phrase de sa description, collez-la entre guillemets dans Google et lancez la recherche. Si le fabricant, deux places de marché et une dizaine de revendeurs affichent la même phrase, votre page n'apporte rien que Google n'ait déjà.</p>
+
+    <p>Une <strong>fiche produit SEO</strong> qui se classe et qui vend, pour un produit technique, ne se distingue pas par sa longueur ni par sa densité de mots-clés. Elle répond aux questions précises que se pose l'acheteur avant de commander (compatibilité, dimensionnement, usage réel, limites), là où le texte du fabricant se contente d'énumérer des caractéristiques. Voici comment mesurer l'ampleur du problème sur votre catalogue, choisir les références à reprendre en premier, les réécrire avec un gabarit en sept blocs et vérifier, chiffres à l'appui, que la réécriture a payé.</p>
+
+    <div class="key-points">
+      <h3>Points clés</h3>
+      <ul>
+        <li><strong>Le texte fabricant ne vous pénalise pas, il vous efface&nbsp;:</strong> face à des pages identiques, Google n'en montre qu'une, rarement la vôtre.</li>
+        <li><strong>Toutes les fiches ne méritent pas une réécriture&nbsp;:</strong> commencez par les références qui ont déjà des impressions, du chiffre d'affaires ou des retours produits.</li>
+        <li><strong>La différence tient en sept blocs&nbsp;:</strong> titre, promesse d'usage, compatibilité, caractéristiques groupées, questions d'acheteur, informations obligatoires, données structurées.</li>
+        <li><strong>Le résultat se juge sur un lot témoin&nbsp;:</strong> comparez les fiches réécrites à des fiches inchangées, sur au moins huit semaines.</li>
+      </ul>
+    </div>
+
+    <div class="toc-box">
+      <h3>📋 Sommaire</h3>
+      <ol>
+        <li><a href="#ch1">Pourquoi le texte du fabricant vous rend invisible</a></li>
+        <li><a href="#ch2">Votre catalogue est-il touché&nbsp;? Quatre vérifications</a></li>
+        <li><a href="#ch3">Fiche produit ou fiche technique&nbsp;: quelle différence&nbsp;?</a></li>
+        <li><a href="#ch4">Quelles références réécrire en premier</a></li>
+        <li><a href="#ch5">Comment rédiger une fiche produit technique en six étapes</a></li>
+        <li><a href="#ch6">Le gabarit en sept blocs et un exemple réécrit</a></li>
+        <li><a href="#ch7">Cinq pièges qui annulent le travail</a></li>
+        <li><a href="#ch8">Les indicateurs qui prouvent le gain</a></li>
+        <li><a href="#ch9">Catalogue en interne ou rédaction confiée</a></li>
+        <li><a href="#faq">Questions fréquentes</a></li>
+        <li><a href="#sources">Sources</a></li>
+      </ol>
+    </div>
+
+    <h2 id="ch1">1. Pourquoi le texte du fabricant vous rend invisible</h2>
+
+    <p>Reprendre la description du fabricant n'entraîne aucune sanction&nbsp;; l'effet est plus discret, et plus coûteux. Lorsque plusieurs pages présentent le même contenu, Google en retient une comme version de référence et n'affiche qu'elle dans ses résultats. Sa documentation sur la canonicalisation (2026) le précise&nbsp;: un certain volume de contenu dupliqué est normal et ne viole pas ses règles anti-spam. Ce filtre suffit à vous écarter au profit du fabricant ou d'une place de marché.</p>
+
+    <p>Pour un revendeur de matériel informatique, d'équipements réseau, d'outillage professionnel ou de composants électroniques, l'effet se lit souvent dans la Search Console&nbsp;: des milliers de fiches indexées, mais des impressions concentrées sur la page d'accueil et quelques catégories. Sur un <a href="/secteur-ecommerce">site e-commerce tech</a>, le contenu du fabricant pose un second problème&nbsp;: il est écrit pour présenter une gamme, pas pour aider un acheteur à choisir entre deux modèles.</p>
+
+    <div class="stat-row">
+      <div class="stat"><b>10&nbsp;%</b><span>des plus grands sites e-commerce ne proposent pas des descriptions produit d'un niveau de détail constamment élevé (Baymard Institute, mars 2021)</span></div>
+      <div class="stat"><b>50&nbsp;%</b><span>des sites e-commerce ont des tableaux de caractéristiques difficiles à parcourir (Baymard Institute, mars 2018)</span></div>
+      <div class="stat"><b>67&nbsp;%</b><span>des participants ont utilisé un outil de comparaison lors des tests sur des sites de produits techniques (Baymard Institute, septembre 2022)</span></div>
+    </div>
+
+    <p>Ces mesures datent de 2018 à 2022 et portent surtout sur des sites anglophones&nbsp;: ce sont des tendances, pas un taux applicable à votre boutique. Elles convergent pourtant&nbsp;: sur un produit technique, l'acheteur cherche une valeur précise, la compare, et part s'il ne la trouve pas.</p>
+
+    <h2 id="ch2">2. Votre catalogue est-il touché&nbsp;? Quatre vérifications</h2>
+
+    <p>Une heure suffit pour savoir si le problème touche quelques fiches ou tout le catalogue, sans outil payant.</p>
+
+    <ol>
+      <li><strong>Le test des guillemets (20 minutes).</strong> Prenez vingt références&nbsp;: dix parmi vos meilleures ventes, dix au hasard. Pour chacune, recherchez entre guillemets une phrase de la description. Au-delà de cinq sites identiques sur la moitié de l'échantillon, le problème est structurel.</li>
+      <li><strong>L'indexation (15 minutes).</strong> Dans le rapport sur l'indexation des pages de la Search Console, filtrez les URL de fiches produits. Une part importante classée parmi les pages en double, ou en «&nbsp;Explorée, actuellement non indexée&nbsp;», confirme que Google ne voit pas l'intérêt de vos fiches.</li>
+      <li><strong>Les requêtes (15 minutes).</strong> Dans le rapport sur les performances, filtrez les pages contenant le chemin de vos fiches. Si les seules requêtes qui les affichent sont la référence exacte du modèle, vos pages ne captent aucune recherche de choix («&nbsp;switch 24 ports PoE pour caméras&nbsp;», «&nbsp;onduleur pour baie serveur 2U&nbsp;»).</li>
+      <li><strong>Les questions des clients (10 minutes).</strong> Exportez les questions reçues par le service client ou les commerciaux sur un trimestre. Chaque question récurrente («&nbsp;est-ce compatible avec…&nbsp;?&nbsp;») signale une réponse absente de la fiche.</li>
+    </ol>
+
+    <p>Un crawler comme Screaming Frog complète ce diagnostic en listant les balises <code>title</code> et les descriptions identiques d'une fiche à l'autre, fréquentes entre variantes d'un même modèle.</p>
+
+    <h2 id="ch3">3. Fiche produit ou fiche technique&nbsp;: quelle différence&nbsp;?</h2>
+
+    <p>La fiche technique décrit ce qu'est le produit&nbsp;; la fiche produit explique ce qu'il permet de faire, pour qui, et dans quelles conditions. La première vient du fabricant et reste identique chez tous les vendeurs. La seconde vous appartient&nbsp;: c'est elle qui se classe sur des requêtes de choix et qui rassure au moment de commander.</p>
+
+    <p>La fiche technique devient un bloc de la fiche produit, réorganisé pour être lisible, et porte des obligations précises. L'article L111-1 du Code de la consommation impose de présenter au consommateur les caractéristiques essentielles du bien et, pour un bien comportant des éléments numériques, ses fonctionnalités, sa compatibilité et son interopérabilité. Pour un produit tech, la compatibilité n'est donc pas un argument facultatif&nbsp;: c'est une information due à l'acheteur particulier.</p>
+
+    <p>Depuis le 13 décembre 2024, le <a class="src" href="https://eur-lex.europa.eu/FR/legal-content/summary/general-product-safety-regulation-2023.html" target="_blank" rel="noopener">règlement européen sur la sécurité générale des produits</a> exige en outre, pour la vente à distance, les coordonnées du fabricant ou de son représentant, une description claire du produit et toute information d'avertissement ou de sécurité, comme dans un magasin traditionnel. Votre gabarit doit leur réserver un emplacement fixe.</p>
+
+    <h2 id="ch4">4. Quelles références réécrire en premier</h2>
+
+    <p>Réécrire un catalogue de 3&nbsp;000 références d'un bloc ne se justifie presque jamais. Classez vos fiches en quatre groupes et traitez-les dans cet ordre&nbsp;:</p>
+
+    <table>
+      <thead>
+        <tr><th>Groupe</th><th>Critère</th><th>Traitement et effort</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>1. Fiches proches du but</td><td>Impressions dans la Search Console, position moyenne entre 8 et 30, et chiffre d'affaires existant</td><td>Réécriture complète selon le gabarit (effort élevé)</td></tr>
+        <tr><td>2. Fiches qui coûtent</td><td>Taux de retour ou volume de questions au-dessus de la moyenne du rayon</td><td>Ajout des blocs compatibilité et questions d'acheteur (effort moyen)</td></tr>
+        <tr><td>3. Modèles d'une même famille</td><td>Variantes (capacité, nombre de ports, couleur) au texte identique</td><td>Une fiche parente riche, des variantes regroupées (effort moyen)</td></tr>
+        <tr><td>4. Longue traîne dormante</td><td>Aucune impression, ventes rares</td><td>Titre, caractéristiques groupées et mentions obligatoires seulement (effort faible)</td></tr>
+      </tbody>
+    </table>
+
+    <p>Le groupe 1 réagit le plus vite, puisque Google connaît déjà ces pages. Le groupe 2 se rentabilise par la baisse des retours, même sans trafic supplémentaire. Pour le groupe 3, Google propose de regrouper les variantes avec ses données structurées <code>ProductGroup</code>, ce qui évite trente textes artificiellement différents.</p>
+
+    <h2 id="ch5">5. Comment rédiger une fiche produit technique en six étapes</h2>
+
+    <p>La méthode suit l'ordre des questions de l'acheteur, pas celui de la documentation du fabricant. Comptez à titre indicatif une à deux heures pour la première fiche, nettement moins ensuite.</p>
+
+    <ol>
+      <li><strong>Recueillir les questions (chef de produit ou responsable catalogue).</strong> Rassemblez les questions du service client, des commerciaux et des avis, puis les suggestions de Google&nbsp;: «&nbsp;compatible&nbsp;», «&nbsp;ou&nbsp;», «&nbsp;vs&nbsp;», «&nbsp;avis&nbsp;», «&nbsp;pour&nbsp;».</li>
+      <li><strong>Choisir la requête visée.</strong> Combinez la catégorie, l'attribut décisif et l'usage&nbsp;: «&nbsp;switch PoE 24 ports manageable&nbsp;» plutôt que la seule référence.</li>
+      <li><strong>Réécrire le titre.</strong> Suivez un motif constant&nbsp;: marque, type de produit, attribut décisif, capacité, référence. Le mot qui fait cliquer passe ainsi avant la référence.</li>
+      <li><strong>Rédiger la promesse d'usage.</strong> Trois à cinq phrases qui disent pour quel usage, quel environnement et quel profil le produit convient, et dans quel cas il ne convient pas. Cette précision réduit les retours.</li>
+      <li><strong>Regrouper les caractéristiques.</strong> Classez-les par thème (alimentation, connectique, dimensions, conformité), une seule colonne, unités homogènes. Baymard Institute a observé en test que même un tableau court devient illisible quand il prend la forme d'un «&nbsp;mur de caractéristiques&nbsp;», et que 23&nbsp;% des sites ne regroupent pas les leurs en sections (2018).</li>
+      <li><strong>Baliser et relier.</strong> Ajoutez les données structurées <code>Product</code> et, si vous vendez en ligne, alimentez Google Merchant Center&nbsp;: selon la documentation de Google (2025), le balisage augmente l'éligibilité aux résultats enrichis de produits, et Merchant Center est obligatoire pour apparaître dans l'onglet Shopping. Reliez enfin la fiche à son guide de choix et aux accessoires indispensables.</li>
+    </ol>
+
+    <p>Sur plusieurs centaines de références, la collecte des questions et le gabarit pèsent plus que la rédaction&nbsp;: c'est là qu'une <a href="/service-fiches-produits">rédaction de fiches produits techniques</a> par lots, avec contrôle des caractéristiques avant import, fait gagner le plus de temps. Quand les requêtes relevées opposent deux marques («&nbsp;modèle A vs modèle B&nbsp;»), elles relèvent plutôt d'une page dédiée&nbsp;: la logique des <a href="/articles/article-pages-comparatives-saas.html">pages comparatives</a> s'applique aussi à un catalogue de matériel.</p>
+
+    <h2 id="ch6">6. Le gabarit en sept blocs et un exemple réécrit</h2>
+
+    <p>Ce gabarit fixe l'ordre et la longueur des blocs&nbsp;; il se copie tel quel dans un brief ou un fichier d'import.</p>
+
+    <div class="callout">
+      <p><strong>Gabarit de fiche produit technique, à copier</strong></p>
+      <ul>
+        <li><strong>Bloc 1, titre (60 à 80 caractères)&nbsp;:</strong> marque + type + attribut décisif + capacité + référence.</li>
+        <li><strong>Bloc 2, promesse d'usage (3 à 5 phrases)&nbsp;:</strong> pour quel usage, quel environnement, quel profil&nbsp;; un cas où le produit ne convient pas.</li>
+        <li><strong>Bloc 3, compatibilité&nbsp;:</strong> systèmes, normes, formats ou équipements compatibles, et prérequis d'installation.</li>
+        <li><strong>Bloc 4, caractéristiques groupées&nbsp;:</strong> trois à six sections thématiques, une colonne, unités homogènes.</li>
+        <li><strong>Bloc 5, questions d'acheteur (3 à 5)&nbsp;:</strong> réponses de deux ou trois phrases, issues du service client.</li>
+        <li><strong>Bloc 6, informations obligatoires&nbsp;:</strong> fabricant et coordonnées, avertissements et consignes de sécurité, documents téléchargeables.</li>
+        <li><strong>Bloc 7, balisage et liens&nbsp;:</strong> données structurées <code>Product</code> (marque, référence fabricant, GTIN, offre), guide de choix, accessoires.</li>
+      </ul>
+    </div>
+
+    <p>Pour que mille fiches partagent un ton, des termes et des unités identiques, consignez ces choix dans une <a href="/articles/article-charte-editoriale-b2b-modele.html">charte éditoriale</a> remise à toute personne qui écrit, y compris un outil d'IA.</p>
+
+    <h3>Un commutateur réseau réécrit, exemple fictif</h3>
+
+    <p>Le produit a été inventé pour illustrer la méthode&nbsp;: un commutateur réseau de 24 ports alimentés pour PME. <strong>Avant</strong>, la version reprise du fabricant&nbsp;:</p>
+
+    <p><em>«&nbsp;Le XS-24P offre des performances exceptionnelles et une fiabilité de niveau entreprise. Grâce à sa technologie avancée, il répond à tous vos besoins de connectivité. 24 ports Gigabit PoE+, budget PoE 370 W, 4 ports SFP.&nbsp;»</em></p>
+
+    <p><strong>Après</strong>, la promesse d'usage et une question d'acheteur&nbsp;:</p>
+
+    <p><em>«&nbsp;Ce commutateur alimente et relie jusqu'à 24 équipements par le câble réseau&nbsp;: caméras de surveillance, bornes Wi-Fi, téléphones IP. Avec un budget de 370 W, il peut alimenter 24 bornes Wi-Fi de 15 W, ou une douzaine de caméras motorisées de 30 W. Il convient à une PME ou à un site de 50 à 200 postes&nbsp;; au-delà, ou pour des écrans alimentés par le réseau, choisissez un modèle à budget plus élevé. Puis-je le gérer à distance&nbsp;? Oui, par une interface web et le protocole SNMP, sans abonnement.&nbsp;»</em></p>
+
+    <p>La seconde version emploie les mots des acheteurs (caméras, bornes Wi-Fi, PME), traduit le budget en watts en nombre d'équipements et écarte ceux pour qui le produit ne convient pas.</p>
+
+    <h2 id="ch7">7. Cinq pièges qui annulent le travail</h2>
+
+    <ul>
+      <li><strong>Réécrire chaque variante avec des synonymes.</strong> Trente versions d'un même texte ne trompent personne. Regroupez les variantes sous une fiche parente et ne différenciez que ce qui change réellement.</li>
+      <li><strong>Supprimer des caractéristiques pour alléger.</strong> L'acheteur technique vient chercher une valeur précise. Allégez la présentation, jamais l'information.</li>
+      <li><strong>Promettre sans preuve.</strong> «&nbsp;Le plus économe du marché&nbsp;» ou «&nbsp;durable&nbsp;» engagent votre responsabilité, et les <a href="/articles/article-allegations-environnementales-fiches-produits.html">allégations environnementales sur une fiche produit</a> sont désormais particulièrement surveillées. Préférez la donnée vérifiable&nbsp;: consommation en watts, durée de garantie.</li>
+      <li><strong>Générer en masse sans vérification.</strong> Un outil d'IA peut inventer une compatibilité ou une norme&nbsp;: comparez chaque valeur chiffrée à la documentation du fabricant.</li>
+      <li><strong>Publier sans point de départ.</strong> Sans relevé préalable des impressions, des ventes et des retours, aucun gain ne sera démontrable.</li>
+    </ul>
+
+    <h2 id="ch8">8. Les indicateurs qui prouvent le gain</h2>
+
+    <p>Comparez un lot de fiches réécrites à un lot témoin de fiches comparables restées inchangées, sur la même période&nbsp;: sans témoin, une hausse saisonnière passe pour un succès.</p>
+
+    <table>
+      <thead>
+        <tr><th>Indicateur</th><th>Où le lire</th><th>Ce qui signale un progrès</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Fiches indexées</td><td>Search Console, rapport sur l'indexation des pages</td><td>Recul des pages en double et non indexées dans le lot réécrit</td></tr>
+        <tr><td>Requêtes distinctes par fiche</td><td>Search Console, performances filtrées par page</td><td>Apparition de requêtes d'usage et de compatibilité, au-delà de la référence</td></tr>
+        <tr><td>Clics organiques</td><td>Search Console</td><td>Hausse sur le lot réécrit supérieure à celle du lot témoin</td></tr>
+        <tr><td>Taux d'ajout au panier</td><td>Outil d'analyse d'audience</td><td>Progression à trafic comparable</td></tr>
+        <tr><td>Retours et questions</td><td>Service client, motifs de retour</td><td>Moins de retours pour «&nbsp;ne correspond pas&nbsp;» et moins de questions répétées</td></tr>
+      </tbody>
+    </table>
+
+    <p>Laissez huit à douze semaines avant de conclure&nbsp;: Google doit explorer à nouveau les pages. Les retours se jugent sur un cycle de commandes complet.</p>
+
+    <h2 id="ch9">9. Catalogue en interne ou rédaction confiée</h2>
+
+    <p>En interne, la méthode fonctionne si un chef de produit connaît la gamme, dispose de deux à trois heures par semaine et a accès aux questions du service client. Confier la rédaction devient pertinent au-delà de quelques dizaines de fiches par mois, quand la gamme demande à la fois de maîtriser les protocoles et de savoir écrire pour un acheteur, ou quand le catalogue doit sortir dans plusieurs langues. Exigez alors un gabarit validé sur un échantillon, la vérification de chaque caractéristique et un lot témoin.</p>
+
+    <p>Pour un catalogue vendu à des professionnels, la fiche ne suffit pas toujours&nbsp;: un acheteur qui équipe un site entier veut comparer des architectures avant de comparer des références. Un guide de choix téléchargeable, construit comme un <a href="/service-livres-blancs">livre blanc B2B</a>, attire les liens que les fiches obtiennent rarement, recueille les coordonnées des acheteurs encore en phase d'étude et nourrit vos fiches de liens contextuels.</p>
+
+    <h2 id="faq">Questions fréquentes</h2>
+
+    <div class="faq-item">
+      <h3>Peut-on garder la description fournie par le fabricant&nbsp;?</h3>
+      <p>Oui, aucune règle ne l'interdit et Google ne sanctionne pas ce contenu dupliqué. Mais il n'affichera qu'une des pages identiques. Gardez les caractéristiques du fabricant, vérifiées, et rédigez vous-même la promesse d'usage, la compatibilité et les réponses aux questions.</p>
+    </div>
+
+    <div class="faq-item">
+      <h3>Quelle longueur pour une fiche produit SEO&nbsp;?</h3>
+      <p>Aucun seuil n'existe. Une fiche technique bien faite compte souvent quelques centaines de mots hors tableau, parce qu'elle doit couvrir l'usage, la compatibilité et trois à cinq questions. Une fiche plus longue n'est utile que si chaque phrase apporte une information que l'acheteur cherche.</p>
+    </div>
+
+    <div class="faq-item">
+      <h3>Peut-on rédiger ses fiches produits avec l'IA&nbsp;?</h3>
+      <p>Oui, pour accélérer la mise en forme et les variantes, à condition de fournir à l'outil le gabarit, la charte et les questions réelles, puis de contrôler chaque valeur chiffrée. Le risque principal n'est pas le style, mais une caractéristique ou une compatibilité inventée.</p>
+    </div>
+
+    <div class="conclusion-box">
+      <p><strong>À retenir</strong></p>
+      <p>Une fiche produit technique se classe et convertit quand elle cesse de réciter le fabricant pour répondre à l'acheteur&nbsp;: à quoi sert ce produit, avec quoi il fonctionne, dans quel cas l'éviter. Mesurez le problème sur vingt références, réécrivez d'abord les fiches proches du but avec le gabarit en sept blocs, puis comparez-les à un lot témoin.</p>
+      <a href="/devis" class="final-cta">Faire auditer vingt fiches de votre catalogue →</a>
+    </div>
+
+    <h2 id="sources">Sources</h2>
+    <ol class="sources">
+      <li>Google Search Central, «&nbsp;What is URL Canonicalization&nbsp;», documentation mise à jour le 20 août 2026. <a href="https://developers.google.com/search/docs/crawling-indexing/canonicalization" target="_blank" rel="nofollow noopener">developers.google.com</a></li>
+      <li>Google Search Central, «&nbsp;Intro to Product Structured Data on Google&nbsp;», mise à jour le 10 décembre 2025. <a href="https://developers.google.com/search/docs/appearance/structured-data/product" target="_blank" rel="nofollow noopener">developers.google.com</a></li>
+      <li>Google Search Central, «&nbsp;Share Your Product Data With Google&nbsp;», mise à jour le 10 décembre 2025. <a href="https://developers.google.com/search/docs/specialty/ecommerce/share-your-product-data-with-google" target="_blank" rel="nofollow noopener">developers.google.com</a></li>
+      <li>Google Search Central, «&nbsp;Product Variant Structured Data (ProductGroup, Product)&nbsp;». <a href="https://developers.google.com/search/docs/appearance/structured-data/product-variants" target="_blank" rel="nofollow noopener">developers.google.com</a></li>
+      <li>Baymard Institute, «&nbsp;10% of E-Commerce Sites Have Product Descriptions That Are Insufficient for Users' Needs&nbsp;», 9 mars 2021. <a href="https://baymard.com/blog/product-descriptions" target="_blank" rel="nofollow noopener">baymard.com</a></li>
+      <li>Baymard Institute, «&nbsp;Product Spec Sheets: 4 Ways to Make Spec Sheets More Scannable for Users&nbsp;», 27 mars 2018. <a href="https://baymard.com/blog/spec-sheet-scannability" target="_blank" rel="nofollow noopener">baymard.com</a></li>
+      <li>Baymard Institute, «&nbsp;Product Comparison UX: Always Provide Comparison Features for Spec-Driven Industries&nbsp;», 6 septembre 2022. <a href="https://baymard.com/blog/provide-comparison-features" target="_blank" rel="nofollow noopener">baymard.com</a></li>
+      <li>Légifrance, «&nbsp;Article L111-1 du Code de la consommation&nbsp;», version en vigueur depuis le 1<sup>er</sup> octobre 2021. <a href="https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000044142438" target="_blank" rel="nofollow noopener">legifrance.gouv.fr</a></li>
+      <li>EUR-Lex, «&nbsp;Règlement relatif à la sécurité générale des produits (2023)&nbsp;», synthèse du règlement (UE) 2023/988, mise à jour le 25 septembre 2026. <a href="https://eur-lex.europa.eu/FR/legal-content/summary/general-product-safety-regulation-2023.html" target="_blank" rel="nofollow noopener">eur-lex.europa.eu</a></li>
+    </ol>
+
+  <!-- maillage:debut -->
+<section class="maillage" aria-label="Articles liés">
+<style>
+.maillage{margin:44px 0 8px;padding-top:28px;border-top:1px solid #e2e8f0;font-family:inherit}
+.maillage h2{font-size:20px!important;font-weight:800;color:#0F1B3D;margin:0 0 16px!important}
+.mi-grille{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:14px}
+.mi-carte{display:flex;flex-direction:column;gap:8px;border:1px solid #e2e8f0;border-radius:14px;padding:16px 18px;background:#fff;text-decoration:none!important;transition:border-color .2s,box-shadow .2s,transform .2s}
+.mi-carte:hover{border-color:#1A56DB;box-shadow:0 8px 24px rgba(26,86,219,.10);transform:translateY(-2px)}
+.mi-cat{font-size:10.5px;font-weight:800;letter-spacing:1.2px;text-transform:uppercase;color:#1342b0}
+.mi-titre{font-size:14.5px;font-weight:700;line-height:1.4;color:#0F1B3D}
+.mi-lire{margin-top:auto;font-size:12px;color:#64748b}
+</style>
+<h2>À lire aussi</h2>
+<div class="mi-grille"><a class="mi-carte" href="/articles/article-allegations-environnementales-fiches-produits.html"><span class="mi-cat">E-commerce</span><span class="mi-titre">Allégations environnementales : ce qu&#x27;il faut changer sur vos fiches produits</span><span class="mi-lire">Lire l'article · 12 min</span></a><a class="mi-carte" href="/articles/article-commerce-agentique.html"><span class="mi-cat">E-commerce</span><span class="mi-titre">Le Commerce Agentique : le guide complet</span><span class="mi-lire">Lire l'article · 18 min</span></a><a class="mi-carte" href="/articles/article-consultant-seo-saas-choisir.html"><span class="mi-cat">SEO</span><span class="mi-titre">Consultant SEO SaaS : comment le choisir et ce qu&#x27;il doit livrer</span><span class="mi-lire">Lire l'article · 12 min</span></a></div>
+</section>
+<!-- maillage:fin -->
+</main>
+
+  <aside class="sidebar">
+    <div class="sidebar-card">
+      <h3>Sommaire</h3>
+      <div class="mini-toc">
+        <a href="#ch1">1. Texte fabricant</a>
+        <a href="#ch2">2. Diagnostic</a>
+        <a href="#ch3">3. Fiche technique</a>
+        <a href="#ch4">4. Priorités</a>
+        <a href="#ch5">5. Six étapes</a>
+        <a href="#ch6">6. Gabarit et exemple</a>
+        <a href="#ch7">7. Pièges</a>
+        <a href="#ch8">8. Indicateurs</a>
+        <a href="#ch9">9. Interne ou externe</a>
+        <a href="#faq">FAQ</a>
+        <a href="#sources">Sources</a>
+      </div>
+    </div>
+    <div class="sidebar-card">
+      <div class="author-card">
+        <div class="author-avatar">TRD</div>
+        <div>
+          <div class="author-name">Rédaction TechRepair Content</div>
+          <div class="author-role">Rédaction SEO tech B2B</div>
+        </div>
+      </div>
+    </div>
+    <div class="sidebar-card guide-card">
+      <h3>Le guide B2B de la visibilité IA</h3>
+      <p>Livre blanc gratuit : savoir ce que ChatGPT, Perplexity et Gemini répondent quand un acheteur cherche vos produits, puis devenir une source qu'ils citent.</p>
+      <a href="/livres-blancs/visibilite-ia-b2b-guide.html" class="guide-btn">Télécharger le livre blanc</a>
+    </div>
+  </aside>
+</div>
+
+<div class="nl-band">
+  <div class="nl-band-inner">
+    <h2>📩 La newsletter SEO Tech B2B</h2>
+    <p>Chaque semaine, une stratégie actionnable et une opportunité SEO dans votre secteur.</p>
+    <div class="nl-band-form">
+      <input type="email" class="nl-band-input" id="nlBandEmail" placeholder="votre@email.com"/>
+      <button class="nl-band-btn" id="nlBandBtn" type="button">S'abonner →</button>
+    </div>
+    <p id="nlBandMsg" style="display:none;font-size:12px;color:#fff;margin-top:8px"></p>
+    <p class="nl-band-note">✓ Gratuit · ✓ Sans spam · ✓ Désabonnement en 1 clic</p>
+  </div>
+</div>
+
+<div class="cta-band">
+  <div class="cta-inner">
+    <div>
+      <h2>Du contenu qui performe, pas qui remplit des pages</h2>
+      <p>Vous voulez une stratégie de contenu sur mesure pour votre secteur tech B2B ? Parlons-en.</p>
+      <div class="cta-btns">
+        <button class="btn-white" onclick="window.location='/devis'">Obtenir un devis gratuit →</button>
+        <button class="btn-ghost-cta" onclick="window.location='/services'">Voir nos services →</button>
+      </div>
+    </div>
+    <div class="cta-checks">
+      <div class="cta-check"><span class="cta-ci">✓</span> Réponse sous 24h</div>
+      <div class="cta-check"><span class="cta-ci">✓</span> Audit SEO gratuit</div>
+      <div class="cta-check"><span class="cta-ci">✓</span> Sans engagement</div>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <div class="logo"><div class="logo-box">TRD</div><div class="logo-text" style="color:#fff">TechRepair<span>Content</span></div></div>
+      <p>Rédaction SEO & technique pour entreprises SaaS, Tech et E-commerce.</p>
+    </div>
+    <div><h4>Navigation</h4><ul class="flinks"><li><a href="/">Accueil</a></li><li><a href="/apropos">À propos</a></li><li><a href="/services">Services</a></li><li><a href="/secteurs">Secteurs</a></li><li><a href="/blog">Blog</a></li><li><a href="/livres-blancs/">Livres blancs</a></li></ul></div>
+    <div><h4>Ressources</h4><ul class="flinks"><li><a href="/agents-ia">Agents IA</a></li><li><a href="/visibilite-ia">Visibilité dans les IA</a></li><li><a href="/faq">FAQ</a></li><li><a href="/confidentialite">Confidentialité</a></li><li><a href="/mentions-legales">Mentions légales</a></li></ul></div>
+    <div>
+      <h4>Contact</h4>
+      <ul class="flinks"><li><a href="mailto:contact@techrepaircontent.com">contact@techrepaircontent.com</a></li><li><a href="/devis">Réponse sous 24h</a></li></ul>
+      <div class="fsocial"><a class="fsoc" href="https://www.linkedin.com/in/techrepair-content" target="_blank" rel="noopener">in</a><a class="fsoc" href="mailto:contact@techrepaircontent.com">✉</a></div>
+    </div>
+    <div><h4>Basé en France</h4><div style="font-size:22px">🇫🇷</div></div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2026 TechRepair Content. Tous droits réservés.</span>
+    <span>Fait avec ❤️ en France</span>
+  </div>
+</footer>
+
+<script>
+const hamburger = document.getElementById('hamburger');
+const mobileMenu = document.getElementById('mobileMenu');
+hamburger.addEventListener('click', () => {
+  hamburger.classList.toggle('open');
+  mobileMenu.classList.toggle('open');
+});
+mobileMenu.querySelectorAll('a').forEach(link => {
+  link.addEventListener('click', () => {
+    hamburger.classList.remove('open');
+    mobileMenu.classList.remove('open');
+  });
+});
+
+const BREVO_FORM_ACTION = 'https://a41ce724.sibforms.com/serve/MUIFAEGqDW1rbNTL0uU5ym6Ux5qJ7TJpdETsCjqRumOCnr-gRU8IGKx8Ic-JLjScrVVWrJVx_YXawDF8ao6y5hYLPvy7h8UJCk3gg9gTHcTaNAWQzbjwLnHO6DPk_HzPb7XY28rHy9JtEMuP-euST6RZutJ_bWOfqZFEtI-UUs9G4HA-O5V8JPwb3jLz0jhwuISuUqZ3Iok5IEyYHg==';
+
+function subscribeToNewsletter(emailInput, msgEl, btnEl) {
+  const email = emailInput.value.trim();
+  const isValidEmail = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+  msgEl.style.display = 'block';
+  if (!isValidEmail) {
+    msgEl.style.color = '#dc2626';
+    msgEl.textContent = "Merci d'entrer une adresse email valide.";
+    return;
+  }
+  const formData = new FormData();
+  formData.append('EMAIL', email);
+  formData.append('email_address_check', '');
+  formData.append('locale', 'fr');
+  formData.append('html_type', 'simple');
+  fetch(BREVO_FORM_ACTION, { method: 'POST', mode: 'no-cors', body: formData }).catch(() => {});
+  msgEl.style.color = '#10b981';
+  msgEl.textContent = 'Merci ! Vérifiez votre boîte mail pour confirmer.';
+  btnEl.textContent = 'Inscription envoyée ✓';
+  btnEl.disabled = true;
+}
+
+const nlBandBtn = document.getElementById('nlBandBtn');
+nlBandBtn.addEventListener('click', () => {
+  subscribeToNewsletter(document.getElementById('nlBandEmail'), document.getElementById('nlBandMsg'), nlBandBtn);
+});
+</script>
+</body>
+</html>

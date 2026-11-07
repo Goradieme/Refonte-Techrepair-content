@@ -278,4 +278,17 @@ const ARTICLES = [
     motCle:   "conformité nis2",
     metaDesc: "Conformité NIS2 : transformer les questionnaires fournisseurs en argument commercial. Diagnostic, dix preuves publiables, plan de livre blanc, exemple réécrit."
   },
+  {
+    titre:    "Fiche produit SEO : optimiser vos produits techniques sans recopier le fabricant",
+    extrait:  "Le texte du fabricant ne vous pénalise pas, il vous efface. Diagnostic en quatre contrôles, priorisation du catalogue, gabarit de fiche en sept blocs, exemple avant / après et indicateurs à suivre.",
+    auteur:   "Rédaction TechRepair Content",
+    date:     "2026-11-07",
+    categorie:"ecommerce",
+    lecture:  "12 min",
+    lien:     "articles/article-fiche-produit-seo-produits-techniques.html",
+    image:    "articles/fiche-produit-seo-produits-techniques-cover.jpg",
+    slug:     "fiche-produit-seo-produits-techniques",
+    motCle:   "fiche produit SEO",
+    metaDesc: "Fiche produit SEO pour produits techniques : diagnostic du texte fabricant, priorités, méthode en six étapes, gabarit en sept blocs et exemple réécrit."
+  },
 ];
