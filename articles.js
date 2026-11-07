@@ -286,7 +286,7 @@ const ARTICLES = [
     categorie:"ecommerce",
     lecture:  "12 min",
     lien:     "articles/article-fiche-produit-seo-produits-techniques.html",
-    image:    "articles/fiche-produit-seo-produits-techniques-cover.jpg",
+    image:    "articles/fiche-produit-seo-produits-techniques-cover-v2-carte.jpg",
     slug:     "fiche-produit-seo-produits-techniques",
     motCle:   "fiche produit SEO",
     metaDesc: "Fiche produit SEO pour produits techniques : diagnostic du texte fabricant, priorités, méthode en six étapes, gabarit en sept blocs et exemple réécrit."
