@@ -355,6 +355,13 @@ jour-là ; l'ajouter alors au calendrier.
 
 ## Diversité des sujets (règle stricte)
 
+**Date imposée (priorité absolue, choix de Goradieme)** : si un sujet `a_faire` de
+`_outils/calendrier-editorial.json` porte un champ `datePrevue` égal à la date du jour,
+c'est le sujet du jour, même s'il contredit les règles ci-dessous (catégorie, service ou
+fréquence). Objectif fixé le 07/11/2026 : au moins 4 articles dans chaque catégorie
+(rh et ecommerce en retard), d'où le planning RH tech le 8/11, e-commerce le 9/11,
+fintech le 10/11 et RH tech le 11/11.
+
 Avant de choisir, lire les 10 derniers articles de `articles.js` (titre, catégorie, mot-clé).
 - Jamais la même catégorie deux jours de suite. Sur 7 jours glissants : au moins
   2 articles `saas`, au moins 1 `fintech`, 1 `cyber` et 1 `seo` (SEO B2B transverse) ;
