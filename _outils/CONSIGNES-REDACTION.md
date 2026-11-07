@@ -365,10 +365,18 @@ cybersécurité le 12/11, SEO B2B le 13/11, e-commerce le 14/11, RH tech le 15/1
 reprendre avec le SaaS B2B le 16/11. Ensuite, retour à la rotation normale ci-dessous.
 
 Avant de choisir, lire les 10 derniers articles de `articles.js` (titre, catégorie, mot-clé).
-- Jamais la même catégorie deux jours de suite. Sur 7 jours glissants : au moins
-  2 articles `saas`, au moins 1 `fintech`, 1 `cyber` et 1 `seo` (SEO B2B transverse) ;
-  `ecommerce` et `rh` au plus une fois chacun. La catégorie désigne le secteur du
-  lecteur visé.
+- **Rotation stricte des catégories à partir du 17/11/2026 (choix de Goradieme, pour un
+  blog équilibré)** : la catégorie du jour se déduit de la date, cycle de 7 jours compté
+  à partir du 17/11/2026 : `(date du jour − 2026-11-17) en jours, modulo 7` donne
+  0 = `cyber`, 1 = `fintech`, 2 = `seo` (SEO B2B transverse), 3 = `ecommerce`, 4 = `rh`,
+  5 = jour libre, 6 = `saas`. Le jour libre accueille le sujet le plus fort du moment
+  (actualité, forte demande, opportunité commerciale), dans n'importe quelle catégorie
+  sauf celle de la veille (`rh`) et du lendemain (`saas`). Chaque catégorie reçoit ainsi
+  un article par semaine. Le 1er du mois, le livre blanc remplace l'article sans décaler
+  le cycle. Une date imposée (`datePrevue`) reste prioritaire. La catégorie désigne le
+  secteur du lecteur visé.
+- Services : jamais le même service principal deux jours de suite, au moins 4 services
+  différents sur 7 jours.
 - Les sujets IA (GEO, ChatGPT, agents IA, moteurs de réponse, IA générative) : au plus
   **un article par semaine**. Le reste du temps, traiter les sujets d'acquisition des
   secteurs : SEO SaaS, génération de leads B2B, livres blancs, études de cas, pages
