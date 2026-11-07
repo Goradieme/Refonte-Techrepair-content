@@ -450,7 +450,8 @@
       "/agents-ia",
       "/secteur-cybersecurite",
       "/devis"
-    ]
+    ],
+    "datePrevue": "2026-11-12"
   },
   {
     "n": 12,
@@ -544,7 +545,8 @@
       "source": "à valider (Ubersuggest + google_suggestions)"
     },
     "service": "articles-seo",
-    "probleme": "Un site B2B tech publie régulièrement mais Google ne le considère pas comme une source experte."
+    "probleme": "Un site B2B tech publie régulièrement mais Google ne le considère pas comme une source experte.",
+    "datePrevue": "2026-11-13"
   },
   {
     "n": 14,
@@ -772,7 +774,8 @@
       "saas seo mistakes"
     ],
     "service": "articles-seo",
-    "probleme": "Le SEO d'un SaaS amène du trafic informationnel qui ne se transforme pas en essais ni en démos."
+    "probleme": "Le SEO d'un SaaS amène du trafic informationnel qui ne se transforme pas en essais ni en démos.",
+    "datePrevue": "2026-11-16"
   },
   {
     "n": 7,
@@ -1063,5 +1066,35 @@
       "/secteur-rh-tech"
     ],
     "datePrevue": "2026-11-11"
+  },
+  {
+    "n": 47,
+    "statut": "a_faire",
+    "categorie": "ecommerce",
+    "slug": "texte-page-categorie-ecommerce",
+    "titre": "Pages catégories e-commerce : le texte qui fait ranker sans gêner la vente",
+    "motCle": "texte page catégorie e-commerce",
+    "intention": "informationnelle / méthode",
+    "service": "fiches-produits",
+    "pagesLiees": [
+      "/service-fiches-produits",
+      "/secteur-ecommerce"
+    ],
+    "datePrevue": "2026-11-14"
+  },
+  {
+    "n": 48,
+    "statut": "a_faire",
+    "categorie": "rh",
+    "slug": "logiciel-rh-rgpd-rassurer-drh",
+    "titre": "Logiciel RH et RGPD : les contenus qui rassurent un DRH sur les données de ses salariés",
+    "motCle": "logiciel RH RGPD",
+    "intention": "commerciale / éditeurs de logiciels RH",
+    "service": "articles-seo",
+    "pagesLiees": [
+      "/service-articles-seo",
+      "/secteur-rh-tech"
+    ],
+    "datePrevue": "2026-11-15"
   }
 ]

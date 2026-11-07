@@ -360,7 +360,9 @@ jour-là ; l'ajouter alors au calendrier.
 c'est le sujet du jour, même s'il contredit les règles ci-dessous (catégorie, service ou
 fréquence). Objectif fixé le 07/11/2026 : au moins 4 articles dans chaque catégorie
 (rh et ecommerce en retard), d'où le planning RH tech le 8/11, e-commerce le 9/11,
-fintech le 10/11 et RH tech le 11/11.
+fintech le 10/11 et RH tech le 11/11 ; puis chaque catégorie remonte à 5, une par jour :
+cybersécurité le 12/11, SEO B2B le 13/11, e-commerce le 14/11, RH tech le 15/11, avant de
+reprendre avec le SaaS B2B le 16/11. Ensuite, retour à la rotation normale ci-dessous.
 
 Avant de choisir, lire les 10 derniers articles de `articles.js` (titre, catégorie, mot-clé).
 - Jamais la même catégorie deux jours de suite. Sur 7 jours glissants : au moins
