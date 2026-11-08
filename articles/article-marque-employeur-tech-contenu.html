@@ -1,0 +1,714 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Marque employeur tech : attirer des développeurs</title>
+<meta name="description" content="Marque employeur tech : test des cinq recherches, méthode en six étapes, gabarit d&#x27;offre développeur avec exemple réécrit et articles techniques à publier."/>
+<meta name="author" content="TechRepair Content"/>
+<link rel="canonical" href="https://www.techrepaircontent.com/articles/article-marque-employeur-tech-contenu.html"/>
+<meta property="og:title" content="Marque employeur tech : les contenus qui attirent les développeurs"/>
+<meta property="og:description" content="Marque employeur tech : test des cinq recherches, méthode en six étapes, gabarit d&#x27;offre développeur avec exemple réécrit et articles techniques à publier."/>
+<meta property="og:type" content="article"/>
+<meta property="og:url" content="https://www.techrepaircontent.com/articles/article-marque-employeur-tech-contenu.html"/>
+<meta property="og:locale" content="fr_FR"/>
+<meta property="og:site_name" content="TechRepair Content"/>
+<meta property="og:image" content="https://www.techrepaircontent.com/articles/marque-employeur-tech-contenu-cover.jpg"/>
+<meta property="article:published_time" content="2026-11-08"/>
+<meta name="twitter:card" content="summary_large_image"/>
+
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet"/>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --blue:#1A56DB;--blue-dark:#1342b0;--blue-light:#EFF6FF;
+  --navy:#0F1B3D;--text:#1e293b;--muted:#64748b;
+  --border:#e2e8f0;--green:#10b981;--orange:#f97316;--purple:#7c3aed;
+  --radius:12px;
+}
+html{scroll-behavior:smooth}
+body{font-family:'Manrope',sans-serif;color:var(--text);background:#fff;font-size:15px;line-height:1.6}
+a{text-decoration:none;color:inherit}
+nav{position:sticky;top:0;z-index:200;background:#fff;border-bottom:1px solid var(--border);padding:0 32px;display:flex;align-items:center;gap:20px;height:62px;}
+.logo{display:flex;align-items:center;gap:10px;flex-shrink:0}
+.logo-box{width:36px;height:36px;background:var(--blue);border-radius:7px;display:grid;place-items:center;color:#fff;font-weight:800;font-size:13px;letter-spacing:-.5px}
+.logo-text{font-size:13px;font-weight:700;line-height:1.2;color:var(--navy)}
+.logo-text span{display:block;color:var(--muted);font-weight:500;font-size:11px}
+.nav-links{display:flex;gap:22px;margin-left:auto;align-items:center}
+.nav-links a{font-size:13.5px;font-weight:500;color:var(--muted);transition:color .2s}
+.nav-links a:hover,.nav-links a.active{color:var(--blue)}
+.nav-links a.active{border-bottom:2px solid var(--blue);padding-bottom:1px}
+.btn-nav{background:var(--blue);color:#fff;border:none;border-radius:8px;padding:9px 18px;font-weight:700;font-size:13.5px;cursor:pointer;white-space:nowrap;font-family:inherit}
+@media(max-width:600px){nav{padding:0 16px}.nav-links a:not(:last-child){display:none}}
+.hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;background:none;border:none;padding:4px}
+.hamburger span{display:block;width:24px;height:2px;background:var(--navy);border-radius:2px;transition:all .3s}
+.hamburger.open span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+.hamburger.open span:nth-child(2){opacity:0}
+.hamburger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+.mobile-menu{display:none;position:fixed;top:62px;left:0;right:0;background:#fff;border-bottom:1px solid var(--border);padding:16px 24px;flex-direction:column;gap:4px;z-index:199;box-shadow:0 8px 24px rgba(0,0,0,.08)}
+.mobile-menu.open{display:flex}
+.mobile-menu a{font-size:15px;font-weight:600;color:var(--muted);padding:10px 0;border-bottom:1px solid var(--border);transition:color .2s}
+.mobile-menu a:last-of-type{border-bottom:none}
+.mobile-menu a:hover,.mobile-menu a.active{color:var(--blue)}
+.mobile-menu .btn-nav-mobile{margin-top:10px;background:var(--blue);color:#fff;border:none;border-radius:8px;padding:12px;font-weight:700;font-size:14px;cursor:pointer;font-family:inherit;width:100%}
+@media(max-width:768px){.hamburger{display:flex}.nav-links{display:none}}
+
+.breadcrumb{max-width:1100px;margin:0 auto;padding:18px 32px 0;font-size:12.5px;color:var(--muted)}
+.breadcrumb a{color:var(--muted)}
+.breadcrumb a:hover{color:var(--blue)}
+
+.article-hero{max-width:1100px;margin:0 auto;padding:24px 32px 0}
+.ah-badge{display:inline-flex;align-items:center;gap:5px;background:#F5F3FF;color:var(--purple);font-size:11px;font-weight:700;padding:4px 12px;border-radius:20px;margin-bottom:16px}
+.article-hero h1{font-size:34px;font-weight:800;line-height:1.2;color:var(--navy);max-width:820px;margin-bottom:16px}
+.ah-meta{display:flex;align-items:center;gap:12px;font-size:13px;color:var(--muted);margin-bottom:24px;flex-wrap:wrap}
+.ah-dot{width:4px;height:4px;border-radius:50%;background:var(--border)}
+.ah-cover{width:100%;border-radius:20px;overflow:hidden;margin-bottom:8px;border:1px solid var(--border)}
+.ah-cover img{width:100%;height:auto;display:block}
+
+.layout{max-width:1100px;margin:0 auto;padding:40px 32px 56px;display:grid;grid-template-columns:1fr 300px;gap:44px;align-items:start}
+.content h2{font-size:24px;font-weight:800;color:var(--navy);margin:40px 0 14px;line-height:1.3}
+.content h3{font-size:18px;font-weight:800;color:var(--navy);margin:28px 0 10px;line-height:1.3}
+.content p{margin-bottom:14px;color:var(--text);font-size:15px;line-height:1.75}
+.content ul,.content ol{margin:0 0 16px 20px;color:var(--text)}
+.content li{margin-bottom:7px;line-height:1.7}
+.content strong{color:var(--navy)}
+.content em{color:var(--muted)}
+.content hr{border:none;border-top:1px solid var(--border);margin:36px 0}
+.intro-lead{font-size:16.5px;color:var(--muted);line-height:1.8;margin-bottom:20px}
+.toc-box{background:var(--blue-light);border:1px solid #c3d6f8;border-radius:16px;padding:22px 24px;margin:24px 0 36px}
+.toc-box h3{margin:0 0 12px;font-size:14px;color:var(--navy)}
+.toc-box ol{margin:0 0 0 18px}
+.toc-box li{font-size:13.5px;margin-bottom:6px}
+.toc-box a{color:var(--blue-dark);font-weight:600}
+.toc-box a:hover{text-decoration:underline}
+.callout{background:#f8fafc;border-left:3px solid var(--blue);border-radius:8px;padding:16px 20px;margin:18px 0;font-size:14px}
+.callout strong{display:block;margin-bottom:4px;color:var(--navy)}
+.benefit{font-size:13.5px;color:var(--muted);font-style:italic;margin:-6px 0 16px}
+table{width:100%;border-collapse:collapse;margin:18px 0 22px;font-size:13.5px}
+th,td{border:1px solid var(--border);padding:10px 12px;text-align:left;vertical-align:top}
+th{background:#f8fafc;color:var(--navy);font-weight:700}
+.case-card{border:1px solid var(--border);border-radius:14px;padding:20px 22px;margin-bottom:18px;background:#fafbfc}
+.case-card h3{margin-top:0}
+.faq-item{border-bottom:1px solid var(--border);padding:16px 0}
+.faq-item:last-child{border-bottom:none}
+.faq-item p.question{font-weight:800;color:var(--navy);margin-bottom:6px;font-size:15px}
+.conclusion-box{background:linear-gradient(135deg,var(--navy),#1e3a6e);border-radius:18px;padding:32px;margin-top:32px;color:#fff}
+.conclusion-box p{color:#cbd5e1}
+.conclusion-box strong{color:#fff}
+.conclusion-box .final-cta{display:inline-block;margin-top:14px;background:var(--blue);color:#fff;border-radius:8px;padding:12px 22px;font-weight:700;font-size:14px}
+
+.sidebar{display:flex;flex-direction:column;gap:20px;position:sticky;top:80px}
+.sidebar-card{background:#f8fafc;border:1px solid var(--border);border-radius:16px;padding:20px}
+.sidebar-card h3{font-size:12.5px;font-weight:800;color:var(--navy);margin-bottom:14px;text-transform:uppercase;letter-spacing:.4px}
+.mini-toc{display:flex;flex-direction:column;gap:9px}
+.mini-toc a{font-size:12.5px;color:var(--muted);line-height:1.5}
+.mini-toc a:hover{color:var(--blue)}
+.author-card{display:flex;gap:10px;align-items:center}
+.author-avatar{width:38px;height:38px;border-radius:50%;background:var(--blue);color:#fff;display:grid;place-items:center;font-weight:800;font-size:13px}
+.author-name{font-size:13px;font-weight:700;color:var(--navy)}
+.author-role{font-size:11.5px;color:var(--muted)}
+.guide-card{background:linear-gradient(135deg,#f0f5ff,#dce9ff);border-color:#c3d6f8}
+.guide-card p{font-size:12.5px;color:var(--muted);line-height:1.6;margin-bottom:14px}
+.guide-btn{display:block;text-align:center;background:var(--blue);color:#fff;border-radius:8px;padding:11px;font-size:13px;font-weight:700;transition:background .2s}
+.guide-btn:hover{background:var(--blue-dark)}
+
+.nl-band{background:var(--blue);padding:48px 32px}
+.nl-band-inner{max-width:700px;margin:0 auto;text-align:center}
+.nl-band h2{font-size:26px;font-weight:800;color:#fff;margin-bottom:10px}
+.nl-band p{color:rgba(255,255,255,.8);font-size:14px;margin-bottom:24px}
+.nl-band-form{display:flex;gap:10px;max-width:440px;margin:0 auto;flex-wrap:wrap}
+.nl-band-input{flex:1;border:none;border-radius:8px;padding:12px 16px;font-size:14px;font-family:inherit;outline:none;min-width:200px}
+.nl-band-btn{background:var(--navy);color:#fff;border:none;border-radius:8px;padding:12px 20px;font-size:14px;font-weight:700;cursor:pointer;font-family:inherit;white-space:nowrap}
+.nl-band-note{font-size:11.5px;color:rgba(255,255,255,.6);margin-top:10px}
+
+.cta-band{background:var(--navy);padding:60px 32px}
+.cta-inner{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:1fr auto;gap:48px;align-items:center}
+.cta-band h2{font-size:28px;font-weight:800;color:#fff;margin-bottom:9px}
+.cta-band>div>p{color:#94a3b8;font-size:13.5px;margin-bottom:24px;max-width:380px}
+.cta-btns{display:flex;gap:10px;flex-wrap:wrap}
+.btn-white{background:#fff;color:var(--navy);border-radius:8px;padding:11px 20px;font-weight:700;font-size:13.5px;display:inline-flex;align-items:center;gap:7px;cursor:pointer;border:none;font-family:inherit}
+.btn-ghost-cta{background:transparent;color:#fff;border:1.5px solid rgba(255,255,255,.3);border-radius:8px;padding:11px 20px;font-weight:700;font-size:13.5px;cursor:pointer;font-family:inherit}
+.btn-ghost-cta:hover{border-color:#fff}
+.cta-checks{display:flex;flex-direction:column;gap:11px;flex-shrink:0}
+.cta-check{display:flex;align-items:center;gap:9px;color:#cbd5e1;font-size:13px}
+.cta-ci{color:var(--green);font-weight:700}
+
+footer{background:var(--navy);border-top:1px solid rgba(255,255,255,.07);padding:44px 32px 26px}
+.footer-inner{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:2fr 1fr 1fr 1fr 1fr;gap:32px}
+.footer-brand p{color:#64748b;font-size:12px;margin-top:8px;max-width:185px;line-height:1.7}
+footer h4{font-size:10.5px;font-weight:700;color:#94a3b8;text-transform:uppercase;letter-spacing:.5px;margin-bottom:13px}
+.flinks{list-style:none}
+.flinks li{margin-bottom:8px}
+.flinks a{color:#64748b;font-size:12px;transition:color .2s}
+.flinks a:hover{color:#fff}
+.fsocial{display:flex;gap:7px;margin-top:11px}
+.fsoc{width:29px;height:29px;border-radius:6px;background:rgba(255,255,255,.07);display:grid;place-items:center;font-size:11px;color:#94a3b8;transition:background .2s}
+.fsoc:hover{background:var(--blue);color:#fff}
+.footer-bottom{max-width:1100px;margin:24px auto 0;padding-top:16px;border-top:1px solid rgba(255,255,255,.07);display:flex;justify-content:space-between;color:#475569;font-size:11px;flex-wrap:wrap;gap:8px}
+
+@media(max-width:960px){.layout{grid-template-columns:1fr}.sidebar{position:static;display:grid;grid-template-columns:1fr 1fr;gap:16px}.cta-inner{grid-template-columns:1fr}.footer-inner{grid-template-columns:1fr 1fr}}
+@media(max-width:600px){.article-hero h1{font-size:26px}.sidebar{grid-template-columns:1fr}.nl-band-form{flex-direction:column}.footer-inner{grid-template-columns:1fr}}
+
+.btn-demo{position:relative;background:var(--blue);color:#fff;border:none;border-radius:8px;padding:9px 16px;font-weight:800;font-size:13.5px;white-space:nowrap;font-family:inherit;display:inline-flex;align-items:center;gap:6px;text-decoration:none;cursor:pointer;transition:background .2s,transform .2s}
+.btn-demo:hover{background:var(--blue-dark);transform:translateY(-1px)}
+.btn-demo .star{color:#fff;font-size:14px;line-height:1;font-weight:800}
+.btn-demo-badge{position:absolute;top:-9px;right:-8px;background:#F59E0B;color:#fff;font-size:8.5px;font-weight:800;padding:2px 6px;border-radius:999px;letter-spacing:.3px;box-shadow:0 2px 6px rgba(245,158,11,.45);animation:demoPulse 2.2s ease-in-out infinite}
+@keyframes demoPulse{0%,100%{transform:scale(1)}50%{transform:scale(1.1)}}
+.nav-tools{position:relative;display:inline-block}
+.nav-tools .chevron{font-size:10px;margin-left:2px;transition:transform .15s}
+.nav-tools:hover .chevron{transform:rotate(180deg)}
+.nav-tools-menu{display:none;position:absolute;top:calc(100% + 8px);right:0;background:#fff;border:1px solid var(--border);border-radius:12px;box-shadow:0 12px 32px rgba(15,27,61,.15);min-width:220px;padding:6px;z-index:260}
+.nav-tools:hover .nav-tools-menu,.nav-tools:focus-within .nav-tools-menu{display:block}
+.nav-tools-menu a{display:flex;align-items:center;gap:9px;padding:10px 12px;border-radius:8px;font-size:13.5px;font-weight:600;color:var(--navy);text-decoration:none;white-space:nowrap}
+.nav-tools-menu a:hover{background:var(--blue-light);color:var(--blue)}
+.nav-tools-menu a .ico{font-size:15px}
+.btn-demo-mobile{position:relative;margin-top:10px;background:var(--blue);color:#fff;border-radius:8px;padding:12px;font-weight:800;font-size:14px;font-family:inherit;width:100%;display:flex;align-items:center;justify-content:center;gap:7px;text-decoration:none;border-bottom:none!important}
+.btn-demo-mobile .star{color:#fff;font-size:15px;font-weight:800}
+.mobile-menu a.btn-demo-mobile{color:#fff}
+.btn-demo-mobile .btn-demo-badge{top:-9px;right:14px;animation:none}
+
+/* ══ Liens vers les sources citées ══ */
+a.src{color:var(--blue);font-weight:600;text-decoration:underline;text-underline-offset:2px;text-decoration-thickness:1px;transition:color .2s}
+a.src:hover{color:var(--blue-dark);text-decoration-thickness:2px}
+/* ══ Mise en forme éditoriale (gabarit 2026) ══ */
+.ah-cover{max-width:960px;box-shadow:0 18px 50px rgba(15,27,61,.18);border:none}
+.key-points{border:1px solid var(--border);border-top:3px solid var(--blue);border-radius:0 0 14px 14px;padding:20px 24px 8px;margin:6px 0 30px;background:#fff}
+.key-points h3{margin:0 0 12px!important;font-size:12px!important;letter-spacing:1.4px;text-transform:uppercase;color:var(--blue-dark)!important}
+.key-points ul{margin-left:18px}
+.key-points li{margin-bottom:10px}
+.stat-row{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:14px;margin:20px 0 24px}
+.stat{border-left:3px solid var(--blue);padding:4px 0 4px 14px}
+.stat b{display:block;font-size:30px;font-weight:800;color:var(--navy);line-height:1.1}
+.stat span{font-size:12.5px;color:var(--muted);line-height:1.45;display:block;margin-top:4px}
+.content table th{font-size:12.5px;text-transform:uppercase;letter-spacing:.4px}
+.content table tr:nth-child(even) td{background:#fafbfd}
+.sources{font-size:13px;color:var(--muted);margin-left:20px}
+.sources li{margin-bottom:6px;line-height:1.6}
+.sources a{color:var(--blue-dark);text-decoration:underline;text-underline-offset:2px}
+@media(max-width:600px){.content table{display:block;overflow-x:auto}.stat b{font-size:26px}}
+.content p a:not(.final-cta),.content li a,.content td a{color:var(--blue);font-weight:600;text-decoration:underline;text-underline-offset:2px;text-decoration-thickness:1px}
+.content p a:not(.final-cta):hover,.content li a:hover,.content td a:hover{color:var(--blue-dark);text-decoration-thickness:2px}
+</style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "BlogPosting",
+      "headline": "Marque employeur tech : les contenus qui attirent les développeurs",
+      "description": "Marque employeur tech : test des cinq recherches, méthode en six étapes, gabarit d'offre développeur avec exemple réécrit et articles techniques à publier.",
+      "datePublished": "2026-11-08",
+      "dateModified": "2026-11-08",
+      "author": {
+        "@type": "Organization",
+        "name": "TechRepair Content",
+        "url": "https://www.techrepaircontent.com/apropos"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "TechRepair Content",
+        "url": "https://www.techrepaircontent.com/"
+      },
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://www.techrepaircontent.com/articles/article-marque-employeur-tech-contenu.html"
+      },
+      "inLanguage": "fr-FR",
+      "keywords": "marque employeur tech",
+      "articleSection": "RH Tech",
+      "wordCount": 2493,
+      "image": "https://www.techrepaircontent.com/articles/marque-employeur-tech-contenu-cover.jpg"
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Comment développer sa marque employeur quand on est une petite entreprise tech ?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Commencez par une page carrières qui décrit la stack, l'équipe et le recrutement, des offres réécrites avec une fourchette de salaire, puis un premier article technique signé par un ingénieur : six semaines suffisent."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Comment recruter des développeurs sans passer par un cabinet ?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Combinez approches directes personnalisées renvoyant vers un contenu technique de l'équipe, offres balisées JobPosting sur votre site et cooptation. Le contenu ne remplace pas l'approche directe : il rend la réponse plus probable."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Faut-il afficher le salaire dans une offre de développeur ?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Oui. La fourchette répond à la première question du candidat, la directive européenne de 2023 prévoit cette information avant l'embauche, et Google recommande de renseigner le salaire dans les données structurées."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "En combien de temps une marque employeur tech produit-elle des effets ?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Les offres réécrites et la page carrières peuvent changer le taux de réponse en quelques semaines. Les articles techniques demandent plutôt trois à six mois pour se classer sur Google et circuler dans les communautés de développeurs."
+          }
+        }
+      ]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Accueil",
+          "item": "https://www.techrepaircontent.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Blog",
+          "item": "https://www.techrepaircontent.com/blog"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Marque employeur tech",
+          "item": "https://www.techrepaircontent.com/articles/article-marque-employeur-tech-contenu.html"
+        }
+      ]
+    }
+  ]
+}
+</script>
+</head>
+<body>
+
+<nav>
+  <div class="logo">
+    <div class="logo-box">TRD</div>
+    <div class="logo-text">TechRepair<span>Content</span></div>
+  </div>
+  <div class="nav-links">
+    <a href="/">Accueil</a>
+    <a href="/services">Services</a>
+    <a href="/secteurs">Secteurs</a>
+    <a href="/apropos">À propos</a>
+    <a href="/blog" class="active">Blog</a>
+    <div class="nav-tools">
+      <button class="btn-demo" type="button"><span class="star">★</span>Outils IA<span class="btn-demo-badge">Nouveau</span><span class="chevron">▾</span></button>
+      <div class="nav-tools-menu">
+        <a href="/agents-ia"><span class="ico">⚙️</span> Agents IA sur mesure</a>
+        <a href="/visibilite-ia"><span class="ico">💬</span> Visibilité dans les IA</a>
+        <a href="/calculateur-temps-perdu"><span class="ico">⏱️</span> Calculateur de temps perdu</a>
+        <a href="https://demo.techrepaircontent.com"><span class="ico">🤖</span> Démo avec Ted</a>
+        <a href="https://demo.techrepaircontent.com/audit-ia.html"><span class="ico">🔍</span> Audit IA gratuit</a>
+      </div>
+    </div>
+    <button class="btn-nav" onclick="window.location='/devis'">Obtenir un devis</button>
+  </div>
+  <button class="hamburger" id="hamburger" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<div class="mobile-menu" id="mobileMenu">
+  <a href="/">Accueil</a>
+  <a href="/services">Services</a>
+  <a href="/secteurs">Secteurs</a>
+  <a href="/apropos">À propos</a>
+  <a href="/blog" class="active">Blog</a>
+  <a href="https://demo.techrepaircontent.com" class="btn-demo-mobile"><span class="star">★</span>Démo avec Ted<span class="btn-demo-badge">Nouveau</span></a>
+  <a href="https://demo.techrepaircontent.com/audit-ia.html" class="btn-demo-mobile"><span class="star">★</span>Audit IA gratuit</a>
+  <button class="btn-nav-mobile" onclick="window.location='/devis'">Obtenir un devis</button>
+</div>
+
+<div class="breadcrumb">
+  <a href="/">Accueil</a> / <a href="/blog">Blog</a> / <span style="color:var(--navy)">Marque employeur tech</span>
+</div>
+
+<div class="article-hero">
+  <span class="ah-badge" style="background:#F5F3FF;color:var(--purple)">👥 RH Tech</span>
+  <h1>Marque employeur tech : les contenus qui attirent les développeurs</h1>
+  <div class="ah-meta">
+    <span>✍️ Rédaction TechRepair Content</span>
+    <div class="ah-dot"></div>
+    <span>Publié le 8 novembre 2026</span>
+    <div class="ah-dot"></div>
+    <span>⏱ 12 min de lecture</span>
+  </div>
+  <div class="ah-cover"><img src="marque-employeur-tech-contenu-cover.jpg" alt="Marque employeur tech : les contenus qui attirent les développeurs" width="1200" height="630" loading="eager"/></div>
+</div>
+
+<div class="layout">
+  <main class="content">
+
+<p class="intro-lead">Que lit un développeur expérimenté lorsqu'il tape le nom de votre entreprise suivi de «&nbsp;stack&nbsp;», «&nbsp;tech&nbsp;» ou «&nbsp;avis&nbsp;», juste avant de décider s'il répond à votre recruteur&nbsp;? Pour beaucoup d'éditeurs SaaS, de fintechs ou d'acteurs de la cybersécurité, la réponse tient en trois résultats&nbsp;: une page carrières générique, une offre expirée sur un agrégateur, un avis anonyme vieux de deux ans.</p>
+
+    <p>Une <strong>marque employeur tech</strong> ne se construit pas avec des photos de baby-foot ni avec des valeurs affichées en lettres capitales. Elle repose sur des preuves que seul un ingénieur sait apprécier&nbsp;: les problèmes techniques réels de l'équipe, la façon dont le code est relu et livré, le niveau d'autonomie, la rémunération proposée. L'enjeu est de rendre ces preuves trouvables sur Google et lisibles en cinq minutes, avec trois formats&nbsp;: une page carrières qui répond aux questions des candidats, des offres d'emploi réécrites et une poignée d'articles techniques signés par l'équipe.</p>
+
+    <div class="key-points">
+      <h3>Points clés</h3>
+      <ul>
+        <li><strong>Le développeur se renseigne avant de répondre&nbsp;:</strong> ce qu'il trouve en cherchant votre nom pèse autant que le message du recruteur.</li>
+        <li><strong>Trois formats suffisent pour démarrer&nbsp;:</strong> une page carrières factuelle, des offres d'emploi précises et quatre à six articles techniques par an.</li>
+        <li><strong>La preuve technique remplace le discours&nbsp;:</strong> stack, architecture, processus de livraison et salaire convainquent mieux que les valeurs d'entreprise.</li>
+        <li><strong>Le résultat se mesure sur l'entonnoir de candidature&nbsp;:</strong> taux de réponse aux approches directes, candidatures spontanées qualifiées et trafic organique de la page carrières.</li>
+      </ul>
+    </div>
+
+    <div class="toc-box">
+      <h3>📋 Sommaire</h3>
+      <ol>
+        <li><a href="#ch1">Des offres publiées, des candidatures absentes</a></li>
+        <li><a href="#ch2">Le test des cinq recherches</a></li>
+        <li><a href="#ch3">Qu'est-ce qu'une marque employeur pour des développeurs&nbsp;?</a></li>
+        <li><a href="#ch4">Comment développer sa marque employeur tech en six étapes</a></li>
+        <li><a href="#ch5">Le gabarit d'offre d'emploi développeur, avant et après</a></li>
+        <li><a href="#ch6">Quels articles techniques publier, et qui les écrit</a></li>
+        <li><a href="#ch7">Cinq faux pas qui éloignent les ingénieurs</a></li>
+        <li><a href="#ch8">Suivre l'effet sur vos recrutements</a></li>
+        <li><a href="#ch9">Mener le chantier seul ou avec un renfort</a></li>
+        <li><a href="#faq">Questions fréquentes</a></li>
+        <li><a href="#sources">Sources</a></li>
+      </ol>
+    </div>
+
+    <h2 id="ch1">1. Des offres publiées, des candidatures absentes</h2>
+
+    <p>Recruter des profils numériques reste difficile pour la plupart des entreprises qui s'y essaient, et davantage dans la tech. Selon l'Insee (octobre 2025), 59&nbsp;% des entreprises françaises de 10 salariés ou plus qui ont cherché à recruter des spécialistes du numérique en 2024 déclarent des difficultés&nbsp;; la proportion atteint 73&nbsp;% dans l'information et la communication.</p>
+
+    <div class="stat-row">
+      <div class="stat"><b>59&nbsp;%</b><span>des entreprises ayant cherché à recruter des spécialistes du numérique déclarent des difficultés (Insee, enquête TIC 2024, publiée en octobre 2025)</span></div>
+      <div class="stat"><b>73&nbsp;%</b><span>dans le secteur de l'information et de la communication (Insee, octobre 2025)</span></div>
+      <div class="stat"><b>86&nbsp;%</b><span>des entreprises en difficulté évoquent un manque de candidatures, premier motif cité (Insee, octobre 2025)</span></div>
+    </div>
+
+    <p>Le premier motif cité, le manque de candidatures, est aussi celui sur lequel le contenu agit le plus directement. Les autres motifs relevés par l'Insee (attentes salariales jugées trop élevées pour 77&nbsp;% des entreprises en difficulté, manque d'expérience pour 63&nbsp;%) relèvent de la politique de rémunération et du profil recherché, pas de la rédaction. L'enquête exclut la finance et l'assurance&nbsp;: une fintech y lira une tendance, pas son taux.</p>
+
+    <p>La facture apparaît d'abord dans la feuille de route&nbsp;: un poste de développeur vacant pendant plusieurs mois repousse les livraisons prévues, surcharge les ingénieurs en place et fait payer des honoraires de cabinet. Pour un éditeur, c'est un problème commercial autant que RH, bien connu des acteurs de la <a href="/secteur-rh-tech">RH tech</a>.</p>
+
+    <h2 id="ch2">2. Le test des cinq recherches</h2>
+
+    <p>En trente minutes, depuis une fenêtre de navigation privée, vous pouvez voir votre entreprise comme un candidat la voit. Notez pour chaque recherche les cinq premiers résultats et ce qu'ils apprennent à un ingénieur.</p>
+
+    <ol>
+      <li><strong>«&nbsp;[nom de l'entreprise] recrutement&nbsp;»</strong>&nbsp;: votre page carrières sort-elle devant les agrégateurs&nbsp;? Les offres affichées sont-elles encore ouvertes&nbsp;?</li>
+      <li><strong>«&nbsp;[nom] stack&nbsp;» ou «&nbsp;[nom] tech&nbsp;»</strong>&nbsp;: un candidat découvre-t-il vos langages, votre infrastructure, vos choix d'architecture&nbsp;?</li>
+      <li><strong>«&nbsp;[nom] avis&nbsp;»</strong>&nbsp;: les témoignages visibles sont-ils récents, et l'entreprise y répond-elle&nbsp;?</li>
+      <li><strong>«&nbsp;développeur [langage principal] [ville]&nbsp;»</strong>&nbsp;: une de vos offres apparaît-elle dans l'encadré emploi de Google&nbsp;?</li>
+      <li><strong>«&nbsp;[nom] blog&nbsp;» ou «&nbsp;[nom] engineering&nbsp;»</strong>&nbsp;: existe-t-il au moins un article écrit par un membre de l'équipe technique depuis un an&nbsp;?</li>
+    </ol>
+
+    <p>Comptez les réponses positives. À quatre ou cinq, le problème vient sans doute d'ailleurs (salaire, entretiens, localisation). À deux ou moins, le candidat repart avec une impression vague que votre approche directe ne corrigera pas.</p>
+
+    <h2 id="ch3">3. Qu'est-ce qu'une marque employeur pour des développeurs&nbsp;?</h2>
+
+    <p>La marque employeur désigne l'image qu'une entreprise renvoie à ceux qui pourraient y travailler&nbsp;: ce qu'on dit d'elle, ce qu'elle publie, ce que vivent ses salariés. Chez les ingénieurs, elle se forme surtout à partir d'éléments vérifiables.</p>
+
+    <p>Le salaire compte&nbsp;: l'article de lancement de l'enquête Stack Overflow 2025 (mai 2025) rappelle, d'après l'édition 2024, que le télétravail ne pèse pas davantage que la rémunération dans la satisfaction globale des développeurs. Il relève aussi que 80&nbsp;% des répondants de 2024 se disaient malheureux ou simplement résignés dans leur poste&nbsp;: un vivier de candidats passifs existe, encore faut-il leur donner une raison concrète de bouger.</p>
+
+    <table>
+      <thead>
+        <tr><th>Ce qu'on publie souvent</th><th>Ce qu'un développeur cherche</th><th>Format qui le prouve</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>«&nbsp;Une équipe passionnée&nbsp;»</td><td>Taille de l'équipe, rôles, rattachement</td><td>Page carrières, section équipe</td></tr>
+        <tr><td>«&nbsp;Des technologies modernes&nbsp;»</td><td>Langages, versions, cloud, outils d'observabilité</td><td>Page stack, article d'architecture</td></tr>
+        <tr><td>«&nbsp;De l'autonomie&nbsp;»</td><td>Qui décide d'une refonte, comment se fait la revue de code</td><td>Article sur le processus de livraison</td></tr>
+        <tr><td>«&nbsp;Un salaire attractif&nbsp;»</td><td>Une fourchette chiffrée</td><td>Offre d'emploi</td></tr>
+        <tr><td>«&nbsp;Des défis passionnants&nbsp;»</td><td>Un problème réel, ses contraintes, la solution retenue</td><td>Retour d'expérience technique</td></tr>
+      </tbody>
+    </table>
+
+    <h2 id="ch4">4. Comment développer sa marque employeur tech en six étapes</h2>
+
+    <p>La démarche tient en six semaines pour une entreprise de 20 à 200 personnes, avec un pilote côté recrutement ou marketing et une heure par semaine d'un responsable technique.</p>
+
+    <h3>Étape 1. Collecter les questions des candidats (semaine 1)</h3>
+    <p>Relisez les notes de vos vingt derniers entretiens et les refus&nbsp;: les questions récurrentes (télétravail, astreintes, dette technique, formation) et les requêtes du test précédent forment le cahier des charges.</p>
+
+    <h3>Étape 2. Rédiger la fiche de vérité technique (semaine 1)</h3>
+    <p>Un document interne d'une page, validé par le CTO&nbsp;: stack et versions, hébergement, fréquence de mise en production, organisation des équipes, astreintes, politique de télétravail, fourchettes de salaire par niveau. Chaque contenu y puise, ce qui évite les contradictions entre l'offre, la page carrières et l'entretien.</p>
+
+    <h3>Étape 3. Refaire la page carrières (semaines 2 et 3)</h3>
+    <p>Structurez-la autour des questions de l'étape 1&nbsp;: le produit et ses utilisateurs en trois phrases, l'équipe technique, la stack, le déroulé exact du recrutement (entretiens, test technique, délai de réponse), puis les offres ouvertes. Un ton commun à ces pages se fixe une fois pour toutes dans une <a href="/articles/article-charte-editoriale-b2b-modele.html">charte éditoriale</a>, qui précise par exemple si l'on tutoie le candidat.</p>
+
+    <h3>Étape 4. Réécrire les offres ouvertes (semaine 3)</h3>
+    <p>Appliquez le gabarit de la partie suivante à chaque offre, en commençant par le poste le plus ancien. Comptez une heure par offre avec la fiche de vérité sous les yeux.</p>
+
+    <h3>Étape 5. Planifier les articles techniques (semaines 4 à 6)</h3>
+    <p>Choisissez quatre sujets dans le tableau de la partie 6, attribuez à chacun un ingénieur référent et prévoyez un entretien de 45 minutes par article&nbsp;: l'ingénieur raconte, un rédacteur structure et écrit, l'ingénieur relit le fond. Chaque article se construit comme des <a href="/service-articles-seo">articles SEO de fond</a>&nbsp;: une requête réelle, un plan qui y répond, un maillage vers la page carrières.</p>
+
+    <h3>Étape 6. Diffuser et réutiliser (en continu)</h3>
+    <p>Chaque article nourrit un message LinkedIn de l'auteur et les approches directes des recruteurs. Un retour d'expérience approfondi peut aussi devenir un <a href="/service-livres-blancs">livre blanc technique</a>&nbsp;: ce format récolte des liens entrants et des mentions, nourrit plusieurs articles satellites et sert de référence que les moteurs IA reprennent.</p>
+
+    <div class="callout">
+      <p><strong>Le bon interlocuteur interne</strong></p>
+      <p>Le projet échoue quand il reste dans un seul service. Le recrutement connaît les questions des candidats, le marketing maîtrise la publication, l'équipe technique détient les preuves&nbsp;: trente minutes ensemble tous les quinze jours suffisent.</p>
+    </div>
+
+    <h2 id="ch5">5. Le gabarit d'offre d'emploi développeur, avant et après</h2>
+
+    <p>Une offre de développeur efficace répond, dans cet ordre, aux six questions qu'un candidat se pose en la lisant&nbsp;: quel produit, quel problème, avec quels outils, dans quelle équipe, pour quel salaire, selon quel processus.</p>
+
+    <ol>
+      <li><strong>Titre précis</strong>&nbsp;: niveau, spécialité, langage principal («&nbsp;Développeur back-end senior Go (F/H)&nbsp;»), sans jargon interne.</li>
+      <li><strong>Le produit en deux phrases</strong>&nbsp;: qui l'utilise, à quelle échelle.</li>
+      <li><strong>Le chantier du poste</strong>&nbsp;: le problème technique sur lequel la personne travaillera les six premiers mois.</li>
+      <li><strong>La stack réelle</strong>&nbsp;: langages, bases de données, infrastructure, outils, en distinguant l'indispensable du souhaitable.</li>
+      <li><strong>L'équipe</strong>&nbsp;: taille, rattachement, rituels, part de télétravail, astreintes éventuelles.</li>
+      <li><strong>La rémunération</strong>&nbsp;: fourchette brute annuelle et avantages chiffrés.</li>
+      <li><strong>Le processus</strong>&nbsp;: étapes, durée totale, nature du test technique.</li>
+    </ol>
+
+    <p>La fourchette n'est pas qu'un argument&nbsp;: la directive (UE) 2023/970 sur la transparence des rémunérations prévoit que le candidat reçoive la rémunération initiale ou sa fourchette, par exemple dans l'offre publiée ou avant l'entretien, et interdit de l'interroger sur son historique salarial (CMS, juin 2025). La même directive demande des offres et des intitulés de poste non sexistes&nbsp;: avec <a href="/articles/article-transparence-salariale-offres-emploi.html">la transparence salariale</a>, «&nbsp;Développeur (F/H)&nbsp;» ou un intitulé neutre devient la norme.</p>
+
+    <h3>Exemple rédigé pour cet article (entreprise fictive)</h3>
+
+    <p><strong>Avant</strong>&nbsp;: «&nbsp;Rejoignez une scale-up en hypercroissance&nbsp;! Nous recherchons un développeur passionné, autonome et force de proposition, à l'aise avec les technologies modernes. Salaire attractif selon profil.&nbsp;»</p>
+
+    <p><strong>Après</strong>&nbsp;: «&nbsp;Développeur ou développeuse back-end senior Go, équipe paiements. Notre logiciel de facturation traite les encaissements de 1&nbsp;200 PME. Votre premier chantier&nbsp;: découper le module de rapprochement bancaire en services indépendants pour réduire les temps de traitement de fin de mois. Stack&nbsp;: Go, PostgreSQL, Kafka, Kubernetes sur un cloud européen&nbsp;; Terraform apprécié. Équipe de cinq développeurs rattachée au CTO, deux jours de télétravail par semaine, astreinte une semaine sur six, rémunérée. Salaire&nbsp;: 58&nbsp;000 à 68&nbsp;000&nbsp;€ brut par an. Processus&nbsp;: un appel de 30 minutes, un exercice de conception discuté en direct (pas de test à faire chez soi), une rencontre avec l'équipe, réponse sous dix jours.&nbsp;»</p>
+
+    <p>Côté référencement, chaque offre publiée sur votre site gagne à porter les données structurées <code>JobPosting</code>&nbsp;: Google exige notamment le titre, la description, la date de publication, l'employeur et le lieu, recommande d'indiquer le salaire de base, et demande de retirer les offres pourvues via la date d'expiration, une page en 404 ou 410, ou la suppression du balisage. La <a class="src" href="https://developers.google.com/search/docs/appearance/structured-data/job-posting?hl=fr" target="_blank" rel="noopener">documentation des offres d'emploi de Google</a> détaille chaque propriété.</p>
+
+    <h2 id="ch6">6. Quels articles techniques publier, et qui les écrit</h2>
+
+    <p>Quatre à six articles soignés par an valent mieux qu'un rythme hebdomadaire vite abandonné. Chaque sujet doit montrer un problème réel et la manière dont l'équipe l'a traité.</p>
+
+    <table>
+      <thead>
+        <tr><th>Type d'article</th><th>Exemple de sujet</th><th>Contribution de l'ingénieur</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Retour d'expérience de migration</td><td>Passer d'un monolithe à des services sans interrompre la facturation</td><td>Entretien de 45 min et relecture</td></tr>
+        <tr><td>Analyse d'incident</td><td>Ce qu'une panne de base de données a changé dans nos procédures</td><td>Entretien et validation juridique</td></tr>
+        <tr><td>Choix d'architecture</td><td>Pourquoi nous avons retenu Kafka plutôt qu'une file de messages gérée</td><td>Entretien de 45 min</td></tr>
+        <tr><td>Processus d'équipe</td><td>Notre revue de code&nbsp;: règles, délais, outils</td><td>Entretien de 30 min</td></tr>
+        <tr><td>Contrainte du secteur</td><td>Concilier mises en production fréquentes et exigences de sécurité d'un client bancaire</td><td>Entretien et relecture sécurité</td></tr>
+      </tbody>
+    </table>
+
+    <p>La migration prouve l'ambition technique, l'analyse d'incident la transparence, le choix d'architecture la rigueur du raisonnement, le processus d'équipe l'autonomie.</p>
+
+    <p>Les sujets propres au secteur pèsent double&nbsp;: en fintech ou en cybersécurité, un responsable sécurité qui lit votre analyse d'incident juge aussi votre sérieux d'éditeur. Faites relire par le juridique tout article qui décrit une faille, un client ou une infrastructure.</p>
+
+    <h2 id="ch7">7. Cinq faux pas qui éloignent les ingénieurs</h2>
+
+    <ul>
+      <li><strong>Le vocabulaire de la publicité</strong>&nbsp;: «&nbsp;rockstar&nbsp;», «&nbsp;ninja&nbsp;», «&nbsp;hypercroissance&nbsp;». Remplacez chaque adjectif par un fait vérifiable.</li>
+      <li><strong>La liste de vingt technologies</strong>&nbsp;: personne n'a tranché. Gardez les cinq ou six outils réellement utilisés.</li>
+      <li><strong>L'article signé «&nbsp;l'équipe&nbsp;»</strong>&nbsp;: sans auteur identifiable, un texte technique perd sa crédibilité. Faites signer l'ingénieur, avec son accord.</li>
+      <li><strong>Les offres fantômes</strong>&nbsp;: une annonce pourvue mais toujours en ligne trompe le candidat et contrevient aux règles de Google pour l'encadré emploi.</li>
+      <li><strong>L'écart entre le contenu et l'entretien</strong>&nbsp;: trois jours de télétravail promis en ligne, un seul annoncé par le manager, et la confiance s'effondre.</li>
+    </ul>
+
+    <h2 id="ch8">8. Suivre l'effet sur vos recrutements</h2>
+
+    <p>Les effets d'un tel dispositif se lisent sur trois à six mois, à condition d'avoir noté le point de départ avant de publier. Suivez quatre indicateurs, chaque mois.</p>
+
+    <table>
+      <thead>
+        <tr><th>Indicateur</th><th>Où le lire</th><th>Signal attendu</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Taux de réponse aux approches directes</td><td>Outil de suivi des candidatures ou tableur des recruteurs</td><td>Hausse après ajout d'un lien vers un article technique</td></tr>
+        <tr><td>Candidatures spontanées qualifiées</td><td>ATS, filtre «&nbsp;source&nbsp;: site&nbsp;»</td><td>Progression régulière, part retenue en premier entretien</td></tr>
+        <tr><td>Impressions et clics de la page carrières et des offres</td><td>Google Search Console, rapport Performances</td><td>Apparition sur les requêtes «&nbsp;[nom] recrutement&nbsp;» et métier + ville</td></tr>
+        <tr><td>Délai de recrutement</td><td>ATS</td><td>Baisse sur les postes rouverts après réécriture</td></tr>
+      </tbody>
+    </table>
+
+    <p>Ajoutez une question simple au premier entretien&nbsp;: «&nbsp;Qu'avez-vous lu sur nous avant cet échange&nbsp;?&nbsp;». Notée à chaque fois, elle révèle les contenus qui comptent. Un marché qui se retourne ou une grille salariale trop basse peut toutefois masquer l'effet du contenu.</p>
+
+    <h2 id="ch9">9. Mener le chantier seul ou avec un renfort</h2>
+
+    <p>Une entreprise qui dispose d'un responsable contenu et d'un CTO disponible peut tout mener en interne avec la méthode ci-dessus. Le besoin d'aide extérieure apparaît dans trois situations&nbsp;: personne n'a le temps de tenir le rythme, les ingénieurs n'aiment pas écrire, ou les contenus publiés ne se classent pas sur Google.</p>
+
+    <p>Pour des contenus écrits destinés à des développeurs, vérifiez trois critères chez un prestataire&nbsp;: savoir mener un entretien technique et restituer fidèlement un choix d'architecture, maîtriser le référencement (requêtes, données structurées, maillage), avoir publié dans le logiciel, la fintech ou la cybersécurité. Demandez un article test relu par votre CTO avant tout engagement long.</p>
+
+    <h2 id="faq">Questions fréquentes</h2>
+
+    <div class="faq-item">
+      <h3>Comment développer sa marque employeur quand on est une petite entreprise tech&nbsp;?</h3>
+      <p>Commencez par une page carrières qui décrit la stack, l'équipe et le recrutement, des offres réécrites avec une fourchette de salaire, puis un premier article technique signé par un ingénieur&nbsp;: six semaines suffisent.</p>
+    </div>
+
+    <div class="faq-item">
+      <h3>Comment recruter des développeurs sans passer par un cabinet&nbsp;?</h3>
+      <p>Combinez approches directes personnalisées renvoyant vers un contenu technique de l'équipe, offres balisées <code>JobPosting</code> sur votre site et cooptation. Le contenu ne remplace pas l'approche directe&nbsp;: il rend la réponse plus probable.</p>
+    </div>
+
+    <div class="faq-item">
+      <h3>Faut-il afficher le salaire dans une offre de développeur&nbsp;?</h3>
+      <p>Oui. La fourchette répond à la première question du candidat, la directive européenne de 2023 prévoit cette information avant l'embauche, et Google recommande de renseigner le salaire dans les données structurées.</p>
+    </div>
+
+    <div class="faq-item">
+      <h3>En combien de temps une marque employeur tech produit-elle des effets&nbsp;?</h3>
+      <p>Les offres réécrites et la page carrières peuvent changer le taux de réponse en quelques semaines. Les articles techniques demandent plutôt trois à six mois pour se classer sur Google et circuler dans les communautés de développeurs.</p>
+    </div>
+
+    <div class="conclusion-box">
+      <p><strong>À retenir</strong></p>
+      <p>Les développeurs jugent un employeur sur des preuves&nbsp;: un problème technique réel, une stack précise, un processus clair et un salaire affiché. Faites le test des cinq recherches, rédigez la fiche de vérité technique, puis réécrivez la page carrières et vos offres avant de lancer les premiers articles signés par l'équipe.</p>
+      <a href="/devis" class="final-cta">Faire évaluer votre page carrières et vos offres →</a>
+    </div>
+
+    <h2 id="sources">Sources</h2>
+    <ol class="sources">
+      <li>Insee, «&nbsp;Recrutements dans les métiers du numérique&nbsp;», Insee Références, L'économie et la société à l'ère du numérique, 14 octobre 2025 (enquête TIC entreprises 2024). <a href="https://www.insee.fr/fr/statistiques/8616805" target="_blank" rel="nofollow noopener">insee.fr</a></li>
+      <li>Stack Overflow, «&nbsp;Not just a vibe: the Stack Overflow Developer Survey is really here&nbsp;», 29 mai 2025. <a href="https://stackoverflow.blog/2025/05/29/not-just-a-vibe-the-stack-overflow-developer-survey-is-really-here/" target="_blank" rel="nofollow noopener">stackoverflow.blog</a></li>
+      <li>CMS, «&nbsp;Transposition de la directive&nbsp;: la transparence des rémunérations dès l'embauche&nbsp;», 10 juin 2025. <a href="https://cms.law/fr/fra/legal-updates/transposition-de-la-directive-la-transparence-des-remunerations-des-l-embauche" target="_blank" rel="nofollow noopener">cms.law</a></li>
+      <li>Google Search Central, «&nbsp;Données structurées des offres d'emploi (JobPosting)&nbsp;», mise à jour le 12 septembre 2026. <a href="https://developers.google.com/search/docs/appearance/structured-data/job-posting?hl=fr" target="_blank" rel="nofollow noopener">developers.google.com</a></li>
+    </ol>
+
+  <!-- maillage:debut -->
+<section class="maillage" aria-label="Articles liés">
+<style>
+.maillage{margin:44px 0 8px;padding-top:28px;border-top:1px solid #e2e8f0;font-family:inherit}
+.maillage h2{font-size:20px!important;font-weight:800;color:#0F1B3D;margin:0 0 16px!important}
+.mi-grille{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:14px}
+.mi-carte{display:flex;flex-direction:column;gap:8px;border:1px solid #e2e8f0;border-radius:14px;padding:16px 18px;background:#fff;text-decoration:none!important;transition:border-color .2s,box-shadow .2s,transform .2s}
+.mi-carte:hover{border-color:#1A56DB;box-shadow:0 8px 24px rgba(26,86,219,.10);transform:translateY(-2px)}
+.mi-cat{font-size:10.5px;font-weight:800;letter-spacing:1.2px;text-transform:uppercase;color:#1342b0}
+.mi-titre{font-size:14.5px;font-weight:700;line-height:1.4;color:#0F1B3D}
+.mi-lire{margin-top:auto;font-size:12px;color:#64748b}
+</style>
+<h2>À lire aussi</h2>
+<div class="mi-grille"><a class="mi-carte" href="/articles/article-transparence-salariale-offres-emploi.html"><span class="mi-cat">RH Tech</span><span class="mi-titre">Transparence salariale : ce que vos offres d&#x27;emploi et vos grilles doivent changer</span><span class="mi-lire">Lire l'article · 12 min</span></a><a class="mi-carte" href="/articles/article-agents-ia-rh.html"><span class="mi-cat">RH Tech</span><span class="mi-titre">Agents IA en RH : le guide complet</span><span class="mi-lire">Lire l'article · 12 min</span></a><a class="mi-carte" href="/articles/article-generation-leads-b2b-saas.html"><span class="mi-cat">SaaS B2B</span><span class="mi-titre">Génération de leads B2B en SaaS : les contenus qui remplissent vraiment le pipeline</span><span class="mi-lire">Lire l'article · 12 min</span></a></div>
+</section>
+<!-- maillage:fin -->
+</main>
+
+  <aside class="sidebar">
+    <div class="sidebar-card">
+      <h3>Sommaire</h3>
+      <div class="mini-toc">
+        <a href="#ch1">1. Candidatures absentes</a>
+        <a href="#ch2">2. Cinq recherches</a>
+        <a href="#ch3">3. Définition</a>
+        <a href="#ch4">4. Six étapes</a>
+        <a href="#ch5">5. Offre d'emploi</a>
+        <a href="#ch6">6. Articles techniques</a>
+        <a href="#ch7">7. Faux pas</a>
+        <a href="#ch8">8. Indicateurs</a>
+        <a href="#ch9">9. Interne ou externe</a>
+        <a href="#faq">FAQ</a>
+        <a href="#sources">Sources</a>
+      </div>
+    </div>
+    <div class="sidebar-card">
+      <div class="author-card">
+        <div class="author-avatar">TRD</div>
+        <div>
+          <div class="author-name">Rédaction TechRepair Content</div>
+          <div class="author-role">Rédaction SEO tech B2B</div>
+        </div>
+      </div>
+    </div>
+    <div class="sidebar-card guide-card">
+      <h3>Le guide B2B de la visibilité IA</h3>
+      <p>Livre blanc gratuit : savoir ce que ChatGPT, Perplexity et Gemini répondent quand un candidat ou un acheteur cherche votre entreprise, puis devenir une source qu'ils citent.</p>
+      <a href="/livres-blancs/visibilite-ia-b2b-guide.html" class="guide-btn">Télécharger le livre blanc</a>
+    </div>
+  </aside>
+</div>
+
+<div class="nl-band">
+  <div class="nl-band-inner">
+    <h2>📩 La newsletter SEO Tech B2B</h2>
+    <p>Chaque semaine, une stratégie actionnable et une opportunité SEO dans votre secteur.</p>
+    <div class="nl-band-form">
+      <input type="email" class="nl-band-input" id="nlBandEmail" placeholder="votre@email.com"/>
+      <button class="nl-band-btn" id="nlBandBtn" type="button">S'abonner →</button>
+    </div>
+    <p id="nlBandMsg" style="display:none;font-size:12px;color:#fff;margin-top:8px"></p>
+    <p class="nl-band-note">✓ Gratuit · ✓ Sans spam · ✓ Désabonnement en 1 clic</p>
+  </div>
+</div>
+
+<div class="cta-band">
+  <div class="cta-inner">
+    <div>
+      <h2>Du contenu qui performe, pas qui remplit des pages</h2>
+      <p>Vous voulez une stratégie de contenu sur mesure pour votre secteur tech B2B ? Parlons-en.</p>
+      <div class="cta-btns">
+        <button class="btn-white" onclick="window.location='/devis'">Obtenir un devis gratuit →</button>
+        <button class="btn-ghost-cta" onclick="window.location='/services'">Voir nos services →</button>
+      </div>
+    </div>
+    <div class="cta-checks">
+      <div class="cta-check"><span class="cta-ci">✓</span> Réponse sous 24h</div>
+      <div class="cta-check"><span class="cta-ci">✓</span> Audit SEO gratuit</div>
+      <div class="cta-check"><span class="cta-ci">✓</span> Sans engagement</div>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <div class="logo"><div class="logo-box">TRD</div><div class="logo-text" style="color:#fff">TechRepair<span>Content</span></div></div>
+      <p>Rédaction SEO & technique pour entreprises SaaS, Tech et E-commerce.</p>
+    </div>
+    <div><h4>Navigation</h4><ul class="flinks"><li><a href="/">Accueil</a></li><li><a href="/apropos">À propos</a></li><li><a href="/services">Services</a></li><li><a href="/secteurs">Secteurs</a></li><li><a href="/blog">Blog</a></li><li><a href="/livres-blancs/">Livres blancs</a></li></ul></div>
+    <div><h4>Ressources</h4><ul class="flinks"><li><a href="/agents-ia">Agents IA</a></li><li><a href="/visibilite-ia">Visibilité dans les IA</a></li><li><a href="/faq">FAQ</a></li><li><a href="/confidentialite">Confidentialité</a></li><li><a href="/mentions-legales">Mentions légales</a></li></ul></div>
+    <div>
+      <h4>Contact</h4>
+      <ul class="flinks"><li><a href="mailto:contact@techrepaircontent.com">contact@techrepaircontent.com</a></li><li><a href="/devis">Réponse sous 24h</a></li></ul>
+      <div class="fsocial"><a class="fsoc" href="https://www.linkedin.com/in/techrepair-content" target="_blank" rel="noopener">in</a><a class="fsoc" href="mailto:contact@techrepaircontent.com">✉</a></div>
+    </div>
+    <div><h4>Basé en France</h4><div style="font-size:22px">🇫🇷</div></div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2026 TechRepair Content. Tous droits réservés.</span>
+    <span>Fait avec ❤️ en France</span>
+  </div>
+</footer>
+
+<script>
+const hamburger = document.getElementById('hamburger');
+const mobileMenu = document.getElementById('mobileMenu');
+hamburger.addEventListener('click', () => {
+  hamburger.classList.toggle('open');
+  mobileMenu.classList.toggle('open');
+});
+mobileMenu.querySelectorAll('a').forEach(link => {
+  link.addEventListener('click', () => {
+    hamburger.classList.remove('open');
+    mobileMenu.classList.remove('open');
+  });
+});
+
+const BREVO_FORM_ACTION = 'https://a41ce724.sibforms.com/serve/MUIFAEGqDW1rbNTL0uU5ym6Ux5qJ7TJpdETsCjqRumOCnr-gRU8IGKx8Ic-JLjScrVVWrJVx_YXawDF8ao6y5hYLPvy7h8UJCk3gg9gTHcTaNAWQzbjwLnHO6DPk_HzPb7XY28rHy9JtEMuP-euST6RZutJ_bWOfqZFEtI-UUs9G4HA-O5V8JPwb3jLz0jhwuISuUqZ3Iok5IEyYHg==';
+
+function subscribeToNewsletter(emailInput, msgEl, btnEl) {
+  const email = emailInput.value.trim();
+  const isValidEmail = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+  msgEl.style.display = 'block';
+  if (!isValidEmail) {
+    msgEl.style.color = '#dc2626';
+    msgEl.textContent = "Merci d'entrer une adresse email valide.";
+    return;
+  }
+  const formData = new FormData();
+  formData.append('EMAIL', email);
+  formData.append('email_address_check', '');
+  formData.append('locale', 'fr');
+  formData.append('html_type', 'simple');
+  fetch(BREVO_FORM_ACTION, { method: 'POST', mode: 'no-cors', body: formData }).catch(() => {});
+  msgEl.style.color = '#10b981';
+  msgEl.textContent = 'Merci ! Vérifiez votre boîte mail pour confirmer.';
+  btnEl.textContent = 'Inscription envoyée ✓';
+  btnEl.disabled = true;
+}
+
+const nlBandBtn = document.getElementById('nlBandBtn');
+nlBandBtn.addEventListener('click', () => {
+  subscribeToNewsletter(document.getElementById('nlBandEmail'), document.getElementById('nlBandMsg'), nlBandBtn);
+});
+</script>
+</body>
+</html>

@@ -291,4 +291,17 @@ const ARTICLES = [
     motCle:   "fiche produit SEO",
     metaDesc: "Fiche produit SEO pour produits techniques : diagnostic du texte fabricant, priorités, méthode en six étapes, gabarit en sept blocs et exemple réécrit."
   },
+  {
+    titre:    "Marque employeur tech : les contenus qui attirent les développeurs",
+    extrait:  "Avant de répondre à un recruteur, un développeur cherche votre nom sur Google. Test des cinq recherches, méthode en six semaines, gabarit d'offre réécrit et sujets d'articles techniques qui prouvent la qualité de l'équipe.",
+    auteur:   "Rédaction TechRepair Content",
+    date:     "2026-11-08",
+    categorie:"rh",
+    lecture:  "12 min",
+    lien:     "articles/article-marque-employeur-tech-contenu.html",
+    image:    "articles/marque-employeur-tech-contenu-cover.jpg",
+    slug:     "marque-employeur-tech-contenu",
+    motCle:   "marque employeur tech",
+    metaDesc: "Marque employeur tech : test des cinq recherches, méthode en six étapes, gabarit d'offre développeur avec exemple réécrit et articles techniques à publier."
+  },
 ];

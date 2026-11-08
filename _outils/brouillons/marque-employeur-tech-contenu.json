@@ -1,0 +1,35 @@
+{
+  "slug": "marque-employeur-tech-contenu",
+  "categorie": "rh",
+  "date": "2026-11-08",
+  "titre": "Marque employeur tech : les contenus qui attirent les développeurs",
+  "titreSeo": "Marque employeur tech : attirer des développeurs",
+  "h1": "Marque employeur tech : les contenus qui attirent les développeurs",
+  "filAriane": "Marque employeur tech",
+  "motCle": "marque employeur tech",
+  "metaDesc": "Marque employeur tech : test des cinq recherches, méthode en six étapes, gabarit d'offre développeur avec exemple réécrit et articles techniques à publier.",
+  "extrait": "Avant de répondre à un recruteur, un développeur cherche votre nom sur Google. Test des cinq recherches, méthode en six semaines, gabarit d'offre réécrit et sujets d'articles techniques qui prouvent la qualité de l'équipe.",
+  "image": "articles/marque-employeur-tech-contenu-cover.jpg",
+  "imageAlt": "Marque employeur tech : les contenus qui attirent les développeurs",
+  "sommaireCourt": {
+    "ch1": "1. Candidatures absentes",
+    "ch2": "2. Cinq recherches",
+    "ch3": "3. Définition",
+    "ch4": "4. Six étapes",
+    "ch5": "5. Offre d'emploi",
+    "ch6": "6. Articles techniques",
+    "ch7": "7. Faux pas",
+    "ch8": "8. Indicateurs",
+    "ch9": "9. Interne ou externe",
+    "faq": "FAQ",
+    "sources": "Sources"
+  },
+  "ctaLateral": {
+    "titre": "Le guide B2B de la visibilité IA",
+    "texte": "Livre blanc gratuit : savoir ce que ChatGPT, Perplexity et Gemini répondent quand un candidat ou un acheteur cherche votre entreprise, puis devenir une source qu'ils citent.",
+    "lien": "/livres-blancs/visibilite-ia-b2b-guide.html",
+    "bouton": "Télécharger le livre blanc"
+  },
+  "service": "articles-seo",
+  "remplacer": true
+}
