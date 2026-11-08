@@ -158,8 +158,12 @@ function illustration() {
     pts.forEach((p, i) => { if (i % 2 === 0 || i === pts.length - 1) g += `<circle cx="${p[0]}" cy="${p[1]}" r="${i === pts.length - 1 ? 8 : 4.5}" fill="${i === pts.length - 1 ? '#fff' : IL.a}" stroke="${FOND}" stroke-width="2"/>`; });
     g += `<circle cx="${CX + 100}" cy="${CY + 60}" r="46" fill="none" stroke="${INK}.18)"/><circle cx="${CX + 100}" cy="${CY + 60}" r="34" fill="none" stroke="${INK}.1)"/>`;
   } else if (cat === 'rh') {
-    const nodes = [...Array(16)].map(() => [CX + (rnd() - .5) * 320, CY + (rnd() - .5) * 380]);
-    nodes[0] = [CX, CY];
+    // Nœuds tirés au hasard, en écartant ceux qui chevaucheraient un nœud déjà placé.
+    const nodes = [[CX, CY]];
+    for (let essai = 0; nodes.length < 16 && essai < 400; essai++) {
+      const p = [CX + (rnd() - .5) * 320, CY + (rnd() - .5) * 380];
+      if (nodes.every((q, j) => Math.hypot(p[0] - q[0], p[1] - q[1]) > (j === 0 ? 80 : 52))) nodes.push(p);
+    }
     nodes.forEach((a, i) => nodes.slice(i + 1).forEach(b => { if (Math.hypot(a[0] - b[0], a[1] - b[1]) < 150) g += `<line x1="${a[0]}" y1="${a[1]}" x2="${b[0]}" y2="${b[1]}" stroke="${INK}.16)"/>`; }));
     nodes.forEach(([x, y], i) => {
       const r = i === 0 ? 34 : i % 4 === 0 ? 18 : 11, f = i === 0 ? 'url(#acc)' : i % 4 === 0 ? IL.a : '#1E3366';
