@@ -312,7 +312,7 @@ const ARTICLES = [
     categorie:"ecommerce",
     lecture:  "12 min",
     lien:     "articles/article-guide-achat-ecommerce-qui-convertit.html",
-    image:    "articles/guide-achat-ecommerce-qui-convertit-cover-v2-carte.jpg",
+    image:    "articles/guide-achat-ecommerce-qui-convertit-cover-v3-carte.jpg",
     slug:     "guide-achat-ecommerce-qui-convertit",
     motCle:   "guide d'achat e-commerce",
     metaDesc: "Guide d'achat e-commerce : quelles catégories en ont besoin, méthode en sept étapes, plan type en huit blocs avec exemple réécrit et indicateurs de vente."
