@@ -299,7 +299,7 @@ const ARTICLES = [
     categorie:"rh",
     lecture:  "12 min",
     lien:     "articles/article-marque-employeur-tech-contenu.html",
-    image:    "articles/marque-employeur-tech-contenu-cover.jpg",
+    image:    "articles/marque-employeur-tech-contenu-cover-v2-carte.jpg",
     slug:     "marque-employeur-tech-contenu",
     motCle:   "marque employeur tech",
     metaDesc: "Marque employeur tech : test des cinq recherches, méthode en six étapes, gabarit d'offre développeur avec exemple réécrit et articles techniques à publier."
