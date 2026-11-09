@@ -1,0 +1,34 @@
+{
+  "slug": "guide-achat-ecommerce-qui-convertit",
+  "categorie": "ecommerce",
+  "date": "2026-11-09",
+  "titre": "Guide d'achat e-commerce : la structure qui fait passer à l'acte",
+  "titreSeo": "Guide d'achat e-commerce : exemple et plan type",
+  "h1": "Guide d'achat e-commerce : la structure qui fait passer à l'acte",
+  "filAriane": "Guide d'achat e-commerce",
+  "motCle": "guide d'achat e-commerce",
+  "metaDesc": "Guide d'achat e-commerce : quelles catégories en ont besoin, méthode en sept étapes, plan type en huit blocs avec exemple réécrit et indicateurs de vente.",
+  "extrait": "Le guide d'achat reçoit l'acheteur qui hésite entre trois modèles. Barème pour choisir les catégories, méthode en sept étapes, plan type en huit blocs, exemple réécrit et indicateurs qui prouvent qu'il fait vendre.",
+  "image": "articles/guide-achat-ecommerce-qui-convertit-cover.jpg",
+  "imageAlt": "Guide d'achat e-commerce : la structure qui fait passer à l'acte",
+  "sommaireCourt": {
+    "ch1": "1. Acheteur qui hésite",
+    "ch2": "2. Définition",
+    "ch3": "3. Catégories prioritaires",
+    "ch4": "4. Sept étapes",
+    "ch5": "5. Plan en huit blocs",
+    "ch6": "6. Six défauts",
+    "ch7": "7. Indicateurs",
+    "ch8": "8. Seul ou accompagné",
+    "faq": "FAQ",
+    "sources": "Sources"
+  },
+  "ctaLateral": {
+    "titre": "Le guide B2B de la visibilité IA",
+    "texte": "Livre blanc gratuit : savoir ce que ChatGPT, Perplexity et Gemini répondent quand un acheteur cherche un produit de votre catalogue, puis devenir une source qu'ils citent.",
+    "lien": "/livres-blancs/visibilite-ia-b2b-guide.html",
+    "bouton": "Télécharger le livre blanc"
+  },
+  "service": "fiches-produits",
+  "remplacer": true
+}

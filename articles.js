@@ -304,4 +304,17 @@ const ARTICLES = [
     motCle:   "marque employeur tech",
     metaDesc: "Marque employeur tech : test des cinq recherches, méthode en six étapes, gabarit d'offre développeur avec exemple réécrit et articles techniques à publier."
   },
+  {
+    titre:    "Guide d'achat e-commerce : la structure qui fait passer à l'acte",
+    extrait:  "Le guide d'achat reçoit l'acheteur qui hésite entre trois modèles. Barème pour choisir les catégories, méthode en sept étapes, plan type en huit blocs, exemple réécrit et indicateurs qui prouvent qu'il fait vendre.",
+    auteur:   "Rédaction TechRepair Content",
+    date:     "2026-11-09",
+    categorie:"ecommerce",
+    lecture:  "12 min",
+    lien:     "articles/article-guide-achat-ecommerce-qui-convertit.html",
+    image:    "articles/guide-achat-ecommerce-qui-convertit-cover.jpg",
+    slug:     "guide-achat-ecommerce-qui-convertit",
+    motCle:   "guide d'achat e-commerce",
+    metaDesc: "Guide d'achat e-commerce : quelles catégories en ont besoin, méthode en sept étapes, plan type en huit blocs avec exemple réécrit et indicateurs de vente."
+  },
 ];
