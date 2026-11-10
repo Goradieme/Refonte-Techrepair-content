@@ -1,0 +1,706 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>SEO fintech : se classer malgré les critères YMYL</title>
+<meta name="description" content="SEO fintech : ce que les critères YMYL de Google et les règles de l&#x27;ACPR et de l&#x27;AMF exigent, diagnostic en huit questions, méthode en six étapes et grille."/>
+<meta name="author" content="TechRepair Content"/>
+<link rel="canonical" href="https://www.techrepaircontent.com/articles/article-contenu-seo-fintech-ymyl.html"/>
+<meta property="og:title" content="SEO fintech : écrire sur l&#x27;argent quand Google applique ses critères YMYL"/>
+<meta property="og:description" content="SEO fintech : ce que les critères YMYL de Google et les règles de l&#x27;ACPR et de l&#x27;AMF exigent, diagnostic en huit questions, méthode en six étapes et grille."/>
+<meta property="og:type" content="article"/>
+<meta property="og:url" content="https://www.techrepaircontent.com/articles/article-contenu-seo-fintech-ymyl.html"/>
+<meta property="og:locale" content="fr_FR"/>
+<meta property="og:site_name" content="TechRepair Content"/>
+<meta property="og:image" content="https://www.techrepaircontent.com/articles/contenu-seo-fintech-ymyl-cover.jpg"/>
+<meta property="article:published_time" content="2026-11-10"/>
+<meta name="twitter:card" content="summary_large_image"/>
+
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet"/>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --blue:#1A56DB;--blue-dark:#1342b0;--blue-light:#EFF6FF;
+  --navy:#0F1B3D;--text:#1e293b;--muted:#64748b;
+  --border:#e2e8f0;--green:#10b981;--orange:#f97316;--purple:#7c3aed;
+  --radius:12px;
+}
+html{scroll-behavior:smooth}
+body{font-family:'Manrope',sans-serif;color:var(--text);background:#fff;font-size:15px;line-height:1.6}
+a{text-decoration:none;color:inherit}
+nav{position:sticky;top:0;z-index:200;background:#fff;border-bottom:1px solid var(--border);padding:0 32px;display:flex;align-items:center;gap:20px;height:62px;}
+.logo{display:flex;align-items:center;gap:10px;flex-shrink:0}
+.logo-box{width:36px;height:36px;background:var(--blue);border-radius:7px;display:grid;place-items:center;color:#fff;font-weight:800;font-size:13px;letter-spacing:-.5px}
+.logo-text{font-size:13px;font-weight:700;line-height:1.2;color:var(--navy)}
+.logo-text span{display:block;color:var(--muted);font-weight:500;font-size:11px}
+.nav-links{display:flex;gap:22px;margin-left:auto;align-items:center}
+.nav-links a{font-size:13.5px;font-weight:500;color:var(--muted);transition:color .2s}
+.nav-links a:hover,.nav-links a.active{color:var(--blue)}
+.nav-links a.active{border-bottom:2px solid var(--blue);padding-bottom:1px}
+.btn-nav{background:var(--blue);color:#fff;border:none;border-radius:8px;padding:9px 18px;font-weight:700;font-size:13.5px;cursor:pointer;white-space:nowrap;font-family:inherit}
+@media(max-width:600px){nav{padding:0 16px}.nav-links a:not(:last-child){display:none}}
+.hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;background:none;border:none;padding:4px}
+.hamburger span{display:block;width:24px;height:2px;background:var(--navy);border-radius:2px;transition:all .3s}
+.hamburger.open span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+.hamburger.open span:nth-child(2){opacity:0}
+.hamburger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+.mobile-menu{display:none;position:fixed;top:62px;left:0;right:0;background:#fff;border-bottom:1px solid var(--border);padding:16px 24px;flex-direction:column;gap:4px;z-index:199;box-shadow:0 8px 24px rgba(0,0,0,.08)}
+.mobile-menu.open{display:flex}
+.mobile-menu a{font-size:15px;font-weight:600;color:var(--muted);padding:10px 0;border-bottom:1px solid var(--border);transition:color .2s}
+.mobile-menu a:last-of-type{border-bottom:none}
+.mobile-menu a:hover,.mobile-menu a.active{color:var(--blue)}
+.mobile-menu .btn-nav-mobile{margin-top:10px;background:var(--blue);color:#fff;border:none;border-radius:8px;padding:12px;font-weight:700;font-size:14px;cursor:pointer;font-family:inherit;width:100%}
+@media(max-width:768px){.hamburger{display:flex}.nav-links{display:none}}
+
+.breadcrumb{max-width:1100px;margin:0 auto;padding:18px 32px 0;font-size:12.5px;color:var(--muted)}
+.breadcrumb a{color:var(--muted)}
+.breadcrumb a:hover{color:var(--blue)}
+
+.article-hero{max-width:1100px;margin:0 auto;padding:24px 32px 0}
+.ah-badge{display:inline-flex;align-items:center;gap:5px;background:#F5F3FF;color:var(--purple);font-size:11px;font-weight:700;padding:4px 12px;border-radius:20px;margin-bottom:16px}
+.article-hero h1{font-size:34px;font-weight:800;line-height:1.2;color:var(--navy);max-width:820px;margin-bottom:16px}
+.ah-meta{display:flex;align-items:center;gap:12px;font-size:13px;color:var(--muted);margin-bottom:24px;flex-wrap:wrap}
+.ah-dot{width:4px;height:4px;border-radius:50%;background:var(--border)}
+.ah-cover{width:100%;border-radius:20px;overflow:hidden;margin-bottom:8px;border:1px solid var(--border)}
+.ah-cover img{width:100%;height:auto;display:block}
+
+.layout{max-width:1100px;margin:0 auto;padding:40px 32px 56px;display:grid;grid-template-columns:1fr 300px;gap:44px;align-items:start}
+.content h2{font-size:24px;font-weight:800;color:var(--navy);margin:40px 0 14px;line-height:1.3}
+.content h3{font-size:18px;font-weight:800;color:var(--navy);margin:28px 0 10px;line-height:1.3}
+.content p{margin-bottom:14px;color:var(--text);font-size:15px;line-height:1.75}
+.content ul,.content ol{margin:0 0 16px 20px;color:var(--text)}
+.content li{margin-bottom:7px;line-height:1.7}
+.content strong{color:var(--navy)}
+.content em{color:var(--muted)}
+.content hr{border:none;border-top:1px solid var(--border);margin:36px 0}
+.intro-lead{font-size:16.5px;color:var(--muted);line-height:1.8;margin-bottom:20px}
+.toc-box{background:var(--blue-light);border:1px solid #c3d6f8;border-radius:16px;padding:22px 24px;margin:24px 0 36px}
+.toc-box h3{margin:0 0 12px;font-size:14px;color:var(--navy)}
+.toc-box ol{margin:0 0 0 18px}
+.toc-box li{font-size:13.5px;margin-bottom:6px}
+.toc-box a{color:var(--blue-dark);font-weight:600}
+.toc-box a:hover{text-decoration:underline}
+.callout{background:#f8fafc;border-left:3px solid var(--blue);border-radius:8px;padding:16px 20px;margin:18px 0;font-size:14px}
+.callout strong{display:block;margin-bottom:4px;color:var(--navy)}
+.benefit{font-size:13.5px;color:var(--muted);font-style:italic;margin:-6px 0 16px}
+table{width:100%;border-collapse:collapse;margin:18px 0 22px;font-size:13.5px}
+th,td{border:1px solid var(--border);padding:10px 12px;text-align:left;vertical-align:top}
+th{background:#f8fafc;color:var(--navy);font-weight:700}
+.case-card{border:1px solid var(--border);border-radius:14px;padding:20px 22px;margin-bottom:18px;background:#fafbfc}
+.case-card h3{margin-top:0}
+.faq-item{border-bottom:1px solid var(--border);padding:16px 0}
+.faq-item:last-child{border-bottom:none}
+.faq-item p.question{font-weight:800;color:var(--navy);margin-bottom:6px;font-size:15px}
+.conclusion-box{background:linear-gradient(135deg,var(--navy),#1e3a6e);border-radius:18px;padding:32px;margin-top:32px;color:#fff}
+.conclusion-box p{color:#cbd5e1}
+.conclusion-box strong{color:#fff}
+.conclusion-box .final-cta{display:inline-block;margin-top:14px;background:var(--blue);color:#fff;border-radius:8px;padding:12px 22px;font-weight:700;font-size:14px}
+
+.sidebar{display:flex;flex-direction:column;gap:20px;position:sticky;top:80px}
+.sidebar-card{background:#f8fafc;border:1px solid var(--border);border-radius:16px;padding:20px}
+.sidebar-card h3{font-size:12.5px;font-weight:800;color:var(--navy);margin-bottom:14px;text-transform:uppercase;letter-spacing:.4px}
+.mini-toc{display:flex;flex-direction:column;gap:9px}
+.mini-toc a{font-size:12.5px;color:var(--muted);line-height:1.5}
+.mini-toc a:hover{color:var(--blue)}
+.author-card{display:flex;gap:10px;align-items:center}
+.author-avatar{width:38px;height:38px;border-radius:50%;background:var(--blue);color:#fff;display:grid;place-items:center;font-weight:800;font-size:13px}
+.author-name{font-size:13px;font-weight:700;color:var(--navy)}
+.author-role{font-size:11.5px;color:var(--muted)}
+.guide-card{background:linear-gradient(135deg,#f0f5ff,#dce9ff);border-color:#c3d6f8}
+.guide-card p{font-size:12.5px;color:var(--muted);line-height:1.6;margin-bottom:14px}
+.guide-btn{display:block;text-align:center;background:var(--blue);color:#fff;border-radius:8px;padding:11px;font-size:13px;font-weight:700;transition:background .2s}
+.guide-btn:hover{background:var(--blue-dark)}
+
+.nl-band{background:var(--blue);padding:48px 32px}
+.nl-band-inner{max-width:700px;margin:0 auto;text-align:center}
+.nl-band h2{font-size:26px;font-weight:800;color:#fff;margin-bottom:10px}
+.nl-band p{color:rgba(255,255,255,.8);font-size:14px;margin-bottom:24px}
+.nl-band-form{display:flex;gap:10px;max-width:440px;margin:0 auto;flex-wrap:wrap}
+.nl-band-input{flex:1;border:none;border-radius:8px;padding:12px 16px;font-size:14px;font-family:inherit;outline:none;min-width:200px}
+.nl-band-btn{background:var(--navy);color:#fff;border:none;border-radius:8px;padding:12px 20px;font-size:14px;font-weight:700;cursor:pointer;font-family:inherit;white-space:nowrap}
+.nl-band-note{font-size:11.5px;color:rgba(255,255,255,.6);margin-top:10px}
+
+.cta-band{background:var(--navy);padding:60px 32px}
+.cta-inner{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:1fr auto;gap:48px;align-items:center}
+.cta-band h2{font-size:28px;font-weight:800;color:#fff;margin-bottom:9px}
+.cta-band>div>p{color:#94a3b8;font-size:13.5px;margin-bottom:24px;max-width:380px}
+.cta-btns{display:flex;gap:10px;flex-wrap:wrap}
+.btn-white{background:#fff;color:var(--navy);border-radius:8px;padding:11px 20px;font-weight:700;font-size:13.5px;display:inline-flex;align-items:center;gap:7px;cursor:pointer;border:none;font-family:inherit}
+.btn-ghost-cta{background:transparent;color:#fff;border:1.5px solid rgba(255,255,255,.3);border-radius:8px;padding:11px 20px;font-weight:700;font-size:13.5px;cursor:pointer;font-family:inherit}
+.btn-ghost-cta:hover{border-color:#fff}
+.cta-checks{display:flex;flex-direction:column;gap:11px;flex-shrink:0}
+.cta-check{display:flex;align-items:center;gap:9px;color:#cbd5e1;font-size:13px}
+.cta-ci{color:var(--green);font-weight:700}
+
+footer{background:var(--navy);border-top:1px solid rgba(255,255,255,.07);padding:44px 32px 26px}
+.footer-inner{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:2fr 1fr 1fr 1fr 1fr;gap:32px}
+.footer-brand p{color:#64748b;font-size:12px;margin-top:8px;max-width:185px;line-height:1.7}
+footer h4{font-size:10.5px;font-weight:700;color:#94a3b8;text-transform:uppercase;letter-spacing:.5px;margin-bottom:13px}
+.flinks{list-style:none}
+.flinks li{margin-bottom:8px}
+.flinks a{color:#64748b;font-size:12px;transition:color .2s}
+.flinks a:hover{color:#fff}
+.fsocial{display:flex;gap:7px;margin-top:11px}
+.fsoc{width:29px;height:29px;border-radius:6px;background:rgba(255,255,255,.07);display:grid;place-items:center;font-size:11px;color:#94a3b8;transition:background .2s}
+.fsoc:hover{background:var(--blue);color:#fff}
+.footer-bottom{max-width:1100px;margin:24px auto 0;padding-top:16px;border-top:1px solid rgba(255,255,255,.07);display:flex;justify-content:space-between;color:#475569;font-size:11px;flex-wrap:wrap;gap:8px}
+
+@media(max-width:960px){.layout{grid-template-columns:1fr}.sidebar{position:static;display:grid;grid-template-columns:1fr 1fr;gap:16px}.cta-inner{grid-template-columns:1fr}.footer-inner{grid-template-columns:1fr 1fr}}
+@media(max-width:600px){.article-hero h1{font-size:26px}.sidebar{grid-template-columns:1fr}.nl-band-form{flex-direction:column}.footer-inner{grid-template-columns:1fr}}
+
+.btn-demo{position:relative;background:var(--blue);color:#fff;border:none;border-radius:8px;padding:9px 16px;font-weight:800;font-size:13.5px;white-space:nowrap;font-family:inherit;display:inline-flex;align-items:center;gap:6px;text-decoration:none;cursor:pointer;transition:background .2s,transform .2s}
+.btn-demo:hover{background:var(--blue-dark);transform:translateY(-1px)}
+.btn-demo .star{color:#fff;font-size:14px;line-height:1;font-weight:800}
+.btn-demo-badge{position:absolute;top:-9px;right:-8px;background:#F59E0B;color:#fff;font-size:8.5px;font-weight:800;padding:2px 6px;border-radius:999px;letter-spacing:.3px;box-shadow:0 2px 6px rgba(245,158,11,.45);animation:demoPulse 2.2s ease-in-out infinite}
+@keyframes demoPulse{0%,100%{transform:scale(1)}50%{transform:scale(1.1)}}
+.nav-tools{position:relative;display:inline-block}
+.nav-tools .chevron{font-size:10px;margin-left:2px;transition:transform .15s}
+.nav-tools:hover .chevron{transform:rotate(180deg)}
+.nav-tools-menu{display:none;position:absolute;top:calc(100% + 8px);right:0;background:#fff;border:1px solid var(--border);border-radius:12px;box-shadow:0 12px 32px rgba(15,27,61,.15);min-width:220px;padding:6px;z-index:260}
+.nav-tools:hover .nav-tools-menu,.nav-tools:focus-within .nav-tools-menu{display:block}
+.nav-tools-menu a{display:flex;align-items:center;gap:9px;padding:10px 12px;border-radius:8px;font-size:13.5px;font-weight:600;color:var(--navy);text-decoration:none;white-space:nowrap}
+.nav-tools-menu a:hover{background:var(--blue-light);color:var(--blue)}
+.nav-tools-menu a .ico{font-size:15px}
+.btn-demo-mobile{position:relative;margin-top:10px;background:var(--blue);color:#fff;border-radius:8px;padding:12px;font-weight:800;font-size:14px;font-family:inherit;width:100%;display:flex;align-items:center;justify-content:center;gap:7px;text-decoration:none;border-bottom:none!important}
+.btn-demo-mobile .star{color:#fff;font-size:15px;font-weight:800}
+.mobile-menu a.btn-demo-mobile{color:#fff}
+.btn-demo-mobile .btn-demo-badge{top:-9px;right:14px;animation:none}
+
+/* ══ Liens vers les sources citées ══ */
+a.src{color:var(--blue);font-weight:600;text-decoration:underline;text-underline-offset:2px;text-decoration-thickness:1px;transition:color .2s}
+a.src:hover{color:var(--blue-dark);text-decoration-thickness:2px}
+/* ══ Mise en forme éditoriale (gabarit 2026) ══ */
+.ah-cover{max-width:960px;box-shadow:0 18px 50px rgba(15,27,61,.18);border:none}
+.key-points{border:1px solid var(--border);border-top:3px solid var(--blue);border-radius:0 0 14px 14px;padding:20px 24px 8px;margin:6px 0 30px;background:#fff}
+.key-points h3{margin:0 0 12px!important;font-size:12px!important;letter-spacing:1.4px;text-transform:uppercase;color:var(--blue-dark)!important}
+.key-points ul{margin-left:18px}
+.key-points li{margin-bottom:10px}
+.stat-row{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:14px;margin:20px 0 24px}
+.stat{border-left:3px solid var(--blue);padding:4px 0 4px 14px}
+.stat b{display:block;font-size:30px;font-weight:800;color:var(--navy);line-height:1.1}
+.stat span{font-size:12.5px;color:var(--muted);line-height:1.45;display:block;margin-top:4px}
+.content table th{font-size:12.5px;text-transform:uppercase;letter-spacing:.4px}
+.content table tr:nth-child(even) td{background:#fafbfd}
+.sources{font-size:13px;color:var(--muted);margin-left:20px}
+.sources li{margin-bottom:6px;line-height:1.6}
+.sources a{color:var(--blue-dark);text-decoration:underline;text-underline-offset:2px}
+@media(max-width:600px){.content table{display:block;overflow-x:auto}.stat b{font-size:26px}}
+.content p a:not(.final-cta),.content li a,.content td a{color:var(--blue);font-weight:600;text-decoration:underline;text-underline-offset:2px;text-decoration-thickness:1px}
+.content p a:not(.final-cta):hover,.content li a:hover,.content td a:hover{color:var(--blue-dark);text-decoration-thickness:2px}
+</style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "BlogPosting",
+      "headline": "SEO fintech : écrire sur l'argent quand Google applique ses critères YMYL",
+      "description": "SEO fintech : ce que les critères YMYL de Google et les règles de l'ACPR et de l'AMF exigent, diagnostic en huit questions, méthode en six étapes et grille.",
+      "datePublished": "2026-11-10",
+      "dateModified": "2026-11-10",
+      "author": {
+        "@type": "Organization",
+        "name": "TechRepair Content",
+        "url": "https://www.techrepaircontent.com/apropos"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "TechRepair Content",
+        "url": "https://www.techrepaircontent.com/"
+      },
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://www.techrepaircontent.com/articles/article-contenu-seo-fintech-ymyl.html"
+      },
+      "inLanguage": "fr-FR",
+      "keywords": "SEO fintech",
+      "articleSection": "Fintech",
+      "wordCount": 2499,
+      "image": "https://www.techrepaircontent.com/articles/contenu-seo-fintech-ymyl-cover.jpg"
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "C'est quoi un contenu YMYL ?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "C'est un contenu qui touche un sujet pouvant affecter fortement la santé, la stabilité financière ou la sécurité des personnes. Sur ces sujets « Your Money or Your Life », Google se montre plus exigeant sur la fiabilité démontrée par la page."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Comment faire du SEO pour une fintech ?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Classez vos requêtes par niveau de risque, confiez chaque article à un auteur réel relu par un expert, rattachez chaque chiffre à une source primaire et fixez avec la conformité un délai de validation par type de page."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Un article de blog doit-il être validé par la conformité ?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Dès qu'il présente une offre, un tarif ou un produit, oui. Un article purement pédagogique peut suivre un circuit allégé, si la frontière entre les deux a été définie à l'avance avec la conformité."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Peut-on rédiger des contenus YMYL avec l'IA ?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Google n'interdit pas l'IA, mais juge contraire à ses règles anti-spam l'automatisation destinée à manipuler le classement. Sur un sujet financier, chaque passage doit être vérifié et signé par une personne compétente."
+          }
+        }
+      ]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Accueil",
+          "item": "https://www.techrepaircontent.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Blog",
+          "item": "https://www.techrepaircontent.com/blog"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "SEO fintech et YMYL",
+          "item": "https://www.techrepaircontent.com/articles/article-contenu-seo-fintech-ymyl.html"
+        }
+      ]
+    }
+  ]
+}
+</script>
+</head>
+<body>
+
+<nav>
+  <div class="logo">
+    <div class="logo-box">TRD</div>
+    <div class="logo-text">TechRepair<span>Content</span></div>
+  </div>
+  <div class="nav-links">
+    <a href="/">Accueil</a>
+    <a href="/services">Services</a>
+    <a href="/secteurs">Secteurs</a>
+    <a href="/apropos">À propos</a>
+    <a href="/blog" class="active">Blog</a>
+    <div class="nav-tools">
+      <button class="btn-demo" type="button"><span class="star">★</span>Outils IA<span class="btn-demo-badge">Nouveau</span><span class="chevron">▾</span></button>
+      <div class="nav-tools-menu">
+        <a href="/agents-ia"><span class="ico">⚙️</span> Agents IA sur mesure</a>
+        <a href="/visibilite-ia"><span class="ico">💬</span> Visibilité dans les IA</a>
+        <a href="/calculateur-temps-perdu"><span class="ico">⏱️</span> Calculateur de temps perdu</a>
+        <a href="https://demo.techrepaircontent.com"><span class="ico">🤖</span> Démo avec Ted</a>
+        <a href="https://demo.techrepaircontent.com/audit-ia.html"><span class="ico">🔍</span> Audit IA gratuit</a>
+      </div>
+    </div>
+    <button class="btn-nav" onclick="window.location='/devis'">Obtenir un devis</button>
+  </div>
+  <button class="hamburger" id="hamburger" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<div class="mobile-menu" id="mobileMenu">
+  <a href="/">Accueil</a>
+  <a href="/services">Services</a>
+  <a href="/secteurs">Secteurs</a>
+  <a href="/apropos">À propos</a>
+  <a href="/blog" class="active">Blog</a>
+  <a href="https://demo.techrepaircontent.com" class="btn-demo-mobile"><span class="star">★</span>Démo avec Ted<span class="btn-demo-badge">Nouveau</span></a>
+  <a href="https://demo.techrepaircontent.com/audit-ia.html" class="btn-demo-mobile"><span class="star">★</span>Audit IA gratuit</a>
+  <button class="btn-nav-mobile" onclick="window.location='/devis'">Obtenir un devis</button>
+</div>
+
+<div class="breadcrumb">
+  <a href="/">Accueil</a> / <a href="/blog">Blog</a> / <span style="color:var(--navy)">SEO fintech et YMYL</span>
+</div>
+
+<div class="article-hero">
+  <span class="ah-badge" style="background:#ECFDF5;color:#047857">💳 Fintech</span>
+  <h1>SEO fintech : écrire sur l&#x27;argent quand Google applique ses critères YMYL (et que l&#x27;ACPR vous lit)</h1>
+  <div class="ah-meta">
+    <span>✍️ Rédaction TechRepair Content</span>
+    <div class="ah-dot"></div>
+    <span>Publié le 10 novembre 2026</span>
+    <div class="ah-dot"></div>
+    <span>⏱ 12 min de lecture</span>
+  </div>
+  <div class="ah-cover"><img src="contenu-seo-fintech-ymyl-cover.jpg" alt="SEO fintech : écrire sur l&#x27;argent quand Google applique ses critères YMYL" width="1200" height="630" loading="eager"/></div>
+</div>
+
+<div class="layout">
+  <main class="content">
+
+<p class="intro-lead">«&nbsp;Of these aspects, trust is most important.&nbsp;» La phrase figure dans la documentation que Google consacre aux contenus utiles et fiables&nbsp;: parmi l'expérience, l'expertise, l'autorité et la fiabilité, c'est la confiance qui pèse le plus. Pour un site qui parle de paiement, de crédit ou de trésorerie, elle compte bien plus que la longueur des articles.</p>
+
+    <p>Le <strong>SEO fintech</strong> obéit donc à une double lecture. Pour Google, les sujets financiers appartiennent à la catégorie «&nbsp;Your Money or Your Life&nbsp;» (YMYL), sur laquelle ses systèmes donnent encore plus de poids aux signaux de confiance. L'ACPR et l'AMF, de leur côté, lisent vos contenus dès qu'ils présentent une offre. Les deux exigences se recoupent largement&nbsp;: un texte exact, équilibré, sourcé et signé satisfait l'une comme l'autre. Suivent un diagnostic en huit questions, une méthode en six étapes, une grille de validation partagée avec la conformité et un paragraphe réécrit.</p>
+
+    <div class="key-points">
+      <h3>Points clés</h3>
+      <ul>
+        <li><strong>La confiance prime pour Google&nbsp;:</strong> sur les sujets qui touchent la stabilité financière des personnes, ses systèmes privilégient les contenus aux signaux E-E-A-T les plus solides.</li>
+        <li><strong>Les régulateurs lisent aussi&nbsp;:</strong> le pôle commun ACPR-AMF a analysé 4&nbsp;543 publicités en 2025, plus du double de l'année précédente.</li>
+        <li><strong>Conformité et SEO convergent&nbsp;:</strong> un auteur identifié, des sources primaires, un discours équilibré sur les avantages et les risques servent à la fois le classement et la validation juridique.</li>
+        <li><strong>Le vrai frein est le circuit de validation&nbsp;:</strong> un délai de relecture fixé par niveau de risque débloque la publication sans affaiblir le contrôle.</li>
+      </ul>
+    </div>
+
+    <div class="toc-box">
+      <h3>📋 Sommaire</h3>
+      <ol>
+        <li><a href="#ch1">Pourquoi les pages d'une fintech plafonnent</a></li>
+        <li><a href="#ch2">YMYL&nbsp;: c'est quoi, et votre fintech est-elle concernée&nbsp;?</a></li>
+        <li><a href="#ch3">Votre blog inspire-t-il confiance&nbsp;? Huit questions</a></li>
+        <li><a href="#ch4">Ce que l'ACPR et l'AMF regardent dans vos textes</a></li>
+        <li><a href="#ch5">Comment faire du SEO pour une fintech en six étapes</a></li>
+        <li><a href="#ch6">La grille de validation et un paragraphe réécrit</a></li>
+        <li><a href="#ch7">Cinq réflexes qui coûtent des positions</a></li>
+        <li><a href="#ch8">Les indicateurs à suivre pendant six mois</a></li>
+        <li><a href="#ch9">Équipe interne ou rédaction spécialisée</a></li>
+        <li><a href="#faq">Questions fréquentes</a></li>
+        <li><a href="#sources">Sources</a></li>
+      </ol>
+    </div>
+
+    <h2 id="ch1">1. Pourquoi les pages d'une fintech plafonnent</h2>
+
+    <p>Une fintech qui publie régulièrement sans progresser dans Google souffre rarement d'un problème technique. Sur les requêtes financières, ses articles affrontent des concurrents que le moteur juge plus sûrs&nbsp;: banques établies, sites publics, régulateurs, médias financiers. Face à eux, un billet signé «&nbsp;l'équipe&nbsp;», sans source ni date de mise à jour, n'a aucun argument.</p>
+
+    <p>Le second frein est interne. Les allers-retours entre marketing et conformité s'étirent sur des semaines, et le texte publié a perdu ses exemples chiffrés au profit de formules prudentes. Le blog devient interchangeable avec ceux des autres <a href="/secteur-fintech">fintechs B2B</a>, exactement le profil que Google ne met pas en avant sur un sujet financier.</p>
+
+    <div class="stat-row">
+      <div class="stat"><b>4&nbsp;543</b><span>publicités financières analysées en 2025 par le pôle commun ACPR-AMF, plus du double du volume de 2024 (rapport annuel, juin 2026)</span></div>
+      <div class="stat"><b>Plus d'1 sur 4</b><span>publicités diffusées par des influenceurs présentaient un défaut de clarté, selon une enquête de l'ACPR menée en 2024 et présentée en 2025 («&nbsp;plus d'un quart&nbsp;»)</span></div>
+      <div class="stat"><b>9&nbsp;269</b><span>noms inscrits sur les listes noires de l'ACPR et de l'AMF au 31 décembre 2025, dont 1&nbsp;351 ajoutés dans l'année (rapport annuel, juin 2026)</span></div>
+    </div>
+
+    <p>Ces chiffres ne mesurent pas votre trafic&nbsp;: ils décrivent un marché où les arnaques abondent, où les régulateurs regardent de plus près et où l'acheteur vérifie avant de cliquer. Chaque signal de sérieux visible sur la page compte alors double.</p>
+
+    <h2 id="ch2">2. YMYL&nbsp;: c'est quoi, et votre fintech est-elle concernée&nbsp;?</h2>
+
+    <p>YMYL désigne, dans le vocabulaire de Google, les sujets qui peuvent avoir un impact important sur la santé, la stabilité financière ou la sécurité des personnes. Sur ces thèmes, ses systèmes de classement donnent encore plus de poids aux contenus qui satisfont les critères E-E-A-T, c'est-à-dire qui démontrent expérience, expertise, autorité et fiabilité.</p>
+
+    <p>Google précise que ses évaluateurs de la qualité n'agissent pas directement sur le classement&nbsp;: leurs notes servent à vérifier que les algorithmes fonctionnent. Il n'existe donc pas de «&nbsp;note YMYL&nbsp;», seulement une exigence plus forte sur les signaux de fiabilité visibles.</p>
+
+    <p>Une fintech B2B n'échappe pas à cette logique. Conseiller un directeur financier sur l'affacturage ou le choix d'un prestataire de paiement engage l'argent d'une entreprise. L'exposition varie selon le type de page.</p>
+
+    <table>
+      <thead>
+        <tr><th>Type de page (exposition)</th><th>Exemple de requête</th><th>Exigence minimale</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Pédagogie générale (modérée)</td><td>«&nbsp;qu'est-ce que l'open banking&nbsp;»</td><td>Auteur nommé, sources officielles, date de mise à jour</td></tr>
+        <tr><td>Aide au choix (forte)</td><td>«&nbsp;comment choisir une solution d'affacturage&nbsp;»</td><td>Critères vérifiables, limites de chaque option, relecture métier</td></tr>
+        <tr><td>Page produit ou offre (très forte)</td><td>«&nbsp;compte pro sans frais&nbsp;»</td><td>Conditions et frais complets, statut réglementaire, validation conformité</td></tr>
+        <tr><td>Simulateur ou calculateur (très forte)</td><td>«&nbsp;simulation crédit trésorerie&nbsp;»</td><td>Hypothèses affichées, mentions légales, résultat présenté comme indicatif</td></tr>
+      </tbody>
+    </table>
+
+    <h2 id="ch3">3. Votre blog inspire-t-il confiance&nbsp;? Huit questions</h2>
+
+    <p>Comptez une heure, sur les dix articles qui reçoivent le plus d'impressions dans la Search Console. Chaque question appelle un oui ou un non, article par article.</p>
+
+    <ol>
+      <li>L'article porte-t-il le nom d'un auteur réel, avec sa fonction et une page de présentation&nbsp;?</li>
+      <li>Une relecture par un expert métier ou par la conformité est-elle mentionnée, avec un nom&nbsp;?</li>
+      <li>Chaque chiffre renvoie-t-il à une source primaire (régulateur, texte officiel, étude publiée) plutôt qu'à un autre blog&nbsp;?</li>
+      <li>L'article affiche-t-il quand il a été revu, à une date postérieure au dernier changement de réglementation&nbsp;?</li>
+      <li>Le statut réglementaire de l'entreprise (agrément, numéro d'immatriculation, autorité de tutelle) est-il accessible en un clic depuis l'article&nbsp;?</li>
+      <li>Les limites, les frais ou les risques de la solution évoquée sont-ils exposés aussi clairement que ses avantages&nbsp;?</li>
+      <li>L'article répond-il à une question précise d'un acheteur, plutôt que de réciter des généralités&nbsp;?</li>
+      <li>Si une partie a été rédigée avec l'aide d'une IA, un humain identifié l'a-t-il vérifiée ligne à ligne&nbsp;?</li>
+    </ol>
+
+    <p>Moins de cinq «&nbsp;oui&nbsp;» en moyenne signale un problème de fiabilité perçue, quels que soient les mots-clés. Les questions 5 et 6 correspondent aux <a href="/articles/article-marketing-fintech-contenus-confiance.html">vérifications d'un directeur financier</a> avant toute prise de contact&nbsp;: elles pèsent autant sur la conversion que sur le classement.</p>
+
+    <h2 id="ch4">4. Ce que l'ACPR et l'AMF regardent dans vos textes</h2>
+
+    <p>Un article pédagogique n'est pas une publicité. Il le devient dès qu'il met en avant une offre, un tarif ou un produit pour inciter à souscrire, ce que font souvent les pages les mieux classées sur les requêtes commerciales.</p>
+
+    <ul>
+      <li><strong>Exactitude et clarté&nbsp;:</strong> pour les services d'investissement, l'article L. 533-12 du Code monétaire et financier exige un contenu «&nbsp;exact, clair et non trompeur&nbsp;», et des communications promotionnelles «&nbsp;clairement identifiables en tant que telles&nbsp;».</li>
+      <li><strong>Équilibre&nbsp;:</strong> la recommandation 2016-R-01 de l'ACPR sur les médias sociaux demande une présentation «&nbsp;loyale et claire&nbsp;» et un contenu équilibré, notamment entre avantages et conditions. Elle vaut aussi quand vous relayez le contenu d'un tiers sur LinkedIn.</li>
+      <li><strong>Mentions obligatoires&nbsp;:</strong> toute publicité pour un crédit à la consommation, hors radio, doit contenir la mention «&nbsp;Un crédit vous engage et doit être remboursé. Vérifiez vos capacités de remboursement avant de vous engager.&nbsp;»</li>
+      <li><strong>Gratuité&nbsp;:</strong> l'enquête de l'ACPR sur les influenceurs relève, parmi les défauts de clarté, la mise en avant d'un service gratuit en réalité inclus dans un abonnement payant, ou l'omission de frais possibles.</li>
+      <li><strong>Affiliation&nbsp;:</strong> le pôle commun rappelle que les liens d'affiliation doivent être visibles, en application de la loi du 9 juin 2023 sur l'influence commerciale.</li>
+    </ul>
+
+    <div class="callout">
+      <p><strong>Une contrainte qui sert le classement</strong></p>
+      <p>Présenter les frais à côté des avantages, citer le texte officiel, signer l'article&nbsp;: chacune de ces obligations produit un signal de fiabilité que Google recherche sur un sujet financier. Intégrée dès la rédaction plutôt qu'en censure finale, la conformité devient un avantage sur les concurrents qui la contournent.</p>
+    </div>
+
+    <h2 id="ch5">5. Comment faire du SEO pour une fintech en six étapes</h2>
+
+    <p>La méthode s'installe en quatre à six semaines, avec le responsable marketing, un expert métier (produit, risques ou finance) et le responsable de la conformité.</p>
+
+    <h3>Étape 1. Classer les requêtes par niveau de risque (semaine 1)</h3>
+    <p>Exportez les requêtes de la Search Console, complétez-les avec les suggestions de Google et rangez chacune dans une zone&nbsp;: pédagogie, aide au choix ou offre. Ce classement fixe pour chaque article le niveau de relecture.</p>
+
+    <h3>Étape 2. Nommer un auteur et un relecteur (semaine 1)</h3>
+    <p>Google encourage à indiquer l'auteur là où le lecteur s'y attend. Créez une page par auteur (parcours, fonction, sujets) et ajoutez sous chaque article la ligne «&nbsp;Relu par&nbsp;» suivie du nom de l'expert. Balisez l'auteur dans les données structurées de l'article.</p>
+
+    <h3>Étape 3. Constituer la bibliothèque de sources (semaine 2)</h3>
+    <p>Réunissez dans un document partagé les sources de référence du secteur&nbsp;: publications de l'ACPR, de l'AMF et de la Banque de France, textes européens sur EUR-Lex, registre REGAFI des établissements agréés. Partir de cette base accélère la relecture et élimine les chiffres de seconde main.</p>
+
+    <h3>Étape 4. Écrire avec les règles de formulation intégrées (semaines 2 et 3)</h3>
+    <p>Ajoutez à votre <a href="/articles/article-charte-editoriale-b2b-modele.html">charte éditoriale</a> une page de formulations&nbsp;: termes à proscrire («&nbsp;sans risque&nbsp;», «&nbsp;garanti&nbsp;», «&nbsp;gratuit&nbsp;» sans conditions), tournures équilibrées, mentions types par produit. Le rédacteur les applique dès le premier jet, et la conformité n'a plus à réécrire.</p>
+
+    <h3>Étape 5. Fixer un délai de validation par zone (semaine 3)</h3>
+    <p>Convenez avec la conformité d'un délai maximal&nbsp;: par exemple deux jours ouvrés pour un article pédagogique, cinq pour une aide au choix, une revue complète pour une page d'offre. Les corrections se font en mode suivi des modifications, et chaque version validée est archivée avec sa date.</p>
+
+    <h3>Étape 6. Programmer les mises à jour (en continu)</h3>
+    <p>Notez pour chaque article les textes dont il dépend (DSP3, MiCA, règles sur le crédit). À chaque évolution, la page est revue, la mention «&nbsp;mis à jour le&nbsp;» actualisée et la relecture tracée. C'est l'étape qui exige le plus de discipline pour publier des <a href="/service-articles-seo">articles SEO sourcés et relus</a> à un rythme régulier.</p>
+
+    <h2 id="ch6">6. La grille de validation et un paragraphe réécrit</h2>
+
+    <p>Cette grille sert de support commun au marketing et à la conformité&nbsp;; elle se remplit en dix minutes et accompagne chaque brouillon envoyé en relecture.</p>
+
+    <table>
+      <thead>
+        <tr><th>Critère (responsable)</th><th>Contrôle SEO</th><th>Contrôle conformité</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Intention (marketing)</td><td>La requête visée est-elle traitée dès les deux premières phrases&nbsp;?</td><td>Le texte est-il pédagogique ou promotionnel&nbsp;?</td></tr>
+        <tr><td>Auteur (marketing)</td><td>Nom, fonction et page auteur reliée</td><td>Expertise réelle sur le sujet</td></tr>
+        <tr><td>Chiffres (rédacteur)</td><td>Source primaire citée et datée</td><td>Périmètre exact, pas de résultat extrapolé</td></tr>
+        <tr><td>Avantages et limites (conformité)</td><td>Réponse complète à la question du lecteur</td><td>Frais, conditions et risques aussi visibles que les avantages</td></tr>
+        <tr><td>Mentions (conformité)</td><td>Lien vers la page statut réglementaire</td><td>Mentions obligatoires selon le produit</td></tr>
+        <tr><td>Mise à jour (expert métier)</td><td>Date visible</td><td>Textes de référence en vigueur</td></tr>
+      </tbody>
+    </table>
+
+    <h3>Exemple rédigé pour cet article (fintech fictive)</h3>
+    <p><strong>Avant&nbsp;:</strong> «&nbsp;Avec notre compte pro 100&nbsp;% gratuit, gérez votre trésorerie sans aucun risque et dites adieu aux frais bancaires.&nbsp;»</p>
+    <p><strong>Après&nbsp;:</strong> «&nbsp;Le compte pro est sans frais de tenue de compte dans l'offre Essentiel, limitée à deux cartes et à 200 virements par mois. Au-delà, chaque virement est facturé 0,20&nbsp;€, et les paiements hors zone euro supportent 1,5&nbsp;% de frais de change. Les fonds sont cantonnés auprès d'un établissement de crédit partenaire.&nbsp;»</p>
+    <p>La seconde version répond aux questions d'un dirigeant (combien, jusqu'où, où est mon argent), supprime deux promesses intenables et donne à Google des faits précis.</p>
+
+    <h2 id="ch7">7. Cinq réflexes qui coûtent des positions</h2>
+
+    <ul>
+      <li><strong>Signer «&nbsp;la rédaction&nbsp;» ou «&nbsp;l'équipe&nbsp;»&nbsp;:</strong> sur un sujet financier, l'absence d'auteur réel prive la page du premier signal de fiabilité.</li>
+      <li><strong>Laisser la conformité réécrire seule&nbsp;:</strong> le texte gagne en prudence mais perd ses exemples et sa réponse&nbsp;; préférez des commentaires que le rédacteur intègre.</li>
+      <li><strong>Copier la structure des pages bancaires&nbsp;:</strong> un plan calqué sur les sites déjà classés ne donne aucune raison de vous placer devant eux.</li>
+      <li><strong>Publier un texte généré sans relecture experte&nbsp;:</strong> Google recommande d'indiquer comment un contenu a été produit lorsque le lecteur peut se poser la question, et range parmi les infractions à ses règles anti-spam l'automatisation destinée à manipuler le classement.</li>
+      <li><strong>Oublier l'article après publication&nbsp;:</strong> une page sur la DSP2 restée en l'état pendant la négociation de la DSP3 envoie le signal inverse de celui recherché.</li>
+    </ul>
+
+    <h2 id="ch8">8. Les indicateurs à suivre pendant six mois</h2>
+
+    <p>Comptez trois à six mois avant de juger, le temps que les pages soient explorées de nouveau. Relevez chaque mois cinq indicateurs.</p>
+
+    <ul>
+      <li><strong>Impressions et position moyenne</strong> des requêtes d'aide au choix, dans la Search Console, page par page.</li>
+      <li><strong>Taux de clic</strong> sur ces mêmes requêtes, qui progresse souvent avant la position.</li>
+      <li><strong>Demandes de démonstration ou d'ouverture de compte</strong> dont la première visite est un article, dans votre outil d'analyse ou votre CRM.</li>
+      <li><strong>Délai moyen de validation</strong> par zone de risque&nbsp;: l'objectif est de rester sous le délai convenu à l'étape 5.</li>
+      <li><strong>Part des articles à jour</strong>, c'est-à-dire revus depuis le dernier changement de texte qui les concerne&nbsp;: visez 100&nbsp;% pour les pages d'offre.</li>
+    </ul>
+
+    <p>Si les deux derniers indicateurs progressent sans gain de trafic après six mois, revoyez le choix des requêtes.</p>
+
+    <h2 id="ch9">9. Équipe interne ou rédaction spécialisée</h2>
+
+    <p>La démarche se mène en interne si un expert métier accepte de signer et de relire, et si le marketing dispose d'une journée par article. Faire appel à l'extérieur devient pertinent lorsque le volume excède ces capacités, ou quand personne ne maîtrise à la fois l'écriture pour le référencement et le vocabulaire réglementaire. La signature de l'expert interne reste indispensable dans les deux cas.</p>
+
+    <p>Les contenus les plus exigeants d'une fintech gagnent aussi à prendre la forme d'un document de référence. Un <a href="/service-livres-blancs">livre blanc B2B</a> sourcé obtient des liens entrants qu'une page d'offre décroche rarement, nourrit plusieurs articles satellites, recueille, en échange du téléchargement, le contact de directeurs financiers en phase de comparaison et fournit aux moteurs de réponse une <a href="/livres-blancs/visibilite-ia-b2b-guide.html">source de référence à citer</a>. Une <a href="/articles/article-etude-de-cas-client-fintech.html">étude de cas client</a>, validée par le client et par la conformité, complète ce dispositif au moment de la décision.</p>
+
+    <h2 id="faq">Questions fréquentes</h2>
+
+    <div class="faq-item">
+      <h3>C'est quoi un contenu YMYL&nbsp;?</h3>
+      <p>C'est un contenu qui touche un sujet pouvant affecter fortement la santé, la stabilité financière ou la sécurité des personnes. Sur ces sujets «&nbsp;Your Money or Your Life&nbsp;», Google se montre plus exigeant sur la fiabilité démontrée par la page.</p>
+    </div>
+
+    <div class="faq-item">
+      <h3>Comment faire du SEO pour une fintech&nbsp;?</h3>
+      <p>Classez vos requêtes par niveau de risque, confiez chaque article à un auteur réel relu par un expert, rattachez chaque chiffre à une source primaire et fixez avec la conformité un délai de validation par type de page.</p>
+    </div>
+
+    <div class="faq-item">
+      <h3>Un article de blog doit-il être validé par la conformité&nbsp;?</h3>
+      <p>Dès qu'il présente une offre, un tarif ou un produit, oui. Un article purement pédagogique peut suivre un circuit allégé, si la frontière entre les deux a été définie à l'avance avec la conformité.</p>
+    </div>
+
+    <div class="faq-item">
+      <h3>Peut-on rédiger des contenus YMYL avec l'IA&nbsp;?</h3>
+      <p>Google n'interdit pas l'IA, mais juge contraire à ses règles anti-spam l'automatisation destinée à manipuler le classement. Sur un sujet financier, chaque passage doit être vérifié et signé par une personne compétente.</p>
+    </div>
+
+    <div class="conclusion-box">
+      <p><strong>À retenir</strong></p>
+      <p>Sur un sujet financier, Google et les régulateurs demandent au fond la même chose&nbsp;: un texte exact, équilibré, sourcé et assumé par une personne identifiable. Passez dix articles au crible des huit questions, adoptez la grille de validation avec votre conformité et fixez les délais par zone de risque&nbsp;: le rythme de publication et la fiabilité perçue progressent ensemble.</p>
+      <a href="/devis" class="final-cta">Faire auditer la fiabilité de votre blog fintech →</a>
+    </div>
+
+    <h2 id="sources">Sources</h2>
+    <ol class="sources">
+      <li>Google, page «&nbsp;Creating helpful, reliable, people-first content&nbsp;» de la documentation pour les éditeurs, mise à jour le 5 octobre 2026, consultée le 10 novembre 2026. <a href="https://developers.google.com/search/docs/fundamentals/creating-helpful-content" target="_blank" rel="nofollow noopener">developers.google.com</a></li>
+      <li>Pôle commun Assurance Banque Épargne de l'ACPR et de l'AMF, «&nbsp;Rapport annuel 2025&nbsp;», juin 2026. <a href="https://acpr.banque-france.fr/system/files/2026-06/20260624_Rapport_annuel_2025_P%C3%B4le_commun_ACPR-AMF.pdf" target="_blank" rel="nofollow noopener">acpr.banque-france.fr</a></li>
+      <li>AMF, communiqué «&nbsp;Le pôle commun de l'AMF et de l'ACPR publie son rapport annuel 2025&nbsp;», 24 juin 2026. <a href="https://www.amf-france.org/fr/actualites-publications/communiques/communiques-de-lamf/le-pole-commun-de-lamf-et-de-lacpr-publie-son-rapport-annuel-2025" target="_blank" rel="nofollow noopener">amf-france.org</a></li>
+      <li>ACPR, «&nbsp;Recommandation sur l'usage des médias sociaux à des fins commerciales&nbsp;», n° 2016-R-01, 14 novembre 2016, applicable depuis le 1er octobre 2017. <a href="https://cclrf.banque-france.fr/sites/default/files/media/2020/08/05/8._recommandation_2016-r-01.pdf" target="_blank" rel="nofollow noopener">cclrf.banque-france.fr</a></li>
+      <li>AMF, «&nbsp;Guide pour l'élaboration des communications à caractère promotionnel relatives à des titres de créance structurés&nbsp;», 26 avril 2021 (cite l'article L. 533-12 du Code monétaire et financier). <a href="https://www.amf-france.org/sites/institutionnel/files/private/2021-04/guide-communications-a-caractere-promotionnel-20210426.pdf" target="_blank" rel="nofollow noopener">amf-france.org</a></li>
+      <li>Institut national de la consommation, fiche pratique J. 196 consacrée au prêt personnel, août 2011 (mention obligatoire des publicités pour le crédit). <a href="https://www.inc-conso.fr/sites/default/files/conseil_1194_072-j196_pret_personnel_corr.pdf" target="_blank" rel="nofollow noopener">inc-conso.fr</a></li>
+    </ol>
+
+  <!-- maillage:debut -->
+<section class="maillage" aria-label="Articles liés">
+<style>
+.maillage{margin:44px 0 8px;padding-top:28px;border-top:1px solid #e2e8f0;font-family:inherit}
+.maillage h2{font-size:20px!important;font-weight:800;color:#0F1B3D;margin:0 0 16px!important}
+.mi-grille{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:14px}
+.mi-carte{display:flex;flex-direction:column;gap:8px;border:1px solid #e2e8f0;border-radius:14px;padding:16px 18px;background:#fff;text-decoration:none!important;transition:border-color .2s,box-shadow .2s,transform .2s}
+.mi-carte:hover{border-color:#1A56DB;box-shadow:0 8px 24px rgba(26,86,219,.10);transform:translateY(-2px)}
+.mi-cat{font-size:10.5px;font-weight:800;letter-spacing:1.2px;text-transform:uppercase;color:#1342b0}
+.mi-titre{font-size:14.5px;font-weight:700;line-height:1.4;color:#0F1B3D}
+.mi-lire{margin-top:auto;font-size:12px;color:#64748b}
+</style>
+<h2>À lire aussi</h2>
+<div class="mi-grille"><a class="mi-carte" href="/articles/article-etude-de-cas-client-fintech.html"><span class="mi-cat">Fintech</span><span class="mi-titre">Étude de cas client en fintech : prouver sans trahir le secret client</span><span class="mi-lire">Lire l'article · 12 min</span></a><a class="mi-carte" href="/articles/article-marketing-fintech-contenus-confiance.html"><span class="mi-cat">Fintech</span><span class="mi-titre">Marketing fintech : les contenus qui créent la confiance avant la première démo</span><span class="mi-lire">Lire l'article · 12 min</span></a><a class="mi-carte" href="/articles/article-dsp3-psr-fintechs-preparer.html"><span class="mi-cat">Fintech</span><span class="mi-titre">DSP3 et règlement PSR : ce que les fintechs de paiement doivent préparer</span><span class="mi-lire">Lire l'article · 12 min</span></a></div>
+</section>
+<!-- maillage:fin -->
+</main>
+
+  <aside class="sidebar">
+    <div class="sidebar-card">
+      <h3>Sommaire</h3>
+      <div class="mini-toc">
+        <a href="#ch1">1. Pages qui plafonnent</a>
+        <a href="#ch2">2. YMYL, définition</a>
+        <a href="#ch3">3. Huit questions</a>
+        <a href="#ch4">4. ACPR et AMF</a>
+        <a href="#ch5">5. Six étapes</a>
+        <a href="#ch6">6. Grille et exemple</a>
+        <a href="#ch7">7. Cinq réflexes</a>
+        <a href="#ch8">8. Indicateurs</a>
+        <a href="#ch9">9. Interne ou externe</a>
+        <a href="#faq">FAQ</a>
+        <a href="#sources">Sources</a>
+      </div>
+    </div>
+    <div class="sidebar-card">
+      <div class="author-card">
+        <div class="author-avatar">TRD</div>
+        <div>
+          <div class="author-name">Rédaction TechRepair Content</div>
+          <div class="author-role">Rédaction SEO tech B2B</div>
+        </div>
+      </div>
+    </div>
+    <div class="sidebar-card guide-card">
+      <h3>Le guide B2B de la visibilité IA</h3>
+      <p>Livre blanc gratuit : savoir ce que ChatGPT, Perplexity et Gemini répondent quand un directeur financier cherche une solution comme la vôtre, puis devenir une source qu'ils citent.</p>
+      <a href="/livres-blancs/visibilite-ia-b2b-guide.html" class="guide-btn">Télécharger le livre blanc</a>
+    </div>
+  </aside>
+</div>
+
+<div class="nl-band">
+  <div class="nl-band-inner">
+    <h2>📩 La newsletter SEO Tech B2B</h2>
+    <p>Chaque semaine, une stratégie actionnable et une opportunité SEO dans votre secteur.</p>
+    <div class="nl-band-form">
+      <input type="email" class="nl-band-input" id="nlBandEmail" placeholder="votre@email.com"/>
+      <button class="nl-band-btn" id="nlBandBtn" type="button">S'abonner →</button>
+    </div>
+    <p id="nlBandMsg" style="display:none;font-size:12px;color:#fff;margin-top:8px"></p>
+    <p class="nl-band-note">✓ Gratuit · ✓ Sans spam · ✓ Désabonnement en 1 clic</p>
+  </div>
+</div>
+
+<div class="cta-band">
+  <div class="cta-inner">
+    <div>
+      <h2>Du contenu qui performe, pas qui remplit des pages</h2>
+      <p>Vous voulez une stratégie de contenu sur mesure pour votre secteur tech B2B ? Parlons-en.</p>
+      <div class="cta-btns">
+        <button class="btn-white" onclick="window.location='/devis'">Obtenir un devis gratuit →</button>
+        <button class="btn-ghost-cta" onclick="window.location='/services'">Voir nos services →</button>
+      </div>
+    </div>
+    <div class="cta-checks">
+      <div class="cta-check"><span class="cta-ci">✓</span> Réponse sous 24h</div>
+      <div class="cta-check"><span class="cta-ci">✓</span> Audit SEO gratuit</div>
+      <div class="cta-check"><span class="cta-ci">✓</span> Sans engagement</div>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <div class="logo"><div class="logo-box">TRD</div><div class="logo-text" style="color:#fff">TechRepair<span>Content</span></div></div>
+      <p>Rédaction SEO & technique pour entreprises SaaS, Tech et E-commerce.</p>
+    </div>
+    <div><h4>Navigation</h4><ul class="flinks"><li><a href="/">Accueil</a></li><li><a href="/apropos">À propos</a></li><li><a href="/services">Services</a></li><li><a href="/secteurs">Secteurs</a></li><li><a href="/blog">Blog</a></li><li><a href="/livres-blancs/">Livres blancs</a></li></ul></div>
+    <div><h4>Ressources</h4><ul class="flinks"><li><a href="/agents-ia">Agents IA</a></li><li><a href="/visibilite-ia">Visibilité dans les IA</a></li><li><a href="/faq">FAQ</a></li><li><a href="/confidentialite">Confidentialité</a></li><li><a href="/mentions-legales">Mentions légales</a></li></ul></div>
+    <div>
+      <h4>Contact</h4>
+      <ul class="flinks"><li><a href="mailto:contact@techrepaircontent.com">contact@techrepaircontent.com</a></li><li><a href="/devis">Réponse sous 24h</a></li></ul>
+      <div class="fsocial"><a class="fsoc" href="https://www.linkedin.com/in/techrepair-content" target="_blank" rel="noopener">in</a><a class="fsoc" href="mailto:contact@techrepaircontent.com">✉</a></div>
+    </div>
+    <div><h4>Basé en France</h4><div style="font-size:22px">🇫🇷</div></div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2026 TechRepair Content. Tous droits réservés.</span>
+    <span>Fait avec ❤️ en France</span>
+  </div>
+</footer>
+
+<script>
+const hamburger = document.getElementById('hamburger');
+const mobileMenu = document.getElementById('mobileMenu');
+hamburger.addEventListener('click', () => {
+  hamburger.classList.toggle('open');
+  mobileMenu.classList.toggle('open');
+});
+mobileMenu.querySelectorAll('a').forEach(link => {
+  link.addEventListener('click', () => {
+    hamburger.classList.remove('open');
+    mobileMenu.classList.remove('open');
+  });
+});
+
+const BREVO_FORM_ACTION = 'https://a41ce724.sibforms.com/serve/MUIFAEGqDW1rbNTL0uU5ym6Ux5qJ7TJpdETsCjqRumOCnr-gRU8IGKx8Ic-JLjScrVVWrJVx_YXawDF8ao6y5hYLPvy7h8UJCk3gg9gTHcTaNAWQzbjwLnHO6DPk_HzPb7XY28rHy9JtEMuP-euST6RZutJ_bWOfqZFEtI-UUs9G4HA-O5V8JPwb3jLz0jhwuISuUqZ3Iok5IEyYHg==';
+
+function subscribeToNewsletter(emailInput, msgEl, btnEl) {
+  const email = emailInput.value.trim();
+  const isValidEmail = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+  msgEl.style.display = 'block';
+  if (!isValidEmail) {
+    msgEl.style.color = '#dc2626';
+    msgEl.textContent = "Merci d'entrer une adresse email valide.";
+    return;
+  }
+  const formData = new FormData();
+  formData.append('EMAIL', email);
+  formData.append('email_address_check', '');
+  formData.append('locale', 'fr');
+  formData.append('html_type', 'simple');
+  fetch(BREVO_FORM_ACTION, { method: 'POST', mode: 'no-cors', body: formData }).catch(() => {});
+  msgEl.style.color = '#10b981';
+  msgEl.textContent = 'Merci ! Vérifiez votre boîte mail pour confirmer.';
+  btnEl.textContent = 'Inscription envoyée ✓';
+  btnEl.disabled = true;
+}
+
+const nlBandBtn = document.getElementById('nlBandBtn');
+nlBandBtn.addEventListener('click', () => {
+  subscribeToNewsletter(document.getElementById('nlBandEmail'), document.getElementById('nlBandMsg'), nlBandBtn);
+});
+</script>
+</body>
+</html>

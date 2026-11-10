@@ -317,4 +317,17 @@ const ARTICLES = [
     motCle:   "guide d'achat e-commerce",
     metaDesc: "Guide d'achat e-commerce : quelles catégories en ont besoin, méthode en sept étapes, plan type en huit blocs avec exemple réécrit et indicateurs de vente."
   },
+  {
+    titre:    "SEO fintech : écrire sur l'argent quand Google applique ses critères YMYL",
+    extrait:  "Google exige plus de fiabilité sur les sujets financiers, et l'ACPR lit vos offres. Diagnostic en huit questions, méthode en six étapes, grille de validation commune au marketing et à la conformité, et paragraphe réécrit.",
+    auteur:   "Rédaction TechRepair Content",
+    date:     "2026-11-10",
+    categorie:"fintech",
+    lecture:  "12 min",
+    lien:     "articles/article-contenu-seo-fintech-ymyl.html",
+    image:    "articles/contenu-seo-fintech-ymyl-cover.jpg",
+    slug:     "contenu-seo-fintech-ymyl",
+    motCle:   "SEO fintech",
+    metaDesc: "SEO fintech : ce que les critères YMYL de Google et les règles de l'ACPR et de l'AMF exigent, diagnostic en huit questions, méthode en six étapes et grille."
+  },
 ];
