@@ -325,7 +325,7 @@ const ARTICLES = [
     categorie:"fintech",
     lecture:  "12 min",
     lien:     "articles/article-contenu-seo-fintech-ymyl.html",
-    image:    "articles/contenu-seo-fintech-ymyl-cover.jpg",
+    image:    "articles/contenu-seo-fintech-ymyl-cover-v2-carte.jpg",
     slug:     "contenu-seo-fintech-ymyl",
     motCle:   "SEO fintech",
     metaDesc: "SEO fintech : ce que les critères YMYL de Google et les règles de l'ACPR et de l'AMF exigent, diagnostic en huit questions, méthode en six étapes et grille."
