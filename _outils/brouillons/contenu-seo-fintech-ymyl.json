@@ -1,0 +1,35 @@
+{
+  "slug": "contenu-seo-fintech-ymyl",
+  "categorie": "fintech",
+  "date": "2026-11-10",
+  "titre": "SEO fintech : écrire sur l'argent quand Google applique ses critères YMYL",
+  "titreSeo": "SEO fintech : se classer malgré les critères YMYL",
+  "h1": "SEO fintech : écrire sur l'argent quand Google applique ses critères YMYL (et que l'ACPR vous lit)",
+  "filAriane": "SEO fintech et YMYL",
+  "motCle": "SEO fintech",
+  "metaDesc": "SEO fintech : ce que les critères YMYL de Google et les règles de l'ACPR et de l'AMF exigent, diagnostic en huit questions, méthode en six étapes et grille.",
+  "extrait": "Google exige plus de fiabilité sur les sujets financiers, et l'ACPR lit vos offres. Diagnostic en huit questions, méthode en six étapes, grille de validation commune au marketing et à la conformité, et paragraphe réécrit.",
+  "image": "articles/contenu-seo-fintech-ymyl-cover.jpg",
+  "imageAlt": "SEO fintech : écrire sur l'argent quand Google applique ses critères YMYL",
+  "sommaireCourt": {
+    "ch1": "1. Pages qui plafonnent",
+    "ch2": "2. YMYL, définition",
+    "ch3": "3. Huit questions",
+    "ch4": "4. ACPR et AMF",
+    "ch5": "5. Six étapes",
+    "ch6": "6. Grille et exemple",
+    "ch7": "7. Cinq réflexes",
+    "ch8": "8. Indicateurs",
+    "ch9": "9. Interne ou externe",
+    "faq": "FAQ",
+    "sources": "Sources"
+  },
+  "ctaLateral": {
+    "titre": "Le guide B2B de la visibilité IA",
+    "texte": "Livre blanc gratuit : savoir ce que ChatGPT, Perplexity et Gemini répondent quand un directeur financier cherche une solution comme la vôtre, puis devenir une source qu'ils citent.",
+    "lien": "/livres-blancs/visibilite-ia-b2b-guide.html",
+    "bouton": "Télécharger le livre blanc"
+  },
+  "service": "articles-seo",
+  "remplacer": true
+}
