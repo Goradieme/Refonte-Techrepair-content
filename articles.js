@@ -338,7 +338,7 @@ const ARTICLES = [
     categorie:"rh",
     lecture:  "12 min",
     lien:     "articles/article-marketing-saas-rh-convaincre-drh.html",
-    image:    "articles/marketing-saas-rh-convaincre-drh-cover.jpg",
+    image:    "articles/marketing-saas-rh-convaincre-drh-cover-v2-carte.jpg",
     slug:     "marketing-saas-rh-convaincre-drh",
     motCle:   "marketing SaaS RH",
     metaDesc: "Marketing SaaS RH : diagnostic en huit questions, objections du DAF, du DSI et du CSE, méthode en six étapes et plan du dossier qui débloque l'achat."
