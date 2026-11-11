@@ -330,4 +330,17 @@ const ARTICLES = [
     motCle:   "SEO fintech",
     metaDesc: "SEO fintech : ce que les critères YMYL de Google et les règles de l'ACPR et de l'AMF exigent, diagnostic en huit questions, méthode en six étapes et grille."
   },
+  {
+    titre:    "Marketing SaaS RH : les contenus qui convainquent un DRH d'acheter votre logiciel",
+    extrait:  "Après la démo, la DRH doit convaincre seule son DAF, son DSI et parfois son CSE. Diagnostic en huit questions, tableau des objections par décideur, méthode en six étapes et plan d'un dossier de décision prêt à remplir.",
+    auteur:   "Rédaction TechRepair Content",
+    date:     "2026-11-11",
+    categorie:"rh",
+    lecture:  "12 min",
+    lien:     "articles/article-marketing-saas-rh-convaincre-drh.html",
+    image:    "articles/marketing-saas-rh-convaincre-drh-cover.jpg",
+    slug:     "marketing-saas-rh-convaincre-drh",
+    motCle:   "marketing SaaS RH",
+    metaDesc: "Marketing SaaS RH : diagnostic en huit questions, objections du DAF, du DSI et du CSE, méthode en six étapes et plan du dossier qui débloque l'achat."
+  },
 ];
