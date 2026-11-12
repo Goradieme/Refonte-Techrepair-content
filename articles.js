@@ -343,4 +343,17 @@ const ARTICLES = [
     motCle:   "marketing SaaS RH",
     metaDesc: "Marketing SaaS RH : diagnostic en huit questions, objections du DAF, du DSI et du CSE, méthode en six étapes et plan du dossier qui débloque l'achat."
   },
+  {
+    titre:    "Veille réglementaire cybersécurité : l'automatiser sans rien laisser passer",
+    extrait:  "CRA, loi Résilience, NIS2 : le calendrier bouge plus vite que les pages des éditeurs cyber. Sources officielles à suivre, méthode d'automatisation en quatre semaines, fiche d'impact prête à copier et indicateurs de couverture.",
+    auteur:   "Rédaction TechRepair Content",
+    date:     "2026-11-12",
+    categorie:"cyber",
+    lecture:  "12 min",
+    lien:     "articles/article-veille-reglementaire-cyber-automatisee.html",
+    image:    "articles/veille-reglementaire-cyber-automatisee-cover.jpg",
+    slug:     "veille-reglementaire-cyber-automatisee",
+    motCle:   "veille réglementaire cybersécurité",
+    metaDesc: "Veille réglementaire cybersécurité : sources à suivre, automatisation en quatre semaines avec un agent IA, fiche d'impact prête à copier et indicateurs."
+  },
 ];

@@ -1,0 +1,200 @@
+    <p class="intro-lead">Depuis le 11&nbsp;septembre 2026, tout fabricant d'un logiciel vendu dans l'Union européenne doit signaler en 24&nbsp;heures toute vulnérabilité activement exploitée dans son produit. Combien de pages de votre site, de fiches commerciales et de réponses types parlaient encore du Cyber Resilience Act au futur le 12&nbsp;septembre au matin&nbsp;?</p>
+
+    <p>La <strong>veille réglementaire cybersécurité</strong> d'un éditeur ne sert pas qu'au juriste ou au RSSI&nbsp;: elle alimente le site, les argumentaires et le calendrier éditorial. Tenue à la main, elle mange plusieurs heures par semaine et laisse filer des textes. La solution décrite ici combine une collecte automatique sur une liste fermée de sources officielles, un agent IA qui qualifie chaque nouveauté, une validation humaine obligatoire et une fiche d'impact qui dit, pour chaque texte, quels contenus modifier.</p>
+
+    <div class="key-points">
+      <h3>Points clés</h3>
+      <ul>
+        <li><strong>Le calendrier réglementaire bouge plus vite que vos pages&nbsp;:</strong> la transposition française de NIS2 a quitté l'agenda des députés le 6&nbsp;octobre 2026, avant d'y revenir à partir du 9&nbsp;novembre.</li>
+        <li><strong>L'automatisation commence par la liste des sources, pas par l'outil&nbsp;:</strong> une dizaine de sources primaires couvrent l'essentiel des textes qui touchent un éditeur cyber.</li>
+        <li><strong>L'agent qualifie, l'humain tranche&nbsp;:</strong> aucune alerte ne devient un contenu publié sans lecture du texte d'origine par une personne nommée.</li>
+        <li><strong>Le livrable qui change tout&nbsp;:</strong> une fiche d'impact d'une page, qui relie chaque nouveauté aux pages, argumentaires et articles à mettre à jour.</li>
+      </ul>
+    </div>
+
+    <div class="toc-box">
+      <h3>📋 Sommaire</h3>
+      <ol>
+        <li><a href="#ch1">Un texte manqué, trois services pris de court</a></li>
+        <li><a href="#ch2">Votre veille actuelle a-t-elle des angles morts&nbsp;?</a></li>
+        <li><a href="#ch3">Quelles sources surveiller pour un éditeur cyber</a></li>
+        <li><a href="#ch4">Comment automatiser une veille réglementaire en quatre semaines</a></li>
+        <li><a href="#ch5">La fiche d'impact, prête à copier</a></li>
+        <li><a href="#ch6">Les défaillances classiques d'une veille automatisée</a></li>
+        <li><a href="#ch7">Prouver que plus rien ne passe entre les mailles</a></li>
+        <li><a href="#ch8">Bâtir l'agent soi-même ou le faire construire</a></li>
+        <li><a href="#faq">Questions fréquentes</a></li>
+        <li><a href="#sources">Sources</a></li>
+      </ol>
+    </div>
+
+    <h2 id="ch1">1. Un texte manqué, trois services pris de court</h2>
+
+    <p>Un changement réglementaire raté coûte rarement une amende à un service marketing&nbsp;; il coûte de la crédibilité. Une page qui annonce une obligation déjà en vigueur, un commercial incapable de répondre à une question sur le CRA, un concurrent qui publie l'analyse de référence avant vous&nbsp;: c'est le prix d'une veille irrégulière.</p>
+
+    <p>Les <a href="/secteur-cybersecurite">éditeurs de solutions de cybersécurité</a> vendent à des lecteurs qui suivent ces textes de près. Or les échéances récentes ont multiplié les occasions de se tromper. Le règlement sur la cyberrésilience impose depuis le 11&nbsp;septembre 2026 des signalements aux fabricants, tandis que ses principales obligations n'arriveront que le 11&nbsp;décembre 2027, selon la Commission européenne. Une page qui confond les deux dates se discrédite aussitôt face à un RSSI.</p>
+
+    <div class="stat-row">
+      <div class="stat"><b>24&nbsp;h</b><span>pour l'alerte précoce d'une vulnérabilité activement exploitée, exigée des fabricants depuis le 11&nbsp;septembre 2026 (Commission européenne, 11&nbsp;septembre 2026)</span></div>
+      <div class="stat"><b>15&nbsp;000</b><span>organisations françaises environ appelées à entrer dans le périmètre de NIS2, contre quelques centaines auparavant (Le Monde Informatique, 10&nbsp;novembre 2026)</span></div>
+      <div class="stat"><b>50</b><span>recherches sauvegardées au maximum par compte Mon EUR-Lex, flux RSS et alertes par courriel compris (aide EUR-Lex)</span></div>
+    </div>
+
+    <p>La transposition de NIS2 illustre l'autre difficulté&nbsp;: l'instabilité du calendrier. Examiné par le Sénat en mars 2025, voté à l'unanimité en commission spéciale à l'Assemblée en septembre de la même année, le projet de loi Résilience a été sorti des séances des 7 et 9&nbsp;octobre 2026, puis remis à l'ordre du jour du 9 au 13&nbsp;novembre. Même adopté par les députés cette semaine, il pourrait encore passer par une commission mixte paritaire. Chaque étape rend une phrase de votre site exacte ou fausse.</p>
+
+    <h2 id="ch2">2. Votre veille actuelle a-t-elle des angles morts&nbsp;?</h2>
+
+    <p>Une heure suffit pour le savoir. Reprenez les événements réglementaires des trois derniers mois et notez, pour chacun, la date à laquelle votre équipe l'a appris et la date à laquelle vos contenus ont été corrigés.</p>
+
+    <table>
+      <thead>
+        <tr><th>Événement à retrouver</th><th>Date</th><th>Ce qu'il change pour vos contenus</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Entrée en application des signalements du CRA</td><td>11&nbsp;septembre 2026</td><td>Pages produit, FAQ sécurité, réponses aux questionnaires fournisseurs</td></tr>
+        <tr><td>Retrait du projet de loi Résilience de l'ordre du jour</td><td>6&nbsp;octobre 2026</td><td>Articles et argumentaires qui annonçaient une adoption imminente</td></tr>
+        <tr><td>Retour du texte en séance à l'Assemblée</td><td>9&nbsp;novembre 2026</td><td>Calendrier éditorial, webinaires, relances commerciales</td></tr>
+      </tbody>
+    </table>
+
+    <p>Mesurez ensuite trois indicateurs. Le délai de détection&nbsp;: au-delà de cinq jours ouvrés entre la publication officielle et la première note interne, la veille est subie. Le temps passé chaque semaine&nbsp;: additionnez les heures de lecture du juriste, du product marketing et des commerciaux, puis estimez leur coût avec un <a href="/calculateur-temps-perdu">calcul du temps perdu</a> sur ces tâches répétitives. Enfin, la part des pages réglementaires de votre site revues depuis moins de six mois.</p>
+
+    <p>Deux «&nbsp;je ne sais pas&nbsp;» sur ces trois indicateurs suffisent à justifier le chantier&nbsp;: une veille efficace dit qui lit quoi, à quelle fréquence, et ce que devient ce qu'il a lu.</p>
+
+    <h2 id="ch3">3. Quelles sources surveiller pour un éditeur cyber</h2>
+
+    <p>Une veille fiable repose sur une liste fermée de sources primaires, chacune associée à un mode de collecte. Les articles de presse et les publications d'autres éditeurs signalent un sujet&nbsp;; seul le texte officiel permet de l'affirmer.</p>
+
+    <table>
+      <thead>
+        <tr><th>Source et ce qu'elle publie</th><th>Collecte et rythme de lecture</th></tr>
+      </thead>
+      <tbody>
+        <tr><td><strong>EUR-Lex</strong>&nbsp;: Journal officiel de l'UE (règlements, directives, actes délégués et d'exécution)</td><td>Flux RSS créés à partir de recherches sauvegardées (compte gratuit)&nbsp;; lecture quotidienne</td></tr>
+        <tr><td><strong>Commission européenne et ENISA</strong>&nbsp;: lignes directrices, FAQ, plateformes de signalement, consultations</td><td>Surveillance de pages et lettres d'information&nbsp;; lecture hebdomadaire</td></tr>
+        <tr><td><strong>Légifrance</strong>&nbsp;: Journal officiel de la République française (lois, décrets, arrêtés)</td><td>Sommaire du jour ou surveillance automatisée de pages&nbsp;; lecture quotidienne</td></tr>
+        <tr><td><strong>Assemblée nationale et Sénat</strong>&nbsp;: dossiers législatifs, ordres du jour, amendements</td><td>Suivi des dossiers (loi Résilience notamment)&nbsp;; lecture hebdomadaire, quotidienne en période de séance</td></tr>
+        <tr><td><strong>ANSSI et CERT-FR</strong>&nbsp;: référentiels, guides, avis et alertes de sécurité</td><td>Surveillance de pages, flux RSS lorsqu'ils existent&nbsp;; lecture quotidienne des alertes</td></tr>
+        <tr><td><strong>CNIL</strong>&nbsp;: recommandations, sanctions, référentiels sur les données</td><td>Surveillance de pages&nbsp;; lecture hebdomadaire</td></tr>
+      </tbody>
+    </table>
+
+    <p>Ajoutez les autorités propres à vos clients&nbsp;: un éditeur qui vend aux banques suit aussi les textes liés à DORA. Les <a href="/articles/article-nis2-argument-commercial-editeurs.html">questionnaires fournisseurs de vos clients</a> donnent d'ailleurs la meilleure liste de départ&nbsp;: chaque référence réglementaire qu'ils citent mérite une source surveillée.</p>
+
+    <div class="callout">
+      <p><strong>Le piège du vocabulaire</strong></p>
+      <p>Les textes officiels n'emploient pas vos mots-clés marketing. Le CRA parle de «&nbsp;produits comportant des éléments numériques&nbsp;» et de «&nbsp;cyberrésilience&nbsp;» en un seul mot&nbsp;; la loi française parle de «&nbsp;résilience des infrastructures critiques&nbsp;». Construisez vos recherches sauvegardées avec les intitulés officiels, leurs numéros (2024/2847 pour le CRA) et leurs variantes d'orthographe.</p>
+    </div>
+
+    <h2 id="ch4">4. Comment automatiser une veille réglementaire en quatre semaines</h2>
+
+    <p>L'automatisation tient en quatre couches&nbsp;: collecter, filtrer, qualifier, valider. Comptez quatre semaines pour une personne à mi-temps, avec un outil d'automatisation (n8n, Make ou équivalent), un lecteur de flux et un modèle de langage accessible par API.</p>
+
+    <ol>
+      <li><strong>Semaine 1, l'inventaire (product marketing et juriste, une journée).</strong> Arrêtez la liste des sources du tableau précédent, les mots-clés officiels et les quatre ou cinq textes suivis en priorité. Désignez un responsable de la veille et un suppléant.</li>
+      <li><strong>Semaine 2, la collecte (une personne technique, deux jours).</strong> Branchez les flux RSS d'EUR-Lex, les recherches enregistrées et la surveillance des pages sans flux. Tout arrive dans une file unique, horodatée, avec le lien vers le texte d'origine.</li>
+      <li><strong>Semaine 3, la qualification (deux jours de réglage).</strong> Un <a href="/agents-ia">agent de veille</a> lit chaque nouveauté, la résume en trois phrases, cite le passage qui justifie son résumé, puis attribue un niveau d'impact selon une grille écrite à l'avance&nbsp;: produit, contrats, contenus publics, argumentaire commercial. Il ne publie rien et signale ses doutes au lieu de trancher.</li>
+      <li><strong>Semaine 4 et suivantes, la validation en double (le responsable, deux heures par semaine).</strong> Pendant un mois, la veille manuelle continue en parallèle. Toute nouveauté repérée à la main et absente de la file révèle un trou de collecte ou de filtrage à corriger.</li>
+    </ol>
+
+    <p>Le critère de choix entre un outil de veille juridique du marché et un agent sur mesure tient à la sortie attendue. Si le besoin se limite à recevoir les textes, un abonnement suffit. Si chaque nouveauté doit déboucher sur des pages corrigées et une note aux commerciaux, un agent relié à vos outils automatise l'étape la plus coûteuse&nbsp;: traduire le texte en actions.</p>
+
+    <h2 id="ch5">5. La fiche d'impact, prête à copier</h2>
+
+    <p>La fiche d'impact transforme une alerte en décisions. Elle tient sur une page, est préremplie par l'agent puis complétée et signée par le responsable de la veille.</p>
+
+    <ul class="checklist">
+      <li><strong>Texte et référence&nbsp;:</strong> intitulé officiel, numéro, lien vers la source primaire.</li>
+      <li><strong>Ce qui change, en trois phrases&nbsp;:</strong> obligation, qui est concerné, à partir de quand.</li>
+      <li><strong>Passage cité&nbsp;:</strong> la phrase exacte du texte qui fonde le résumé.</li>
+      <li><strong>Niveau d'impact&nbsp;:</strong> 1 (information), 2 (contenus à ajuster), 3 (produit, contrats ou argumentaire à revoir sous quinze jours).</li>
+      <li><strong>Contenus touchés&nbsp;:</strong> liste des URL, fiches commerciales et réponses types à modifier.</li>
+      <li><strong>Opportunité éditoriale&nbsp;:</strong> article, mise à jour de guide ou webinaire à programmer.</li>
+      <li><strong>Responsable et échéance&nbsp;:</strong> un nom par action, une date.</li>
+      <li><strong>Validation&nbsp;:</strong> nom de la personne qui a lu le texte d'origine, date.</li>
+    </ul>
+
+    <h3>Une alerte brute devenue fiche d'impact (exemple rédigé pour cet article, éditeur fictif)</h3>
+
+    <p><strong>Avant, l'alerte reçue&nbsp;:</strong> «&nbsp;CRA&nbsp;: nouvelles obligations de signalement à partir du 11/09.&nbsp;» Personne ne sait qui doit agir, ni sur quoi.</p>
+
+    <p><strong>Après, la fiche rédigée pour un éditeur fictif d'outil de détection&nbsp;:</strong> «&nbsp;Depuis le 11&nbsp;septembre 2026, en tant que fabricant, nous devons signaler toute vulnérabilité activement exploitée et tout incident grave touchant la sécurité de notre agent&nbsp;: alerte précoce sous 24&nbsp;heures, notification sous 72&nbsp;heures, rapport final au plus tard 14&nbsp;jours après la mise à disposition d'un correctif (un mois pour un incident grave), via la plateforme unique de signalement gérée par l'ENISA. Impact&nbsp;: niveau 3. Contenus touchés&nbsp;: page Sécurité, politique de divulgation, réponses 12 à 15 du questionnaire fournisseur, fiche commerciale «&nbsp;Conformité&nbsp;». Opportunité&nbsp;: article expliquant à nos clients ce que ces délais garantissent pour eux. Responsable&nbsp;: product marketing, échéance au 18&nbsp;septembre. Texte d'origine lu et validé par la juriste le 12&nbsp;septembre.&nbsp;»</p>
+
+    <p>La seconde version se lit en trente secondes et déclenche quatre actions datées&nbsp;: c'est le format que l'agent doit produire.</p>
+
+    <h2 id="ch6">6. Les défaillances classiques d'une veille automatisée</h2>
+
+    <p>Une veille automatisée échoue rarement à cause de l'outil, mais parce qu'on lui accorde trop tôt sa confiance.</p>
+
+    <ul>
+      <li><strong>Publier le résumé sans lire le texte.</strong> Un modèle de langage peut inverser une date ou étendre un périmètre. La règle&nbsp;: aucune phrase d'une fiche ne sort sans le passage cité et la signature d'un lecteur humain.</li>
+      <li><strong>Filtrer trop étroit.</strong> Des mots-clés limités à «&nbsp;NIS2&nbsp;» et «&nbsp;cybersécurité&nbsp;» ratent les actes d'exécution, les lignes directrices et les textes nationaux qui portent d'autres intitulés.</li>
+      <li><strong>Noyer l'équipe sous les alertes.</strong> Au-delà d'une dizaine d'éléments par jour, plus personne ne lit. Regroupez les niveaux 1 dans une synthèse hebdomadaire et réservez les notifications immédiates au niveau 3.</li>
+      <li><strong>Se fier aux sources secondaires.</strong> Un article de presse annonce un vote avant qu'il ait lieu&nbsp;; le dossier législatif, lui, ne se trompe pas de séance.</li>
+      <li><strong>Transformer chaque texte en contenu alarmiste.</strong> Une nouvelle obligation ne justifie aucun <a href="/articles/article-marketing-contenu-cybersecurite.html">marketing de la peur</a>, rejeté par les RSSI&nbsp;: expliquez ce qui change et ce que vous faites, sans dramatiser.</li>
+      <li><strong>Oublier le suppléant.</strong> Une veille qui repose sur une seule personne s'arrête pendant ses congés, souvent au moment où un texte paraît.</li>
+    </ul>
+
+    <h2 id="ch7">7. Prouver que plus rien ne passe entre les mailles</h2>
+
+    <p>Une veille se juge sur ce qu'elle rate. Le contrôle le plus utile est trimestriel&nbsp;: une personne extérieure à la veille dresse la liste des textes parus sur la période à partir des sources officielles, puis la compare aux fiches produites.</p>
+
+    <table>
+      <thead>
+        <tr><th>Indicateur</th><th>Mode de calcul</th><th>Seuil visé après trois mois</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Taux de couverture</td><td>Textes pertinents détectés ÷ textes pertinents parus</td><td>Aucun texte de niveau 3 manqué</td></tr>
+        <tr><td>Délai de détection</td><td>Jours entre publication officielle et fiche validée</td><td>Deux jours ouvrés au plus pour le niveau 3</td></tr>
+        <tr><td>Délai de mise à jour</td><td>Jours entre fiche validée et pages corrigées</td><td>Quinze jours au plus</td></tr>
+        <tr><td>Temps humain</td><td>Heures de lecture et de validation par semaine</td><td>En baisse nette par rapport au relevé initial</td></tr>
+        <tr><td>Valeur éditoriale</td><td>Contenus publiés ou mis à jour à partir des fiches</td><td>Au moins un par mois</td></tr>
+      </tbody>
+    </table>
+
+    <p>Ajustez ces seuils au volume de textes qui vous concernent. Le dernier indicateur relie la veille à l'acquisition&nbsp;: une analyse publiée juste après un texte capte les prospects qui découvrent l'obligation.</p>
+
+    <h2 id="ch8">8. Bâtir l'agent soi-même ou le faire construire</h2>
+
+    <p>Construire en interne se justifie si une personne maîtrise l'outil d'automatisation, connaît les textes et peut consacrer quatre semaines au rodage, puis deux heures par semaine à la validation. Le plus long n'est pas la technique&nbsp;: c'est l'écriture de la grille d'impact et des consignes qui empêchent l'agent d'extrapoler.</p>
+
+    <p>Faire construire l'agent devient pertinent quand personne n'a ce temps, quand la veille doit alimenter plusieurs équipes (marketing, ventes, produit) ou quand il faut le relier au CRM et à l'outil de gestion de contenu. Dans tous les cas, la validation reste interne&nbsp;: c'est votre entreprise qui s'engage sur ce que disent ses pages.</p>
+
+    <p>La matière accumulée a aussi une seconde vie. Douze mois de fiches d'impact forment la trame d'un <a href="/service-livres-blancs">livre blanc réglementaire annuel</a>&nbsp;: un document de référence qui attire des liens, nourrit des articles satellites, recueille l'adresse des RSSI et des acheteurs intéressés, et fournit aux assistants IA une référence à citer, un enjeu détaillé dans le <a href="/livres-blancs/visibilite-ia-b2b-guide.html">guide de la visibilité dans les IA</a>.</p>
+
+    <h2 id="faq">Questions fréquentes</h2>
+
+    <div class="faq-item">
+      <h3>Comment faire une veille réglementaire efficace en cybersécurité&nbsp;?</h3>
+      <p>Avec une liste fermée de sources officielles, une collecte automatique quotidienne, une grille d'impact écrite et une personne responsable qui valide chaque fiche après lecture du texte d'origine. L'efficacité se mesure au délai de détection et aux textes manqués.</p>
+    </div>
+
+    <div class="faq-item">
+      <h3>La veille réglementaire est-elle obligatoire pour un éditeur de logiciel&nbsp;?</h3>
+      <p>Le mot compte moins que ses conséquences&nbsp;: un fabricant doit respecter des obligations comme les signalements du CRA, en vigueur depuis le 11&nbsp;septembre 2026, qu'il les ait repérées ou non. Sans veille, il les découvre trop tard.</p>
+    </div>
+
+    <div class="faq-item">
+      <h3>Comment automatiser une veille sans perdre en fiabilité&nbsp;?</h3>
+      <p>En automatisant la collecte et le tri, jamais la décision&nbsp;: l'agent résume, cite le passage source et propose un niveau d'impact&nbsp;; une personne lit le texte et valide. Un mois de double veille manuelle et automatique révèle les trous.</p>
+    </div>
+
+    <div class="faq-item">
+      <h3>Quels outils utiliser pour une veille cyber automatisée&nbsp;?</h3>
+      <p>Les flux RSS d'EUR-Lex et les recherches enregistrées des sites officiels pour la collecte, un outil d'automatisation comme n8n ou Make pour l'acheminement, un modèle de langage pour la qualification, et votre outil de travail habituel (Notion, Slack, Teams) pour les fiches.</p>
+    </div>
+
+    <div class="conclusion-box">
+      <p><strong>À retenir</strong></p>
+      <p>Pour un éditeur cyber, une veille réglementaire vaut par ce qu'elle déclenche&nbsp;: des pages justes, des commerciaux qui répondent et des analyses publiées avant les concurrents. Testez votre veille sur les trois événements de l'automne, fermez la liste des sources, puis confiez à un agent la collecte et la qualification en gardant la validation humaine. Pour cadrer ce chantier, voyez comment fonctionne <a href="/agents-ia">un agent de veille relié à vos outils</a>.</p>
+      <a href="/devis" class="final-cta">Demander un diagnostic de votre veille →</a>
+    </div>
+
+    <h2 id="sources">Sources</h2>
+    <ol class="sources">
+      <li>Commission européenne, «&nbsp;Des produits numériques plus sûrs et plus sécurisés&nbsp;», article d'actualité du 11&nbsp;septembre 2026 (signalements du règlement sur la cyberrésilience à partir du 11&nbsp;septembre 2026, principales obligations au 11&nbsp;décembre 2027). <a href="https://commission.europa.eu/news-and-media/news/safer-and-more-secure-digital-products-2026-09-11_fr" target="_blank" rel="nofollow noopener">commission.europa.eu</a></li>
+      <li>ENISA, «&nbsp;Comment signaler des incidents et des vulnérabilités activement exploitées sur la plateforme unique de signalement&nbsp;», fiche d'information sur la plateforme unique de signalement du règlement sur la cyberrésilience. <a href="https://www.enisa.europa.eu/sites/default/files/2026-09/ENISA_SRP_FACTSHEET_03_FR.pdf" target="_blank" rel="nofollow noopener">enisa.europa.eu</a></li>
+      <li>EUR-Lex, «&nbsp;Mes notifications RSS&nbsp;», page d'aide (création de flux à partir de recherches sauvegardées, 50 recherches sauvegardées au maximum). <a href="https://eur-lex.europa.eu/content/help/my-eurlex/my-rss-feeds.html?locale=fr" target="_blank" rel="nofollow noopener">eur-lex.europa.eu</a></li>
+      <li>Le Monde Informatique, «&nbsp;NIS 2&nbsp;: la loi Résilience arrive enfin à l'Assemblée&nbsp;», 10&nbsp;novembre 2026. <a href="https://www.lemondeinformatique.fr/cybersecurite-conformite/nis-2-la-loi-resilience-arrive-enfin-a-l-assemblee" target="_blank" rel="nofollow noopener">lemondeinformatique.fr</a></li>
+      <li>Leto, «&nbsp;Transposition NIS 2&nbsp;: examen à l'Assemblée le 9&nbsp;novembre 2026&nbsp;», 5&nbsp;novembre 2026. <a href="https://www.leto.legal/news/nis-2-projet-loi-resilience-assemblee-nationale-9-novembre-2026" target="_blank" rel="nofollow noopener">leto.legal</a></li>
+    </ol>
