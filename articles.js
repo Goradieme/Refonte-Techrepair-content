@@ -351,7 +351,7 @@ const ARTICLES = [
     categorie:"cyber",
     lecture:  "12 min",
     lien:     "articles/article-veille-reglementaire-cyber-automatisee.html",
-    image:    "articles/veille-reglementaire-cyber-automatisee-cover.jpg",
+    image:    "articles/veille-reglementaire-cyber-automatisee-cover-v2-carte.jpg",
     slug:     "veille-reglementaire-cyber-automatisee",
     motCle:   "veille réglementaire cybersécurité",
     metaDesc: "Veille réglementaire cybersécurité : sources à suivre, automatisation en quatre semaines avec un agent IA, fiche d'impact prête à copier et indicateurs."
