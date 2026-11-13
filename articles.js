@@ -364,7 +364,7 @@ const ARTICLES = [
     categorie:"seo",
     lecture:  "12 min",
     lien:     "articles/article-eeat-b2b-tech.html",
-    image:    "articles/eeat-b2b-tech-cover.jpg",
+    image:    "articles/eeat-b2b-tech-cover-v2-carte.jpg",
     slug:     "eeat-b2b-tech",
     motCle:   "E-E-A-T",
     metaDesc: "E-E-A-T : ce que Google évalue vraiment, test en 45 minutes, méthode en six étapes et grille en seize points pour prouver l'expertise d'un site SaaS ou cyber."
