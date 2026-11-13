@@ -1,0 +1,34 @@
+{
+  "slug": "eeat-b2b-tech",
+  "categorie": "seo",
+  "date": "2026-11-13",
+  "titre": "E-E-A-T en B2B tech : prouver votre expertise à Google et à vos acheteurs",
+  "titreSeo": "E-E-A-T en B2B tech : prouver votre expertise",
+  "h1": "E-E-A-T en B2B tech : prouver votre expertise à Google et à vos acheteurs",
+  "filAriane": "E-E-A-T en B2B tech",
+  "motCle": "E-E-A-T",
+  "metaDesc": "E-E-A-T : ce que Google évalue vraiment, test en 45 minutes, méthode en six étapes et grille en seize points pour prouver l'expertise d'un site SaaS ou cyber.",
+  "extrait": "Il n'existe pas de score E-E-A-T, mais les acheteurs B2B jugent votre sérieux sur les mêmes preuves que Google. Test du lecteur sceptique, méthode en six étapes, grille en seize points et paragraphe réécrit.",
+  "image": "articles/eeat-b2b-tech-cover.jpg",
+  "imageAlt": "E-E-A-T en B2B tech : prouver votre expertise à Google et à vos acheteurs",
+  "sommaireCourt": {
+    "ch1": "1. Blog sans autorité",
+    "ch2": "2. Définition",
+    "ch3": "3. Test de 45 minutes",
+    "ch4": "4. Six étapes",
+    "ch5": "5. Grille et exemple",
+    "ch6": "6. Raccourcis risqués",
+    "ch7": "7. Indicateurs",
+    "ch8": "8. Interne ou externe",
+    "faq": "FAQ",
+    "sources": "Sources"
+  },
+  "ctaLateral": {
+    "titre": "Le guide B2B de la visibilité IA",
+    "texte": "Livre blanc gratuit : comprendre pourquoi ChatGPT, Perplexity et Gemini citent certaines sources expertes plutôt que d'autres, et faire de votre site l'une d'elles.",
+    "lien": "/livres-blancs/visibilite-ia-b2b-guide.html",
+    "bouton": "Télécharger le livre blanc"
+  },
+  "service": "articles-seo",
+  "remplacer": true
+}

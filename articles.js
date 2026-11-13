@@ -356,4 +356,17 @@ const ARTICLES = [
     motCle:   "veille réglementaire cybersécurité",
     metaDesc: "Veille réglementaire cybersécurité : sources à suivre, automatisation en quatre semaines avec un agent IA, fiche d'impact prête à copier et indicateurs."
   },
+  {
+    titre:    "E-E-A-T en B2B tech : prouver votre expertise à Google et à vos acheteurs",
+    extrait:  "Il n'existe pas de score E-E-A-T, mais les acheteurs B2B jugent votre sérieux sur les mêmes preuves que Google. Test du lecteur sceptique, méthode en six étapes, grille en seize points et paragraphe réécrit.",
+    auteur:   "Rédaction TechRepair Content",
+    date:     "2026-11-13",
+    categorie:"seo",
+    lecture:  "12 min",
+    lien:     "articles/article-eeat-b2b-tech.html",
+    image:    "articles/eeat-b2b-tech-cover.jpg",
+    slug:     "eeat-b2b-tech",
+    motCle:   "E-E-A-T",
+    metaDesc: "E-E-A-T : ce que Google évalue vraiment, test en 45 minutes, méthode en six étapes et grille en seize points pour prouver l'expertise d'un site SaaS ou cyber."
+  },
 ];
