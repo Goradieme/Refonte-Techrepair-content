@@ -1,0 +1,34 @@
+{
+  "slug": "texte-page-categorie-ecommerce",
+  "categorie": "ecommerce",
+  "date": "2026-11-14",
+  "titre": "Page catégorie e-commerce : le texte qui fait ranker sans gêner la vente",
+  "titreSeo": "Page catégorie e-commerce : quel texte pour ranker ?",
+  "h1": "Page catégorie e-commerce : le texte qui fait ranker sans gêner la vente",
+  "filAriane": "Texte de page catégorie",
+  "motCle": "page catégorie e-commerce",
+  "metaDesc": "Page catégorie e-commerce : quel texte écrire, où le placer et quelle longueur viser. Contrôle en 30 minutes, méthode en six étapes, gabarit et exemple.",
+  "extrait": "Le pavé de texte sous la grille de produits aide rarement. Contrôle en trente minutes, méthode en six étapes, gabarit en cinq zones avec un exemple avant / après, et un test simple pour mesurer l'effet sur les clics et les ventes.",
+  "image": "articles/texte-page-categorie-ecommerce-cover.jpg",
+  "imageAlt": "Page catégorie e-commerce : le texte qui fait ranker sans gêner la vente",
+  "sommaireCourt": {
+    "ch1": "1. Le pavé sous la grille",
+    "ch2": "2. Définition",
+    "ch3": "3. Contrôle en 30 min",
+    "ch4": "4. Six étapes",
+    "ch5": "5. Gabarit et exemple",
+    "ch6": "6. Au-dessus ou dessous",
+    "ch7": "7. Mesurer l'effet",
+    "ch8": "8. Interne ou externe",
+    "faq": "FAQ",
+    "sources": "Sources"
+  },
+  "ctaLateral": {
+    "titre": "Le guide B2B de la visibilité IA",
+    "texte": "Livre blanc gratuit : savoir si ChatGPT, Perplexity et Gemini recommandent vos gammes quand un acheteur professionnel cherche un produit, et devenir une source qu'ils citent.",
+    "lien": "/livres-blancs/visibilite-ia-b2b-guide.html",
+    "bouton": "Télécharger le livre blanc"
+  },
+  "service": "fiches-produits",
+  "remplacer": true
+}

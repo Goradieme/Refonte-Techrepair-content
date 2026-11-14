@@ -371,4 +371,17 @@ const ARTICLES = [
     motCle:   "E-E-A-T",
     metaDesc: "E-E-A-T : ce que Google évalue vraiment, test en 45 minutes, méthode en six étapes et grille en seize points pour prouver l'expertise d'un site SaaS ou cyber."
   },
+  {
+    titre:    "Page catégorie e-commerce : le texte qui fait ranker sans gêner la vente",
+    extrait:  "Le pavé de texte sous la grille de produits aide rarement. Contrôle en trente minutes, méthode en six étapes, gabarit en cinq zones avec un exemple avant / après, et un test simple pour mesurer l'effet sur les clics et les ventes.",
+    auteur:   "Gora Dieme",
+    date:     "2026-11-14",
+    categorie:"ecommerce",
+    lecture:  "12 min",
+    lien:     "articles/article-texte-page-categorie-ecommerce.html",
+    image:    "articles/texte-page-categorie-ecommerce-cover.jpg",
+    slug:     "texte-page-categorie-ecommerce",
+    motCle:   "page catégorie e-commerce",
+    metaDesc: "Page catégorie e-commerce : quel texte écrire, où le placer et quelle longueur viser. Contrôle en 30 minutes, méthode en six étapes, gabarit et exemple."
+  },
 ];
