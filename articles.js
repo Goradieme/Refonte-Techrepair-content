@@ -10,7 +10,7 @@ const ARTICLES = [
   {
     titre:    "AI Overviews et GEO : le guide complet pour dominer les résultats IA en 2026",
     extrait:  "Les AI Overviews cannibalisent votre trafic SEO ? Voici la méthode exacte pour produire des contenus que Google cite — et non remplace — dans ses résultats IA.",
-    auteur:   "Rédaction TechRepair Content",
+    auteur:   "Gora Dieme",
     date:     "2025-06-07",
     categorie:"seo",
     lecture:  "11 min",
@@ -23,7 +23,7 @@ const ARTICLES = [
   {
     titre:    "Facturation électronique 2026 : comprendre la réforme et savoir où s'inscrire",
     extrait:  "Calendrier exact, formats acceptés, plateformes agréées réelles et sanctions : le guide complet de la réforme pour les entreprises françaises.",
-    auteur:   "Rédaction TechRepair Content",
+    auteur:   "Gora Dieme",
     date:     "2026-07-15",
     categorie:"fintech",
     lecture:  "12 min",
@@ -36,7 +36,7 @@ const ARTICLES = [
   {
     titre:    "Le Commerce Agentique : le guide complet",
     extrait:  "AEO, GEO, schema.org : comment rendre votre e-commerce visible par les agents IA (ChatGPT, Gemini, Copilot). Guide complet avec études indépendantes et checklist actionnable.",
-    auteur:   "Rédaction TechRepair Content",
+    auteur:   "Gora Dieme",
     date:     "2026-08-15",
     categorie:"ecommerce",
     lecture:  "18 min",
@@ -49,7 +49,7 @@ const ARTICLES = [
    {
     titre:    "Identités Non-Humaines : sécuriser l'explosion des agents IA",
     extrait:  "Agents IA, clés API, tokens : les identités non-humaines dépassent déjà les identités humaines dans les entreprises. Guide complet sur les risques réels, incidents documentés et le standard émergent AIMS pour les sécuriser.",
-    auteur:   "Rédaction TechRepair Content",
+    auteur:   "Gora Dieme",
     date:     "2026-08-31",
     categorie:"cyber",
     lecture:  "16 min",
@@ -62,7 +62,7 @@ const ARTICLES = [
        {
       titre:     "Agents IA en RH : le guide complet",
       extrait:   "Recrutement, onboarding, rétention, paie : comment les agents IA transforment concrètement la fonction RH, avec cas d'usage, ROI et cadre légal.",
-      auteur:    "Rédaction TechRepair Content",
+      auteur:    "Gora Dieme",
       date:      "2026-07-21",
       categorie: "rh",
       lecture:   "12 min",
@@ -75,7 +75,7 @@ const ARTICLES = [
        {
       titre:     "Dark social : le vrai funnel d'achat SaaS que Google Analytics ne voit pas",
       extrait:   "Slack, Discord, LinkedIn, WhatsApp : jusqu'à 84% des échanges B2B autour de votre produit échappent à vos outils d'analyse. Comprendre le dark social et agir dessus.",
-      auteur:    "Rédaction TechRepair Content",
+      auteur:    "Gora Dieme",
       date:      "2026-09-16",
       categorie: "saas",
       lecture:   "15 min",
@@ -88,7 +88,7 @@ const ARTICLES = [
   {
     titre:    "GEO : comment faire citer votre entreprise B2B par ChatGPT, Perplexity et Gemini",
     extrait:  "Robots à autoriser, écriture vérifiable, mentions tierces et mesure des citations : la méthode documentée pour que les assistants IA citent votre entreprise B2B.",
-    auteur:   "Rédaction TechRepair Content",
+    auteur:   "Gora Dieme",
     date:     "2026-10-22",
     categorie:"seo",
     lecture:  "12 min",
@@ -101,7 +101,7 @@ const ARTICLES = [
   {
     titre:    "NIS2 en France : entreprises concernées et plan d'action avant la loi Résilience",
     extrait:  "La transposition de NIS2 est de nouveau reportée à l'Assemblée. Seuils, secteurs, obligations, référentiel ReCyF de l'ANSSI : qui est concerné et quoi faire dès maintenant.",
-    auteur:   "Rédaction TechRepair Content",
+    auteur:   "Gora Dieme",
     date:     "2026-10-23",
     categorie:"cyber",
     lecture:  "12 min",
@@ -114,7 +114,7 @@ const ARTICLES = [
   {
     titre:    "Allégations environnementales : ce qu'il faut changer sur vos fiches produits",
     extrait:  "L'échéance européenne contre l'écoblanchiment est passée, la loi française attend à l'Assemblée. Ce qui sera interdit, ce qui est déjà sanctionné et comment réécrire vos fiches produits.",
-    auteur:   "Rédaction TechRepair Content",
+    auteur:   "Gora Dieme",
     date:     "2026-10-24",
     categorie:"ecommerce",
     lecture:  "12 min",
@@ -127,7 +127,7 @@ const ARTICLES = [
   {
     titre:    "Transparence salariale : ce que vos offres d'emploi et vos grilles doivent changer",
     extrait:  "Le projet de loi de transposition attend son examen au Parlement. Fourchettes dans les offres, fin des questions sur le salaire passé, catégories de valeur égale : l'ordre dans lequel s'y préparer.",
-    auteur:   "Rédaction TechRepair Content",
+    auteur:   "Gora Dieme",
     date:     "2026-10-25",
     categorie:"rh",
     lecture:  "12 min",
@@ -140,7 +140,7 @@ const ARTICLES = [
   {
     titre:    "DSP3 et règlement PSR : ce que les fintechs de paiement doivent préparer",
     extrait:  "Le Conseil a arrêté sa position sur la DSP3 et le PSR. Remboursement des victimes de faux conseillers, vérification du bénéficiaire, nouvel agrément : l'ordre dans lequel s'y préparer.",
-    auteur:   "Rédaction TechRepair Content",
+    auteur:   "Gora Dieme",
     date:     "2026-10-26",
     categorie:"fintech",
     lecture:  "12 min",
@@ -153,7 +153,7 @@ const ARTICLES = [
   {
     titre:    "Pages comparatives SaaS : gagner les prospects qui vous comparent à vos concurrents",
     extrait:  "Vos prospects vous comparent à vos concurrents avant la première démo. Diagnostic, formats, cadre de la publicité comparative et gabarit de page « alternative à » prêt à remplir.",
-    auteur:   "Rédaction TechRepair Content",
+    auteur:   "Gora Dieme",
     date:     "2026-10-27",
     categorie:"saas",
     lecture:  "12 min",
@@ -166,7 +166,7 @@ const ARTICLES = [
   {
     titre:    "Marketing fintech : les contenus qui créent la confiance avant la première démo",
     extrait:  "Vos prospects vérifient votre agrément et la protection de leurs fonds avant de demander une démo. Le test des douze questions, cinq contenus à produire et un modèle de page prêt à adapter.",
-    auteur:   "Rédaction TechRepair Content",
+    auteur:   "Gora Dieme",
     date:     "2026-10-28",
     categorie:"fintech",
     lecture:  "12 min",
@@ -179,7 +179,7 @@ const ARTICLES = [
   {
     titre:    "Lead nurturing SaaS : relancer vos téléchargements et vos essais avant qu'ils refroidissent",
     extrait:  "Vos téléchargements de livres blancs et vos essais gratuits refroidissent faute de relance au bon moment. Diagnostic, méthode en six étapes, matrice de relance par signal et exemple d'e-mail réécrit.",
-    auteur:   "Rédaction TechRepair Content",
+    auteur:   "Gora Dieme",
     date:     "2026-10-29",
     categorie:"saas",
     lecture:  "12 min",
@@ -192,7 +192,7 @@ const ARTICLES = [
   {
     titre:    "Marketing cybersécurité : convaincre un RSSI sans jouer sur la peur",
     extrait:  "Le discours alarmiste ne convainc plus les RSSI : ils réclament des preuves. Audit en une matinée, six contenus à produire dans l'ordre, grille de crédibilité en dix critères et accroche réécrite.",
-    auteur:   "Rédaction TechRepair Content",
+    auteur:   "Gora Dieme",
     date:     "2026-10-30",
     categorie:"cyber",
     lecture:  "12 min",
@@ -205,7 +205,7 @@ const ARTICLES = [
   {
     titre:    "Charte éditoriale B2B : le modèle pour qu'une marque tech parle d'une seule voix",
     extrait:  "Pigistes, experts produit, fondateur et IA écrivent chacun à leur façon. Audit en une demi-journée, méthode en six étapes, modèle de charte éditoriale en neuf rubriques et exemple réécrit.",
-    auteur:   "Rédaction TechRepair Content",
+    auteur:   "Gora Dieme",
     date:     "2026-10-31",
     categorie:"seo",
     lecture:  "12 min",
@@ -218,7 +218,7 @@ const ARTICLES = [
   {
     titre:    "Génération de leads B2B en SaaS : les contenus qui remplissent vraiment le pipeline",
     extrait:  "Beaucoup de formulaires, peu de rendez-vous ? Audit CRM en une journée, définition du lead qualifié avec les ventes, trois couches de contenus et matrice contenu, signal, action.",
-    auteur:   "Rédaction TechRepair Content",
+    auteur:   "Gora Dieme",
     date:     "2026-11-02",
     categorie:"saas",
     lecture:  "12 min",
@@ -231,7 +231,7 @@ const ARTICLES = [
   {
     titre:    "Consultant SEO SaaS : comment le choisir et ce qu'il doit livrer",
     extrait:  "Avant de signer, qualifiez votre besoin en deux heures, comparez profils et tarifs, notez chaque candidat sur 100 points et fixez les livrables à 30, 60 et 90 jours.",
-    auteur:   "Rédaction TechRepair Content",
+    auteur:   "Gora Dieme",
     date:     "2026-11-03",
     categorie:"seo",
     lecture:  "12 min",
@@ -244,7 +244,7 @@ const ARTICLES = [
   {
     titre:    "Étude de cas client en fintech : prouver sans trahir le secret client",
     extrait:  "Vos clients refusent d'être cités ? Graduez l'autorisation, respectez le secret professionnel et publiez une preuve vérifiable à chaque niveau, avec un plan type et un exemple réécrit.",
-    auteur:   "Rédaction TechRepair Content",
+    auteur:   "Gora Dieme",
     date:     "2026-11-04",
     categorie:"fintech",
     lecture:  "12 min",
@@ -257,7 +257,7 @@ const ARTICLES = [
   {
     titre:    "Landing page SaaS : la structure qui transforme les visites en démos",
     extrait:  "Moins de quatre visiteurs sur cent convertissent sur une page SaaS médiane. Diagnostiquez la vôtre en 45 minutes, reconstruisez-la en neuf blocs et mesurez-la en démos qualifiées.",
-    auteur:   "Rédaction TechRepair Content",
+    auteur:   "Gora Dieme",
     date:     "2026-11-05",
     categorie:"saas",
     lecture:  "12 min",
@@ -270,7 +270,7 @@ const ARTICLES = [
   {
     titre:    "Conformité NIS2 : en faire un argument commercial crédible face aux RSSI",
     extrait:  "« Certifié NIS2 » ne veut rien dire. Ce qui convainc un RSSI, c'est une preuve datée pour chacune des dix mesures de l'article 21 : méthode en six étapes, tableau des preuves et plan de livre blanc fournisseur.",
-    auteur:   "Rédaction TechRepair Content",
+    auteur:   "Gora Dieme",
     date:     "2026-11-06",
     categorie:"cyber",
     lecture:  "12 min",
@@ -283,7 +283,7 @@ const ARTICLES = [
   {
     titre:    "Fiche produit SEO : optimiser vos produits techniques sans recopier le fabricant",
     extrait:  "Le texte du fabricant ne vous pénalise pas, il vous efface. Diagnostic en quatre contrôles, priorisation du catalogue, gabarit de fiche en sept blocs, exemple avant / après et indicateurs à suivre.",
-    auteur:   "Rédaction TechRepair Content",
+    auteur:   "Gora Dieme",
     date:     "2026-11-07",
     categorie:"ecommerce",
     lecture:  "12 min",
@@ -296,7 +296,7 @@ const ARTICLES = [
   {
     titre:    "Marque employeur tech : les contenus qui attirent les développeurs",
     extrait:  "Avant de répondre à un recruteur, un développeur cherche votre nom sur Google. Test des cinq recherches, méthode en six semaines, gabarit d'offre réécrit et sujets d'articles techniques qui prouvent la qualité de l'équipe.",
-    auteur:   "Rédaction TechRepair Content",
+    auteur:   "Gora Dieme",
     date:     "2026-11-08",
     categorie:"rh",
     lecture:  "12 min",
@@ -309,7 +309,7 @@ const ARTICLES = [
   {
     titre:    "Guide d'achat e-commerce : la structure qui fait passer à l'acte",
     extrait:  "Le guide d'achat reçoit l'acheteur qui hésite entre trois modèles. Barème pour choisir les catégories, méthode en sept étapes, plan type en huit blocs, exemple réécrit et indicateurs qui prouvent qu'il fait vendre.",
-    auteur:   "Rédaction TechRepair Content",
+    auteur:   "Gora Dieme",
     date:     "2026-11-09",
     categorie:"ecommerce",
     lecture:  "12 min",
@@ -322,7 +322,7 @@ const ARTICLES = [
   {
     titre:    "SEO fintech : écrire sur l'argent quand Google applique ses critères YMYL",
     extrait:  "Google exige plus de fiabilité sur les sujets financiers, et l'ACPR lit vos offres. Diagnostic en huit questions, méthode en six étapes, grille de validation commune au marketing et à la conformité, et paragraphe réécrit.",
-    auteur:   "Rédaction TechRepair Content",
+    auteur:   "Gora Dieme",
     date:     "2026-11-10",
     categorie:"fintech",
     lecture:  "12 min",
@@ -335,7 +335,7 @@ const ARTICLES = [
   {
     titre:    "Marketing SaaS RH : les contenus qui convainquent un DRH d'acheter votre logiciel",
     extrait:  "Après la démo, la DRH doit convaincre seule son DAF, son DSI et parfois son CSE. Diagnostic en huit questions, tableau des objections par décideur, méthode en six étapes et plan d'un dossier de décision prêt à remplir.",
-    auteur:   "Rédaction TechRepair Content",
+    auteur:   "Gora Dieme",
     date:     "2026-11-11",
     categorie:"rh",
     lecture:  "12 min",
@@ -348,7 +348,7 @@ const ARTICLES = [
   {
     titre:    "Veille réglementaire cybersécurité : l'automatiser sans rien laisser passer",
     extrait:  "CRA, loi Résilience, NIS2 : le calendrier bouge plus vite que les pages des éditeurs cyber. Sources officielles à suivre, méthode d'automatisation en quatre semaines, fiche d'impact prête à copier et indicateurs de couverture.",
-    auteur:   "Rédaction TechRepair Content",
+    auteur:   "Gora Dieme",
     date:     "2026-11-12",
     categorie:"cyber",
     lecture:  "12 min",
@@ -361,7 +361,7 @@ const ARTICLES = [
   {
     titre:    "E-E-A-T en B2B tech : prouver votre expertise à Google et à vos acheteurs",
     extrait:  "Il n'existe pas de score E-E-A-T, mais les acheteurs B2B jugent votre sérieux sur les mêmes preuves que Google. Test du lecteur sceptique, méthode en six étapes, grille en seize points et paragraphe réécrit.",
-    auteur:   "Rédaction TechRepair Content",
+    auteur:   "Gora Dieme",
     date:     "2026-11-13",
     categorie:"seo",
     lecture:  "12 min",

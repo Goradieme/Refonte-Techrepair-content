@@ -32,7 +32,7 @@ const ACCENTS = {
 const N = parseInt(numero, 10) || 0;
 const AC = ACCENTS[accentArg || COULEURS[(N + Math.floor(N / 4)) % 4]];
 const MOIS = ['janvier','février','mars','avril','mai','juin','juillet','août','septembre','octobre','novembre','décembre'];
-const d = new Date();
+const d = OPTS.date ? new Date(OPTS.date) : new Date(); // --date=AAAA-MM-JJ pour un article antidaté
 const dateTxt = `${MOIS[d.getMonth()][0].toUpperCase()}${MOIS[d.getMonth()].slice(1)} ${d.getFullYear()}`;
 const esc = s => String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
 const fonte = w => `url(data:font/woff2;base64,${fs.readFileSync(path.join(POL, `manrope-latin-${w}-normal.woff2`)).toString('base64')}) format('woff2')`;

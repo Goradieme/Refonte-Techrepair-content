@@ -283,7 +283,7 @@ API ; ne pas les appeler) :
 - Mot-clé principal dans : titre SEO (≤ 60 caractères, la marque « | TechRepair » est ajoutée seulement s’il reste la place), H1, meta description
   (≤ 160 caractères), introduction et au moins un H2. Pas de bourrage.
 - Structure, dans cet ordre : `<p class="intro-lead">`, un paragraphe d'introduction,
-  un encadré `<div class="key-points"><h3>Points clés</h3><ul>…</ul></div>` (4 conclusions
+  un encadré `<div class="key-points"><p class="bloc-titre">Points clés</p><ul>…</ul></div>` (4 conclusions
   essentielles, chacune avec une amorce en gras), le sommaire `<div class="toc-box">`, 6 à 9 `<h2 id="chN">` numérotés, des `<h3>`,
   au moins un tableau ou une liste d'étapes, un `<div class="callout">`.
 - Réponse directe dans les deux premières phrases de chaque partie ; passages
