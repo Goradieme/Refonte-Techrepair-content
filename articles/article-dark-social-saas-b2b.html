@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 <title>Dark social : le funnel SaaS invisible dans GA4 | TechRepair</title>
 <meta name="description" content="Slack, Discord, LinkedIn, WhatsApp : jusqu'à 84 % des échanges B2B sur votre SaaS échappent à vos outils d'analyse. Comprendre le dark social et agir."/>
-<meta name="author" content="TechRepair Content"/>
+<meta name="author" content="Gora Dieme"/>
 <link rel="canonical" href="https://www.techrepaircontent.com/articles/article-dark-social-saas-b2b.html"/>
 <meta property="og:title" content="Slack, Discord, communautés privées : le vrai funnel d'achat SaaS que Google Analytics ne voit pas"/>
 <meta property="og:description" content="Slack, Discord, LinkedIn, WhatsApp : jusqu'à 84 % des échanges B2B sur votre SaaS échappent à vos outils d'analyse. Comprendre le dark social et agir."/>
@@ -170,6 +170,8 @@ footer h4{font-size:10.5px;font-weight:700;color:#94a3b8;text-transform:uppercas
 /* ══ Liens vers les sources citées ══ */
 a.src{color:var(--blue);font-weight:600;text-decoration:underline;text-underline-offset:2px;text-decoration-thickness:1px;transition:color .2s}
 a.src:hover{color:var(--blue-dark);text-decoration-thickness:2px}
+.key-points .bloc-titre{margin:0 0 12px!important;font-size:12px!important;font-weight:800;letter-spacing:1.4px;text-transform:uppercase;color:var(--blue-dark)!important;line-height:1.3}
+.toc-box .bloc-titre{margin:0 0 12px!important;font-size:14px!important;font-weight:800;color:var(--navy)!important;line-height:1.3}
 </style>
 <script type="application/ld+json">
 {
@@ -182,9 +184,15 @@ a.src:hover{color:var(--blue-dark);text-decoration-thickness:2px}
       "datePublished": "2026-09-16",
       "dateModified": "2026-09-16",
       "author": {
-        "@type": "Organization",
-        "name": "TechRepair Content",
-        "url": "https://www.techrepaircontent.com/apropos"
+        "@type": "Person",
+        "name": "Gora Dieme",
+        "jobTitle": "Fondateur de TechRepair Content, expert SEO tech B2B",
+        "url": "https://www.techrepaircontent.com/apropos",
+        "worksFor": {
+          "@type": "Organization",
+          "name": "TechRepair Content",
+          "url": "https://www.techrepaircontent.com/"
+        }
       },
       "publisher": {
         "@type": "Organization",
@@ -200,6 +208,51 @@ a.src:hover{color:var(--blue-dark);text-decoration-thickness:2px}
       "articleSection": "SaaS B2B",
       "wordCount": 5705,
       "image": "https://www.techrepaircontent.com/articles/dark-social-saas-b2b-cover.jpg"
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Qu'est-ce que le dark social ?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Le dark social désigne le partage de contenu par des canaux numériques privés (messages directs, transferts d'e-mail, fils Slack), où la donnée de provenance est supprimée par le canal lui-même. Les visites qui en résultent sont classées par défaut en trafic « direct ». Le terme a été inventé en 2012 par le journaliste Alexis Madrigal dans The Atlantic."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Quelle différence entre dark social et dark funnel ?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Le dark funnel est la catégorie la plus large : il regroupe toute l'activité d'achat qui se produit hors de vos outils traçables, y compris les plateformes d'avis, les podcasts et les conversations de vive voix. Le dark social en est un sous-ensemble, limité au partage de contenu dans des canaux numériques privés."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Pourquoi Google Analytics classe-t-il ce trafic en « direct » ?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Les outils d'attribution identifient la source d'une visite grâce au « referrer », une information transmise par le navigateur. Quand un lien est collé dans Slack, envoyé par WhatsApp ou transféré par e-mail, cette information n'est pas transmise. L'outil range alors la visite dans le trafic direct, avec les visiteurs qui ont tapé l'adresse de mémoire."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Quelle part des échanges B2B passe par le dark social ?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Les études donnent des fourchettes de 50 % à 84 % selon le périmètre mesuré. Elles ne se contredisent pas : certaines portent sur le partage de contenu tous secteurs confondus, d'autres sur le seul B2B. Mieux vaut retenir la tendance qu'un chiffre unique : la majorité de l'influence sur un achat SaaS B2B échappe aux outils de mesure classiques."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Comment estimer le dark social dans GA4 ?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Isolez le trafic direct par page d'atterrissage, puis excluez la page d'accueil et vos pages de destination publicitaires. Le trafic direct restant, vers des articles de blog profonds, des livres blancs ou des études de cas, constitue une base raisonnable de dark social. Suivez-la chaque mois et complétez-la par un champ libre « Comment avez-vous entendu parler de nous ? » sur vos formulaires."
+          }
+        }
+      ]
     },
     {
       "@type": "BreadcrumbList",
@@ -274,7 +327,7 @@ a.src:hover{color:var(--blue-dark);text-decoration-thickness:2px}
   <span class="ah-badge" style="background:#EFF6FF;color:var(--blue-dark)">💼 SaaS B2B</span>
   <h1>Slack, Discord, communautés privées : le vrai funnel d'achat SaaS que Google Analytics ne voit pas</h1>
   <div class="ah-meta">
-    <span>✍️ Rédaction TechRepair Content</span>
+    <span>✍️ <a href="/apropos" rel="author" style="color:inherit;text-decoration:none">Gora Dieme</a></span>
     <div class="ah-dot"></div>
     <span>Publié le 31 août 2026</span>
     <div class="ah-dot"></div>
@@ -300,7 +353,7 @@ a.src:hover{color:var(--blue-dark);text-decoration-thickness:2px}
     </ul>
 
     <div class="toc-box">
-      <h3>📋 Sommaire</h3>
+      <p class="bloc-titre">📋 Sommaire</p>
       <ol>
         <li><a href="#ch1">Le constat : ce que votre tableau de bord marketing ne peut pas mesurer</a></li>
         <li><a href="#ch2">Dark social, dark funnel : de quoi parle-t-on précisément</a></li>
@@ -638,6 +691,29 @@ a.src:hover{color:var(--blue-dark);text-decoration-thickness:2px}
 
     <p>Le dark social ne se résout pas avec un outil de plus. Il se travaille avec de la patience, une présence honnête, et l'acceptation qu'une partie de votre influence restera, par nature, invisible dans vos tableaux de bord.</p>
 
+    <h2 id="faq">Questions fréquentes</h2>
+
+    <div class="faq-item">
+      <p class="question">Qu'est-ce que le dark social&nbsp;?</p>
+      <p>Le dark social désigne le partage de contenu par des canaux numériques privés (messages directs, transferts d'e-mail, fils Slack), où la donnée de provenance est supprimée par le canal lui-même. Les visites qui en résultent sont classées par défaut en trafic «&nbsp;direct&nbsp;». Le terme a été inventé en 2012 par le journaliste Alexis Madrigal dans The Atlantic.</p>
+    </div>
+    <div class="faq-item">
+      <p class="question">Quelle différence entre dark social et dark funnel&nbsp;?</p>
+      <p>Le dark funnel est la catégorie la plus large&nbsp;: il regroupe toute l'activité d'achat qui se produit hors de vos outils traçables, y compris les plateformes d'avis, les podcasts et les conversations de vive voix. Le dark social en est un sous-ensemble, limité au partage de contenu dans des canaux numériques privés.</p>
+    </div>
+    <div class="faq-item">
+      <p class="question">Pourquoi Google Analytics classe-t-il ce trafic en «&nbsp;direct&nbsp;»&nbsp;?</p>
+      <p>Les outils d'attribution identifient la source d'une visite grâce au «&nbsp;referrer&nbsp;», une information transmise par le navigateur. Quand un lien est collé dans Slack, envoyé par WhatsApp ou transféré par e-mail, cette information n'est pas transmise. L'outil range alors la visite dans le trafic direct, avec les visiteurs qui ont tapé l'adresse de mémoire.</p>
+    </div>
+    <div class="faq-item">
+      <p class="question">Quelle part des échanges B2B passe par le dark social&nbsp;?</p>
+      <p>Les études donnent des fourchettes de 50&nbsp;% à 84&nbsp;% selon le périmètre mesuré. Elles ne se contredisent pas&nbsp;: certaines portent sur le partage de contenu tous secteurs confondus, d'autres sur le seul B2B. Mieux vaut retenir la tendance qu'un chiffre unique&nbsp;: la majorité de l'influence sur un achat SaaS B2B échappe aux outils de mesure classiques.</p>
+    </div>
+    <div class="faq-item">
+      <p class="question">Comment estimer le dark social dans GA4&nbsp;?</p>
+      <p>Isolez le trafic direct par page d'atterrissage, puis excluez la page d'accueil et vos pages de destination publicitaires. Le trafic direct restant, vers des articles de blog profonds, des livres blancs ou des études de cas, constitue une base raisonnable de dark social. Suivez-la chaque mois et complétez-la par un champ libre «&nbsp;Comment avez-vous entendu parler de nous&nbsp;?&nbsp;» sur vos formulaires.</p>
+    </div>
+
     <div class="conclusion-box">
       <p><strong>En résumé</strong></p>
       <p>Une majorité des décisions d'achat SaaS B2B se discute désormais dans des canaux que vos outils d'analyse ne peuvent pas voir. Ce n'est pas un problème à résoudre techniquement, mais un changement de terrain à comprendre : produire du contenu qui se partage bien seul, et être présent honnêtement là où vos acheteurs se parlent déjà entre eux.</p>
@@ -680,10 +756,10 @@ a.src:hover{color:var(--blue-dark);text-decoration-thickness:2px}
     </div>
     <div class="sidebar-card">
       <div class="author-card">
-        <div class="author-avatar">TRD</div>
+        <div class="author-avatar">GD</div>
         <div>
-          <div class="author-name">Rédaction TechRepair Content</div>
-          <div class="author-role">Rédaction SEO tech B2B</div>
+          <div class="author-name"><a href="/apropos" rel="author" style="color:inherit;text-decoration:none">Gora Dieme</a></div>
+          <div class="author-role">Fondateur · SEO tech B2B</div>
         </div>
       </div>
     </div>

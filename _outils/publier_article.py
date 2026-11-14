@@ -69,6 +69,9 @@ def main(chemin_meta: str) -> None:
     url = f"{SITE}/articles/{fichier}"
 
     # --- Contrôles qualité -------------------------------------------------
+    # Les titres des encadrés « Points clés » et « Sommaire » précèdent le premier H2 :
+    # ce ne sont pas des titres de section, on les sort de la hiérarchie Hn.
+    corps = re.sub(r'(<div class="(?:key-points|toc-box)">\s*)<h3>(.*?)</h3>', r'\1<p class="bloc-titre">\2</p>', corps)
     mots = compter_mots(corps)
     if not (MIN_MOTS <= mots <= MAX_MOTS):
         sys.exit(f"Longueur hors limites : {mots} mots (attendu {MIN_MOTS}-{MAX_MOTS}).")
@@ -100,7 +103,8 @@ def main(chemin_meta: str) -> None:
         "description": m["metaDesc"],
         "datePublished": date,
         "dateModified": m.get("dateModification", date),
-        "author": {"@type": "Organization", "name": "TechRepair Content", "url": f"{SITE}/apropos"},
+        "author": {"@type": "Person", "name": "Gora Dieme", "jobTitle": "Fondateur de TechRepair Content, expert SEO tech B2B", "url": f"{SITE}/apropos",
+                   "worksFor": {"@type": "Organization", "name": "TechRepair Content", "url": f"{SITE}/"}},
         "publisher": {"@type": "Organization", "name": "TechRepair Content", "url": f"{SITE}/"},
         "mainEntityOfPage": {"@type": "WebPage", "@id": url},
         "inLanguage": "fr-FR",
@@ -170,7 +174,7 @@ def main(chemin_meta: str) -> None:
     contenu = aj.read_text(encoding="utf-8")
     if f'"articles/{fichier}"' not in contenu:
         champs = [
-            ("titre", m["titre"]), ("extrait", m["extrait"]), ("auteur", "Rédaction TechRepair Content"),
+            ("titre", m["titre"]), ("extrait", m["extrait"]), ("auteur", "Gora Dieme"),
             ("date", date), ("categorie", cat), ("lecture", lecture),
             ("lien", f"articles/{fichier}"),
         ]
