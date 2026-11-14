@@ -4,10 +4,18 @@
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 <title>Identités non humaines : sécuriser les agents IA</title>
-<meta name="description" content="NHI, AIMS, SPIFFE, WIMSE : comment sécuriser les identités des agents IA en entreprise. Guide complet, cas réels (Hugging Face, tj-actions) et checklist actionnable."/>
+<meta name="description" content="NHI, AIMS, SPIFFE, WIMSE : sécuriser les identités des agents IA en entreprise. Guide complet, cas réels (Hugging Face, tj-actions) et checklist."/>
+<meta name="author" content="TechRepair Content"/>
+<link rel="canonical" href="https://www.techrepaircontent.com/articles/article-identites-non-humaines.html"/>
 <meta property="og:title" content="Identités Non-Humaines : sécuriser l'explosion des agents IA"/>
-<meta property="og:description" content="Comment sécuriser les identités des agents IA en entreprise. Guide complet, cas réels et checklist actionnable."/>
+<meta property="og:description" content="NHI, AIMS, SPIFFE, WIMSE : sécuriser les identités des agents IA en entreprise. Guide complet, cas réels (Hugging Face, tj-actions) et checklist."/>
 <meta property="og:type" content="article"/>
+<meta property="og:url" content="https://www.techrepaircontent.com/articles/article-identites-non-humaines.html"/>
+<meta property="og:locale" content="fr_FR"/>
+<meta property="og:site_name" content="TechRepair Content"/>
+<meta property="og:image" content="https://www.techrepaircontent.com/articles/identites-non-humaines-cover.jpg"/>
+<meta property="article:published_time" content="2026-08-31"/>
+<meta name="twitter:card" content="summary_large_image"/>
 <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet"/>
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
@@ -140,6 +148,99 @@ footer h4{font-size:10.5px;font-weight:700;color:#94a3b8;text-transform:uppercas
 @media(max-width:960px){.layout{grid-template-columns:1fr}.sidebar{position:static;display:grid;grid-template-columns:1fr 1fr;gap:16px}.cta-inner{grid-template-columns:1fr}.footer-inner{grid-template-columns:1fr 1fr}}
 @media(max-width:600px){.article-hero h1{font-size:26px}.sidebar{grid-template-columns:1fr}.nl-band-form{flex-direction:column}.footer-inner{grid-template-columns:1fr}}
 </style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "BlogPosting",
+      "headline": "Identités Non-Humaines : sécuriser l'explosion des agents IA",
+      "description": "NHI, AIMS, SPIFFE, WIMSE : sécuriser les identités des agents IA en entreprise. Guide complet, cas réels (Hugging Face, tj-actions) et checklist.",
+      "datePublished": "2026-08-31",
+      "dateModified": "2026-08-31",
+      "author": {
+        "@type": "Organization",
+        "name": "TechRepair Content",
+        "url": "https://www.techrepaircontent.com/apropos"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "TechRepair Content",
+        "url": "https://www.techrepaircontent.com/"
+      },
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://www.techrepaircontent.com/articles/article-identites-non-humaines.html"
+      },
+      "inLanguage": "fr-FR",
+      "keywords": "identités non-humaines",
+      "articleSection": "Cybersécurité",
+      "wordCount": 5599,
+      "image": "https://www.techrepaircontent.com/articles/identites-non-humaines-cover.jpg"
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Faut-il attendre que le brouillon AIMS devienne une norme IETF officielle avant d'agir ?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Non. Le brouillon reste un document de travail, mais les principes qu'il formalise (abandon des clés statiques, identifiants courts et rotés automatiquement) sont déjà des bonnes pratiques reconnues indépendamment de son adoption formelle. Attendre la normalisation complète pour agir reviendrait à laisser le risque documenté au chapitre 8 s'accumuler sans raison."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Une PME est-elle vraiment concernée par ce sujet ?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Oui. Le cas tj-actions/changed-files a touché plus de 23 000 organisations de toutes tailles via une seule dépendance logicielle partagée. La taille de l'entreprise réduit le volume d'identités à gérer, pas l'exposition au risque lui-même."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Combien de temps prend une mise en conformité de base ?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Le chapitre 7 détaille une feuille de route de 90 jours pour un premier cycle complet (audit, remédiation prioritaire, suivi continu), avec une extension progressive au reste du parc au-delà de cette première fenêtre."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Le risque vient-il uniquement d'agents IA malveillants créés par des attaquants ?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Non, et c'est un point central de ce guide. Dans les quatre cas du chapitre 8, le risque provient d'agents ou de systèmes légitimes mal configurés (privilèges excessifs, secrets non révoqués, absence de contrôle d'autorisation), pas d'une IA conçue pour nuire. La menace la plus courante reste la négligence de configuration, pas l'intention malveillante d'un système autonome."
+          }
+        }
+      ]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Accueil",
+          "item": "https://www.techrepaircontent.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Blog",
+          "item": "https://www.techrepaircontent.com/blog"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Identités non humaines",
+          "item": "https://www.techrepaircontent.com/articles/article-identites-non-humaines.html"
+        }
+      ]
+    }
+  ]
+}
+</script>
 </head>
 <body>
 
