@@ -15,6 +15,7 @@ const ARTICLES = [
     categorie:"seo",
     lecture:  "11 min",
     lien:     "articles/article-ai-overviews-seo.html",
+    image:     "articles/ai-overviews-seo-cover.jpg",
     slug:     "ai-overviews-seo",
     motCle:   "AI Overviews SEO",
     metaDesc: "Les AI Overviews cannibalisent votre trafic SEO ? Voici la méthode exacte pour produire des contenus que Google cite — et non remplace — dans ses résultats IA."
@@ -27,6 +28,7 @@ const ARTICLES = [
     categorie:"fintech",
     lecture:  "12 min",
     lien:     "articles/article-facturation-electronique-2026.html",
+    image:     "articles/facturation-electronique-cover.jpg",
     slug:     "facturation-electronique-2026",
     motCle:   "facturation électronique 2026",
     metaDesc: "Calendrier exact, formats acceptés, plateformes agréées réelles et sanctions : le guide complet de la réforme de facturation électronique 2026."
