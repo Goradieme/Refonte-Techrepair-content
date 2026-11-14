@@ -46,7 +46,13 @@ jobs:
             cat rapport.txt
             if echo "$etiquettes" | grep -qx seo-a-corriger; then
               gh api -X DELETE "repos/$REPO/issues/$N/labels/seo-a-corriger" >/dev/null || true
-              gh api -X DELETE "repos/$REPO/issues/$N/labels/attendre" >/dev/null || true
+              # « attendre » n'est retirée que si c'est ce contrôle qui l'a posée :
+              # une mise en attente décidée par Goradieme reste en place.
+              par=$(gh api "repos/$REPO/issues/$N/events" --paginate \
+                    --jq '[.[] | select(.event == "labeled" and .label.name == "attendre")] | last | .actor.login')
+              if [ "$par" = "github-actions[bot]" ]; then
+                gh api -X DELETE "repos/$REPO/issues/$N/labels/attendre" >/dev/null || true
+              fi
               gh api "repos/$REPO/issues/$N/comments" -f body="Contrôle SEO et GEO : tous les points bloquants sont corrigés, la publication reprend son cours." >/dev/null
             fi
             exit 0
@@ -54,7 +60,11 @@ jobs:
           cat rapport.txt
           gh api "repos/$REPO/labels" -f name=seo-a-corriger -f color=D93F0B -f description="Contrôle SEO/GEO en échec" >/dev/null 2>&1 || true
           gh api "repos/$REPO/labels" -f name=attendre -f color=FBCA04 >/dev/null 2>&1 || true
-          gh api "repos/$REPO/issues/$N/labels" -f "labels[]=attendre" -f "labels[]=seo-a-corriger" >/dev/null
+          if echo "$etiquettes" | grep -qx attendre; then
+            gh api "repos/$REPO/issues/$N/labels" -f "labels[]=seo-a-corriger" >/dev/null
+          else
+            gh api "repos/$REPO/issues/$N/labels" -f "labels[]=attendre" -f "labels[]=seo-a-corriger" >/dev/null
+          fi
           {
             echo "**Contrôle SEO et GEO : article non conforme, publication suspendue.**"
             echo
