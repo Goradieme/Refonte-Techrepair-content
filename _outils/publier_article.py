@@ -250,8 +250,40 @@ def main(chemin_meta: str) -> None:
     import subprocess
     subprocess.run([sys.executable, str(RACINE / "_outils" / "maillage.py")], check=True)
 
+    # --- llms.txt : liste des articles, lue par les moteurs IA ---------------------
+    maj_llms()
+
     print(f"OK : articles/{fichier} — {mots} mots, {lecture} de lecture, "
           f"{len(h2s)} parties, {len(faq)} questions FAQ.")
+
+    # --- Contrôle SEO et GEO : bloquant ------------------------------------------
+    # Un article qui échoue ne part pas en publication : corriger le brouillon (ou son
+    # JSON), puis relancer ce script avec "remplacer": true.
+    r = subprocess.run([sys.executable, str(RACINE / "_outils" / "controle_seo.py"), slug])
+    if r.returncode:
+        sys.exit("Contrôle SEO/GEO : points bloquants ci-dessus. Corriger, puis relancer.")
+
+
+def maj_llms() -> None:
+    """Réécrit la section « Articles du blog » de llms.txt à partir de articles.js."""
+    chemin = RACINE / "llms.txt"
+    if not chemin.exists():
+        return
+    js = (RACINE / "articles.js").read_text(encoding="utf-8")
+    champ = lambda bloc, k: (re.search(k + r'\s*:\s*"((?:[^"\\]|\\.)*)"', bloc) or [None, ""])[1].replace('\\"', '"')
+    arts = []
+    for bloc in re.findall(r"\{[^{}]*?slug\s*:[^{}]*?\}", js, re.S):
+        if champ(bloc, "lien"):
+            arts.append((champ(bloc, "date"), champ(bloc, "titre"), champ(bloc, "lien"), champ(bloc, "extrait")))
+    arts.sort(reverse=True)
+    section = "## Articles du blog\n\n" + "\n".join(
+        f"- [{t}]({SITE}/{l}): {e}" for _, t, l, e in arts) + "\n"
+    txt = chemin.read_text(encoding="utf-8")
+    if "## Articles du blog" in txt:
+        txt = re.sub(r"## Articles du blog\n.*?(?=\n## |\Z)", lambda _: section, txt, flags=re.S)
+    else:
+        txt = txt.replace("## Ressources", section + "\n## Ressources", 1) if "## Ressources" in txt else txt.rstrip() + "\n\n" + section
+    chemin.write_text(txt, encoding="utf-8")
 
 
 if __name__ == "__main__":
