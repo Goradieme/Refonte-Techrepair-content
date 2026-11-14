@@ -208,7 +208,8 @@ API ; ne pas les appeler) :
    - ouvrir l'image et vérifier qu'elle est parfaite : titre sur 4 lignes au plus, aucune
      coupure de mot, illustration nette, aucun élément coupé ou superposé au texte.
 6. Assembler et indexer : `python3 _outils/publier_article.py _outils/brouillons/<slug>.json`
-   (met à jour l'article, `articles.js`, `blog.html`, `sitemap.xml`, `feed.xml` et le calendrier).
+   (met à jour l'article, `articles.js`, `blog.html`, `sitemap.xml`, `feed.xml` et le calendrier),
+   puis lance le contrôle SEO et GEO : tant qu'il affiche un point bloquant, corriger et relancer).
 7. **Contrôle qualité obligatoire** (l'article peut être publié sans relecture humaine) :
    - `python3 _outils/verifier_article.py _outils/brouillons/<slug>.html` (installer
      d'abord `pip install --break-system-packages -q pyspellchecker`) ; corriger tout ce
@@ -279,6 +280,43 @@ API ; ne pas les appeler) :
   position Google ou de citation IA.
 
 ## Exigences SEO et GEO
+
+**Règle de Goradieme : tout article publié respecte les normes SEO et GEO, sans exception.**
+Elle est appliquée par `_outils/controle_seo.py`, lancé automatiquement à la fin de
+`publier_article.py` puis sur la demande de fusion. Un seul point BLOQUANT et l'article
+ne part pas : on corrige le brouillon ou son JSON, on relance avec `"remplacer": true`,
+jusqu'à lire « ✓ conforme ». Les avertissements se traitent un par un (corriger, ou
+vérifier que le défaut signalé n'en est pas un). Ne jamais contourner le contrôle.
+
+Ce que le contrôle exige (points bloquants) :
+
+- balise title ≤ 60 caractères, meta description ≤ 160 (viser 140 à 160), un seul H1,
+  aucun saut de niveau dans les titres, au moins 6 parties H2, pas deux H2 identiques ;
+- mot-clé principal (`motCle`) dans le title, le H1, la meta description, les 200
+  premiers mots et au moins un H2 ;
+- chapeau `intro-lead`, encadré « Points clés », FAQ visible de 3 à 5 questions, au moins
+  un tableau ou une liste d'étapes, une rangée de 3 chiffres clés, au moins 2 sources ;
+- au moins 4 liens internes dont 2 vers d'autres articles, 1 lien sortant au plus dans
+  le corps, aucun lien interne cassé ;
+- images avec texte alternatif et dimensions, image de partage présente ;
+- données structurées complètes (article, auteur nommé, FAQ, fil d'Ariane), balise
+  canonique, balises de partage, sitemap, `articles.js` : tout cela est généré par le
+  gabarit, le contrôle vérifie simplement que rien ne manque.
+
+Écrire pour être cité par les moteurs IA (GEO), en plus des règles ci-dessous :
+
+- **définir le sujet en une phrase** dès sa première apparition (« X est… »), sans
+  détour : c'est la phrase que les moteurs reprennent ;
+- **commencer chaque partie par la réponse**, en un paragraphe de 2 ou 3 phrases
+  (90 mots au plus), compréhensible sans avoir lu le reste ;
+- **formuler au moins deux titres (H2 ou H3) comme la question que tape l'internaute**
+  (« Combien coûte… ? », « Qui est concerné… ? ») ;
+- **dater et attribuer chaque chiffre** dans la phrase même (organisme, année) : un
+  chiffre sans source n'est pas repris ;
+- préférer les faits vérifiables, les étapes numérotées et les tableaux comparatifs aux
+  généralités ; bannir les promesses invérifiables ;
+- questions de FAQ rédigées comme on les pose à voix haute, réponses de 2 à 4 phrases
+  qui se suffisent à elles-mêmes.
 
 - Mot-clé principal dans : titre SEO (≤ 60 caractères, la marque « | TechRepair » est ajoutée seulement s’il reste la place), H1, meta description
   (≤ 160 caractères), introduction et au moins un H2. Pas de bourrage.
