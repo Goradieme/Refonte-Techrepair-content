@@ -170,6 +170,18 @@ def controler(slug: str):
     # --- Contenu extractible (GEO) ---------------------------------------------
     if 'class="intro-lead"' not in principal:
         B("chapeau <p class=\"intro-lead\"> absent")
+    # Introduction : elle campe le décor en deux paragraphes avant les « Points clés ».
+    avant = principal.split("<h2", 1)[0]
+    avant = re.sub(r'<div class="(?:key-points|toc-box)">.*?</div>', "", avant.split("</h1>", 1)[-1], flags=re.S)
+    avant = avant.split('class="intro-lead"', 1)[-1] if 'class="intro-lead"' in avant else ""
+    paras = [brut(x) for x in re.findall(r"<p[^>]*>(.*?)</p>", '<p class="intro-lead"' + avant, re.S)] if avant else []
+    n_intro = sum(len(x.split()) for x in paras)
+    if avant and len(paras) < 2:
+        B("introduction : deux paragraphes attendus avant les « Points clés » (le décor, puis le problème)")
+    elif avant and n_intro < 110:
+        B(f"introduction trop courte pour camper le décor ({n_intro} mots ; 110 à 200 attendus)")
+    elif n_intro > 200:
+        A(f"introduction longue ({n_intro} mots ; 110 à 200 attendus)")
     kp = re.search(r'<div class="key-points">(.*?)</div>', principal, re.S)
     if not kp:
         B("encadré « Points clés » absent")
