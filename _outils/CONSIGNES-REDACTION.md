@@ -296,6 +296,7 @@ Ce que le contrôle exige (points bloquants) :
   premiers mots et au moins un H2 ;
 - introduction de deux paragraphes au moins (110 à 200 mots) avant les « Points clés »,
   chapeau `intro-lead` compris ;
+- lexique des sigles présent et complet (généré automatiquement) ;
 - chapeau `intro-lead`, encadré « Points clés », FAQ visible de 3 à 5 questions, au moins
   un tableau ou une liste d'étapes, une rangée de 3 chiffres clés, au moins 2 sources ;
 - au moins 4 liens internes dont 2 vers d'autres articles, 1 lien sortant au plus dans
@@ -333,6 +334,18 @@ Ce que le contrôle exige (points bloquants) :
   `intro-lead` pose le décor ; le second paragraphe amène le problème et annonce la
   solution. La même règle vaut à l'intérieur de l'article : chaque partie H2 s'ouvre par
   une ou deux phrases qui situent ce dont elle traite avant d'entrer dans le détail.
+- **Sigles expliqués pour un lecteur novice (règle de Goradieme du 15/11/2026).** Écrire
+  pour un salarié qui découvre le sujet : tout sigle ou acronyme (RSSI, DPO, SaaS, B2B,
+  SEO, RGPD, NIS2, CRM…) est développé entre parenthèses à sa PREMIÈRE apparition dans le
+  texte courant, par exemple « un RSSI (responsable de la sécurité des systèmes
+  d'information) », puis employé seul. Reprendre le libellé de `_outils/sigles.json` ;
+  pour un sigle qui n'y figure pas, l'expliquer dans la phrase et l'ajouter au glossaire
+  (champ `developpe` = le texte à écrire, champ `cle` = le motif sans accents qui prouve
+  qu'il est expliqué). Ne jamais développer un sigle dans un titre, un tableau, une
+  citation, un exemple entre guillemets ou le mot-clé en gras : le faire dans la phrase
+  voisine. Un mot technique rare (« réversibilité », « sous-traitant ultérieur ») se
+  définit de la même façon, en quelques mots. `publier_article.py` ajoute en plus, avant
+  la FAQ, l'encadré « Sigles utilisés dans cet article » : ne pas l'écrire à la main.
 - Structure, dans cet ordre : `<p class="intro-lead">` (le décor), un paragraphe d'introduction (le problème et la promesse),
   un encadré `<div class="key-points"><p class="bloc-titre">Points clés</p><ul>…</ul></div>` (4 conclusions
   essentielles, chacune avec une amorce en gras), le sommaire `<div class="toc-box">`, 6 à 9 `<h2 id="chN">` numérotés, des `<h3>`,

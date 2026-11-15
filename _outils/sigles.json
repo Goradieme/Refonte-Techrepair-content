@@ -1,0 +1,419 @@
+{
+  "_lisezmoi": "Glossaire des sigles du blog. Règle de Goradieme (15/11/2026) : tout sigle est développé entre parenthèses à sa première apparition dans le texte, pour un lecteur novice. « developpe » est le texte à écrire ; « cle » est le motif (sans accents, minuscules) que controle_seo.py cherche dans l'article pour vérifier que le sigle est bien expliqué. « ignorer » liste les suites de majuscules qui ne sont pas des sigles à définir.",
+  "sigles": {
+    "IA": {
+      "developpe": "intelligence artificielle",
+      "cle": "intelligence artificielle"
+    },
+    "B2B": {
+      "developpe": "vente entre entreprises",
+      "cle": "entre entreprises|aux entreprises|business to business"
+    },
+    "B2C": {
+      "developpe": "vente aux particuliers",
+      "cle": "aux particuliers|business to consumer"
+    },
+    "SaaS": {
+      "developpe": "logiciel en ligne vendu par abonnement",
+      "cle": "logiciels? en ligne|software as a service"
+    },
+    "SEO": {
+      "developpe": "référencement naturel",
+      "cle": "referencement naturel"
+    },
+    "GEO": {
+      "developpe": "Generative Engine Optimization, l'optimisation pour les moteurs de réponse IA",
+      "cle": "generative engine optimi"
+    },
+    "AEO": {
+      "developpe": "Answer Engine Optimization, l'optimisation pour les moteurs de réponse",
+      "cle": "answer engine optimi"
+    },
+    "E-E-A-T": {
+      "developpe": "expérience, expertise, autorité et fiabilité",
+      "cle": "experience.{0,40}expertise.{0,40}autorite"
+    },
+    "YMYL": {
+      "developpe": "Your Money or Your Life, les sujets qui touchent à l'argent ou à la santé",
+      "cle": "your money or your life"
+    },
+    "SERP": {
+      "developpe": "page de résultats de recherche",
+      "cle": "pages? de resultats"
+    },
+    "CTR": {
+      "developpe": "taux de clics",
+      "cle": "taux de clics?"
+    },
+    "LLM": {
+      "developpe": "grand modèle de langage",
+      "cle": "modeles? de langage"
+    },
+    "CRM": {
+      "developpe": "logiciel de gestion de la relation client",
+      "cle": "relation client"
+    },
+    "CMS": {
+      "developpe": "système de gestion de contenu",
+      "cle": "gestion de contenus?"
+    },
+    "ERP": {
+      "developpe": "progiciel de gestion intégré",
+      "cle": "gestion integre"
+    },
+    "PIM": {
+      "developpe": "outil de gestion des informations produit",
+      "cle": "informations? produits?"
+    },
+    "ATS": {
+      "developpe": "logiciel de suivi des candidatures",
+      "cle": "suivi des candidat"
+    },
+    "SIRH": {
+      "developpe": "système d'information des ressources humaines",
+      "cle": "systemes? d information des ressources humaines"
+    },
+    "API": {
+      "developpe": "interface de programmation",
+      "cle": "interfaces? de programmation"
+    },
+    "GA4": {
+      "developpe": "Google Analytics 4",
+      "cle": "google analytics"
+    },
+    "ROI": {
+      "developpe": "retour sur investissement",
+      "cle": "retour sur investissement"
+    },
+    "KPI": {
+      "developpe": "indicateurs clés de performance",
+      "cle": "indicateurs? cles?"
+    },
+    "UX": {
+      "developpe": "expérience utilisateur",
+      "cle": "experience utilisateur"
+    },
+    "UTM": {
+      "developpe": "paramètres de suivi ajoutés à un lien",
+      "cle": "parametres? de suivi"
+    },
+    "RH": {
+      "developpe": "ressources humaines",
+      "cle": "ressources humaines"
+    },
+    "DRH": {
+      "developpe": "directeur ou directrice des ressources humaines",
+      "cle": "direct\\w+ (ou directrice )?des ressources humaines"
+    },
+    "RRH": {
+      "developpe": "responsable des ressources humaines",
+      "cle": "responsables? des ressources humaines"
+    },
+    "DSI": {
+      "developpe": "directeur des systèmes d'information",
+      "cle": "direct\\w+ des systemes d information"
+    },
+    "RSSI": {
+      "developpe": "responsable de la sécurité des systèmes d'information",
+      "cle": "responsables? de la securite des systemes d information"
+    },
+    "DAF": {
+      "developpe": "directeur administratif et financier",
+      "cle": "administrati\\w+ et financi"
+    },
+    "DPO": {
+      "developpe": "délégué à la protection des données",
+      "cle": "delegue\\w* a la protection des donnees"
+    },
+    "CTO": {
+      "developpe": "directeur technique",
+      "cle": "direct\\w+ technique"
+    },
+    "CMO": {
+      "developpe": "directeur marketing",
+      "cle": "direct\\w+ marketing"
+    },
+    "CSE": {
+      "developpe": "comité social et économique",
+      "cle": "comite social et economique"
+    },
+    "PME": {
+      "developpe": "petites et moyennes entreprises",
+      "cle": "petites? et moyennes? entreprises?"
+    },
+    "ETI": {
+      "developpe": "entreprises de taille intermédiaire",
+      "cle": "taille intermediaire"
+    },
+    "TPE": {
+      "developpe": "très petites entreprises",
+      "cle": "tres petites? entreprises?"
+    },
+    "UE": {
+      "developpe": "Union européenne",
+      "cle": "union europeenne"
+    },
+    "JO": {
+      "developpe": "Journal officiel",
+      "cle": "journal officiel"
+    },
+    "CGU": {
+      "developpe": "conditions générales d'utilisation",
+      "cle": "conditions generales d utilisation"
+    },
+    "TJM": {
+      "developpe": "taux journalier moyen",
+      "cle": "taux journalier"
+    },
+    "RGPD": {
+      "developpe": "règlement général sur la protection des données",
+      "cle": "reglement general sur la protection des donnees"
+    },
+    "NIS2": {
+      "developpe": "directive européenne sur la cybersécurité",
+      "cle": "directive"
+    },
+    "DORA": {
+      "developpe": "règlement européen sur la résilience numérique du secteur financier",
+      "cle": "resilience (operationnelle )?numerique"
+    },
+    "CRA": {
+      "developpe": "Cyber Resilience Act, le règlement européen sur la cybersécurité des produits",
+      "cle": "cyber resilience act"
+    },
+    "DSP2": {
+      "developpe": "deuxième directive sur les services de paiement",
+      "cle": "services de paiement"
+    },
+    "DSP3": {
+      "developpe": "troisième directive sur les services de paiement",
+      "cle": "services de paiement"
+    },
+    "PSR": {
+      "developpe": "règlement sur les services de paiement",
+      "cle": "reglement sur les services de paiement"
+    },
+    "DDADUE": {
+      "developpe": "loi d'adaptation au droit de l'Union européenne",
+      "cle": "adaptation au droit"
+    },
+    "LCB": {
+      "developpe": "lutte contre le blanchiment",
+      "cle": "blanchiment"
+    },
+    "ACPR": {
+      "developpe": "Autorité de contrôle prudentiel et de résolution",
+      "cle": "autorite de controle prudentiel"
+    },
+    "AMF": {
+      "developpe": "Autorité des marchés financiers",
+      "cle": "autorite des marches financiers"
+    },
+    "CNIL": {
+      "developpe": "Commission nationale de l'informatique et des libertés",
+      "cle": "commission nationale de l informatique"
+    },
+    "ANSSI": {
+      "developpe": "Agence nationale de la sécurité des systèmes d'information",
+      "cle": "agence nationale de la securite"
+    },
+    "ENISA": {
+      "developpe": "Agence de l'Union européenne pour la cybersécurité",
+      "cle": "agence de l union europeenne pour la cybersecurite"
+    },
+    "DGCCRF": {
+      "developpe": "Direction générale de la concurrence, de la consommation et de la répression des fraudes",
+      "cle": "repression des fraudes"
+    },
+    "OSMP": {
+      "developpe": "Observatoire de la sécurité des moyens de paiement",
+      "cle": "observatoire de la securite des moyens de paiement"
+    },
+    "SOC": {
+      "developpe": "centre des opérations de sécurité",
+      "cle": "centres? des operations de securite"
+    },
+    "SIEM": {
+      "developpe": "outil de gestion des événements de sécurité",
+      "cle": "evenements de securite"
+    },
+    "EDR": {
+      "developpe": "outil de détection et de réponse sur les postes",
+      "cle": "detection et (de )?reponse"
+    },
+    "MFA": {
+      "developpe": "authentification multifacteur",
+      "cle": "authentification multi"
+    },
+    "NHI": {
+      "developpe": "identités non humaines",
+      "cle": "identites non.humaines"
+    },
+    "RPA": {
+      "developpe": "automatisation robotisée des processus",
+      "cle": "automatisation robotisee"
+    },
+    "OCR": {
+      "developpe": "reconnaissance optique de caractères",
+      "cle": "reconnaissance (optique )?de caracteres"
+    },
+    "PPF": {
+      "developpe": "portail public de facturation",
+      "cle": "portail public de facturation"
+    },
+    "PDP": {
+      "developpe": "plateforme de dématérialisation partenaire",
+      "cle": "plateformes? de dematerialisation"
+    },
+    "TIC": {
+      "developpe": "technologies de l'information et de la communication",
+      "cle": "technologies de l information"
+    },
+    "RAG": {
+      "developpe": "génération de réponses appuyée sur une recherche documentaire",
+      "cle": "retrieval|generation augmentee|recherche documentaire"
+    },
+    "MCP": {
+      "developpe": "Model Context Protocol, un protocole qui relie les agents IA à des outils",
+      "cle": "model context protocol"
+    },
+    "MSSP": {
+      "developpe": "prestataire de services de sécurité managés",
+      "cle": "services de securite manages"
+    },
+    "FGDR": {
+      "developpe": "Fonds de garantie des dépôts et de résolution",
+      "cle": "fonds de garantie des depots"
+    },
+    "SGE": {
+      "developpe": "Search Generative Experience, l'ancêtre des AI Overviews",
+      "cle": "search generative experience"
+    },
+    "AIO": {
+      "developpe": "AI Overviews, les réponses générées par l'IA dans Google",
+      "cle": "ai overviews"
+    },
+    "LLMO": {
+      "developpe": "optimisation pour les grands modèles de langage",
+      "cle": "large language model optimi|optimisation pour les (grands )?modeles"
+    },
+    "CMI": {
+      "developpe": "Content Marketing Institute",
+      "cle": "content marketing institute"
+    },
+    "REGAFI": {
+      "developpe": "registre des agents financiers tenu par l'ACPR",
+      "cle": "registre des agents financiers|registre public"
+    }
+  },
+  "ignorer": [
+    "AI",
+    "FAQ",
+    "URL",
+    "PDF",
+    "SMS",
+    "TVA",
+    "CV",
+    "HTML",
+    "HTTPS",
+    "HTTP",
+    "IP",
+    "ISO",
+    "IEC",
+    "IT",
+    "EUR",
+    "EU",
+    "FR",
+    "HT",
+    "TTC",
+    "IBAN",
+    "RIB",
+    "RSS",
+    "JSON",
+    "XML",
+    "DNS",
+    "CDN",
+    "NAS",
+    "HP",
+    "AWS",
+    "KPMG",
+    "NIST",
+    "MITRE",
+    "IETF",
+    "CNCF",
+    "ONU",
+    "WIPO",
+    "CFDT",
+    "G2",
+    "H1",
+    "H2",
+    "H3",
+    "NIS",
+    "RTT",
+    "SIREN",
+    "GTIN",
+    "CE",
+    "CA",
+    "DM",
+    "CD",
+    "CI",
+    "CLI",
+    "ET",
+    "XS",
+    "MAX",
+    "ADD",
+    "REV",
+    "HR",
+    "GD",
+    "APAC",
+    "ECON",
+    "ACP",
+    "UCP",
+    "MPN",
+    "UPC",
+    "CERRE",
+    "BASSE",
+    "HAUTE",
+    "MOYENNE",
+    "ABANDON",
+    "LCP",
+    "INP",
+    "CLS",
+    "AIMS",
+    "NHIMG",
+    "RSA",
+    "SCIM",
+    "SPIFFE",
+    "SPIRE",
+    "URI",
+    "WIMSE",
+    "WIT",
+    "CVE",
+    "CVSS",
+    "AIX",
+    "ATT",
+    "CK",
+    "NOLA",
+    "IIT",
+    "SFP",
+    "SNMP",
+    "UBL",
+    "CII",
+    "AEF",
+    "REC",
+    "PA",
+    "OAI",
+    "FT",
+    "PSD3",
+    "DDADDUE",
+    "D2",
+    "TJ",
+    "RG",
+    "IEOM",
+    "FA",
+    "LD",
+    "HG",
+    "CERT",
+    "SRI"
+  ]
+}
