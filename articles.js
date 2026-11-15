@@ -392,7 +392,7 @@ const ARTICLES = [
     categorie:"rh",
     lecture:  "12 min",
     lien:     "articles/article-sirh-rgpd-contenus-rassurer-drh.html",
-    image:    "articles/sirh-rgpd-contenus-rassurer-drh-cover.jpg",
+    image:    "articles/sirh-rgpd-contenus-rassurer-drh-cover-v2-carte.jpg",
     slug:     "sirh-rgpd-contenus-rassurer-drh",
     motCle:   "SIRH RGPD",
     metaDesc: "SIRH et RGPD : les sept questions du DPO, la page « Données et RGPD » en six étapes, un plan type à copier et les articles qui captent les recherches des DRH."
