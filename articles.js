@@ -379,7 +379,7 @@ const ARTICLES = [
     categorie:"ecommerce",
     lecture:  "12 min",
     lien:     "articles/article-texte-page-categorie-ecommerce.html",
-    image:    "articles/texte-page-categorie-ecommerce-cover.jpg",
+    image:    "articles/texte-page-categorie-ecommerce-cover-v2-carte.jpg",
     slug:     "texte-page-categorie-ecommerce",
     motCle:   "page catégorie e-commerce",
     metaDesc: "Page catégorie e-commerce : quel texte écrire, où le placer et quelle longueur viser. Contrôle en 30 minutes, méthode en six étapes, gabarit et exemple."
