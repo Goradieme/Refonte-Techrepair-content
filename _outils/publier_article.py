@@ -73,8 +73,13 @@ def main(chemin_meta: str) -> None:
     # ce ne sont pas des titres de section, on les sort de la hiérarchie Hn.
     corps = re.sub(r'(<div class="(?:key-points|toc-box)">\s*)<h3>(.*?)</h3>', r'\1<p class="bloc-titre">\2</p>', corps)
     mots = compter_mots(corps)
-    if not (MIN_MOTS <= mots <= MAX_MOTS):
-        sys.exit(f"Longueur hors limites : {mots} mots (attendu {MIN_MOTS}-{MAX_MOTS}).")
+    # Un article déjà paru (date passée) peut dépasser un peu la limite : il a reçu depuis
+    # des liens retour, une FAQ ou une introduction étoffée. La limite stricte vaut pour
+    # l'article du jour.
+    deja_paru = date < datetime.now().strftime("%Y-%m-%d")
+    maxi = MAX_MOTS + 300 if deja_paru else MAX_MOTS
+    if not (MIN_MOTS <= mots <= maxi):
+        sys.exit(f"Longueur hors limites : {mots} mots (attendu {MIN_MOTS}-{maxi}).")
     if len(m["metaDesc"]) > 160:
         sys.exit(f"Meta description trop longue ({len(m['metaDesc'])} > 160 caractères).")
     if len(m["titreSeo"]) > 60:
