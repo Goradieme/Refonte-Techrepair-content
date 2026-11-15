@@ -352,9 +352,9 @@ a.src:hover{color:var(--blue-dark);text-decoration-thickness:2px}
 <div class="layout">
   <main class="content">
 
-<p class="intro-lead">La <strong>veille réglementaire cybersécurité</strong> consiste à suivre les textes qui s'imposent à un éditeur de logiciels et à en tirer les conséquences. Elle ne sert pas qu'au juriste ou au RSSI&nbsp;: elle alimente le site, les argumentaires et le calendrier éditorial. Dernier exemple en date&nbsp;: depuis le 11&nbsp;septembre 2026, tout fabricant d'un logiciel vendu dans l'Union européenne doit signaler en 24&nbsp;heures toute vulnérabilité activement exploitée dans son produit.</p>
+<p class="intro-lead">La <strong>veille réglementaire cybersécurité</strong> consiste à suivre les textes qui s'imposent à un éditeur de logiciels et à en tirer les conséquences. Elle ne sert pas qu'au juriste ou au RSSI (responsable de la sécurité des systèmes d'information)&nbsp;: elle alimente le site, les argumentaires et le calendrier éditorial. Dernier exemple en date&nbsp;: depuis le 11&nbsp;septembre 2026, tout fabricant d'un logiciel vendu dans l'Union européenne doit signaler en 24&nbsp;heures toute vulnérabilité activement exploitée dans son produit.</p>
 
-    <p>Combien de pages de votre site, de fiches commerciales et de réponses types parlaient encore du Cyber Resilience Act au futur le 12&nbsp;septembre au matin&nbsp;? Tenue à la main, cette veille mange plusieurs heures par semaine et laisse filer des textes. La solution décrite ici combine une collecte automatique sur une liste fermée de sources officielles, un agent IA qui qualifie chaque nouveauté, une validation humaine obligatoire et une fiche d'impact qui dit, pour chaque texte, quels contenus modifier.</p>
+    <p>Combien de pages de votre site, de fiches commerciales et de réponses types parlaient encore du Cyber Resilience Act au futur le 12&nbsp;septembre au matin&nbsp;? Tenue à la main, cette veille mange plusieurs heures par semaine et laisse filer des textes. La solution décrite ici combine une collecte automatique sur une liste fermée de sources officielles, un agent IA (intelligence artificielle) qui qualifie chaque nouveauté, une validation humaine obligatoire et une fiche d'impact qui dit, pour chaque texte, quels contenus modifier.</p>
 
     <div class="key-points">
       <p class="bloc-titre">Points clés</p>
@@ -433,7 +433,7 @@ a.src:hover{color:var(--blue-dark);text-decoration-thickness:2px}
       </tbody>
     </table>
 
-    <p>Ajoutez les autorités propres à vos clients&nbsp;: un éditeur qui vend aux banques suit aussi les textes liés à DORA. Les <a href="/articles/article-nis2-argument-commercial-editeurs.html">questionnaires fournisseurs de vos clients</a> donnent d'ailleurs la meilleure liste de départ&nbsp;: chaque référence réglementaire qu'ils citent mérite une source surveillée.</p>
+    <p>Ajoutez les autorités propres à vos clients&nbsp;: un éditeur qui vend aux banques suit aussi les textes liés à DORA (règlement européen sur la résilience numérique du secteur financier). Les <a href="/articles/article-nis2-argument-commercial-editeurs.html">questionnaires fournisseurs de vos clients</a> donnent d'ailleurs la meilleure liste de départ&nbsp;: chaque référence réglementaire qu'ils citent mérite une source surveillée.</p>
 
     <div class="callout">
       <p><strong>Le piège du vocabulaire</strong></p>
@@ -442,7 +442,7 @@ a.src:hover{color:var(--blue-dark);text-decoration-thickness:2px}
 
     <h2 id="ch4">4. Comment automatiser une veille réglementaire en quatre semaines</h2>
 
-    <p>L'automatisation tient en quatre couches&nbsp;: collecter, filtrer, qualifier, valider. Comptez quatre semaines pour une personne à mi-temps, avec un outil d'automatisation (n8n, Make ou équivalent), un lecteur de flux et un modèle de langage accessible par API.</p>
+    <p>L'automatisation tient en quatre couches&nbsp;: collecter, filtrer, qualifier, valider. Comptez quatre semaines pour une personne à mi-temps, avec un outil d'automatisation (n8n, Make ou équivalent), un lecteur de flux et un modèle de langage accessible par API (interface de programmation).</p>
 
     <ol>
       <li><strong>Semaine 1, l'inventaire (product marketing et juriste, une journée).</strong> Arrêtez la liste des sources du tableau précédent, les mots-clés officiels et les quatre ou cinq textes suivis en priorité. Désignez un responsable de la veille et un suppléant.</li>
@@ -512,10 +512,28 @@ a.src:hover{color:var(--blue-dark);text-decoration-thickness:2px}
 
     <p>Construire en interne se justifie si une personne maîtrise l'outil d'automatisation, connaît les textes et peut consacrer quatre semaines au rodage, puis deux heures par semaine à la validation. Le plus long n'est pas la technique&nbsp;: c'est l'écriture de la grille d'impact et des consignes qui empêchent l'agent d'extrapoler.</p>
 
-    <p>Faire construire l'agent devient pertinent quand personne n'a ce temps, quand la veille doit alimenter plusieurs équipes (marketing, ventes, produit) ou quand il faut le relier au CRM et à l'outil de gestion de contenu. Dans tous les cas, la validation reste interne&nbsp;: c'est votre entreprise qui s'engage sur ce que disent ses pages.</p>
+    <p>Faire construire l'agent devient pertinent quand personne n'a ce temps, quand la veille doit alimenter plusieurs équipes (marketing, ventes, produit) ou quand il faut le relier au CRM (logiciel de gestion de la relation client) et à l'outil de gestion de contenu. Dans tous les cas, la validation reste interne&nbsp;: c'est votre entreprise qui s'engage sur ce que disent ses pages.</p>
 
     <p>La matière accumulée a aussi une seconde vie. Douze mois de fiches d'impact forment la trame d'un <a href="/service-livres-blancs">livre blanc réglementaire annuel</a>&nbsp;: un document de référence qui attire des liens, nourrit des articles satellites, recueille l'adresse des RSSI et des acheteurs intéressés, et fournit aux assistants IA une référence à citer, un enjeu détaillé dans le <a href="/livres-blancs/visibilite-ia-b2b-guide.html">guide de la visibilité dans les IA</a>.</p>
 
+    <!-- lexique:debut -->
+    <div class="lexique" style="margin:40px 0 8px;padding:22px 26px 16px;background:#F4F7FC;border:1px solid #DCE5F3;border-radius:14px;font-size:15px;line-height:1.55;color:#33415C">
+      <p style="margin:0 0 12px;font-size:12px;font-weight:800;letter-spacing:1.4px;text-transform:uppercase;color:#1A56DB">Sigles utilisés dans cet article</p>
+      <dl style="margin:0;overflow:hidden">
+      <dt style="float:left;clear:left;min-width:86px;font-weight:800;color:#0B1633">ANSSI</dt><dd style="margin:0 0 7px 96px">Agence nationale de la sécurité des systèmes d&#x27;information</dd>
+      <dt style="float:left;clear:left;min-width:86px;font-weight:800;color:#0B1633">API</dt><dd style="margin:0 0 7px 96px">interface de programmation</dd>
+      <dt style="float:left;clear:left;min-width:86px;font-weight:800;color:#0B1633">CNIL</dt><dd style="margin:0 0 7px 96px">Commission nationale de l&#x27;informatique et des libertés</dd>
+      <dt style="float:left;clear:left;min-width:86px;font-weight:800;color:#0B1633">CRA</dt><dd style="margin:0 0 7px 96px">Cyber Resilience Act, le règlement européen sur la cybersécurité des produits</dd>
+      <dt style="float:left;clear:left;min-width:86px;font-weight:800;color:#0B1633">CRM</dt><dd style="margin:0 0 7px 96px">logiciel de gestion de la relation client</dd>
+      <dt style="float:left;clear:left;min-width:86px;font-weight:800;color:#0B1633">DORA</dt><dd style="margin:0 0 7px 96px">règlement européen sur la résilience numérique du secteur financier</dd>
+      <dt style="float:left;clear:left;min-width:86px;font-weight:800;color:#0B1633">ENISA</dt><dd style="margin:0 0 7px 96px">Agence de l&#x27;Union européenne pour la cybersécurité</dd>
+      <dt style="float:left;clear:left;min-width:86px;font-weight:800;color:#0B1633">IA</dt><dd style="margin:0 0 7px 96px">intelligence artificielle</dd>
+      <dt style="float:left;clear:left;min-width:86px;font-weight:800;color:#0B1633">NIS2</dt><dd style="margin:0 0 7px 96px">directive européenne sur la cybersécurité</dd>
+      <dt style="float:left;clear:left;min-width:86px;font-weight:800;color:#0B1633">RSSI</dt><dd style="margin:0 0 7px 96px">responsable de la sécurité des systèmes d&#x27;information</dd>
+      <dt style="float:left;clear:left;min-width:86px;font-weight:800;color:#0B1633">UE</dt><dd style="margin:0 0 7px 96px">Union européenne</dd>
+      </dl>
+    </div>
+    <!-- lexique:fin -->
     <h2 id="faq">Questions fréquentes</h2>
 
     <div class="faq-item">

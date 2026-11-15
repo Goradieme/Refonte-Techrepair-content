@@ -300,9 +300,9 @@ footer h4{font-size:10.5px;font-weight:700;color:#94a3b8;text-transform:uppercas
 
     <p class="intro-lead">Les identités non-humaines (comptes de service, clés API, agents IA) dépassent déjà largement les identités humaines dans la plupart des entreprises. Le problème n'est plus leur nombre, mais le fait qu'elles agissent, à la vitesse d'une machine, avec des privilèges que personne ne surveille vraiment.</p>
 
-    <p>Le commerce agentique et la sécurité des agents IA sont les deux faces d'un même changement : des systèmes autonomes qui agissent, décident et transigent sans supervision humaine directe. Ce guide applique à la cybersécurité la même exigence que notre guide sur le commerce agentique : présenter les faits vérifiables, signaler les désaccords entre sources plutôt que de les lisser, et distinguer clairement ce qui est déjà arrivé de ce qui reste projection. Les mêmes enjeux se posent dans chaque fonction qui déploie ses propres agents, à commencer par les ressources humaines : notre <a href="/articles/article-agents-ia-rh.html" style="color:#1A56DB;font-weight:600;text-decoration:underline;text-underline-offset:2px">guide des agents IA en RH</a> en détaille les usages et le cadre légal.</p>
+    <p>Le commerce agentique et la sécurité des agents IA (intelligence artificielle) sont les deux faces d'un même changement : des systèmes autonomes qui agissent, décident et transigent sans supervision humaine directe. Ce guide applique à la cybersécurité la même exigence que notre guide sur le commerce agentique : présenter les faits vérifiables, signaler les désaccords entre sources plutôt que de les lisser, et distinguer clairement ce qui est déjà arrivé de ce qui reste projection. Les mêmes enjeux se posent dans chaque fonction qui déploie ses propres agents, à commencer par les ressources humaines : notre <a href="/articles/article-agents-ia-rh.html" style="color:#1A56DB;font-weight:600;text-decoration:underline;text-underline-offset:2px">guide des agents IA en RH</a> en détaille les usages et le cadre légal.</p>
 
-    <p>Ce guide s'adresse aux RSSI, équipes sécurité et plateforme/DevOps qui doivent sécuriser un parc d'identités d'agents IA en pleine expansion, souvent sans cadre de gouvernance formel. Vous y trouverez :</p>
+    <p>Ce guide s'adresse aux RSSI (responsable de la sécurité des systèmes d'information), équipes sécurité et plateforme/DevOps qui doivent sécuriser un parc d'identités d'agents IA en pleine expansion, souvent sans cadre de gouvernance formel. Vous y trouverez :</p>
     <ul>
       <li>Pourquoi les identités non-humaines sont devenues le nouveau périmètre d'attaque</li>
       <li>Comment un agent IA compromis attaque réellement (anatomie technique)</li>
@@ -332,7 +332,7 @@ footer h4{font-size:10.5px;font-weight:700;color:#94a3b8;text-transform:uppercas
     <h2>Chapitre 1. Comprendre la crise des identités non-humaines</h2>
 
     <h3>1.1 Qu'est-ce qu'une identité non-humaine, et pourquoi les agents IA changent la donne</h3>
-    <p>Une identité non-humaine (NHI, Non-Human Identity) désigne tout compte, clé ou jeton utilisé par un logiciel plutôt que par une personne : comptes de service, clés API, jetons OAuth, certificats de charge de travail, et désormais agents IA autonomes. Ces identités existaient déjà avant l'IA générative, mais restaient largement gérées de façon artisanale, souvent avec des identifiants créés une fois et jamais révoqués.</p>
+    <p>Une identité non-humaine (NHI, Non-Human Identity) désigne tout compte, clé ou jeton utilisé par un logiciel plutôt que par une personne : comptes de service, clés API (interface de programmation), jetons OAuth, certificats de charge de travail, et désormais agents IA autonomes. Ces identités existaient déjà avant l'IA générative, mais restaient largement gérées de façon artisanale, souvent avec des identifiants créés une fois et jamais révoqués.</p>
     <p>Les agents IA changent la donne sur un point précis : ils ne se contentent pas d'exécuter une tâche fixe avec un identifiant statique, ils prennent des décisions d'action en temps réel, enchaînent des appels d'API, et parfois provisionnent eux-mêmes de nouvelles ressources ou de nouveaux accès. Un système conçu pour gérer des comptes de service prévisibles se retrouve à devoir gouverner des acteurs dont le comportement n'est plus entièrement déterministe.</p>
 
     <h3>1.2 Le ratio NHI/humains : une explosion mesurée très différemment selon les sources</h3>
@@ -347,7 +347,7 @@ footer h4{font-size:10.5px;font-weight:700;color:#94a3b8;text-transform:uppercas
     <p>Un décalage notable ressort aussi des mêmes données : la sécurité des agents IA est désormais un sujet abordé au niveau du conseil d'administration, mais 55 % des professionnels interrogés jugent que leur direction ne prend pas la menace suffisamment au sérieux. Le sujet est donc à la fois surexposé dans les discours et sous-traité dans les budgets réels, selon ces mêmes données.</p>
 
     <h3>1.5 Pourquoi l'identité devient le nouveau périmètre</h3>
-    <p>Le constat qui traverse la plupart des rapports 2026 tient en une phrase, désormais un cliché du secteur mais empiriquement fondé : les attaquants ne forcent plus une porte, ils se connectent avec des identifiants valides. Le pare-feu réseau classique perd en pertinence quand l'essentiel du mouvement latéral d'un attaquant se fait via des jetons OAuth légitimes entre applications SaaS plutôt que par intrusion réseau directe.</p>
+    <p>Le constat qui traverse la plupart des rapports 2026 tient en une phrase, désormais un cliché du secteur mais empiriquement fondé : les attaquants ne forcent plus une porte, ils se connectent avec des identifiants valides. Le pare-feu réseau classique perd en pertinence quand l'essentiel du mouvement latéral d'un attaquant se fait via des jetons OAuth légitimes entre applications SaaS (logiciel en ligne vendu par abonnement) plutôt que par intrusion réseau directe.</p>
 
     <h3>1.6 Ce qui a changé depuis les identités machine classiques</h3>
     <p>La gestion des comptes de service existait déjà avant l'IA générative, mais fonctionnait sur un modèle de cycle de vie humain (création, quelques modifications, suppression à l'usure) totalement inadapté aux agents IA, qui naissent et meurent parfois en quelques secondes, peuvent représenter plusieurs équipes ou utilisateurs à la fois, et sont provisionnés par les équipes produit ou data plutôt que par l'IT centrale. Un système d'identité pensé pour le cycle "arrivée, mutation, départ" d'un salarié ne transpose tout simplement pas à ce rythme.</p>
@@ -561,7 +561,7 @@ footer h4{font-size:10.5px;font-weight:700;color:#94a3b8;text-transform:uppercas
       <p>Non. Le brouillon reste un document de travail, mais les principes qu'il formalise (abandon des clés statiques, identifiants courts et rotés automatiquement) sont déjà des bonnes pratiques reconnues indépendamment de son adoption formelle. Attendre la normalisation complète pour agir reviendrait à laisser le risque documenté au chapitre 8 s'accumuler sans raison.</p>
     </div>
     <div class="faq-item">
-      <p class="question">Une PME est-elle vraiment concernée par ce sujet ?</p>
+      <p class="question">Une PME (petites et moyennes entreprises) est-elle vraiment concernée par ce sujet ?</p>
       <p>Oui. Le cas tj-actions/changed-files a touché plus de 23 000 organisations de toutes tailles via une seule dépendance logicielle partagée. La taille de l'entreprise réduit le volume d'identités à gérer, pas l'exposition au risque lui-même.</p>
     </div>
     <div class="faq-item">
@@ -582,6 +582,24 @@ footer h4{font-size:10.5px;font-weight:700;color:#94a3b8;text-transform:uppercas
       <a href="/devis" class="final-cta">Demander un audit initial →</a>
     </div>
 
+    <!-- lexique:debut -->
+    <div class="lexique" style="margin:40px 0 8px;padding:22px 26px 16px;background:#F4F7FC;border:1px solid #DCE5F3;border-radius:14px;font-size:15px;line-height:1.55;color:#33415C">
+      <p style="margin:0 0 12px;font-size:12px;font-weight:800;letter-spacing:1.4px;text-transform:uppercase;color:#1A56DB">Sigles utilisés dans cet article</p>
+      <dl style="margin:0;overflow:hidden">
+      <dt style="float:left;clear:left;min-width:86px;font-weight:800;color:#0B1633">API</dt><dd style="margin:0 0 7px 96px">interface de programmation</dd>
+      <dt style="float:left;clear:left;min-width:86px;font-weight:800;color:#0B1633">DSI</dt><dd style="margin:0 0 7px 96px">directeur des systèmes d&#x27;information</dd>
+      <dt style="float:left;clear:left;min-width:86px;font-weight:800;color:#0B1633">IA</dt><dd style="margin:0 0 7px 96px">intelligence artificielle</dd>
+      <dt style="float:left;clear:left;min-width:86px;font-weight:800;color:#0B1633">MCP</dt><dd style="margin:0 0 7px 96px">Model Context Protocol, un protocole qui relie les agents IA à des outils</dd>
+      <dt style="float:left;clear:left;min-width:86px;font-weight:800;color:#0B1633">MSSP</dt><dd style="margin:0 0 7px 96px">prestataire de services de sécurité managés</dd>
+      <dt style="float:left;clear:left;min-width:86px;font-weight:800;color:#0B1633">NHI</dt><dd style="margin:0 0 7px 96px">identités non humaines</dd>
+      <dt style="float:left;clear:left;min-width:86px;font-weight:800;color:#0B1633">NIS2</dt><dd style="margin:0 0 7px 96px">directive européenne sur la cybersécurité</dd>
+      <dt style="float:left;clear:left;min-width:86px;font-weight:800;color:#0B1633">PME</dt><dd style="margin:0 0 7px 96px">petites et moyennes entreprises</dd>
+      <dt style="float:left;clear:left;min-width:86px;font-weight:800;color:#0B1633">RH</dt><dd style="margin:0 0 7px 96px">ressources humaines</dd>
+      <dt style="float:left;clear:left;min-width:86px;font-weight:800;color:#0B1633">RSSI</dt><dd style="margin:0 0 7px 96px">responsable de la sécurité des systèmes d&#x27;information</dd>
+      <dt style="float:left;clear:left;min-width:86px;font-weight:800;color:#0B1633">SaaS</dt><dd style="margin:0 0 7px 96px">logiciel en ligne vendu par abonnement</dd>
+      </dl>
+    </div>
+    <!-- lexique:fin -->
   <!-- maillage:debut -->
 <section class="maillage" aria-label="Articles liés">
 <style>

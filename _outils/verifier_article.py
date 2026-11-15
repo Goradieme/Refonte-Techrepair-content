@@ -19,6 +19,7 @@ Affiche :
 Code de sortie 1 s'il reste un problème typographique ou un lien interne cassé.
 """
 import html
+import json
 import re
 import sys
 from pathlib import Path
@@ -114,9 +115,23 @@ def main(chemin):
         erreurs += 0 if ok else 1
 
     # 5. Formulations déjà employées dans d'autres articles
+    # Les libellés du glossaire des sigles (« responsable de la sécurité des systèmes
+    # d'information »…) reviennent forcément d'un article à l'autre : on les neutralise.
+    try:
+        _gloss = json.loads((RACINE / "_outils" / "sigles.json").read_text(encoding="utf-8"))["sigles"]
+        _libelles = sorted({v["developpe"].lower() for v in _gloss.values()}, key=len, reverse=True)
+    except (OSError, ValueError, KeyError):
+        _libelles = []
+
     def shingles(txt, n=6):
-        m = re.findall(r"[a-zà-ÿœ0-9']+", txt.lower())
-        return {" ".join(m[i:i + n]) for i in range(len(m) - n + 1)}
+        txt = txt.lower().replace("\u00a0", " ")
+        for lib in _libelles:
+            txt = txt.replace(lib, " ¤ ")
+        sortie = set()
+        for bloc in txt.split("¤"):
+            m = re.findall(r"[a-zà-ÿœ0-9']+", bloc)
+            sortie |= {" ".join(m[i:i + n]) for i in range(len(m) - n + 1)}
+        return sortie
     slug = Path(chemin).stem
     deja = {}
     for autre in sorted((RACINE / "articles").glob("article-*.html")):

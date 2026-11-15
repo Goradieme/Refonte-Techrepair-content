@@ -172,6 +172,10 @@ def main(chemin_meta: str) -> None:
         page = page.replace("{{" + k + "}}", v)
     if "{{" in page:
         sys.exit("Variable de gabarit non remplacée : " + re.search(r"\{\{\w+\}\}", page).group(0))
+    # Lexique des sigles (règle du 15/11/2026) : encadré généré avant la FAQ.
+    sys.path.insert(0, str(RACINE / "_outils"))
+    import sigles
+    page = sigles.inserer_lexique(page)
     (RACINE / "articles" / fichier).write_text(page, encoding="utf-8")
 
     # --- articles.js -----------------------------------------------------------

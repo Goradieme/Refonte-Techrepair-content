@@ -221,6 +221,26 @@ def controler(slug: str):
     if not any(t.rstrip().endswith("?") for t in h2 + [brut(x) for x in re.findall(r"<h3[^>]*>(.*?)</h3>", sans_sources, re.S)]):
         A("aucun titre formulé comme une question d'internaute")
 
+    # --- Sigles : expliqués pour un lecteur novice ------------------------------
+    sys.path.insert(0, str(RACINE / "_outils"))
+    import sigles as sg
+    za, zb = sg.zone_redactionnelle(s)
+    utilises = sg.sigles_utilises(s[za:zb])
+    lex = re.search(re.escape(sg.DEBUT) + r"(.*?)" + re.escape(sg.FIN), s, re.S)
+    if utilises and not lex:
+        B("lexique « Sigles utilisés dans cet article » absent (relancer publier_article.py ou _outils/sigles.py)")
+    elif lex:
+        manquants = [x for x in utilises if f">{html.escape(x)}</dt>" not in lex.group(1)]
+        if manquants:
+            B("lexique des sigles incomplet : " + ", ".join(manquants) + " (relancer _outils/sigles.py)")
+    texte_sigles = norm(sg.texte_brut(s[za:zb]))
+    non_devel = [x for x in utilises if not re.search(sg.GLOSSAIRE[x]["cle"], texte_sigles)]
+    if non_devel:
+        A("sigle(s) à développer entre parenthèses à la première apparition : " + ", ".join(non_devel))
+    inconnus = sg.sigles_inconnus(s[za:zb])
+    if inconnus:
+        A("sigle(s) hors glossaire, à expliquer dans le texte et à ajouter à _outils/sigles.json : " + ", ".join(inconnus))
+
     # --- Images ----------------------------------------------------------------
     for img in re.findall(r"<img\b[^>]*>", principal):
         if not re.search(r'alt="[^"]+', img):
