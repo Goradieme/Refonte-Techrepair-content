@@ -1,0 +1,35 @@
+{
+  "slug": "sirh-rgpd-contenus-rassurer-drh",
+  "categorie": "rh",
+  "date": "2026-11-15",
+  "titre": "SIRH et RGPD : les contenus qui rassurent un DRH sur les données de ses salariés",
+  "titreSeo": "SIRH et RGPD : les contenus qui rassurent un DRH",
+  "h1": "SIRH et RGPD : les contenus qui rassurent un DRH sur les données de ses salariés",
+  "filAriane": "SIRH et RGPD",
+  "motCle": "SIRH RGPD",
+  "metaDesc": "SIRH et RGPD : les sept questions du DPO, la page « Données et RGPD » en six étapes, un plan type à copier et les articles qui captent les recherches des DRH.",
+  "extrait": "Le badge « Conforme RGPD » ne rassure plus le DPO de vos prospects. Test des sept questions, page de confiance en six étapes, plan type avec une réponse réécrite, et les requêtes RGPD des DRH à transformer en articles.",
+  "image": "articles/sirh-rgpd-contenus-rassurer-drh-cover.jpg",
+  "imageAlt": "SIRH et RGPD : les contenus qui rassurent un DRH sur les données de ses salariés",
+  "sommaireCourt": {
+    "ch1": "1. Le prix du flou",
+    "ch2": "2. Qui vérifie quoi",
+    "ch3": "3. Sept questions",
+    "ch4": "4. La page en six étapes",
+    "ch5": "5. Plan type",
+    "ch6": "6. Requêtes des DRH",
+    "ch7": "7. Formulations à bannir",
+    "ch8": "8. Indicateurs",
+    "ch9": "9. Qui rédige",
+    "faq": "FAQ",
+    "sources": "Sources"
+  },
+  "ctaLateral": {
+    "titre": "Le guide B2B de la visibilité IA",
+    "texte": "Livre blanc gratuit : savoir ce que ChatGPT, Perplexity et Gemini répondent quand un DRH cherche un SIRH sûr pour les données de ses salariés, et devenir une source qu'ils citent.",
+    "lien": "/livres-blancs/visibilite-ia-b2b-guide.html",
+    "bouton": "Télécharger le livre blanc"
+  },
+  "service": "articles-seo",
+  "remplacer": true
+}

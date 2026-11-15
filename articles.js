@@ -384,4 +384,17 @@ const ARTICLES = [
     motCle:   "page catégorie e-commerce",
     metaDesc: "Page catégorie e-commerce : quel texte écrire, où le placer et quelle longueur viser. Contrôle en 30 minutes, méthode en six étapes, gabarit et exemple."
   },
+  {
+    titre:    "SIRH et RGPD : les contenus qui rassurent un DRH sur les données de ses salariés",
+    extrait:  "Le badge « Conforme RGPD » ne rassure plus le DPO de vos prospects. Test des sept questions, page de confiance en six étapes, plan type avec une réponse réécrite, et les requêtes RGPD des DRH à transformer en articles.",
+    auteur:   "Gora Dieme",
+    date:     "2026-11-15",
+    categorie:"rh",
+    lecture:  "12 min",
+    lien:     "articles/article-sirh-rgpd-contenus-rassurer-drh.html",
+    image:    "articles/sirh-rgpd-contenus-rassurer-drh-cover.jpg",
+    slug:     "sirh-rgpd-contenus-rassurer-drh",
+    motCle:   "SIRH RGPD",
+    metaDesc: "SIRH et RGPD : les sept questions du DPO, la page « Données et RGPD » en six étapes, un plan type à copier et les articles qui captent les recherches des DRH."
+  },
 ];
