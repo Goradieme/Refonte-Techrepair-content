@@ -1,0 +1,34 @@
+{
+  "slug": "strategie-seo-saas",
+  "categorie": "saas",
+  "date": "2026-11-16",
+  "titre": "Stratégie SEO SaaS : du trafic aux essais gratuits et aux démos",
+  "titreSeo": "Stratégie SEO SaaS : du trafic aux essais et aux démos",
+  "h1": "Stratégie SEO SaaS : du trafic aux essais gratuits et aux démos",
+  "filAriane": "Stratégie SEO SaaS",
+  "motCle": "stratégie SEO SaaS",
+  "metaDesc": "Stratégie SEO SaaS : noter vos pages selon leur distance au produit, la méthode en sept étapes, une matrice trimestrielle et les indicateurs reliés aux essais.",
+  "extrait": "Votre blog SaaS attire des visites mais pas d'essais ? Diagnostic de la distance au produit, méthode en sept étapes, matrice trimestrielle à copier, programmatic SEO et indicateurs reliés aux démos.",
+  "image": "articles/strategie-seo-saas-cover.jpg",
+  "imageAlt": "Stratégie SEO SaaS : du trafic aux essais gratuits et aux démos",
+  "sommaireCourt": {
+    "ch1": "1. Trafic sans essais",
+    "ch2": "2. Définition",
+    "ch3": "3. Distance au produit",
+    "ch4": "4. Sept étapes",
+    "ch5": "5. Matrice trimestrielle",
+    "ch6": "6. Erreurs fréquentes",
+    "ch7": "7. Délais et indicateurs",
+    "ch8": "8. Ressources",
+    "faq": "FAQ",
+    "sources": "Sources"
+  },
+  "ctaLateral": {
+    "titre": "Le guide B2B de la visibilité IA",
+    "texte": "Livre blanc gratuit : savoir si ChatGPT, Perplexity et Gemini citent votre logiciel quand un acheteur compare les solutions de votre catégorie.",
+    "lien": "/livres-blancs/visibilite-ia-b2b-guide.html",
+    "bouton": "Télécharger le livre blanc"
+  },
+  "service": "articles-seo",
+  "remplacer": true
+}
