@@ -304,6 +304,10 @@
     "REGAFI": {
       "developpe": "registre des agents financiers tenu par l'ACPR",
       "cle": "registre des agents financiers|registre public"
+    },
+    "EMEA": {
+      "developpe": "Europe, Moyen-Orient, Afrique",
+      "cle": "europe\\W+moyen\\W+orient"
     }
   },
   "ignorer": [

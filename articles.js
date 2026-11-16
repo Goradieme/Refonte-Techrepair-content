@@ -397,4 +397,17 @@ const ARTICLES = [
     motCle:   "SIRH RGPD",
     metaDesc: "SIRH et RGPD : les sept questions du DPO, la page « Données et RGPD » en six étapes, un plan type à copier et les articles qui captent les recherches des DRH."
   },
+  {
+    titre:    "Stratégie SEO SaaS : du trafic aux essais gratuits et aux démos",
+    extrait:  "Votre blog SaaS attire des visites mais pas d'essais ? Diagnostic de la distance au produit, méthode en sept étapes, matrice trimestrielle à copier, programmatic SEO et indicateurs reliés aux démos.",
+    auteur:   "Gora Dieme",
+    date:     "2026-11-16",
+    categorie:"saas",
+    lecture:  "12 min",
+    lien:     "articles/article-strategie-seo-saas.html",
+    image:    "articles/strategie-seo-saas-cover.jpg",
+    slug:     "strategie-seo-saas",
+    motCle:   "stratégie SEO SaaS",
+    metaDesc: "Stratégie SEO SaaS : noter vos pages selon leur distance au produit, la méthode en sept étapes, une matrice trimestrielle et les indicateurs reliés aux essais."
+  },
 ];
