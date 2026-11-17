@@ -410,4 +410,17 @@ const ARTICLES = [
     motCle:   "stratégie SEO SaaS",
     metaDesc: "Stratégie SEO SaaS : noter vos pages selon leur distance au produit, la méthode en sept étapes, une matrice trimestrielle et les indicateurs reliés aux essais."
   },
+  {
+    titre:    "Étude de cas cybersécurité : raconter un incident évité sans exposer le client",
+    extrait:  "Vos clients refusent d'être cités et leur RSSI craint d'exposer ses défenses ? Tri des projets, grille en trois colonnes, méthode en six étapes et récit d'incident réécrit pour être publiable.",
+    auteur:   "Gora Dieme",
+    date:     "2026-11-17",
+    categorie:"cyber",
+    lecture:  "12 min",
+    lien:     "articles/article-etude-de-cas-cybersecurite.html",
+    image:    "articles/etude-de-cas-cybersecurite-cover.jpg",
+    slug:     "etude-de-cas-cybersecurite",
+    motCle:   "étude de cas cybersécurité",
+    metaDesc: "Étude de cas cybersécurité : pourquoi le RSSI client refuse, la grille de tri publier, généraliser ou taire, six étapes, un plan type et un exemple réécrit."
+  },
 ];

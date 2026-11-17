@@ -1,0 +1,711 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Étude de cas cybersécurité : prouver sans exposer le client</title>
+<meta name="description" content="Étude de cas cybersécurité : pourquoi le RSSI client refuse, la grille de tri publier, généraliser ou taire, six étapes, un plan type et un exemple réécrit."/>
+<meta name="author" content="Gora Dieme"/>
+<link rel="canonical" href="https://www.techrepaircontent.com/articles/article-etude-de-cas-cybersecurite.html"/>
+<meta property="og:title" content="Étude de cas cybersécurité : raconter un incident évité sans exposer le client"/>
+<meta property="og:description" content="Étude de cas cybersécurité : pourquoi le RSSI client refuse, la grille de tri publier, généraliser ou taire, six étapes, un plan type et un exemple réécrit."/>
+<meta property="og:type" content="article"/>
+<meta property="og:url" content="https://www.techrepaircontent.com/articles/article-etude-de-cas-cybersecurite.html"/>
+<meta property="og:locale" content="fr_FR"/>
+<meta property="og:site_name" content="TechRepair Content"/>
+<meta property="og:image" content="https://www.techrepaircontent.com/articles/etude-de-cas-cybersecurite-cover.jpg"/>
+<meta property="article:published_time" content="2026-11-17"/>
+<meta name="twitter:card" content="summary_large_image"/>
+
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet"/>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --blue:#1A56DB;--blue-dark:#1342b0;--blue-light:#EFF6FF;
+  --navy:#0F1B3D;--text:#1e293b;--muted:#64748b;
+  --border:#e2e8f0;--green:#10b981;--orange:#f97316;--purple:#7c3aed;
+  --radius:12px;
+}
+html{scroll-behavior:smooth}
+body{font-family:'Manrope',sans-serif;color:var(--text);background:#fff;font-size:15px;line-height:1.6}
+a{text-decoration:none;color:inherit}
+nav{position:sticky;top:0;z-index:200;background:#fff;border-bottom:1px solid var(--border);padding:0 32px;display:flex;align-items:center;gap:20px;height:62px;}
+.logo{display:flex;align-items:center;gap:10px;flex-shrink:0}
+.logo-box{width:36px;height:36px;background:var(--blue);border-radius:7px;display:grid;place-items:center;color:#fff;font-weight:800;font-size:13px;letter-spacing:-.5px}
+.logo-text{font-size:13px;font-weight:700;line-height:1.2;color:var(--navy)}
+.logo-text span{display:block;color:var(--muted);font-weight:500;font-size:11px}
+.nav-links{display:flex;gap:22px;margin-left:auto;align-items:center}
+.nav-links a{font-size:13.5px;font-weight:500;color:var(--muted);transition:color .2s}
+.nav-links a:hover,.nav-links a.active{color:var(--blue)}
+.nav-links a.active{border-bottom:2px solid var(--blue);padding-bottom:1px}
+.btn-nav{background:var(--blue);color:#fff;border:none;border-radius:8px;padding:9px 18px;font-weight:700;font-size:13.5px;cursor:pointer;white-space:nowrap;font-family:inherit}
+@media(max-width:600px){nav{padding:0 16px}.nav-links a:not(:last-child){display:none}}
+.hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;background:none;border:none;padding:4px}
+.hamburger span{display:block;width:24px;height:2px;background:var(--navy);border-radius:2px;transition:all .3s}
+.hamburger.open span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+.hamburger.open span:nth-child(2){opacity:0}
+.hamburger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+.mobile-menu{display:none;position:fixed;top:62px;left:0;right:0;background:#fff;border-bottom:1px solid var(--border);padding:16px 24px;flex-direction:column;gap:4px;z-index:199;box-shadow:0 8px 24px rgba(0,0,0,.08)}
+.mobile-menu.open{display:flex}
+.mobile-menu a{font-size:15px;font-weight:600;color:var(--muted);padding:10px 0;border-bottom:1px solid var(--border);transition:color .2s}
+.mobile-menu a:last-of-type{border-bottom:none}
+.mobile-menu a:hover,.mobile-menu a.active{color:var(--blue)}
+.mobile-menu .btn-nav-mobile{margin-top:10px;background:var(--blue);color:#fff;border:none;border-radius:8px;padding:12px;font-weight:700;font-size:14px;cursor:pointer;font-family:inherit;width:100%}
+@media(max-width:768px){.hamburger{display:flex}.nav-links{display:none}}
+
+.breadcrumb{max-width:1100px;margin:0 auto;padding:18px 32px 0;font-size:12.5px;color:var(--muted)}
+.breadcrumb a{color:var(--muted)}
+.breadcrumb a:hover{color:var(--blue)}
+
+.article-hero{max-width:1100px;margin:0 auto;padding:24px 32px 0}
+.ah-badge{display:inline-flex;align-items:center;gap:5px;background:#F5F3FF;color:var(--purple);font-size:11px;font-weight:700;padding:4px 12px;border-radius:20px;margin-bottom:16px}
+.article-hero h1{font-size:34px;font-weight:800;line-height:1.2;color:var(--navy);max-width:820px;margin-bottom:16px}
+.ah-meta{display:flex;align-items:center;gap:12px;font-size:13px;color:var(--muted);margin-bottom:24px;flex-wrap:wrap}
+.ah-dot{width:4px;height:4px;border-radius:50%;background:var(--border)}
+.ah-cover{width:100%;border-radius:20px;overflow:hidden;margin-bottom:8px;border:1px solid var(--border)}
+.ah-cover img{width:100%;height:auto;display:block}
+
+.layout{max-width:1100px;margin:0 auto;padding:40px 32px 56px;display:grid;grid-template-columns:1fr 300px;gap:44px;align-items:start}
+.content h2{font-size:24px;font-weight:800;color:var(--navy);margin:40px 0 14px;line-height:1.3}
+.content h3{font-size:18px;font-weight:800;color:var(--navy);margin:28px 0 10px;line-height:1.3}
+.content p{margin-bottom:14px;color:var(--text);font-size:15px;line-height:1.75}
+.content ul,.content ol{margin:0 0 16px 20px;color:var(--text)}
+.content li{margin-bottom:7px;line-height:1.7}
+.content strong{color:var(--navy)}
+.content em{color:var(--muted)}
+.content hr{border:none;border-top:1px solid var(--border);margin:36px 0}
+.intro-lead{font-size:16.5px;color:var(--muted);line-height:1.8;margin-bottom:20px}
+.toc-box{background:var(--blue-light);border:1px solid #c3d6f8;border-radius:16px;padding:22px 24px;margin:24px 0 36px}
+.toc-box h3{margin:0 0 12px;font-size:14px;color:var(--navy)}
+.toc-box ol{margin:0 0 0 18px}
+.toc-box li{font-size:13.5px;margin-bottom:6px}
+.toc-box a{color:var(--blue-dark);font-weight:600}
+.toc-box a:hover{text-decoration:underline}
+.callout{background:#f8fafc;border-left:3px solid var(--blue);border-radius:8px;padding:16px 20px;margin:18px 0;font-size:14px}
+.callout strong{display:block;margin-bottom:4px;color:var(--navy)}
+.benefit{font-size:13.5px;color:var(--muted);font-style:italic;margin:-6px 0 16px}
+table{width:100%;border-collapse:collapse;margin:18px 0 22px;font-size:13.5px}
+th,td{border:1px solid var(--border);padding:10px 12px;text-align:left;vertical-align:top}
+th{background:#f8fafc;color:var(--navy);font-weight:700}
+.case-card{border:1px solid var(--border);border-radius:14px;padding:20px 22px;margin-bottom:18px;background:#fafbfc}
+.case-card h3{margin-top:0}
+.faq-item{border-bottom:1px solid var(--border);padding:16px 0}
+.faq-item:last-child{border-bottom:none}
+.faq-item p.question{font-weight:800;color:var(--navy);margin-bottom:6px;font-size:15px}
+.conclusion-box{background:linear-gradient(135deg,var(--navy),#1e3a6e);border-radius:18px;padding:32px;margin-top:32px;color:#fff}
+.conclusion-box p{color:#cbd5e1}
+.conclusion-box strong{color:#fff}
+.conclusion-box .final-cta{display:inline-block;margin-top:14px;background:var(--blue);color:#fff;border-radius:8px;padding:12px 22px;font-weight:700;font-size:14px}
+
+.sidebar{display:flex;flex-direction:column;gap:20px;position:sticky;top:80px}
+.sidebar-card{background:#f8fafc;border:1px solid var(--border);border-radius:16px;padding:20px}
+.sidebar-card h3{font-size:12.5px;font-weight:800;color:var(--navy);margin-bottom:14px;text-transform:uppercase;letter-spacing:.4px}
+.mini-toc{display:flex;flex-direction:column;gap:9px}
+.mini-toc a{font-size:12.5px;color:var(--muted);line-height:1.5}
+.mini-toc a:hover{color:var(--blue)}
+.author-card{display:flex;gap:10px;align-items:center}
+.author-avatar{width:38px;height:38px;border-radius:50%;background:var(--blue);color:#fff;display:grid;place-items:center;font-weight:800;font-size:13px}
+.author-name{font-size:13px;font-weight:700;color:var(--navy)}
+.author-role{font-size:11.5px;color:var(--muted)}
+.guide-card{background:linear-gradient(135deg,#f0f5ff,#dce9ff);border-color:#c3d6f8}
+.guide-card p{font-size:12.5px;color:var(--muted);line-height:1.6;margin-bottom:14px}
+.guide-btn{display:block;text-align:center;background:var(--blue);color:#fff;border-radius:8px;padding:11px;font-size:13px;font-weight:700;transition:background .2s}
+.guide-btn:hover{background:var(--blue-dark)}
+
+.nl-band{background:var(--blue);padding:48px 32px}
+.nl-band-inner{max-width:700px;margin:0 auto;text-align:center}
+.nl-band h2{font-size:26px;font-weight:800;color:#fff;margin-bottom:10px}
+.nl-band p{color:rgba(255,255,255,.8);font-size:14px;margin-bottom:24px}
+.nl-band-form{display:flex;gap:10px;max-width:440px;margin:0 auto;flex-wrap:wrap}
+.nl-band-input{flex:1;border:none;border-radius:8px;padding:12px 16px;font-size:14px;font-family:inherit;outline:none;min-width:200px}
+.nl-band-btn{background:var(--navy);color:#fff;border:none;border-radius:8px;padding:12px 20px;font-size:14px;font-weight:700;cursor:pointer;font-family:inherit;white-space:nowrap}
+.nl-band-note{font-size:11.5px;color:rgba(255,255,255,.6);margin-top:10px}
+
+.cta-band{background:var(--navy);padding:60px 32px}
+.cta-inner{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:1fr auto;gap:48px;align-items:center}
+.cta-band h2{font-size:28px;font-weight:800;color:#fff;margin-bottom:9px}
+.cta-band>div>p{color:#94a3b8;font-size:13.5px;margin-bottom:24px;max-width:380px}
+.cta-btns{display:flex;gap:10px;flex-wrap:wrap}
+.btn-white{background:#fff;color:var(--navy);border-radius:8px;padding:11px 20px;font-weight:700;font-size:13.5px;display:inline-flex;align-items:center;gap:7px;cursor:pointer;border:none;font-family:inherit}
+.btn-ghost-cta{background:transparent;color:#fff;border:1.5px solid rgba(255,255,255,.3);border-radius:8px;padding:11px 20px;font-weight:700;font-size:13.5px;cursor:pointer;font-family:inherit}
+.btn-ghost-cta:hover{border-color:#fff}
+.cta-checks{display:flex;flex-direction:column;gap:11px;flex-shrink:0}
+.cta-check{display:flex;align-items:center;gap:9px;color:#cbd5e1;font-size:13px}
+.cta-ci{color:var(--green);font-weight:700}
+
+footer{background:var(--navy);border-top:1px solid rgba(255,255,255,.07);padding:44px 32px 26px}
+.footer-inner{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:2fr 1fr 1fr 1fr 1fr;gap:32px}
+.footer-brand p{color:#64748b;font-size:12px;margin-top:8px;max-width:185px;line-height:1.7}
+footer h4{font-size:10.5px;font-weight:700;color:#94a3b8;text-transform:uppercase;letter-spacing:.5px;margin-bottom:13px}
+.flinks{list-style:none}
+.flinks li{margin-bottom:8px}
+.flinks a{color:#64748b;font-size:12px;transition:color .2s}
+.flinks a:hover{color:#fff}
+.fsocial{display:flex;gap:7px;margin-top:11px}
+.fsoc{width:29px;height:29px;border-radius:6px;background:rgba(255,255,255,.07);display:grid;place-items:center;font-size:11px;color:#94a3b8;transition:background .2s}
+.fsoc:hover{background:var(--blue);color:#fff}
+.footer-bottom{max-width:1100px;margin:24px auto 0;padding-top:16px;border-top:1px solid rgba(255,255,255,.07);display:flex;justify-content:space-between;color:#475569;font-size:11px;flex-wrap:wrap;gap:8px}
+
+@media(max-width:960px){.layout{grid-template-columns:1fr}.sidebar{position:static;display:grid;grid-template-columns:1fr 1fr;gap:16px}.cta-inner{grid-template-columns:1fr}.footer-inner{grid-template-columns:1fr 1fr}}
+@media(max-width:600px){.article-hero h1{font-size:26px}.sidebar{grid-template-columns:1fr}.nl-band-form{flex-direction:column}.footer-inner{grid-template-columns:1fr}}
+
+.btn-demo{position:relative;background:var(--blue);color:#fff;border:none;border-radius:8px;padding:9px 16px;font-weight:800;font-size:13.5px;white-space:nowrap;font-family:inherit;display:inline-flex;align-items:center;gap:6px;text-decoration:none;cursor:pointer;transition:background .2s,transform .2s}
+.btn-demo:hover{background:var(--blue-dark);transform:translateY(-1px)}
+.btn-demo .star{color:#fff;font-size:14px;line-height:1;font-weight:800}
+.btn-demo-badge{position:absolute;top:-9px;right:-8px;background:#F59E0B;color:#fff;font-size:8.5px;font-weight:800;padding:2px 6px;border-radius:999px;letter-spacing:.3px;box-shadow:0 2px 6px rgba(245,158,11,.45);animation:demoPulse 2.2s ease-in-out infinite}
+@keyframes demoPulse{0%,100%{transform:scale(1)}50%{transform:scale(1.1)}}
+.nav-tools{position:relative;display:inline-block}
+.nav-tools .chevron{font-size:10px;margin-left:2px;transition:transform .15s}
+.nav-tools:hover .chevron{transform:rotate(180deg)}
+.nav-tools-menu{display:none;position:absolute;top:calc(100% + 8px);right:0;background:#fff;border:1px solid var(--border);border-radius:12px;box-shadow:0 12px 32px rgba(15,27,61,.15);min-width:220px;padding:6px;z-index:260}
+.nav-tools:hover .nav-tools-menu,.nav-tools:focus-within .nav-tools-menu{display:block}
+.nav-tools-menu a{display:flex;align-items:center;gap:9px;padding:10px 12px;border-radius:8px;font-size:13.5px;font-weight:600;color:var(--navy);text-decoration:none;white-space:nowrap}
+.nav-tools-menu a:hover{background:var(--blue-light);color:var(--blue)}
+.nav-tools-menu a .ico{font-size:15px}
+.btn-demo-mobile{position:relative;margin-top:10px;background:var(--blue);color:#fff;border-radius:8px;padding:12px;font-weight:800;font-size:14px;font-family:inherit;width:100%;display:flex;align-items:center;justify-content:center;gap:7px;text-decoration:none;border-bottom:none!important}
+.btn-demo-mobile .star{color:#fff;font-size:15px;font-weight:800}
+.mobile-menu a.btn-demo-mobile{color:#fff}
+.btn-demo-mobile .btn-demo-badge{top:-9px;right:14px;animation:none}
+
+/* ══ Liens vers les sources citées ══ */
+a.src{color:var(--blue);font-weight:600;text-decoration:underline;text-underline-offset:2px;text-decoration-thickness:1px;transition:color .2s}
+a.src:hover{color:var(--blue-dark);text-decoration-thickness:2px}
+/* ══ Mise en forme éditoriale (gabarit 2026) ══ */
+.ah-cover{max-width:960px;box-shadow:0 18px 50px rgba(15,27,61,.18);border:none}
+.key-points{border:1px solid var(--border);border-top:3px solid var(--blue);border-radius:0 0 14px 14px;padding:20px 24px 8px;margin:6px 0 30px;background:#fff}
+.key-points h3{margin:0 0 12px!important;font-size:12px!important;letter-spacing:1.4px;text-transform:uppercase;color:var(--blue-dark)!important}
+.key-points .bloc-titre{margin:0 0 12px!important;font-size:12px!important;font-weight:800;letter-spacing:1.4px;text-transform:uppercase;color:var(--blue-dark)!important;line-height:1.3}
+.toc-box .bloc-titre{margin:0 0 12px!important;font-size:14px!important;font-weight:800;color:var(--navy)!important;line-height:1.3}
+.key-points ul{margin-left:18px}
+.key-points li{margin-bottom:10px}
+.stat-row{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:14px;margin:20px 0 24px}
+.stat{border-left:3px solid var(--blue);padding:4px 0 4px 14px}
+.stat b{display:block;font-size:30px;font-weight:800;color:var(--navy);line-height:1.1}
+.stat span{font-size:12.5px;color:var(--muted);line-height:1.45;display:block;margin-top:4px}
+.content table th{font-size:12.5px;text-transform:uppercase;letter-spacing:.4px}
+.content table tr:nth-child(even) td{background:#fafbfd}
+.sources{font-size:13px;color:var(--muted);margin-left:20px}
+.sources li{margin-bottom:6px;line-height:1.6}
+.sources a{color:var(--blue-dark);text-decoration:underline;text-underline-offset:2px}
+@media(max-width:600px){.content table{display:block;overflow-x:auto}.stat b{font-size:26px}}
+.content p a:not(.final-cta),.content li a,.content td a{color:var(--blue);font-weight:600;text-decoration:underline;text-underline-offset:2px;text-decoration-thickness:1px}
+.content p a:not(.final-cta):hover,.content li a:hover,.content td a:hover{color:var(--blue-dark);text-decoration-thickness:2px}
+</style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "BlogPosting",
+      "headline": "Étude de cas cybersécurité : raconter un incident évité sans exposer le client",
+      "description": "Étude de cas cybersécurité : pourquoi le RSSI client refuse, la grille de tri publier, généraliser ou taire, six étapes, un plan type et un exemple réécrit.",
+      "datePublished": "2026-11-17",
+      "dateModified": "2026-11-17",
+      "author": {
+        "@type": "Person",
+        "name": "Gora Dieme",
+        "jobTitle": "Fondateur de TechRepair Content, expert SEO tech B2B",
+        "url": "https://www.techrepaircontent.com/apropos",
+        "worksFor": {
+          "@type": "Organization",
+          "name": "TechRepair Content",
+          "url": "https://www.techrepaircontent.com/"
+        }
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "TechRepair Content",
+        "url": "https://www.techrepaircontent.com/"
+      },
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://www.techrepaircontent.com/articles/article-etude-de-cas-cybersecurite.html"
+      },
+      "inLanguage": "fr-FR",
+      "keywords": "étude de cas cybersécurité",
+      "articleSection": "Cybersécurité",
+      "wordCount": 2495,
+      "image": "https://www.techrepaircontent.com/articles/etude-de-cas-cybersecurite-cover.jpg"
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Qu'est-ce qu'une étude de cas en cybersécurité ?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "C'est le récit vérifiable d'un projet de sécurité mené chez un client : le risque de départ, la solution retenue, le déploiement et les résultats mesurés. Elle sert à montrer à un prospect comparable comment le produit s'est comporté en conditions réelles."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Comment présenter un cas client sans révéler le nom de l'entreprise ?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Remplacez le nom par un profil en fourchette (secteur, taille, nombre de sites) et retirez les détails qui permettraient de la reconnaître, comme les dates exactes ou la pile technique. Faites ensuite relire le texte par le client pour qu'il confirme qu'il n'est pas identifiable. N'inventez aucun détail pour le rendre plus vivant."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Quelles informations ne jamais publier dans une étude de cas cyber ?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Les outils de sécurité en place et leurs versions, l'architecture du réseau, les comptes à privilèges et les indicateurs techniques d'un incident. Ce sont précisément les éléments qu'un attaquant recherche pendant sa phase de reconnaissance. Les résultats, eux, se publient en ordres de grandeur."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Quelles questions poser au RSSI lors de l'entretien ?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Demandez-lui ce qu'il redoutait avant le projet, quelles solutions il a écartées et pourquoi, ce qui a été plus difficile que prévu et quel indicateur a changé depuis. Terminez par ce qu'il dirait à un homologue qui hésite : la réponse fournit souvent la meilleure citation."
+          }
+        }
+      ]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Accueil",
+          "item": "https://www.techrepaircontent.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Blog",
+          "item": "https://www.techrepaircontent.com/blog"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Étude de cas cybersécurité",
+          "item": "https://www.techrepaircontent.com/articles/article-etude-de-cas-cybersecurite.html"
+        }
+      ]
+    }
+  ]
+}
+</script>
+</head>
+<body>
+
+<nav>
+  <div class="logo">
+    <div class="logo-box">TRD</div>
+    <div class="logo-text">TechRepair<span>Content</span></div>
+  </div>
+  <div class="nav-links">
+    <a href="/">Accueil</a>
+    <a href="/services">Services</a>
+    <a href="/secteurs">Secteurs</a>
+    <a href="/apropos">À propos</a>
+    <a href="/blog" class="active">Blog</a>
+    <div class="nav-tools">
+      <button class="btn-demo" type="button"><span class="star">★</span>Outils IA<span class="btn-demo-badge">Nouveau</span><span class="chevron">▾</span></button>
+      <div class="nav-tools-menu">
+        <a href="/agents-ia"><span class="ico">⚙️</span> Agents IA sur mesure</a>
+        <a href="/visibilite-ia"><span class="ico">💬</span> Visibilité dans les IA</a>
+        <a href="/calculateur-temps-perdu"><span class="ico">⏱️</span> Calculateur de temps perdu</a>
+        <a href="https://demo.techrepaircontent.com"><span class="ico">🤖</span> Démo avec Ted</a>
+        <a href="https://demo.techrepaircontent.com/audit-ia.html"><span class="ico">🔍</span> Audit IA gratuit</a>
+      </div>
+    </div>
+    <button class="btn-nav" onclick="window.location='/devis'">Obtenir un devis</button>
+  </div>
+  <button class="hamburger" id="hamburger" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<div class="mobile-menu" id="mobileMenu">
+  <a href="/">Accueil</a>
+  <a href="/services">Services</a>
+  <a href="/secteurs">Secteurs</a>
+  <a href="/apropos">À propos</a>
+  <a href="/blog" class="active">Blog</a>
+  <a href="https://demo.techrepaircontent.com" class="btn-demo-mobile"><span class="star">★</span>Démo avec Ted<span class="btn-demo-badge">Nouveau</span></a>
+  <a href="https://demo.techrepaircontent.com/audit-ia.html" class="btn-demo-mobile"><span class="star">★</span>Audit IA gratuit</a>
+  <button class="btn-nav-mobile" onclick="window.location='/devis'">Obtenir un devis</button>
+</div>
+
+<div class="breadcrumb">
+  <a href="/">Accueil</a> / <a href="/blog">Blog</a> / <span style="color:var(--navy)">Étude de cas cybersécurité</span>
+</div>
+
+<div class="article-hero">
+  <span class="ah-badge" style="background:#FEF2F2;color:#B91C1C">🔒 Cybersécurité</span>
+  <h1>Étude de cas cybersécurité : raconter un incident évité sans exposer le client</h1>
+  <div class="ah-meta">
+    <span>✍️ <a href="/apropos" rel="author" style="color:inherit;text-decoration:none">Gora Dieme</a></span>
+    <div class="ah-dot"></div>
+    <span>Publié le 17 novembre 2026</span>
+    <div class="ah-dot"></div>
+    <span>⏱ 12 min de lecture</span>
+  </div>
+  <div class="ah-cover"><img src="etude-de-cas-cybersecurite-cover.jpg" alt="Étude de cas cybersécurité : raconter un incident évité sans exposer le client" width="1200" height="630" loading="eager"/></div>
+</div>
+
+<div class="layout">
+  <main class="content">
+
+<p class="intro-lead">Avant de retenir un éditeur de sécurité, un RSSI (responsable de la sécurité des systèmes d'information) veut savoir comment la solution s'est comportée chez une organisation qui ressemble à la sienne. L'<strong>étude de cas cybersécurité</strong> répond à cette attente&nbsp;: c'est le récit vérifiable d'un projet mené chez un client, du risque de départ aux résultats mesurés, publié pour aider d'autres acheteurs à décider. Comme les décideurs comparent seuls, bien avant le premier rendez-vous avec un vendeur, ce format pèse lourd au moment de trancher.</p>
+
+    <p>Le secteur se heurte pourtant à une difficulté que les autres éditeurs connaissent moins&nbsp;: raconter une protection, c'est décrire des défenses. Le client refuse d'être cité, son RSSI craint de livrer à un attaquant la liste de ses outils, et le service marketing finit par publier un témoignage si vague qu'il ne prouve plus rien. Il existe une voie entre le silence et l'indiscrétion&nbsp;: trier chaque information selon ce qu'elle apprendrait à un adversaire, puis rédiger un récit que le client valide sans hésiter. Grille de tri, méthode en six étapes, plan type et exemple réécrit sont détaillés plus bas.</p>
+
+    <div class="key-points">
+      <p class="bloc-titre">Points clés</p>
+      <ul>
+        <li><strong>Le refus du client a une raison technique&nbsp;:</strong> le référentiel MITRE ATT&amp;CK classe la collecte d'informations sur les logiciels d'une cible, protections défensives comprises, parmi les techniques de reconnaissance des attaquants.</li>
+        <li><strong>L'anonymat ne suffit pas&nbsp;:</strong> un secteur, une taille et une pile technique précise suffisent souvent à reconnaître une organisation&nbsp;; il faut généraliser, pas seulement retirer le nom.</li>
+        <li><strong>Le résultat se dit en délais et en périmètre&nbsp;:</strong> temps de détection, part du parc couverte, heures d'analyse économisées parlent davantage à un RSSI qu'un «&nbsp;niveau de sécurité renforcé&nbsp;».</li>
+        <li><strong>La validation se prépare dès l'entretien&nbsp;:</strong> un accord écrit sur ce qui sera publié, obtenu avant la rédaction, évite des semaines d'allers-retours avec le service juridique du client.</li>
+      </ul>
+    </div>
+
+    <div class="toc-box">
+      <p class="bloc-titre">📋 Sommaire</p>
+      <ol>
+        <li><a href="#ch1">Des clients satisfaits, mais aucune histoire publiable</a></li>
+        <li><a href="#ch2">Pourquoi le RSSI de votre client refuse-t-il l'étude de cas&nbsp;?</a></li>
+        <li><a href="#ch3">Quels projets méritent une étude de cas&nbsp;? Le tri en vingt minutes</a></li>
+        <li><a href="#ch4">Rédiger une étude de cas cybersécurité publiable en six étapes</a></li>
+        <li><a href="#ch5">La grille de tri&nbsp;: publier, généraliser ou taire</a></li>
+        <li><a href="#ch6">Plan type et récit réécrit d'un incident évité</a></li>
+        <li><a href="#ch7">Quatre maladresses qui font échouer la publication</a></li>
+        <li><a href="#ch8">Repérer l'effet d'une étude de cas sur les ventes</a></li>
+        <li><a href="#faq">Questions fréquentes</a></li>
+        <li><a href="#sources">Sources</a></li>
+      </ol>
+    </div>
+
+    <h2 id="ch1">1. Des clients satisfaits, mais aucune histoire publiable</h2>
+
+    <p>La plupart des éditeurs de sécurité ont des clients contents et presque aucune preuve publique de leur travail. Cette absence coûte cher, car l'acheteur se fait une opinion seul, à partir de ce qu'il trouve en ligne.</p>
+
+    <p>Le symptôme est familier chez les <a href="/secteur-cybersecurite">éditeurs et prestataires de cybersécurité</a>&nbsp;: une page «&nbsp;Références&nbsp;» réduite à des logos, pendant que les commerciaux racontent en rendez-vous des anecdotes qu'ils n'ont pas le droit d'écrire. Or la phase où ces preuves comptent se déroule souvent sans eux. Gartner indique en juin 2025 que la majorité des acheteurs B2B (vente entre entreprises) aimeraient mener tout leur achat sans l'intervention d'un vendeur, et l'enquête annuelle de Foundry, menée en décembre 2025 auprès de 676 décideurs informatiques et métiers, observe que les études de cas gagnent en influence lorsque l'acheteur passe à l'évaluation et à la recommandation.</p>
+
+    <div class="stat-row">
+      <div class="stat"><b>61&nbsp;%</b><span>des acheteurs B2B voudraient acheter sans passer par un vendeur (Gartner, enquête auprès de 632 acheteurs, août-septembre 2024, publiée en juin 2025)</span></div>
+      <div class="stat"><b>31&nbsp;%</b><span>des décideurs de la région EMEA (Europe, Moyen-Orient, Afrique) citent les études de cas clients parmi les contenus sur lesquels ils s'appuient (Foundry, Customer Engagement, décembre 2025)</span></div>
+      <div class="stat"><b>20&nbsp;%</b><span>des acheteurs de technologies jugent l'étude de cas le format le plus engageant, juste derrière la vidéo de démonstration (BlueWhale Research, enquête 2025)</span></div>
+    </div>
+
+    <p>Ces enquêtes internationales décrivent une tendance, pas le marché français&nbsp;; celle de BlueWhale Research, prestataire de génération de leads, ne publie pas la taille de son échantillon dans l'article consulté. Elles convergent toutefois&nbsp;: pour justifier son choix en interne, l'acheteur cherche une organisation comparable qui a franchi le pas, et l'éditeur qui n'en montre aucune laisse ce rôle à ses concurrents.</p>
+
+    <h2 id="ch2">2. Pourquoi le RSSI de votre client refuse-t-il l'étude de cas&nbsp;?</h2>
+
+    <p>Le RSSI client refuse rarement par manque de reconnaissance&nbsp;: il refuse parce qu'un récit détaillé révèle sa surface d'attaque. Ses réticences sont fondées.</p>
+
+    <p>Le référentiel MITRE ATT&amp;CK, base publique qui décrit les techniques employées par les attaquants, recense la collecte d'informations sur les logiciels installés chez une cible (technique T1592.002, mise à jour le 18 septembre 2026). Il précise que ces informations peuvent inclure la présence de protections défensives, comme un antivirus ou un SIEM (outil de gestion des événements de sécurité), et qu'elles peuvent être exposées dans des données accessibles en ligne. Seule parade recommandée&nbsp;: réduire les données sensibles laissées à la portée de tiers. Annoncer «&nbsp;la banque X a déployé notre outil sur ses 4&nbsp;000 postes en mars&nbsp;» répond donc à la question d'un attaquant.</p>
+
+    <p>Trois autres freins s'ajoutent&nbsp;: la clause de confidentialité du contrat, qui interdit souvent toute mention publique sans accord écrit&nbsp;; la crainte qu'un incident raconté, même évité, passe pour un aveu de faiblesse&nbsp;; enfin le temps de relecture et de validation juridique, pris sur une équipe déjà saturée.</p>
+
+    <h2 id="ch3">3. Quels projets méritent une étude de cas&nbsp;? Le tri en vingt minutes</h2>
+
+    <p>Avant de solliciter un client, le responsable marketing passe sa liste de projets au crible de cinq questions, avec l'ingénieur avant-vente qui a suivi le déploiement.</p>
+
+    <ol>
+      <li><strong>Le problème de départ est-il partagé par d'autres prospects&nbsp;?</strong> Des alertes noyées dans le bruit parlent à beaucoup d'acheteurs&nbsp;; une configuration unique, à personne.</li>
+      <li><strong>Un résultat chiffré existe-t-il déjà&nbsp;?</strong> Délai de détection avant et après, alertes traitées par analyste, durée du déploiement&nbsp;: sans mesure de départ, le récit reste une impression.</li>
+      <li><strong>Le récit tient-il sans détail exploitable&nbsp;?</strong> Si l'intérêt de l'histoire repose sur la version d'un pare-feu ou le nom d'un groupe d'attaquants, elle sera difficile à publier.</li>
+      <li><strong>Un interlocuteur côté client est-il favorable&nbsp;?</strong> Un RSSI qui a porté le projet en interne a souvent intérêt à le valoriser, même anonymement.</li>
+      <li><strong>Le projet date-t-il de moins de dix-huit mois&nbsp;?</strong> Au-delà, l'outil et le contexte ont changé.</li>
+    </ol>
+
+    <p>Quatre «&nbsp;oui&nbsp;» sur cinq&nbsp;: le projet part en production. Deux ou trois&nbsp;: un récit anonymisé, raconté par l'éditeur, suffit. Ces paliers restent indicatifs.</p>
+
+    <h2 id="ch4">4. Rédiger une étude de cas cybersécurité publiable en six étapes</h2>
+
+    <p>La méthode inverse l'ordre habituel&nbsp;: on négocie ce qui sera publié avant d'écrire, et non après. Prévoyez un mois à un mois et demi entre la demande et la mise en ligne, dont une semaine seulement de rédaction effective.</p>
+
+    <ol>
+      <li><strong>Proposer un cadre écrit avant l'entretien (marketing, une heure).</strong> Envoyez au RSSI une page qui annonce le niveau d'anonymat proposé, les informations jamais publiées et son droit de relecture sur chaque phrase.</li>
+      <li><strong>Mener deux entretiens de trente minutes.</strong> L'un avec le RSSI (contexte, risque, critères de choix), l'autre avec l'ingénieur du déploiement (étapes, chiffres). Enregistrez avec accord.</li>
+      <li><strong>Trier chaque information avec la grille de la partie suivante (une heure).</strong> Toute donnée passe dans l'une des trois colonnes&nbsp;: publiable telle quelle, à généraliser, à taire.</li>
+      <li><strong>Rédiger en commençant par le problème (deux jours).</strong> Le lecteur doit se reconnaître dans les trois premières phrases. Arrondissez les chiffres ou exprimez-les en variation («&nbsp;délai divisé par trois&nbsp;») quand la valeur exacte identifierait le client.</li>
+      <li><strong>Faire valider en une seule fois.</strong> Envoyez au RSSI le texte final avec, en marge, la liste des informations généralisées.</li>
+      <li><strong>Décliner le récit.</strong> Un même cas alimente une page web indexable, une fiche d'une page pour les commerciaux et un passage d'un livre blanc. Réunies dans <a href="/service-livres-blancs">un livre blanc thématique</a>, plusieurs de ces histoires attirent des liens et des citations, nourrissent des articles satellites, captent l'e-mail des lecteurs qualifiés et offrent aux moteurs d'IA (intelligence artificielle) une source de référence.</li>
+    </ol>
+
+    <div class="callout">
+      <p><strong>Si le client refuse malgré tout</strong></p>
+      <p>Proposez un récit entièrement attribué à l'éditeur («&nbsp;un hôpital de 1&nbsp;500 lits, accompagné en 2026&nbsp;»), sans citation du client, que celui-ci relit seulement pour vérifier qu'il n'est pas reconnaissable. Moins fort qu'un témoignage signé, ce format, présenté honnêtement comme anonymisé, convainc bien plus qu'une rangée de logos.</p>
+    </div>
+
+    <p>Les contraintes changent d'un secteur à l'autre&nbsp;: en finance, le <a href="/articles/article-etude-de-cas-client-fintech.html">secret professionnel des fintechs</a> impose un accord exprès du client, alors qu'en cybersécurité le premier frein relève de la sécurité opérationnelle plus que du droit.</p>
+
+    <h2 id="ch5">5. La grille de tri&nbsp;: publier, généraliser ou taire</h2>
+
+    <p>La grille ci-dessous sert de livrable de travail&nbsp;: copiez-la dans un tableur et remplissez une ligne par information relevée en entretien. Elle a été construite pour cet article, à partir de la logique de reconnaissance décrite par MITRE ATT&amp;CK.</p>
+
+    <table>
+      <thead>
+        <tr><th>Information</th><th>Décision</th><th>Formulation publiable</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Nom et logo du client</td><td>Selon l'accord</td><td>«&nbsp;Un établissement de santé&nbsp;» ou nom réel si accord écrit</td></tr>
+        <tr><td>Secteur et taille exacte</td><td>Généraliser</td><td>Fourchette («&nbsp;entre 1&nbsp;000 et 5&nbsp;000 salariés&nbsp;»)</td></tr>
+        <tr><td>Localisation des sites</td><td>Généraliser</td><td>«&nbsp;Plusieurs sites en France&nbsp;»</td></tr>
+        <tr><td>Outils de sécurité déjà en place, versions</td><td>Taire</td><td>«&nbsp;Un socle de protection existant&nbsp;»</td></tr>
+        <tr><td>Architecture, segmentation, comptes à privilèges</td><td>Taire</td><td>Aucune</td></tr>
+        <tr><td>Type de menace redoutée</td><td>Publier</td><td>«&nbsp;Rançongiciel diffusé par hameçonnage&nbsp;»</td></tr>
+        <tr><td>Indicateurs de compromission d'un incident</td><td>Taire</td><td>Les partager par les canaux de signalement prévus, pas dans une page marketing</td></tr>
+        <tr><td>Dates précises de déploiement</td><td>Généraliser</td><td>Durée («&nbsp;six semaines&nbsp;») plutôt que calendrier</td></tr>
+        <tr><td>Résultats chiffrés</td><td>Publier, arrondis</td><td>Variation ou ordre de grandeur</td></tr>
+        <tr><td>Citation du RSSI</td><td>Publier si validée</td><td>Fonction sans nom, ou nom avec accord</td></tr>
+      </tbody>
+    </table>
+
+    <p>Dernier test&nbsp;: un attaquant qui connaît déjà le secteur apprendrait-il quelque chose d'utile en lisant le texte&nbsp;? Si oui, la phrase repasse dans la colonne «&nbsp;généraliser&nbsp;».</p>
+
+    <h2 id="ch6">6. Plan type et récit réécrit d'un incident évité</h2>
+
+    <p>Une étude de cas cyber convaincante suit un plan court, centré sur la décision du lecteur&nbsp;: six blocs, 600 à 900 mots.</p>
+
+    <h3>Les six blocs du récit</h3>
+
+    <ul>
+      <li><strong>Le profil&nbsp;:</strong> secteur, taille en fourchette, contraintes réglementaires, par exemple NIS2 (directive européenne sur la cybersécurité) ou l'hébergement de données de santé.</li>
+      <li><strong>Le risque de départ&nbsp;:</strong> ce que l'équipe redoutait, en une ou deux phrases, et ce que cela coûtait déjà en temps.</li>
+      <li><strong>Les critères de choix&nbsp;:</strong> pourquoi cette solution, sans dénigrer de concurrent.</li>
+      <li><strong>Le déploiement&nbsp;:</strong> durée, équipes mobilisées, difficultés rencontrées.</li>
+      <li><strong>Les résultats&nbsp;:</strong> trois indicateurs au plus, avec leur période de mesure.</li>
+      <li><strong>La parole du client&nbsp;:</strong> une citation validée, factuelle plutôt qu'enthousiaste.</li>
+    </ul>
+
+    <h3>Avant et après, sur un cas fictif rédigé pour cet article</h3>
+
+    <p><strong>Version d'origine&nbsp;:</strong> «&nbsp;Grâce à notre plateforme, le groupe hospitalier de Valcourt, équipé de pare-feu de la marque Y en version 7.2, a bloqué en avril une attaque par rançongiciel ciblant ses 3&nbsp;200 postes. Une sécurité renforcée et une sérénité retrouvée&nbsp;!&nbsp;»</p>
+
+    <p><strong>Version publiable&nbsp;:</strong> «&nbsp;Un groupe hospitalier de plus de 2&nbsp;000 postes répartis sur plusieurs sites recevait chaque jour des centaines d'alertes que son équipe de trois analystes ne pouvait pas toutes examiner. Après six semaines de déploiement, les alertes à traiter ont été divisées par quatre et le délai moyen de détection est passé de plusieurs heures à moins de trente minutes, mesuré sur le premier trimestre. Lors d'une campagne d'hameçonnage, un poste infecté a été isolé avant toute propagation.&nbsp;»</p>
+
+    <p>La seconde version retire nom, marque, version, mois et nombre exact de postes, et gagne pourtant en force&nbsp;: un problème connu, une durée, deux indicateurs, une issue concrète.</p>
+
+    <h2 id="ch7">7. Quatre maladresses qui font échouer la publication</h2>
+
+    <p>Les études de cas cyber abandonnées en route échouent presque toujours pour l'une de ces quatre raisons évitables.</p>
+
+    <ul>
+      <li><strong>Demander l'accord avec un texte déjà rédigé.</strong> Le RSSI y découvre des détails inacceptables et refuse le tout&nbsp;; le cadre écrit de l'étape 1 l'évite.</li>
+      <li><strong>Mettre en scène la peur.</strong> Un récit qui dramatise l'attaque met le client dans le rôle de la victime. Les décideurs techniques préfèrent des faits mesurés, comme le rappellent les principes d'un <a href="/articles/article-marketing-contenu-cybersecurite.html">marketing cybersécurité sans alarmisme</a>.</li>
+      <li><strong>Gommer toute difficulté.</strong> Un déploiement «&nbsp;sans aucun accroc&nbsp;» paraît suspect&nbsp;; une difficulté résolue rassure.</li>
+      <li><strong>Publier puis oublier.</strong> Sans lien depuis les pages produit, les comparatifs et les séquences commerciales, personne ne la lit.</li>
+    </ul>
+
+    <h2 id="ch8">8. Repérer l'effet d'une étude de cas sur les ventes</h2>
+
+    <p>La valeur d'un cas client publié se lit dans l'usage qu'en font les ventes, pas dans son nombre de vues. Trois indicateurs suffisent, à relever trois à six mois après la publication.</p>
+
+    <ul>
+      <li><strong>Le taux d'utilisation par les commerciaux&nbsp;:</strong> combien de propositions et d'e-mails de suivi la citent, relevé dans le CRM (logiciel de gestion de la relation client).</li>
+      <li><strong>Les opportunités qui l'ont consultée&nbsp;:</strong> dans l'outil d'analyse, le nombre de comptes en cours de négociation ayant visité la page.</li>
+      <li><strong>Les objections levées&nbsp;:</strong> demandez aux commerciaux si la question «&nbsp;avez-vous une référence dans mon secteur&nbsp;?&nbsp;» revient moins souvent.</li>
+    </ul>
+
+    <p>Côté référencement, la page doit viser une requête précise («&nbsp;détection rançongiciel hôpital&nbsp;», «&nbsp;supervision de sécurité industrie&nbsp;») plutôt que le nom du client, que personne ne cherche. Elle nourrit aussi le dossier de preuves qu'appelle l'<a href="/articles/article-nis2-argument-commercial-editeurs.html">argument commercial NIS2</a>, face aux questionnaires fournisseurs.</p>
+
+    <h3>Produire ces récits soi-même ou les externaliser</h3>
+
+    <p>Avec un product marketing à l'aise sur la technique et des ingénieurs disponibles, une équipe tient le rythme d'une étude de cas par trimestre. L'externalisation se justifie quand plusieurs cas attendent depuis des mois, quand l'entretien exige un interlocuteur qui parle le langage du RSSI, ou pour assembler plusieurs récits en un document téléchargeable. L'ingénieur du projet reste dans tous les cas le garant de l'exactitude.</p>
+
+    <div class="conclusion-box">
+      <p><strong>Ce qu'il faut retenir</strong></p>
+      <p>Le silence de vos clients n'est pas une fatalité&nbsp;: il disparaît quand le récit ne livre rien d'exploitable à un attaquant et que le RSSI sait d'avance ce qui sera publié. Cette semaine, choisissez dans votre portefeuille le projet qui passe le tri des cinq questions et envoyez au client la page de cadrage. Pour transformer ces entretiens en <a href="/service-livres-blancs">cas clients et livres blancs</a> relus par vos ingénieurs, les étapes et les délais sont détaillés sur la page dédiée.</p>
+      <a href="/devis" class="final-cta">Faire évaluer vos projets publiables →</a>
+    </div>
+
+    <!-- lexique:debut -->
+    <div class="lexique" style="margin:40px 0 8px;padding:22px 26px 16px;background:#F4F7FC;border:1px solid #DCE5F3;border-radius:14px;font-size:15px;line-height:1.55;color:#33415C">
+      <p style="margin:0 0 12px;font-size:12px;font-weight:800;letter-spacing:1.4px;text-transform:uppercase;color:#1A56DB">Sigles utilisés dans cet article</p>
+      <dl style="margin:0;overflow:hidden">
+      <dt style="float:left;clear:left;min-width:86px;font-weight:800;color:#0B1633">B2B</dt><dd style="margin:0 0 7px 96px">vente entre entreprises</dd>
+      <dt style="float:left;clear:left;min-width:86px;font-weight:800;color:#0B1633">CRM</dt><dd style="margin:0 0 7px 96px">logiciel de gestion de la relation client</dd>
+      <dt style="float:left;clear:left;min-width:86px;font-weight:800;color:#0B1633">EMEA</dt><dd style="margin:0 0 7px 96px">Europe, Moyen-Orient, Afrique</dd>
+      <dt style="float:left;clear:left;min-width:86px;font-weight:800;color:#0B1633">IA</dt><dd style="margin:0 0 7px 96px">intelligence artificielle</dd>
+      <dt style="float:left;clear:left;min-width:86px;font-weight:800;color:#0B1633">NIS2</dt><dd style="margin:0 0 7px 96px">directive européenne sur la cybersécurité</dd>
+      <dt style="float:left;clear:left;min-width:86px;font-weight:800;color:#0B1633">RSSI</dt><dd style="margin:0 0 7px 96px">responsable de la sécurité des systèmes d&#x27;information</dd>
+      <dt style="float:left;clear:left;min-width:86px;font-weight:800;color:#0B1633">SIEM</dt><dd style="margin:0 0 7px 96px">outil de gestion des événements de sécurité</dd>
+      </dl>
+    </div>
+    <!-- lexique:fin -->
+    <h2 id="faq">Questions fréquentes</h2>
+
+    <div class="faq-item">
+      <h3>Qu'est-ce qu'une étude de cas en cybersécurité&nbsp;?</h3>
+      <p>C'est le récit vérifiable d'un projet de sécurité mené chez un client&nbsp;: le risque de départ, la solution retenue, le déploiement et les résultats mesurés. Elle sert à montrer à un prospect comparable comment le produit s'est comporté en conditions réelles.</p>
+    </div>
+
+    <div class="faq-item">
+      <h3>Comment présenter un cas client sans révéler le nom de l'entreprise&nbsp;?</h3>
+      <p>Remplacez le nom par un profil en fourchette (secteur, taille, nombre de sites) et retirez les détails qui permettraient de la reconnaître, comme les dates exactes ou la pile technique. Faites ensuite relire le texte par le client pour qu'il confirme qu'il n'est pas identifiable. N'inventez aucun détail pour le rendre plus vivant.</p>
+    </div>
+
+    <div class="faq-item">
+      <h3>Quelles informations ne jamais publier dans une étude de cas cyber&nbsp;?</h3>
+      <p>Les outils de sécurité en place et leurs versions, l'architecture du réseau, les comptes à privilèges et les indicateurs techniques d'un incident. Ce sont précisément les éléments qu'un attaquant recherche pendant sa phase de reconnaissance. Les résultats, eux, se publient en ordres de grandeur.</p>
+    </div>
+
+    <div class="faq-item">
+      <h3>Quelles questions poser au RSSI lors de l'entretien&nbsp;?</h3>
+      <p>Demandez-lui ce qu'il redoutait avant le projet, quelles solutions il a écartées et pourquoi, ce qui a été plus difficile que prévu et quel indicateur a changé depuis. Terminez par ce qu'il dirait à un homologue qui hésite&nbsp;: la réponse fournit souvent la meilleure citation.</p>
+    </div>
+
+    <h2 id="sources">Sources</h2>
+    <ol class="sources">
+      <li>MITRE ATT&amp;CK, «&nbsp;Gather Victim Host Information: Software&nbsp;» (technique T1592.002), version 1.2 mise à jour le 18&nbsp;septembre 2026 (collecte d'informations sur les logiciels et protections défensives d'une cible, exposition via des données accessibles en ligne, parade&nbsp;: réduire les données laissées à la portée de tiers). <a href="https://attack.mitre.org/techniques/T1592/002/" target="_blank" rel="nofollow noopener">attack.mitre.org</a></li>
+      <li>Gartner, communiqué de presse consacré à son enquête commerciale sur les acheteurs B2B, 25&nbsp;juin 2025 (61&nbsp;% préfèrent un parcours d'achat sans vendeur&nbsp;; 632 acheteurs B2B interrogés d'août à septembre 2024). <a href="https://www.gartner.com/en/newsroom/press-releases/2025-06-25-gartner-sales-survey-finds-61-percent-of-b2b-buyers-prefer-a-rep-free-buying-experience" target="_blank" rel="nofollow noopener">gartner.com</a></li>
+      <li>Foundry, «&nbsp;Customer Engagement Survey&nbsp;», 12<sup>e</sup>&nbsp;édition (676 décideurs informatiques et métiers interrogés en décembre 2025&nbsp;; influence croissante des études de cas aux étapes d'évaluation et de recommandation&nbsp;; 31&nbsp;% en région EMEA). <a href="https://resources.foundryco.com/hubfs/R-WP_Customer%20Engagement_2025.pdf" target="_blank" rel="nofollow noopener">resources.foundryco.com</a></li>
+      <li>BlueWhale Research, «&nbsp;What Content Truly Engages Tech Buyers? A Data-Driven Breakdown&nbsp;», 12&nbsp;mai 2025 (2025 Tech Buyer Preferences Survey&nbsp;; études de cas citées comme format le plus engageant par 20&nbsp;% des répondants&nbsp;; taille d'échantillon non précisée). <a href="https://bluewhaleresearch.com/blog/what-content-types-truly-engage-tech-buyers/" target="_blank" rel="nofollow noopener">bluewhaleresearch.com</a></li>
+    </ol>
+
+  <!-- maillage:debut -->
+<section class="maillage" aria-label="Articles liés">
+<style>
+.maillage{margin:44px 0 8px;padding-top:28px;border-top:1px solid #e2e8f0;font-family:inherit}
+.maillage h2{font-size:20px!important;font-weight:800;color:#0F1B3D;margin:0 0 16px!important}
+.mi-grille{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:14px}
+.mi-carte{display:flex;flex-direction:column;gap:8px;border:1px solid #e2e8f0;border-radius:14px;padding:16px 18px;background:#fff;text-decoration:none!important;transition:border-color .2s,box-shadow .2s,transform .2s}
+.mi-carte:hover{border-color:#1A56DB;box-shadow:0 8px 24px rgba(26,86,219,.10);transform:translateY(-2px)}
+.mi-cat{font-size:10.5px;font-weight:800;letter-spacing:1.2px;text-transform:uppercase;color:#1342b0}
+.mi-titre{font-size:14.5px;font-weight:700;line-height:1.4;color:#0F1B3D}
+.mi-lire{margin-top:auto;font-size:12px;color:#64748b}
+</style>
+<h2>À lire aussi</h2>
+<div class="mi-grille"><a class="mi-carte" href="/articles/article-veille-reglementaire-cyber-automatisee.html"><span class="mi-cat">Cybersécurité</span><span class="mi-titre">Veille réglementaire cybersécurité : l&#x27;automatiser sans rien laisser passer</span><span class="mi-lire">Lire l'article · 12 min</span></a><a class="mi-carte" href="/articles/article-etude-de-cas-client-fintech.html"><span class="mi-cat">Fintech</span><span class="mi-titre">Étude de cas client en fintech : prouver sans trahir le secret client</span><span class="mi-lire">Lire l'article · 12 min</span></a><a class="mi-carte" href="/articles/article-marketing-contenu-cybersecurite.html"><span class="mi-cat">Cybersécurité</span><span class="mi-titre">Marketing cybersécurité : convaincre un RSSI sans jouer sur la peur</span><span class="mi-lire">Lire l'article · 12 min</span></a></div>
+</section>
+<!-- maillage:fin -->
+</main>
+
+  <aside class="sidebar">
+    <div class="sidebar-card">
+      <h3>Sommaire</h3>
+      <div class="mini-toc">
+        <a href="#ch1">1. Aucune histoire publiable</a>
+        <a href="#ch2">2. Le refus du RSSI</a>
+        <a href="#ch3">3. Trier les projets</a>
+        <a href="#ch4">4. Six étapes</a>
+        <a href="#ch5">5. Grille de tri</a>
+        <a href="#ch6">6. Plan et exemple</a>
+        <a href="#ch7">7. Maladresses</a>
+        <a href="#ch8">8. Effet sur les ventes</a>
+        <a href="#faq">FAQ</a>
+        <a href="#sources">Sources</a>
+      </div>
+    </div>
+    <div class="sidebar-card">
+      <div class="author-card">
+        <div class="author-avatar">GD</div>
+        <div>
+          <div class="author-name"><a href="/apropos" rel="author" style="color:inherit;text-decoration:none">Gora Dieme</a></div>
+          <div class="author-role">Fondateur · SEO tech B2B</div>
+        </div>
+      </div>
+    </div>
+    <div class="sidebar-card guide-card">
+      <h3>Le guide B2B de la visibilité IA</h3>
+      <p>Livre blanc gratuit : vérifier si ChatGPT, Perplexity et Gemini citent votre solution de sécurité quand un RSSI compare les éditeurs.</p>
+      <a href="/livres-blancs/visibilite-ia-b2b-guide.html" class="guide-btn">Télécharger le livre blanc</a>
+    </div>
+  </aside>
+</div>
+
+<div class="nl-band">
+  <div class="nl-band-inner">
+    <h2>📩 La newsletter SEO Tech B2B</h2>
+    <p>Chaque semaine, une stratégie actionnable et une opportunité SEO dans votre secteur.</p>
+    <div class="nl-band-form">
+      <input type="email" class="nl-band-input" id="nlBandEmail" placeholder="votre@email.com"/>
+      <button class="nl-band-btn" id="nlBandBtn" type="button">S'abonner →</button>
+    </div>
+    <p id="nlBandMsg" style="display:none;font-size:12px;color:#fff;margin-top:8px"></p>
+    <p class="nl-band-note">✓ Gratuit · ✓ Sans spam · ✓ Désabonnement en 1 clic</p>
+  </div>
+</div>
+
+<div class="cta-band">
+  <div class="cta-inner">
+    <div>
+      <h2>Du contenu qui performe, pas qui remplit des pages</h2>
+      <p>Vous voulez une stratégie de contenu sur mesure pour votre secteur tech B2B ? Parlons-en.</p>
+      <div class="cta-btns">
+        <button class="btn-white" onclick="window.location='/devis'">Obtenir un devis gratuit →</button>
+        <button class="btn-ghost-cta" onclick="window.location='/services'">Voir nos services →</button>
+      </div>
+    </div>
+    <div class="cta-checks">
+      <div class="cta-check"><span class="cta-ci">✓</span> Réponse sous 24h</div>
+      <div class="cta-check"><span class="cta-ci">✓</span> Audit SEO gratuit</div>
+      <div class="cta-check"><span class="cta-ci">✓</span> Sans engagement</div>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <div class="logo"><div class="logo-box">TRD</div><div class="logo-text" style="color:#fff">TechRepair<span>Content</span></div></div>
+      <p>Rédaction SEO & technique pour entreprises SaaS, Tech et E-commerce.</p>
+    </div>
+    <div><h4>Navigation</h4><ul class="flinks"><li><a href="/">Accueil</a></li><li><a href="/apropos">À propos</a></li><li><a href="/services">Services</a></li><li><a href="/secteurs">Secteurs</a></li><li><a href="/blog">Blog</a></li><li><a href="/livres-blancs/">Livres blancs</a></li></ul></div>
+    <div><h4>Ressources</h4><ul class="flinks"><li><a href="/agents-ia">Agents IA</a></li><li><a href="/visibilite-ia">Visibilité dans les IA</a></li><li><a href="/faq">FAQ</a></li><li><a href="/confidentialite">Confidentialité</a></li><li><a href="/mentions-legales">Mentions légales</a></li></ul></div>
+    <div>
+      <h4>Contact</h4>
+      <ul class="flinks"><li><a href="mailto:contact@techrepaircontent.com">contact@techrepaircontent.com</a></li><li><a href="/devis">Réponse sous 24h</a></li></ul>
+      <div class="fsocial"><a class="fsoc" href="https://www.linkedin.com/in/techrepair-content" target="_blank" rel="noopener">in</a><a class="fsoc" href="mailto:contact@techrepaircontent.com">✉</a></div>
+    </div>
+    <div><h4>Basé en France</h4><div style="font-size:22px">🇫🇷</div></div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2026 TechRepair Content. Tous droits réservés.</span>
+    <span>Fait avec ❤️ en France</span>
+  </div>
+</footer>
+
+<script>
+const hamburger = document.getElementById('hamburger');
+const mobileMenu = document.getElementById('mobileMenu');
+hamburger.addEventListener('click', () => {
+  hamburger.classList.toggle('open');
+  mobileMenu.classList.toggle('open');
+});
+mobileMenu.querySelectorAll('a').forEach(link => {
+  link.addEventListener('click', () => {
+    hamburger.classList.remove('open');
+    mobileMenu.classList.remove('open');
+  });
+});
+
+const BREVO_FORM_ACTION = 'https://a41ce724.sibforms.com/serve/MUIFAEGqDW1rbNTL0uU5ym6Ux5qJ7TJpdETsCjqRumOCnr-gRU8IGKx8Ic-JLjScrVVWrJVx_YXawDF8ao6y5hYLPvy7h8UJCk3gg9gTHcTaNAWQzbjwLnHO6DPk_HzPb7XY28rHy9JtEMuP-euST6RZutJ_bWOfqZFEtI-UUs9G4HA-O5V8JPwb3jLz0jhwuISuUqZ3Iok5IEyYHg==';
+
+function subscribeToNewsletter(emailInput, msgEl, btnEl) {
+  const email = emailInput.value.trim();
+  const isValidEmail = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+  msgEl.style.display = 'block';
+  if (!isValidEmail) {
+    msgEl.style.color = '#dc2626';
+    msgEl.textContent = "Merci d'entrer une adresse email valide.";
+    return;
+  }
+  const formData = new FormData();
+  formData.append('EMAIL', email);
+  formData.append('email_address_check', '');
+  formData.append('locale', 'fr');
+  formData.append('html_type', 'simple');
+  fetch(BREVO_FORM_ACTION, { method: 'POST', mode: 'no-cors', body: formData }).catch(() => {});
+  msgEl.style.color = '#10b981';
+  msgEl.textContent = 'Merci ! Vérifiez votre boîte mail pour confirmer.';
+  btnEl.textContent = 'Inscription envoyée ✓';
+  btnEl.disabled = true;
+}
+
+const nlBandBtn = document.getElementById('nlBandBtn');
+nlBandBtn.addEventListener('click', () => {
+  subscribeToNewsletter(document.getElementById('nlBandEmail'), document.getElementById('nlBandMsg'), nlBandBtn);
+});
+</script>
+</body>
+</html>
