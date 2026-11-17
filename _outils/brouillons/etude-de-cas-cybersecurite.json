@@ -1,0 +1,34 @@
+{
+  "slug": "etude-de-cas-cybersecurite",
+  "categorie": "cyber",
+  "date": "2026-11-17",
+  "titre": "Étude de cas cybersécurité : raconter un incident évité sans exposer le client",
+  "titreSeo": "Étude de cas cybersécurité : prouver sans exposer le client",
+  "h1": "Étude de cas cybersécurité : raconter un incident évité sans exposer le client",
+  "filAriane": "Étude de cas cybersécurité",
+  "motCle": "étude de cas cybersécurité",
+  "metaDesc": "Étude de cas cybersécurité : pourquoi le RSSI client refuse, la grille de tri publier, généraliser ou taire, six étapes, un plan type et un exemple réécrit.",
+  "extrait": "Vos clients refusent d'être cités et leur RSSI craint d'exposer ses défenses ? Tri des projets, grille en trois colonnes, méthode en six étapes et récit d'incident réécrit pour être publiable.",
+  "image": "articles/etude-de-cas-cybersecurite-cover.jpg",
+  "imageAlt": "Étude de cas cybersécurité : raconter un incident évité sans exposer le client",
+  "sommaireCourt": {
+    "ch1": "1. Aucune histoire publiable",
+    "ch2": "2. Le refus du RSSI",
+    "ch3": "3. Trier les projets",
+    "ch4": "4. Six étapes",
+    "ch5": "5. Grille de tri",
+    "ch6": "6. Plan et exemple",
+    "ch7": "7. Maladresses",
+    "ch8": "8. Effet sur les ventes",
+    "faq": "FAQ",
+    "sources": "Sources"
+  },
+  "ctaLateral": {
+    "titre": "Le guide B2B de la visibilité IA",
+    "texte": "Livre blanc gratuit : vérifier si ChatGPT, Perplexity et Gemini citent votre solution de sécurité quand un RSSI compare les éditeurs.",
+    "lien": "/livres-blancs/visibilite-ia-b2b-guide.html",
+    "bouton": "Télécharger le livre blanc"
+  },
+  "service": "livres-blancs",
+  "remplacer": true
+}

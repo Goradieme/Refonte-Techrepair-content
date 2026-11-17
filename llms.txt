@@ -23,6 +23,7 @@
 
 ## Articles du blog
 
+- [Étude de cas cybersécurité : raconter un incident évité sans exposer le client](https://www.techrepaircontent.com/articles/article-etude-de-cas-cybersecurite.html): Vos clients refusent d'être cités et leur RSSI craint d'exposer ses défenses ? Tri des projets, grille en trois colonnes, méthode en six étapes et récit d'incident réécrit pour être publiable.
 - [Stratégie SEO SaaS : du trafic aux essais gratuits et aux démos](https://www.techrepaircontent.com/articles/article-strategie-seo-saas.html): Votre blog SaaS attire des visites mais pas d'essais ? Diagnostic de la distance au produit, méthode en sept étapes, matrice trimestrielle à copier, programmatic SEO et indicateurs reliés aux démos.
 - [SIRH et RGPD : les contenus qui rassurent un DRH sur les données de ses salariés](https://www.techrepaircontent.com/articles/article-sirh-rgpd-contenus-rassurer-drh.html): Le badge « Conforme RGPD » ne rassure plus le DPO de vos prospects. Test des sept questions, page de confiance en six étapes, plan type avec une réponse réécrite, et les requêtes RGPD des DRH à transformer en articles.
 - [Page catégorie e-commerce : le texte qui fait ranker sans gêner la vente](https://www.techrepaircontent.com/articles/article-texte-page-categorie-ecommerce.html): Le pavé de texte sous la grille de produits aide rarement. Contrôle en trente minutes, méthode en six étapes, gabarit en cinq zones avec un exemple avant / après, et un test simple pour mesurer l'effet sur les clics et les ventes.
