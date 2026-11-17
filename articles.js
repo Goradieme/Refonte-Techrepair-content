@@ -418,7 +418,7 @@ const ARTICLES = [
     categorie:"cyber",
     lecture:  "12 min",
     lien:     "articles/article-etude-de-cas-cybersecurite.html",
-    image:    "articles/etude-de-cas-cybersecurite-cover.jpg",
+    image:    "articles/etude-de-cas-cybersecurite-cover-v2-carte.jpg",
     slug:     "etude-de-cas-cybersecurite",
     motCle:   "étude de cas cybersécurité",
     metaDesc: "Étude de cas cybersécurité : pourquoi le RSSI client refuse, la grille de tri publier, généraliser ou taire, six étapes, un plan type et un exemple réécrit."
