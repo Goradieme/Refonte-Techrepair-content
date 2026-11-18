@@ -23,6 +23,7 @@
 
 ## Articles du blog
 
+- [Rédacteur web finance : recruter la bonne plume pour votre fintech](https://www.techrepaircontent.com/articles/article-redacteur-web-finance.html): Vos textes reviennent raturés par la conformité ou restent trop vagues pour un DAF ? Audit en cinq questions, modèles comparés, tarifs 2026, brief de test et grille de notation pour recruter la bonne plume.
 - [Étude de cas cybersécurité : raconter un incident évité sans exposer le client](https://www.techrepaircontent.com/articles/article-etude-de-cas-cybersecurite.html): Vos clients refusent d'être cités et leur RSSI craint d'exposer ses défenses ? Tri des projets, grille en trois colonnes, méthode en six étapes et récit d'incident réécrit pour être publiable.
 - [Stratégie SEO SaaS : du trafic aux essais gratuits et aux démos](https://www.techrepaircontent.com/articles/article-strategie-seo-saas.html): Votre blog SaaS attire des visites mais pas d'essais ? Diagnostic de la distance au produit, méthode en sept étapes, matrice trimestrielle à copier, programmatic SEO et indicateurs reliés aux démos.
 - [SIRH et RGPD : les contenus qui rassurent un DRH sur les données de ses salariés](https://www.techrepaircontent.com/articles/article-sirh-rgpd-contenus-rassurer-drh.html): Le badge « Conforme RGPD » ne rassure plus le DPO de vos prospects. Test des sept questions, page de confiance en six étapes, plan type avec une réponse réécrite, et les requêtes RGPD des DRH à transformer en articles.

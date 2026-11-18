@@ -308,6 +308,10 @@
     "EMEA": {
       "developpe": "Europe, Moyen-Orient, Afrique",
       "cle": "europe\\W+moyen\\W+orient"
+    },
+    "MIF": {
+      "developpe": "marchés d'instruments financiers (directive européenne)",
+      "cle": "marches d.instruments financiers"
     }
   },
   "ignorer": [
