@@ -423,4 +423,17 @@ const ARTICLES = [
     motCle:   "étude de cas cybersécurité",
     metaDesc: "Étude de cas cybersécurité : pourquoi le RSSI client refuse, la grille de tri publier, généraliser ou taire, six étapes, un plan type et un exemple réécrit."
   },
+  {
+    titre:    "Rédacteur web finance : recruter la bonne plume pour votre fintech",
+    extrait:  "Vos textes reviennent raturés par la conformité ou restent trop vagues pour un DAF ? Audit en cinq questions, modèles comparés, tarifs 2026, brief de test et grille de notation pour recruter la bonne plume.",
+    auteur:   "Gora Dieme",
+    date:     "2026-11-18",
+    categorie:"fintech",
+    lecture:  "12 min",
+    lien:     "articles/article-redacteur-web-finance.html",
+    image:    "articles/redacteur-web-finance-cover.jpg",
+    slug:     "redacteur-web-finance",
+    motCle:   "rédacteur web finance",
+    metaDesc: "Rédacteur web finance : diagnostic de vos contenus, freelance ou agence, tarifs 2026, recrutement en cinq étapes, brief de test et grille de notation sur 20."
+  },
 ];
