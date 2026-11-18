@@ -431,7 +431,7 @@ const ARTICLES = [
     categorie:"fintech",
     lecture:  "12 min",
     lien:     "articles/article-redacteur-web-finance.html",
-    image:    "articles/redacteur-web-finance-cover.jpg",
+    image:    "articles/redacteur-web-finance-cover-v2-carte.jpg",
     slug:     "redacteur-web-finance",
     motCle:   "rédacteur web finance",
     metaDesc: "Rédacteur web finance : diagnostic de vos contenus, freelance ou agence, tarifs 2026, recrutement en cinq étapes, brief de test et grille de notation sur 20."
