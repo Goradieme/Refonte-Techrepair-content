@@ -436,4 +436,17 @@ const ARTICLES = [
     motCle:   "rédacteur web finance",
     metaDesc: "Rédacteur web finance : diagnostic de vos contenus, freelance ou agence, tarifs 2026, recrutement en cinq étapes, brief de test et grille de notation sur 20."
   },
+  {
+    titre:    "Contenu IA et SEO : publier plus d'articles B2B sans perdre en qualité",
+    extrait:  "Vos textes produits avec l'IA se ressemblent, glissent des erreurs et se classent mal ? Ce que Google sanctionne vraiment, l'obligation de l'AI Act, un audit en cinq questions, une chaîne en six étapes et un brief type.",
+    auteur:   "Gora Dieme",
+    date:     "2026-11-19",
+    categorie:"seo",
+    lecture:  "12 min",
+    lien:     "articles/article-contenu-ia-seo-qualite-b2b.html",
+    image:    "articles/contenu-ia-seo-qualite-b2b-cover.jpg",
+    slug:     "contenu-ia-seo-qualite-b2b",
+    motCle:   "contenu IA SEO",
+    metaDesc: "Contenu IA et SEO : ce que Google sanctionne vraiment, l'AI Act, un audit en cinq questions, une chaîne en six étapes, un brief type et une grille de contrôle."
+  },
 ];
