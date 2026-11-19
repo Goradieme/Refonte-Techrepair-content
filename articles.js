@@ -444,7 +444,7 @@ const ARTICLES = [
     categorie:"seo",
     lecture:  "12 min",
     lien:     "articles/article-contenu-ia-seo-qualite-b2b.html",
-    image:    "articles/contenu-ia-seo-qualite-b2b-cover-v2-carte.jpg",
+    image:    "articles/contenu-ia-seo-qualite-b2b-cover-v3-carte.jpg",
     slug:     "contenu-ia-seo-qualite-b2b",
     motCle:   "contenu IA SEO",
     metaDesc: "Contenu IA et SEO : ce que Google sanctionne vraiment, l'AI Act, un audit en cinq questions, une chaîne en six étapes, un brief type et une grille de contrôle."
