@@ -457,7 +457,7 @@ const ARTICLES = [
     categorie:"ecommerce",
     lecture:  "12 min",
     lien:     "articles/article-audit-seo-e-commerce.html",
-    image:    "articles/audit-seo-e-commerce-cover.jpg",
+    image:    "articles/audit-seo-e-commerce-cover-v2-carte.jpg",
     slug:     "audit-seo-e-commerce",
     motCle:   "audit SEO e-commerce",
     metaDesc: "Audit SEO e-commerce : repérer les quatre fuites d'un catalogue, la procédure en deux jours, une grille impact et effort, une fiche réécrite et le prix."
