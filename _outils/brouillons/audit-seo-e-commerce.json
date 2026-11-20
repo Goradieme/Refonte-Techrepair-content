@@ -1,0 +1,34 @@
+{
+  "slug": "audit-seo-e-commerce",
+  "categorie": "ecommerce",
+  "date": "2026-11-20",
+  "titre": "Audit SEO e-commerce : la méthode pour trouver ce qui bride votre catalogue",
+  "titreSeo": "Audit SEO e-commerce : méthode en 2 jours et grille",
+  "h1": "Audit SEO e-commerce : la méthode pour trouver ce qui bride votre catalogue",
+  "filAriane": "Audit SEO e-commerce",
+  "motCle": "audit SEO e-commerce",
+  "metaDesc": "Audit SEO e-commerce : repérer les quatre fuites d'un catalogue, la procédure en deux jours, une grille impact et effort, une fiche réécrite et le prix.",
+  "extrait": "Filtres, variantes, fiches copiées du fabricant : la procédure en deux jours pour savoir pourquoi votre catalogue reste invisible, une grille impact et effort remplie et une fiche réécrite.",
+  "image": "articles/audit-seo-e-commerce-cover.jpg",
+  "imageAlt": "Audit SEO e-commerce : ce qui bride votre catalogue",
+  "sommaireCourt": {
+    "ch1": "1. Pages qui vendent",
+    "ch2": "2. Définition",
+    "ch3": "3. Quatre fuites",
+    "ch4": "4. En deux jours",
+    "ch5": "5. Grille impact/effort",
+    "ch6": "6. Fiche réécrite",
+    "ch7": "7. Trois ratés",
+    "ch8": "8. Prix et effet",
+    "faq": "FAQ",
+    "sources": "Sources"
+  },
+  "ctaLateral": {
+    "titre": "Le guide B2B de la visibilité IA",
+    "texte": "Livre blanc gratuit : vérifier si ChatGPT, Perplexity et Gemini recommandent vos gammes quand un acheteur professionnel compare les équipements.",
+    "lien": "/livres-blancs/visibilite-ia-b2b-guide.html",
+    "bouton": "Télécharger le livre blanc"
+  },
+  "service": "fiches-produits",
+  "remplacer": true
+}

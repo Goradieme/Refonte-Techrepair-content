@@ -23,6 +23,7 @@
 
 ## Articles du blog
 
+- [Audit SEO e-commerce : la méthode pour trouver ce qui bride votre catalogue](https://www.techrepaircontent.com/articles/article-audit-seo-e-commerce.html): Filtres, variantes, fiches copiées du fabricant : la procédure en deux jours pour savoir pourquoi votre catalogue reste invisible, une grille impact et effort remplie et une fiche réécrite.
 - [Contenu IA et SEO : publier plus d'articles B2B sans perdre en qualité](https://www.techrepaircontent.com/articles/article-contenu-ia-seo-qualite-b2b.html): Vos textes produits avec l'IA se ressemblent, glissent des erreurs et se classent mal ? Ce que Google sanctionne vraiment, l'obligation de l'AI Act, un audit en cinq questions, une chaîne en six étapes et un brief type.
 - [Rédacteur web finance : recruter la bonne plume pour votre fintech](https://www.techrepaircontent.com/articles/article-redacteur-web-finance.html): Vos textes reviennent raturés par la conformité ou restent trop vagues pour un DAF ? Audit en cinq questions, modèles comparés, tarifs 2026, brief de test et grille de notation pour recruter la bonne plume.
 - [Étude de cas cybersécurité : raconter un incident évité sans exposer le client](https://www.techrepaircontent.com/articles/article-etude-de-cas-cybersecurite.html): Vos clients refusent d'être cités et leur RSSI craint d'exposer ses défenses ? Tri des projets, grille en trois colonnes, méthode en six étapes et récit d'incident réécrit pour être publiable.

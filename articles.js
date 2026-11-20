@@ -449,4 +449,17 @@ const ARTICLES = [
     motCle:   "contenu IA SEO",
     metaDesc: "Contenu IA et SEO : ce que Google sanctionne vraiment, l'AI Act, un audit en cinq questions, une chaîne en six étapes, un brief type et une grille de contrôle."
   },
+  {
+    titre:    "Audit SEO e-commerce : la méthode pour trouver ce qui bride votre catalogue",
+    extrait:  "Filtres, variantes, fiches copiées du fabricant : la procédure en deux jours pour savoir pourquoi votre catalogue reste invisible, une grille impact et effort remplie et une fiche réécrite.",
+    auteur:   "Gora Dieme",
+    date:     "2026-11-20",
+    categorie:"ecommerce",
+    lecture:  "12 min",
+    lien:     "articles/article-audit-seo-e-commerce.html",
+    image:    "articles/audit-seo-e-commerce-cover.jpg",
+    slug:     "audit-seo-e-commerce",
+    motCle:   "audit SEO e-commerce",
+    metaDesc: "Audit SEO e-commerce : repérer les quatre fuites d'un catalogue, la procédure en deux jours, une grille impact et effort, une fiche réécrite et le prix."
+  },
 ];
