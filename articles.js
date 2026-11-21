@@ -470,7 +470,7 @@ const ARTICLES = [
     categorie:"rh",
     lecture:  "12 min",
     lien:     "articles/article-seo-logiciel-rh.html",
-    image:    "articles/seo-logiciel-rh-cover-v2-carte.jpg",
+    image:    "articles/seo-logiciel-rh-cover-v3-carte.jpg",
     slug:     "seo-logiciel-rh",
     motCle:   "SEO logiciel RH",
     metaDesc: "SEO logiciel RH : carte des requêtes par module et secteur, pages à créer en six étapes, gabarit de page BTP, contenus de droit social fiables et mesure."
