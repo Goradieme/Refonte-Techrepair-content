@@ -312,6 +312,14 @@
     "MIF": {
       "developpe": "marchés d'instruments financiers (directive européenne)",
       "cle": "marches d.instruments financiers"
+    },
+    "CPC": {
+      "developpe": "coût par clic",
+      "cle": "cout par clic"
+    },
+    "BTP": {
+      "developpe": "bâtiment et travaux publics",
+      "cle": "batiment et travaux publics"
     }
   },
   "ignorer": [

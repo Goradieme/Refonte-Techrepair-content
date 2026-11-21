@@ -462,4 +462,17 @@ const ARTICLES = [
     motCle:   "audit SEO e-commerce",
     metaDesc: "Audit SEO e-commerce : repérer les quatre fuites d'un catalogue, la procédure en deux jours, une grille impact et effort, une fiche réécrite et le prix."
   },
+  {
+    titre:    "SEO logiciel RH : capter sur Google les acheteurs prêts à demander une démo",
+    extrait:  "Clics à 33 € et comparateurs en tête sur « logiciel RH » : la méthode pour se classer sur les modules, les secteurs et les questions de droit social, avec un gabarit de page sectorielle.",
+    auteur:   "Gora Dieme",
+    date:     "2026-11-21",
+    categorie:"rh",
+    lecture:  "12 min",
+    lien:     "articles/article-seo-logiciel-rh.html",
+    image:    "articles/seo-logiciel-rh-cover.jpg",
+    slug:     "seo-logiciel-rh",
+    motCle:   "SEO logiciel RH",
+    metaDesc: "SEO logiciel RH : carte des requêtes par module et secteur, pages à créer en six étapes, gabarit de page BTP, contenus de droit social fiables et mesure."
+  },
 ];
