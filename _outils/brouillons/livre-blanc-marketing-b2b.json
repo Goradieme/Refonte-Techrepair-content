@@ -1,0 +1,35 @@
+{
+  "slug": "livre-blanc-marketing-b2b",
+  "categorie": "seo",
+  "date": "2026-11-22",
+  "titre": "Livre blanc marketing : le plan type B2B qui génère des rendez-vous",
+  "titreSeo": "Livre blanc marketing : plan type B2B et exemple",
+  "h1": "Livre blanc marketing : le plan type B2B qui génère des rendez-vous",
+  "filAriane": "Livre blanc marketing",
+  "motCle": "livre blanc marketing",
+  "metaDesc": "Livre blanc marketing en B2B : diagnostic en six questions, plan type en sept chapitres, exemple fintech, réglage du formulaire et séquence de suivi.",
+  "extrait": "Des téléchargements qui ne deviennent jamais des rendez-vous ? Diagnostic, plan type en sept chapitres, exemple de structure, formulaire et séquence de suivi pour un livre blanc B2B qui sert la vente.",
+  "image": "articles/livre-blanc-marketing-b2b-cover.jpg",
+  "imageAlt": "Livre blanc marketing : le plan type B2B qui génère des rendez-vous",
+  "sommaireCourt": {
+    "ch1": "1. Le symptôme",
+    "ch2": "2. Diagnostic",
+    "ch3": "3. Sept étapes",
+    "ch4": "4. Plan type",
+    "ch5": "5. Formulaire",
+    "ch6": "6. Suivi",
+    "ch7": "7. Cinq erreurs",
+    "ch8": "8. Indicateurs",
+    "ch9": "9. Interne ou externe",
+    "faq": "FAQ",
+    "sources": "Sources"
+  },
+  "ctaLateral": {
+    "titre": "Le guide B2B de la visibilité IA",
+    "texte": "Livre blanc gratuit : un exemple complet de plan, d'outils prêts à l'emploi et de page de téléchargement, à lire avant d'écrire le vôtre.",
+    "lien": "/livres-blancs/visibilite-ia-b2b-guide.html",
+    "bouton": "Télécharger le livre blanc"
+  },
+  "service": "livres-blancs",
+  "remplacer": true
+}

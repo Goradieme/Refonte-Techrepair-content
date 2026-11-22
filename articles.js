@@ -475,4 +475,17 @@ const ARTICLES = [
     motCle:   "SEO logiciel RH",
     metaDesc: "SEO logiciel RH : carte des requêtes par module et secteur, pages à créer en six étapes, gabarit de page BTP, contenus de droit social fiables et mesure."
   },
+  {
+    titre:    "Livre blanc marketing : le plan type B2B qui génère des rendez-vous",
+    extrait:  "Des téléchargements qui ne deviennent jamais des rendez-vous ? Diagnostic, plan type en sept chapitres, exemple de structure, formulaire et séquence de suivi pour un livre blanc B2B qui sert la vente.",
+    auteur:   "Gora Dieme",
+    date:     "2026-11-22",
+    categorie:"seo",
+    lecture:  "12 min",
+    lien:     "articles/article-livre-blanc-marketing-b2b.html",
+    image:    "articles/livre-blanc-marketing-b2b-cover.jpg",
+    slug:     "livre-blanc-marketing-b2b",
+    motCle:   "livre blanc marketing",
+    metaDesc: "Livre blanc marketing en B2B : diagnostic en six questions, plan type en sept chapitres, exemple fintech, réglage du formulaire et séquence de suivi."
+  },
 ];
