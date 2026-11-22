@@ -483,7 +483,7 @@ const ARTICLES = [
     categorie:"seo",
     lecture:  "12 min",
     lien:     "articles/article-livre-blanc-marketing-b2b.html",
-    image:    "articles/livre-blanc-marketing-b2b-cover.jpg",
+    image:    "articles/livre-blanc-marketing-b2b-cover-v2-carte.jpg",
     slug:     "livre-blanc-marketing-b2b",
     motCle:   "livre blanc marketing",
     metaDesc: "Livre blanc marketing en B2B : diagnostic en six questions, plan type en sept chapitres, exemple fintech, réglage du formulaire et séquence de suivi."
