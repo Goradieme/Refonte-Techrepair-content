@@ -488,4 +488,17 @@ const ARTICLES = [
     motCle:   "livre blanc marketing",
     metaDesc: "Livre blanc marketing en B2B : diagnostic en six questions, plan type en sept chapitres, exemple fintech, réglage du formulaire et séquence de suivi."
   },
+  {
+    titre:    "Base de connaissances SaaS : un centre d'aide qui se classe sur Google et soulage le support",
+    extrait:  "Vos clients cherchent d'abord sur Google, puis ouvrent un ticket. La méthode pour ouvrir, titrer et réécrire votre centre d'aide afin qu'il se classe et réponde à leur place, avec un gabarit d'article.",
+    auteur:   "Gora Dieme",
+    date:     "2026-11-23",
+    categorie:"saas",
+    lecture:  "12 min",
+    lien:     "articles/article-base-de-connaissances-saas-seo.html",
+    image:    "articles/base-de-connaissances-saas-seo-cover.jpg",
+    slug:     "base-de-connaissances-saas-seo",
+    motCle:   "base de connaissances",
+    metaDesc: "Base de connaissances SaaS : diagnostic en une heure, six étapes pour rendre votre centre d'aide visible sur Google, gabarit d'article et indicateurs."
+  },
 ];
