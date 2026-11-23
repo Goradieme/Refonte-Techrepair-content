@@ -496,7 +496,7 @@ const ARTICLES = [
     categorie:"saas",
     lecture:  "12 min",
     lien:     "articles/article-base-de-connaissances-saas-seo.html",
-    image:    "articles/base-de-connaissances-saas-seo-cover.jpg",
+    image:    "articles/base-de-connaissances-saas-seo-cover-v2-carte.jpg",
     slug:     "base-de-connaissances-saas-seo",
     motCle:   "base de connaissances",
     metaDesc: "Base de connaissances SaaS : diagnostic en une heure, six étapes pour rendre votre centre d'aide visible sur Google, gabarit d'article et indicateurs."
