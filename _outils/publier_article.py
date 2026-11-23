@@ -16,6 +16,7 @@ Le dossier _outils/ n'est pas publié par GitHub Pages (préfixe « _ »).
 import html
 import json
 import re
+import subprocess
 import sys
 from datetime import datetime, timezone
 from email.utils import format_datetime
@@ -214,14 +215,8 @@ def main(chemin_meta: str) -> None:
     if b2 != b:
         bh.write_text(b2, encoding="utf-8")
 
-    # --- sitemap.xml -------------------------------------------------------------
-    sm = RACINE / "sitemap.xml"
-    s = sm.read_text(encoding="utf-8")
-    if url not in s:
-        ligne = f"  <url><loc>{url}</loc><lastmod>{date}</lastmod><priority>0.9</priority></url>\n"
-        ancre = f"  <url><loc>https://demo."
-        s = s.replace(ancre, ligne + ancre, 1) if ancre in s else s.replace("</urlset>", ligne + "</urlset>")
-        sm.write_text(s, encoding="utf-8")
+    # --- sitemap.xml : régénéré à partir des pages publiées ----------------------
+    subprocess.run([sys.executable, str(RACINE / "_outils" / "sitemap.py")], check=True)
 
     # --- feed.xml ----------------------------------------------------------------
     fd = RACINE / "feed.xml"
@@ -256,7 +251,6 @@ def main(chemin_meta: str) -> None:
             encoding="utf-8")
 
     # --- Maillage interne : bloc « À lire aussi » recalculé sur tous les articles ---
-    import subprocess
     subprocess.run([sys.executable, str(RACINE / "_outils" / "maillage.py")], check=True)
 
     # --- llms.txt : liste des articles, lue par les moteurs IA ---------------------

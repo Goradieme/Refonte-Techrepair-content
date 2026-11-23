@@ -378,15 +378,9 @@ def main(chemin):
             nouveau = _re.sub(r"Livre blanc N° \d+ · [a-zéû]+ \d{4}", f"Livre blanc N° {_num:02d} · {mois[_mo - 1]} {_an}", nouveau)
             sp.write_text(t.replace(bloc, nouveau), encoding="utf-8")
 
-    # --- sitemap.xml -------------------------------------------------------------
-    sm = RACINE / "sitemap.xml"
-    s = sm.read_text(encoding="utf-8")
-    for loc, prio in ((url, "0.9"), (f"{SITE}/livres-blancs/", "0.8")):
-        if f"<loc>{loc}</loc>" not in s:
-            s = s.replace("</urlset>", f"  <url><loc>{loc}</loc><lastmod>{m['date']}</lastmod><priority>{prio}</priority></url>\n</urlset>")
-        else:
-            s = re.sub(rf"(<loc>{re.escape(loc)}</loc><lastmod>)[^<]*", rf"\g<1>{m['date']}", s)
-    sm.write_text(s, encoding="utf-8")
+    # --- sitemap.xml : régénéré à partir des pages publiées ----------------------
+    import subprocess
+    subprocess.run([sys.executable, str(RACINE / "_outils" / "sitemap.py")], check=True)
 
     # --- feed.xml ----------------------------------------------------------------
     fd = RACINE / "feed.xml"
