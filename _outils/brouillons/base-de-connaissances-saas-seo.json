@@ -1,0 +1,40 @@
+{
+  "slug": "base-de-connaissances-saas-seo",
+  "categorie": "saas",
+  "date": "2026-11-23",
+  "titre": "Base de connaissances SaaS : un centre d'aide qui se classe sur Google et soulage le support",
+  "titreSeo": "Base de connaissances SaaS : un centre d'aide qui se classe",
+  "h1": "Base de connaissances SaaS : un centre d'aide qui se classe sur Google et soulage le support",
+  "filAriane": "Base de connaissances SaaS",
+  "motCle": "base de connaissances",
+  "metaDesc": "Base de connaissances SaaS : diagnostic en une heure, six étapes pour rendre votre centre d'aide visible sur Google, gabarit d'article et indicateurs.",
+  "extrait": "Vos clients cherchent d'abord sur Google, puis ouvrent un ticket. La méthode pour ouvrir, titrer et réécrire votre centre d'aide afin qu'il se classe et réponde à leur place, avec un gabarit d'article.",
+  "image": "articles/base-de-connaissances-saas-seo-cover.jpg",
+  "imageAlt": "Base de connaissances SaaS : un centre d'aide qui se classe sur Google",
+  "sommaireCourt": {
+    "ch1": "1. Tickets évitables",
+    "ch2": "2. Causes",
+    "ch3": "3. Diagnostic",
+    "ch4": "4. Six étapes",
+    "ch5": "5. Gabarit",
+    "ch6": "6. Trois lecteurs",
+    "ch7": "7. Pièges",
+    "ch8": "8. Indicateurs",
+    "ch9": "9. Organisation",
+    "faq": "FAQ",
+    "sources": "Sources"
+  },
+  "ctaLateral": {
+    "titre": "Le guide B2B de la visibilité IA",
+    "texte": "Livre blanc gratuit : vérifier si ChatGPT, Perplexity et Gemini citent votre logiciel et vos pages d'aide quand un prospect compare les solutions.",
+    "lien": "/livres-blancs/visibilite-ia-b2b-guide.html",
+    "bouton": "Télécharger le livre blanc"
+  },
+  "service": "agents-ia",
+  "pagesLiees": [
+    "/agents-ia",
+    "/secteur-saas",
+    "/devis"
+  ],
+  "remplacer": true
+}
