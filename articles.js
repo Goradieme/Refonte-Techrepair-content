@@ -509,7 +509,7 @@ const ARTICLES = [
     categorie:"cyber",
     lecture:  "12 min",
     lien:     "articles/article-redaction-technique-cybersecurite.html",
-    image:    "articles/redaction-technique-cybersecurite-cover-v2-carte.jpg",
+    image:    "articles/redaction-technique-cybersecurite-cover-v3-carte.jpg",
     slug:     "redaction-technique-cybersecurite",
     motCle:   "rédaction technique cybersécurité",
     metaDesc: "Rédaction technique cybersécurité : test des deux lecteurs, méthode en six étapes, plan type de fiche solution et exigences du CRA pour vos documents."
