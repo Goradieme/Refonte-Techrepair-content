@@ -501,4 +501,17 @@ const ARTICLES = [
     motCle:   "base de connaissances",
     metaDesc: "Base de connaissances SaaS : diagnostic en une heure, six étapes pour rendre votre centre d'aide visible sur Google, gabarit d'article et indicateurs."
   },
+  {
+    titre:    "Rédaction technique cybersécurité : la documentation qui passe l'examen du RSSI",
+    extrait:  "Fiches solution trop vagues pour l'ingénieur, notes illisibles pour le décideur : la méthode pour réécrire la documentation d'un éditeur cyber, avec un plan type, un passage réécrit et les exigences du Cyber Resilience Act.",
+    auteur:   "Gora Dieme",
+    date:     "2026-11-24",
+    categorie:"cyber",
+    lecture:  "12 min",
+    lien:     "articles/article-redaction-technique-cybersecurite.html",
+    image:    "articles/redaction-technique-cybersecurite-cover.jpg",
+    slug:     "redaction-technique-cybersecurite",
+    motCle:   "rédaction technique cybersécurité",
+    metaDesc: "Rédaction technique cybersécurité : test des deux lecteurs, méthode en six étapes, plan type de fiche solution et exigences du CRA pour vos documents."
+  },
 ];
