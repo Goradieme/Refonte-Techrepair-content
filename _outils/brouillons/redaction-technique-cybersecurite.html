@@ -1,0 +1,232 @@
+    <p class="intro-lead">Dans un achat de sécurité, la décision se joue souvent avant le premier rendez-vous, au moment où l'équipe du RSSI (responsable de la sécurité des systèmes d'information) ouvre la fiche solution, la note d'architecture ou le guide d'intégration de chaque éditeur présélectionné. La <strong>rédaction technique cybersécurité</strong> désigne la production de ces documents&nbsp;: des textes qui expliquent précisément ce que fait un produit de sécurité, comment il s'installe, ce qu'il protège et ce qu'il ne couvre pas, pour des lecteurs capables de vérifier chaque phrase. Depuis septembre 2026, le Cyber Resilience Act (CRA, le règlement européen sur la cybersécurité des produits) ajoute une contrainte légale à cette exigence commerciale.</p>
+
+    <p>Les équipes marketing des éditeurs connaissent le problème&nbsp;: leurs documents sont soit trop vagues pour un ingénieur sécurité, soit illisibles pour le directeur qui signe. Le dossier recule alors dans la pile. Vous trouverez ici un test pour mesurer cet écart sur vos propres documents, une méthode en six étapes pour les réécrire, un plan type de fiche solution avec un passage réécrit, et les indicateurs qui montrent, après un trimestre, que vos contenus techniques aident enfin vos commerciaux.</p>
+
+    <div class="key-points">
+      <p class="bloc-titre">Points clés</p>
+      <ul>
+        <li><strong>Les acheteurs réclament du détail&nbsp;:</strong> plus d'un décideur sécurité sur deux trouve les messages des éditeurs trop superficiels, selon l'institut Ponemon (juin 2026).</li>
+        <li><strong>Un document technique sert deux lecteurs&nbsp;:</strong> l'ingénieur qui vérifie le fonctionnement et le décideur qui arbitre le risque, le coût et l'intégration.</li>
+        <li><strong>La notice de sécurité devient obligatoire&nbsp;:</strong> l'annexe II du CRA fixe les informations à fournir à l'utilisateur, applicables à partir du 11 décembre 2027.</li>
+        <li><strong>La preuve vaut plus que l'adjectif&nbsp;:</strong> un périmètre testé, une limite assumée et une procédure reproductible convainquent davantage qu'une promesse de protection totale.</li>
+      </ul>
+    </div>
+
+    <div class="toc-box">
+      <p class="bloc-titre">📋 Sommaire</p>
+      <ol>
+        <li><a href="#ch1">Des dossiers écartés pendant l'évaluation technique</a></li>
+        <li><a href="#ch2">Qu'est-ce que la rédaction technique en cybersécurité&nbsp;?</a></li>
+        <li><a href="#ch3">Le CRA transforme la notice en obligation</a></li>
+        <li><a href="#ch4">Vos documents passent-ils l'épreuve des deux lecteurs&nbsp;?</a></li>
+        <li><a href="#ch5">Réécrire sa documentation technique en six étapes</a></li>
+        <li><a href="#ch6">Plan type de fiche solution et passage réécrit</a></li>
+        <li><a href="#ch7">Cinq défauts qui disqualifient un document</a></li>
+        <li><a href="#ch8">Comment savoir si vos contenus techniques aident à vendre&nbsp;?</a></li>
+        <li><a href="#ch9">Ingénieur, marketing ou rédacteur spécialisé&nbsp;?</a></li>
+        <li><a href="#faq">Questions fréquentes</a></li>
+        <li><a href="#sources">Sources</a></li>
+      </ol>
+    </div>
+
+    <h2 id="ch1">1. Des dossiers écartés pendant l'évaluation technique</h2>
+
+    <p>Le symptôme&nbsp;: des prospects téléchargent la documentation, puis reviennent avec des questions auxquelles vos pages auraient dû répondre, ou disparaissent.</p>
+
+    <p>Les enquêtes auprès des acheteurs décrivent ce décalage. Publiée en juin 2026, l'étude de l'institut Ponemon sur l'influence du marketing en cybersécurité indique que 58&nbsp;% des responsables d'achats interrogés s'estiment correctement informés par les éditeurs, mais qu'une majorité pointe un manque de détail technique et opérationnel, des affirmations sans preuve et peu de transparence sur les compromis. Près d'un acheteur sur deux y signale aussi une intégration difficile à comprendre dans son environnement existant. Autrement dit, le contenu attendu existe dans la tête de vos ingénieurs, mais il n'arrive pas jusqu'au lecteur sous une forme qu'il peut utiliser.</p>
+
+    <p>La facture apparaît dans la durée des ventes&nbsp;: chaque question non traitée par écrit devient un échange supplémentaire avec un avant-vente, chaque imprécision repérée par un ingénieur sécurité fragilise la crédibilité de tout le dossier. Un <a href="/secteur-cybersecurite">éditeur du secteur de la cybersécurité</a> s'adresse à des lecteurs qui cherchent la faille, y compris dans sa documentation.</p>
+
+    <h2 id="ch2">2. Qu'est-ce que la rédaction technique en cybersécurité&nbsp;?</h2>
+
+    <p>La rédaction technique en cybersécurité consiste à écrire des documents exacts et vérifiables sur un produit ou un service de sécurité&nbsp;: son fonctionnement, son déploiement, ses limites et sa maintenance. Elle se distingue du contenu marketing par sa promesse&nbsp;: tout ce qui est écrit doit pouvoir être testé.</p>
+
+    <p>Chez un éditeur, elle couvre six familles de documents, qui ne servent pas au même moment du cycle d'achat&nbsp;:</p>
+
+    <table>
+      <thead>
+        <tr><th>Document</th><th>Lecteur principal</th><th>Question à laquelle il répond</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Fiche solution</td><td>RSSI, directeur des systèmes d'information</td><td>Ce produit répond-il à mon besoin, et à quelles conditions&nbsp;?</td></tr>
+        <tr><td>Note d'architecture</td><td>Architecte, ingénieur sécurité</td><td>Où s'installe-t-il, quels flux ouvre-t-il, où vont les données&nbsp;?</td></tr>
+        <tr><td>Guide d'intégration</td><td>Équipe d'exploitation</td><td>Comment le relier à mon SIEM (outil de gestion des événements de sécurité) ou à mon annuaire&nbsp;?</td></tr>
+        <tr><td>Notice de sécurité</td><td>Administrateur, acheteur</td><td>Comment le configurer, le mettre à jour et le retirer sans risque&nbsp;?</td></tr>
+        <tr><td>Avis de vulnérabilité</td><td>Clients en production</td><td>Suis-je exposé, et que dois-je faire&nbsp;?</td></tr>
+        <tr><td>Réponse à questionnaire</td><td>Acheteur, juriste, RSSI</td><td>Le fournisseur tient-il ses engagements de sécurité&nbsp;?</td></tr>
+      </tbody>
+    </table>
+
+    <p>Ces textes sont lus lentement, par des personnes qui comparent plusieurs offres&nbsp;: une phrase ambiguë sur le chiffrement suffit à semer le doute.</p>
+
+    <h2 id="ch3">3. Le CRA transforme la notice en obligation</h2>
+
+    <p>Pour les éditeurs de logiciels et de matériels vendus dans l'Union européenne, une partie de cette documentation n'est plus facultative. Le règlement (UE) 2024/2847, dit Cyber Resilience Act, fixe dans son annexe II la liste minimale des informations et instructions qui accompagnent un produit comportant des éléments numériques.</p>
+
+    <p>Le calendrier est désormais engagé. Selon la Commission européenne (11 septembre 2026), les fabricants doivent depuis cette date signaler les vulnérabilités activement exploitées et les incidents graves, avec une alerte précoce sous 24 heures et une notification complète sous 72 heures&nbsp;; les principales obligations s'appliqueront à partir du 11 décembre 2027. L'ANSSI (Agence nationale de la sécurité des systèmes d'information) précise dans sa <a href="https://cyber.gouv.fr/reglementation/cybersecurite-des-produits/cyber-resilience-act/cadre-reglementaire-du-cra/" class="src" target="_blank" rel="noopener">présentation du cadre réglementaire du CRA</a> que les pare-feu et les systèmes de détection ou de prévention d'intrusion figurent parmi les produits importants de classe II.</p>
+
+    <div class="stat-row">
+      <div class="stat"><b>24&nbsp;h</b><span>pour envoyer l'alerte précoce sur une vulnérabilité activement exploitée, obligation applicable dès septembre 2026 (Commission européenne, 11/09/2026)</span></div>
+      <div class="stat"><b>11/12/2027</b><span>date d'application des principales obligations du CRA, dont les informations de l'annexe II (Commission européenne, 2026)</span></div>
+      <div class="stat"><b>15&nbsp;M€</b><span>montant maximal des sanctions, ou 2,5&nbsp;% du chiffre d'affaires annuel mondial du fabricant (ANSSI, 2026)</span></div>
+    </div>
+
+    <p>Parmi les éléments exigés par l'annexe II, plusieurs relèvent directement de la rédaction technique&nbsp;:</p>
+
+    <ul>
+      <li>le point de contact unique pour signaler une vulnérabilité, et la politique de divulgation coordonnée des vulnérabilités&nbsp;;</li>
+      <li>l'utilisation prévue du produit, ses fonctionnalités essentielles et ses propriétés de sécurité&nbsp;;</li>
+      <li>les circonstances connues ou prévisibles d'utilisation, y compris une mauvaise utilisation raisonnablement prévisible, pouvant entraîner des risques importants&nbsp;;</li>
+      <li>le type d'assistance de sécurité proposé et la date de fin de la période pendant laquelle l'utilisateur recevra des mises à jour de sécurité&nbsp;;</li>
+      <li>des instructions sur la mise en service sécurisée, l'installation des mises à jour, la mise hors service et la suppression sûre des données.</li>
+    </ul>
+
+    <p>Pour le marketing, ces informations deviennent un socle commun à tous les concurrents&nbsp;: la différence se fera sur la clarté. Et chaque engagement écrit, comme la durée de support, devient opposable par l'acheteur.</p>
+
+    <h2 id="ch4">4. Vos documents passent-ils l'épreuve des deux lecteurs&nbsp;?</h2>
+
+    <p>Le diagnostic prend deux heures et se fait à deux&nbsp;: un ingénieur avant-vente ou produit, et une personne du marketing. Prenez trois documents réellement envoyés aux prospects le trimestre dernier, puis posez-leur les questions du tableau.</p>
+
+    <table>
+      <thead>
+        <tr><th>Question</th><th>Lecteur simulé</th><th>Signal d'alerte</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Le périmètre couvert est-il délimité&nbsp;?</td><td>Ingénieur sécurité</td><td>Aucune limite ni exclusion mentionnée</td></tr>
+        <tr><td>Les affirmations sont-elles vérifiables&nbsp;?</td><td>Ingénieur sécurité</td><td>Des chiffres de détection sans méthode de test ni date</td></tr>
+        <tr><td>L'intégration est-elle décrite&nbsp;?</td><td>Architecte</td><td>Ni flux réseau, ni prérequis, ni connecteurs nommés</td></tr>
+        <tr><td>Le coût d'exploitation apparaît-il&nbsp;?</td><td>Décideur</td><td>Rien sur le temps d'administration ou les compétences requises</td></tr>
+        <tr><td>La conclusion tient-elle en trois lignes&nbsp;?</td><td>Décideur</td><td>Il faut lire tout le document pour comprendre la valeur</td></tr>
+        <tr><td>Les obligations du CRA sont-elles couvertes&nbsp;?</td><td>Acheteur</td><td>Pas de durée de support ni de contact de signalement</td></tr>
+      </tbody>
+    </table>
+
+    <p>Notez chaque document sur six&nbsp;: en dessous de quatre, il dessert plus qu'il n'aide. Passez deux concurrents à la même grille pour fixer vos priorités.</p>
+
+    <h2 id="ch5">5. Réécrire sa documentation technique en six étapes</h2>
+
+    <p>La méthode repose sur un principe&nbsp;: l'expert fournit la matière, le rédacteur la structure, et l'expert valide. Prévoyez environ cinq semaines pour un premier lot de trois à cinq documents.</p>
+
+    <ol class="etapes">
+      <li><strong>Recueillir les vraies questions (une semaine).</strong> Le marketing collecte les questions écrites des prospects, les objections notées dans le CRM (logiciel de gestion de la relation client) et les questionnaires fournisseurs des six derniers mois.</li>
+      <li><strong>Interroger l'expert (deux entretiens d'une heure).</strong> Le rédacteur questionne l'ingénieur sur le fonctionnement, les limites, les cas d'échec et les déploiements types.</li>
+      <li><strong>Choisir un niveau de lecture par section (une demi-journée).</strong> Chaque document s'ouvre par une synthèse pour le décideur, puis descend dans le détail pour l'ingénieur. Critère de décision&nbsp;: si une information change l'arbitrage budgétaire, elle monte dans la synthèse.</li>
+      <li><strong>Rédiger avec des preuves datées (deux à trois jours par document).</strong> Chaque affirmation chiffrée indique sa source, sa date et son périmètre de test.</li>
+      <li><strong>Faire relire par deux profils (une semaine).</strong> L'ingénieur vérifie l'exactitude, un lecteur extérieur au produit vérifie la compréhension.</li>
+      <li><strong>Publier, indexer et relier (une journée).</strong> Les documents sans données sensibles sont publiés en page web plutôt qu'en seul fichier joint, ce qui permet à Google de les trouver et aux commerciaux de les citer par un lien.</li>
+    </ol>
+
+    <p>Une documentation ouverte capte des recherches très qualifiées, du type «&nbsp;intégration de tel outil avec tel SIEM&nbsp;», comme une <a href="/articles/article-base-de-connaissances-saas-seo.html">base de connaissances bien référencée</a> le fait pour un éditeur de logiciel en ligne. Fiches et guides s'insèrent alors dans un plan de référencement naturel (SEO) où des <a href="/service-articles-seo">articles techniques et piliers</a> relient chaque document à la requête de l'acheteur.</p>
+
+    <div class="callout">
+      <p class="bloc-titre">Ce qui reste fermé</p>
+      <p>Les schémas propres à un client, les résultats d'audit détaillés et les procédures qui faciliteraient un contournement restent réservés, sous accord de confidentialité. Le reste gagne à être public.</p>
+    </div>
+
+    <h2 id="ch6">6. Plan type de fiche solution et passage réécrit</h2>
+
+    <p>La fiche solution est le document le plus demandé après les pages du site, selon l'étude de l'institut Ponemon citée plus haut. Voici un plan type en sept blocs, à adapter à votre produit.</p>
+
+    <div class="callout">
+      <p class="bloc-titre">Plan type d'une fiche solution cybersécurité (deux pages)</p>
+      <ul>
+        <li><strong>Synthèse (trois lignes)&nbsp;:</strong> le risque traité, pour quel type d'organisation, le résultat attendu.</li>
+        <li><strong>Périmètre&nbsp;:</strong> ce que le produit couvre, ce qu'il ne couvre pas, les prérequis.</li>
+        <li><strong>Fonctionnement&nbsp;:</strong> un schéma des flux et une description en cinq à huit lignes.</li>
+        <li><strong>Intégration&nbsp;:</strong> connecteurs disponibles, formats d'export, effort de déploiement estimé.</li>
+        <li><strong>Preuves&nbsp;:</strong> tests indépendants, certifications, référentiels, avec dates et périmètres.</li>
+        <li><strong>Exploitation&nbsp;:</strong> temps d'administration, compétences requises, durée de support des versions.</li>
+        <li><strong>Contact sécurité&nbsp;:</strong> adresse de signalement des vulnérabilités et lien vers la politique de divulgation.</li>
+      </ul>
+    </div>
+
+    <h3>Un paragraphe réécrit (exemple inventé pour illustrer la méthode)</h3>
+
+    <p><strong>Avant&nbsp;:</strong> «&nbsp;Notre solution unique stoppe instantanément tous les rançongiciels et se déploie sans effort dans n'importe quel environnement.&nbsp;»</p>
+
+    <p><strong>Après&nbsp;:</strong> «&nbsp;L'agent analyse les processus lancés sur les postes Windows et macOS et bloque ceux qui correspondent à des comportements de chiffrement massif de fichiers. Il ne protège pas les serveurs Linux, couverts par un module distinct. Les alertes partent vers votre SIEM au format Syslog ou par API (interface de programmation)&nbsp;; comptez une demi-journée de paramétrage pour un parc de 500 postes. Cette version reçoit des correctifs de sécurité jusqu'au 31 décembre 2030.&nbsp;»</p>
+
+    <p>Moins flatteuse, la seconde version nomme une limite, chiffre un effort et prend un engagement daté&nbsp;: un ingénieur peut la vérifier, un directeur la comparer.</p>
+
+    <h2 id="ch7">7. Cinq défauts qui disqualifient un document</h2>
+
+    <p>La grille de la partie 4 fait ressortir ces erreurs, qui se corrigent chacune en quelques heures.</p>
+
+    <ul>
+      <li><strong>Les superlatifs invérifiables.</strong> «&nbsp;Protection totale&nbsp;», «&nbsp;zéro faux positif&nbsp;»&nbsp;: un lecteur technique s'arrête là. Remplacez-les par un taux mesuré, sa méthode et sa date, ou supprimez-les.</li>
+      <li><strong>Le jargon interne.</strong> Décrivez la fonction avant de donner le nom commercial du module.</li>
+      <li><strong>La peur comme argument.</strong> Les statistiques d'attaques en ouverture lassent un RSSI qui les connaît. Le registre alarmiste et ses alternatives sont détaillés dans une méthode de <a href="/articles/article-marketing-contenu-cybersecurite.html">marketing de contenu cybersécurité</a> adaptée aux lecteurs techniques.</li>
+      <li><strong>Le document figé.</strong> Datez chaque fiche et revoyez-la à chaque version majeure.</li>
+      <li><strong>Le fichier seul.</strong> Un document uniquement en pièce jointe n'apparaît pas dans Google et échappe aux assistants comme ChatGPT, qui citent des pages web.</li>
+    </ul>
+
+    <h2 id="ch8">8. Comment savoir si vos contenus techniques aident à vendre&nbsp;?</h2>
+
+    <p>Trois mois après le premier lot, comparez ces indicateurs à leur point de départ. Comptez quelques semaines pour la recherche, un à deux trimestres pour le cycle de vente.</p>
+
+    <table>
+      <thead>
+        <tr><th>Indicateur</th><th>Où le mesurer</th><th>Tendance attendue</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Questions écrites répétitives des prospects</td><td>CRM, notes des avant-ventes</td><td>En baisse</td></tr>
+        <tr><td>Documents cités dans les échanges commerciaux</td><td>Suivi des liens partagés</td><td>En hausse</td></tr>
+        <tr><td>Recherches d'intégration qui mènent à vos pages</td><td>Search Console</td><td>Impressions et clics en hausse</td></tr>
+        <tr><td>Temps de réponse aux questionnaires de sécurité</td><td>Équipe avant-vente</td><td>En baisse</td></tr>
+        <tr><td>Opportunités passées en évaluation technique</td><td>CRM</td><td>Taux de passage en hausse</td></tr>
+      </tbody>
+    </table>
+
+    <p>Demandez aussi aux commerciaux quels documents ils envoient spontanément. Ceux qu'ils n'utilisent jamais sont à réécrire ou à retirer.</p>
+
+    <h2 id="ch9">9. Ingénieur, marketing ou rédacteur spécialisé&nbsp;?</h2>
+
+    <p>Le choix dépend de la ressource qui manque&nbsp;: l'expertise est presque toujours interne, le temps et la structure beaucoup moins.</p>
+
+    <ul>
+      <li><strong>L'ingénieur rédige seul</strong> un document destiné à ses pairs, comme un guide d'intégration avancé.</li>
+      <li><strong>Le marketing pilote</strong> quand le document doit aussi convaincre un décideur, mais il lui faut du temps d'expert garanti pour les entretiens et la relecture.</li>
+      <li><strong>Un rédacteur spécialisé intervient</strong> pour produire vite un premier lot, avec une méthode d'entretien éprouvée.</li>
+    </ul>
+
+    <p>Les mêmes entretiens d'experts peuvent aussi nourrir un <a href="/service-livres-blancs">livre blanc technique</a>&nbsp;: un document de référence de ce type gagne des backlinks (liens entrants depuis d'autres sites), sert de base à des articles dérivés et recueille l'adresse électronique des lecteurs les plus qualifiés.</p>
+
+    <div class="conclusion-box">
+      <p class="bloc-titre">Écrire pour celui qui vérifie</p>
+      <p>Un acheteur de sécurité ne vous croit pas sur parole, et c'est une chance&nbsp;: celui qui documente précisément son périmètre, ses limites et ses engagements se distingue de concurrents qui en restent aux promesses. Le CRA rendra bientôt une partie de cette transparence obligatoire. Cette semaine, appliquez la grille de la partie 4 à votre fiche solution la plus envoyée&nbsp;: vous saurez quel document réécrire en premier.</p>
+      <p>Pour transformer les connaissances de vos ingénieurs en <a href="/service-articles-seo">contenus techniques qui se classent et convainquent</a>, un premier audit de vos documents peut cadrer le chantier.</p>
+      <a href="/devis" class="final-cta">Demander l'audit gratuit de votre documentation →</a>
+    </div>
+
+    <h2 id="faq">Questions fréquentes</h2>
+
+    <div class="faq-item">
+      <h3>Qu'est-ce que la rédaction technique&nbsp;?</h3>
+      <p>La rédaction technique est la production de documents qui expliquent un produit ou un procédé avec exactitude&nbsp;: fiches, notices, guides d'installation, documentation d'interface. En cybersécurité, elle s'adresse à des lecteurs experts qui vérifient chaque affirmation.</p>
+    </div>
+
+    <div class="faq-item">
+      <h3>Quel exemple de rédaction technique pour un éditeur de cybersécurité&nbsp;?</h3>
+      <p>La fiche solution est l'exemple le plus courant&nbsp;: deux pages qui décrivent le risque traité, le périmètre, le fonctionnement, l'intégration, les preuves et la durée de support.</p>
+    </div>
+
+    <div class="faq-item">
+      <h3>Quelle différence entre un rédacteur technique et un rédacteur web&nbsp;?</h3>
+      <p>Le rédacteur web écrit pour attirer des visiteurs depuis les moteurs de recherche. Le rédacteur technique écrit pour qu'un produit soit compris, installé et utilisé correctement. En cybersécurité, les deux compétences se rejoignent quand une documentation ouverte doit à la fois être exacte et se classer sur Google.</p>
+    </div>
+
+    <div class="faq-item">
+      <h3>Quelle documentation le Cyber Resilience Act impose-t-il&nbsp;?</h3>
+      <p>L'annexe II du règlement (UE) 2024/2847 impose notamment un point de contact pour signaler les vulnérabilités, la description de l'utilisation prévue et des propriétés de sécurité, la date de fin de la période de mises à jour de sécurité et des instructions de mise en service, de mise à jour et de mise hors service. Les principales obligations s'appliquent à partir du 11 décembre 2027.</p>
+    </div>
+
+
+    <h2 id="sources">Sources</h2>
+    <ol class="sources">
+      <li>Ponemon-Sullivan Privacy Report, synthèse de l'enquête 2026 de NOLA Marketing et du Ponemon Institute sur l'influence du marketing auprès des acheteurs de cybersécurité (320 décideurs), 15 juin 2026, <a href="https://ponemonsullivanreport.com/2026/06/the-state-of-cybersecurity-marketing-influence-2026-from-awareness-to-selection-how-buyers-evaluate-vendors/" target="_blank" rel="nofollow noopener">ponemonsullivanreport.com</a></li>
+      <li>Commission européenne, actualité du 11 septembre 2026 sur l'entrée en application des obligations de signalement du CRA («&nbsp;Des produits numériques plus sûrs&nbsp;»), <a href="https://commission.europa.eu/news-and-media/news/safer-and-more-secure-digital-products-2026-09-11_fr" target="_blank" rel="nofollow noopener">commission.europa.eu</a></li>
+      <li>ANSSI, «&nbsp;Cadre règlementaire du CRA&nbsp;», consulté le 24 novembre 2026, <a href="https://cyber.gouv.fr/reglementation/cybersecurite-des-produits/cyber-resilience-act/cadre-reglementaire-du-cra/" target="_blank" rel="nofollow noopener">cyber.gouv.fr</a></li>
+      <li>Journal officiel de l'Union européenne, règlement (UE) 2024/2847 du 23 octobre 2024 sur la cyberrésilience, texte officiel, <a href="https://eur-lex.europa.eu/eli/reg/2024/2847/oj" target="_blank" rel="nofollow noopener">eur-lex.europa.eu</a></li>
+      <li>Springlex, transcription de l'annexe II du règlement (UE) 2024/2847, «&nbsp;Informations et instructions destinées à l'utilisateur&nbsp;», consulté le 24 novembre 2026, <a href="https://www.springlex.eu/fr/packages/cra/cra-regulation/annex-2/" target="_blank" rel="nofollow noopener">springlex.eu</a></li>
+      <li>Ubersuggest, suggestions de recherche Google en France pour «&nbsp;rédaction technique cybersécurité&nbsp;» et requêtes voisines, relevé du 24 novembre 2026, <a href="https://app.neilpatel.com/fr/ubersuggest/" target="_blank" rel="nofollow noopener">app.neilpatel.com</a></li>
+    </ol>

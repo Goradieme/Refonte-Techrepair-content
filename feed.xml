@@ -5,8 +5,16 @@
     <link>https://www.techrepaircontent.com/blog</link>
     <description>Rédaction SEO et technique pour le SaaS, la tech et l'e-commerce.</description>
     <language>fr-FR</language>
-    <lastBuildDate>Mon, 23 Nov 2026 02:55:50 GMT</lastBuildDate>
+    <lastBuildDate>Tue, 24 Nov 2026 03:01:02 GMT</lastBuildDate>
     <atom:link href="https://www.techrepaircontent.com/feed.xml" rel="self" type="application/rss+xml"/>
+    <item>
+      <title>Rédaction technique cybersécurité : la documentation qui passe l&#x27;examen du RSSI</title>
+      <link>https://www.techrepaircontent.com/articles/article-redaction-technique-cybersecurite.html</link>
+      <guid isPermaLink="true">https://www.techrepaircontent.com/articles/article-redaction-technique-cybersecurite.html</guid>
+      <pubDate>Tue, 24 Nov 2026 07:00:00 GMT</pubDate>
+      <description>Fiches solution trop vagues pour l&#x27;ingénieur, notes illisibles pour le décideur : la méthode pour réécrire la documentation d&#x27;un éditeur cyber, avec un plan type, un passage réécrit et les exigences du Cyber Resilience Act.</description>
+      <enclosure url="https://www.techrepaircontent.com/articles/redaction-technique-cybersecurite-cover.jpg" type="image/jpeg"/>
+    </item>
     <item>
       <title>Base de connaissances SaaS : un centre d&#x27;aide qui se classe sur Google et soulage le support</title>
       <link>https://www.techrepaircontent.com/articles/article-base-de-connaissances-saas-seo.html</link>
