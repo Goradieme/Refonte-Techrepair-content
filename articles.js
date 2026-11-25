@@ -522,7 +522,7 @@ const ARTICLES = [
     categorie:"fintech",
     lecture:  "12 min",
     lien:     "articles/article-conformite-dora-dossier-fournisseur.html",
-    image:    "articles/conformite-dora-dossier-fournisseur-cover.jpg",
+    image:    "articles/conformite-dora-dossier-fournisseur-cover-v2.jpg",
     slug:     "conformite-dora-dossier-fournisseur",
     motCle:   "conformité DORA",
     metaDesc: "Conformité DORA côté fournisseur : ce qu'impose l'article 30, un test en dix questions, six étapes et le plan type du dossier à remettre aux banques."
