@@ -23,6 +23,7 @@
 
 ## Articles du blog
 
+- [Conformité DORA : le dossier fournisseur qui rassure les banques avant la signature](https://www.techrepaircontent.com/articles/article-conformite-dora-dossier-fournisseur.html): Vos ventes aux banques s'enlisent chez les achats et la conformité ? Ce que DORA exige d'un prestataire TIC, un diagnostic en dix questions, six étapes pour monter le dossier fournisseur et un plan type prêt à remplir.
 - [Rédaction technique cybersécurité : la documentation qui passe l'examen du RSSI](https://www.techrepaircontent.com/articles/article-redaction-technique-cybersecurite.html): Fiches solution trop vagues pour l'ingénieur, notes illisibles pour le décideur : la méthode pour réécrire la documentation d'un éditeur cyber, avec un plan type, un passage réécrit et les exigences du Cyber Resilience Act.
 - [Base de connaissances SaaS : un centre d'aide qui se classe sur Google et soulage le support](https://www.techrepaircontent.com/articles/article-base-de-connaissances-saas-seo.html): Vos clients cherchent d'abord sur Google, puis ouvrent un ticket. La méthode pour ouvrir, titrer et réécrire votre centre d'aide afin qu'il se classe et réponde à leur place, avec un gabarit d'article.
 - [Livre blanc marketing : le plan type B2B qui génère des rendez-vous](https://www.techrepaircontent.com/articles/article-livre-blanc-marketing-b2b.html): Des téléchargements qui ne deviennent jamais des rendez-vous ? Diagnostic, plan type en sept chapitres, exemple de structure, formulaire et séquence de suivi pour un livre blanc B2B qui sert la vente.

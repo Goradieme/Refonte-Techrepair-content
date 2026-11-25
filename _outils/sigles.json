@@ -320,6 +320,18 @@
     "BTP": {
       "developpe": "bâtiment et travaux publics",
       "cle": "batiment et travaux publics"
+    },
+    "AES": {
+      "developpe": "autorités européennes de surveillance",
+      "cle": "autorites europeennes de surveillance"
+    },
+    "LEI": {
+      "developpe": "identifiant international d'entité juridique",
+      "cle": "identifiant international d entite juridique"
+    },
+    "EUID": {
+      "developpe": "identifiant unique européen des entreprises",
+      "cle": "identifiant unique europeen"
     }
   },
   "ignorer": [
@@ -430,6 +442,7 @@
     "LD",
     "HG",
     "CERT",
-    "SRI"
+    "SRI",
+    "SAP"
   ]
 }
