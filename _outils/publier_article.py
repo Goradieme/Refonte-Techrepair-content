@@ -266,6 +266,12 @@ def main(chemin_meta: str) -> None:
     if r.returncode:
         sys.exit("Contrôle SEO/GEO : points bloquants ci-dessus. Corriger, puis relancer.")
 
+    # --- Relecture des fautes : bloquante (règle de Goradieme du 25/11/2026) -------------
+    r = subprocess.run([sys.executable, str(RACINE / "_outils" / "relecture.py"), slug])
+    if r.returncode:
+        sys.exit("Relecture : fautes ci-dessus. Corriger le brouillon (ou déclarer un faux positif "
+                 "avéré dans _outils/relecture-exceptions.json), puis relancer.")
+
 
 def maj_llms() -> None:
     """Réécrit la section « Articles du blog » de llms.txt à partir de articles.js."""

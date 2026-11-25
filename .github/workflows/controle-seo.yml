@@ -50,7 +50,7 @@ jobs:
               # une mise en attente décidée par Goradieme reste en place.
               par=$(gh api "repos/$REPO/issues/$N/events" --paginate \
                     --jq '[.[] | select(.event == "labeled" and .label.name == "attendre")] | last | .actor.login')
-              if [ "$par" = "github-actions[bot]" ]; then
+              if [ "$par" = "github-actions[bot]" ] && ! echo "$etiquettes" | grep -qx fautes-a-corriger; then
                 gh api -X DELETE "repos/$REPO/issues/$N/labels/attendre" >/dev/null || true
               fi
               gh api "repos/$REPO/issues/$N/comments" -f body="Contrôle SEO et GEO : tous les points bloquants sont corrigés, la publication reprend son cours." >/dev/null

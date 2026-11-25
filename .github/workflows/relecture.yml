@@ -1,0 +1,97 @@
+# Relecture orthographique et grammaticale, règle fixée par Goradieme le 25/11/2026 :
+# contrôler les fautes de toute nature dans tous les articles, actuels et à venir.
+#
+# À chaque demande de fusion « article/… », les nouveaux articles passent dans
+# _outils/relecture.py (LanguageTool en français + règles maison). S'il reste des fautes,
+# la demande reçoit les étiquettes « attendre » (qui suspend la publication de 8 h) et
+# « fautes-a-corriger », avec la liste en commentaire. Dès que la relecture repasse au vert,
+# les deux étiquettes sont retirées.
+# Lancement manuel (onglet Actions) : relit tous les articles et joint le rapport.
+name: Relecture des fautes
+
+on:
+  pull_request:
+    types: [opened, reopened, synchronize, ready_for_review]
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pull-requests: write
+  issues: write
+
+concurrency:
+  group: relecture-${{ github.event.pull_request.number || github.run_id }}
+  cancel-in-progress: true
+
+jobs:
+  relire:
+    if: github.event_name == 'workflow_dispatch' || startsWith(github.head_ref, 'article/')
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: "17"
+      - uses: actions/cache@v4
+        with:
+          path: ~/.cache/language_tool_python
+          key: languagetool-v1
+      - run: pip install language-tool-python
+      - name: Relire tous les articles (lancement manuel)
+        if: github.event_name == 'workflow_dispatch'
+        run: python3 _outils/relecture.py --tous | tee rapport-relecture.txt || true
+      - uses: actions/upload-artifact@v4
+        if: github.event_name == 'workflow_dispatch'
+        with:
+          name: rapport-relecture
+          path: rapport-relecture.txt
+      - name: Relire les nouveaux articles
+        if: github.event_name == 'pull_request'
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          REPO: ${{ github.repository }}
+          N: ${{ github.event.pull_request.number }}
+          BASE: ${{ github.base_ref }}
+        run: |
+          set -u
+          slugs=$(git diff --name-only --diff-filter=A "origin/$BASE...HEAD" -- 'articles/article-*.html' \
+                  | sed -e 's#^articles/article-##' -e 's#\.html$##')
+          if [ -z "$slugs" ]; then echo "Aucun nouvel article dans cette demande."; exit 0; fi
+          etiquettes=$(gh api "repos/$REPO/issues/$N/labels" --jq '.[].name')
+          if python3 _outils/relecture.py $slugs > rapport.txt 2>&1; then
+            cat rapport.txt
+            if echo "$etiquettes" | grep -qx fautes-a-corriger; then
+              gh api -X DELETE "repos/$REPO/issues/$N/labels/fautes-a-corriger" >/dev/null || true
+              par=$(gh api "repos/$REPO/issues/$N/events" --paginate \
+                    --jq '[.[] | select(.event == "labeled" and .label.name == "attendre")] | last | .actor.login')
+              # « attendre » n'est retirée que si un contrôle l'a posée et que le contrôle SEO est au vert.
+              if [ "$par" = "github-actions[bot]" ] && ! echo "$etiquettes" | grep -qx seo-a-corriger; then
+                gh api -X DELETE "repos/$REPO/issues/$N/labels/attendre" >/dev/null || true
+              fi
+              gh api "repos/$REPO/issues/$N/comments" -f body="Relecture : toutes les fautes sont corrigées." >/dev/null
+            fi
+            exit 0
+          fi
+          cat rapport.txt
+          gh api "repos/$REPO/labels" -f name=fautes-a-corriger -f color=B60205 -f description="Relecture : fautes à corriger" >/dev/null 2>&1 || true
+          gh api "repos/$REPO/labels" -f name=attendre -f color=FBCA04 >/dev/null 2>&1 || true
+          if echo "$etiquettes" | grep -qx attendre; then
+            gh api "repos/$REPO/issues/$N/labels" -f "labels[]=fautes-a-corriger" >/dev/null
+          else
+            gh api "repos/$REPO/issues/$N/labels" -f "labels[]=attendre" -f "labels[]=fautes-a-corriger" >/dev/null
+          fi
+          {
+            echo "**Relecture : fautes relevées, publication suspendue.**"
+            echo
+            echo '```'
+            cat rapport.txt
+            echo '```'
+            echo "Corriger le brouillon (ou, pour un faux positif avéré, l'ajouter à \`_outils/relecture-exceptions.json\`), relancer \`publier_article.py\`, puis pousser : la relecture se relance toute seule."
+          } > commentaire.md
+          gh api "repos/$REPO/issues/$N/comments" -F body=@commentaire.md >/dev/null
+          exit 1
