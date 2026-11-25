@@ -70,9 +70,9 @@ def main(chemin_meta: str) -> None:
     url = f"{SITE}/articles/{fichier}"
 
     # --- Contrôles qualité -------------------------------------------------
-    # Les titres des encadrés « Points clés » et « Sommaire » précèdent le premier H2 :
+    # Les titres des encadrés « Le cadre en bref », « Points clés » et « Sommaire » précèdent le premier H2 :
     # ce ne sont pas des titres de section, on les sort de la hiérarchie Hn.
-    corps = re.sub(r'(<div class="(?:key-points|toc-box)">\s*)<h3>(.*?)</h3>', r'\1<p class="bloc-titre">\2</p>', corps)
+    corps = re.sub(r'(<div class="(?:cadre|key-points|toc-box)">\s*)<h3>(.*?)</h3>', r'\1<p class="bloc-titre">\2</p>', corps)
     mots = compter_mots(corps)
     # Un article déjà paru (date passée) peut dépasser un peu la limite : il a reçu depuis
     # des liens retour, une FAQ ou une introduction étoffée. La limite stricte vaut pour
