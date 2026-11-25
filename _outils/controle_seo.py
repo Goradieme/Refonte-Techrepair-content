@@ -172,7 +172,7 @@ def controler(slug: str):
         B("chapeau <p class=\"intro-lead\"> absent")
     # Introduction : elle campe le décor en deux paragraphes avant les « Points clés ».
     avant = principal.split("<h2", 1)[0]
-    avant = re.sub(r'<div class="(?:key-points|toc-box)">.*?</div>', "", avant.split("</h1>", 1)[-1], flags=re.S)
+    avant = re.sub(r'<div class="(?:cadre|key-points|toc-box)">.*?</div>', "", avant.split("</h1>", 1)[-1], flags=re.S)
     avant = avant.split('class="intro-lead"', 1)[-1] if 'class="intro-lead"' in avant else ""
     paras = [brut(x) for x in re.findall(r"<p[^>]*>(.*?)</p>", '<p class="intro-lead"' + avant, re.S)] if avant else []
     n_intro = sum(len(x.split()) for x in paras)
@@ -182,6 +182,15 @@ def controler(slug: str):
         B(f"introduction trop courte pour camper le décor ({n_intro} mots ; 110 à 200 attendus)")
     elif n_intro > 200:
         A(f"introduction longue ({n_intro} mots ; 110 à 200 attendus)")
+    # Cadre pour les non-initiés (règle de Goradieme du 25/11/2026) : encadré « Le cadre en
+    # bref » entre l'introduction et les « Points clés ».
+    cadre = re.search(r'<div class="cadre">(.*?)</div>', principal, re.S)
+    if not cadre:
+        B("encadré « Le cadre en bref » absent (poser le cadre pour les non-initiés, avant les « Points clés »)")
+    elif len(re.findall(r"<li", cadre.group(1))) < 3:
+        B("encadré « Le cadre en bref » : 3 notions au moins attendues (le texte ou le sujet, qui est concerné, les mots à connaître)")
+    elif principal.find('class="cadre"') > principal.find('class="key-points"') > -1:
+        A("encadré « Le cadre en bref » : à placer avant les « Points clés »")
     kp = re.search(r'<div class="key-points">(.*?)</div>', principal, re.S)
     if not kp:
         B("encadré « Points clés » absent")
