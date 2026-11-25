@@ -28,7 +28,7 @@ jobs:
   relire:
     if: github.event_name == 'workflow_dispatch' || startsWith(github.head_ref, 'article/')
     runs-on: ubuntu-latest
-    timeout-minutes: 30
+    timeout-minutes: ${{ github.event_name == 'workflow_dispatch' && 150 || 20 }}
     steps:
       - uses: actions/checkout@v4
         with:
