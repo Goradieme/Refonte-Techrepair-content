@@ -514,4 +514,17 @@ const ARTICLES = [
     motCle:   "rédaction technique cybersécurité",
     metaDesc: "Rédaction technique cybersécurité : test des deux lecteurs, méthode en six étapes, plan type de fiche solution et exigences du CRA pour vos documents."
   },
+  {
+    titre:    "Conformité DORA : le dossier fournisseur qui rassure les banques avant la signature",
+    extrait:  "Vos ventes aux banques s'enlisent chez les achats et la conformité ? Ce que DORA exige d'un prestataire TIC, un diagnostic en dix questions, six étapes pour monter le dossier fournisseur et un plan type prêt à remplir.",
+    auteur:   "Gora Dieme",
+    date:     "2026-11-25",
+    categorie:"fintech",
+    lecture:  "12 min",
+    lien:     "articles/article-conformite-dora-dossier-fournisseur.html",
+    image:    "articles/conformite-dora-dossier-fournisseur-cover.jpg",
+    slug:     "conformite-dora-dossier-fournisseur",
+    motCle:   "conformité DORA",
+    metaDesc: "Conformité DORA côté fournisseur : ce qu'impose l'article 30, un test en dix questions, six étapes et le plan type du dossier à remettre aux banques."
+  },
 ];
