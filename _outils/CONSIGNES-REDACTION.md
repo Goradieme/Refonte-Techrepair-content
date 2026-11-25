@@ -223,6 +223,27 @@ API ; ne pas les appeler) :
      conjugaison, ponctuation et typographie française (espace avant « ; : ! ? »,
      guillemets « »), noms propres, chiffres, cohérence entre titre, sommaire et
      parties, liens. Corriger directement.
+   - **Relecture automatique des fautes (règle de Goradieme du 25/11/2026, bloquante)** :
+     `publier_article.py` lance `_outils/relecture.py <slug>` (LanguageTool en français +
+     règles maison ; `pip install --break-system-packages -q language-tool-python` au
+     besoin). Le rapport a deux niveaux : « FAUTES » (bloquant : orthographe, conjugaison,
+     accords sûrs, règles maison) et « À VÉRIFIER » (règles souvent fausses ou de style :
+     non bloquant, mais chaque point se relit et se corrige s'il s'agit d'une vraie faute,
+     par exemple un déterminant mal accordé). Corriger dans le brouillon. Un faux positif avéré (nom de
+     marque, terme technique correct, mot latin en italique) va dans
+     `_outils/relecture-exceptions.json`, jamais une vraie faute. Le même contrôle tourne
+     sur GitHub à l'ouverture de la demande de fusion : en cas de faute, il pose
+     « attendre » et « fautes-a-corriger », ce qui suspend la publication de 8 h.
+   - **Fautes que l'outil ne voit pas, à chercher à la main** (relevées par Goradieme) :
+     déterminant ambigu (« ces » / « ses » / « leurs » : à qui renvoie-t-il ? sinon,
+     nommer : « ses clients financiers ») ; articles oubliés dans les énumérations
+     (« réunit l'identifiant, la raison sociale, le pays… », pas « réunit identifiant,
+     raison sociale, pays ») ; phrase qui dit l'inverse de l'idée ; « ses » / « son » en
+     début de phrase sans antécédent clair ; deux propositions complètes séparées par une
+     simple virgule (mettre un point-virgule ou un point) ; anglicismes (« product
+     marketing », « impacter ») ; mots inexistants (« correctrice ») ; promesse au
+     présent de vérité (« votre guide obtient » → « peut obtenir ») ; énumération
+     « dont A, B ou C » (→ « et C ») ; titre SEO bancal (« vos clients banques »).
    - Relancer `publier_article.py` après les corrections.
 8. Vérifier le rendu dans un navigateur (bureau et mobile).
 9. Exporter le PDF de relecture :
