@@ -294,7 +294,7 @@ Ce que le contrôle exige (points bloquants) :
   aucun saut de niveau dans les titres, au moins 6 parties H2, pas deux H2 identiques ;
 - mot-clé principal (`motCle`) dans le title, le H1, la meta description, les 200
   premiers mots et au moins un H2 ;
-- introduction de deux paragraphes au moins (110 à 200 mots) avant les « Points clés »,
+- introduction de deux paragraphes au moins (110 à 250 mots) avant les « Points clés »,
   chapeau `intro-lead` compris ;
 - lexique des sigles présent et complet (généré automatiquement) ;
 - chapeau `intro-lead`, encadré « Points clés », FAQ visible de 3 à 5 questions, au moins
@@ -323,17 +323,23 @@ Ce que le contrôle exige (points bloquants) :
 
 - Mot-clé principal dans : titre SEO (≤ 60 caractères, la marque « | TechRepair » est ajoutée seulement s’il reste la place), H1, meta description
   (≤ 160 caractères), introduction et au moins un H2. Pas de bourrage.
-- **Introduction qui campe le décor (règle de Goradieme du 15/11/2026, sans exception).**
-  Tout article commence par une introduction de deux paragraphes (110 à 200 mots) qui
-  installe le sujet AVANT d'entrer dans le vif : de quoi parle-t-on (le sujet nommé et
-  défini en une phrase, sigles développés), dans quel contexte (ce qui se passe
-  aujourd'hui, ce qui a changé, pour qui), pourquoi cela pose un problème au lecteur, et
-  ce que l'article va lui permettre de faire. Un lecteur qui ne connaît pas le sujet doit
-  pouvoir suivre dès la première phrase : jamais d'ouverture sur une formule choc, une
-  citation ou un cas particulier sans avoir d'abord posé le cadre. Le chapeau
-  `intro-lead` pose le décor ; le second paragraphe amène le problème et annonce la
-  solution. La même règle vaut à l'intérieur de l'article : chaque partie H2 s'ouvre par
-  une ou deux phrases qui situent ce dont elle traite avant d'entrer dans le détail.
+- **Introduction qui campe le décor et définit le sujet (règles de Goradieme du 15/11 et du 25/11/2026, sans exception).**
+  Tout article commence par une petite introduction de deux paragraphes (110 à 250 mots)
+  qui donne un aperçu général du sujet AVANT d'entrer dans le vif, pour qu'un lecteur qui
+  n'y connaît rien puisse suivre dès la première phrase :
+  1. **Définir.** La première phrase dit ce qu'est le sujet traité, en termes simples. Les
+     termes clés de l'article sont définis au fil de l'introduction (sigles développés,
+     mots techniques expliqués en quelques mots) ; quand l'origine d'un mot éclaire son
+     sens, donner son étymologie en une incise (ex. : « résilience », du latin
+     *resilire*, « rebondir »). Pas d'étymologie plaquée quand elle n'apporte rien.
+  2. **Situer.** Le contexte : ce qui se passe aujourd'hui, ce qui a changé, pour qui.
+  3. **Annoncer.** Le second paragraphe amène le problème du lecteur et ce que l'article
+     va lui permettre de faire.
+  Jamais d'ouverture sur une formule choc, une citation, un chiffre ou un cas particulier
+  avant cette définition. Tout reste dans le texte de l'introduction : pas d'encadré
+  séparé. Le chapeau `intro-lead` porte la définition et le décor. La même règle vaut à
+  l'intérieur de l'article : chaque partie H2 s'ouvre par une ou deux phrases qui situent
+  ce dont elle traite avant d'entrer dans le détail.
 - **Sigles expliqués pour un lecteur novice (règle de Goradieme du 15/11/2026).** Écrire
   pour un salarié qui découvre le sujet : tout sigle ou acronyme (RSSI, DPO, SaaS, B2B,
   SEO, RGPD, NIS2, CRM…) est développé entre parenthèses à sa PREMIÈRE apparition dans le

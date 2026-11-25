@@ -179,9 +179,9 @@ def controler(slug: str):
     if avant and len(paras) < 2:
         B("introduction : deux paragraphes attendus avant les « Points clés » (le décor, puis le problème)")
     elif avant and n_intro < 110:
-        B(f"introduction trop courte pour camper le décor ({n_intro} mots ; 110 à 200 attendus)")
-    elif n_intro > 200:
-        A(f"introduction longue ({n_intro} mots ; 110 à 200 attendus)")
+        B(f"introduction trop courte pour camper le décor ({n_intro} mots ; 110 à 250 attendus)")
+    elif n_intro > 250:
+        A(f"introduction longue ({n_intro} mots ; 110 à 250 attendus)")
     kp = re.search(r'<div class="key-points">(.*?)</div>', principal, re.S)
     if not kp:
         B("encadré « Points clés » absent")
