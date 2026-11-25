@@ -334,15 +334,6 @@ Ce que le contrôle exige (points bloquants) :
   `intro-lead` pose le décor ; le second paragraphe amène le problème et annonce la
   solution. La même règle vaut à l'intérieur de l'article : chaque partie H2 s'ouvre par
   une ou deux phrases qui situent ce dont elle traite avant d'entrer dans le détail.
-- **Poser le cadre pour les non-initiés (règle de Goradieme du 25/11/2026, sans exception).**
-  Juste après l'introduction et AVANT les « Points clés », tout article contient l'encadré
-  `<div class="cadre"><p class="bloc-titre">Le cadre en bref</p><p class="cadre-sous">…</p><ul>…</ul></div>`.
-  Il donne en 4 à 6 puces courtes, chacune avec une amorce en gras, ce qu'un lecteur qui
-  découvre le sujet doit savoir pour suivre la suite : le sujet ou le texte (nom complet,
-  nature, date ou contexte), son but, qui est concerné et comment, les deux ou trois mots
-  techniques employés plus loin (définis en une phrase simple), et l'objet concret dont
-  parle l'article. Pas de chiffre choc ni de conseil ici : seulement le décor et le
-  vocabulaire. `controle_seo.py` bloque la publication si l'encadré manque.
 - **Sigles expliqués pour un lecteur novice (règle de Goradieme du 15/11/2026).** Écrire
   pour un salarié qui découvre le sujet : tout sigle ou acronyme (RSSI, DPO, SaaS, B2B,
   SEO, RGPD, NIS2, CRM…) est développé entre parenthèses à sa PREMIÈRE apparition dans le
@@ -356,7 +347,6 @@ Ce que le contrôle exige (points bloquants) :
   définit de la même façon, en quelques mots. `publier_article.py` ajoute en plus, avant
   la FAQ, l'encadré « Sigles utilisés dans cet article » : ne pas l'écrire à la main.
 - Structure, dans cet ordre : `<p class="intro-lead">` (le décor), un paragraphe d'introduction (le problème et la promesse),
-  l'encadré `<div class="cadre">` « Le cadre en bref » (les notions pour les non-initiés),
   un encadré `<div class="key-points"><p class="bloc-titre">Points clés</p><ul>…</ul></div>` (4 conclusions
   essentielles, chacune avec une amorce en gras), le sommaire `<div class="toc-box">`, 6 à 9 `<h2 id="chN">` numérotés, des `<h3>`,
   au moins un tableau ou une liste d'étapes, un `<div class="callout">`.
