@@ -535,7 +535,7 @@ const ARTICLES = [
     categorie:"seo",
     lecture:  "12 min",
     lien:     "articles/article-obtenir-des-backlinks-b2b.html",
-    image:    "articles/obtenir-des-backlinks-b2b-cover.jpg",
+    image:    "articles/obtenir-des-backlinks-b2b-cover-v2.jpg",
     slug:     "obtenir-des-backlinks-b2b",
     motCle:   "obtenir des backlinks",
     metaDesc: "Obtenir des backlinks sans les acheter : diagnostic en 45 minutes, étude maison en sept étapes, grille de cibles et e-mail type pour SaaS, fintech et cyber."
