@@ -527,4 +527,17 @@ const ARTICLES = [
     motCle:   "conformité DORA",
     metaDesc: "Conformité DORA côté fournisseur : ce qu'impose l'article 30, un test en dix questions, six étapes et le plan type du dossier à remettre aux banques."
   },
+  {
+    titre:    "Obtenir des backlinks en B2B : l'étude maison qui attire les liens",
+    extrait:  "Peu de médias, des pages qui vendent, des concurrents installés : la méthode pour qu'un site SaaS, fintech ou cybersécurité gagne des liens éditoriaux grâce à une étude maison, avec une grille de cibles et un e-mail de proposition prêts à adapter.",
+    auteur:   "Gora Dieme",
+    date:     "2026-11-26",
+    categorie:"seo",
+    lecture:  "12 min",
+    lien:     "articles/article-obtenir-des-backlinks-b2b.html",
+    image:    "articles/obtenir-des-backlinks-b2b-cover.jpg",
+    slug:     "obtenir-des-backlinks-b2b",
+    motCle:   "obtenir des backlinks",
+    metaDesc: "Obtenir des backlinks sans les acheter : diagnostic en 45 minutes, étude maison en sept étapes, grille de cibles et e-mail type pour SaaS, fintech et cyber."
+  },
 ];
