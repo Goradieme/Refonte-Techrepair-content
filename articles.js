@@ -99,8 +99,8 @@ const ARTICLES = [
     metaDesc: "Robots, contenus, mesure : la méthode documentée pour que ChatGPT, Perplexity, Gemini et Copilot citent votre entreprise B2B. Plan d'action sur 30 jours."
   },
   {
-    titre:    "NIS2 en France : entreprises concernées et plan d'action avant la loi Résilience",
-    extrait:  "La transposition de NIS2 est de nouveau reportée à l'Assemblée. Seuils, secteurs, obligations, référentiel ReCyF de l'ANSSI : qui est concerné et quoi faire dès maintenant.",
+    titre:    "NIS2 en France : entreprises concernées et plan d'action après le vote de la loi Résilience",
+    extrait:  "La loi Résilience qui transpose NIS2 a été votée par l'Assemblée le 17 novembre 2026. Seuils, secteurs, obligations, référentiel ReCyF de l'ANSSI : qui est concerné et quoi faire dès maintenant.",
     auteur:   "Gora Dieme",
     date:     "2026-10-23",
     categorie:"cyber",
