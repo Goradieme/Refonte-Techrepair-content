@@ -548,7 +548,7 @@ const ARTICLES = [
     categorie:"ecommerce",
     lecture:  "12 min",
     lien:     "articles/article-taux-de-retour-e-commerce.html",
-    image:    "articles/taux-de-retour-e-commerce-cover-v3.jpg",
+    image:    "articles/taux-de-retour-e-commerce-cover-v4.jpg",
     slug:     "taux-de-retour-e-commerce",
     motCle:   "taux de retour e-commerce",
     metaDesc: "Taux de retour e-commerce : moyenne par catégorie, calcul, diagnostic des retours causés par la fiche, grille de correction et exemple réécrit."
