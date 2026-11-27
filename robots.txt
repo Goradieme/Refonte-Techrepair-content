@@ -2,5 +2,8 @@ User-agent: *
 Allow: /
 Disallow: /studio.html
 Disallow: /_sources/
+# Le livre blanc se lit et s'indexe sur sa page HTML ; le PDF (téléchargement après formulaire)
+# ne doit pas lui faire concurrence dans Google.
+Disallow: /livres-blancs/*.pdf
 
 Sitemap: https://www.techrepaircontent.com/sitemap.xml

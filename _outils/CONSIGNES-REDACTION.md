@@ -174,6 +174,36 @@ API ; ne pas les appeler) :
    mot-clé principal, volume, SD, CPC, source et date, et les 3 à 5 questions réelles
    retenues avec leur source.
 
+### Leçons de la Search Console (analyse du 27/11/2026, règles validées par Goradieme)
+
+Sur les 28 premiers jours, 60 % des impressions venaient de positions au-delà de la 40ᵉ,
+sur des requêtes génériques très disputées (« fiche produit seo », « guide d'achat »,
+« visibilité ia », « audit e-commerce ») ; les seuls clics venaient d'articles
+réglementaires précis (DSP3, NIS2), classés entre la 3ᵉ et la 10ᵉ place. Tant que le
+domaine a peu de liens entrants :
+
+- **Viser la longue traîne B2B précise** : un mot-clé principal de 3 mots ou plus, avec
+  le secteur ou le métier du lecteur (« fiche produit technique B2B », « DSP3 date
+  d'application »), SD idéalement < 30. Une requête générique ne sert que de mot-clé
+  secondaire.
+- **Écarter les intentions grand public** (particulier qui cherche un « guide d'achat »
+  de produit) : elles donnent des impressions, jamais des clients.
+- **Deux piliers prioritaires** où Google nous montre déjà : la réglementation fintech et
+  cyber (DSP3, PSR, NIS2, DORA, CRA) et les fiches produits e-commerce. Le jour libre de
+  la rotation leur revient en priorité.
+- **Fraîcheur des articles réglementaires** : un article dont le titre ou l'introduction
+  décrit un état du droit dépassé (« avant la loi », « reporté ») perd ses positions.
+  Dès qu'une étape législative est franchie, mettre à jour le titre, l'introduction, le
+  calendrier, la FAQ et `dateModified`, et afficher « mis à jour le … » sous le titre.
+- **Un sujet, une page** : avant d'écrire, vérifier qu'aucun article ne vise déjà la
+  même requête ; si deux articles sont proches, séparer nettement leurs intentions
+  (« qui est concerné » / « comment le prouver à ses clients ») et les relier entre eux.
+- **Titre SEO orienté clic** : la requête principale au début, puis le bénéfice concret
+  ou la donnée attendue (date, liste, modèle) et, pour un sujet daté, l'année.
+- **Pages services et secteurs** : chaque nouvel article est ajouté au bloc « Nos
+  guides » (`id="guides-lies"`) de la page secteur correspondante s'il est plus utile
+  que l'un des quatre guides affichés.
+
 ## Routine quotidienne
 
 1. Ouvrir `_outils/calendrier-editorial.json` et prendre le premier sujet dont le
