@@ -540,4 +540,17 @@ const ARTICLES = [
     motCle:   "obtenir des backlinks",
     metaDesc: "Obtenir des backlinks sans les acheter : diagnostic en 45 minutes, étude maison en sept étapes, grille de cibles et e-mail type pour SaaS, fintech et cyber."
   },
+  {
+    titre:    "Taux de retour e-commerce : les fiches produits qui font revenir les colis",
+    extrait:  "Compatibilité passée sous silence, dimensions absentes, contenu de la boîte flou : la méthode pour isoler les retours causés par vos fiches produits, les réécrire avec une grille motif / correction et mesurer l'effet en trois mois.",
+    auteur:   "Gora Dieme",
+    date:     "2026-11-27",
+    categorie:"ecommerce",
+    lecture:  "12 min",
+    lien:     "articles/article-taux-de-retour-e-commerce.html",
+    image:    "articles/taux-de-retour-e-commerce-cover.jpg",
+    slug:     "taux-de-retour-e-commerce",
+    motCle:   "taux de retour e-commerce",
+    metaDesc: "Taux de retour e-commerce : moyenne par catégorie, calcul, diagnostic des retours causés par la fiche, grille de correction et exemple réécrit."
+  },
 ];

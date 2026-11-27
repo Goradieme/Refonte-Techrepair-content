@@ -106,6 +106,7 @@
   "marketplace",
   "marketplaces",
   "multifacteur",
+  "nas",
   "netlinking",
   "newsletter",
   "newsletters",
@@ -183,6 +184,7 @@
   "techrepair",
   "template",
   "templates",
+  "title",
   "tj-actions",
   "tracking",
   "ubersuggest",
@@ -210,7 +212,9 @@
   "UNPAIRED_BRACKETS",
   "FR_SIMPLE_REPLACE_SOFT"
  ],
- "passages_admis": [],
+ "passages_admis": [
+  "Ne répond pas à mes attentes"
+ ],
  "regles_a_verifier": [
   "ACCORD_EXPRESSION_SANS_COMPLEMENT",
   "ACCORD_SUJET_VERBE",

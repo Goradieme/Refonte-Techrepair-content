@@ -332,6 +332,14 @@
     "EUID": {
       "developpe": "identifiant unique européen des entreprises",
       "cle": "identifiant unique europeen"
+    },
+    "SAV": {
+      "developpe": "service après-vente",
+      "cle": "service apres-vente|service apres vente"
+    },
+    "NRF": {
+      "developpe": "National Retail Federation, la fédération américaine du commerce de détail",
+      "cle": "national retail federation"
     }
   },
   "ignorer": [
