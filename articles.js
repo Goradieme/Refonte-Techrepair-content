@@ -561,7 +561,7 @@ const ARTICLES = [
     categorie:"rh",
     lecture:  "12 min",
     lien:     "articles/article-calendrier-editorial-rh-2027.html",
-    image:    "articles/calendrier-editorial-rh-2027-cover.jpg",
+    image:    "articles/calendrier-editorial-rh-2027-cover-v2.jpg",
     slug:     "calendrier-editorial-rh-2027",
     motCle:   "calendrier éditorial RH",
     metaDesc: "Calendrier éditorial RH 2027 pour éditeurs de logiciels RH : temps forts (index égalité, entretiens, transparence salariale), méthode en six étapes et fiche."
