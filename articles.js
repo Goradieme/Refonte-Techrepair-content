@@ -553,4 +553,17 @@ const ARTICLES = [
     motCle:   "taux de retour e-commerce",
     metaDesc: "Taux de retour e-commerce : moyenne par catégorie, calcul, diagnostic des retours causés par la fiche, grille de correction et exemple réécrit."
   },
+  {
+    titre:    "Calendrier éditorial RH 2027 : publier avant les échéances des DRH",
+    extrait:  "Index égalité avant le 1er mars, entretien de parcours professionnel tous les quatre ans, transparence salariale en navette : la méthode pour caler le planning d'un éditeur de logiciel RH sur l'agenda des DRH, avec un tableau des temps forts 2027 et une fiche remplie.",
+    auteur:   "Gora Dieme",
+    date:     "2026-11-28",
+    categorie:"rh",
+    lecture:  "12 min",
+    lien:     "articles/article-calendrier-editorial-rh-2027.html",
+    image:    "articles/calendrier-editorial-rh-2027-cover.jpg",
+    slug:     "calendrier-editorial-rh-2027",
+    motCle:   "calendrier éditorial RH",
+    metaDesc: "Calendrier éditorial RH 2027 pour éditeurs de logiciels RH : temps forts (index égalité, entretiens, transparence salariale), méthode en six étapes et fiche."
+  },
 ];
